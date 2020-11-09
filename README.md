@@ -1,5 +1,2 @@
-mPohoda Client PHP Library
-==========================
-
-
-
+# PHPmServer
+client library for Sormware's Pohoda mServer
