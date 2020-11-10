@@ -1,2 +1,2 @@
 # PHPmServer
-client library for Sormware's Pohoda mServer
+client library for Stormware's Pohoda mServer

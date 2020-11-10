@@ -1,11 +1,11 @@
 {
-    "name": "temify/mpohoda",
-    "description": "mPohoda rest client.",
+    "name": "vitexsoftware/pohoda-connector",
+    "description": "Stormware's Pohoda mServer client.",
     "license": "MIT",
     "authors": [
         {
             "name": "Vítězslav Dvořák",
-            "email": "vitex@arachne.cz"
+            "email": "info@vitexsoftware.cz"
         }
     ],
     "minimum-stability": "stable",
@@ -13,7 +13,7 @@
         "ext-curl": "*",
         "ext-iconv": "*",
         "riesenia/pohoda": "dev-master",
-        "vitexsoftware/ease-core": "9999999-dev",
+        "vitexsoftware/ease-core": ">=1.9",
         "lightools/xml": "v2.0.0"
     },
     "autoload": {
