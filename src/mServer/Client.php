@@ -130,6 +130,12 @@ class Client extends \Ease\Sand {
     protected $pohoda;
 
     /**
+     * Response holder
+     * @var Response
+     */
+    protected $response = null;
+
+    /**
      * 
      *
      * @param mixed $init default record id or initial data. See processInit()
@@ -169,8 +175,8 @@ class Client extends \Ease\Sand {
      *
      * @param array $options Object Options ( user,password,authSessionId
      *                                        company,url,agenda,
-     *                                        prefix,defaultUrlParams,debug,
-     *                                        detail,offline,filter,ignore404
+     *                                        debug,
+     *                                        filter,ignore404
      *                                        timeout,companyUrl,ver,throwException
      */
     public function setUp($options = []) {
@@ -182,8 +188,21 @@ class Client extends \Ease\Sand {
         $this->setupProperty($options, 'compress', 'POHODA_COMPRESS');
 
         if (isset($options['agenda'])) {
-            $this->setEvidence($options['agenda']);
+            $this->setAgenda($options['agenda']);
         }
+
+        if (array_key_exists('instance', $options)) {
+            $this->setInstance($options['instance']);
+        }
+
+        if (array_key_exists('application', $options)) {
+            $this->setApplication($options['application']);
+        }
+
+        if (array_key_exists('duplicity', $options)) {
+            $this->setCheckDuplicity($options['duplicity']);
+        }
+
         $this->setupProperty($options, 'debug');
     }
 
@@ -195,6 +214,22 @@ class Client extends \Ease\Sand {
     public function setAuth() {
         $this->defaultHttpHeaders['STW-Authorization'] = 'Basic ' . base64_encode($this->user . ':' . $this->password);
         return strlen($this->user) && strlen($this->password);
+    }
+
+    public function setInstance(string $instance) {
+        $this->defaultHttpHeaders['STW-Instance'] = $instance;
+    }
+
+    public function setApplication(string $application) {
+        $this->defaultHttpHeaders['STW-Application'] = $application;
+    }
+
+    public function setCheckDuplicity(bool $flag) {
+        if ($flag) {
+            $this->defaultHttpHeaders['STW-Check-Duplicity'] = 'true';
+        } else {
+            unset($this->defaultHttpHeaders['STW-Check-Duplicity']);
+        }
     }
 
     /**
@@ -270,7 +305,7 @@ class Client extends \Ease\Sand {
      * 
      * @return int HTTP Status code
      */
-    public function performRequest($urlSuffix = null, $method = 'GET') {
+    public function performRequest($urlSuffix = null, $method = 'POST') {
         $this->responseStats = [];
         $this->errors = [];
 
@@ -284,18 +319,58 @@ class Client extends \Ease\Sand {
     }
 
     public function processResponse($httpCode) {
-        $loader = new XmlLoader();
-        $response = [];
-        $xmlDomDocument = $loader->loadXml($this->lastCurlResponse);
-        $p = $xmlDomDocument->getElementsByTagName('responsePackItem')->item(0);
-        if ($p->hasAttributes()) {
-            foreach ($p->attributes as $attr) {
-                $response[$attr->nodeName] = trim($attr->nodeValue);
-            }
+
+        switch ($httpCode) {
+            case 400:
+                $this->addStatusMessage(_('400: Bad request'), 'error');
+                // "Požadavek nemůže být vyřízen, poněvadž byl syntakticky nesprávně zapsán"
+                break;
+            case 401:
+                $this->addStatusMessage(_('401: Unauthorized'), 'error');
+                //"Používán tam, kde je vyžadována autentifikace, ale nebyla zatím provedena". V tomto případě se jedná o problém, kdy buď v HTTP požadavku chybí autentizační údaje nebo daný uživatel není v programu POHODA vytvořen.
+                break;
+            case 403:
+                $this->addStatusMessage(_(': Forbidden'), 'error');
+                //"Požadavek byl legální, ale server odmítl odpovědět". Například se jedná o problém, kdy daný uživatel nemá právo na otevření účetní jednotky v programu POHODA.
+                break;
+            case 404:
+                $this->addStatusMessage(_('404: Not found'), 'error');
+                //„Požadovaný dokument nebyl nalezen“. Jedná se o problém, kdy byla chybně zadaná URL cesta k mServeru. Například se jedná o problém, kdy v URL adrese není uvedena cesta k umístění na serveru "/XML". Příklad správně zadné URL: 192.168.0.1:444/xml
+                break;
+            case 405:
+                $this->addStatusMessage(_('405: Method not allowed'), 'error');
+                //„Požadavek byl zavolán na zdroj s metodou, kterou nepodporuje. Například se jedná o službu, na kterou se odesílají data metodou POST a někdo se je místo toho pokusí odeslat metodou GET.“
+                break;
+            case 408:
+                $this->addStatusMessage(_('408 : Request Timeout'), 'error');
+                //„Vypršel čas vyhrazený na zpracování požadavku“
+                break;
+            case 500:
+                $this->addStatusMessage(_('500: Internal server error'), 'error');
+                //„Při zpracovávání požadavku došlo k blíže nespecifikované chybě“
+                break;
+            case 502:
+                $this->addStatusMessage(_('502: Bad Gateway'), 'error');
+                //„Proxy server nebo brána obdržely od serveru neplatnou odpověď“
+                break;
+            case 503:
+                $this->addStatusMessage(_('503: Service unavailable'), 'error');
+                //„Služba je dočasně nedostupná“
+                break;
+            case 504:
+                $this->addStatusMessage(_('504: Gateway Timeout'), 'error');
+                //„Proxy server nedostal od cílového serveru odpověď v daném čase“
+                break;
+            case 505:
+                $this->addStatusMessage(_('505: HTTP Version Not Supported'), 'error');
+                //„Server nepodporuje verzi protokolu HTTP použitou v požadavku“
+                break;
+            default :
+                $this->response = new Response($this);
+                break;
         }
-        $responseNoteLines = explode(PHP_EOL, $response['note']);
-        $this->addStatusMessage(end($responseNoteLines), $response['state']);
-        return $response;
+
+        return $this->response->isOk();
     }
 
     /**
@@ -306,6 +381,17 @@ class Client extends \Ease\Sand {
     public function getStatus() {
         $this->performRequest('/status');
         return ($this->lastResponseCode == 200) && $this->lastCurlResponse == 'Response from POHODA mServer';
+    }
+
+    public function getElementMap($extra = []) {
+        return array_merge(
+                [
+                    '{http://www.stormware.cz/schema/version_2/response.xsd}responsePackItem' => function(\Sabre\Xml\Reader $reader) {
+                        return \Sabre\Xml\Deserializer\keyValue($reader, 'http://www.stormware.cz/schema/version_2/response.xsd');
+                    }
+                ]
+                , $extra
+        );
     }
 
     /**
