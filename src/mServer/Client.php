@@ -124,7 +124,7 @@ class Client extends \Ease\Sand {
     protected $ico = null;
 
     /**
-     * XML Processor
+     * XML Response Processor
      * @var Pohoda
      */
     protected $pohoda;
@@ -134,6 +134,18 @@ class Client extends \Ease\Sand {
      * @var Response
      */
     protected $response = null;
+
+    /**
+     * Current Object's agenda
+     * @var string
+     */
+    public $agenda = null;
+
+    /**
+     * Request XML helper
+     * @var Pohoda\Agenda
+     */
+    public $requestXml = null;
 
     /**
      * 
@@ -154,7 +166,15 @@ class Client extends \Ease\Sand {
     }
 
     public function processInit($init) {
-        
+        if (is_integer($init)) {
+            $this->loadFromPohoda($init);
+        } elseif (is_array($init)) {
+            $this->takeData($init);
+        } elseif (preg_match('/\.(json|xml|csv)/', $init)) {
+            $this->takeData($this->getPohodaData((($init[0] != '/') ? $this->evidenceUrlWithSuffix($init) : $init)));
+        } else {
+            $this->loadFromPohoda($init);
+        }
     }
 
     /**
@@ -392,6 +412,51 @@ class Client extends \Ease\Sand {
                 ]
                 , $extra
         );
+    }
+
+    public function takeData($data, $reset = false) {
+        parent::takeData(\Ease\Functions::recursiveIconv('UTF-8', 'Windows-1250', $data), $reset);
+        $this->create($this->getData());
+    }
+
+    /**
+     * Create Agenda document using given data
+     * 
+     * @param Array $data
+     */
+    public function create($data) {
+        $this->requestXml = $this->pohoda->create($data);
+    }
+
+    /**
+     * Insert prepared record to Pohoda
+     * 
+     * @param array $data extra data
+     * 
+     * @return int
+     */
+    public function insertToPohoda($data = []) {
+        if (count($data)) {
+            $this->takeData($data);
+        }
+        if ($this->requestXml) {
+            if (method_exists($this->requestXml, 'addActionType')) {
+                $this->requestXml->addActionType('add/update'); // "add", "add/update", "update", "delete"
+            }
+            $this->pohoda->addItem(2, $this->requestXml);
+        }
+        $this->setPostFields($this->pohoda->close());
+        return $this->performRequest('/xml');
+    }
+
+    public function getColumnsFromPohoda($columns = ['id'], $conditions = []) {
+        $this->requestXml = $this->pohoda->createListRequest(['type' => ucfirst($this->agenda)]);
+        if (count($conditions)) {
+            $this->requestXml->addFilter($conditions);
+        }
+        $this->pohoda->addItem(2, $this->requestXml);
+        $this->setPostFields($this->pohoda->close());
+        return $this->performRequest('/xml') ? $this->response->getAgendaData($this->agenda) : null;
     }
 
     /**

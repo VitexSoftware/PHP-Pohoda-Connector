@@ -51,12 +51,7 @@ class Response extends \Ease\Sand {
 
     public function useCaller(Client $caller) {
         $this->caller = $caller;
-//        foreach (simplexml_load_string($xml)->getNamespaces(true) as $ns => $uri) {
-//            $this->service->elementMap['{' . $uri . '}' . $ns] = 'Sabre\Xml\Deserializer\keyValue';
-//        }
-
         $this->service->elementMap = $caller->getElementMap();
-
         $this->parsed = $this->service->parse($caller->lastCurlResponse);
         print_r($this->parsed);
     }
@@ -88,7 +83,7 @@ class Response extends \Ease\Sand {
     }
 
     static public function stripNsUri($parsedName) {
-        return \Sabre\Xml\Service::parseClarkNotation($parsedName)[1];
+        return \Sabre\Xml\Service::parseClarkNotation($parsedName)[1];  
     }
 
     /**

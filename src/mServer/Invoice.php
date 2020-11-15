@@ -9,21 +9,21 @@
 namespace mServer;
 
 /**
- * Description of Adresa
+ * Description of Invoice
  *
  * @author vitex
  */
-class Adressbook extends Client /* implements \Sabre\Xml\XmlDeserializable */ {
+class Invoice extends Client /* implements \Sabre\Xml\XmlDeserializable */ {
 
     /**
      * Current Object's agenda
      * @var string
      */
-    public $agenda = 'addressBook';
+    public $agenda = 'invoice';
 
     /**
      * Request XML helper
-     * @var \Riesenia\Pohoda\Addressbook
+     * @var \Riesenia\Pohoda\Invoice
      */
     public $requestXml = null;
 
@@ -72,7 +72,14 @@ class Adressbook extends Client /* implements \Sabre\Xml\XmlDeserializable */ {
      * @param Array $data
      */
     public function create($data) {
-        $this->requestXml = $this->pohoda->createAddressbook($data);
+        if (array_key_exists('invoiceSummary', $data)) {
+            $summary = $data['invoiceSummary'];
+            unset($data['invoiceSummary']);
+            $this->requestXml = $this->pohoda->createInvoice($data);
+            $this->requestXml->addSummary($summary);
+        } else {
+            $this->requestXml = $this->pohoda->createInvoice($data);
+        }
     }
 
 }
