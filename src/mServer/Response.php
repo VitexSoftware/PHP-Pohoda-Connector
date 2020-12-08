@@ -1,4 +1,11 @@
 <?php
+/**
+ * PHPmPohoda - Response parser class
+ *
+ * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
+ * @copyright  (C) 2020 Vitex Software
+ */
+
 
 namespace mServer;
 

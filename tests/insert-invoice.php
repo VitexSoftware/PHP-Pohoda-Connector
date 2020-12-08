@@ -77,7 +77,27 @@ $invoiceRecord = [
 //"text".    
 ];
 
-$addresser = new Invoice($invoiceRecord, \Ease\Shared::instanced()->loadConfig(__DIR__ . '/.env'));
-$addresser->insertToPohoda();
+$invoicer = new Invoice($invoiceRecord, \Ease\Shared::instanced()->loadConfig(__DIR__ . '/.env'));
+
+$itemRecord = [
+    'text' => 'Židle Z220',
+    'quantity' => 1.0,
+    'unit' => 'ks',
+    'payVAT' => false,
+    'rateVAT' => 'high',
+    'homeCurrency' => [
+        'unitPrice' => 1968,
+        'price' => 1968,
+        'priceVAT' => 413.28,
+        'priceSum' => 2381.28
+    ],
+    'code' => 'Z220',
+    'stockItemIDS' => 'Z220'
+];
+
+
+$invoicer->addItem($itemRecord);
+
+$invoicer->insertToPohoda();
 
 
