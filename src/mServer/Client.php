@@ -283,6 +283,9 @@ class Client extends \Ease\Sand {
      * @param string $data
      */
     public function setPostFields($data) {
+        if ($this->debug) {
+            
+        }
         $this->postFields = $data;
     }
 
@@ -387,6 +390,16 @@ class Client extends \Ease\Sand {
                 break;
             default :
                 $this->response = new Response($this);
+                if ($this->response->isOk() === false) {
+                    if ($this->response->getNote()) {
+                        $this->addStatusMessage($this->response->getNote(), 'error');
+                    }
+                    foreach ($this->response->messages as $type => $messages) {
+                        foreach ($messages as $message) {
+                            $this->addStatusMessage($message['state'].' '.$message['errno'].': '.$message['note'].(array_key_exists('XPath', $message)?' ('.$message['XPath'].')':''), $type);
+                        }
+                    }
+                }
                 break;
         }
 
@@ -414,6 +427,12 @@ class Client extends \Ease\Sand {
         );
     }
 
+    /**
+     * Use data in object
+     * 
+     * @param array   $data  raw document data
+     * @param boolean $reset replace current content
+     */
     public function takeData($data, $reset = false) {
         parent::takeData(\Ease\Functions::recursiveIconv('UTF-8', 'Windows-1250', $data), $reset);
         $this->create($this->getData());
@@ -449,6 +468,13 @@ class Client extends \Ease\Sand {
         return $this->performRequest('/xml');
     }
 
+    /**
+     * 
+     * @param type $columns
+     * @param type $conditions
+     * 
+     * @return array
+     */
     public function getColumnsFromPohoda($columns = ['id'], $conditions = []) {
         $this->requestXml = $this->pohoda->createListRequest(['type' => ucfirst($this->agenda)]);
         if (count($conditions)) {

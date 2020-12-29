@@ -1,10 +1,9 @@
 <?php
 
-/**
- * PHPmPohoda - Invoice helper Class
- *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Vitex Software
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
 namespace mServer;
@@ -83,28 +82,20 @@ class Invoice extends Client /* implements \Sabre\Xml\XmlDeserializable */ {
         }
     }
 
-    /**
-     * Add Item into invoice
-     * 
-     * @param array $itemRecord Item properties
-     * 
-     * @return \Riesenia\Pohoda\Invoice Invoice with item added
-     */
-    public function addItem($itemRecord) {
+    public static function extId($ids, $exSystemName = '', $exSystemText = '') {
+        $node = new \SimpleXMLElement('<extId></extId>', 0, false, \Riesenia\Pohoda::$namespaces['typ']);
 
-        if (array_key_exists('stockItemIDS', $itemRecord)) { //TODO: Finalize
-            $stockItemIDS = $itemRecord['stockItemIDS'];
-            unset($itemRecord['stockItemIDS']);
-            $itemRecord['stockItem']['stockItem']['ids'] = $stockItemIDS;
-        }
+//					<typ:extId>
+//						<typ:ids>268</typ:ids>
+//						<typ:exSystemName>banager</typ:exSystemName>
+//						<typ:exSystemText>Benefitka Manager</typ:exSystemText>
+//					</typ:extId>        
 
+        $node->addChild('typ:' . 'ids', \htmlspecialchars((string) $ids), \Riesenia\Pohoda::$namespaces['typ']);
+        $node->addChild('typ:' . 'exSystemName', \htmlspecialchars((string) $exSystemName), \Riesenia\Pohoda::$namespaces['typ']);
+        $node->addChild('typ:' . 'exSystemText', \htmlspecialchars((string) $exSystemText), \Riesenia\Pohoda::$namespaces['typ']);
 
-//        $itemRecord['homeCurrency'];
-//        $itemRecord['foreignCurrency'];
-//        $itemRecord['stockItem'];
-
-
-        return $this->requestXml->addItem($itemRecord);
+        return $node;
     }
 
 }

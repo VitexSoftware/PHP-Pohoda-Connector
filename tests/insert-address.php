@@ -40,7 +40,13 @@ $addressBookRecord = [
             'country' => '', //  
         ], // 
         'addressLinkToAddress' => '', // 
-//        'extId' => '', // 
+//                'extId' => [
+//                    'ids' => 'EXT-001',
+//                    'exSystemName' => 'appslug',
+//                    'exSystemText' => 'app name'
+//                ], // 
+        
+        
         'shipToAddress' => [// Dodací adresa.
 //            'actionType' => '', //Typ práce s dodací adresou. Výchozí hodnota je přidání nového dodací adresy.
 //            'extId' => '', //

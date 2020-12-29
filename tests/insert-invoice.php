@@ -74,7 +74,6 @@ $invoiceRecord = [
 //"symPar", 
 //"symSpec", 
 //"symVar", 
-//"text".    
 ];
 
 $invoicer = new Invoice($invoiceRecord, \Ease\Shared::instanced()->loadConfig(__DIR__ . '/.env'));
@@ -95,9 +94,10 @@ $itemRecord = [
     'stockItemIDS' => 'Z220'
 ];
 
-
 $invoicer->addItem($itemRecord);
 
 $invoicer->insertToPohoda();
+
+$invoicer->getIDS();
 
 

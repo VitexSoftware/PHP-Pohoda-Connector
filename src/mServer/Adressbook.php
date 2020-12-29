@@ -1,12 +1,10 @@
 <?php
 
-/**
- * PHPmPohoda - Addressbook helper class
- *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Vitex Software
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-
 
 namespace mServer;
 
@@ -75,6 +73,38 @@ class Adressbook extends Client /* implements \Sabre\Xml\XmlDeserializable */ {
      */
     public function create($data) {
         $this->requestXml = $this->pohoda->createAddressbook($data);
+    }
+
+    /**
+     * Convert decimal coordineates to GPS field value
+     * 
+     * @param string $latitude
+     * @param string $longitude
+     * 
+     * @return string 50° 04' 58.9781" N 000° 00' 00.0000" E
+     */
+    public static function LatLongToGPS(string $latitude, string $longitude) {
+        return self::DECtoDMS($longitude) . 'N ' . self::DECtoDMS($longitude) . 'E ';
+    }
+
+    /**
+     * Converts decimal longitude / latitude to DMS ( Degrees / minutes / seconds ) 
+     * This is the piece of code which may appear to be inefficient, but to avoid 
+     * issues with floating point math we extract the integer part and the float 
+     * part by using a string function.
+     * 
+     * @param string $dec float as string ex. 50.111199
+     * 
+     * @return string 50°06'40.3"
+     */
+    public static function DECtoDMS(string $dec) {
+        $vars = explode(".", $dec);
+        $deg = $vars[0];
+        $tempma = "0." . $vars[1];
+        $tempma = $tempma * 3600;
+        $min = floor($tempma / 60);
+        $sec = round($tempma - ($min * 60), 4);
+        return $deg . '° ' . $min . "' " . $sec . '" ';
     }
 
 }
