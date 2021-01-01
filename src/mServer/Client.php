@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PHPmPohoda - Client Class
+ * PHPmServer - Client Class
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
  * @copyright  (C) 2020 Vitex Software
@@ -28,7 +28,7 @@ class Client extends \Ease\Sand {
      *
      * @var string
      */
-    public static $libVersion = '0.1';
+    public static $libVersion = '0.3';
 
     /**
      * Curl Handle.
@@ -148,14 +148,21 @@ class Client extends \Ease\Sand {
     public $requestXml = null;
 
     /**
-     * 
+     * Where to find current record name. 
+     * @var string column name or path in array address:company
+     */
+    public $nameColumn = null;
+
+    /**
+     * mServer client class
      *
-     * @param mixed $init default record id or initial data. See processInit()
+     * @param mixed $init    default record id or initial data. See processInit()
      * @param array $options Connection settings and other options override
      */
     public function __construct($init = null, $options = []) {
         $this->setUp($options);
         $this->curlInit();
+        Pohoda::$encoding = 'UTF-8';
         $this->pohoda = new Pohoda($this->ico);
         $this->pohoda->setApplicationName(Functions::cfg('APP_NAME') ? Functions::cfg('APP_NAME') : 'PHPmPohoda');
         $tmpFile = sys_get_temp_dir() . '/' . Functions::randomString() . '.xml';
@@ -165,6 +172,11 @@ class Client extends \Ease\Sand {
         }
     }
 
+    /**
+     * Process and use initial value
+     * 
+     * @param mixed $init
+     */
     public function processInit($init) {
         if (is_integer($init)) {
             $this->loadFromPohoda($init);
@@ -223,7 +235,7 @@ class Client extends \Ease\Sand {
             $this->setCheckDuplicity($options['duplicity']);
         }
 
-        $this->setupProperty($options, 'debug');
+        $this->setupProperty($options, 'debug', 'POHODA_DEBUG');
     }
 
     /**
@@ -236,14 +248,29 @@ class Client extends \Ease\Sand {
         return strlen($this->user) && strlen($this->password);
     }
 
+    /**
+     * Set Instance http header
+     * 
+     * @param string $instance
+     */
     public function setInstance(string $instance) {
         $this->defaultHttpHeaders['STW-Instance'] = $instance;
     }
 
+    /**
+     * Set Application http header
+     * 
+     * @param string $application
+     */
     public function setApplication(string $application) {
         $this->defaultHttpHeaders['STW-Application'] = $application;
     }
 
+    /**
+     * Set "Check Duplicity" http header enabler
+     * 
+     * @param bool $flag
+     */
     public function setCheckDuplicity(bool $flag) {
         if ($flag) {
             $this->defaultHttpHeaders['STW-Check-Duplicity'] = 'true';
@@ -341,6 +368,13 @@ class Client extends \Ease\Sand {
         return $this->processResponse($this->doCurlRequest($url, $method));
     }
 
+    /**
+     * Response processing handler
+     * 
+     * @param int $httpCode
+     * 
+     * @return boolean
+     */
     public function processResponse($httpCode) {
 
         switch ($httpCode) {
@@ -396,7 +430,7 @@ class Client extends \Ease\Sand {
                     }
                     foreach ($this->response->messages as $type => $messages) {
                         foreach ($messages as $message) {
-                            $this->addStatusMessage($message['state'].' '.$message['errno'].': '.$message['note'].(array_key_exists('XPath', $message)?' ('.$message['XPath'].')':''), $type);
+                            $this->addStatusMessage($message['state'] . ' ' . $message['errno'] . ': ' . $message['note'] . (array_key_exists('XPath', $message) ? ' (' . $message['XPath'] . ')' : ''), $type);
                         }
                     }
                 }
@@ -412,19 +446,9 @@ class Client extends \Ease\Sand {
      * @return boolean
      */
     public function getStatus() {
-        $this->performRequest('/status');
-        return ($this->lastResponseCode == 200) && $this->lastCurlResponse == 'Response from POHODA mServer';
-    }
-
-    public function getElementMap($extra = []) {
-        return array_merge(
-                [
-                    '{http://www.stormware.cz/schema/version_2/response.xsd}responsePackItem' => function(\Sabre\Xml\Reader $reader) {
-                        return \Sabre\Xml\Deserializer\keyValue($reader, 'http://www.stormware.cz/schema/version_2/response.xsd');
-                    }
-                ]
-                , $extra
-        );
+        $this->responseStats = [];
+        $this->errors = [];
+        return ($this->doCurlRequest($this->url . '/status','POST') == 200) && $this->lastCurlResponse == 'Response from POHODA mServer';
     }
 
     /**
@@ -434,7 +458,7 @@ class Client extends \Ease\Sand {
      * @param boolean $reset replace current content
      */
     public function takeData($data, $reset = false) {
-        parent::takeData(\Ease\Functions::recursiveIconv('UTF-8', 'Windows-1250', $data), $reset);
+        parent::takeData($data, $reset);
         $this->create($this->getData());
     }
 
@@ -454,18 +478,67 @@ class Client extends \Ease\Sand {
      * 
      * @return int
      */
-    public function insertToPohoda($data = []) {
-        if (count($data)) {
+    public function addToPohoda($data = []) {
+        if (!empty($data)) {
             $this->takeData($data);
         }
         if ($this->requestXml) {
             if (method_exists($this->requestXml, 'addActionType')) {
-                $this->requestXml->addActionType('add/update'); // "add", "add/update", "update", "delete"
+                $this->requestXml->addActionType('add'); // "add", "add/update", "update", "delete"
             }
             $this->pohoda->addItem(2, $this->requestXml);
         }
+
         $this->setPostFields($this->pohoda->close());
         return $this->performRequest('/xml');
+    }
+
+    /**
+     * Insert prepared record to Pohoda
+     * 
+     * @param array $data extra data
+     * 
+     * @return int
+     */
+    public function updateInPohoda($data = [], $filter = null) {
+        if (!empty($data)) {
+            $this->takeData($data);
+        }
+        if ($this->requestXml) {
+            if (method_exists($this->requestXml, 'addActionType')) {
+                $this->requestXml->addActionType('update', empty($filter) ? $this->filterToMe() : $filter); // "add", "add/update", "update", "delete"
+            }
+            $this->pohoda->addItem(2, $this->requestXml);
+        }
+
+        $this->setPostFields($this->pohoda->close());
+        return $this->performRequest('/xml');
+    }
+
+    /**
+     * Filter to select only "current" record
+     * 
+     * @return array
+     */
+    public function filterToMe() {
+        if ($this->nameColumn) {
+            if (strstr($this->nameColumn, ':')) {
+                $data = $this->getData();
+                foreach (explode(':', $this->nameColumn) as $key) {
+                    if (array_key_exists($data, $data)) {
+                        $data = $data[$key];
+                    } else {
+                        throw new \Exception('Data Path ' . $this->nameColumn . 'does not exist');
+                    }
+                }
+                $filter = [$key => $data];
+            } else {
+                $filter = [$this->nameColumn => $this->getDataValue($this->nameColumn)];
+            }
+        } else {
+            $filter = [$this->getKeyColumn() => $this->getMyKey()];
+        }
+        return $filter;
     }
 
     /**

@@ -11,6 +11,8 @@ namespace mServer;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+$extID = 234;
+
 $addressBookRecord = [
     'GPS' => '', // GPS souřadnice.
     'ICQ' => '', // ICQ adresa.
@@ -79,5 +81,5 @@ $addressBookRecord = [
 ];
 
 $addresser = new Adressbook($addressBookRecord, \Ease\Shared::instanced()->loadConfig(__DIR__ . '/.env'));
-$addresser->addToPohoda();
+$addresser->updateInPohoda(null, ['extId' => ['exSystemName' => \Ease\Functions::cfg('APP_NAME'), 'ids' => strval($extID)]]);
 

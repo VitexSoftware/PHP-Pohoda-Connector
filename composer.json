@@ -12,11 +12,9 @@
     "require": {
         "ext-curl": "*",
         "ext-iconv": "*",
-        "ext-simplexml": "*",
         "riesenia/pohoda": ">=1.5 || dev-master",
         "vitexsoftware/ease-core": ">=1.9",
-        "lightools/xml": "v2.0.0",
-        "sabre/xml": "2.2.3"
+        "lightools/xml": "v2.0.0"
     },
     "autoload": {
         "psr-4": {

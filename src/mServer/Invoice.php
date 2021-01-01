@@ -1,9 +1,10 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * PHPmServer - Invoice helper Class
+ *
+ * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
+ * @copyright  (C) 2020 Vitex Software
  */
 
 namespace mServer;
@@ -13,7 +14,7 @@ namespace mServer;
  *
  * @author vitex
  */
-class Invoice extends Client /* implements \Sabre\Xml\XmlDeserializable */ {
+class Invoice extends Client {
 
     /**
      * Current Object's agenda
@@ -82,6 +83,37 @@ class Invoice extends Client /* implements \Sabre\Xml\XmlDeserializable */ {
         }
     }
 
+    /**
+     * Add Item into invoice
+     * 
+     * @param array $itemRecord Item properties
+     * 
+     * @return \Riesenia\Pohoda\Invoice Invoice with item added
+     */
+    public function addItem($itemRecord) {
+
+        if (array_key_exists('stockItemIDS', $itemRecord)) { //TODO: Finalize
+            $stockItemIDS = $itemRecord['stockItemIDS'];
+            unset($itemRecord['stockItemIDS']);
+            $itemRecord['stockItem']['stockItem']['ids'] = $stockItemIDS;
+        }
+
+
+//        $itemRecord['homeCurrency'];
+//        $itemRecord['foreignCurrency'];
+//        $itemRecord['stockItem'];
+
+
+        return $this->requestXml->addItem($itemRecord);
+    }
+
+    /**
+     * 
+     * @param type $ids
+     * @param type $exSystemName
+     * @param type $exSystemText
+     * @return \SimpleXMLElement
+     */
     public static function extId($ids, $exSystemName = '', $exSystemText = '') {
         $node = new \SimpleXMLElement('<extId></extId>', 0, false, \Riesenia\Pohoda::$namespaces['typ']);
 

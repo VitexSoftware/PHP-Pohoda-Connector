@@ -96,7 +96,7 @@ $itemRecord = [
 
 $invoicer->addItem($itemRecord);
 
-$invoicer->insertToPohoda();
+$invoicer->addToPohoda();
 
 $invoicer->getIDS();
 
