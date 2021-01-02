@@ -5,6 +5,7 @@ client library for Stormware's [mPohoda mServer](https://www.stormware.cz/pohoda
 
 Features:
 
+ * Check connection
  * Create/Update/Delete AddressBook record
  * Create/Update/Delete Invoice record
 
@@ -24,13 +25,13 @@ Configuration
 
 Classess check at startup for this constants or environment variables:
 
-  * POHODA_ICO      - company indentificator
-  * POHODA_URL      - mServer endpoint
-  * POHODA_USERNAME - Pohoda user's login
-  * POHODA_PASSWORD - Pohoda user's password
-  * POHODA_TIMEOUT  - Curl timeout
-  * POHODA_COMPRESS - compress is disabled by default
-  * POHODA_DEBUG    - debug mode is disabled by default
+  * **POHODA_ICO**      - company indentificator
+  * **POHODA_URL**      - mServer endpoint
+  * **POHODA_USERNAME** - Pohoda user's login
+  * **POHODA_PASSWORD** - Pohoda user's password
+  * **POHODA_TIMEOUT**  - Curl timeout
+  * **POHODA_COMPRESS** - compress is disabled by default
+  * **POHODA_DEBUG**    - debug mode is disabled by default
 
 
 Usage
@@ -45,5 +46,7 @@ See usage examples in [tests](tests) directory
   * [Address update](tests/update-address.php)
 
 
-See also my other libraries: https://github.com/Spoje-NET/PohodaSQL , https://github.com/Spoje-NET/php-abraflexi
+** Many thanks to [Riešenia, spol. s r.o.](https://www.riesenia.com/) for its library https://github.com/riesenia/pohoda **
 
+
+See my other libraries: https://github.com/Spoje-NET/PohodaSQL , https://github.com/Spoje-NET/php-abraflexi
