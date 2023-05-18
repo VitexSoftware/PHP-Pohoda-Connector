@@ -12,7 +12,8 @@ namespace mServer;
 /**
  * Class ResponseXML
  */
-class Response extends \Ease\Sand {
+class Response extends \Ease\Sand
+{
 
     /**
      * @var \SimpleXMLElement
@@ -70,7 +71,8 @@ class Response extends \Ease\Sand {
      * 
      * @param string $xml path to file
      */
-    public function __construct(Client $caller) {
+    public function __construct(Client $caller)
+    {
         $this->useCaller($caller);
     }
 
@@ -78,7 +80,8 @@ class Response extends \Ease\Sand {
      * 
      * @param Client $caller
      */
-    public function useCaller(Client $caller) {
+    public function useCaller(Client $caller)
+    {
         $this->caller = $caller;
         if ($caller->lastCurlResponse) {
             $parsed = $this->parse($this->caller->lastCurlResponse, []);
@@ -89,7 +92,8 @@ class Response extends \Ease\Sand {
         }
     }
 
-    public function processResponsePack($responsePackData) {
+    public function processResponsePack($responsePackData)
+    {
         if (array_key_exists('rsp:responsePackItem', $responsePackData)) {
             $this->processResponsePackItem($responsePackData['rsp:responsePackItem']);
         } else {
@@ -98,7 +102,8 @@ class Response extends \Ease\Sand {
         }
     }
 
-    public function processResponsePackItem($responsePackItem) {
+    public function processResponsePackItem($responsePackItem)
+    {
 
         foreach ($responsePackItem as $name => $responsePackSubitem) {
 
@@ -113,17 +118,19 @@ class Response extends \Ease\Sand {
                     break;
 
                 default:
-//                    throw new Exception('Unknown element to process: ' . $name);
+                    //                    throw new Exception('Unknown element to process: ' . $name);
                     break;
             }
         }
     }
 
-    public function processProducedDetails($productDetails) {
+    public function processProducedDetails($productDetails)
+    {
         $this->producedDetails = self::typeToArray($productDetails);
     }
 
-    public function processImportDetails($importDetails) {
+    public function processImportDetails($importDetails)
+    {
         if (array_key_exists('rdc:state', $importDetails['rdc:detail'])) {
             $importDetail = self::typeToArray($importDetails['rdc:detail']);
             $this->messages[$importDetail['state']][] = $importDetail;
@@ -144,17 +151,18 @@ class Response extends \Ease\Sand {
      * 
      * @param array $responseData
      */
-    function processResponseData($responseData) {
+    function processResponseData($responseData)
+    {
         foreach ($responseData as $key => $value) {
             switch ($key) {
-                case 'rdc:producedDetails' :
+                case 'rdc:producedDetails':
                     $this->processProducedDetails($value);
                     break;
                 case 'rdc:importDetails':
                     $this->processImportDetails($value);
                     break;
                 default:
-//                    $this->addStatusMessage(_('Unknown response section') . ': ' . $responseData['name'], 'debug');
+                    //                    $this->addStatusMessage(_('Unknown response section') . ': ' . $responseData['name'], 'debug');
                     break;
             }
         }
@@ -166,7 +174,8 @@ class Response extends \Ease\Sand {
      * 
      * @return array
      */
-    public static function typesToArray(array $source) {
+    public static function typesToArray(array $source)
+    {
         $details = [];
         foreach ($source as $did => $detail) {
             $details[$did] = self::typeToArray($detail);
@@ -180,7 +189,8 @@ class Response extends \Ease\Sand {
      * 
      * @return array
      */
-    public static function typeToArray(array $type) {
+    public static function typeToArray(array $type)
+    {
         $details = [];
         foreach ($type as $key => $value) {
             $details[str_replace(['rdc:', 'typ:'], '', $key)] = is_array($value) ? (array_key_exists('$', $value) ? $value['$'] : self::typeToArray($value)) : $value;
@@ -192,7 +202,8 @@ class Response extends \Ease\Sand {
      * 
      * @return string
      */
-    public function getNote() {
+    public function getNote()
+    {
         return $this->note;
     }
 
@@ -201,7 +212,8 @@ class Response extends \Ease\Sand {
      * 
      * @return bool
      */
-    public function isOk() {
+    public function isOk()
+    {
         return $this->getState() == static::STATE_OK;
     }
 
@@ -210,11 +222,13 @@ class Response extends \Ease\Sand {
      * 
      * @return string
      */
-    public function getState() {
+    public function getState()
+    {
         return $this->state;
     }
 
-    public function getAgendaData($agenda) {
+    public function getAgendaData($agenda)
+    {
         $data = [];
         foreach (current($this->parsed[0]['value']) as $packItemData) {
             $data[current($packItemData)['id']] = current($packItemData);
@@ -222,7 +236,8 @@ class Response extends \Ease\Sand {
         return $data;
     }
 
-    public static function prepareElement($elementData) {
+    public static function prepareElement($elementData)
+    {
         $name = self::stripNsUri($elementData['name']);
         $data = [];
         foreach ($elementData['value'] as $subitems) {
@@ -246,7 +261,8 @@ class Response extends \Ease\Sand {
      *
      * @return array
      */
-    public function anyXmlToArray($xml) {
+    public function anyXmlToArray($xml)
+    {
         return self::xml2array(is_string($xml) ? simplexml_load_string($xml) : $xml);
     }
 
@@ -258,12 +274,14 @@ class Response extends \Ease\Sand {
      * 
      * @return array
      */
-    public static function parse($xml, array $alwaysArrayElements) {
+    public static function parse($xml, array $alwaysArrayElements)
+    {
         $xmlNode = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
         $arrayData = self::xmlToArray($xmlNode, array(
-                    'alwaysArray' => $alwaysArrayElements,
-                    'autoText' => false,
-        ));
+            'alwaysArray' => $alwaysArrayElements,
+            'autoText' => false,
+        )
+        );
 
         return $arrayData;
     }
@@ -277,15 +295,23 @@ class Response extends \Ease\Sand {
      * @author Tamlyn Rhodes
      * @link http://outlandish.com/blog/xml-to-json/
      */
-    public static function xmlToArray(\SimpleXMLElement $xml, $options = array()) {
+    public static function xmlToArray(\SimpleXMLElement $xml, $options = array())
+    {
         $defaults = array(
-            'namespaceSeparator' => ':', //you may want this to be something other than a colon
-            'attributePrefix' => '@', //to distinguish between attributes and nodes with the same name
-            'alwaysArray' => array(), //array of xml tag names which should always become arrays
-            'autoArray' => true, //only create arrays for tags which appear more than once
-            'textContent' => '$', //key used for the text content of elements
-            'autoText' => true, //skip textContent key if node has no attributes or child nodes
-            'keySearch' => false, //optional search and replace on tag and attribute names
+            'namespaceSeparator' => ':',
+            //you may want this to be something other than a colon
+            'attributePrefix' => '@',
+            //to distinguish between attributes and nodes with the same name
+            'alwaysArray' => array(),
+            //array of xml tag names which should always become arrays
+            'autoArray' => true,
+            //only create arrays for tags which appear more than once
+            'textContent' => '$',
+            //key used for the text content of elements
+            'autoText' => true,
+            //skip textContent key if node has no attributes or child nodes
+            'keySearch' => false,
+            //optional search and replace on tag and attribute names
             'keyReplace' => false //replace values for above search values (as passed to str_replace())
         );
         $options = array_merge($defaults, $options);
@@ -299,8 +325,8 @@ class Response extends \Ease\Sand {
                 if ($options['keySearch'])
                     $attributeName = str_replace($options['keySearch'], $options['keyReplace'], $attributeName);
                 $attributeKey = $options['attributePrefix']
-                        . ($prefix ? $prefix . $options['namespaceSeparator'] : '')
-                        . $attributeName;
+                    . ($prefix ? $prefix . $options['namespaceSeparator'] : '')
+                    . $attributeName;
                 $attributesArray[$attributeKey] = (string) $attribute;
             }
         }
@@ -327,7 +353,7 @@ class Response extends \Ease\Sand {
                     //test if tags of this type should always be arrays, no matter the element count
                     $tagsArray[$childTagName] = in_array($childTagName, $options['alwaysArray']) || !$options['autoArray'] ? array($childProperties) : $childProperties;
                 } elseif (
-                        is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName]) === range(0, count($tagsArray[$childTagName]) - 1)
+                    is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName]) === range(0, count($tagsArray[$childTagName]) - 1)
                 ) {
                     //key already exists and is integer indexed array
                     $tagsArray[$childTagName][] = $childProperties;
