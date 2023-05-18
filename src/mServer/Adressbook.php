@@ -4,17 +4,18 @@
  * PHPmServer - Addressbook helper class
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Vitex Software
+ * @copyright  (C) 2020,2023 Vitex Software
  */
 
 namespace mServer;
 
 /**
- * Description of Adresa
+ * Address Adresa
  *
  * @author vitex
  */
-class Adressbook extends Client {
+class Adressbook extends Client
+{
 
     /**
      * Current Object's agenda
@@ -31,9 +32,10 @@ class Adressbook extends Client {
     /**
      * Create Agenda document using given data
      * 
-     * @param Array $data
+     * @param array $data
      */
-    public function create($data) {
+    public function create($data)
+    {
         $this->requestXml = $this->pohoda->createAddressbook($data);
     }
 

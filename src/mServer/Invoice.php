@@ -14,7 +14,8 @@ namespace mServer;
  *
  * @author vitex
  */
-class Invoice extends Client {
+class Invoice extends Client
+{
 
     /**
      * Current Object's agenda
@@ -72,7 +73,8 @@ class Invoice extends Client {
      * 
      * @param Array $data
      */
-    public function create($data) {
+    public function create($data)
+    {
         if (array_key_exists('invoiceSummary', $data)) {
             $summary = $data['invoiceSummary'];
             unset($data['invoiceSummary']);
@@ -90,7 +92,8 @@ class Invoice extends Client {
      * 
      * @return \Riesenia\Pohoda\Invoice Invoice with item added
      */
-    public function addItem($itemRecord) {
+    public function addItem($itemRecord)
+    {
 
         if (array_key_exists('stockItemIDS', $itemRecord)) { //TODO: Finalize
             $stockItemIDS = $itemRecord['stockItemIDS'];
@@ -99,7 +102,7 @@ class Invoice extends Client {
         }
 
 
-//        $itemRecord['homeCurrency'];
+        //        $itemRecord['homeCurrency'];
 //        $itemRecord['foreignCurrency'];
 //        $itemRecord['stockItem'];
 
@@ -114,10 +117,11 @@ class Invoice extends Client {
      * @param type $exSystemText
      * @return \SimpleXMLElement
      */
-    public static function extId($ids, $exSystemName = '', $exSystemText = '') {
+    public static function extId($ids, $exSystemName = '', $exSystemText = '')
+    {
         $node = new \SimpleXMLElement('<extId></extId>', 0, false, \Riesenia\Pohoda::$namespaces['typ']);
 
-//					<typ:extId>
+        //					<typ:extId>
 //						<typ:ids>268</typ:ids>
 //						<typ:exSystemName>banager</typ:exSystemName>
 //						<typ:exSystemText>Benefitka Manager</typ:exSystemText>
