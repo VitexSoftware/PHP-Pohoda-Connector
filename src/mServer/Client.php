@@ -4,7 +4,7 @@
  * PHPmServer - Client Class
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Vitex Software
+ * @copyright  (C) 2020,2023 Vitex Software
  */
 
 namespace mServer;
@@ -448,7 +448,7 @@ class Client extends \Ease\Sand {
     public function getStatus() {
         $this->responseStats = [];
         $this->errors = [];
-        return ($this->doCurlRequest($this->url . '/status','POST') == 200) && $this->lastCurlResponse == 'Response from POHODA mServer';
+        return ($this->doCurlRequest($this->url . '/status','POST') === 200) && str_contains($this->lastCurlResponse, 'Response from POHODA mServer');
     }
 
     /**
@@ -465,7 +465,7 @@ class Client extends \Ease\Sand {
     /**
      * Create Agenda document using given data
      * 
-     * @param Array $data
+     * @param array $data
      */
     public function create($data) {
         $this->requestXml = $this->pohoda->create($data);
