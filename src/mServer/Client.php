@@ -24,6 +24,8 @@ use Riesenia\Pohoda;
 class Client extends \Ease\Sand
 {
 
+    use \Ease\RecordKey;
+
     /**
      * Version of mServer library
      *
@@ -87,7 +89,7 @@ class Client extends \Ease\Sand
     /**
      * Informace o posledním HTTP requestu.
      *
-     * @var *
+     * @var array
      */
     public $curlInfo;
 
@@ -96,7 +98,6 @@ class Client extends \Ease\Sand
      * 
      * @var array
      */
-
     public $errors = [];
 
     /**
@@ -104,7 +105,6 @@ class Client extends \Ease\Sand
      * 
      * @var array
      */
-
     public $responseStats = [];
 
     /**
@@ -217,9 +217,9 @@ class Client extends \Ease\Sand
     public function logBanner($prefix = null, $suffix = null)
     {
         parent::logBanner(
-            $prefix,
-            'mServer ' . str_replace('://', '://' . $this->user . '@', $this->url) . ' PHPmServer v' . self::$libVersion . ' ease-core v' . Atom::$frameworkVersion . ' ' .
-            $suffix
+                $prefix,
+                'mServer ' . str_replace('://', '://' . $this->user . '@', $this->url) . ' PHPmServer v' . self::$libVersion . ' ease-core v' . Atom::$frameworkVersion . ' ' .
+                $suffix
         );
     }
 
@@ -240,7 +240,6 @@ class Client extends \Ease\Sand
         $this->setupProperty($options, 'password', 'POHODA_PASSWORD');
         $this->setupProperty($options, 'timeout', 'POHODA_TIMEOUT');
         $this->setupProperty($options, 'compress', 'POHODA_COMPRESS');
-
         if (isset($options['agenda'])) {
             $this->setAgenda($options['agenda']);
         }
@@ -339,7 +338,7 @@ class Client extends \Ease\Sand
     public function setPostFields($data)
     {
         if ($this->debug) {
-
+            
         }
         $this->postFields = $data;
     }
@@ -362,7 +361,6 @@ class Client extends \Ease\Sand
             $value = $header . ': ' . $value;
         });
         curl_setopt($this->curl, CURLOPT_HTTPHEADER, $httpHeaders);
-
         $this->lastCurlResponse = curl_exec($this->curl);
         $this->curlInfo = curl_getinfo($this->curl);
         $this->curlInfo['when'] = microtime();
@@ -370,11 +368,11 @@ class Client extends \Ease\Sand
         $this->lastCurlError = curl_error($this->curl);
         if (strlen($this->lastCurlError)) {
             $this->addStatusMessage(
-                sprintf(
-                    'Curl Error (HTTP %d): %s',
-                    $this->lastResponseCode, $this->lastCurlError
-                ),
-                'error'
+                    sprintf(
+                            'Curl Error (HTTP %d): %s',
+                            $this->lastResponseCode, $this->lastCurlError
+                    ),
+                    'error'
             );
         }
         return $this->lastResponseCode;
@@ -385,22 +383,21 @@ class Client extends \Ease\Sand
      *
      * @param string $urlSuffix část URL za identifikátorem firmy.
      * @param string $method    HTTP/REST metoda
-
      * 
      * @return int HTTP Status code
      */
-    public function performRequest($urlSuffix = null, $method = 'POST')
+    public function performRequest($urlSuffix = '', $method = 'POST')
     {
         $this->responseStats = [];
         $this->errors = [];
-
         if (preg_match('/^http/', $urlSuffix)) {
             $url = $urlSuffix;
         } elseif (strlen($urlSuffix) && ($urlSuffix[0] == '/')) {
             $url = $this->url . $urlSuffix;
+        } else {
+            $url = $this->url;
         }
-
-        return $this->processResponse($this->doCurlRequest($url, $method));
+        return $this->processResponse($this->doCurlRequest($url, $method) ? 1 : 0);
     }
 
     /**
@@ -492,12 +489,11 @@ class Client extends \Ease\Sand
      * Use data in object
      * 
      * @param array   $data  raw document data
-     * @param boolean $reset replace current content
      */
-    public function takeData($data, $reset = false)
+    public function takeData($data)
     {
-        parent::takeData($data, $reset);
-        $this->create($this->getData());
+        parent::takeData($data);
+        return $this->create($this->getData());
     }
 
     /**
@@ -508,6 +504,7 @@ class Client extends \Ease\Sand
     public function create($data)
     {
         $this->requestXml = $this->pohoda->create($data);
+        return empty($this->requestXml) ? 0 : 1;
     }
 
     /**
@@ -607,7 +604,6 @@ class Client extends \Ease\Sand
      *
      * @return mixed
      */
-
     public function loadFromPohoda($id = null)
     {
         if (is_null($id)) {
@@ -625,5 +621,4 @@ class Client extends \Ease\Sand
     {
         $this->curlInit();
     }
-
 }

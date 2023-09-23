@@ -69,7 +69,7 @@ class Response extends \Ease\Sand
     /**
      * Create a new Response Instance
      * 
-     * @param string $xml path to file
+     * @param string $caller parent object
      */
     public function __construct(Client $caller)
     {
@@ -257,13 +257,13 @@ class Response extends \Ease\Sand
     /**
      * Convert Pohoda Response XML to Array
      *
-     * @param string|rawXML $xml
+     * @param string|\rawXML $xml
      *
      * @return array
      */
     public function anyXmlToArray($xml)
     {
-        return self::xml2array(is_string($xml) ? simplexml_load_string($xml) : $xml);
+        return self::xmlToArray(is_string($xml) ? simplexml_load_string($xml) : $xml);
     }
 
     /**

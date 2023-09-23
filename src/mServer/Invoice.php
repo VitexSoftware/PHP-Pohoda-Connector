@@ -111,10 +111,12 @@ class Invoice extends Client
     }
 
     /**
+     * set extID for item
      * 
-     * @param type $ids
-     * @param type $exSystemName
-     * @param type $exSystemText
+     * @param string $ids
+     * @param string $exSystemName
+     * @param string $exSystemText
+     * 
      * @return \SimpleXMLElement
      */
     public static function extId($ids, $exSystemName = '', $exSystemText = '')
