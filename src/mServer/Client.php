@@ -23,6 +23,7 @@ use Riesenia\Pohoda;
  */
 class Client extends \Ease\Sand
 {
+    use \Ease\RecordKey;
 
     /**
      * Version of mServer library
@@ -87,13 +88,13 @@ class Client extends \Ease\Sand
     /**
      * Informace o posledním HTTP requestu.
      *
-     * @var *
+     * @var mixed
      */
     public $curlInfo;
 
     /**
      * Array of errors
-     * 
+     *
      * @var array
      */
 
@@ -101,7 +102,7 @@ class Client extends \Ease\Sand
 
     /**
      * Response stats live here
-     * 
+     *
      * @var array
      */
 
@@ -165,7 +166,7 @@ class Client extends \Ease\Sand
     public $requestXml = null;
 
     /**
-     * Where to find current record name. 
+     * Where to find current record name.
      * @var string column name or path in array address:company
      */
     public $nameColumn = null;
@@ -192,7 +193,7 @@ class Client extends \Ease\Sand
 
     /**
      * Process and use initial value
-     * 
+     *
      * @param mixed $init
      */
     public function processInit($init)
@@ -216,11 +217,9 @@ class Client extends \Ease\Sand
      */
     public function logBanner($prefix = null, $suffix = null)
     {
-        parent::logBanner(
-            $prefix,
-            'mServer ' . str_replace('://', '://' . $this->user . '@', $this->url) . ' PHPmServer v' . self::$libVersion . ' ease-core v' . Atom::$frameworkVersion . ' ' .
-            $suffix
-        );
+        parent::logBanner($prefix, 'mServer ' . str_replace('://', '://' . $this->user . '@', $this->url) .
+                ' PHPmServer v' . self::$libVersion . ' ease-core v' . Atom::$frameworkVersion . ' ' .
+            $suffix);
     }
 
     /**
@@ -262,7 +261,7 @@ class Client extends \Ease\Sand
 
     /**
      * Set Authentification
-     * 
+     *
      * @return boolean
      */
     public function setAuth()
@@ -273,7 +272,7 @@ class Client extends \Ease\Sand
 
     /**
      * Set Instance http header
-     * 
+     *
      * @param string $instance
      */
     public function setInstance(string $instance)
@@ -283,7 +282,7 @@ class Client extends \Ease\Sand
 
     /**
      * Set Application http header
-     * 
+     *
      * @param string $application
      */
     public function setApplication(string $application)
@@ -293,7 +292,7 @@ class Client extends \Ease\Sand
 
     /**
      * Set "Check Duplicity" http header enabler
-     * 
+     *
      * @param bool $flag
      */
     public function setCheckDuplicity(bool $flag)
@@ -315,9 +314,9 @@ class Client extends \Ease\Sand
         if ($this->offline === false) {
             $this->curl = \curl_init(); // create curl resource
             \curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true); // return content as a string from curl_exec
-            \curl_setopt($this->curl, CURLOPT_FOLLOWLOCATION, true); // follow redirects (compatibility for future changes in FlexiBee)
+            \curl_setopt($this->curl, CURLOPT_FOLLOWLOCATION, true); // follow redirects
             \curl_setopt($this->curl, CURLOPT_HTTPAUTH, true); // HTTP authentication
-            \curl_setopt($this->curl, CURLOPT_SSL_VERIFYPEER, false); // FlexiBee by default uses Self-Signed certificates
+            \curl_setopt($this->curl, CURLOPT_SSL_VERIFYPEER, false); // for Self-Signed certificates
             \curl_setopt($this->curl, CURLOPT_SSL_VERIFYHOST, false);
             \curl_setopt($this->curl, CURLOPT_VERBOSE, ($this->debug === true)); // For debugging
             if (!is_null($this->timeout)) {
@@ -326,7 +325,7 @@ class Client extends \Ease\Sand
             if ($this->compress === true) {
                 \curl_setopt($this->curl, CURLOPT_ENCODING, "gzip");
             }
-            \curl_setopt($this->curl, CURLOPT_USERAGENT, 'mServerPHP  v' . self::$libVersion . ' https://github.com/VitexSoftware/PHPmServer');
+            \curl_setopt($this->curl, CURLOPT_USERAGENT, 'mServerPHP  v' . self::$libVersion . ' https://github.com/VitexSoftware/PHP-Pohoda-Connector');
         }
         return !$this->offline && $this->setAuth();
     }
@@ -405,9 +404,9 @@ class Client extends \Ease\Sand
 
     /**
      * Response processing handler
-     * 
+     *
      * @param int $httpCode
-     * 
+     *
      * @return boolean
      */
     public function processResponse($httpCode)
@@ -481,11 +480,12 @@ class Client extends \Ease\Sand
      * 
      * @return boolean
      */
-    public function getStatus()
+    public function isOnline()
     {
         $this->responseStats = [];
         $this->errors = [];
-        return ($this->doCurlRequest($this->url . '/status', 'POST') === 200) && str_contains($this->lastCurlResponse, 'Response from POHODA mServer');
+        return ($this->doCurlRequest($this->url . '/status', 'POST') === 200) && 
+                str_contains($this->lastCurlResponse, 'Response from POHODA mServer');
     }
 
     /**
@@ -512,9 +512,9 @@ class Client extends \Ease\Sand
 
     /**
      * Insert prepared record to Pohoda
-     * 
+     *
      * @param array $data extra data
-     * 
+     *
      * @return int
      */
     public function addToPohoda($data = [])
@@ -535,9 +535,9 @@ class Client extends \Ease\Sand
 
     /**
      * Insert prepared record to Pohoda
-     * 
+     *
      * @param array $data extra data
-     * 
+     *
      * @return int
      */
     public function updateInPohoda($data = [], $filter = null)
@@ -547,7 +547,8 @@ class Client extends \Ease\Sand
         }
         if ($this->requestXml) {
             if (method_exists($this->requestXml, 'addActionType')) {
-                $this->requestXml->addActionType('update', empty($filter) ? $this->filterToMe() : $filter); // "add", "add/update", "update", "delete"
+                // "add", "add/update", "update", "delete"
+                $this->requestXml->addActionType('update', empty($filter) ? $this->filterToMe() : $filter); 
             }
             $this->pohoda->addItem(2, $this->requestXml);
         }
@@ -558,7 +559,7 @@ class Client extends \Ease\Sand
 
     /**
      * Filter to select only "current" record
-     * 
+     *
      * @return array
      */
     public function filterToMe()
@@ -585,10 +586,10 @@ class Client extends \Ease\Sand
 
     /**
      * Obtain given fields from Pohoda
-     * 
+     *
      * @param array $columns    list of columns to obtain
      * @param array $conditions conditions to filter
-     * 
+     *
      * @return array
      */
     public function getColumnsFromPohoda($columns = ['id'], $conditions = [])
@@ -608,12 +609,12 @@ class Client extends \Ease\Sand
      * @return mixed
      */
 
-    public function loadFromPohoda($id = null)
+    public function loadFromPohoda($phid = null)
     {
-        if (is_null($id)) {
+        if (is_null($phid) === true) {
             $condition = [];
         } else {
-            $condition = ['id' => $id];
+            $condition = ['id' => $phid];
         }
         return $this->takeData($this->getColumnsFromPohoda(["*"], $condition)) ? $this->getMyKey() : null;
     }
@@ -625,5 +626,4 @@ class Client extends \Ease\Sand
     {
         $this->curlInit();
     }
-
 }

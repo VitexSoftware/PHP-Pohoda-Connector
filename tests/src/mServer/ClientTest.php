@@ -141,7 +141,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase {
      * @covers mServer\Client::getStatus
      */
     public function testgetStatus() {
-        $this->assertTrue($this->object->getStatus());
+        $this->assertTrue($this->object->isOnline());
     }
 
     /**

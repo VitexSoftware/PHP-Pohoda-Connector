@@ -70,7 +70,7 @@ class Invoice extends Client
 
     /**
      * Create Agenda document using given data
-     * 
+     *
      * @param Array $data
      */
     public function create($data)
@@ -87,9 +87,9 @@ class Invoice extends Client
 
     /**
      * Add Item into invoice
-     * 
+     *
      * @param array $itemRecord Item properties
-     * 
+     *
      * @return \Riesenia\Pohoda\Invoice Invoice with item added
      */
     public function addItem($itemRecord)
@@ -111,7 +111,7 @@ class Invoice extends Client
     }
 
     /**
-     * 
+     *
      * @param type $ids
      * @param type $exSystemName
      * @param type $exSystemText
@@ -125,7 +125,7 @@ class Invoice extends Client
 //						<typ:ids>268</typ:ids>
 //						<typ:exSystemName>banager</typ:exSystemName>
 //						<typ:exSystemText>Benefitka Manager</typ:exSystemText>
-//					</typ:extId>        
+//					</typ:extId>
 
         $node->addChild('typ:' . 'ids', \htmlspecialchars((string) $ids), \Riesenia\Pohoda::$namespaces['typ']);
         $node->addChild('typ:' . 'exSystemName', \htmlspecialchars((string) $exSystemName), \Riesenia\Pohoda::$namespaces['typ']);
@@ -133,5 +133,4 @@ class Invoice extends Client
 
         return $node;
     }
-
 }

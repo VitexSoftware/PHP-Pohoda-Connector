@@ -16,7 +16,6 @@ namespace mServer;
  */
 class Adressbook extends Client
 {
-
     /**
      * Current Object's agenda
      * @var string
@@ -31,7 +30,7 @@ class Adressbook extends Client
 
     /**
      * Create Agenda document using given data
-     * 
+     *
      * @param array $data
      */
     public function create($data)
@@ -44,5 +43,4 @@ class Adressbook extends Client
      * @var string
      */
     public $nameColumn = 'address:company';
-
 }
