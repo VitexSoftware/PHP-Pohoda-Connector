@@ -97,7 +97,6 @@ class Client extends \Ease\Sand
      *
      * @var array
      */
-
     public $errors = [];
 
     /**
