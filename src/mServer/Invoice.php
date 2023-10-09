@@ -122,11 +122,11 @@ class Invoice extends Client
     {
         $node = new \SimpleXMLElement('<extId></extId>', 0, false, \Riesenia\Pohoda::$namespaces['typ']);
 
-        //                  <typ:extId>
-//                      <typ:ids>268</typ:ids>
-//                      <typ:exSystemName>banager</typ:exSystemName>
-//                      <typ:exSystemText>Benefitka Manager</typ:exSystemText>
-//                  </typ:extId>
+        //					<typ:extId>
+//						<typ:ids>268</typ:ids>
+//						<typ:exSystemName>banager</typ:exSystemName>
+//						<typ:exSystemText>Benefitka Manager</typ:exSystemText>
+//					</typ:extId>        
 
         $node->addChild('typ:' . 'ids', \htmlspecialchars((string) $ids), \Riesenia\Pohoda::$namespaces['typ']);
         $node->addChild('typ:' . 'exSystemName', \htmlspecialchars((string) $exSystemName), \Riesenia\Pohoda::$namespaces['typ']);

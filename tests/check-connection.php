@@ -11,5 +11,5 @@ namespace mServer;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $client = new Client(null, \Ease\Shared::instanced()->loadConfig(__DIR__ . '/.env') );
-print_r($client->getStatus());
+print_r($client->isOnline());
 

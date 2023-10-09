@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHPmServer - Client Class
  *
@@ -24,6 +25,7 @@ class Client extends \Ease\Sand
 {
 
     use \Ease\RecordKey;
+
     /**
      * Version of mServer library
      *
@@ -247,6 +249,7 @@ class Client extends \Ease\Sand
         $this->setupProperty($options, 'password', 'POHODA_PASSWORD');
         $this->setupProperty($options, 'timeout', 'POHODA_TIMEOUT');
         $this->setupProperty($options, 'compress', 'POHODA_COMPRESS');
+
         if (isset($options['agenda'])) {
             $this->setAgenda($options['agenda']);
         }
@@ -338,14 +341,14 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Prepare data to send
+     * Prepare data to send 
      *
      * @param string $data
      */
     public function setPostFields($data)
     {
         if ($this->debug) {
-            
+
         }
         $this->postFields = $data;
     }
@@ -478,19 +481,19 @@ class Client extends \Ease\Sand
                 break;
         }
 
-        return is_object($this->response) ? $this->response->isOk() : false;
+        return $this->response->isOk();
     }
 
     /**
      * Check mServer availbilty
-     *
+     * 
      * @return boolean
      */
-    public function getStatus()
+    public function isOnline()
     {
         $this->responseStats = [];
         $this->errors = [];
-        return ($this->doCurlRequest($this->url . '/status', 'POST') === 200) &&
+        return ($this->doCurlRequest($this->url . '/status', 'POST') === 200) && 
                 str_contains($this->lastCurlResponse, 'Response from POHODA mServer');
     }
 
@@ -498,11 +501,12 @@ class Client extends \Ease\Sand
      * Use data in object
      *
      * @param array   $data  raw document data
+     * @param boolean $reset replace current content
      */
-    public function takeData($data)
+    public function takeData($data, $reset = false)
     {
-        parent::takeData($data);
-        return $this->create($this->getData());
+        parent::takeData($data, $reset);
+        $this->create($this->getData());
     }
 
     /**
