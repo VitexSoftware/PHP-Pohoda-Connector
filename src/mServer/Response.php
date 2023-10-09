@@ -1,5 +1,4 @@
 <?php
-
 /**
  * PHPmServer - Response parser class
  *
@@ -14,7 +13,6 @@ namespace mServer;
  */
 class Response extends \Ease\Sand
 {
-
     /**
      * @var \SimpleXMLElement
      */
@@ -37,19 +35,19 @@ class Response extends \Ease\Sand
     private $parsed;
 
     /**
-     * 
+     *
      * @var Client
      */
     private $caller;
 
     /**
-     * 
+     *
      * @var array
      */
     public $messages = ['error' => [], 'warning' => []];
 
     /**
-     * 
+     *
      * @var array
      */
     public $producedDetails;
@@ -68,7 +66,7 @@ class Response extends \Ease\Sand
 
     /**
      * Create a new Response Instance
-     * 
+     *
      * @param string $caller parent object
      */
     public function __construct(Client $caller)
@@ -77,7 +75,7 @@ class Response extends \Ease\Sand
     }
 
     /**
-     * 
+     *
      * @param Client $caller
      */
     public function useCaller(Client $caller)
@@ -108,6 +106,9 @@ class Response extends \Ease\Sand
         foreach ($responsePackItem as $name => $responsePackSubitem) {
 
             switch ($name) {
+                case 'lAdb:listAddressBook':
+                    $this->processResponseData($responsePackSubitem);
+                    break;
                 case 'adb:addressbookResponse':
                     $this->processResponseData($responsePackSubitem);
                     break;
@@ -116,7 +117,6 @@ class Response extends \Ease\Sand
                     break;
                 case '':
                     break;
-
                 default:
                     //                    throw new Exception('Unknown element to process: ' . $name);
                     break;
@@ -142,19 +142,22 @@ class Response extends \Ease\Sand
 
         if (count($this->messages['error'])) {
             $this->state = 'error';
-        } else if (count($this->messages['warning'])) {
+        } elseif (count($this->messages['warning'])) {
             $this->state = 'warning';
         }
     }
 
     /**
-     * 
+     *
      * @param array $responseData
      */
     function processResponseData($responseData)
     {
         foreach ($responseData as $key => $value) {
             switch ($key) {
+                case 'lAdb:addressbook':
+                    $this->parsed = $this->processListAddressBook($value);
+                    break;
                 case 'rdc:producedDetails':
                     $this->processProducedDetails($value);
                     break;
@@ -169,9 +172,9 @@ class Response extends \Ease\Sand
     }
 
     /**
-     * 
+     *
      * @param array $source
-     * 
+     *
      * @return array
      */
     public static function typesToArray(array $source)
@@ -184,9 +187,9 @@ class Response extends \Ease\Sand
     }
 
     /**
-     * 
+     *
      * @param array $type
-     * 
+     *
      * @return array
      */
     public static function typeToArray(array $type)
@@ -199,7 +202,7 @@ class Response extends \Ease\Sand
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function getNote()
@@ -209,7 +212,7 @@ class Response extends \Ease\Sand
 
     /**
      * Checks if import was successful
-     * 
+     *
      * @return bool
      */
     public function isOk()
@@ -219,7 +222,7 @@ class Response extends \Ease\Sand
 
     /**
      * Return state of whole file
-     * 
+     *
      * @return string
      */
     public function getState()
@@ -227,11 +230,22 @@ class Response extends \Ease\Sand
         return $this->state;
     }
 
+    /**
+     * Obtain response data
+     * 
+     * @param string $agenda
+     * 
+     * @return array item or array of items
+     */
     public function getAgendaData($agenda)
     {
-        $data = [];
-        foreach (current($this->parsed[0]['value']) as $packItemData) {
-            $data[current($packItemData)['id']] = current($packItemData);
+        if (array_key_exists(0, $this->parsed)) {
+            $data = [];
+            foreach (current($this->parsed[0]['value']) as $packItemData) {
+                $data[current($packItemData)['id']] = current($packItemData);
+            }
+        } else {
+            $data = $this->parsed;
         }
         return $data;
     }
@@ -268,30 +282,29 @@ class Response extends \Ease\Sand
 
     /**
      * Convert XML to Array
-     * 
+     *
      * @param string $xml
      * @param array $alwaysArrayElements
-     * 
+     *
      * @return array
      */
     public static function parse($xml, array $alwaysArrayElements)
     {
         $xmlNode = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
         $arrayData = self::xmlToArray($xmlNode, array(
-            'alwaysArray' => $alwaysArrayElements,
-            'autoText' => false,
-        )
+                    'alwaysArray' => $alwaysArrayElements,
+                    'autoText' => false,
+                        )
         );
-
         return $arrayData;
     }
 
     /**
      * @param \SimpleXMLElement $xml
      * @param array $options
-     * 
+     *
      * @return array
-     * 
+     *
      * @author Tamlyn Rhodes
      * @link http://outlandish.com/blog/xml-to-json/
      */
@@ -322,11 +335,12 @@ class Response extends \Ease\Sand
         foreach ($namespaces as $prefix => $namespace) {
             foreach ($xml->attributes($namespace) as $attributeName => $attribute) {
                 //replace characters in attribute name
-                if ($options['keySearch'])
+                if ($options['keySearch']) {
                     $attributeName = str_replace($options['keySearch'], $options['keyReplace'], $attributeName);
+                }
                 $attributeKey = $options['attributePrefix']
-                    . ($prefix ? $prefix . $options['namespaceSeparator'] : '')
-                    . $attributeName;
+                        . ($prefix ? $prefix . $options['namespaceSeparator'] : '')
+                        . $attributeName;
                 $attributesArray[$attributeKey] = (string) $attribute;
             }
         }
@@ -339,21 +353,22 @@ class Response extends \Ease\Sand
                 $childArray = self::xmlToArray($childXml, $options);
                 $childTagName = key($childArray);
                 $childProperties = current($childArray);
-
                 //list($childTagName, $childProperties) = each($childArray);
                 //replace characters in tag name
-                if ($options['keySearch'])
+                if ($options['keySearch']) {
                     $childTagName = str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
+                }
                 //add namespace prefix, if any
-                if ($prefix)
+                if ($prefix) {
                     $childTagName = $prefix . $options['namespaceSeparator'] . $childTagName;
+                }
 
                 if (!isset($tagsArray[$childTagName])) {
                     //only entry with this key
                     //test if tags of this type should always be arrays, no matter the element count
                     $tagsArray[$childTagName] = in_array($childTagName, $options['alwaysArray']) || !$options['autoArray'] ? array($childProperties) : $childProperties;
                 } elseif (
-                    is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName]) === range(0, count($tagsArray[$childTagName]) - 1)
+                        is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName]) === range(0, count($tagsArray[$childTagName]) - 1)
                 ) {
                     //key already exists and is integer indexed array
                     $tagsArray[$childTagName][] = $childProperties;
@@ -367,16 +382,43 @@ class Response extends \Ease\Sand
         //get text content of node
         $textContentArray = array();
         $plainText = trim((string) $xml);
-        if ($plainText !== '')
+        if ($plainText !== '') {
             $textContentArray[$options['textContent']] = $plainText;
+        }
 
         //stick it all together
         $propertiesArray = !$options['autoText'] || $attributesArray || $tagsArray || ($plainText === '') ? array_merge($attributesArray, $tagsArray, $textContentArray) : $plainText;
-
         //return node as array
         return array(
             $xml->getName() => $propertiesArray
         );
     }
 
+    public function processListAddressBook($listAddressBook)
+    {
+        $addressBook = [];
+        foreach ($listAddressBook as $apos => $addressEntry) {
+            $addressData = self::adbToArray($addressEntry);
+            $addressBook[$addressData['addressbookHeader']['id']] = $addressData;
+        }
+        return $addressBook;
+    }
+
+    /**
+     * Strip adb: prefix form key names
+     * 
+     * @param array $entryData
+     * 
+     * @return array
+     */
+    static function adbToArray($entryData)
+    {
+        $entry = [];
+        foreach ($entryData as $entryKey => $entryValue) {
+            if (preg_match('/^adb:/', $entryKey)) {
+                $entry[str_replace('adb:', '', $entryKey)] = array_key_exists('$', $entryValue) ? $entryValue['$'] : self::adbToArray($entryValue);
+            }
+        }
+        return $entry;
+    }
 }

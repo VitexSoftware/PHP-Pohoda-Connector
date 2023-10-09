@@ -1,23 +1,21 @@
 <?php
 
 /**
- * PHPmPohoda - address import example
+ * PHPmServer - Pohoda Addressbook obtainer example
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Vitex Software
+ * @copyright  (C) 2023 Vitex Software
  */
 
-namespace mServer;
+require_once '../vendor/autoload.php';
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], '../.env');
+$addresser = new \mServer\Adressbook();
+print_r($addresser->getColumnsFromPohoda(['id', 'jmeno', 'email', 'web'], ['city' => 'Prague']));
 
-require_once __DIR__ . '/../vendor/autoload.php';
 
-
-$addresser = new Adressbook(null, \Ease\Shared::instanced()->loadConfig(__DIR__ . '/.env'));
-$pragueAddresses = $addresser->getColumnsFromPohoda(['id', 'email', 'web'], ['city' => 'Prague']);
-
-echo "-----------------------------------------------------------\n";
-
-print_r($pragueAddresses);
+//echo "-----------------------------------------------------------\n";
+//
+//print_r($pragueAddresses);
 
 //$addresser->loadFromPohoda(10);
 //print_r($addresser->getData());
