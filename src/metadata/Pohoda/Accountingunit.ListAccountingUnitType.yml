@@ -1,0 +1,16 @@
+Pohoda\Accountingunit\ListAccountingUnitType:
+    properties:
+        itemAccountingUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: itemAccountingUnit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getItemAccountingUnit
+                setter: setItemAccountingUnit
+            xml_list:
+                inline: true
+                entry_name: itemAccountingUnit
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            type: array<Pohoda\Accountingunit\ItemAccountingUnitType>

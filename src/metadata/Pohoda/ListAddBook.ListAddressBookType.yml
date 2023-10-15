@@ -1,0 +1,16 @@
+Pohoda\ListAddBook\ListAddressBookType:
+    properties:
+        addressbook:
+            expose: true
+            access_type: public_method
+            serialized_name: addressbook
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_addBook.xsd'
+            accessor:
+                getter: getAddressbook
+                setter: setAddressbook
+            xml_list:
+                inline: true
+                entry_name: addressbook
+                namespace: 'http://www.stormware.cz/schema/version_2/list_addBook.xsd'
+            type: array<Pohoda\AddressBook\AddressbookType>

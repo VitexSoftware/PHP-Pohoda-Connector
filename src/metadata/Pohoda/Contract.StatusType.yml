@@ -1,0 +1,20 @@
+Pohoda\Contract\StatusType:
+    properties:
+        unused:
+            expose: true
+            access_type: public_method
+            serialized_name: unused
+            accessor:
+                getter: getUnused
+                setter: setUnused
+            xml_attribute: true
+            type: string
+        executed:
+            expose: true
+            access_type: public_method
+            serialized_name: executed
+            accessor:
+                getter: getExecuted
+                setter: setExecuted
+            xml_attribute: true
+            type: string

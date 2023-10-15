@@ -1,0 +1,16 @@
+Pohoda\Filter\SelectedCompanysType:
+    properties:
+        company:
+            expose: true
+            access_type: public_method
+            serialized_name: company
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getCompany
+                setter: setCompany
+            xml_list:
+                inline: true
+                entry_name: company
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            type: array<string>

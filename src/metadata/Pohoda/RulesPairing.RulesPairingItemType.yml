@@ -1,0 +1,92 @@
+Pohoda\RulesPairing\RulesPairingItemType:
+    properties:
+        movement:
+            expose: true
+            access_type: public_method
+            serialized_name: movement
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            accessor:
+                getter: getMovement
+                setter: setMovement
+            type: string
+        documents:
+            expose: true
+            access_type: public_method
+            serialized_name: documents
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            accessor:
+                getter: getDocuments
+                setter: setDocuments
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: document
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+        pairings:
+            expose: true
+            access_type: public_method
+            serialized_name: pairings
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            accessor:
+                getter: getPairings
+                setter: setPairings
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: pairing
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+        amountComparison:
+            expose: true
+            access_type: public_method
+            serialized_name: amountComparison
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            accessor:
+                getter: getAmountComparison
+                setter: setAmountComparison
+            type: string
+        fulfilled:
+            expose: true
+            access_type: public_method
+            serialized_name: fulfilled
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            accessor:
+                getter: getFulfilled
+                setter: setFulfilled
+            type: string
+        endGroup:
+            expose: true
+            access_type: public_method
+            serialized_name: endGroup
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            accessor:
+                getter: getEndGroup
+                setter: setEndGroup
+            type: string
+        finish:
+            expose: true
+            access_type: public_method
+            serialized_name: finish
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            accessor:
+                getter: getFinish
+                setter: setFinish
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string

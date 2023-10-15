@@ -1,0 +1,40 @@
+Pohoda\Voucher\VoucherDetailType:
+    properties:
+        voucherItem:
+            expose: true
+            access_type: public_method
+            serialized_name: voucherItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getVoucherItem
+                setter: setVoucherItem
+            xml_list:
+                inline: true
+                entry_name: voucherItem
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            type: array<Pohoda\Voucher\VoucherItemType>
+        voucherLiquidationItem:
+            expose: true
+            access_type: public_method
+            serialized_name: voucherLiquidationItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getVoucherLiquidationItem
+                setter: setVoucherLiquidationItem
+            xml_list:
+                inline: true
+                entry_name: voucherLiquidationItem
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            type: array<Pohoda\Voucher\VoucherliquidationItemType>
+        roundingItem:
+            expose: true
+            access_type: public_method
+            serialized_name: roundingItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getRoundingItem
+                setter: setRoundingItem
+            type: Pohoda\Type\RoundingItemType

@@ -1,0 +1,42 @@
+Pohoda\Type\TypeCurrencyHomeItemType:
+    properties:
+        unitPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: unitPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getUnitPrice
+                setter: setUnitPrice
+            type: float
+        price:
+            expose: true
+            access_type: public_method
+            serialized_name: price
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPrice
+                setter: setPrice
+            type: float
+        priceVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: priceVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceVAT
+                setter: setPriceVAT
+            type: float
+        priceSum:
+            expose: true
+            access_type: public_method
+            serialized_name: priceSum
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceSum
+                setter: setPriceSum
+            type: float

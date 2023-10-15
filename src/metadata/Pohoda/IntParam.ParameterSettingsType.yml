@@ -1,0 +1,47 @@
+Pohoda\IntParam\ParameterSettingsType:
+    properties:
+        unit:
+            expose: true
+            access_type: public_method
+            serialized_name: unit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            accessor:
+                getter: getUnit
+                setter: setUnit
+            type: string
+        length:
+            expose: true
+            access_type: public_method
+            serialized_name: length
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            accessor:
+                getter: getLength
+                setter: setLength
+            type: int
+        parameterList:
+            expose: true
+            access_type: public_method
+            serialized_name: parameterList
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            accessor:
+                getter: getParameterList
+                setter: setParameterList
+            type: array<Pohoda\IntParam\ParameterListItemType>
+            xml_list:
+                inline: false
+                entry_name: parameterListItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+        currency:
+            expose: true
+            access_type: public_method
+            serialized_name: currency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            accessor:
+                getter: getCurrency
+                setter: setCurrency
+            type: Pohoda\Type\RefType

@@ -1,0 +1,56 @@
+Pohoda\Enquiry\EnquiryType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        enquiryHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: enquiryHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/enquiry.xsd'
+            accessor:
+                getter: getEnquiryHeader
+                setter: setEnquiryHeader
+            type: Pohoda\Enquiry\EnquiryHeaderType
+        enquiryDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: enquiryDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/enquiry.xsd'
+            accessor:
+                getter: getEnquiryDetail
+                setter: setEnquiryDetail
+            type: Pohoda\Enquiry\EnquiryDetailType
+        enquirySummary:
+            expose: true
+            access_type: public_method
+            serialized_name: enquirySummary
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/enquiry.xsd'
+            accessor:
+                getter: getEnquirySummary
+                setter: setEnquirySummary
+            type: Pohoda\Enquiry\EnquirySummaryType
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/enquiry.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: false
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

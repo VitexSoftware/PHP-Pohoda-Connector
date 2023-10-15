@@ -1,0 +1,32 @@
+Pohoda\MKasa\ChangeOfModeInCalendarYearType:
+    properties:
+        identifiedPerson:
+            expose: true
+            access_type: public_method
+            serialized_name: identifiedPerson
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getIdentifiedPerson
+                setter: setIdentifiedPerson
+            type: string
+        taxPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: taxPeriod
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getTaxPeriod
+                setter: setTaxPeriod
+            type: string
+        modeCalendar:
+            expose: true
+            access_type: public_method
+            serialized_name: modeCalendar
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getModeCalendar
+                setter: setModeCalendar
+            type: Pohoda\MKasa\ModeCalendarType

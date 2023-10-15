@@ -1,0 +1,62 @@
+Pohoda\List\RequestBalanceType:
+    properties:
+        dateTo:
+            expose: true
+            access_type: public_method
+            serialized_name: dateTo
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getDateTo
+                setter: setDateTo
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        adjustTo:
+            expose: true
+            access_type: public_method
+            serialized_name: adjustTo
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getAdjustTo
+                setter: setAdjustTo
+            type: float
+        groupByDoc:
+            expose: true
+            access_type: public_method
+            serialized_name: groupByDoc
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getGroupByDoc
+                setter: setGroupByDoc
+            type: string
+        removeBalancedRec:
+            expose: true
+            access_type: public_method
+            serialized_name: removeBalancedRec
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRemoveBalancedRec
+                setter: setRemoveBalancedRec
+            type: string
+        pairing:
+            expose: true
+            access_type: public_method
+            serialized_name: pairing
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getPairing
+                setter: setPairing
+            type: string
+        userFilterName:
+            expose: true
+            access_type: public_method
+            serialized_name: userFilterName
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getUserFilterName
+                setter: setUserFilterName
+            type: string

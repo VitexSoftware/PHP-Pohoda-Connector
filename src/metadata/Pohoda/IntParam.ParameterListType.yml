@@ -1,0 +1,16 @@
+Pohoda\IntParam\ParameterListType:
+    properties:
+        parameterListItem:
+            expose: true
+            access_type: public_method
+            serialized_name: parameterListItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            accessor:
+                getter: getParameterListItem
+                setter: setParameterListItem
+            xml_list:
+                inline: true
+                entry_name: parameterListItem
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            type: array<Pohoda\IntParam\ParameterListItemType>

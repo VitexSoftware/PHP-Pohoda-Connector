@@ -1,0 +1,16 @@
+Pohoda\RulesPairing\PairingsType:
+    properties:
+        pairing:
+            expose: true
+            access_type: public_method
+            serialized_name: pairing
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            accessor:
+                getter: getPairing
+                setter: setPairing
+            xml_list:
+                inline: true
+                entry_name: pairing
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            type: array<string>

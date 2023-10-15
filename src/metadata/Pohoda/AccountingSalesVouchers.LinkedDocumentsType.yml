@@ -1,0 +1,16 @@
+Pohoda\AccountingSalesVouchers\LinkedDocumentsType:
+    properties:
+        linkedDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: linkedDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            accessor:
+                getter: getLinkedDocument
+                setter: setLinkedDocument
+            xml_list:
+                inline: true
+                entry_name: linkedDocument
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            type: array<Pohoda\AccountingSalesVouchers\LinkedDocumentType>

@@ -1,0 +1,152 @@
+Pohoda\BankAccount\BankAccountHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: Pohoda\Type\ExtIdType
+        ids:
+            expose: true
+            access_type: public_method
+            serialized_name: ids
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getIds
+                setter: setIds
+            type: string
+        numberAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: numberAccount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getNumberAccount
+                setter: setNumberAccount
+            type: string
+        codeBank:
+            expose: true
+            access_type: public_method
+            serialized_name: codeBank
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getCodeBank
+                setter: setCodeBank
+            type: string
+        nameBank:
+            expose: true
+            access_type: public_method
+            serialized_name: nameBank
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getNameBank
+                setter: setNameBank
+            type: string
+        symSpec:
+            expose: true
+            access_type: public_method
+            serialized_name: symSpec
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getSymSpec
+                setter: setSymSpec
+            type: string
+        iBAN:
+            expose: true
+            access_type: public_method
+            serialized_name: IBAN
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getIBAN
+                setter: setIBAN
+            type: string
+        sWIFT:
+            expose: true
+            access_type: public_method
+            serialized_name: SWIFT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getSWIFT
+                setter: setSWIFT
+            type: string
+        analyticAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: analyticAccount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getAnalyticAccount
+                setter: setAnalyticAccount
+            type: Pohoda\Type\RefType
+        currencyBankAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: currencyBankAccount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getCurrencyBankAccount
+                setter: setCurrencyBankAccount
+            type: Pohoda\BankAccount\CurrencyBankAccountType
+        cancelled:
+            expose: true
+            access_type: public_method
+            serialized_name: cancelled
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getCancelled
+                setter: setCancelled
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        homebanking:
+            expose: true
+            access_type: public_method
+            serialized_name: homebanking
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getHomebanking
+                setter: setHomebanking
+            type: string
+        payTerminal:
+            expose: true
+            access_type: public_method
+            serialized_name: payTerminal
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getPayTerminal
+                setter: setPayTerminal
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string

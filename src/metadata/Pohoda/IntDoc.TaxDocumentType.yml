@@ -1,0 +1,12 @@
+Pohoda\IntDoc\TaxDocumentType:
+    properties:
+        sourceLiquidation:
+            expose: true
+            access_type: public_method
+            serialized_name: sourceLiquidation
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            accessor:
+                getter: getSourceLiquidation
+                setter: setSourceLiquidation
+            type: Pohoda\Type\SourceDocumentItemType

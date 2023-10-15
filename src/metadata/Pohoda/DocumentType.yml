@@ -1,0 +1,92 @@
+Pohoda\DocumentType:
+    properties:
+        state:
+            expose: true
+            access_type: public_method
+            serialized_name: state
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getState
+                setter: setState
+            type: string
+        detail:
+            expose: true
+            access_type: public_method
+            serialized_name: detail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getDetail
+                setter: setDetail
+            type: string
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: string
+        agenda:
+            expose: true
+            access_type: public_method
+            serialized_name: agenda
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getAgenda
+                setter: setAgenda
+            type: string
+        homeCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: homeCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getHomeCurrency
+                setter: setHomeCurrency
+            type: Pohoda\HomeCurrencyType
+        foreignCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getForeignCurrency
+                setter: setForeignCurrency
+            type: Pohoda\ForeignCurrencyType
+        rule:
+            expose: true
+            access_type: public_method
+            serialized_name: rule
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getRule
+                setter: setRule
+            type: string
+        taxDocumentNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: taxDocumentNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getTaxDocumentNumber
+                setter: setTaxDocumentNumber
+            type: Pohoda\TaxDocumentType

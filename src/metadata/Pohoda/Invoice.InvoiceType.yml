@@ -1,0 +1,136 @@
+Pohoda\Invoice\InvoiceType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        links:
+            expose: true
+            access_type: public_method
+            serialized_name: links
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getLinks
+                setter: setLinks
+            type: Pohoda\Type\LinksType
+        cancelDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: cancelDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getCancelDocument
+                setter: setCancelDocument
+            type: Pohoda\Type\CancelDocumentType
+        correctiveDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: correctiveDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getCorrectiveDocument
+                setter: setCorrectiveDocument
+            type: Pohoda\Type\CorrectiveDocumentType
+        invoiceHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getInvoiceHeader
+                setter: setInvoiceHeader
+            type: Pohoda\Invoice\InvoiceHeaderType
+        invoiceRetentions:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceRetentions
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getInvoiceRetentions
+                setter: setInvoiceRetentions
+            type: array<Pohoda\Invoice\InvoiceRetentionType>
+            xml_list:
+                inline: false
+                entry_name: invoiceRetention
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+        invoiceDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getInvoiceDetail
+                setter: setInvoiceDetail
+            type: Pohoda\Invoice\InvoiceDetailType
+        invoiceSummary:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceSummary
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getInvoiceSummary
+                setter: setInvoiceSummary
+            type: Pohoda\Invoice\InvoiceSummaryType
+        linkedDocuments:
+            expose: true
+            access_type: public_method
+            serialized_name: linkedDocuments
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getLinkedDocuments
+                setter: setLinkedDocuments
+            type: Pohoda\Type\LinksType
+        liquidations:
+            expose: true
+            access_type: public_method
+            serialized_name: liquidations
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getLiquidations
+                setter: setLiquidations
+            type: array<Pohoda\Type\LiquidationItemType>
+            xml_list:
+                inline: false
+                entry_name: liquidation
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+        eET:
+            expose: true
+            access_type: public_method
+            serialized_name: EET
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getEET
+                setter: setEET
+            type: Pohoda\Type\EETType
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

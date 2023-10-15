@@ -1,0 +1,92 @@
+Pohoda\IndividualPrice\StockItemType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        ids:
+            expose: true
+            access_type: public_method
+            serialized_name: ids
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getIds
+                setter: setIds
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        storage:
+            expose: true
+            access_type: public_method
+            serialized_name: storage
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getStorage
+                setter: setStorage
+            type: Pohoda\Type\RefTypeStorageType
+        price:
+            expose: true
+            access_type: public_method
+            serialized_name: price
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getPrice
+                setter: setPrice
+            type: float
+        discountPercentage:
+            expose: true
+            access_type: public_method
+            serialized_name: discountPercentage
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getDiscountPercentage
+                setter: setDiscountPercentage
+            type: float
+        individualPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: individualPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getIndividualPrice
+                setter: setIndividualPrice
+            type: float
+        currency:
+            expose: true
+            access_type: public_method
+            serialized_name: currency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getCurrency
+                setter: setCurrency
+            type: Pohoda\Type\RefType
+        payVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: payVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getPayVAT
+                setter: setPayVAT
+            type: string

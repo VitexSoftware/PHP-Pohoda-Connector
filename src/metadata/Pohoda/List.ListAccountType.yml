@@ -1,0 +1,16 @@
+Pohoda\List\ListAccountType:
+    properties:
+        itemAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: itemAccount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getItemAccount
+                setter: setItemAccount
+            xml_list:
+                inline: true
+                entry_name: itemAccount
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\ItemAccountType>

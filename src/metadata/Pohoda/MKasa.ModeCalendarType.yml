@@ -1,0 +1,122 @@
+Pohoda\MKasa\ModeCalendarType:
+    properties:
+        january:
+            expose: true
+            access_type: public_method
+            serialized_name: january
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getJanuary
+                setter: setJanuary
+            type: string
+        february:
+            expose: true
+            access_type: public_method
+            serialized_name: february
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getFebruary
+                setter: setFebruary
+            type: string
+        march:
+            expose: true
+            access_type: public_method
+            serialized_name: march
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getMarch
+                setter: setMarch
+            type: string
+        april:
+            expose: true
+            access_type: public_method
+            serialized_name: april
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getApril
+                setter: setApril
+            type: string
+        may:
+            expose: true
+            access_type: public_method
+            serialized_name: may
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getMay
+                setter: setMay
+            type: string
+        june:
+            expose: true
+            access_type: public_method
+            serialized_name: june
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getJune
+                setter: setJune
+            type: string
+        july:
+            expose: true
+            access_type: public_method
+            serialized_name: july
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getJuly
+                setter: setJuly
+            type: string
+        august:
+            expose: true
+            access_type: public_method
+            serialized_name: august
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getAugust
+                setter: setAugust
+            type: string
+        september:
+            expose: true
+            access_type: public_method
+            serialized_name: september
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getSeptember
+                setter: setSeptember
+            type: string
+        october:
+            expose: true
+            access_type: public_method
+            serialized_name: october
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getOctober
+                setter: setOctober
+            type: string
+        november:
+            expose: true
+            access_type: public_method
+            serialized_name: november
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getNovember
+                setter: setNovember
+            type: string
+        december:
+            expose: true
+            access_type: public_method
+            serialized_name: december
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getDecember
+                setter: setDecember
+            type: string

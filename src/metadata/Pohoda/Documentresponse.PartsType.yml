@@ -1,0 +1,16 @@
+Pohoda\Documentresponse\PartsType:
+    properties:
+        part:
+            expose: true
+            access_type: public_method
+            serialized_name: part
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getPart
+                setter: setPart
+            xml_list:
+                inline: true
+                entry_name: part
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            type: array<string>

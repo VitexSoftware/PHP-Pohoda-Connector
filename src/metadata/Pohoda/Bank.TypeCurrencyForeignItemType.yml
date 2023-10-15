@@ -1,0 +1,12 @@
+Pohoda\Bank\TypeCurrencyForeignItemType:
+    properties:
+        unitPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: unitPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getUnitPrice
+                setter: setUnitPrice
+            type: float

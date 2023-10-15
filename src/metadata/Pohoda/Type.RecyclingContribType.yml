@@ -1,0 +1,52 @@
+Pohoda\Type\RecyclingContribType:
+    properties:
+        recyclingContribType:
+            expose: true
+            access_type: public_method
+            serialized_name: recyclingContribType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getRecyclingContribType
+                setter: setRecyclingContribType
+            type: Pohoda\Type\RefType
+        recyclingContribText:
+            expose: true
+            access_type: public_method
+            serialized_name: recyclingContribText
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getRecyclingContribText
+                setter: setRecyclingContribText
+            type: string
+        recyclingContribAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: recyclingContribAmount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getRecyclingContribAmount
+                setter: setRecyclingContribAmount
+            type: float
+        recyclingContribUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: recyclingContribUnit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getRecyclingContribUnit
+                setter: setRecyclingContribUnit
+            type: string
+        coefficientOfRecyclingContrib:
+            expose: true
+            access_type: public_method
+            serialized_name: coefficientOfRecyclingContrib
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getCoefficientOfRecyclingContrib
+                setter: setCoefficientOfRecyclingContrib
+            type: float

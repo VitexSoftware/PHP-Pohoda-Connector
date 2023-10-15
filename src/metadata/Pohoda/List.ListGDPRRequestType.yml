@@ -1,0 +1,34 @@
+Pohoda\List\ListGDPRRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        gDPRVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: GDPRVersion
+            accessor:
+                getter: getGDPRVersion
+                setter: setGDPRVersion
+            xml_attribute: true
+            type: string
+        requestGDPR:
+            expose: true
+            access_type: public_method
+            serialized_name: requestGDPR
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestGDPR
+                setter: setRequestGDPR
+            xml_list:
+                inline: true
+                entry_name: requestGDPR
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\RequestGDPRType>

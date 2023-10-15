@@ -1,0 +1,26 @@
+Pohoda\Category\InternetParamsType:
+    properties:
+        idInternetParams:
+            expose: true
+            access_type: public_method
+            serialized_name: idInternetParams
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/category.xsd'
+            accessor:
+                getter: getIdInternetParams
+                setter: setIdInternetParams
+            type: string
+        intParameter:
+            expose: true
+            access_type: public_method
+            serialized_name: intParameter
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/category.xsd'
+            accessor:
+                getter: getIntParameter
+                setter: setIntParameter
+            xml_list:
+                inline: true
+                entry_name: intParameter
+                namespace: 'http://www.stormware.cz/schema/version_2/category.xsd'
+            type: array<Pohoda\Type\RefTypeLongType>

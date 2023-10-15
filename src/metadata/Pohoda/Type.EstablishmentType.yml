@@ -1,0 +1,42 @@
+Pohoda\Type\EstablishmentType:
+    properties:
+        company:
+            expose: true
+            access_type: public_method
+            serialized_name: company
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getCompany
+                setter: setCompany
+            type: string
+        city:
+            expose: true
+            access_type: public_method
+            serialized_name: city
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getCity
+                setter: setCity
+            type: string
+        street:
+            expose: true
+            access_type: public_method
+            serialized_name: street
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getStreet
+                setter: setStreet
+            type: string
+        zip:
+            expose: true
+            access_type: public_method
+            serialized_name: zip
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getZip
+                setter: setZip
+            type: string

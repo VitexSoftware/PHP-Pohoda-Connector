@@ -1,0 +1,16 @@
+Pohoda\GroupStocks\GroupStocksDetailType:
+    properties:
+        variant:
+            expose: true
+            access_type: public_method
+            serialized_name: variant
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            accessor:
+                getter: getVariant
+                setter: setVariant
+            xml_list:
+                inline: true
+                entry_name: variant
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            type: array<Pohoda\GroupStocks\VariantsItemType>

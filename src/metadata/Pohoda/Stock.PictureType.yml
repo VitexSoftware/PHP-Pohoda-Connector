@@ -1,0 +1,61 @@
+Pohoda\Stock\PictureType:
+    properties:
+        default:
+            expose: true
+            access_type: public_method
+            serialized_name: default
+            accessor:
+                getter: getDefault
+                setter: setDefault
+            xml_attribute: true
+            type: bool
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: Pohoda\Type\ActionTypeItemType
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        filepath:
+            expose: true
+            access_type: public_method
+            serialized_name: filepath
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getFilepath
+                setter: setFilepath
+            type: string
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: description
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            type: string
+        order:
+            expose: true
+            access_type: public_method
+            serialized_name: order
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getOrder
+                setter: setOrder
+            type: int

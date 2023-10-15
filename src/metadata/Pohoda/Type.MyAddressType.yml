@@ -1,0 +1,22 @@
+Pohoda\Type\MyAddressType:
+    properties:
+        address:
+            expose: true
+            access_type: public_method
+            serialized_name: address
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getAddress
+                setter: setAddress
+            type: Pohoda\Type\AddressInternetType
+        establishment:
+            expose: true
+            access_type: public_method
+            serialized_name: establishment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getEstablishment
+                setter: setEstablishment
+            type: Pohoda\Type\EstablishmentType

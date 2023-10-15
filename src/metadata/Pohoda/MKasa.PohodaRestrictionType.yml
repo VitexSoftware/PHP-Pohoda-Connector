@@ -1,0 +1,192 @@
+Pohoda\MKasa\PohodaRestrictionType:
+    properties:
+        lockPin:
+            expose: true
+            access_type: public_method
+            serialized_name: lockPin
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getLockPin
+                setter: setLockPin
+            type: string
+        administration:
+            expose: true
+            access_type: public_method
+            serialized_name: administration
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getAdministration
+                setter: setAdministration
+            type: string
+        administrationPass:
+            expose: true
+            access_type: public_method
+            serialized_name: administrationPass
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getAdministrationPass
+                setter: setAdministrationPass
+            type: string
+        createCustomer:
+            expose: true
+            access_type: public_method
+            serialized_name: createCustomer
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getCreateCustomer
+                setter: setCreateCustomer
+            type: bool
+        changePrize:
+            expose: true
+            access_type: public_method
+            serialized_name: changePrize
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getChangePrize
+                setter: setChangePrize
+            type: string
+        textItems:
+            expose: true
+            access_type: public_method
+            serialized_name: textItems
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getTextItems
+                setter: setTextItems
+            type: string
+        depositsWithdrawals:
+            expose: true
+            access_type: public_method
+            serialized_name: depositsWithdrawals
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getDepositsWithdrawals
+                setter: setDepositsWithdrawals
+            type: string
+        delayedDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: delayedDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getDelayedDocument
+                setter: setDelayedDocument
+            type: string
+        agendaHistory:
+            expose: true
+            access_type: public_method
+            serialized_name: AgendaHistory
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getAgendaHistory
+                setter: setAgendaHistory
+            type: string
+        createSKPV:
+            expose: true
+            access_type: public_method
+            serialized_name: createSKPV
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getCreateSKPV
+                setter: setCreateSKPV
+            type: string
+        changeEet:
+            expose: true
+            access_type: public_method
+            serialized_name: changeEet
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getChangeEet
+                setter: setChangeEet
+            type: string
+        deleteRecords:
+            expose: true
+            access_type: public_method
+            serialized_name: deleteRecords
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getDeleteRecords
+                setter: setDeleteRecords
+            type: string
+        exportXml:
+            expose: true
+            access_type: public_method
+            serialized_name: exportXml
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getExportXml
+                setter: setExportXml
+            type: string
+        createBackup:
+            expose: true
+            access_type: public_method
+            serialized_name: createBackup
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getCreateBackup
+                setter: setCreateBackup
+            type: string
+        restoreBackup:
+            expose: true
+            access_type: public_method
+            serialized_name: restoreBackup
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getRestoreBackup
+                setter: setRestoreBackup
+            type: string
+        createCashRegisterDoc:
+            expose: true
+            access_type: public_method
+            serialized_name: createCashRegisterDoc
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getCreateCashRegisterDoc
+                setter: setCreateCashRegisterDoc
+            type: string
+        refund:
+            expose: true
+            access_type: public_method
+            serialized_name: refund
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getRefund
+                setter: setRefund
+            type: string
+        accountDayByDay:
+            expose: true
+            access_type: public_method
+            serialized_name: accountDayByDay
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getAccountDayByDay
+                setter: setAccountDayByDay
+            type: bool
+        canDoDiffExport:
+            expose: true
+            access_type: public_method
+            serialized_name: canDoDiffExport
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getCanDoDiffExport
+                setter: setCanDoDiffExport
+            type: bool

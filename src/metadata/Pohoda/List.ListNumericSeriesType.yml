@@ -1,0 +1,16 @@
+Pohoda\List\ListNumericSeriesType:
+    properties:
+        itemNumericSeries:
+            expose: true
+            access_type: public_method
+            serialized_name: itemNumericSeries
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getItemNumericSeries
+                setter: setItemNumericSeries
+            xml_list:
+                inline: true
+                entry_name: itemNumericSeries
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\ItemNumericSeriesType>

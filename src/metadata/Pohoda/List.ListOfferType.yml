@@ -1,0 +1,16 @@
+Pohoda\List\ListOfferType:
+    properties:
+        offer:
+            expose: true
+            access_type: public_method
+            serialized_name: offer
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getOffer
+                setter: setOffer
+            xml_list:
+                inline: true
+                entry_name: offer
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Offer\OfferType>

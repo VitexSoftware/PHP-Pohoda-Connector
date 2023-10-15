@@ -1,0 +1,16 @@
+Pohoda\ListActivity\ListActivityType:
+    properties:
+        activity:
+            expose: true
+            access_type: public_method
+            serialized_name: activity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_activity.xsd'
+            accessor:
+                getter: getActivity
+                setter: setActivity
+            xml_list:
+                inline: true
+                entry_name: activity
+                namespace: 'http://www.stormware.cz/schema/version_2/list_activity.xsd'
+            type: array<Pohoda\Activity\ActivityType>

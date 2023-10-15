@@ -1,0 +1,48 @@
+Pohoda\ListStock\ListRequestStockType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        stockVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: stockVersion
+            accessor:
+                getter: getStockVersion
+                setter: setStockVersion
+            xml_attribute: true
+            type: string
+        requestStock:
+            expose: true
+            access_type: public_method
+            serialized_name: requestStock
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getRequestStock
+                setter: setRequestStock
+            xml_list:
+                inline: true
+                entry_name: requestStock
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            type: array<Pohoda\Filter\RequestStockType>
+        restrictionData:
+            expose: true
+            access_type: public_method
+            serialized_name: restrictionData
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getRestrictionData
+                setter: setRestrictionData
+            xml_list:
+                inline: true
+                entry_name: restrictionData
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            type: array<Pohoda\ListStock\RestrictionDataType>

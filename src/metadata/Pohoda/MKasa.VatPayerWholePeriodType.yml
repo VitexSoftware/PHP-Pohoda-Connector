@@ -1,0 +1,12 @@
+Pohoda\MKasa\VatPayerWholePeriodType:
+    properties:
+        taxPeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: taxPeriod
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getTaxPeriod
+                setter: setTaxPeriod
+            type: string

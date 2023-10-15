@@ -1,0 +1,3 @@
+Pohoda\Balance\Balance:
+    xml_root_name: balance
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'

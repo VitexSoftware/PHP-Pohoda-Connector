@@ -1,0 +1,16 @@
+Pohoda\List\ListPrevodkaType:
+    properties:
+        prevodka:
+            expose: true
+            access_type: public_method
+            serialized_name: prevodka
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getPrevodka
+                setter: setPrevodka
+            xml_list:
+                inline: true
+                entry_name: prevodka
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Prevodka\PrevodkaType>

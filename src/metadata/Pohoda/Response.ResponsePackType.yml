@@ -1,0 +1,88 @@
+Pohoda\Response\ResponsePackType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: string
+        state:
+            expose: true
+            access_type: public_method
+            serialized_name: state
+            accessor:
+                getter: getState
+                setter: setState
+            xml_attribute: true
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_attribute: true
+            type: string
+        programVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: programVersion
+            accessor:
+                getter: getProgramVersion
+                setter: setProgramVersion
+            xml_attribute: true
+            type: string
+        ico:
+            expose: true
+            access_type: public_method
+            serialized_name: ico
+            accessor:
+                getter: getIco
+                setter: setIco
+            xml_attribute: true
+            type: string
+        key:
+            expose: true
+            access_type: public_method
+            serialized_name: key
+            accessor:
+                getter: getKey
+                setter: setKey
+            xml_attribute: true
+            type: string
+        dateTimeStamp:
+            expose: true
+            access_type: public_method
+            serialized_name: dateTimeStamp
+            accessor:
+                getter: getDateTimeStamp
+                setter: setDateTimeStamp
+            xml_attribute: true
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        responsePackItem:
+            expose: true
+            access_type: public_method
+            serialized_name: responsePackItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/response.xsd'
+            accessor:
+                getter: getResponsePackItem
+                setter: setResponsePackItem
+            xml_list:
+                inline: true
+                entry_name: responsePackItem
+                namespace: 'http://www.stormware.cz/schema/version_2/response.xsd'
+            type: array<Pohoda\Response\ResponsePackItemType>

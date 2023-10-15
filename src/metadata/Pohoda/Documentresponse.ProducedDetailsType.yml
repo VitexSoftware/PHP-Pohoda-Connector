@@ -1,0 +1,62 @@
+Pohoda\Documentresponse\ProducedDetailsType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: string
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: string
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getCode
+                setter: setCode
+            type: string
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: string
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: Pohoda\Type\ExtIdType
+        itemDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: itemDetails
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getItemDetails
+                setter: setItemDetails
+            type: Pohoda\Documentresponse\ItemDetailsType

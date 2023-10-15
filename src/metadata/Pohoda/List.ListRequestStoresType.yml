@@ -1,0 +1,17 @@
+Pohoda\List\ListRequestStoresType:
+    properties:
+        stores:
+            expose: true
+            access_type: public_method
+            serialized_name: stores
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getStores
+                setter: setStores
+            type: array<Pohoda\Type\RefType>
+            xml_list:
+                inline: false
+                entry_name: store
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'

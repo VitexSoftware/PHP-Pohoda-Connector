@@ -1,0 +1,31 @@
+Pohoda\AutomaticLiquidationType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        record:
+            expose: true
+            access_type: public_method
+            serialized_name: record
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getRecord
+                setter: setRecord
+            type: Pohoda\Filter\RecordAutomaticLiquidationType
+        ruleOfPairing:
+            expose: true
+            access_type: public_method
+            serialized_name: ruleOfPairing
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getRuleOfPairing
+                setter: setRuleOfPairing
+            type: Pohoda\Type\RefType

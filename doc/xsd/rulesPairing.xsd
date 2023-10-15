@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd" 	xmlns:inv="http://www.stormware.cz/schema/version_2/invoice.xsd" xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd" xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd" xmlns:rul="http://www.stormware.cz/schema/version_2/rulesPairing.xsd" xmlns="http://www.stormware.cz/schema/version_2/rulesPairing.xsd" targetNamespace="http://www.stormware.cz/schema/version_2/rulesPairing.xsd" elementFormDefault="qualified" >
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/invoice.xsd" schemaLocation="invoice.xsd"/>
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+  <!-- ************************************************************************** Pravidla Párování dokladů ************************************************************************** -->
+  <!-- REQUEST -->
+  <xsd:element name="rulesPairing" type="rulesPairingType"/>
+  <xsd:complexType name="rulesPairingType">
+    <xsd:sequence>
+      <xsd:element name="rulesPairingHeader" type="rul:rulesPairingHeaderType" minOccurs="1"/>
+      <xsd:element name="rulesPairingDetail" type="rul:rulesPairingDetailType" minOccurs="1"/>
+    </xsd:sequence>
+    <xsd:attribute name="version" type="rul:rulesPairingVersionType" use="required"/>
+  </xsd:complexType>
+  <xsd:simpleType name="rulesPairingVersionType">
+    <xsd:annotation>
+      <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="2.0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="rulesPairingHeaderType">
+    <xsd:all>
+      <xsd:element name="id" type="typ:idType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>ID záznamu (jen pro export).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ids" type="typ:string50" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Název pravidla párování dokladů.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="automaticLiquidation" type="typ:boolean" minOccurs="0" default="false">
+        <xsd:annotation>
+          <xsd:documentation>Nabízet při automatické likvidaci.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="note" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Poznámka</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="markRecord" type="typ:boolean" minOccurs="0" default="true">
+        <xsd:annotation>
+          <xsd:documentation>Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="rulesPairingDetailType">
+    <xsd:sequence>
+      <xsd:element name="rulesPairingItem" type="rul:rulesPairingItemType" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="rulesPairingItemType">
+    <xsd:all>
+      <xsd:element name="movement" type="rul:movementType" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Typ pohybu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="documents" type="rul:documentsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Typ dokladu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="pairings" type="rul:pairingsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Pravidla párování.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="amountComparison" type="rul:amountComparisonType" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Porovnání částky.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="fulfilled" type="rul:fulfilledType" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Splněno při.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="endGroup" type="typ:boolean" minOccurs="0" default="false">
+        <xsd:annotation>
+          <xsd:documentation>Konec skupiny.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="finish" type="rul:finishType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Ukončit.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="note" type="typ:string90" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Poznámka</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+  <!-- Typ pohybu -->
+  <xsd:simpleType name="movementType">
+    <xsd:annotation>
+      <xsd:documentation>Typ pohybu.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="income">
+        <xsd:annotation>
+          <xsd:documentation>Příjem.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="expenditure">
+        <xsd:annotation>
+          <xsd:documentation>Výdej.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="incomeReceivables">
+        <xsd:annotation>
+          <xsd:documentation>Příjem - ostatní pohledávky.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="incomeFM">
+        <xsd:annotation>
+          <xsd:documentation>Příjem FM (pouze SK verze).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- Doklady -->
+  <xsd:complexType name="documentsType">
+    <xsd:annotation>
+      <xsd:documentation>Doklady.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name ="document"  type = "rul:documentType" maxOccurs="unbounded"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="documentType">
+    <xsd:annotation>
+      <xsd:documentation>Typ dokladu.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="issuedInvoice">
+        <xsd:annotation>
+          <xsd:documentation>Faktura.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+	  <xsd:enumeration value="issuedInvoiceMinus">
+        <xsd:annotation>
+          <xsd:documentation>Faktura na zápornou částku.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="issuedCreditNotice">
+        <xsd:annotation>
+          <xsd:documentation>Dobropis.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="issuedDebitNote">
+        <xsd:annotation>
+          <xsd:documentation>Vrubopis.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="issuedAdvanceInvoice">
+        <xsd:annotation>
+          <xsd:documentation>Zálohová faktura.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="receivable">
+        <xsd:annotation>
+          <xsd:documentation>Ostatní pohledávka.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="issuedProformaInvoice">
+        <xsd:annotation>
+          <xsd:documentation>Proforma faktura.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="penalty">
+        <xsd:annotation>
+          <xsd:documentation>Penále.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="issuedCorrectiveTaxPlus">
+        <xsd:annotation>
+          <xsd:documentation>Vydaný opravný daňový doklad na kladnou částku (pouze CZ verze).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="issuedCorrectiveTaxMinus">
+        <xsd:annotation>
+          <xsd:documentation>Vydaný opravný daňový doklad na zápornou částku (pouze CZ verze).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="receivedInvoice">
+        <xsd:annotation>
+          <xsd:documentation>Přijatá faktura.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+	  <xsd:enumeration value="receivedInvoiceMinus">
+        <xsd:annotation>
+          <xsd:documentation>Přijatá faktura na zápornou částku.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="receivedCreditNotice">
+        <xsd:annotation>
+          <xsd:documentation>Přijatý dobropis.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="receivedDebitNote">
+        <xsd:annotation>
+          <xsd:documentation>Přijatý vrubopis.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="receivedAdvanceInvoice">
+        <xsd:annotation>
+          <xsd:documentation>Přijatá zálohová faktura.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="commitment">
+        <xsd:annotation>
+          <xsd:documentation>Závazek.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="receivedProformaInvoice">
+        <xsd:annotation>
+          <xsd:documentation>Přijatá proforma faktura.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="receivedCorrectiveTaxPlus">
+        <xsd:annotation>
+          <xsd:documentation>Přijatý opravný daňový doklad na kladnou částku (pouze CZ verze).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="receivedCorrectiveTaxMinus">
+        <xsd:annotation>
+          <xsd:documentation>Přijatý opravný daňový doklad na zápornou částku (pouze CZ verze).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- Doklady -->
+  <xsd:complexType name="pairingsType">
+    <xsd:annotation>
+      <xsd:documentation>Doklady.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name ="pairing"  type = "rul:pairingType" maxOccurs="unbounded"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- Párování -->
+  <xsd:simpleType name="pairingType">
+    <xsd:annotation>
+      <xsd:documentation>Pravidlo párování</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="VSDocumentVSPayment">
+        <xsd:annotation>
+          <xsd:documentation>VSD=VSP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="documentNumberVSPayment">
+        <xsd:annotation>
+          <xsd:documentation>CD=VSP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="clientNumberVSPayment">
+        <xsd:annotation>
+          <xsd:documentation>CK=VSP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="orderNumberVSPayment">
+        <xsd:annotation>
+          <xsd:documentation>COD=VSP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VSDocumentSSPayment">
+        <xsd:annotation>
+          <xsd:documentation>VSD=SSP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="orderNumberVSPayment">
+        <xsd:annotation>
+          <xsd:documentation>COD=VSP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="documentNumberSSPayment">
+        <xsd:annotation>
+          <xsd:documentation>CD=SSP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="clientNumberSSPayment">
+        <xsd:annotation>
+          <xsd:documentation>CK=SSP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="orderNumberSSPayment">
+        <xsd:annotation>
+          <xsd:documentation>COD=SSP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="documentDatePaymentDate">
+        <xsd:annotation>
+          <xsd:documentation>DD=DP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="paymentTerminal">
+        <xsd:annotation>
+          <xsd:documentation>PP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AccountDocumentAccountPayment">
+        <xsd:annotation>
+          <xsd:documentation>UD=UP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VSPaymentEmpty">
+        <xsd:annotation>
+          <xsd:documentation>VSP=".</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VSPaymentnotEmpty">
+        <xsd:annotation>
+          <xsd:documentation><![CDATA[VSP<>".]]></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VSPaymentZero">
+        <xsd:annotation>
+          <xsd:documentation>VSP0.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SSPaymentEmpty">
+        <xsd:annotation>
+          <xsd:documentation>SSP=".</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SSPaymentNotEmpty">
+        <xsd:annotation>
+          <xsd:documentation><![CDATA[SSP<>".]]></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SSPaymentZero">
+        <xsd:annotation>
+          <xsd:documentation>SSP0.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AccountDocumentEmpty">
+        <xsd:annotation>
+          <xsd:documentation>CUD=".</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AccountDocumentNotEmpty">
+        <xsd:annotation>
+          <xsd:documentation><![CDATA[CUD<>".]]></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AccountDocumentNumberAccountPaymentNumber">
+        <xsd:annotation>
+          <xsd:documentation>CUD=CUP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AccountAddressAccountPayment">
+        <xsd:annotation>
+          <xsd:documentation>CUA=CUP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SSDocumentSSPayment">
+        <xsd:annotation>
+          <xsd:documentation>SSD=SSP.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- Porovnání částky -->
+  <xsd:simpleType name="amountComparisonType">
+    <xsd:annotation>
+      <xsd:documentation>Porovnání částky.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="equal">
+        <xsd:annotation>
+          <xsd:documentation>Rovna.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="nonzero">
+        <xsd:annotation>
+          <xsd:documentation>Různá od nuly.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- Splněno pří -->
+  <xsd:simpleType name="fulfilledType">
+    <xsd:annotation>
+      <xsd:documentation>Splněno při.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="oneDocument">
+        <xsd:annotation>
+          <xsd:documentation>Jeden doklad.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="oldest">
+        <xsd:annotation>
+          <xsd:documentation>Nejstarší.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="repeatLiquidation">
+        <xsd:annotation>
+          <xsd:documentation>Opakovat likvidaci.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- Ukončit -->
+  <xsd:simpleType name="finishType">
+    <xsd:annotation>
+      <xsd:documentation>Ukončit.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="terminateMatching">
+        <xsd:annotation>
+          <xsd:documentation>Ukončit párování.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="terminateGroup">
+        <xsd:annotation>
+          <xsd:documentation>Ukončit skupinu - žádný doklad.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- RESPONSE -->
+
+  <xsd:element name="rulesPairingResponse" type="rul:rulesPairingResponseType">
+    <xsd:annotation>
+      <xsd:documentation>Odpověď na import pravidla párování. Obsahuje podrobnosti zpracování a id importvaného záznamu.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+
+  <xsd:complexType name="rulesPairingResponseType">
+    <xsd:complexContent>
+      <xsd:extension  base="rdc:documentResponseType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

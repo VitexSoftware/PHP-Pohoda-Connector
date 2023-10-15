@@ -1,0 +1,3 @@
+Pohoda\Prijemka\PrijemkaResponse:
+    xml_root_name: prijemkaResponse
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'

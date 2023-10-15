@@ -1,0 +1,34 @@
+Pohoda\List\ListProductRequirementRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        productRequirementVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: productRequirementVersion
+            accessor:
+                getter: getProductRequirementVersion
+                setter: setProductRequirementVersion
+            xml_attribute: true
+            type: string
+        requestProductRequirement:
+            expose: true
+            access_type: public_method
+            serialized_name: requestProductRequirement
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestProductRequirement
+                setter: setRequestProductRequirement
+            xml_list:
+                inline: true
+                entry_name: requestProductRequirement
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Filter\RequestProductRequirementType>

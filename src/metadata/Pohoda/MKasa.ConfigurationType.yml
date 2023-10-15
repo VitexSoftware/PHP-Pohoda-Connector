@@ -1,0 +1,62 @@
+Pohoda\MKasa\ConfigurationType:
+    properties:
+        pohodaSNID:
+            expose: true
+            access_type: public_method
+            serialized_name: pohodaSNID
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getPohodaSNID
+                setter: setPohodaSNID
+            type: string
+        pohodaPackNum:
+            expose: true
+            access_type: public_method
+            serialized_name: pohodaPackNum
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getPohodaPackNum
+                setter: setPohodaPackNum
+            type: int
+        companyInfo:
+            expose: true
+            access_type: public_method
+            serialized_name: companyInfo
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getCompanyInfo
+                setter: setCompanyInfo
+            type: Pohoda\MKasa\CompanyInfoType
+        kasaInfo:
+            expose: true
+            access_type: public_method
+            serialized_name: kasaInfo
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getKasaInfo
+                setter: setKasaInfo
+            type: Pohoda\MKasa\KasaInfoType
+        pohodaRestriction:
+            expose: true
+            access_type: public_method
+            serialized_name: pohodaRestriction
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getPohodaRestriction
+                setter: setPohodaRestriction
+            type: Pohoda\MKasa\PohodaRestrictionType
+        globalSettings:
+            expose: true
+            access_type: public_method
+            serialized_name: globalSettings
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getGlobalSettings
+                setter: setGlobalSettings
+            type: Pohoda\MKasa\ConfigurationType\GlobalSettingsAType

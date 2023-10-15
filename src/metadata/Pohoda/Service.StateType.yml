@@ -1,0 +1,72 @@
+Pohoda\Service\StateType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        date:
+            expose: true
+            access_type: public_method
+            serialized_name: date
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getDate
+                setter: setDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        status:
+            expose: true
+            access_type: public_method
+            serialized_name: status
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getStatus
+                setter: setStatus
+            type: Pohoda\Type\RefType
+        responsiblePerson:
+            expose: true
+            access_type: public_method
+            serialized_name: responsiblePerson
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getResponsiblePerson
+                setter: setResponsiblePerson
+            type: Pohoda\Type\RefTypeLongType
+        companyService:
+            expose: true
+            access_type: public_method
+            serialized_name: companyService
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getCompanyService
+                setter: setCompanyService
+            type: Pohoda\Service\ServiceAddressType
+        forwarding:
+            expose: true
+            access_type: public_method
+            serialized_name: forwarding
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getForwarding
+                setter: setForwarding
+            type: Pohoda\Type\RefType
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string

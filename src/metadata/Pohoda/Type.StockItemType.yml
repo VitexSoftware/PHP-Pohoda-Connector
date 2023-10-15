@@ -1,0 +1,42 @@
+Pohoda\Type\StockItemType:
+    properties:
+        store:
+            expose: true
+            access_type: public_method
+            serialized_name: store
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getStore
+                setter: setStore
+            type: Pohoda\Type\RefType
+        stockItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getStockItem
+                setter: setStockItem
+            type: Pohoda\Type\StockRefType
+        serialNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: serialNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getSerialNumber
+                setter: setSerialNumber
+            type: string
+        serialNumberExtId:
+            expose: true
+            access_type: public_method
+            serialized_name: serialNumberExtId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getSerialNumberExtId
+                setter: setSerialNumberExtId
+            type: Pohoda\Type\ExtIdType

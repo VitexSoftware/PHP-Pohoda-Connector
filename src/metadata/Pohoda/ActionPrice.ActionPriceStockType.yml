@@ -1,0 +1,32 @@
+Pohoda\ActionPrice\ActionPriceStockType:
+    properties:
+        price:
+            expose: true
+            access_type: public_method
+            serialized_name: price
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getPrice
+                setter: setPrice
+            type: float
+        discountPercentage:
+            expose: true
+            access_type: public_method
+            serialized_name: discountPercentage
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getDiscountPercentage
+                setter: setDiscountPercentage
+            type: float
+        fixedPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: fixedPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getFixedPrice
+                setter: setFixedPrice
+            type: string

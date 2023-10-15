@@ -1,0 +1,16 @@
+Pohoda\ActionPrice\ActionPriceGroupsType:
+    properties:
+        group:
+            expose: true
+            access_type: public_method
+            serialized_name: group
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getGroup
+                setter: setGroup
+            xml_list:
+                inline: true
+                entry_name: group
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            type: array<Pohoda\ActionPrice\GroupType>

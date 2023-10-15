@@ -1,0 +1,12 @@
+Pohoda\Voucher\LiquidationType:
+    properties:
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: string

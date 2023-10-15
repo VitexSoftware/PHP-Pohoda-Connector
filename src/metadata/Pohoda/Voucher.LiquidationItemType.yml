@@ -1,0 +1,132 @@
+Pohoda\Voucher\LiquidationItemType:
+    properties:
+        text:
+            expose: true
+            access_type: public_method
+            serialized_name: text
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getText
+                setter: setText
+            type: string
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: quantity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: float
+        payVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: payVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getPayVAT
+                setter: setPayVAT
+            type: string
+        rateVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: rateVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getRateVAT
+                setter: setRateVAT
+            type: Pohoda\Type\VatRateType
+        homeCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: homeCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getHomeCurrency
+                setter: setHomeCurrency
+            type: Pohoda\Type\TypeCurrencyHomeItem2Type
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        symPar:
+            expose: true
+            access_type: public_method
+            serialized_name: symPar
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getSymPar
+                setter: setSymPar
+            type: string
+        accounting:
+            expose: true
+            access_type: public_method
+            serialized_name: accounting
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getAccounting
+                setter: setAccounting
+            type: Pohoda\Type\RefType
+        classificationVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getClassificationVAT
+                setter: setClassificationVAT
+            type: Pohoda\Type\ClassificationVATType
+        classificationKVDPH:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationKVDPH
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getClassificationKVDPH
+                setter: setClassificationKVDPH
+            type: Pohoda\Type\RefType
+        centre:
+            expose: true
+            access_type: public_method
+            serialized_name: centre
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getCentre
+                setter: setCentre
+            type: Pohoda\Type\RefType
+        activity:
+            expose: true
+            access_type: public_method
+            serialized_name: activity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getActivity
+                setter: setActivity
+            type: Pohoda\Type\RefType
+        contract:
+            expose: true
+            access_type: public_method
+            serialized_name: contract
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getContract
+                setter: setContract
+            type: Pohoda\Type\RefType

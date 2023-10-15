@@ -1,0 +1,72 @@
+Pohoda\InventoryLists\InventoryListsItemType:
+    properties:
+        stockItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getStockItem
+                setter: setStockItem
+            type: Pohoda\Type\StockItemType
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getCode
+                setter: setCode
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        text:
+            expose: true
+            access_type: public_method
+            serialized_name: text
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getText
+                setter: setText
+            type: string
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: quantity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: float
+        unit:
+            expose: true
+            access_type: public_method
+            serialized_name: unit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getUnit
+                setter: setUnit
+            type: string
+        isDelivered:
+            expose: true
+            access_type: public_method
+            serialized_name: isDelivered
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getIsDelivered
+                setter: setIsDelivered
+            type: string

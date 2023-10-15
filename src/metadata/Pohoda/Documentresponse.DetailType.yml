@@ -1,0 +1,62 @@
+Pohoda\Documentresponse\DetailType:
+    properties:
+        state:
+            expose: true
+            access_type: public_method
+            serialized_name: state
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getState
+                setter: setState
+            type: string
+        errno:
+            expose: true
+            access_type: public_method
+            serialized_name: errno
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getErrno
+                setter: setErrno
+            type: int
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        xPath:
+            expose: true
+            access_type: public_method
+            serialized_name: XPath
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getXPath
+                setter: setXPath
+            type: string
+        valueRequested:
+            expose: true
+            access_type: public_method
+            serialized_name: valueRequested
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getValueRequested
+                setter: setValueRequested
+            type: string
+        valueProduced:
+            expose: true
+            access_type: public_method
+            serialized_name: valueProduced
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getValueProduced
+                setter: setValueProduced
+            type: string

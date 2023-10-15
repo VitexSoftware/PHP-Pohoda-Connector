@@ -1,0 +1,76 @@
+Pohoda\Voucher\VoucherType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        cancelDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: cancelDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getCancelDocument
+                setter: setCancelDocument
+            type: Pohoda\Type\CancelDocumentType
+        voucherHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: voucherHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getVoucherHeader
+                setter: setVoucherHeader
+            type: Pohoda\Voucher\VoucherHeaderType
+        voucherDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: voucherDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getVoucherDetail
+                setter: setVoucherDetail
+            type: Pohoda\Voucher\VoucherDetailType
+        voucherSummary:
+            expose: true
+            access_type: public_method
+            serialized_name: voucherSummary
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getVoucherSummary
+                setter: setVoucherSummary
+            type: Pohoda\Voucher\VoucherSummaryType
+        eET:
+            expose: true
+            access_type: public_method
+            serialized_name: EET
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getEET
+                setter: setEET
+            type: Pohoda\Type\EETType
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

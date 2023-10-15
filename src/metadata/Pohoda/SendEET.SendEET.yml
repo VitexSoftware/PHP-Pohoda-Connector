@@ -1,0 +1,3 @@
+Pohoda\SendEET\SendEET:
+    xml_root_name: sendEET
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/sendEET.xsd'

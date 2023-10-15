@@ -1,0 +1,22 @@
+Pohoda\Invoice\InvoiceHeaderType\PaymentAccountAType:
+    properties:
+        accountNo:
+            expose: true
+            access_type: public_method
+            serialized_name: accountNo
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getAccountNo
+                setter: setAccountNo
+            type: string
+        bankCode:
+            expose: true
+            access_type: public_method
+            serialized_name: bankCode
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getBankCode
+                setter: setBankCode
+            type: string

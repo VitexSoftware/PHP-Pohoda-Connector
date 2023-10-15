@@ -1,0 +1,16 @@
+Pohoda\Prodejka\PaymentsType:
+    properties:
+        paymentItem:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getPaymentItem
+                setter: setPaymentItem
+            xml_list:
+                inline: true
+                entry_name: paymentItem
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            type: array<Pohoda\Prodejka\PaymentItemType>

@@ -1,0 +1,66 @@
+Pohoda\List\ListOrderRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        orderType:
+            expose: true
+            access_type: public_method
+            serialized_name: orderType
+            accessor:
+                getter: getOrderType
+                setter: setOrderType
+            xml_attribute: true
+            type: string
+        orderVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: orderVersion
+            accessor:
+                getter: getOrderVersion
+                setter: setOrderVersion
+            xml_attribute: true
+            type: string
+        extSystem:
+            expose: true
+            access_type: public_method
+            serialized_name: extSystem
+            accessor:
+                getter: getExtSystem
+                setter: setExtSystem
+            xml_attribute: true
+            type: string
+        requestOrder:
+            expose: true
+            access_type: public_method
+            serialized_name: requestOrder
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestOrder
+                setter: setRequestOrder
+            xml_list:
+                inline: true
+                entry_name: requestOrder
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Filter\RequestOrderType>
+        restrictionData:
+            expose: true
+            access_type: public_method
+            serialized_name: restrictionData
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRestrictionData
+                setter: setRestrictionData
+            xml_list:
+                inline: true
+                entry_name: restrictionData
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\RestrictionDocParamType>

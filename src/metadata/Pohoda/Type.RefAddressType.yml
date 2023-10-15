@@ -1,0 +1,32 @@
+Pohoda\Type\RefAddressType:
+    properties:
+        refAD:
+            expose: true
+            access_type: public_method
+            serialized_name: refAD
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getRefAD
+                setter: setRefAD
+            type: int
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: Pohoda\Type\ExtIdType
+        address:
+            expose: true
+            access_type: public_method
+            serialized_name: address
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getAddress
+                setter: setAddress
+            type: Pohoda\Type\AddressType

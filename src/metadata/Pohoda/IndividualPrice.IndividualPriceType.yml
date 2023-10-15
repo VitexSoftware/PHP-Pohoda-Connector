@@ -1,0 +1,31 @@
+Pohoda\IndividualPrice\IndividualPriceType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        partnerIdentity:
+            expose: true
+            access_type: public_method
+            serialized_name: partnerIdentity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getPartnerIdentity
+                setter: setPartnerIdentity
+            type: Pohoda\IndividualPrice\AddressType
+        setPrices:
+            expose: true
+            access_type: public_method
+            serialized_name: setPrices
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getSetPrices
+                setter: setSetPrices
+            type: Pohoda\IndividualPrice\SetPricesType

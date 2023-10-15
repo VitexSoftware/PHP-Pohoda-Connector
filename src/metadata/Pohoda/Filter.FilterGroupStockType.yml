@@ -1,0 +1,32 @@
+Pohoda\Filter\FilterGroupStockType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getCode
+                setter: setCode
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string

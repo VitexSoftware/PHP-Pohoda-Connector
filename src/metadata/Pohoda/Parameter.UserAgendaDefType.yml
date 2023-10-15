@@ -1,0 +1,112 @@
+Pohoda\Parameter\UserAgendaDefType:
+    properties:
+        idsUserAgenda:
+            expose: true
+            access_type: public_method
+            serialized_name: idsUserAgenda
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getIdsUserAgenda
+                setter: setIdsUserAgenda
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        tabMain:
+            expose: true
+            access_type: public_method
+            serialized_name: tabMain
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getTabMain
+                setter: setTabMain
+            type: string
+        tabItem:
+            expose: true
+            access_type: public_method
+            serialized_name: tabItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getTabItem
+                setter: setTabItem
+            type: string
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: Pohoda\Type\NumberType
+        items:
+            expose: true
+            access_type: public_method
+            serialized_name: items
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getItems
+                setter: setItems
+            type: string
+        templates:
+            expose: true
+            access_type: public_method
+            serialized_name: templates
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getTemplates
+                setter: setTemplates
+            type: string
+        documents:
+            expose: true
+            access_type: public_method
+            serialized_name: documents
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getDocuments
+                setter: setDocuments
+            type: string
+        list:
+            expose: true
+            access_type: public_method
+            serialized_name: list
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getList
+                setter: setList
+            type: string
+        listIDS:
+            expose: true
+            access_type: public_method
+            serialized_name: listIDS
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getListIDS
+                setter: setListIDS
+            type: string
+        listSText:
+            expose: true
+            access_type: public_method
+            serialized_name: listSText
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getListSText
+                setter: setListSText
+            type: string

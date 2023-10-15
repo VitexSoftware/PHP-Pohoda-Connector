@@ -1,0 +1,76 @@
+Pohoda\Vydejka\VydejkaType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        links:
+            expose: true
+            access_type: public_method
+            serialized_name: links
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vydejka.xsd'
+            accessor:
+                getter: getLinks
+                setter: setLinks
+            type: Pohoda\Type\LinksType
+        vydejkaHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: vydejkaHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vydejka.xsd'
+            accessor:
+                getter: getVydejkaHeader
+                setter: setVydejkaHeader
+            type: Pohoda\Vydejka\VydejkaHeaderType
+        vydejkaDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: vydejkaDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vydejka.xsd'
+            accessor:
+                getter: getVydejkaDetail
+                setter: setVydejkaDetail
+            type: Pohoda\Vydejka\VydejkaDetailType
+        vydejkaSummary:
+            expose: true
+            access_type: public_method
+            serialized_name: vydejkaSummary
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vydejka.xsd'
+            accessor:
+                getter: getVydejkaSummary
+                setter: setVydejkaSummary
+            type: Pohoda\Vydejka\VydejkaSummaryType
+        linkedDocuments:
+            expose: true
+            access_type: public_method
+            serialized_name: linkedDocuments
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vydejka.xsd'
+            accessor:
+                getter: getLinkedDocuments
+                setter: setLinkedDocuments
+            type: Pohoda\Type\LinksType
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vydejka.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

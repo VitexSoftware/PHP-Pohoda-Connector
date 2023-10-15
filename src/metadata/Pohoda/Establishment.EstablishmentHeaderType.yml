@@ -1,0 +1,132 @@
+Pohoda\Establishment\EstablishmentHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: Pohoda\Type\ExtIdType
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getCode
+                setter: setCode
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        street:
+            expose: true
+            access_type: public_method
+            serialized_name: street
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getStreet
+                setter: setStreet
+            type: string
+        zip:
+            expose: true
+            access_type: public_method
+            serialized_name: zip
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getZip
+                setter: setZip
+            type: string
+        city:
+            expose: true
+            access_type: public_method
+            serialized_name: city
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getCity
+                setter: setCity
+            type: string
+        phone:
+            expose: true
+            access_type: public_method
+            serialized_name: phone
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getPhone
+                setter: setPhone
+            type: string
+        mobil:
+            expose: true
+            access_type: public_method
+            serialized_name: mobil
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getMobil
+                setter: setMobil
+            type: string
+        fax:
+            expose: true
+            access_type: public_method
+            serialized_name: fax
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getFax
+                setter: setFax
+            type: string
+        email:
+            expose: true
+            access_type: public_method
+            serialized_name: email
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getEmail
+                setter: setEmail
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        markRecord:
+            expose: true
+            access_type: public_method
+            serialized_name: markRecord
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/establishment.xsd'
+            accessor:
+                getter: getMarkRecord
+                setter: setMarkRecord
+            type: string

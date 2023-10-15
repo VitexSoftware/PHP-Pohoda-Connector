@@ -1,0 +1,12 @@
+Pohoda\Stock\EKasaItemType:
+    properties:
+        refundType:
+            expose: true
+            access_type: public_method
+            serialized_name: refundType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getRefundType
+                setter: setRefundType
+            type: string

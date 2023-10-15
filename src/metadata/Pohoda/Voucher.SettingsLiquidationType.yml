@@ -1,0 +1,42 @@
+Pohoda\Voucher\SettingsLiquidationType:
+    properties:
+        sourceAgenda:
+            expose: true
+            access_type: public_method
+            serialized_name: sourceAgenda
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getSourceAgenda
+                setter: setSourceAgenda
+            type: string
+        sourceDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: sourceDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getSourceDocument
+                setter: setSourceDocument
+            type: Pohoda\Type\SourceDocumentType
+        liquidationPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: liquidationPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getLiquidationPrice
+                setter: setLiquidationPrice
+            type: float
+        liquidation:
+            expose: true
+            access_type: public_method
+            serialized_name: liquidation
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getLiquidation
+                setter: setLiquidation
+            type: Pohoda\Voucher\LiquidationType

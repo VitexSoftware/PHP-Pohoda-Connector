@@ -1,0 +1,16 @@
+Pohoda\Stock\StockAttachType:
+    properties:
+        attachItem:
+            expose: true
+            access_type: public_method
+            serialized_name: attachItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getAttachItem
+                setter: setAttachItem
+            xml_list:
+                inline: true
+                entry_name: attachItem
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            type: array<Pohoda\Stock\AttachItemType>

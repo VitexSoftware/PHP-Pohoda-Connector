@@ -1,0 +1,121 @@
+Pohoda\Prodejka\ProdejkaType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        cancelDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: cancelDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getCancelDocument
+                setter: setCancelDocument
+            type: Pohoda\Type\CancelDocumentType
+        links:
+            expose: true
+            access_type: public_method
+            serialized_name: links
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getLinks
+                setter: setLinks
+            type: Pohoda\Type\LinksType
+        prodejkaHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: prodejkaHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getProdejkaHeader
+                setter: setProdejkaHeader
+            type: Pohoda\Prodejka\ProdejkaHeaderType
+        prodejkaDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: prodejkaDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getProdejkaDetail
+                setter: setProdejkaDetail
+            type: Pohoda\Prodejka\ProdejkaDetailType
+        prodejkaPayments:
+            expose: true
+            access_type: public_method
+            serialized_name: prodejkaPayments
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getProdejkaPayments
+                setter: setProdejkaPayments
+            type: array<Pohoda\Prodejka\PaymentItemType>
+            xml_list:
+                inline: false
+                entry_name: paymentItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+        prodejkaSummary:
+            expose: true
+            access_type: public_method
+            serialized_name: prodejkaSummary
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getProdejkaSummary
+                setter: setProdejkaSummary
+            type: Pohoda\Prodejka\ProdejkaSummaryType
+        linkedDocuments:
+            expose: true
+            access_type: public_method
+            serialized_name: linkedDocuments
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getLinkedDocuments
+                setter: setLinkedDocuments
+            type: Pohoda\Type\LinksType
+        eET:
+            expose: true
+            access_type: public_method
+            serialized_name: EET
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getEET
+                setter: setEET
+            type: Pohoda\Type\EETType
+        eKasa:
+            expose: true
+            access_type: public_method
+            serialized_name: eKasa
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getEKasa
+                setter: setEKasa
+            type: Pohoda\Prodejka\EKasaType
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

@@ -1,0 +1,22 @@
+Pohoda\Type\StockItemMovementType:
+    properties:
+        storage:
+            expose: true
+            access_type: public_method
+            serialized_name: storage
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getStorage
+                setter: setStorage
+            type: Pohoda\Type\RefTypeStorageType
+        stockItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getStockItem
+                setter: setStockItem
+            type: Pohoda\Type\StockItemMovementType\StockItemAType

@@ -1,0 +1,72 @@
+Pohoda\Type\SettingsSourceDocumentItemType:
+    properties:
+        linkIssueSlipItemToInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: linkIssueSlipItemToInvoice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLinkIssueSlipItemToInvoice
+                setter: setLinkIssueSlipItemToInvoice
+            type: string
+        linkIssueOfferItemToReceivedOrder:
+            expose: true
+            access_type: public_method
+            serialized_name: linkIssueOfferItemToReceivedOrder
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLinkIssueOfferItemToReceivedOrder
+                setter: setLinkIssueOfferItemToReceivedOrder
+            type: string
+        linkReceivedOrderItemToTransfer:
+            expose: true
+            access_type: public_method
+            serialized_name: linkReceivedOrderItemToTransfer
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLinkReceivedOrderItemToTransfer
+                setter: setLinkReceivedOrderItemToTransfer
+            type: string
+        linkReceivedOrderItemToSaleVoucher:
+            expose: true
+            access_type: public_method
+            serialized_name: linkReceivedOrderItemToSaleVoucher
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLinkReceivedOrderItemToSaleVoucher
+                setter: setLinkReceivedOrderItemToSaleVoucher
+            type: string
+        linkIssueSlipItemToSaleVoucher:
+            expose: true
+            access_type: public_method
+            serialized_name: linkIssueSlipItemToSaleVoucher
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLinkIssueSlipItemToSaleVoucher
+                setter: setLinkIssueSlipItemToSaleVoucher
+            type: string
+        linkIssuedInvoiceToIssueSlip:
+            expose: true
+            access_type: public_method
+            serialized_name: linkIssuedInvoiceToIssueSlip
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLinkIssuedInvoiceToIssueSlip
+                setter: setLinkIssuedInvoiceToIssueSlip
+            type: string
+        linkIssuedOrderToReceiptVoucher:
+            expose: true
+            access_type: public_method
+            serialized_name: linkIssuedOrderToReceiptVoucher
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLinkIssuedOrderToReceiptVoucher
+                setter: setLinkIssuedOrderToReceiptVoucher
+            type: string

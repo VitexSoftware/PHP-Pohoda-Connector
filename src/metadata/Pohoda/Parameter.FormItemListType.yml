@@ -1,0 +1,25 @@
+Pohoda\Parameter\FormItemListType:
+    properties:
+        formAgenda:
+            expose: true
+            access_type: public_method
+            serialized_name: formAgenda
+            accessor:
+                getter: getFormAgenda
+                setter: setFormAgenda
+            xml_attribute: true
+            type: string
+        ctrlDef:
+            expose: true
+            access_type: public_method
+            serialized_name: ctrlDef
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getCtrlDef
+                setter: setCtrlDef
+            xml_list:
+                inline: true
+                entry_name: ctrlDef
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            type: array<Pohoda\Parameter\CtrlDefType>

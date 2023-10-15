@@ -1,0 +1,12 @@
+Pohoda\TaxDocumentType:
+    properties:
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: string

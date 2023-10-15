@@ -1,0 +1,43 @@
+Pohoda\List\ListSupplierRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        supplierVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: supplierVersion
+            accessor:
+                getter: getSupplierVersion
+                setter: setSupplierVersion
+            xml_attribute: true
+            type: string
+        extSystem:
+            expose: true
+            access_type: public_method
+            serialized_name: extSystem
+            accessor:
+                getter: getExtSystem
+                setter: setExtSystem
+            xml_attribute: true
+            type: string
+        requestSupplier:
+            expose: true
+            access_type: public_method
+            serialized_name: requestSupplier
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestSupplier
+                setter: setRequestSupplier
+            xml_list:
+                inline: true
+                entry_name: requestSupplier
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Filter\RequestStockType>

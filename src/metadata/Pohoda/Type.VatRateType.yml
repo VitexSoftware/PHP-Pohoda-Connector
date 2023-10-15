@@ -1,0 +1,19 @@
+Pohoda\Type\VatRateType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string
+        value:
+            expose: true
+            access_type: public_method
+            serialized_name: value
+            accessor:
+                getter: getValue
+                setter: setValue
+            xml_attribute: true
+            type: float

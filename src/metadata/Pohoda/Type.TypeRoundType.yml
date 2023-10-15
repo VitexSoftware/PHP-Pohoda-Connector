@@ -1,0 +1,42 @@
+Pohoda\Type\TypeRoundType:
+    properties:
+        priceRound:
+            expose: true
+            access_type: public_method
+            serialized_name: priceRound
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceRound
+                setter: setPriceRound
+            type: float
+        rateVATround:
+            expose: true
+            access_type: public_method
+            serialized_name: rateVATround
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getRateVATround
+                setter: setRateVATround
+            type: float
+        priceRoundSum:
+            expose: true
+            access_type: public_method
+            serialized_name: priceRoundSum
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceRoundSum
+                setter: setPriceRoundSum
+            type: float
+        priceRoundSumVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: priceRoundSumVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceRoundSumVAT
+                setter: setPriceRoundSumVAT
+            type: float

@@ -1,0 +1,16 @@
+Pohoda\DocumentsType:
+    properties:
+        document:
+            expose: true
+            access_type: public_method
+            serialized_name: document
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getDocument
+                setter: setDocument
+            xml_list:
+                inline: true
+                entry_name: document
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            type: array<Pohoda\DocumentType>

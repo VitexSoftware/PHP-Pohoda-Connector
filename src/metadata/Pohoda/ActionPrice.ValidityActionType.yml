@@ -1,0 +1,22 @@
+Pohoda\ActionPrice\ValidityActionType:
+    properties:
+        dateFrom:
+            expose: true
+            access_type: public_method
+            serialized_name: dateFrom
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getDateFrom
+                setter: setDateFrom
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        dateTill:
+            expose: true
+            access_type: public_method
+            serialized_name: dateTill
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getDateTill
+                setter: setDateTill
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date

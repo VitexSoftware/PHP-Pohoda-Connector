@@ -1,0 +1,16 @@
+Pohoda\AccountingSalesVouchers\ProducedAccountingDocsType:
+    properties:
+        accountingDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: accountingDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            accessor:
+                getter: getAccountingDocument
+                setter: setAccountingDocument
+            xml_list:
+                inline: true
+                entry_name: accountingDocument
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            type: array<Pohoda\AccountingSalesVouchers\AccountingDocumentType>

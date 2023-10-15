@@ -1,0 +1,68 @@
+Pohoda\Documentresponse\ListVersionType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        dateTimeStamp:
+            expose: true
+            access_type: public_method
+            serialized_name: dateTimeStamp
+            accessor:
+                getter: getDateTimeStamp
+                setter: setDateTimeStamp
+            xml_attribute: true
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        dateValidFrom:
+            expose: true
+            access_type: public_method
+            serialized_name: dateValidFrom
+            accessor:
+                getter: getDateValidFrom
+                setter: setDateValidFrom
+            xml_attribute: true
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        state:
+            expose: true
+            access_type: public_method
+            serialized_name: state
+            accessor:
+                getter: getState
+                setter: setState
+            xml_attribute: true
+            type: string
+        importDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: importDetails
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getImportDetails
+                setter: setImportDetails
+            type: array<Pohoda\Documentresponse\DetailType>
+            xml_list:
+                inline: false
+                entry_name: detail
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+        parts:
+            expose: true
+            access_type: public_method
+            serialized_name: parts
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getParts
+                setter: setParts
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: part
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'

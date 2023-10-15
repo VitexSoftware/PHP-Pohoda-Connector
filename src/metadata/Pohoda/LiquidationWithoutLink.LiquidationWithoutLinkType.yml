@@ -1,0 +1,61 @@
+Pohoda\LiquidationWithoutLink\LiquidationWithoutLinkType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: Pohoda\Type\ExtIdType
+        record:
+            expose: true
+            access_type: public_method
+            serialized_name: record
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd'
+            accessor:
+                getter: getRecord
+                setter: setRecord
+            type: Pohoda\LiquidationWithoutLink\RecordliquidationWithoutLinkType
+        date:
+            expose: true
+            access_type: public_method
+            serialized_name: date
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd'
+            accessor:
+                getter: getDate
+                setter: setDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        amountHome:
+            expose: true
+            access_type: public_method
+            serialized_name: amountHome
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd'
+            accessor:
+                getter: getAmountHome
+                setter: setAmountHome
+            type: float
+        amountForeign:
+            expose: true
+            access_type: public_method
+            serialized_name: amountForeign
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd'
+            accessor:
+                getter: getAmountForeign
+                setter: setAmountForeign
+            type: float

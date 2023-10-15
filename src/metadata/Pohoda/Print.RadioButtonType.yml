@@ -1,0 +1,22 @@
+Pohoda\Print\RadioButtonType:
+    properties:
+        value:
+            expose: true
+            access_type: public_method
+            serialized_name: value
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getValue
+                setter: setValue
+            type: int
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string

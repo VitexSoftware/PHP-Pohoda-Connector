@@ -1,0 +1,26 @@
+Pohoda\Enquiry\EnquiryDetailType:
+    properties:
+        enquiryItem:
+            expose: true
+            access_type: public_method
+            serialized_name: enquiryItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/enquiry.xsd'
+            accessor:
+                getter: getEnquiryItem
+                setter: setEnquiryItem
+            xml_list:
+                inline: true
+                entry_name: enquiryItem
+                namespace: 'http://www.stormware.cz/schema/version_2/enquiry.xsd'
+            type: array<Pohoda\Enquiry\EnquiryItemType>
+        roundingItem:
+            expose: true
+            access_type: public_method
+            serialized_name: roundingItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/enquiry.xsd'
+            accessor:
+                getter: getRoundingItem
+                setter: setRoundingItem
+            type: Pohoda\Type\RoundingItemType

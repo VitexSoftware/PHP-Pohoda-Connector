@@ -1,0 +1,82 @@
+Pohoda\Gdpr\GDPRHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/GDPR.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        gDPRType:
+            expose: true
+            access_type: public_method
+            serialized_name: GDPRType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/GDPR.xsd'
+            accessor:
+                getter: getGDPRType
+                setter: setGDPRType
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/GDPR.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: description
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/GDPR.xsd'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            type: string
+        valueOfValidity:
+            expose: true
+            access_type: public_method
+            serialized_name: valueOfValidity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/GDPR.xsd'
+            accessor:
+                getter: getValueOfValidity
+                setter: setValueOfValidity
+            type: int
+        typeOfValidity:
+            expose: true
+            access_type: public_method
+            serialized_name: typeOfValidity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/GDPR.xsd'
+            accessor:
+                getter: getTypeOfValidity
+                setter: setTypeOfValidity
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/GDPR.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        markRecord:
+            expose: true
+            access_type: public_method
+            serialized_name: markRecord
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/GDPR.xsd'
+            accessor:
+                getter: getMarkRecord
+                setter: setMarkRecord
+            type: string

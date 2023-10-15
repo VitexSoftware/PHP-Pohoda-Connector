@@ -1,0 +1,16 @@
+Pohoda\ListCentre\ListCentreType:
+    properties:
+        centre:
+            expose: true
+            access_type: public_method
+            serialized_name: centre
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_centre.xsd'
+            accessor:
+                getter: getCentre
+                setter: setCentre
+            xml_list:
+                inline: true
+                entry_name: centre
+                namespace: 'http://www.stormware.cz/schema/version_2/list_centre.xsd'
+            type: array<Pohoda\Centre\CentreType>

@@ -1,0 +1,12 @@
+Pohoda\Isdoc\SignatureCertificateType:
+    properties:
+        serialNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: serialNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/isdoc.xsd'
+            accessor:
+                getter: getSerialNumber
+                setter: setSerialNumber
+            type: string

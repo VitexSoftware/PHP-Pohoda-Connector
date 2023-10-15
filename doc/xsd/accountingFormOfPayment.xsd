@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+			xmlns:afp="http://www.stormware.cz/schema/version_2/accountingFormOfPayment.xsd"
+			xmlns="http://www.stormware.cz/schema/version_2/accountingFormOfPayment.xsd"
+			targetNamespace="http://www.stormware.cz/schema/version_2/accountingFormOfPayment.xsd"
+			elementFormDefault="qualified"
+>
+
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" 	schemaLocation="documentresponse.xsd"/>
+
+  <!-- **************************************************************************
+		Agenda zaúčtování forem úhrad
+	 ************************************************************************** -->
+
+  <xsd:element name="accountingFormOfPayment" type="accountingFormOfPaymentTypeRoot"/>
+
+  <xsd:complexType name="accountingFormOfPaymentTypeRoot">
+    <xsd:sequence minOccurs="1" maxOccurs="1">
+      <xsd:element name="accountingFormOfPaymentHeader" type="afp:accountingFormOfPaymentHeaderType" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attribute name="version" type="afp:accountingFormOfPaymentVersionType" use="required"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="accountingFormOfPaymentVersionType">
+    <xsd:annotation>
+      <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="2.0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="accountingFormOfPaymentHeaderType">
+    <xsd:all>
+      <xsd:element name="id" type="typ:idType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>ID záznamu(pouze pro export).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="extId" type="typ:extIdType" minOccurs="0" >
+        <xsd:annotation>
+          <xsd:documentation>
+            Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
+            vazbu mezi agendou a externí databází.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="centre" type="typ:refType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Středisko.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="paymentType" type="typ:paymentType" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Forma úhrady.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="accountingDestination" type="afp:accountingDestinationType" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Zaúčtování.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="account" type="typ:accountType" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Bankovní účet nebo pokladna.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="setTheAccountIndependently" type="typ:boolean" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Nastavení účtování formy úhrady: "na střediska / samostatně".</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="debit" type="typ:numberAccountType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Účet MD(pouze pro účetnictví typu "PU").</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="credit" type="typ:numberAccountType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Účet DAL(pouze pro účetnictví typu "PU").</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="accounting" type="typ:refType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Předkontace(pouze pro účetnictví typu "DE").</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+    </xsd:all>
+  </xsd:complexType>
+
+  <!--Zaúčtování-->
+  <xsd:simpleType name="accountingDestinationType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="cashbox"/>
+      <xsd:enumeration value="otherReceivables"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- RESPONSE -->
+
+  <xsd:element name="accountingPaymentResponse" type="afp:accountingPaymentResponseType"/>
+
+  <xsd:complexType name="accountingPaymentResponseType">
+    <xsd:complexContent>
+      <xsd:extension  base="rdc:documentResponseType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+</xsd:schema>

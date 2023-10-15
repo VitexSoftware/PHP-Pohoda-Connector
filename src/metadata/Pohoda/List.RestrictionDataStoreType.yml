@@ -1,0 +1,12 @@
+Pohoda\List\RestrictionDataStoreType:
+    properties:
+        parameters:
+            expose: true
+            access_type: public_method
+            serialized_name: parameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            type: string

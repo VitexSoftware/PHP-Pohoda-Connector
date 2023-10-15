@@ -1,0 +1,72 @@
+Pohoda\RecyclingContrib\RecyclingContribHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/recyclingContrib.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/recyclingContrib.xsd'
+            accessor:
+                getter: getCode
+                setter: setCode
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/recyclingContrib.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        text:
+            expose: true
+            access_type: public_method
+            serialized_name: text
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/recyclingContrib.xsd'
+            accessor:
+                getter: getText
+                setter: setText
+            type: string
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: amount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/recyclingContrib.xsd'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: float
+        unit:
+            expose: true
+            access_type: public_method
+            serialized_name: unit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/recyclingContrib.xsd'
+            accessor:
+                getter: getUnit
+                setter: setUnit
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/recyclingContrib.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string

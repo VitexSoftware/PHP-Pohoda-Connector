@@ -1,0 +1,42 @@
+Pohoda\IntParam\ParameterListItemType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: description
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            type: string
+        sequence:
+            expose: true
+            access_type: public_method
+            serialized_name: sequence
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            accessor:
+                getter: getSequence
+                setter: setSequence
+            type: int

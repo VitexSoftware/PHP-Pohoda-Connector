@@ -1,0 +1,88 @@
+Pohoda\List\ListUserCodeType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        dateTimeStamp:
+            expose: true
+            access_type: public_method
+            serialized_name: dateTimeStamp
+            accessor:
+                getter: getDateTimeStamp
+                setter: setDateTimeStamp
+            xml_attribute: true
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        dateValidFrom:
+            expose: true
+            access_type: public_method
+            serialized_name: dateValidFrom
+            accessor:
+                getter: getDateValidFrom
+                setter: setDateValidFrom
+            xml_attribute: true
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        state:
+            expose: true
+            access_type: public_method
+            serialized_name: state
+            accessor:
+                getter: getState
+                setter: setState
+            xml_attribute: true
+            type: string
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: int
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            accessor:
+                getter: getCode
+                setter: setCode
+            xml_attribute: true
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            accessor:
+                getter: getName
+                setter: setName
+            xml_attribute: true
+            type: string
+        constants:
+            expose: true
+            access_type: public_method
+            serialized_name: constants
+            accessor:
+                getter: getConstants
+                setter: setConstants
+            xml_attribute: true
+            type: string
+        itemUserCode:
+            expose: true
+            access_type: public_method
+            serialized_name: itemUserCode
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getItemUserCode
+                setter: setItemUserCode
+            xml_list:
+                inline: true
+                entry_name: itemUserCode
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\ItemUserCodeType>

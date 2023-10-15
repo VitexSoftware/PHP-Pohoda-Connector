@@ -1,0 +1,46 @@
+Pohoda\Bank\BankType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        bankHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: bankHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getBankHeader
+                setter: setBankHeader
+            type: Pohoda\Bank\BankHeaderType
+        bankDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: bankDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getBankDetail
+                setter: setBankDetail
+            type: array<Pohoda\Bank\BankItemType>
+            xml_list:
+                inline: false
+                entry_name: bankItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+        bankSummary:
+            expose: true
+            access_type: public_method
+            serialized_name: bankSummary
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getBankSummary
+                setter: setBankSummary
+            type: Pohoda\Bank\BankSummaryType

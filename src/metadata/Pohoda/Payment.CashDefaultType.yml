@@ -1,0 +1,12 @@
+Pohoda\Payment\CashDefaultType:
+    properties:
+        default:
+            expose: true
+            access_type: public_method
+            serialized_name: default
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/payment.xsd'
+            accessor:
+                getter: getDefault
+                setter: setDefault
+            type: string

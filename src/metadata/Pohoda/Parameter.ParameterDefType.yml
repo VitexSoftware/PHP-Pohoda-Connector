@@ -1,0 +1,152 @@
+Pohoda\Parameter\ParameterDefType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        label:
+            expose: true
+            access_type: public_method
+            serialized_name: label
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getLabel
+                setter: setLabel
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: type
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getType
+                setter: setType
+            type: string
+        length:
+            expose: true
+            access_type: public_method
+            serialized_name: length
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getLength
+                setter: setLength
+            type: int
+        definition:
+            expose: true
+            access_type: public_method
+            serialized_name: definition
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getDefinition
+                setter: setDefinition
+            type: string
+        list:
+            expose: true
+            access_type: public_method
+            serialized_name: list
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getList
+                setter: setList
+            type: Pohoda\Type\RefType
+        write:
+            expose: true
+            access_type: public_method
+            serialized_name: write
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getWrite
+                setter: setWrite
+            type: string
+        row:
+            expose: true
+            access_type: public_method
+            serialized_name: row
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getRow
+                setter: setRow
+            type: int
+        use0:
+            expose: true
+            access_type: public_method
+            serialized_name: use0
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getUse0
+                setter: setUse0
+            type: string
+        use1:
+            expose: true
+            access_type: public_method
+            serialized_name: use1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getUse1
+                setter: setUse1
+            type: string
+        use2:
+            expose: true
+            access_type: public_method
+            serialized_name: use2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getUse2
+                setter: setUse2
+            type: string
+        use3:
+            expose: true
+            access_type: public_method
+            serialized_name: use3
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getUse3
+                setter: setUse3
+            type: string
+        use4:
+            expose: true
+            access_type: public_method
+            serialized_name: use4
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getUse4
+                setter: setUse4
+            type: string
+        use5:
+            expose: true
+            access_type: public_method
+            serialized_name: use5
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getUse5
+                setter: setUse5
+            type: string

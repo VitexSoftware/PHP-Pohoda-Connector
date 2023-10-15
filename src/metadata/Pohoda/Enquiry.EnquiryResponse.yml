@@ -1,0 +1,3 @@
+Pohoda\Enquiry\EnquiryResponse:
+    xml_root_name: enquiryResponse
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/enquiry.xsd'

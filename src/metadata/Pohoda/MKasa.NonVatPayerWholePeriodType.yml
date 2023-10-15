@@ -1,0 +1,12 @@
+Pohoda\MKasa\NonVatPayerWholePeriodType:
+    properties:
+        identifiedPerson:
+            expose: true
+            access_type: public_method
+            serialized_name: identifiedPerson
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getIdentifiedPerson
+                setter: setIdentifiedPerson
+            type: string

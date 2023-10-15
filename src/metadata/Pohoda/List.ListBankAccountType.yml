@@ -1,0 +1,16 @@
+Pohoda\List\ListBankAccountType:
+    properties:
+        bankAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: bankAccount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getBankAccount
+                setter: setBankAccount
+            xml_list:
+                inline: true
+                entry_name: bankAccount
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\BankAccount\BankAccountType>

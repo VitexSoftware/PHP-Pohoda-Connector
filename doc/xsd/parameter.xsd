@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+			xmlns:prm="http://www.stormware.cz/schema/version_2/parameter.xsd"
+			xmlns="http://www.stormware.cz/schema/version_2/parameter.xsd"
+			targetNamespace="http://www.stormware.cz/schema/version_2/parameter.xsd"
+			elementFormDefault="qualified">
+
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd"					schemaLocation="type.xsd"/>
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" 	schemaLocation="documentresponse.xsd"/>
+
+<!-- **************************************************************************
+		Volitelné parametry
+	 ************************************************************************** -->
+
+<!-- REQUEST -->
+<xsd:element name="parameter" type="prm:parameterType"/>
+
+<xsd:complexType name="parameterType">
+	<xsd:annotation>
+		<xsd:documentation>Definice volitelných parametrů formuláře a položek agendy.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="userAgendaDef" type="prm:userAgendaDefType" minOccurs="0"/>
+		<xsd:element name="formParameter" type="prm:parameterItemListType" minOccurs="0"/>
+		<xsd:element name="itemParameter" type="prm:parameterItemListType" minOccurs="0"/>
+		<xsd:element name="userForm" type="prm:formItemListType" minOccurs="0" maxOccurs="6"/>
+		<xsd:choice>
+			<xsd:element name="userCode" type="prm:userCodeType" minOccurs="0"/>
+			<xsd:element name="userCodePart" type="prm:userCodePartType" minOccurs="0"/>
+		</xsd:choice>
+	</xsd:sequence>
+	<xsd:attribute name="version" type="prm:prmVersionType" use="required">
+	<xsd:annotation>
+		  <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>
+	<xsd:attribute name="idsAgenda" type="typ:parameterAgendaType" use="required">
+	 <xsd:annotation>
+		  <xsd:documentation>Agenda, ve které bude možné volitelné parametry používat a dále s nimi pracovat.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>	
+	<xsd:attribute name="idsUserAgenda" type="typ:string10">
+ <xsd:annotation>
+		  <xsd:documentation>Krátký název uživatelské agendy.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>	
+	<xsd:attribute name="id" type="typ:idType">
+			<xsd:annotation>
+				<xsd:documentation>ID uživatelské agendy (jen pro export).</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+</xsd:complexType>
+
+<xsd:simpleType name="prmVersionType">
+	<xsd:annotation>
+		<xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+	</xsd:annotation>
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="2.0"/>
+		<xsd:enumeration value="2.1"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:complexType name="parameterDefType">
+	<xsd:annotation>
+		<xsd:documentation>Definice volitelného parametru.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:all>
+	 <xsd:element name="id" type="typ:idType" minOccurs="0">
+			<xsd:annotation>
+				<xsd:documentation>ID položky dokladu (jen pro export).</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="label" type="typ:string32" minOccurs="0">
+		<xsd:annotation>
+				<xsd:documentation>Název pole, který se bude zobrazovat ve formuláři zvolené agendy.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="name" type="typ:string16" minOccurs="0">
+		<xsd:annotation>
+				<xsd:documentation>Název databázového pole, které bude zapsáno přímo do databáze. Program automaticky doplní před zadaný název zkratku VPr a v případě datového pole typu Seznam RefVpr.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="type" type="typ:parameterDataType" minOccurs="0">
+		<xsd:annotation>
+				<xsd:documentation>Požadovaný datový typ jako je Text, Měna, Číslo, Ano/Ne, Datum a Seznam.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="length" type="xsd:integer" minOccurs="0">
+		<xsd:annotation>
+				<xsd:documentation>Požadovaná délka textového pole. Maximální délka textového pole je 250 znaků.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+        <xsd:element name="definition" type="xsd:string" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Definice počítaného sloupce.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+		<xsd:element name="list" type="typ:refType" minOccurs="0"/>
+    <xsd:element name="write" type="typ:boolean" minOccurs="0" default="true"/>
+    <xsd:element name="row" type="xsd:integer" minOccurs="0" default="1">
+      <xsd:annotation>
+        <xsd:documentation>Řádek v tabulce položek dokladu.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+		<xsd:element name="use0" type="typ:boolean" minOccurs="0" default="false"/>
+		<xsd:element name="use1" type="typ:boolean" minOccurs="0" default="false"/>
+		<xsd:element name="use2" type="typ:boolean" minOccurs="0" default="false"/>
+		<xsd:element name="use3" type="typ:boolean" minOccurs="0" default="false"/>
+		<xsd:element name="use4" type="typ:boolean" minOccurs="0" default="false"/>
+		<xsd:element name="use5" type="typ:boolean" minOccurs="0" default="false"/>
+	</xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="ctrlDefType">
+	<xsd:annotation>
+		<xsd:documentation>Definice prvku formuláře.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:all>
+		<xsd:element name="name" type="typ:string16" minOccurs="1"/>
+		<xsd:element name="label" type="typ:string240" minOccurs="1"/>
+		<xsd:element name="rect" type="typ:rectangle" minOccurs="1"/>
+		<xsd:element name="type" type="typ:ctrlType" minOccurs="1"/>
+		<xsd:element name="style" type="xsd:integer" minOccurs="1"/>
+	</xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="parameterItemListType">
+	<xsd:annotation>
+		<xsd:documentation>Seznam definic volitelných parametrů. U běžných agend je počet programově omezen na 92, uživatelské agendy mají maximálně 128 polí.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="parameterDef" type="prm:parameterDefType" minOccurs="0" maxOccurs="128"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="formItemListType">
+	<xsd:annotation>
+		<xsd:documentation>Seznam definic volitelných parametrů.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="ctrlDef" type="prm:ctrlDefType" minOccurs="0" maxOccurs="255"/>
+	</xsd:sequence>
+	<xsd:attribute name="formAgenda" type="typ:parameterAgendaFormType"/>
+</xsd:complexType>
+
+<xsd:simpleType name="userCodeType">
+	<xsd:annotation>
+		<xsd:documentation>Řetězec o délce 64000 znaků.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:restriction base="xsd:string">
+		<xsd:maxLength value="64000"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:complexType name="userCodePartType">
+	<xsd:annotation>
+		<xsd:documentation>Zdrojový kód uživatelského rozšíření.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+    <xsd:element name="part0" type="prm:userCodeType" minOccurs="0"/>
+    <xsd:element name="part1" type="prm:userCodeType" minOccurs="0"/>
+    <xsd:element name="part2" type="prm:userCodeType" minOccurs="0"/>
+    <xsd:element name="part3" type="prm:userCodeType" minOccurs="0"/>
+    <xsd:element name="part4" type="prm:userCodeType" minOccurs="0"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="userAgendaDefType">
+	<xsd:annotation>
+		<xsd:documentation>Definice uživatelské agendy.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:all>
+		<xsd:element name="idsUserAgenda" type="typ:string10" minOccurs="1">
+		 <xsd:annotation>
+				<xsd:documentation>Krátký název uživatelské agendy.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="name" type="typ:string32" minOccurs="1">
+		<xsd:annotation>
+				<xsd:documentation>Plný název nebo popis uživatelské agendy. Tento údaj se poté zobrazuje v seznamu uživatelských agend.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="tabMain" type="typ:string16" minOccurs="1">
+		<xsd:annotation>
+				<xsd:documentation>Název tabulky, k názvu je automaticky doplněno VTb a pod tímto označením bude agenda evidována v databázi účetní jednotky.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="tabItem" type="typ:string16" minOccurs="1">
+		<xsd:annotation>
+				<xsd:documentation>Název položkové tabulky.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="number" type="typ:numberType" minOccurs="0">
+		<xsd:annotation>
+				<xsd:documentation>Evidenční číslo.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="items" type="typ:boolean" minOccurs="1">
+		<xsd:annotation>
+				<xsd:documentation>Uživatelská agenda obsahuje položkové doklady.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="templates" type="typ:boolean" minOccurs="1">
+		<xsd:annotation>
+				<xsd:documentation>Uživatelská agenda obsahuje šablony.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="documents" type="typ:boolean" minOccurs="1">
+		<xsd:annotation>
+				<xsd:documentation>Uživatelská agenda obsahuje evidenci dokumentů.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+		<xsd:element name="list" type="typ:boolean" minOccurs="0" default="false"/>
+		<xsd:element name="listIDS" type="typ:string16" minOccurs="0"/>
+		<xsd:element name="listSText" type="typ:string16" minOccurs="0"/>
+	</xsd:all>
+</xsd:complexType>
+
+<!-- RESPONSE -->
+<xsd:element name="parameterItemResponse" type="prm:parameterItemResponseType"/>
+
+<xsd:complexType name="parameterItemResponseType">
+	<xsd:complexContent>
+		<xsd:extension base="rdc:documentResponseType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+
+</xsd:schema>

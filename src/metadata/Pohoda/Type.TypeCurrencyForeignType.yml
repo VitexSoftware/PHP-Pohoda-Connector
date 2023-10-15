@@ -1,0 +1,52 @@
+Pohoda\Type\TypeCurrencyForeignType:
+    properties:
+        currency:
+            expose: true
+            access_type: public_method
+            serialized_name: currency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getCurrency
+                setter: setCurrency
+            type: Pohoda\Type\RefType
+        rate:
+            expose: true
+            access_type: public_method
+            serialized_name: rate
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getRate
+                setter: setRate
+            type: float
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: amount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: int
+        priceSum:
+            expose: true
+            access_type: public_method
+            serialized_name: priceSum
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceSum
+                setter: setPriceSum
+            type: float
+        round:
+            expose: true
+            access_type: public_method
+            serialized_name: round
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getRound
+                setter: setRound
+            type: Pohoda\Type\TypeRoundType

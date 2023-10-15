@@ -1,0 +1,16 @@
+Pohoda\List\ListMovementType:
+    properties:
+        movement:
+            expose: true
+            access_type: public_method
+            serialized_name: movement
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getMovement
+                setter: setMovement
+            xml_list:
+                inline: true
+                entry_name: movement
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Movement\MovementType>

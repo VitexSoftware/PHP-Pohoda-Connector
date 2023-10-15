@@ -1,0 +1,12 @@
+Pohoda\Service\ServiceSubjectType:
+    properties:
+        subject:
+            expose: true
+            access_type: public_method
+            serialized_name: subject
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getSubject
+                setter: setSubject
+            type: Pohoda\Service\SubjectType

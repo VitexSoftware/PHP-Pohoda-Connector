@@ -1,0 +1,3 @@
+Pohoda\AccountingSalesVouchers\AccountingSalesVouchersResponse:
+    xml_root_name: accountingSalesVouchersResponse
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'

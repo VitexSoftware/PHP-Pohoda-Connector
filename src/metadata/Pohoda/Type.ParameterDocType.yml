@@ -1,0 +1,102 @@
+Pohoda\Type\ParameterDocType:
+    properties:
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        textValue:
+            expose: true
+            access_type: public_method
+            serialized_name: textValue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getTextValue
+                setter: setTextValue
+            type: string
+        memoValue:
+            expose: true
+            access_type: public_method
+            serialized_name: memoValue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getMemoValue
+                setter: setMemoValue
+            type: string
+        currencyValue:
+            expose: true
+            access_type: public_method
+            serialized_name: currencyValue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getCurrencyValue
+                setter: setCurrencyValue
+            type: float
+        booleanValue:
+            expose: true
+            access_type: public_method
+            serialized_name: booleanValue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getBooleanValue
+                setter: setBooleanValue
+            type: string
+        numberValue:
+            expose: true
+            access_type: public_method
+            serialized_name: numberValue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getNumberValue
+                setter: setNumberValue
+            type: float
+        datetimeValue:
+            expose: true
+            access_type: public_method
+            serialized_name: datetimeValue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getDatetimeValue
+                setter: setDatetimeValue
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        listValueRef:
+            expose: true
+            access_type: public_method
+            serialized_name: listValueRef
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getListValueRef
+                setter: setListValueRef
+            type: Pohoda\Type\RefType
+        integerValue:
+            expose: true
+            access_type: public_method
+            serialized_name: integerValue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getIntegerValue
+                setter: setIntegerValue
+            type: int
+        list:
+            expose: true
+            access_type: public_method
+            serialized_name: list
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getList
+                setter: setList
+            type: Pohoda\Type\RefType

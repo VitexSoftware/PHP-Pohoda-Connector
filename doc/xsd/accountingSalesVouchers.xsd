@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+      xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+			xmlns:asv="http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd"
+			xmlns="http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd"
+			targetNamespace="http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd"
+			elementFormDefault="qualified"
+>
+
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+
+  <!-- **************************************************************************
+		root element must be <accountingSalesVouchers>
+	 ************************************************************************** -->
+
+  <!-- REQUEST -->
+
+  <xsd:element name="accountingSalesVouchers" type="asv:accountingSalesVouchersType">
+    <xsd:annotation>
+      <xsd:documentation>Zaúčtování vybrané prodejky.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:complexType name="accountingSalesVouchersType">
+    <xsd:sequence>
+      <xsd:element name="recordFilter" type="ftr:requestProdejkaType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Výběr záznamu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="centre" type="typ:refType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Středisko které se nastaví do hlavičky zaúčtovávacích dokladů</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="version" type="asv:accountingSalesVouchersVerType" use="required"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="accountingSalesVouchersVerType">
+    <xsd:annotation>
+      <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="2.0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- RESPONSE -->
+
+  <xsd:element name="accountingSalesVouchersResponse" type="asv:accountingSalesVouchersResponesType"/>
+
+  <xsd:complexType name="accountingSalesVouchersResponesType">
+    <xsd:complexContent>
+      <xsd:extension  base="rdc:documentResponseType">
+        <xsd:sequence>
+          <xsd:element name="producedAccountingDocs" type="asv:producedAccountingDocsType" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation>Vytvořené zaúčtovávací doklady.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+
+  </xsd:complexType>
+
+  <xsd:complexType name="producedAccountingDocsType">
+    <xsd:sequence>
+      <xsd:element name="accountingDocument" type="asv:accountingDocumentType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>Zaúčtovávací doklad.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="accountingDocumentType">
+    <xsd:sequence>
+      <xsd:element name="agenda" type="asv:agendaType">
+        <xsd:annotation>
+          <xsd:documentation>Agenda dokladu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="id" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>ID dokladu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="number" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Číslo dokladu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="linkedDocuments" type="asv:linkedDocumentsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Agenda.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="linkedDocumentsType">
+    <xsd:sequence>
+      <xsd:element name="linkedDocument" type="asv:linkedDocumentType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>Prodejky zaúčtované dokladem.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="linkedDocumentType">
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>ID prodejky.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="number" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Číslo prodejky.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="agendaType">
+    <xsd:annotation>
+      <xsd:documentation>Agenda se zaúčtovávacím dokladem.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="receivable">
+        <xsd:annotation>
+          <xsd:documentation>Ostatní pohledávky.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="voucher">
+        <xsd:annotation>
+          <xsd:documentation>Pokladna.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+</xsd:schema>

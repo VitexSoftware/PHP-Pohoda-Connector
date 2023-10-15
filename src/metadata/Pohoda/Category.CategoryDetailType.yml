@@ -1,0 +1,25 @@
+Pohoda\Category\CategoryDetailType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        category:
+            expose: true
+            access_type: public_method
+            serialized_name: category
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/category.xsd'
+            accessor:
+                getter: getCategory
+                setter: setCategory
+            xml_list:
+                inline: true
+                entry_name: category
+                namespace: 'http://www.stormware.cz/schema/version_2/category.xsd'
+            type: array<Pohoda\Category\CategoryType>

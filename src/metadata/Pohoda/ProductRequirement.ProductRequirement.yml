@@ -1,0 +1,3 @@
+Pohoda\ProductRequirement\ProductRequirement:
+    xml_root_name: productRequirement
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'

@@ -1,0 +1,16 @@
+Pohoda\List\ListCentreType:
+    properties:
+        itemCentre:
+            expose: true
+            access_type: public_method
+            serialized_name: itemCentre
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getItemCentre
+                setter: setItemCentre
+            xml_list:
+                inline: true
+                entry_name: itemCentre
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\ItemNameType>

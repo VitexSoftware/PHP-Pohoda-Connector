@@ -1,0 +1,71 @@
+Pohoda\Service\ServiceType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        serviceHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: serviceHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getServiceHeader
+                setter: setServiceHeader
+            type: Pohoda\Service\ServiceHeaderType
+        serviceSubject:
+            expose: true
+            access_type: public_method
+            serialized_name: serviceSubject
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getServiceSubject
+                setter: setServiceSubject
+            type: Pohoda\Service\ServiceSubjectType
+        serviceStates:
+            expose: true
+            access_type: public_method
+            serialized_name: serviceStates
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getServiceStates
+                setter: setServiceStates
+            type: array<Pohoda\Service\StateType>
+            xml_list:
+                inline: false
+                entry_name: state
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+        serviceItems:
+            expose: true
+            access_type: public_method
+            serialized_name: serviceItems
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getServiceItems
+                setter: setServiceItems
+            type: array<Pohoda\Service\ItemType>
+            xml_list:
+                inline: false
+                entry_name: item
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+        serviceSummary:
+            expose: true
+            access_type: public_method
+            serialized_name: serviceSummary
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getServiceSummary
+                setter: setServiceSummary
+            type: Pohoda\Service\ServiceSummaryType

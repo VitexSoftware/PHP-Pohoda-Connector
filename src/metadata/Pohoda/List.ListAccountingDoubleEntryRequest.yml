@@ -1,0 +1,3 @@
+Pohoda\List\ListAccountingDoubleEntryRequest:
+    xml_root_name: listAccountingDoubleEntryRequest
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'

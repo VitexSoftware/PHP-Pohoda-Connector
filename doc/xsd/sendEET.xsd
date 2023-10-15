@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"		
+      xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+      xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+			xmlns:sEET="http://www.stormware.cz/schema/version_2/sendEET.xsd"
+			xmlns="http://www.stormware.cz/schema/version_2/sendEET.xsd"
+			targetNamespace="http://www.stormware.cz/schema/version_2/sendEET.xsd"
+			elementFormDefault="qualified"
+>
+
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" 					schemaLocation="type.xsd"/>
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" 					schemaLocation="filter.xsd"/>
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" 	schemaLocation="documentresponse.xsd"/>
+                                                                                                                   
+                                                                                                                   
+<xsd:element name="sendEET" type="sEET:sendEETType">
+  <xsd:annotation>
+	 <xsd:documentation>Odeslání vybraného záznamu na EET bez tisku.</xsd:documentation>
+	</xsd:annotation>
+</xsd:element>
+
+<!-- **************************************************************************
+		Odeslání na EET bez tisku
+	 ************************************************************************** -->
+
+<xsd:complexType name="sendEETType">
+	<xsd:sequence>
+		<xsd:element name="record" type="sEET:recordSendEETType">
+			<xsd:annotation>
+				<xsd:documentation>Výběr záznamu.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+  </xsd:sequence>
+	<xsd:attribute name="version" type="sEET:sendEETVerType" use="required"/>		
+</xsd:complexType>
+
+<xsd:simpleType name="sendEETVerType">
+	<xsd:annotation>
+		<xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="1.0"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+  <xsd:complexType name="recordSendEETType">    
+      <xsd:group ref="ftr:groupFilter_1"/>    
+    <xsd:attribute name="agenda" type="sEET:sendEETAgendaType" use="required"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="sendEETAgendaType">
+    <xsd:annotation>
+      <xsd:documentation>Výběr agendy.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ostatni_pohledavky"/>
+      <xsd:enumeration value="pokladna_prijem"/>
+      <xsd:enumeration value="prodejky"/>
+      <xsd:enumeration value="vydane_faktury"/>      
+      <xsd:enumeration value="vydane_zalohove_faktury"/>      
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- RESPONSE -->
+
+  <xsd:element name="sendEETResponse" type="sEET:sendEETResponseType"/>
+
+  <xsd:complexType name="sendEETResponseType">
+    <xsd:complexContent>
+      <xsd:extension  base="rdc:documentResponseType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+
+</xsd:schema>

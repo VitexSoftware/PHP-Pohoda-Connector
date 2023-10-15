@@ -1,0 +1,81 @@
+Pohoda\ActionPrice\ActionPriceType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        actionPriceHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: actionPriceHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getActionPriceHeader
+                setter: setActionPriceHeader
+            type: Pohoda\ActionPrice\ActionPriceHeaderType
+        actionPriceItem:
+            expose: true
+            access_type: public_method
+            serialized_name: actionPriceItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getActionPriceItem
+                setter: setActionPriceItem
+            type: array<Pohoda\ActionPrice\ActionPriceStockItemType>
+            xml_list:
+                inline: false
+                entry_name: actionPriceStockItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+        actionPriceStocks:
+            expose: true
+            access_type: public_method
+            serialized_name: actionPriceStocks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getActionPriceStocks
+                setter: setActionPriceStocks
+            type: array<Pohoda\ActionPrice\ActionPriceStockItemType>
+            xml_list:
+                inline: false
+                entry_name: actionPriceStockItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+        actionPriceCustomers:
+            expose: true
+            access_type: public_method
+            serialized_name: actionPriceCustomers
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getActionPriceCustomers
+                setter: setActionPriceCustomers
+            type: array<Pohoda\ActionPrice\CustomerType>
+            xml_list:
+                inline: false
+                entry_name: customer
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+        actionPriceGroups:
+            expose: true
+            access_type: public_method
+            serialized_name: actionPriceGroups
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getActionPriceGroups
+                setter: setActionPriceGroups
+            type: array<Pohoda\ActionPrice\GroupType>
+            xml_list:
+                inline: false
+                entry_name: group
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'

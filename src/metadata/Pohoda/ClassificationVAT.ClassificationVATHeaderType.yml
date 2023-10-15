@@ -1,0 +1,172 @@
+Pohoda\ClassificationVAT\ClassificationVATHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: Pohoda\Type\ExtIdType
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getCode
+                setter: setCode
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        vATType:
+            expose: true
+            access_type: public_method
+            serialized_name: VATType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getVATType
+                setter: setVATType
+            type: Pohoda\Type\RefType
+        textOnDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: textOnDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getTextOnDocument
+                setter: setTextOnDocument
+            type: string
+        textForVATAssessment:
+            expose: true
+            access_type: public_method
+            serialized_name: textForVATAssessment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getTextForVATAssessment
+                setter: setTextForVATAssessment
+            type: string
+        offer:
+            expose: true
+            access_type: public_method
+            serialized_name: offer
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getOffer
+                setter: setOffer
+            type: bool
+        validFrom:
+            expose: true
+            access_type: public_method
+            serialized_name: validFrom
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getValidFrom
+                setter: setValidFrom
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        validTill:
+            expose: true
+            access_type: public_method
+            serialized_name: validTill
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getValidTill
+                setter: setValidTill
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        lineInVATReturn:
+            expose: true
+            access_type: public_method
+            serialized_name: lineInVATReturn
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getLineInVATReturn
+                setter: setLineInVATReturn
+            type: string
+        sectionInVATLedgerStatement:
+            expose: true
+            access_type: public_method
+            serialized_name: sectionInVATLedgerStatement
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getSectionInVATLedgerStatement
+                setter: setSectionInVATLedgerStatement
+            type: string
+        codeOfSupplyMode:
+            expose: true
+            access_type: public_method
+            serialized_name: codeOfSupplyMode
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getCodeOfSupplyMode
+                setter: setCodeOfSupplyMode
+            type: string
+        codeForSummaryReport:
+            expose: true
+            access_type: public_method
+            serialized_name: codeForSummaryReport
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getCodeForSummaryReport
+                setter: setCodeForSummaryReport
+            type: string
+        codeOfObjectOfFulfilment:
+            expose: true
+            access_type: public_method
+            serialized_name: codeOfObjectOfFulfilment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getCodeOfObjectOfFulfilment
+                setter: setCodeOfObjectOfFulfilment
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        markRecord:
+            expose: true
+            access_type: public_method
+            serialized_name: markRecord
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/classificationVAT.xsd'
+            accessor:
+                getter: getMarkRecord
+                setter: setMarkRecord
+            type: string

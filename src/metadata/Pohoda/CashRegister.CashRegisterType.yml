@@ -1,0 +1,31 @@
+Pohoda\CashRegister\CashRegisterType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: Pohoda\CashRegister\ActionTypeType
+        cashRegisterHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: cashRegisterHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getCashRegisterHeader
+                setter: setCashRegisterHeader
+            type: Pohoda\CashRegister\CashRegisterHeaderType

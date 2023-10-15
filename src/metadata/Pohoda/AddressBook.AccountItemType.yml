@@ -1,0 +1,62 @@
+Pohoda\AddressBook\AccountItemType:
+    properties:
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: Pohoda\Type\ActionTypeItemType
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        accountNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: accountNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAccountNumber
+                setter: setAccountNumber
+            type: string
+        symSpec:
+            expose: true
+            access_type: public_method
+            serialized_name: symSpec
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getSymSpec
+                setter: setSymSpec
+            type: string
+        bankCode:
+            expose: true
+            access_type: public_method
+            serialized_name: bankCode
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getBankCode
+                setter: setBankCode
+            type: string
+        defaultAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: defaultAccount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getDefaultAccount
+                setter: setDefaultAccount
+            type: string

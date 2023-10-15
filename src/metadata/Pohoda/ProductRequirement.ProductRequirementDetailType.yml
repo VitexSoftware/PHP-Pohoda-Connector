@@ -1,0 +1,16 @@
+Pohoda\ProductRequirement\ProductRequirementDetailType:
+    properties:
+        productRequirementItem:
+            expose: true
+            access_type: public_method
+            serialized_name: productRequirementItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getProductRequirementItem
+                setter: setProductRequirementItem
+            xml_list:
+                inline: true
+                entry_name: productRequirementItem
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            type: array<Pohoda\ProductRequirement\ProductRequirementItemType>

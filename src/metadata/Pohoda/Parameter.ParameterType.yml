@@ -1,0 +1,112 @@
+Pohoda\Parameter\ParameterType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        idsAgenda:
+            expose: true
+            access_type: public_method
+            serialized_name: idsAgenda
+            accessor:
+                getter: getIdsAgenda
+                setter: setIdsAgenda
+            xml_attribute: true
+            type: string
+        idsUserAgenda:
+            expose: true
+            access_type: public_method
+            serialized_name: idsUserAgenda
+            accessor:
+                getter: getIdsUserAgenda
+                setter: setIdsUserAgenda
+            xml_attribute: true
+            type: string
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: int
+        userAgendaDef:
+            expose: true
+            access_type: public_method
+            serialized_name: userAgendaDef
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getUserAgendaDef
+                setter: setUserAgendaDef
+            type: Pohoda\Parameter\UserAgendaDefType
+        formParameter:
+            expose: true
+            access_type: public_method
+            serialized_name: formParameter
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getFormParameter
+                setter: setFormParameter
+            type: array<Pohoda\Parameter\ParameterDefType>
+            xml_list:
+                inline: false
+                entry_name: parameterDef
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+        itemParameter:
+            expose: true
+            access_type: public_method
+            serialized_name: itemParameter
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getItemParameter
+                setter: setItemParameter
+            type: array<Pohoda\Parameter\ParameterDefType>
+            xml_list:
+                inline: false
+                entry_name: parameterDef
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+        userForm:
+            expose: true
+            access_type: public_method
+            serialized_name: userForm
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getUserForm
+                setter: setUserForm
+            xml_list:
+                inline: true
+                entry_name: userForm
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            type: array<Pohoda\Parameter\FormItemListType>
+        userCode:
+            expose: true
+            access_type: public_method
+            serialized_name: userCode
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getUserCode
+                setter: setUserCode
+            type: string
+        userCodePart:
+            expose: true
+            access_type: public_method
+            serialized_name: userCodePart
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getUserCodePart
+                setter: setUserCodePart
+            type: Pohoda\Parameter\UserCodePartType

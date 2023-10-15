@@ -1,0 +1,12 @@
+Pohoda\MKasa\ConfigurationType\GlobalSettingsAType:
+    properties:
+        archive:
+            expose: true
+            access_type: public_method
+            serialized_name: archive
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/archive.xsd'
+            accessor:
+                getter: getArchive
+                setter: setArchive
+            type: Pohoda\Archive\Archive

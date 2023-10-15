@@ -1,0 +1,47 @@
+Pohoda\AccountingSalesVouchers\AccountingDocumentType:
+    properties:
+        agenda:
+            expose: true
+            access_type: public_method
+            serialized_name: agenda
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            accessor:
+                getter: getAgenda
+                setter: setAgenda
+            type: string
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: string
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: string
+        linkedDocuments:
+            expose: true
+            access_type: public_method
+            serialized_name: linkedDocuments
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            accessor:
+                getter: getLinkedDocuments
+                setter: setLinkedDocuments
+            type: array<Pohoda\AccountingSalesVouchers\LinkedDocumentType>
+            xml_list:
+                inline: false
+                entry_name: linkedDocument
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'

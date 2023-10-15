@@ -1,0 +1,32 @@
+Pohoda\Balance\HomeCurrencyType:
+    properties:
+        amountMD:
+            expose: true
+            access_type: public_method
+            serialized_name: amountMD
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getAmountMD
+                setter: setAmountMD
+            type: float
+        amountD:
+            expose: true
+            access_type: public_method
+            serialized_name: amountD
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getAmountD
+                setter: setAmountD
+            type: float
+        amountRemain:
+            expose: true
+            access_type: public_method
+            serialized_name: amountRemain
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getAmountRemain
+                setter: setAmountRemain
+            type: \AnyType

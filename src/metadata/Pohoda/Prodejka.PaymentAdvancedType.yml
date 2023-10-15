@@ -1,0 +1,62 @@
+Pohoda\Prodejka\PaymentAdvancedType:
+    properties:
+        valueFoodVoucher:
+            expose: true
+            access_type: public_method
+            serialized_name: valueFoodVoucher
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getValueFoodVoucher
+                setter: setValueFoodVoucher
+            type: float
+        rate:
+            expose: true
+            access_type: public_method
+            serialized_name: rate
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getRate
+                setter: setRate
+            type: float
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: amount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: int
+        paymentTerminal:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentTerminal
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getPaymentTerminal
+                setter: setPaymentTerminal
+            type: string
+        symVar:
+            expose: true
+            access_type: public_method
+            serialized_name: symVar
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getSymVar
+                setter: setSymVar
+            type: string
+        account:
+            expose: true
+            access_type: public_method
+            serialized_name: account
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getAccount
+                setter: setAccount
+            type: Pohoda\Type\AccountType

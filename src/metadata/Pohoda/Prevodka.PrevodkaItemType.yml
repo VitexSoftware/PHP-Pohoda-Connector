@@ -1,0 +1,57 @@
+Pohoda\Prevodka\PrevodkaItemType:
+    properties:
+        link:
+            expose: true
+            access_type: public_method
+            serialized_name: link
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+            accessor:
+                getter: getLink
+                setter: setLink
+            type: Pohoda\Type\LinkItemType
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: quantity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: float
+        stockItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+            accessor:
+                getter: getStockItem
+                setter: setStockItem
+            type: Pohoda\Type\StockItemType
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        parameters:
+            expose: true
+            access_type: public_method
+            serialized_name: parameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            type: array<Pohoda\Type\ParameterDocType>
+            xml_list:
+                inline: false
+                entry_name: parameter
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'

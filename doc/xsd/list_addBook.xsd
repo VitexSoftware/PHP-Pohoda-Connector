@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+			xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+			xmlns:adb="http://www.stormware.cz/schema/version_2/addressbook.xsd"
+			xmlns:lAdb="http://www.stormware.cz/schema/version_2/list_addBook.xsd"
+			xmlns="http://www.stormware.cz/schema/version_2/list_addBook.xsd"
+			targetNamespace="http://www.stormware.cz/schema/version_2/list_addBook.xsd"
+			elementFormDefault="qualified"
+>
+
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/addressbook.xsd" schemaLocation="addressbook.xsd"/>
+
+<!-- ************************************************************************** -->
+<!-- REQUEST -->
+<xsd:element name="listAddressBookRequest" type="lAdb:listAddressBookRequestType"/>
+
+<xsd:complexType name="listAddressBookRequestType">
+	<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+		<xsd:element name="requestAddressBook" type="ftr:requestAddressBookType"/>
+	</xsd:sequence>
+	<xsd:attribute name="version" type="lAdb:listAddressBookRequestVerType" use="required"/>
+	<xsd:attribute name="addressBookVersion" type="adb:adbVersionType" use="required">
+		<xsd:annotation>
+			<xsd:documentation>Požadovaná verze dokladu.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>
+	<xsd:attribute name="extSystem" type="typ:string64">
+		<xsd:annotation>
+			<xsd:documentation>Označení externího systému, pro který se vyexportují identifikátory.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:attribute>
+</xsd:complexType>
+
+<xsd:simpleType name="listAddressBookRequestVerType">
+	<xsd:annotation>
+		<xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+	</xsd:annotation>
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="2.0"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<!-- ************************************************************************** -->
+<!-- RESPONSE -->
+<xsd:element name="listAddressBook" type="lAdb:listAddressBookType"/>
+
+<xsd:complexType name="listAddressBookType">
+	<xsd:complexContent>
+		<xsd:extension base="rdc:listVersionType">
+			<xsd:choice>
+				<xsd:element name="addressbook" type="adb:addressbookType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:choice>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+
+</xsd:schema>

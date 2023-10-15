@@ -1,0 +1,51 @@
+Pohoda\Vyroba\VyrobaType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        vyrobaHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: vyrobaHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'
+            accessor:
+                getter: getVyrobaHeader
+                setter: setVyrobaHeader
+            type: Pohoda\Vyroba\VyrobaHeaderType
+        vyrobaDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: vyrobaDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'
+            accessor:
+                getter: getVyrobaDetail
+                setter: setVyrobaDetail
+            type: array<Pohoda\Vyroba\VyrobaItemType>
+            xml_list:
+                inline: false
+                entry_name: vyrobaItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

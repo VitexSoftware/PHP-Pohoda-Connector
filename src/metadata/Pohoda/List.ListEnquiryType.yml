@@ -1,0 +1,16 @@
+Pohoda\List\ListEnquiryType:
+    properties:
+        enquiry:
+            expose: true
+            access_type: public_method
+            serialized_name: enquiry
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getEnquiry
+                setter: setEnquiry
+            xml_list:
+                inline: true
+                entry_name: enquiry
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Enquiry\EnquiryType>

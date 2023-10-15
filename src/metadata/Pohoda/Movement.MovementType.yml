@@ -1,0 +1,21 @@
+Pohoda\Movement\MovementType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        movementHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: movementHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/movement.xsd'
+            accessor:
+                getter: getMovementHeader
+                setter: setMovementHeader
+            type: Pohoda\Movement\MovementHeaderType

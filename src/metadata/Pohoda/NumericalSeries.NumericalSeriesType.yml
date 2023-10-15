@@ -1,0 +1,21 @@
+Pohoda\NumericalSeries\NumericalSeriesType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        numericalSeriesHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: numericalSeriesHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/numericalSeries.xsd'
+            accessor:
+                getter: getNumericalSeriesHeader
+                setter: setNumericalSeriesHeader
+            type: Pohoda\NumericalSeries\NumericalSeriesHeaderType

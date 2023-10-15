@@ -1,0 +1,32 @@
+Pohoda\Type\OrderStockItemType:
+    properties:
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: Pohoda\Type\ActionTypeStockItemType
+        stockOrder:
+            expose: true
+            access_type: public_method
+            serialized_name: stockOrder
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getStockOrder
+                setter: setStockOrder
+            type: int
+        stockItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getStockItem
+                setter: setStockItem
+            type: Pohoda\Type\StockRefType

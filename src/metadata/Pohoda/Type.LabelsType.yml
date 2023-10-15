@@ -1,0 +1,16 @@
+Pohoda\Type\LabelsType:
+    properties:
+        label:
+            expose: true
+            access_type: public_method
+            serialized_name: label
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLabel
+                setter: setLabel
+            xml_list:
+                inline: true
+                entry_name: label
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            type: array<Pohoda\Type\LabelType>

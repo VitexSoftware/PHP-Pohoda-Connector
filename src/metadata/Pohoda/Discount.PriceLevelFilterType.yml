@@ -1,0 +1,12 @@
+Pohoda\Discount\PriceLevelFilterType:
+    properties:
+        priceLevel:
+            expose: true
+            access_type: public_method
+            serialized_name: priceLevel
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/discount.xsd'
+            accessor:
+                getter: getPriceLevel
+                setter: setPriceLevel
+            type: Pohoda\Type\RefType

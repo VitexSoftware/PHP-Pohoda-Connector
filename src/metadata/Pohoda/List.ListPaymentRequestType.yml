@@ -1,0 +1,34 @@
+Pohoda\List\ListPaymentRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        paymentVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentVersion
+            accessor:
+                getter: getPaymentVersion
+                setter: setPaymentVersion
+            xml_attribute: true
+            type: string
+        requestPayment:
+            expose: true
+            access_type: public_method
+            serialized_name: requestPayment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestPayment
+                setter: setRequestPayment
+            xml_list:
+                inline: true
+                entry_name: requestPayment
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Filter\RequestPaymentType>

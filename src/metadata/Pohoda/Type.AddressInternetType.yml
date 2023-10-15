@@ -1,0 +1,162 @@
+Pohoda\Type\AddressInternetType:
+    properties:
+        company:
+            expose: true
+            access_type: public_method
+            serialized_name: company
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getCompany
+                setter: setCompany
+            type: string
+        title:
+            expose: true
+            access_type: public_method
+            serialized_name: title
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getTitle
+                setter: setTitle
+            type: string
+        surname:
+            expose: true
+            access_type: public_method
+            serialized_name: surname
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getSurname
+                setter: setSurname
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        city:
+            expose: true
+            access_type: public_method
+            serialized_name: city
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getCity
+                setter: setCity
+            type: string
+        street:
+            expose: true
+            access_type: public_method
+            serialized_name: street
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getStreet
+                setter: setStreet
+            type: string
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: string
+        zip:
+            expose: true
+            access_type: public_method
+            serialized_name: zip
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getZip
+                setter: setZip
+            type: string
+        ico:
+            expose: true
+            access_type: public_method
+            serialized_name: ico
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getIco
+                setter: setIco
+            type: string
+        dic:
+            expose: true
+            access_type: public_method
+            serialized_name: dic
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getDic
+                setter: setDic
+            type: string
+        icDph:
+            expose: true
+            access_type: public_method
+            serialized_name: icDph
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getIcDph
+                setter: setIcDph
+            type: string
+        phone:
+            expose: true
+            access_type: public_method
+            serialized_name: phone
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPhone
+                setter: setPhone
+            type: string
+        mobilPhone:
+            expose: true
+            access_type: public_method
+            serialized_name: mobilPhone
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getMobilPhone
+                setter: setMobilPhone
+            type: string
+        fax:
+            expose: true
+            access_type: public_method
+            serialized_name: fax
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getFax
+                setter: setFax
+            type: string
+        email:
+            expose: true
+            access_type: public_method
+            serialized_name: email
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getEmail
+                setter: setEmail
+            type: string
+        www:
+            expose: true
+            access_type: public_method
+            serialized_name: www
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getWww
+                setter: setWww
+            type: string

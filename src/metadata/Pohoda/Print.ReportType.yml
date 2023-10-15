@@ -1,0 +1,32 @@
+Pohoda\Print\ReportType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        detail:
+            expose: true
+            access_type: public_method
+            serialized_name: detail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getDetail
+                setter: setDetail
+            type: string

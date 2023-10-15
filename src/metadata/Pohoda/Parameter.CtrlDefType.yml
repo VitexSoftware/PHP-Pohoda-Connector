@@ -1,0 +1,52 @@
+Pohoda\Parameter\CtrlDefType:
+    properties:
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        label:
+            expose: true
+            access_type: public_method
+            serialized_name: label
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getLabel
+                setter: setLabel
+            type: string
+        rect:
+            expose: true
+            access_type: public_method
+            serialized_name: rect
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getRect
+                setter: setRect
+            type: Pohoda\Type\RectangleType
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: type
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getType
+                setter: setType
+            type: string
+        style:
+            expose: true
+            access_type: public_method
+            serialized_name: style
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getStyle
+                setter: setStyle
+            type: int

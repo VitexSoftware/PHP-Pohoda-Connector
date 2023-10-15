@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+      xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+			xmlns:prn="http://www.stormware.cz/schema/version_2/print.xsd"
+			xmlns="http://www.stormware.cz/schema/version_2/print.xsd"
+			targetNamespace="http://www.stormware.cz/schema/version_2/print.xsd"
+			elementFormDefault="qualified"
+>
+
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" 					schemaLocation="type.xsd"/>
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" 					schemaLocation="filter.xsd"/>
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" 	schemaLocation="documentresponse.xsd"/>
+
+<!-- **************************************************************************
+		root element must be <print>
+	 ************************************************************************** -->
+
+<!-- REQUEST -->
+
+<xsd:element name="print" type="prn:printType">
+  <xsd:annotation>
+	 <xsd:documentation>Tisk vybraného záznamu.</xsd:documentation>
+	</xsd:annotation>
+</xsd:element>
+
+<!-- **************************************************************************
+		print
+	 ************************************************************************** -->
+
+<xsd:complexType name="printType">
+	<xsd:sequence>
+		<xsd:element name="record" type="ftr:recordPrintType">
+			<xsd:annotation>
+				<xsd:documentation>Výběr záznamu.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+    <xsd:element name="printerSettings" type="prn:printerSettingsType" maxOccurs="unbounded">
+			<xsd:annotation>
+				<xsd:documentation>Parametry tisku.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+	</xsd:sequence>
+	<xsd:attribute name="version" type="prn:printVerType" use="required"/>		
+</xsd:complexType>
+
+<xsd:simpleType name="printVerType">
+	<xsd:annotation>
+		<xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="1.0"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:complexType name="agendaPrintType">
+	<xsd:sequence>		
+    <xsd:element name="printerSettings" type="prn:printerSettingsType" minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:sequence>		
+</xsd:complexType>
+
+<xsd:complexType name="printerSettingsType">
+	<xsd:all>
+    <xsd:element name="report" type="prn:reportType">
+			<xsd:annotation>
+				<xsd:documentation>Výběr sestavy.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+    <xsd:element name="printer" type="xsd:string" minOccurs="0">
+    	<xsd:annotation>
+    		<xsd:documentation>Název tiskárny. Hodnotu lze zkopírovat z dialogu tisk. Pokud hodnota není uvedena, použije se výchozí tiskárna. Při současném použití elementu "printer" a "PDF" má přednost element "printer".</xsd:documentation>
+    	</xsd:annotation>
+    </xsd:element>
+    <xsd:element name="pdf" type="prn:PDFType" minOccurs="0">
+      <xsd:annotation>
+        <xsd:documentation>Uložení tiskové sestavy do PDF souboru.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="parameters" type="prn:parametersType" minOccurs="0"/>
+	</xsd:all>	
+</xsd:complexType>
+
+  <xsd:complexType name="PDFType">
+    <xsd:all>
+      <xsd:element name="fileName" type="typ:nonEmptyString">
+        <xsd:annotation>
+          <xsd:documentation>Název a umístění PDF souboru (př. "C:\PDF\faktura_c_FV160006.pdf").</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="isdoc" type="prn:isdocType" minOccurs="0"/>        
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="isdocType">
+    <xsd:all>      
+      <xsd:element name="includeToPdf" type="typ:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Při exportu sestavy do PDF vytvořit a vložit ISDOC jako přílohu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="graphicNote">
+        <xsd:annotation>
+          <xsd:documentation>Umístění grafické poznámky ISDOC. Pouze CZ verze.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="topRight"/>
+            <xsd:enumeration value="topLeft"/>
+            <xsd:enumeration value="bottomRight"/>
+            <xsd:enumeration value="bottomLeft"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+
+<xsd:complexType name="reportType">
+	<xsd:all>
+   		<xsd:element name="id" type="typ:idType">
+	    	<xsd:annotation>
+	    		<xsd:documentation>Identifikátor sestavy. Hodnotu naleznete ve vlastnostech sestavy.</xsd:documentation>
+	    	</xsd:annotation>
+	    </xsd:element>
+    <xsd:element name="name" type="xsd:string" minOccurs="0">
+      <xsd:annotation>
+        <xsd:documentation>Název sestavy. Pouze export.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="detail" type="xsd:string" minOccurs="0">
+      <xsd:annotation>
+        <xsd:documentation>Popis sestavy. Pouze export.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+	</xsd:all>	
+</xsd:complexType>
+  
+<xsd:complexType name="parametersType">
+	<xsd:all>
+    <xsd:element name="copy" type="prn:copyType" minOccurs="0" default="1">
+    	<xsd:annotation>
+    		<xsd:documentation>Počet kopií.</xsd:documentation>
+    	</xsd:annotation>
+	  </xsd:element>
+	  <xsd:element name="datePrint" type="xsd:date" minOccurs="0">
+	    	<xsd:annotation>
+	    		<xsd:documentation>Datum tisku.</xsd:documentation>
+	    	</xsd:annotation>
+	  </xsd:element>
+
+    <xsd:element name="checkbox1" type="checkboxType" minOccurs="0" />
+    <xsd:element name="checkbox2" type="checkboxType" minOccurs="0" />
+    <xsd:element name="checkbox3" type="checkboxType" minOccurs="0" />
+    <xsd:element name="checkbox4" type="checkboxType" minOccurs="0" />
+    <xsd:element name="checkbox5" type="checkboxType" minOccurs="0" />
+    <xsd:element name="checkbox6" type="checkboxType" minOccurs="0" />
+	<xsd:element name="checkbox7" type="checkboxType" minOccurs="0" />
+    <xsd:element name="radioButton1" type="radioButtonType" minOccurs="0" />
+    <xsd:element name="spin1" type="numberType" minOccurs="0" />
+    <xsd:element name="currency1" type="numberType" minOccurs="0" />    
+    <xsd:element name="month1" type="numberType" minOccurs="0" />
+    <xsd:element name="month2" type="numberType" minOccurs="0" />
+    <xsd:element name="year1" type="numberType" minOccurs="0" />    
+    <xsd:element name="date1" type="dateType" minOccurs="0" />
+    <xsd:element name="date2" type="dateType" minOccurs="0" />
+    <xsd:element name="date3" type="dateType" minOccurs="0" />
+    <xsd:element name="date4" type="dateType" minOccurs="0" />
+    <xsd:element name="text1" type="textType" minOccurs="0" />
+    <xsd:element name="text2" type="textType" minOccurs="0" />
+    <xsd:element name="text3" type="textType" minOccurs="0" />
+    <xsd:element name="combobox1" type="comboboxType" minOccurs="0" />
+    <xsd:element name="combobox2" type="comboboxType" minOccurs="0" />
+    <xsd:element name="combobox3" type="comboboxType" minOccurs="0" />
+    <xsd:element name="comboboxEx1" type="comboboxType" minOccurs="0" />
+    <xsd:element name="comboboxEx2" type="comboboxType" minOccurs="0" />
+  </xsd:all>	
+</xsd:complexType>
+
+  <xsd:complexType name="checkboxType">
+    <xsd:all>
+      <xsd:element name="value" type="typ:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Zatržítko.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Pouze export.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element> 
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="radioButtonType">
+    <xsd:all>
+      <xsd:element name="value" type="xsd:integer">
+        <xsd:annotation>
+          <xsd:documentation>Přepínač.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Pouze export.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="numberType">
+    <xsd:all>
+      <xsd:element name="value" type="xsd:integer">
+        <xsd:annotation>
+          <xsd:documentation>Přepínač.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Pouze export.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="comboboxType">
+    <xsd:all>
+      <xsd:element name="value" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Hodnota z rozbalovacího seznamu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Pouze export.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="textType">
+    <xsd:all>
+      <xsd:element name="value" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Textová hodnota.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="dateType">
+    <xsd:all>
+      <xsd:element name="value" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Datum.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Pouze export.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+
+<xsd:simpleType name="copyType">
+	<xsd:restriction base="xsd:decimal">
+	   <xsd:minInclusive value="1"/>
+     <xsd:maxInclusive value="20"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+<!-- RESPONSE -->
+
+  <xsd:element name="printResponse" type="prn:printResponseType"/>
+
+  <xsd:complexType name="printResponseType">
+    <xsd:complexContent>
+      <xsd:extension  base="rdc:documentResponseType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+
+</xsd:schema>

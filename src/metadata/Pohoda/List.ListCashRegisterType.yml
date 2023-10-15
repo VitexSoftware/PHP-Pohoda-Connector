@@ -1,0 +1,16 @@
+Pohoda\List\ListCashRegisterType:
+    properties:
+        cashRegister:
+            expose: true
+            access_type: public_method
+            serialized_name: cashRegister
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getCashRegister
+                setter: setCashRegister
+            xml_list:
+                inline: true
+                entry_name: cashRegister
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\CashRegister\CashRegisterType>

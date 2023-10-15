@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+      xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+			xmlns:ipm="http://www.stormware.cz/schema/version_2/intParam.xsd"
+			xmlns="http://www.stormware.cz/schema/version_2/intParam.xsd"
+			targetNamespace="http://www.stormware.cz/schema/version_2/intParam.xsd"
+			elementFormDefault="qualified">
+
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd"	schemaLocation="documentresponse.xsd"/>
+
+  <!-- **************************************************************************
+		Parametry internetových obchodů
+	 ************************************************************************** -->
+  
+<!-- REQUEST -->
+<xsd:element name="intParamDetail" type="ipm:intParamDetailType"/>
+
+<xsd:complexType name="intParamDetailType">
+	<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+		<xsd:element name="intParam" type="ipm:intParamType"/>
+	</xsd:sequence>
+	<xsd:attribute name="version" type="ipm:ipmVersionType" use="required"/>
+</xsd:complexType> 
+
+<xsd:complexType name="intParamType">
+	<xsd:annotation>
+		<xsd:documentation>Internetové parametry zásoby.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="id" type="typ:idType" minOccurs="0" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation>ID záznamu (jen pro export).</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+
+		<xsd:element name="name" type="typ:string32" minOccurs="1" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation>Název parametru pro internetové obchody.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+			
+		<xsd:element name="description" type="typ:string240" minOccurs="0" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation>Popis parametru pro internetové obchody.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+
+		<xsd:element name="parameterType" type="typ:internetParameterType" minOccurs="1" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation>Typ parametru internetového obchodu.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+
+		<xsd:element name="parameterSettings" type="ipm:parameterSettingsType" minOccurs="0" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation>Typ parametru internetového obchodu.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+
+    <xsd:element name="markRecord" type="typ:boolean" minOccurs="0" default="true">
+      <xsd:annotation>
+        <xsd:documentation>Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".</xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+
+    <xsd:element name="note" type="xsd:string" minOccurs="0">
+      <xsd:annotation>
+        <xsd:documentation>Poznámka.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+    
+	</xsd:sequence>
+</xsd:complexType>
+
+
+<xsd:complexType name="parameterSettingsType">
+	<xsd:annotation>
+		<xsd:documentation></xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="unit" type="xsd:string" minOccurs="0" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation></xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+
+		<xsd:element name="length" type="xsd:integer" minOccurs="0" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation></xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+
+		<xsd:element name="parameterList" type="ipm:parameterListType" minOccurs="0" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation></xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+
+		<xsd:element name="currency" type="typ:refType" minOccurs="0" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation></xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="parameterListType">
+	<xsd:annotation>
+		<xsd:documentation></xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="parameterListItem" type="ipm:parameterListItemType" minOccurs="0" maxOccurs="unbounded">
+			<xsd:annotation>
+				<xsd:documentation></xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="parameterListItemType">
+	<xsd:annotation>
+		<xsd:documentation></xsd:documentation>
+	</xsd:annotation>
+	<xsd:sequence>
+		<xsd:element name="id" type="typ:idType" minOccurs="0" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation>ID záznamu (jen pro export).</xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+	
+		<xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation></xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+
+		<xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation></xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+
+		<xsd:element name="sequence" type="xsd:integer" minOccurs="1" maxOccurs="1">
+			<xsd:annotation>
+				<xsd:documentation></xsd:documentation>
+			</xsd:annotation>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:simpleType name="ipmVersionType">
+	<xsd:annotation>
+		<xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+	</xsd:annotation>
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="2.0"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<!-- RESPONSE -->
+
+<xsd:element name="intParamResponse" type="ipm:intParamResponseType">
+	<xsd:annotation>
+		<xsd:documentation>Odpověď na import kategorie. Obsahuje podrobnosti zpracování.</xsd:documentation>
+	</xsd:annotation>
+</xsd:element>
+
+<xsd:complexType name="intParamResponseType">
+	<xsd:complexContent>
+		<xsd:extension  base="rdc:documentResponseType"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
+</xsd:schema>

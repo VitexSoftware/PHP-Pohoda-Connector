@@ -1,0 +1,22 @@
+Pohoda\Data\TransformationType:
+    properties:
+        input:
+            expose: true
+            access_type: public_method
+            serialized_name: input
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/data.xsd'
+            accessor:
+                getter: getInput
+                setter: setInput
+            type: string
+        output:
+            expose: true
+            access_type: public_method
+            serialized_name: output
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/data.xsd'
+            accessor:
+                getter: getOutput
+                setter: setOutput
+            type: string

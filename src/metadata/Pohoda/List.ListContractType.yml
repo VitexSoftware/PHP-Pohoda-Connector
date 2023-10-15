@@ -1,0 +1,16 @@
+Pohoda\List\ListContractType:
+    properties:
+        itemContract:
+            expose: true
+            access_type: public_method
+            serialized_name: itemContract
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getItemContract
+                setter: setItemContract
+            xml_list:
+                inline: true
+                entry_name: itemContract
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\ItemContractType>

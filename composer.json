@@ -14,7 +14,8 @@
         "ext-iconv": "*",
         "riesenia/pohoda": ">=1.5 || dev-master",
         "vitexsoftware/ease-core": ">=1.9",
-        "lightools/xml": "v2.0.0"
+        "lightools/xml": "v2.0.0",
+        "goetas-webservices/xsd2php-runtime": "^0.2.16"
     },
     "autoload": {
         "psr-4": {
@@ -30,7 +31,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^9",
-        "phpstan/phpstan": "^0.12.52"
+        "phpstan/phpstan": "^0.12.52",
+        "goetas-webservices/xsd2php": "^0.4.11"
     },
     "scripts": {
         "phpstan": "vendor/bin/phpstan analyse --ansi --memory-limit=4G"

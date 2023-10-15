@@ -1,0 +1,32 @@
+Pohoda\Store\PLUtypeType:
+    properties:
+        usePLU:
+            expose: true
+            access_type: public_method
+            serialized_name: usePLU
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getUsePLU
+                setter: setUsePLU
+            type: bool
+        lowerLimit:
+            expose: true
+            access_type: public_method
+            serialized_name: lowerLimit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getLowerLimit
+                setter: setLowerLimit
+            type: int
+        upperLimit:
+            expose: true
+            access_type: public_method
+            serialized_name: upperLimit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getUpperLimit
+                setter: setUpperLimit
+            type: int

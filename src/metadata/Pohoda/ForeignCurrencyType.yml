@@ -1,0 +1,22 @@
+Pohoda\ForeignCurrencyType:
+    properties:
+        currency:
+            expose: true
+            access_type: public_method
+            serialized_name: currency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getCurrency
+                setter: setCurrency
+            type: Pohoda\Type\RefType
+        price:
+            expose: true
+            access_type: public_method
+            serialized_name: price
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getPrice
+                setter: setPrice
+            type: float

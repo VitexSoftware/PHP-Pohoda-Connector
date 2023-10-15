@@ -1,0 +1,32 @@
+Pohoda\Stock\RelatedLinkType:
+    properties:
+        addressURL:
+            expose: true
+            access_type: public_method
+            serialized_name: addressURL
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getAddressURL
+                setter: setAddressURL
+            type: string
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: description
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            type: string
+        order:
+            expose: true
+            access_type: public_method
+            serialized_name: order
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getOrder
+                setter: setOrder
+            type: int

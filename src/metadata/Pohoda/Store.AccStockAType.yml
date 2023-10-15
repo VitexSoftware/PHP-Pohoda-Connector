@@ -1,0 +1,72 @@
+Pohoda\Store\AccStockAType:
+    properties:
+        material:
+            expose: true
+            access_type: public_method
+            serialized_name: material
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getMaterial
+                setter: setMaterial
+            type: string
+        goods:
+            expose: true
+            access_type: public_method
+            serialized_name: goods
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getGoods
+                setter: setGoods
+            type: string
+        workInProgress:
+            expose: true
+            access_type: public_method
+            serialized_name: workInProgress
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getWorkInProgress
+                setter: setWorkInProgress
+            type: string
+        semiproducts:
+            expose: true
+            access_type: public_method
+            serialized_name: semiproducts
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getSemiproducts
+                setter: setSemiproducts
+            type: string
+        products:
+            expose: true
+            access_type: public_method
+            serialized_name: products
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getProducts
+                setter: setProducts
+            type: string
+        animals:
+            expose: true
+            access_type: public_method
+            serialized_name: animals
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getAnimals
+                setter: setAnimals
+            type: string
+        materialOfOwnProduction:
+            expose: true
+            access_type: public_method
+            serialized_name: materialOfOwnProduction
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getMaterialOfOwnProduction
+                setter: setMaterialOfOwnProduction
+            type: string

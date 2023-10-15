@@ -1,0 +1,20 @@
+Pohoda\List\ItemUserCodeType:
+    properties:
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            accessor:
+                getter: getName
+                setter: setName
+            xml_attribute: true
+            type: string
+        constant:
+            expose: true
+            access_type: public_method
+            serialized_name: constant
+            accessor:
+                getter: getConstant
+                setter: setConstant
+            xml_attribute: true
+            type: int

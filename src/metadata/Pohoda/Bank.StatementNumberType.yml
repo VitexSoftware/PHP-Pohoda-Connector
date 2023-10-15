@@ -1,0 +1,22 @@
+Pohoda\Bank\StatementNumberType:
+    properties:
+        statementNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: statementNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getStatementNumber
+                setter: setStatementNumber
+            type: string
+        numberMovement:
+            expose: true
+            access_type: public_method
+            serialized_name: numberMovement
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getNumberMovement
+                setter: setNumberMovement
+            type: string

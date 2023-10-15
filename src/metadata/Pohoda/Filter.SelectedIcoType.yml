@@ -1,0 +1,16 @@
+Pohoda\Filter\SelectedIcoType:
+    properties:
+        ico:
+            expose: true
+            access_type: public_method
+            serialized_name: ico
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getIco
+                setter: setIco
+            xml_list:
+                inline: true
+                entry_name: ico
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            type: array<string>

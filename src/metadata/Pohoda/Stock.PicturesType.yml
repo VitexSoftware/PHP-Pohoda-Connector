@@ -1,0 +1,16 @@
+Pohoda\Stock\PicturesType:
+    properties:
+        picture:
+            expose: true
+            access_type: public_method
+            serialized_name: picture
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getPicture
+                setter: setPicture
+            xml_list:
+                inline: true
+                entry_name: picture
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            type: array<Pohoda\Stock\PictureType>

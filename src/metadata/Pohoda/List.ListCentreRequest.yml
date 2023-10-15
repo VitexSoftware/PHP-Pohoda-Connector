@@ -1,0 +1,3 @@
+Pohoda\List\ListCentreRequest:
+    xml_root_name: listCentreRequest
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'

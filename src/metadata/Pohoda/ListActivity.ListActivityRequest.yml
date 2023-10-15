@@ -1,0 +1,3 @@
+Pohoda\ListActivity\ListActivityRequest:
+    xml_root_name: listActivityRequest
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/list_activity.xsd'

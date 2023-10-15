@@ -1,0 +1,122 @@
+Pohoda\ListStock\RestrictionDataType:
+    properties:
+        relatedFiles:
+            expose: true
+            access_type: public_method
+            serialized_name: relatedFiles
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getRelatedFiles
+                setter: setRelatedFiles
+            type: string
+        relatedLinks:
+            expose: true
+            access_type: public_method
+            serialized_name: relatedLinks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getRelatedLinks
+                setter: setRelatedLinks
+            type: string
+        pictures:
+            expose: true
+            access_type: public_method
+            serialized_name: pictures
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getPictures
+                setter: setPictures
+            type: string
+        categories:
+            expose: true
+            access_type: public_method
+            serialized_name: categories
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getCategories
+                setter: setCategories
+            type: string
+        relatedStocks:
+            expose: true
+            access_type: public_method
+            serialized_name: relatedStocks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getRelatedStocks
+                setter: setRelatedStocks
+            type: string
+        alternativeStocks:
+            expose: true
+            access_type: public_method
+            serialized_name: alternativeStocks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getAlternativeStocks
+                setter: setAlternativeStocks
+            type: string
+        intParameters:
+            expose: true
+            access_type: public_method
+            serialized_name: intParameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getIntParameters
+                setter: setIntParameters
+            type: string
+        stockItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getStockItem
+                setter: setStockItem
+            type: string
+        stockAttach:
+            expose: true
+            access_type: public_method
+            serialized_name: stockAttach
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getStockAttach
+                setter: setStockAttach
+            type: string
+        stockSerialNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: stockSerialNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getStockSerialNumber
+                setter: setStockSerialNumber
+            type: string
+        stockPriceItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockPriceItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getStockPriceItem
+                setter: setStockPriceItem
+            type: string
+        stockParameters:
+            expose: true
+            access_type: public_method
+            serialized_name: stockParameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getStockParameters
+                setter: setStockParameters
+            type: string

@@ -1,0 +1,52 @@
+Pohoda\Type\LinkItemType:
+    properties:
+        sourceAgenda:
+            expose: true
+            access_type: public_method
+            serialized_name: sourceAgenda
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getSourceAgenda
+                setter: setSourceAgenda
+            type: string
+        sourceItemId:
+            expose: true
+            access_type: public_method
+            serialized_name: sourceItemId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getSourceItemId
+                setter: setSourceItemId
+            type: int
+        sourceItemExtId:
+            expose: true
+            access_type: public_method
+            serialized_name: sourceItemExtId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getSourceItemExtId
+                setter: setSourceItemExtId
+            type: Pohoda\Type\ExtIdType
+        settingsSourceDocumentOrderItem:
+            expose: true
+            access_type: public_method
+            serialized_name: settingsSourceDocumentOrderItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getSettingsSourceDocumentOrderItem
+                setter: setSettingsSourceDocumentOrderItem
+            type: Pohoda\Type\SettingsSourceDocumentOrderItemType
+        settingsSourceDocumentItem:
+            expose: true
+            access_type: public_method
+            serialized_name: settingsSourceDocumentItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getSettingsSourceDocumentItem
+                setter: setSettingsSourceDocumentItem
+            type: Pohoda\Type\SettingsSourceDocumentItemType

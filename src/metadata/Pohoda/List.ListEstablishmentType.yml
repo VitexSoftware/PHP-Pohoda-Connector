@@ -1,0 +1,16 @@
+Pohoda\List\ListEstablishmentType:
+    properties:
+        establishment:
+            expose: true
+            access_type: public_method
+            serialized_name: establishment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getEstablishment
+                setter: setEstablishment
+            xml_list:
+                inline: true
+                entry_name: establishment
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Establishment\EstablishmentType>

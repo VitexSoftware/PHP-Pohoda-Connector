@@ -1,0 +1,30 @@
+Pohoda\Type\LinksType:
+    properties:
+        link:
+            expose: true
+            access_type: public_method
+            serialized_name: link
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLink
+                setter: setLink
+            xml_list:
+                inline: true
+                entry_name: link
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            type: array<Pohoda\Type\LinkElemetType>
+        manualLink:
+            expose: true
+            access_type: public_method
+            serialized_name: manualLink
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getManualLink
+                setter: setManualLink
+            xml_list:
+                inline: true
+                entry_name: manualLink
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            type: array<Pohoda\Type\ManualLinkElementType>

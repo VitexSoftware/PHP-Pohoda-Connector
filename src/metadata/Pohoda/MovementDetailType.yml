@@ -1,0 +1,62 @@
+Pohoda\MovementDetailType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: string
+        bankType:
+            expose: true
+            access_type: public_method
+            serialized_name: bankType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getBankType
+                setter: setBankType
+            type: string
+        datePayment:
+            expose: true
+            access_type: public_method
+            serialized_name: datePayment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getDatePayment
+                setter: setDatePayment
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        homeCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: homeCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getHomeCurrency
+                setter: setHomeCurrency
+            type: Pohoda\HomeCurrencyType
+        foreignCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getForeignCurrency
+                setter: setForeignCurrency
+            type: Pohoda\ForeignCurrencyType

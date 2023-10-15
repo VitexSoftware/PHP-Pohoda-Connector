@@ -1,0 +1,16 @@
+Pohoda\List\CreateAccountingDoubleEntryResponseType:
+    properties:
+        createAccountingResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: createAccountingResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getCreateAccountingResponse
+                setter: setCreateAccountingResponse
+            xml_list:
+                inline: true
+                entry_name: createAccountingResponse
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\CreateAccountingResponseType>

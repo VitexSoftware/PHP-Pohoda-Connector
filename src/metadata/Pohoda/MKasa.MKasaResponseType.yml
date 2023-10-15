@@ -1,0 +1,22 @@
+Pohoda\MKasa\MKasaResponseType:
+    properties:
+        configuration:
+            expose: true
+            access_type: public_method
+            serialized_name: configuration
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getConfiguration
+                setter: setConfiguration
+            type: Pohoda\MKasa\ConfigurationType
+        importResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: importResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getImportResponse
+                setter: setImportResponse
+            type: Pohoda\MKasa\ImportResponseType

@@ -1,0 +1,247 @@
+Pohoda\Bank\BankItemType:
+    properties:
+        text:
+            expose: true
+            access_type: public_method
+            serialized_name: text
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getText
+                setter: setText
+            type: string
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: quantity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: float
+        unit:
+            expose: true
+            access_type: public_method
+            serialized_name: unit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getUnit
+                setter: setUnit
+            type: string
+        coefficient:
+            expose: true
+            access_type: public_method
+            serialized_name: coefficient
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getCoefficient
+                setter: setCoefficient
+            type: float
+        payVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: payVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getPayVAT
+                setter: setPayVAT
+            type: string
+        rateVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: rateVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getRateVAT
+                setter: setRateVAT
+            type: Pohoda\Type\VatRateType
+        percentVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: percentVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getPercentVAT
+                setter: setPercentVAT
+            type: float
+        discountPercentage:
+            expose: true
+            access_type: public_method
+            serialized_name: discountPercentage
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getDiscountPercentage
+                setter: setDiscountPercentage
+            type: float
+        homeCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: homeCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getHomeCurrency
+                setter: setHomeCurrency
+            type: Pohoda\Bank\TypeCurrencyHomeItemType
+        foreignCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getForeignCurrency
+                setter: setForeignCurrency
+            type: Pohoda\Bank\TypeCurrencyForeignItemType
+        homeCurrencyJU:
+            expose: true
+            access_type: public_method
+            serialized_name: homeCurrencyJU
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getHomeCurrencyJU
+                setter: setHomeCurrencyJU
+            type: Pohoda\Type\TypeCurrencyHomeItemType
+        foreignCurrencyJU:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignCurrencyJU
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getForeignCurrencyJU
+                setter: setForeignCurrencyJU
+            type: Pohoda\Type\TypeCurrencyForeignItemType
+        typeServiceMOSS:
+            expose: true
+            access_type: public_method
+            serialized_name: typeServiceMOSS
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getTypeServiceMOSS
+                setter: setTypeServiceMOSS
+            type: Pohoda\Type\MOSStypeType
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        symPar:
+            expose: true
+            access_type: public_method
+            serialized_name: symPar
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getSymPar
+                setter: setSymPar
+            type: string
+        accounting:
+            expose: true
+            access_type: public_method
+            serialized_name: accounting
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getAccounting
+                setter: setAccounting
+            type: Pohoda\Type\RefType
+        classificationVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getClassificationVAT
+                setter: setClassificationVAT
+            type: Pohoda\Type\ClassificationVATType
+        classificationKVDPH:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationKVDPH
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getClassificationKVDPH
+                setter: setClassificationKVDPH
+            type: Pohoda\Type\RefType
+        pDP:
+            expose: true
+            access_type: public_method
+            serialized_name: PDP
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getPDP
+                setter: setPDP
+            type: bool
+        codePDP:
+            expose: true
+            access_type: public_method
+            serialized_name: CodePDP
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getCodePDP
+                setter: setCodePDP
+            type: string
+        centre:
+            expose: true
+            access_type: public_method
+            serialized_name: centre
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getCentre
+                setter: setCentre
+            type: Pohoda\Type\RefType
+        activity:
+            expose: true
+            access_type: public_method
+            serialized_name: activity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getActivity
+                setter: setActivity
+            type: Pohoda\Type\RefType
+        contract:
+            expose: true
+            access_type: public_method
+            serialized_name: contract
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getContract
+                setter: setContract
+            type: Pohoda\Type\RefType
+        parameters:
+            expose: true
+            access_type: public_method
+            serialized_name: parameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            type: array<Pohoda\Type\ParameterDocType>
+            xml_list:
+                inline: false
+                entry_name: parameter
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'

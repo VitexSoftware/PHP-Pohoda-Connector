@@ -1,0 +1,98 @@
+Pohoda\Data\DataPackType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: string
+        ico:
+            expose: true
+            access_type: public_method
+            serialized_name: ico
+            accessor:
+                getter: getIco
+                setter: setIco
+            xml_attribute: true
+            type: string
+        key:
+            expose: true
+            access_type: public_method
+            serialized_name: key
+            accessor:
+                getter: getKey
+                setter: setKey
+            xml_attribute: true
+            type: string
+        period:
+            expose: true
+            access_type: public_method
+            serialized_name: period
+            accessor:
+                getter: getPeriod
+                setter: setPeriod
+            xml_attribute: true
+            type: string
+        application:
+            expose: true
+            access_type: public_method
+            serialized_name: application
+            accessor:
+                getter: getApplication
+                setter: setApplication
+            xml_attribute: true
+            type: string
+        programVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: programVersion
+            accessor:
+                getter: getProgramVersion
+                setter: setProgramVersion
+            xml_attribute: true
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_attribute: true
+            type: string
+        transformation:
+            expose: true
+            access_type: public_method
+            serialized_name: transformation
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/data.xsd'
+            accessor:
+                getter: getTransformation
+                setter: setTransformation
+            type: Pohoda\Data\TransformationType
+        dataPackItem:
+            expose: true
+            access_type: public_method
+            serialized_name: dataPackItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/data.xsd'
+            accessor:
+                getter: getDataPackItem
+                setter: setDataPackItem
+            xml_list:
+                inline: true
+                entry_name: dataPackItem
+                namespace: 'http://www.stormware.cz/schema/version_2/data.xsd'
+            type: array<Pohoda\Data\DataPackItemType>

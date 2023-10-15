@@ -1,0 +1,3 @@
+Pohoda\AddressBook\AddressbookResponse:
+    xml_root_name: addressbookResponse
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'

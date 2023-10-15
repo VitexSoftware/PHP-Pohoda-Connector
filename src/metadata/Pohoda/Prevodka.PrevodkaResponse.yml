@@ -1,0 +1,3 @@
+Pohoda\Prevodka\PrevodkaResponse:
+    xml_root_name: prevodkaResponse
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'

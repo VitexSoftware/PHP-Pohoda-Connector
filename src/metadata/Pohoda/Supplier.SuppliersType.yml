@@ -1,0 +1,16 @@
+Pohoda\Supplier\SuppliersType:
+    properties:
+        supplierItem:
+            expose: true
+            access_type: public_method
+            serialized_name: supplierItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/supplier.xsd'
+            accessor:
+                getter: getSupplierItem
+                setter: setSupplierItem
+            xml_list:
+                inline: true
+                entry_name: supplierItem
+                namespace: 'http://www.stormware.cz/schema/version_2/supplier.xsd'
+            type: array<Pohoda\Supplier\SupplierItemType>

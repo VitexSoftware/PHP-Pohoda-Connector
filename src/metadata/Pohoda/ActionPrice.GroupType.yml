@@ -1,0 +1,22 @@
+Pohoda\ActionPrice\GroupType:
+    properties:
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        descripton:
+            expose: true
+            access_type: public_method
+            serialized_name: descripton
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getDescripton
+                setter: setDescripton
+            type: string

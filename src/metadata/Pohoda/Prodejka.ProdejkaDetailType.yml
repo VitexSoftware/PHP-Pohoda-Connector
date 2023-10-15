@@ -1,0 +1,26 @@
+Pohoda\Prodejka\ProdejkaDetailType:
+    properties:
+        prodejkaItem:
+            expose: true
+            access_type: public_method
+            serialized_name: prodejkaItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getProdejkaItem
+                setter: setProdejkaItem
+            xml_list:
+                inline: true
+                entry_name: prodejkaItem
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            type: array<Pohoda\Prodejka\ProdejkaItemType>
+        roundingItem:
+            expose: true
+            access_type: public_method
+            serialized_name: roundingItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getRoundingItem
+                setter: setRoundingItem
+            type: Pohoda\Type\RoundingItemType

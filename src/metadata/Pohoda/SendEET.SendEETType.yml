@@ -1,0 +1,21 @@
+Pohoda\SendEET\SendEETType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        record:
+            expose: true
+            access_type: public_method
+            serialized_name: record
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/sendEET.xsd'
+            accessor:
+                getter: getRecord
+                setter: setRecord
+            type: Pohoda\SendEET\RecordSendEETType

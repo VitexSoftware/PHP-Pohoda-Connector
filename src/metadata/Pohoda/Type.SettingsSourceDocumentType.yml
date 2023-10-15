@@ -1,0 +1,12 @@
+Pohoda\Type\SettingsSourceDocumentType:
+    properties:
+        linkOrderToAdvanceInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: linkOrderToAdvanceInvoice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLinkOrderToAdvanceInvoice
+                setter: setLinkOrderToAdvanceInvoice
+            type: string

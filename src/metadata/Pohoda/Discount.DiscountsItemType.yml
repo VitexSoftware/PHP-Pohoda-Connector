@@ -1,0 +1,52 @@
+Pohoda\Discount\DiscountsItemType:
+    properties:
+        filter:
+            expose: true
+            access_type: public_method
+            serialized_name: filter
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/discount.xsd'
+            accessor:
+                getter: getFilter
+                setter: setFilter
+            type: Pohoda\Discount\PriceLevelFilterType
+        price:
+            expose: true
+            access_type: public_method
+            serialized_name: price
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/discount.xsd'
+            accessor:
+                getter: getPrice
+                setter: setPrice
+            type: float
+        markup:
+            expose: true
+            access_type: public_method
+            serialized_name: markup
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/discount.xsd'
+            accessor:
+                getter: getMarkup
+                setter: setMarkup
+            type: float
+        rebate:
+            expose: true
+            access_type: public_method
+            serialized_name: rebate
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/discount.xsd'
+            accessor:
+                getter: getRebate
+                setter: setRebate
+            type: float
+        discountPercent:
+            expose: true
+            access_type: public_method
+            serialized_name: discountPercent
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/discount.xsd'
+            accessor:
+                getter: getDiscountPercent
+                setter: setDiscountPercent
+            type: float

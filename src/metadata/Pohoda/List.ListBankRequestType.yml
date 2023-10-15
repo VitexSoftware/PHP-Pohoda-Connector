@@ -1,0 +1,30 @@
+Pohoda\List\ListBankRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        bankVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: bankVersion
+            accessor:
+                getter: getBankVersion
+                setter: setBankVersion
+            xml_attribute: true
+            type: string
+        requestBank:
+            expose: true
+            access_type: public_method
+            serialized_name: requestBank
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestBank
+                setter: setRequestBank
+            type: Pohoda\Filter\RequestBankType

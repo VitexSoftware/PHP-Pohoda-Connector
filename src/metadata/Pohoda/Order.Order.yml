@@ -1,0 +1,3 @@
+Pohoda\Order\Order:
+    xml_root_name: order
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'

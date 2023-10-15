@@ -1,0 +1,16 @@
+Pohoda\List\ListVyrobaType:
+    properties:
+        vyroba:
+            expose: true
+            access_type: public_method
+            serialized_name: vyroba
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getVyroba
+                setter: setVyroba
+            xml_list:
+                inline: true
+                entry_name: vyroba
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Vyroba\VyrobaType>

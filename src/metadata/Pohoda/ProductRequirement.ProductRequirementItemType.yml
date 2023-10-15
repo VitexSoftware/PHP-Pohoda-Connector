@@ -1,0 +1,52 @@
+Pohoda\ProductRequirement\ProductRequirementItemType:
+    properties:
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: quantity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: float
+        produced:
+            expose: true
+            access_type: public_method
+            serialized_name: produced
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getProduced
+                setter: setProduced
+            type: float
+        stockItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getStockItem
+                setter: setStockItem
+            type: Pohoda\Type\StockItemType
+        expirationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: expirationDate
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getExpirationDate
+                setter: setExpirationDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string

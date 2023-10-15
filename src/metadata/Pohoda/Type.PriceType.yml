@@ -1,0 +1,22 @@
+Pohoda\Type\PriceType:
+    properties:
+        price:
+            expose: true
+            access_type: public_method
+            serialized_name: price
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPrice
+                setter: setPrice
+            type: float
+        priceVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: priceVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceVAT
+                setter: setPriceVAT
+            type: float

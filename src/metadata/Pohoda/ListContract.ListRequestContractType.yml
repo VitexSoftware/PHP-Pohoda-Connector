@@ -1,0 +1,34 @@
+Pohoda\ListContract\ListRequestContractType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        contractVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: contractVersion
+            accessor:
+                getter: getContractVersion
+                setter: setContractVersion
+            xml_attribute: true
+            type: string
+        requestContract:
+            expose: true
+            access_type: public_method
+            serialized_name: requestContract
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_contract.xsd'
+            accessor:
+                getter: getRequestContract
+                setter: setRequestContract
+            xml_list:
+                inline: true
+                entry_name: requestContract
+                namespace: 'http://www.stormware.cz/schema/version_2/list_contract.xsd'
+            type: array<Pohoda\Filter\RequestContractType>

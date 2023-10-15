@@ -1,0 +1,36 @@
+Pohoda\InventoryLists\InventoryListsType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        inventoryListsHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: inventoryListsHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getInventoryListsHeader
+                setter: setInventoryListsHeader
+            type: Pohoda\InventoryLists\InventoryListsHeaderType
+        inventoryListsDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: inventoryListsDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getInventoryListsDetail
+                setter: setInventoryListsDetail
+            type: array<Pohoda\InventoryLists\InventoryListsItemType>
+            xml_list:
+                inline: false
+                entry_name: inventoryListsItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'

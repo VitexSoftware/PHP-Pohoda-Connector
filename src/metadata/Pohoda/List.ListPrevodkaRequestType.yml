@@ -1,0 +1,43 @@
+Pohoda\List\ListPrevodkaRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        prevodkaVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: prevodkaVersion
+            accessor:
+                getter: getPrevodkaVersion
+                setter: setPrevodkaVersion
+            xml_attribute: true
+            type: string
+        extSystem:
+            expose: true
+            access_type: public_method
+            serialized_name: extSystem
+            accessor:
+                getter: getExtSystem
+                setter: setExtSystem
+            xml_attribute: true
+            type: string
+        requestPrevodka:
+            expose: true
+            access_type: public_method
+            serialized_name: requestPrevodka
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestPrevodka
+                setter: setRequestPrevodka
+            xml_list:
+                inline: true
+                entry_name: requestPrevodka
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Filter\RequestPrevodkaType>

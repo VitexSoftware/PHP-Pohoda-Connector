@@ -1,0 +1,16 @@
+Pohoda\Filter\SelectedNumbersType:
+    properties:
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            xml_list:
+                inline: true
+                entry_name: number
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            type: array<Pohoda\Type\NumberType>

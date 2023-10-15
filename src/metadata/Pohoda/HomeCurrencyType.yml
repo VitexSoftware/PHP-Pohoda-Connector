@@ -1,0 +1,12 @@
+Pohoda\HomeCurrencyType:
+    properties:
+        price:
+            expose: true
+            access_type: public_method
+            serialized_name: price
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getPrice
+                setter: setPrice
+            type: float

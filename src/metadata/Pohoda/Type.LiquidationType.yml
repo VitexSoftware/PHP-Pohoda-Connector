@@ -1,0 +1,32 @@
+Pohoda\Type\LiquidationType:
+    properties:
+        date:
+            expose: true
+            access_type: public_method
+            serialized_name: date
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getDate
+                setter: setDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        amountHome:
+            expose: true
+            access_type: public_method
+            serialized_name: amountHome
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getAmountHome
+                setter: setAmountHome
+            type: float
+        amountForeign:
+            expose: true
+            access_type: public_method
+            serialized_name: amountForeign
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getAmountForeign
+                setter: setAmountForeign
+            type: float

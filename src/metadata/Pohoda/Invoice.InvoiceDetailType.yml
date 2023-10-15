@@ -1,0 +1,44 @@
+Pohoda\Invoice\InvoiceDetailType:
+    properties:
+        invoiceItem:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getInvoiceItem
+                setter: setInvoiceItem
+            xml_list:
+                inline: true
+                entry_name: invoiceItem
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            type: array<Pohoda\Invoice\InvoiceItemType>
+        invoiceAdvancePaymentItem:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceAdvancePaymentItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getInvoiceAdvancePaymentItem
+                setter: setInvoiceAdvancePaymentItem
+            xml_list:
+                inline: true
+                entry_name: invoiceAdvancePaymentItem
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            type: array<Pohoda\Invoice\InvoiceAdvancePaymentItemType>
+        roundingItem:
+            expose: true
+            access_type: public_method
+            serialized_name: roundingItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getRoundingItem
+                setter: setRoundingItem
+            xml_list:
+                inline: true
+                entry_name: roundingItem
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            type: array<Pohoda\Type\RoundingItemType>

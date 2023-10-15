@@ -1,0 +1,11 @@
+Pohoda\List\RequestUserCodeType:
+    properties:
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            accessor:
+                getter: getCode
+                setter: setCode
+            xml_attribute: true
+            type: string

@@ -1,0 +1,34 @@
+Pohoda\List\ListUserCodeRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        listVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: listVersion
+            accessor:
+                getter: getListVersion
+                setter: setListVersion
+            xml_attribute: true
+            type: string
+        requestUserCode:
+            expose: true
+            access_type: public_method
+            serialized_name: requestUserCode
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestUserCode
+                setter: setRequestUserCode
+            xml_list:
+                inline: true
+                entry_name: requestUserCode
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\RequestUserCodeType>

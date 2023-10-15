@@ -1,0 +1,16 @@
+Pohoda\AddressBook\AddressbookAccountType:
+    properties:
+        accountItem:
+            expose: true
+            access_type: public_method
+            serialized_name: accountItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAccountItem
+                setter: setAccountItem
+            xml_list:
+                inline: true
+                entry_name: accountItem
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            type: array<Pohoda\AddressBook\AccountItemType>

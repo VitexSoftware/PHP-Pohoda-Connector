@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+			xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+			xmlns:nms="http://www.stormware.cz/schema/version_2/numericalSeries.xsd"
+			xmlns="http://www.stormware.cz/schema/version_2/numericalSeries.xsd"
+			targetNamespace="http://www.stormware.cz/schema/version_2/numericalSeries.xsd"
+			elementFormDefault="qualified">
+
+	<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+	<xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+	<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+
+  <!-- **************************************************************************
+		 Číselné řady
+	 ************************************************************************** -->
+  
+	<!-- REQUEST -->
+	<xsd:element name="numericalSeries" type="nms:numericalSeriesType"/>
+
+	<xsd:complexType name="numericalSeriesType">
+		<xsd:sequence>
+			<xsd:element name="numericalSeriesHeader" type="nms:numericalSeriesHeaderType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="nms:nmsVersionType" use="required"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="nmsVersionType">
+		<xsd:annotation>
+			<xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="2.0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="numericalSeriesHeaderType">
+		<xsd:all>
+			<xsd:element name="id" type="typ:idType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>ID záznamu (pouze pro export).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+      
+			<xsd:element name="extId" type="typ:extIdType" minOccurs="0" >
+				<xsd:annotation>
+					<xsd:documentation>
+						Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
+						vazbu mezi agendou a externí databází.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+      
+		  <xsd:element name="prefix" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Prefix číselné řady.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="typ:nonEmptyString">
+            <xsd:maxLength value="5"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+        
+			<xsd:element name="number" minOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Číslo.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="5"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+
+      <xsd:element name="topNumber" type="typ:string32NotEmpty" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Nejvyšší číslo v dané číselné řadě (pouze pro export).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      
+      <xsd:element name="name" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Název (popis).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="typ:nonEmptyString">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+
+      <xsd:element name="agenda" type="ftr:CRadyAgendaType" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Agenda.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="typeOfDocument" type="nms:typeOfDocumentType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Typ dokladu. Tento element je vyžadován při vytvoření číselné řady pro agendu, které má více typů dokladů.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="cashAccount" type="typ:refType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Pokladna. Tento element je vyžadován při vytvoření číselné řady pro agendu "Pokladna".</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="cashbox" type="typ:refType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Kasa. Tento element je vyžadován při vytvoření číselné řady pro agendu "Prodejky".</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="period" type="nms:periodType" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Období plastnosti číselné řady.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="periodAccountUnit" type="nms:periodAccountUnitType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Období plastnosti účetní jednotky.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+       
+      <xsd:element name="unitPZD" type="typ:refType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Jednotka PZD. Nastavení vlastníka číselné řady v režimu „Pobočkové zpracování dat“.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="year" type="xsd:gYear" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Rok běžného nebo přechodné období. V případě, že ještě nedošlo k přepnutí přechodného období, řada do následujícího období se nenaimportuje.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      
+			<xsd:element name="note" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Poznámka.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+
+      <xsd:element name="markRecord" type="typ:boolean" minOccurs="0" default="true">
+        <xsd:annotation>
+          <xsd:documentation>Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+
+      <xsd:element name="parameters" type="typ:parametersType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Volitelný parametr.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      
+		</xsd:all>
+	</xsd:complexType>
+
+  <!--Typ dokladu-->
+  <xsd:simpleType name="typeOfDocumentType">
+    <xsd:annotation>
+      <xsd:documentation>Typ dokladu.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="vydane_faktury_faktura"/>
+      <xsd:enumeration value="vydane_faktury_opravny_danovy_doklad"/>
+      <xsd:enumeration value="vydane_faktury_dobropis"/>
+      <xsd:enumeration value="vydane_faktury_vrubopis"/>
+      <xsd:enumeration value="prijate_faktury_faktura"/>
+      <xsd:enumeration value="prijate_faktury_opravny_danovy_doklad"/>
+      <xsd:enumeration value="prijate_faktury_dobropis"/>
+      <xsd:enumeration value="prijate_faktury_vrubopis"/>
+      <xsd:enumeration value="pohledavky_pohledavka"/>
+      <xsd:enumeration value="pohledavky_penale"/>
+      <xsd:enumeration value="pokladna_prijem"/>
+      <xsd:enumeration value="pokladna_vydej"/>
+      <xsd:enumeration value="prodejky_vklad"/>
+      <xsd:enumeration value="prodejky_vyber"/>
+      <xsd:enumeration value="prodejky_prodejka"/>
+      <xsd:enumeration value="reklamace_zakaznicka"/>
+      <xsd:enumeration value="reklamace_skladova"/>
+      <xsd:enumeration value="reklamace_nakupni"/>
+      <xsd:enumeration value="reklamace_reklamacni_list"/>
+      <xsd:enumeration value="servis_pozarucni"/>
+      <xsd:enumeration value="servis_zarucni"/>
+
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <!--Období platnosti číselné řady-->
+  <xsd:simpleType name="periodType">
+    <xsd:annotation>
+      <xsd:documentation>Období plastnosti číselné řady.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="permanent"/>
+      <xsd:enumeration value="yearlong"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  
+  <!--Období plastnosti účetní jednotky-->
+  <xsd:complexType name="periodAccountUnitType">
+    <xsd:annotation>
+      <xsd:documentation>Období platnosti účetní jednotky (pouze pro export).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:all>
+      <xsd:element name="dateFrom" type="xsd:date" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Datum od.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="dateTill" type="xsd:date" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Datum do.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType> 
+
+
+
+  <!-- RESPONSE -->
+
+	<xsd:element name="numericalSeriesResponse" type="nms:numericalSeriesResponseType"/>
+
+	<xsd:complexType name="numericalSeriesResponseType">
+		<xsd:complexContent>
+			<xsd:extension  base="rdc:documentResponseType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+ 
+</xsd:schema>

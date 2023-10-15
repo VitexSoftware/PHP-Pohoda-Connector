@@ -1,0 +1,92 @@
+Pohoda\MKasa\CompanyInfoType:
+    properties:
+        key:
+            expose: true
+            access_type: public_method
+            serialized_name: key
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getKey
+                setter: setKey
+            type: string
+        address:
+            expose: true
+            access_type: public_method
+            serialized_name: address
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getAddress
+                setter: setAddress
+            type: Pohoda\Type\AddressInternetType
+        establishment:
+            expose: true
+            access_type: public_method
+            serialized_name: establishment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getEstablishment
+                setter: setEstablishment
+            type: Pohoda\Type\EstablishmentType
+        unitType:
+            expose: true
+            access_type: public_method
+            serialized_name: unitType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getUnitType
+                setter: setUnitType
+            type: string
+        suffix:
+            expose: true
+            access_type: public_method
+            serialized_name: suffix
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getSuffix
+                setter: setSuffix
+            type: string
+        stateType:
+            expose: true
+            access_type: public_method
+            serialized_name: stateType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getStateType
+                setter: setStateType
+            type: string
+        register:
+            expose: true
+            access_type: public_method
+            serialized_name: register
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getRegister
+                setter: setRegister
+            type: string
+        vatPayer:
+            expose: true
+            access_type: public_method
+            serialized_name: vatPayer
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getVatPayer
+                setter: setVatPayer
+            type: Pohoda\MKasa\VatPayerType
+        changeForFoodVouchers:
+            expose: true
+            access_type: public_method
+            serialized_name: changeForFoodVouchers
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getChangeForFoodVouchers
+                setter: setChangeForFoodVouchers
+            type: string

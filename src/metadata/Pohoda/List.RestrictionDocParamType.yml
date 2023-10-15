@@ -1,0 +1,32 @@
+Pohoda\List\RestrictionDocParamType:
+    properties:
+        documents:
+            expose: true
+            access_type: public_method
+            serialized_name: documents
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getDocuments
+                setter: setDocuments
+            type: string
+        parameters:
+            expose: true
+            access_type: public_method
+            serialized_name: parameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            type: string
+        liquidations:
+            expose: true
+            access_type: public_method
+            serialized_name: liquidations
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getLiquidations
+                setter: setLiquidations
+            type: string

@@ -1,0 +1,102 @@
+Pohoda\Accountingunit\ItemAccountingUnitType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        year:
+            expose: true
+            access_type: public_method
+            serialized_name: year
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getYear
+                setter: setYear
+            type: int
+        yearType:
+            expose: true
+            access_type: public_method
+            serialized_name: yearType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getYearType
+                setter: setYearType
+            type: string
+        dateFrom:
+            expose: true
+            access_type: public_method
+            serialized_name: dateFrom
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getDateFrom
+                setter: setDateFrom
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        dateTo:
+            expose: true
+            access_type: public_method
+            serialized_name: dateTo
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getDateTo
+                setter: setDateTo
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        unitType:
+            expose: true
+            access_type: public_method
+            serialized_name: unitType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getUnitType
+                setter: setUnitType
+            type: string
+        stateType:
+            expose: true
+            access_type: public_method
+            serialized_name: stateType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getStateType
+                setter: setStateType
+            type: string
+        accountingUnitIdentity:
+            expose: true
+            access_type: public_method
+            serialized_name: accountingUnitIdentity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getAccountingUnitIdentity
+                setter: setAccountingUnitIdentity
+            type: Pohoda\Type\MyAddressType
+        dataFile:
+            expose: true
+            access_type: public_method
+            serialized_name: dataFile
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getDataFile
+                setter: setDataFile
+            type: string
+        key:
+            expose: true
+            access_type: public_method
+            serialized_name: key
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getKey
+                setter: setKey
+            type: string

@@ -1,0 +1,37 @@
+Pohoda\Documentresponse\ItemType:
+    properties:
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: string
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: string
+        producedItem:
+            expose: true
+            access_type: public_method
+            serialized_name: producedItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getProducedItem
+                setter: setProducedItem
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: id
+                skip_when_empty: false
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'

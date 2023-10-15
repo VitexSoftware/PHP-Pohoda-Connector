@@ -1,0 +1,72 @@
+Pohoda\Prodejka\PaymentItemType:
+    properties:
+        paymentType:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getPaymentType
+                setter: setPaymentType
+            type: Pohoda\Type\PaymentType
+        text:
+            expose: true
+            access_type: public_method
+            serialized_name: text
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getText
+                setter: setText
+            type: string
+        received:
+            expose: true
+            access_type: public_method
+            serialized_name: received
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getReceived
+                setter: setReceived
+            type: float
+        receivedHomeCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: receivedHomeCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getReceivedHomeCurrency
+                setter: setReceivedHomeCurrency
+            type: float
+        paymentAdvanced:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentAdvanced
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getPaymentAdvanced
+                setter: setPaymentAdvanced
+            type: Pohoda\Prodejka\PaymentAdvancedType
+        returned:
+            expose: true
+            access_type: public_method
+            serialized_name: returned
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getReturned
+                setter: setReturned
+            type: float
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string

@@ -1,0 +1,32 @@
+Pohoda\Type\ExtIdType:
+    properties:
+        ids:
+            expose: true
+            access_type: public_method
+            serialized_name: ids
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getIds
+                setter: setIds
+            type: string
+        exSystemName:
+            expose: true
+            access_type: public_method
+            serialized_name: exSystemName
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getExSystemName
+                setter: setExSystemName
+            type: string
+        exSystemText:
+            expose: true
+            access_type: public_method
+            serialized_name: exSystemText
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getExSystemText
+                setter: setExSystemText
+            type: string

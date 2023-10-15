@@ -1,0 +1,26 @@
+Pohoda\Offer\OfferDetailType:
+    properties:
+        offerItem:
+            expose: true
+            access_type: public_method
+            serialized_name: offerItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/offer.xsd'
+            accessor:
+                getter: getOfferItem
+                setter: setOfferItem
+            xml_list:
+                inline: true
+                entry_name: offerItem
+                namespace: 'http://www.stormware.cz/schema/version_2/offer.xsd'
+            type: array<Pohoda\Offer\OfferItemType>
+        roundingItem:
+            expose: true
+            access_type: public_method
+            serialized_name: roundingItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/offer.xsd'
+            accessor:
+                getter: getRoundingItem
+                setter: setRoundingItem
+            type: Pohoda\Type\RoundingItemType

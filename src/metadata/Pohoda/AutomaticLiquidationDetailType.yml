@@ -1,0 +1,22 @@
+Pohoda\AutomaticLiquidationDetailType:
+    properties:
+        movementDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: movementDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getMovementDetail
+                setter: setMovementDetail
+            type: Pohoda\MovementDetailType
+        liquidationDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: liquidationDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getLiquidationDetail
+                setter: setLiquidationDetail
+            type: Pohoda\LiquidationDetailType

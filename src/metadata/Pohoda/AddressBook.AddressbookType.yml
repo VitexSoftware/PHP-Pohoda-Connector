@@ -1,0 +1,71 @@
+Pohoda\AddressBook\AddressbookType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: Pohoda\AddressBook\ActionTypeType
+        addressbookHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: addressbookHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAddressbookHeader
+                setter: setAddressbookHeader
+            type: Pohoda\AddressBook\AddressbookHeaderType
+        addressbookAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: addressbookAccount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAddressbookAccount
+                setter: setAddressbookAccount
+            type: array<Pohoda\AddressBook\AccountItemType>
+            xml_list:
+                inline: false
+                entry_name: accountItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+        addressbookGDPR:
+            expose: true
+            access_type: public_method
+            serialized_name: addressbookGDPR
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAddressbookGDPR
+                setter: setAddressbookGDPR
+            type: Pohoda\AddressBook\AddressbookGDPRType
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

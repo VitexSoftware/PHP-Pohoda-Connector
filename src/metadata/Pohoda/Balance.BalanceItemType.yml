@@ -1,0 +1,152 @@
+Pohoda\Balance\BalanceItemType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: string
+        partnerIdentity:
+            expose: true
+            access_type: public_method
+            serialized_name: partnerIdentity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getPartnerIdentity
+                setter: setPartnerIdentity
+            type: Pohoda\Type\AddressType
+        sourceAgenda:
+            expose: true
+            access_type: public_method
+            serialized_name: sourceAgenda
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getSourceAgenda
+                setter: setSourceAgenda
+            type: string
+        accountNo:
+            expose: true
+            access_type: public_method
+            serialized_name: accountNo
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getAccountNo
+                setter: setAccountNo
+            type: string
+        pairSymbol:
+            expose: true
+            access_type: public_method
+            serialized_name: pairSymbol
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getPairSymbol
+                setter: setPairSymbol
+            type: string
+        date:
+            expose: true
+            access_type: public_method
+            serialized_name: date
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getDate
+                setter: setDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        dueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: dueDate
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getDueDate
+                setter: setDueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        dueDays:
+            expose: true
+            access_type: public_method
+            serialized_name: dueDays
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getDueDays
+                setter: setDueDays
+            type: int
+        text:
+            expose: true
+            access_type: public_method
+            serialized_name: text
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getText
+                setter: setText
+            type: string
+        amountMD:
+            expose: true
+            access_type: public_method
+            serialized_name: amountMD
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getAmountMD
+                setter: setAmountMD
+            type: float
+        amountD:
+            expose: true
+            access_type: public_method
+            serialized_name: amountD
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getAmountD
+                setter: setAmountD
+            type: float
+        amountRemain:
+            expose: true
+            access_type: public_method
+            serialized_name: amountRemain
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getAmountRemain
+                setter: setAmountRemain
+            type: \AnyType
+        homeCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: homeCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getHomeCurrency
+                setter: setHomeCurrency
+            type: Pohoda\Balance\HomeCurrencyType
+        foreignCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getForeignCurrency
+                setter: setForeignCurrency
+            type: Pohoda\Balance\ForeignCurrencyType

@@ -1,0 +1,102 @@
+Pohoda\CashRegister\CashRegisterHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: Pohoda\Type\ExtIdType
+        ids:
+            expose: true
+            access_type: public_method
+            serialized_name: ids
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getIds
+                setter: setIds
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        account:
+            expose: true
+            access_type: public_method
+            serialized_name: account
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getAccount
+                setter: setAccount
+            type: Pohoda\Type\RefType
+        cashier:
+            expose: true
+            access_type: public_method
+            serialized_name: cashier
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getCashier
+                setter: setCashier
+            type: Pohoda\Type\RefType
+        currencyCashRegister:
+            expose: true
+            access_type: public_method
+            serialized_name: currencyCashRegister
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getCurrencyCashRegister
+                setter: setCurrencyCashRegister
+            type: Pohoda\CashRegister\CurrencyCashRegisterType
+        cancelled:
+            expose: true
+            access_type: public_method
+            serialized_name: cancelled
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getCancelled
+                setter: setCancelled
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        fM:
+            expose: true
+            access_type: public_method
+            serialized_name: FM
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getFM
+                setter: setFM
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/cashRegister.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string

@@ -1,0 +1,31 @@
+Pohoda\MKasa\MKasaRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        export:
+            expose: true
+            access_type: public_method
+            serialized_name: export
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getExport
+                setter: setExport
+            type: Pohoda\MKasa\ExportRequestType
+        import:
+            expose: true
+            access_type: public_method
+            serialized_name: import
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getImport
+                setter: setImport
+            type: Pohoda\MKasa\ImportRequestType

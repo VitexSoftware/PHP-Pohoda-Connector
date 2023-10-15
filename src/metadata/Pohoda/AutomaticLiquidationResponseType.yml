@@ -1,0 +1,17 @@
+Pohoda\AutomaticLiquidationResponseType:
+    properties:
+        automaticLiquidationDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: automaticLiquidationDetails
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getAutomaticLiquidationDetails
+                setter: setAutomaticLiquidationDetails
+            type: array<Pohoda\AutomaticLiquidationDetailType>
+            xml_list:
+                inline: false
+                entry_name: automaticLiquidationDetail
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'

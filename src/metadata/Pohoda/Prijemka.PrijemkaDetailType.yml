@@ -1,0 +1,44 @@
+Pohoda\Prijemka\PrijemkaDetailType:
+    properties:
+        prijemkaItem:
+            expose: true
+            access_type: public_method
+            serialized_name: prijemkaItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            accessor:
+                getter: getPrijemkaItem
+                setter: setPrijemkaItem
+            xml_list:
+                inline: true
+                entry_name: prijemkaItem
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            type: array<Pohoda\Prijemka\PrijemkaItemType>
+        roundingItem:
+            expose: true
+            access_type: public_method
+            serialized_name: roundingItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            accessor:
+                getter: getRoundingItem
+                setter: setRoundingItem
+            xml_list:
+                inline: true
+                entry_name: roundingItem
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            type: array<Pohoda\Type\RoundingItemType>
+        prijemkaAccessoryChargesItem:
+            expose: true
+            access_type: public_method
+            serialized_name: prijemkaAccessoryChargesItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            accessor:
+                getter: getPrijemkaAccessoryChargesItem
+                setter: setPrijemkaAccessoryChargesItem
+            xml_list:
+                inline: true
+                entry_name: prijemkaAccessoryChargesItem
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            type: array<Pohoda\Prijemka\PrijemkaAccessoryChargesItemType>

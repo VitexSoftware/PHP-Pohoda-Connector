@@ -1,0 +1,25 @@
+Pohoda\Documentresponse\ItemDetailsType:
+    properties:
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: type
+            accessor:
+                getter: getType
+                setter: setType
+            xml_attribute: true
+            type: string
+        item:
+            expose: true
+            access_type: public_method
+            serialized_name: item
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            accessor:
+                getter: getItem
+                setter: setItem
+            xml_list:
+                inline: true
+                entry_name: item
+                namespace: 'http://www.stormware.cz/schema/version_2/documentresponse.xsd'
+            type: array<Pohoda\Documentresponse\ItemType>

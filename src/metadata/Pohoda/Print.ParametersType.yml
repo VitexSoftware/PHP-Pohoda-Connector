@@ -1,0 +1,272 @@
+Pohoda\Print\ParametersType:
+    properties:
+        copy:
+            expose: true
+            access_type: public_method
+            serialized_name: copy
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCopy
+                setter: setCopy
+            type: float
+        datePrint:
+            expose: true
+            access_type: public_method
+            serialized_name: datePrint
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getDatePrint
+                setter: setDatePrint
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        checkbox1:
+            expose: true
+            access_type: public_method
+            serialized_name: checkbox1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCheckbox1
+                setter: setCheckbox1
+            type: Pohoda\Print\CheckboxType
+        checkbox2:
+            expose: true
+            access_type: public_method
+            serialized_name: checkbox2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCheckbox2
+                setter: setCheckbox2
+            type: Pohoda\Print\CheckboxType
+        checkbox3:
+            expose: true
+            access_type: public_method
+            serialized_name: checkbox3
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCheckbox3
+                setter: setCheckbox3
+            type: Pohoda\Print\CheckboxType
+        checkbox4:
+            expose: true
+            access_type: public_method
+            serialized_name: checkbox4
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCheckbox4
+                setter: setCheckbox4
+            type: Pohoda\Print\CheckboxType
+        checkbox5:
+            expose: true
+            access_type: public_method
+            serialized_name: checkbox5
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCheckbox5
+                setter: setCheckbox5
+            type: Pohoda\Print\CheckboxType
+        checkbox6:
+            expose: true
+            access_type: public_method
+            serialized_name: checkbox6
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCheckbox6
+                setter: setCheckbox6
+            type: Pohoda\Print\CheckboxType
+        checkbox7:
+            expose: true
+            access_type: public_method
+            serialized_name: checkbox7
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCheckbox7
+                setter: setCheckbox7
+            type: Pohoda\Print\CheckboxType
+        radioButton1:
+            expose: true
+            access_type: public_method
+            serialized_name: radioButton1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getRadioButton1
+                setter: setRadioButton1
+            type: Pohoda\Print\RadioButtonType
+        spin1:
+            expose: true
+            access_type: public_method
+            serialized_name: spin1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getSpin1
+                setter: setSpin1
+            type: Pohoda\Print\NumberType
+        currency1:
+            expose: true
+            access_type: public_method
+            serialized_name: currency1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCurrency1
+                setter: setCurrency1
+            type: Pohoda\Print\NumberType
+        month1:
+            expose: true
+            access_type: public_method
+            serialized_name: month1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getMonth1
+                setter: setMonth1
+            type: Pohoda\Print\NumberType
+        month2:
+            expose: true
+            access_type: public_method
+            serialized_name: month2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getMonth2
+                setter: setMonth2
+            type: Pohoda\Print\NumberType
+        year1:
+            expose: true
+            access_type: public_method
+            serialized_name: year1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getYear1
+                setter: setYear1
+            type: Pohoda\Print\NumberType
+        date1:
+            expose: true
+            access_type: public_method
+            serialized_name: date1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getDate1
+                setter: setDate1
+            type: Pohoda\Print\DateType
+        date2:
+            expose: true
+            access_type: public_method
+            serialized_name: date2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getDate2
+                setter: setDate2
+            type: Pohoda\Print\DateType
+        date3:
+            expose: true
+            access_type: public_method
+            serialized_name: date3
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getDate3
+                setter: setDate3
+            type: Pohoda\Print\DateType
+        date4:
+            expose: true
+            access_type: public_method
+            serialized_name: date4
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getDate4
+                setter: setDate4
+            type: Pohoda\Print\DateType
+        text1:
+            expose: true
+            access_type: public_method
+            serialized_name: text1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getText1
+                setter: setText1
+            type: Pohoda\Print\TextType
+        text2:
+            expose: true
+            access_type: public_method
+            serialized_name: text2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getText2
+                setter: setText2
+            type: Pohoda\Print\TextType
+        text3:
+            expose: true
+            access_type: public_method
+            serialized_name: text3
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getText3
+                setter: setText3
+            type: Pohoda\Print\TextType
+        combobox1:
+            expose: true
+            access_type: public_method
+            serialized_name: combobox1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCombobox1
+                setter: setCombobox1
+            type: Pohoda\Print\ComboboxType
+        combobox2:
+            expose: true
+            access_type: public_method
+            serialized_name: combobox2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCombobox2
+                setter: setCombobox2
+            type: Pohoda\Print\ComboboxType
+        combobox3:
+            expose: true
+            access_type: public_method
+            serialized_name: combobox3
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getCombobox3
+                setter: setCombobox3
+            type: Pohoda\Print\ComboboxType
+        comboboxEx1:
+            expose: true
+            access_type: public_method
+            serialized_name: comboboxEx1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getComboboxEx1
+                setter: setComboboxEx1
+            type: Pohoda\Print\ComboboxType
+        comboboxEx2:
+            expose: true
+            access_type: public_method
+            serialized_name: comboboxEx2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getComboboxEx2
+                setter: setComboboxEx2
+            type: Pohoda\Print\ComboboxType

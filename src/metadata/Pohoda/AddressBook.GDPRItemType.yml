@@ -1,0 +1,82 @@
+Pohoda\AddressBook\GDPRItemType:
+    properties:
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: Pohoda\Type\ActionTypeItemType
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: Pohoda\Type\RefTypeLongType
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: description
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            type: string
+        dateFrom:
+            expose: true
+            access_type: public_method
+            serialized_name: dateFrom
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getDateFrom
+                setter: setDateFrom
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        dateTill:
+            expose: true
+            access_type: public_method
+            serialized_name: dateTill
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getDateTill
+                setter: setDateTill
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        revokeGDPR:
+            expose: true
+            access_type: public_method
+            serialized_name: revokeGDPR
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getRevokeGDPR
+                setter: setRevokeGDPR
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string

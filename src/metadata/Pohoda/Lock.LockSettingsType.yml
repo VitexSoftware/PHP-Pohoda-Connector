@@ -1,0 +1,30 @@
+Pohoda\Lock\LockSettingsType:
+    properties:
+        lock1:
+            expose: true
+            access_type: public_method
+            serialized_name: lock1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/lock.xsd'
+            accessor:
+                getter: getLock1
+                setter: setLock1
+            xml_list:
+                inline: true
+                entry_name: lock1
+                namespace: 'http://www.stormware.cz/schema/version_2/lock.xsd'
+            type: array<string>
+        lock2:
+            expose: true
+            access_type: public_method
+            serialized_name: lock2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/lock.xsd'
+            accessor:
+                getter: getLock2
+                setter: setLock2
+            xml_list:
+                inline: true
+                entry_name: lock2
+                namespace: 'http://www.stormware.cz/schema/version_2/lock.xsd'
+            type: array<string>

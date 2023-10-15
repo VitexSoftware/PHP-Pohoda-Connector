@@ -1,0 +1,3 @@
+Pohoda\Activity\Activity:
+    xml_root_name: activity
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/activity.xsd'

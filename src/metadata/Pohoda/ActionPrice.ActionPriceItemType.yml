@@ -1,0 +1,16 @@
+Pohoda\ActionPrice\ActionPriceItemType:
+    properties:
+        actionPriceStockItem:
+            expose: true
+            access_type: public_method
+            serialized_name: actionPriceStockItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getActionPriceStockItem
+                setter: setActionPriceStockItem
+            xml_list:
+                inline: true
+                entry_name: actionPriceStockItem
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            type: array<Pohoda\ActionPrice\ActionPriceStockItemType>

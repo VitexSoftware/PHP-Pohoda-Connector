@@ -1,0 +1,16 @@
+Pohoda\Service\ServiceStatesType:
+    properties:
+        state:
+            expose: true
+            access_type: public_method
+            serialized_name: state
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getState
+                setter: setState
+            xml_list:
+                inline: true
+                entry_name: state
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            type: array<Pohoda\Service\StateType>

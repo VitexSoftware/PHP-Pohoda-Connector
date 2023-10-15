@@ -1,0 +1,3 @@
+Pohoda\Category\CategoryDetail:
+    xml_root_name: categoryDetail
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/category.xsd'

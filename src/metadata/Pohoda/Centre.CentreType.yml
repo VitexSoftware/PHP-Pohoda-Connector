@@ -1,0 +1,21 @@
+Pohoda\Centre\CentreType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        centreHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: centreHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/centre.xsd'
+            accessor:
+                getter: getCentreHeader
+                setter: setCentreHeader
+            type: Pohoda\Centre\CentreHeaderType

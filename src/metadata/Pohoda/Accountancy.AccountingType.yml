@@ -1,0 +1,22 @@
+Pohoda\Accountancy\AccountingType:
+    properties:
+        credit:
+            expose: true
+            access_type: public_method
+            serialized_name: credit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountancy.xsd'
+            accessor:
+                getter: getCredit
+                setter: setCredit
+            type: string
+        debit:
+            expose: true
+            access_type: public_method
+            serialized_name: debit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountancy.xsd'
+            accessor:
+                getter: getDebit
+                setter: setDebit
+            type: string

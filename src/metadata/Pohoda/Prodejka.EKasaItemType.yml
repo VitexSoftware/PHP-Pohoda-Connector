@@ -1,0 +1,22 @@
+Pohoda\Prodejka\EKasaItemType:
+    properties:
+        refId:
+            expose: true
+            access_type: public_method
+            serialized_name: refId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getRefId
+                setter: setRefId
+            type: string
+        refundType:
+            expose: true
+            access_type: public_method
+            serialized_name: refundType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getRefundType
+                setter: setRefundType
+            type: string

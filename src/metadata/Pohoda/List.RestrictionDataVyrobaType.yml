@@ -1,0 +1,12 @@
+Pohoda\List\RestrictionDataVyrobaType:
+    properties:
+        productionList:
+            expose: true
+            access_type: public_method
+            serialized_name: productionList
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getProductionList
+                setter: setProductionList
+            type: string

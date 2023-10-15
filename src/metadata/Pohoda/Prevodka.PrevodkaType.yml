@@ -1,0 +1,61 @@
+Pohoda\Prevodka\PrevodkaType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        links:
+            expose: true
+            access_type: public_method
+            serialized_name: links
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+            accessor:
+                getter: getLinks
+                setter: setLinks
+            type: Pohoda\Type\LinksType
+        prevodkaHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: prevodkaHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+            accessor:
+                getter: getPrevodkaHeader
+                setter: setPrevodkaHeader
+            type: Pohoda\Prevodka\PrevodkaHeaderType
+        prevodkaDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: prevodkaDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+            accessor:
+                getter: getPrevodkaDetail
+                setter: setPrevodkaDetail
+            type: array<Pohoda\Prevodka\PrevodkaItemType>
+            xml_list:
+                inline: false
+                entry_name: prevodkaItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

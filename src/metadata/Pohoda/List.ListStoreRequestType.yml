@@ -1,0 +1,40 @@
+Pohoda\List\ListStoreRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        storeVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: storeVersion
+            accessor:
+                getter: getStoreVersion
+                setter: setStoreVersion
+            xml_attribute: true
+            type: string
+        requestStore:
+            expose: true
+            access_type: public_method
+            serialized_name: requestStore
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestStore
+                setter: setRequestStore
+            type: Pohoda\Filter\RequestStoreType
+        restrictionData:
+            expose: true
+            access_type: public_method
+            serialized_name: restrictionData
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRestrictionData
+                setter: setRestrictionData
+            type: Pohoda\List\RestrictionDataStoreType

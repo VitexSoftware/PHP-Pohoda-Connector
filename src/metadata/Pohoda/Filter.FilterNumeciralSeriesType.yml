@@ -1,0 +1,32 @@
+Pohoda\Filter\FilterNumeciralSeriesType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        period:
+            expose: true
+            access_type: public_method
+            serialized_name: period
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getPeriod
+                setter: setPeriod
+            type: string
+        agenda:
+            expose: true
+            access_type: public_method
+            serialized_name: agenda
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getAgenda
+                setter: setAgenda
+            type: string

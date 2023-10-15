@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+			xmlns:acu="http://www.stormware.cz/schema/version_2/accountingunit.xsd"
+			xmlns:arch="http://www.stormware.cz/schema/version_2/archive.xsd"
+			xmlns:mKasa="http://www.stormware.cz/schema/version_2/mKasa.xsd"
+			xmlns="http://www.stormware.cz/schema/version_2/mKasa.xsd"
+			targetNamespace="http://www.stormware.cz/schema/version_2/mKasa.xsd"
+			elementFormDefault="qualified"
+>
+
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/accountingunit.xsd" schemaLocation="accountingunit.xsd"/>
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/archive.xsd" schemaLocation="archive.xsd"/>
+
+
+  <!-- ************************************************************************** -->
+  <!-- REQUEST -->
+  <xsd:element name="mKasaRequest" type="mKasa:mKasaRequestType"/>
+
+  <xsd:complexType name="mKasaRequestType">
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element name="export" type="mKasa:exportRequestType"/>
+        <xsd:element name="import" type="mKasa:importRequestType"/>
+      </xsd:choice>
+    </xsd:sequence>
+    <xsd:attribute name="version" type="mKasa:mKasaVersionType" use="required"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="mKasaVersionType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="2.0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="exportRequestType">
+    <xsd:sequence>
+      <xsd:element name="name" type="mKasa:nameType"/>
+      <xsd:element name="deviceGuid" type="mKasa:deviceGuidType"/>
+      <xsd:element name="overwriteDeviceGuid" type="typ:boolean">
+        <xsd:annotation>
+          <xsd:documentation>
+            Má se aktualizovat Guid zařížení, na kterém se používá mKasa.
+            Guid se aktualizuje jen pokud je agenda Kasa.
+            Pokud se Guid liší a element je false nebo agenda není Kasa, vrací se chyba.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="agenda" type="mKasa:agendaType"/>
+      <xsd:element name="myLastId" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>
+            Nejvyšší ID, které mKasa obdržela za danou agendu. Nenulová hodnota má význam jen u agend AD, SKz, SkzVC.
+            Používá se pro stránkovaní. Poslední stránka neobsahuje žádné záznamy z požadované agendy.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DiffExport" type="typ:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            Exportovat jen změněné záznamy, má význam jen u agend SKz, SkzVC.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="importRequestType">
+    <xsd:sequence>
+      <xsd:element name="mKasaPackNum" type="mKasa:packNumType"/>
+      <xsd:element name="name" type="mKasa:nameType"/>
+      <xsd:element name="deviceGuid" type="mKasa:deviceGuidType"/>
+      <xsd:element name="overwriteDeviceGuid" type="typ:boolean">
+        <xsd:annotation>
+          <xsd:documentation>
+            Má se aktualizovat Guid zařížení, na kterém se používá mKasa.
+            Pokud se Guid liší a element je false, vrací se chyba.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="agendaType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Kasa"/>
+      <xsd:enumeration value="AD"/>
+      <xsd:enumeration value="FormUh"/>
+      <xsd:enumeration value="CIN"/>
+      <xsd:enumeration value="CRady"/>
+      <xsd:enumeration value="SkCeny"/>
+      <xsd:enumeration value="SkSt"/>
+      <xsd:enumeration value="SkKat"/>
+      <xsd:enumeration value="SKz"/>
+      <xsd:enumeration value="SKzVC"/>
+      <xsd:enumeration value="PHzauc"/>
+      <xsd:enumeration value="Ucet"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="packNumType">
+    <xsd:restriction base="xsd:int">
+      <xsd:minInclusive value="1"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="nameType">
+    <xsd:restriction base="typ:nonEmptyString">
+      <xsd:maxLength value="3"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="deviceGuidType">
+    <xsd:restriction base="typ:nonEmptyString">
+      <xsd:length value="36"/>
+      <xsd:pattern value="[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- ************************************************************************** -->
+  <!-- RESPONSE -->
+  <xsd:element name="mKasaResponse" type="mKasa:mKasaResponseType"/>
+
+  <xsd:complexType name="mKasaResponseType">
+    <xsd:complexContent>
+      <xsd:extension base="rdc:listVersionType">
+        <xsd:choice minOccurs="0">
+          <xsd:element name="configuration" type="mKasa:configurationType"/>
+          <xsd:element name="importResponse" type="mKasa:importResponseType"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="configurationType">
+    <xsd:sequence>
+      <xsd:element name="pohodaSNID" type="xsd:string"/>
+      <xsd:element name="pohodaPackNum" type="mKasa:packNumType"/>
+      <xsd:element name="companyInfo" type="mKasa:companyInfoType"/>
+      <xsd:element name="kasaInfo" type="mKasa:kasaInfoType"/>
+      <xsd:element name="pohodaRestriction" type="mKasa:pohodaRestrictionType"/>
+      <xsd:element name="globalSettings">
+        <xsd:complexType>
+          <xsd:sequence>
+             <xsd:element ref="arch:archive"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="importResponseType">
+    <xsd:sequence>
+      <xsd:element name="mKasaPackNum" type="mKasa:packNumType"/>
+      <xsd:element name="name" type="mKasa:nameType"/>
+      <xsd:element name="deviceGuid" type="mKasa:deviceGuidType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="companyInfoType">
+    <xsd:sequence>
+      <xsd:element name="key" type="typ:string64"/>
+      <xsd:element name="address" type="typ:addressInternetType"/>
+      <xsd:element name="establishment" type="typ:establishmentType" minOccurs="0"/>
+      <xsd:element name="unitType" type="acu:unitTypeType"/>
+      <xsd:element name="suffix" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="stateType" type="acu:stateTypeType"/>
+      <xsd:element name="register" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="vatPayer" type="mKasa:vatPayerType"/>
+      <xsd:element name="changeForFoodVouchers" type="typ:boolean" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="kasaInfoType">
+    <xsd:sequence>
+      <xsd:element name="id" type ="typ:idType"/>
+      <xsd:element name="name" type="mKasa:nameType"/>
+      <xsd:element name="description" type="xsd:string"/>
+      <xsd:element name="deviceGuid" type="mKasa:deviceGuidType"/>
+      <xsd:element name="establishment" type="mKasa:kasaEstablishmentType" minOccurs="0"/>
+      <xsd:element name="centre" type="typ:refType" minOccurs="0"/>
+      <xsd:element name="defaultStore" type="typ:refType" minOccurs="0"/>
+      <xsd:element name="defaultSellingPrice" type="typ:refType" minOccurs="0"/>
+      <xsd:element name="defaultPaymentType" type="typ:refType" minOccurs="0"/>
+      <xsd:element name="text" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="footer" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="payVat" type="typ:boolean" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="pohodaRestrictionType">
+    <xsd:sequence>
+      <xsd:element name="lockPin" type="typ:boolean"/>
+      <xsd:element name="administration" type="typ:boolean"/>
+      <xsd:element name="administrationPass" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="createCustomer" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="changePrize" type="typ:boolean"/>
+      <xsd:element name="textItems" type="typ:boolean"/>
+      <xsd:element name="depositsWithdrawals" type="typ:boolean"/>
+      <xsd:element name="delayedDocument" type="typ:boolean"/>
+      <xsd:element name="AgendaHistory" type="typ:boolean"/>
+      <xsd:element name="createSKPV" type="typ:boolean"/>
+      <xsd:element name="changeEet" type="typ:boolean"/>
+      <xsd:element name="deleteRecords" type="typ:boolean"/>
+      <xsd:element name="exportXml" type="typ:boolean"/>
+      <xsd:element name="createBackup" type="typ:boolean"/>
+      <xsd:element name="restoreBackup" type="typ:boolean"/>
+      <xsd:element name="createCashRegisterDoc" type="typ:boolean"/>
+      <xsd:element name="refund" type="typ:boolean"/>
+      <xsd:element name="accountDayByDay" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="canDoDiffExport" type="xsd:boolean" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="kasaEstablishmentType">
+    <xsd:sequence>
+      <xsd:element name="company" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="street" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="zip" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="phone" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="mobilPhone" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="fax" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="email" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="vatPayerType">
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element name="vatPayerWholePeriod" type="mKasa:vatPayerWholePeriodType"/>
+        <xsd:element name="nonVatPayerWholePeriod" type="mKasa:nonVatPayerWholePeriodType"/>
+        <xsd:element name="changeOfModeInCalendarYear" type="mKasa:changeOfModeInCalendarYearType"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="vatPayerWholePeriodType">
+    <xsd:sequence>
+      <xsd:element name="taxPeriod" type="mKasa:taxPeriodType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="nonVatPayerWholePeriodType">
+    <xsd:sequence>
+      <xsd:element name="identifiedPerson" type="typ:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="changeOfModeInCalendarYearType">
+    <xsd:sequence>
+      <xsd:element name="identifiedPerson" type="typ:boolean"/>
+      <xsd:element name="taxPeriod" type="mKasa:taxPeriodType"/>
+      <xsd:element name="modeCalendar" type="modeCalendarType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="taxPeriodType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="quarterly"/>
+      <xsd:enumeration value="monthly"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="modeCalendarType">
+    <xsd:sequence>
+      <xsd:element name="january" type="typ:boolean"/>
+      <xsd:element name="february" type="typ:boolean"/>
+      <xsd:element name="march" type="typ:boolean"/>
+      <xsd:element name="april" type="typ:boolean"/>
+      <xsd:element name="may" type="typ:boolean"/>
+      <xsd:element name="june" type="typ:boolean"/>
+      <xsd:element name="july" type="typ:boolean"/>
+      <xsd:element name="august" type="typ:boolean"/>
+      <xsd:element name="september" type="typ:boolean"/>
+      <xsd:element name="october" type="typ:boolean"/>
+      <xsd:element name="november" type="typ:boolean"/>
+      <xsd:element name="december" type="typ:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

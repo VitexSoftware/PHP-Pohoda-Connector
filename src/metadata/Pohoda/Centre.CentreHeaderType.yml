@@ -1,0 +1,72 @@
+Pohoda\Centre\CentreHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/centre.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/centre.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: Pohoda\Type\ExtIdType
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/centre.xsd'
+            accessor:
+                getter: getCode
+                setter: setCode
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/centre.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        establishment:
+            expose: true
+            access_type: public_method
+            serialized_name: establishment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/centre.xsd'
+            accessor:
+                getter: getEstablishment
+                setter: setEstablishment
+            type: Pohoda\Type\RefType
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/centre.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        markRecord:
+            expose: true
+            access_type: public_method
+            serialized_name: markRecord
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/centre.xsd'
+            accessor:
+                getter: getMarkRecord
+                setter: setMarkRecord
+            type: string

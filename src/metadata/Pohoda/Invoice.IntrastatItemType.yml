@@ -1,0 +1,182 @@
+Pohoda\Invoice\IntrastatItemType:
+    properties:
+        date:
+            expose: true
+            access_type: public_method
+            serialized_name: date
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getDate
+                setter: setDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        goodsCode:
+            expose: true
+            access_type: public_method
+            serialized_name: goodsCode
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getGoodsCode
+                setter: setGoodsCode
+            type: string
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: description
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            type: string
+        countryOfDestination:
+            expose: true
+            access_type: public_method
+            serialized_name: countryOfDestination
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getCountryOfDestination
+                setter: setCountryOfDestination
+            type: string
+        countryOfDispatch:
+            expose: true
+            access_type: public_method
+            serialized_name: countryOfDispatch
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getCountryOfDispatch
+                setter: setCountryOfDispatch
+            type: string
+        countryOfOrigin:
+            expose: true
+            access_type: public_method
+            serialized_name: countryOfOrigin
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getCountryOfOrigin
+                setter: setCountryOfOrigin
+            type: string
+        region:
+            expose: true
+            access_type: public_method
+            serialized_name: region
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getRegion
+                setter: setRegion
+            type: string
+        invoicedAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: invoicedAmount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getInvoicedAmount
+                setter: setInvoicedAmount
+            type: float
+        transportExpenses:
+            expose: true
+            access_type: public_method
+            serialized_name: transportExpenses
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getTransportExpenses
+                setter: setTransportExpenses
+            type: float
+        ownWeight:
+            expose: true
+            access_type: public_method
+            serialized_name: ownWeight
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getOwnWeight
+                setter: setOwnWeight
+            type: float
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: quantity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: float
+        addUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: addUnit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getAddUnit
+                setter: setAddUnit
+            type: string
+        transaction:
+            expose: true
+            access_type: public_method
+            serialized_name: transaction
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getTransaction
+                setter: setTransaction
+            type: string
+        termsOfDelivery:
+            expose: true
+            access_type: public_method
+            serialized_name: termsOfDelivery
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getTermsOfDelivery
+                setter: setTermsOfDelivery
+            type: string
+        modeOfTransport:
+            expose: true
+            access_type: public_method
+            serialized_name: modeOfTransport
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getModeOfTransport
+                setter: setModeOfTransport
+            type: string
+        statisticalCode:
+            expose: true
+            access_type: public_method
+            serialized_name: statisticalCode
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getStatisticalCode
+                setter: setStatisticalCode
+            type: string
+        specialTransaction:
+            expose: true
+            access_type: public_method
+            serialized_name: specialTransaction
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getSpecialTransaction
+                setter: setSpecialTransaction
+            type: string
+        vATIdOfPartner:
+            expose: true
+            access_type: public_method
+            serialized_name: VATIdOfPartner
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getVATIdOfPartner
+                setter: setVATIdOfPartner
+            type: string

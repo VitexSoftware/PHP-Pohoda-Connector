@@ -1,0 +1,32 @@
+Pohoda\ActionPrice\DefaultPriceStockType:
+    properties:
+        price:
+            expose: true
+            access_type: public_method
+            serialized_name: price
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getPrice
+                setter: setPrice
+            type: float
+        payVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: payVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getPayVAT
+                setter: setPayVAT
+            type: string
+        foreignCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getForeignCurrency
+                setter: setForeignCurrency
+            type: Pohoda\ActionPrice\TypeAcpCurrencyForeignType

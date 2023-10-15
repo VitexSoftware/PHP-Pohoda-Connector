@@ -1,0 +1,22 @@
+Pohoda\Type\ActionTypeItemAddDeleteType:
+    properties:
+        add:
+            expose: true
+            access_type: public_method
+            serialized_name: add
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getAdd
+                setter: setAdd
+            type: string
+        delete:
+            expose: true
+            access_type: public_method
+            serialized_name: delete
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getDelete
+                setter: setDelete
+            type: Pohoda\Filter\RequestItemType

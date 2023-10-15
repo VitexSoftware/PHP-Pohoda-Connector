@@ -1,0 +1,21 @@
+Pohoda\List\ListIntParamRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        requestIntParam:
+            expose: true
+            access_type: public_method
+            serialized_name: requestIntParam
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestIntParam
+                setter: setRequestIntParam
+            type: Pohoda\List\RequestIntParamType

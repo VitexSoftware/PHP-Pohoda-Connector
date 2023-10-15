@@ -1,0 +1,572 @@
+Pohoda\AddressBook\AddressbookHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        identity:
+            expose: true
+            access_type: public_method
+            serialized_name: identity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getIdentity
+                setter: setIdentity
+            type: Pohoda\Type\AddressType
+        region:
+            expose: true
+            access_type: public_method
+            serialized_name: region
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getRegion
+                setter: setRegion
+            type: string
+        phone:
+            expose: true
+            access_type: public_method
+            serialized_name: phone
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getPhone
+                setter: setPhone
+            type: string
+        mobil:
+            expose: true
+            access_type: public_method
+            serialized_name: mobil
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getMobil
+                setter: setMobil
+            type: string
+        fax:
+            expose: true
+            access_type: public_method
+            serialized_name: fax
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getFax
+                setter: setFax
+            type: string
+        email:
+            expose: true
+            access_type: public_method
+            serialized_name: email
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getEmail
+                setter: setEmail
+            type: string
+        web:
+            expose: true
+            access_type: public_method
+            serialized_name: web
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getWeb
+                setter: setWeb
+            type: string
+        iCQ:
+            expose: true
+            access_type: public_method
+            serialized_name: ICQ
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getICQ
+                setter: setICQ
+            type: string
+        skype:
+            expose: true
+            access_type: public_method
+            serialized_name: Skype
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getSkype
+                setter: setSkype
+            type: string
+        gPS:
+            expose: true
+            access_type: public_method
+            serialized_name: GPS
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getGPS
+                setter: setGPS
+            type: string
+        adGroup:
+            expose: true
+            access_type: public_method
+            serialized_name: adGroup
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAdGroup
+                setter: setAdGroup
+            type: string
+        adKey:
+            expose: true
+            access_type: public_method
+            serialized_name: adKey
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAdKey
+                setter: setAdKey
+            type: string
+        credit:
+            expose: true
+            access_type: public_method
+            serialized_name: credit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getCredit
+                setter: setCredit
+            type: float
+        priceIDS:
+            expose: true
+            access_type: public_method
+            serialized_name: priceIDS
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getPriceIDS
+                setter: setPriceIDS
+            type: string
+        maturity:
+            expose: true
+            access_type: public_method
+            serialized_name: maturity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getMaturity
+                setter: setMaturity
+            type: int
+        maturityCommitments:
+            expose: true
+            access_type: public_method
+            serialized_name: maturityCommitments
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getMaturityCommitments
+                setter: setMaturityCommitments
+            type: int
+        paymentType:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getPaymentType
+                setter: setPaymentType
+            type: Pohoda\Type\PaymentType
+        agreement:
+            expose: true
+            access_type: public_method
+            serialized_name: agreement
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAgreement
+                setter: setAgreement
+            type: string
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: Pohoda\Type\NumberADType
+        ost1:
+            expose: true
+            access_type: public_method
+            serialized_name: ost1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getOst1
+                setter: setOst1
+            type: string
+        ost2:
+            expose: true
+            access_type: public_method
+            serialized_name: ost2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getOst2
+                setter: setOst2
+            type: string
+        function:
+            expose: true
+            access_type: public_method
+            serialized_name: function
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getFunction
+                setter: setFunction
+            type: string
+        personalIdentificationNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: personalIdentificationNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getPersonalIdentificationNumber
+                setter: setPersonalIdentificationNumber
+            type: string
+        salutation:
+            expose: true
+            access_type: public_method
+            serialized_name: salutation
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getSalutation
+                setter: setSalutation
+            type: string
+        sex:
+            expose: true
+            access_type: public_method
+            serialized_name: sex
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getSex
+                setter: setSex
+            type: string
+        dateOfBirth:
+            expose: true
+            access_type: public_method
+            serialized_name: dateOfBirth
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getDateOfBirth
+                setter: setDateOfBirth
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        p1:
+            expose: true
+            access_type: public_method
+            serialized_name: p1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getP1
+                setter: setP1
+            type: string
+        p2:
+            expose: true
+            access_type: public_method
+            serialized_name: p2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getP2
+                setter: setP2
+            type: string
+        p3:
+            expose: true
+            access_type: public_method
+            serialized_name: p3
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getP3
+                setter: setP3
+            type: string
+        p4:
+            expose: true
+            access_type: public_method
+            serialized_name: p4
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getP4
+                setter: setP4
+            type: string
+        p5:
+            expose: true
+            access_type: public_method
+            serialized_name: p5
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getP5
+                setter: setP5
+            type: string
+        p6:
+            expose: true
+            access_type: public_method
+            serialized_name: p6
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getP6
+                setter: setP6
+            type: string
+        message:
+            expose: true
+            access_type: public_method
+            serialized_name: message
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getMessage
+                setter: setMessage
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        intNote:
+            expose: true
+            access_type: public_method
+            serialized_name: intNote
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getIntNote
+                setter: setIntNote
+            type: string
+        accountingReceivedInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: accountingReceivedInvoice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAccountingReceivedInvoice
+                setter: setAccountingReceivedInvoice
+            type: Pohoda\Type\AccountingType
+        accountingIssuedInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: accountingIssuedInvoice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAccountingIssuedInvoice
+                setter: setAccountingIssuedInvoice
+            type: Pohoda\Type\AccountingType
+        classificationVATReceivedInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationVATReceivedInvoice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getClassificationVATReceivedInvoice
+                setter: setClassificationVATReceivedInvoice
+            type: Pohoda\Type\ClassificationVATType
+        classificationVATIssuedInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationVATIssuedInvoice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getClassificationVATIssuedInvoice
+                setter: setClassificationVATIssuedInvoice
+            type: Pohoda\Type\ClassificationVATType
+        classificationKVDPHReceivedInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationKVDPHReceivedInvoice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getClassificationKVDPHReceivedInvoice
+                setter: setClassificationKVDPHReceivedInvoice
+            type: Pohoda\Type\RefType
+        classificationKVDPHIssuedInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationKVDPHIssuedInvoice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getClassificationKVDPHIssuedInvoice
+                setter: setClassificationKVDPHIssuedInvoice
+            type: Pohoda\Type\RefType
+        accountForInvoicing:
+            expose: true
+            access_type: public_method
+            serialized_name: accountForInvoicing
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAccountForInvoicing
+                setter: setAccountForInvoicing
+            type: Pohoda\Type\AccountType
+        responsiblePerson:
+            expose: true
+            access_type: public_method
+            serialized_name: responsiblePerson
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getResponsiblePerson
+                setter: setResponsiblePerson
+            type: Pohoda\Type\ResponsiblePersonType
+        toleranceMaturity:
+            expose: true
+            access_type: public_method
+            serialized_name: toleranceMaturity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getToleranceMaturity
+                setter: setToleranceMaturity
+            type: int
+        foreignCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getForeignCurrency
+                setter: setForeignCurrency
+            type: Pohoda\Type\RefType
+        centre:
+            expose: true
+            access_type: public_method
+            serialized_name: centre
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getCentre
+                setter: setCentre
+            type: Pohoda\Type\RefType
+        activity:
+            expose: true
+            access_type: public_method
+            serialized_name: activity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getActivity
+                setter: setActivity
+            type: Pohoda\Type\RefType
+        contract:
+            expose: true
+            access_type: public_method
+            serialized_name: contract
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getContract
+                setter: setContract
+            type: Pohoda\Type\RefType
+        turnover:
+            expose: true
+            access_type: public_method
+            serialized_name: turnover
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getTurnover
+                setter: setTurnover
+            type: float
+        turnover2:
+            expose: true
+            access_type: public_method
+            serialized_name: turnover2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getTurnover2
+                setter: setTurnover2
+            type: float
+        parameters:
+            expose: true
+            access_type: public_method
+            serialized_name: parameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            type: array<Pohoda\Type\ParameterDocType>
+            xml_list:
+                inline: false
+                entry_name: parameter
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+        refAddress:
+            expose: true
+            access_type: public_method
+            serialized_name: refAddress
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getRefAddress
+                setter: setRefAddress
+            type: Pohoda\Type\RefAddressType
+        markRecord:
+            expose: true
+            access_type: public_method
+            serialized_name: markRecord
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getMarkRecord
+                setter: setMarkRecord
+            type: string
+        labels:
+            expose: true
+            access_type: public_method
+            serialized_name: labels
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getLabels
+                setter: setLabels
+            type: array<Pohoda\Type\LabelType>
+            xml_list:
+                inline: false
+                entry_name: label
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+        carrier:
+            expose: true
+            access_type: public_method
+            serialized_name: carrier
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getCarrier
+                setter: setCarrier
+            type: Pohoda\Type\CarrierType

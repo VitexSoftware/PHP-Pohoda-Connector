@@ -1,0 +1,978 @@
+Pohoda\Response\ResponsePackItemType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: string
+        state:
+            expose: true
+            access_type: public_method
+            serialized_name: state
+            accessor:
+                getter: getState
+                setter: setState
+            xml_attribute: true
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_attribute: true
+            type: string
+        addressbookResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: addressbookResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getAddressbookResponse
+                setter: setAddressbookResponse
+            type: Pohoda\AddressBook\AddressbookResponse
+        invoiceResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getInvoiceResponse
+                setter: setInvoiceResponse
+            type: Pohoda\Invoice\InvoiceResponse
+        numericalSeriesResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: numericalSeriesResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/numericalSeries.xsd'
+            accessor:
+                getter: getNumericalSeriesResponse
+                setter: setNumericalSeriesResponse
+            type: Pohoda\NumericalSeries\NumericalSeriesResponse
+        voucherResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: voucherResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/voucher.xsd'
+            accessor:
+                getter: getVoucherResponse
+                setter: setVoucherResponse
+            type: Pohoda\Voucher\VoucherResponse
+        intDocResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: intDocResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            accessor:
+                getter: getIntDocResponse
+                setter: setIntDocResponse
+            type: Pohoda\IntDoc\IntDocResponse
+        vydejkaResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: vydejkaResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vydejka.xsd'
+            accessor:
+                getter: getVydejkaResponse
+                setter: setVydejkaResponse
+            type: Pohoda\Vydejka\VydejkaResponse
+        prijemkaResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: prijemkaResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            accessor:
+                getter: getPrijemkaResponse
+                setter: setPrijemkaResponse
+            type: Pohoda\Prijemka\PrijemkaResponse
+        prodejkaResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: prodejkaResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getProdejkaResponse
+                setter: setProdejkaResponse
+            type: Pohoda\Prodejka\ProdejkaResponse
+        stockItemResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: stockItemResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getStockItemResponse
+                setter: setStockItemResponse
+            type: Pohoda\Stock\StockItemResponse
+        orderResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: orderResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getOrderResponse
+                setter: setOrderResponse
+            type: Pohoda\Order\OrderResponse
+        enquiryResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: enquiryResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/enquiry.xsd'
+            accessor:
+                getter: getEnquiryResponse
+                setter: setEnquiryResponse
+            type: Pohoda\Enquiry\EnquiryResponse
+        offerResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: offerResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/offer.xsd'
+            accessor:
+                getter: getOfferResponse
+                setter: setOfferResponse
+            type: Pohoda\Offer\OfferResponse
+        vyrobaResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: vyrobaResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'
+            accessor:
+                getter: getVyrobaResponse
+                setter: setVyrobaResponse
+            type: Pohoda\Vyroba\VyrobaResponse
+        prevodkaResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: prevodkaResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prevodka.xsd'
+            accessor:
+                getter: getPrevodkaResponse
+                setter: setPrevodkaResponse
+            type: Pohoda\Prevodka\PrevodkaResponse
+        parameterItemResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: parameterItemResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getParameterItemResponse
+                setter: setParameterItemResponse
+            type: Pohoda\Parameter\ParameterItemResponse
+        contractResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: contractResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/contract.xsd'
+            accessor:
+                getter: getContractResponse
+                setter: setContractResponse
+            type: Pohoda\Contract\ContractResponse
+        storageResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: storageResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/storage.xsd'
+            accessor:
+                getter: getStorageResponse
+                setter: setStorageResponse
+            type: Pohoda\Storage\StorageResponse
+        intParamResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: intParamResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intParam.xsd'
+            accessor:
+                getter: getIntParamResponse
+                setter: setIntParamResponse
+            type: Pohoda\IntParam\IntParamResponse
+        individualPriceResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: individualPriceResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getIndividualPriceResponse
+                setter: setIndividualPriceResponse
+            type: Pohoda\IndividualPrice\IndividualPriceResponse
+        storeResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: storeResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'
+            accessor:
+                getter: getStoreResponse
+                setter: setStoreResponse
+            type: Pohoda\Store\StoreResponse
+        groupStocksResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: groupStocksResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            accessor:
+                getter: getGroupStocksResponse
+                setter: setGroupStocksResponse
+            type: Pohoda\GroupStocks\GroupStocksResponse
+        printResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: printResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getPrintResponse
+                setter: setPrintResponse
+            type: Pohoda\Print\PrintResponse
+        lockResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: lockResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/lock.xsd'
+            accessor:
+                getter: getLockResponse
+                setter: setLockResponse
+            type: Pohoda\Lock\LockResponse
+        isdocResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: isdocResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/isdoc.xsd'
+            accessor:
+                getter: getIsdocResponse
+                setter: setIsdocResponse
+            type: Pohoda\Isdoc\IsdocResponse
+        sendEETResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: sendEETResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/sendEET.xsd'
+            accessor:
+                getter: getSendEETResponse
+                setter: setSendEETResponse
+            type: Pohoda\SendEET\SendEETResponse
+        mKasaResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: mKasaResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getMKasaResponse
+                setter: setMKasaResponse
+            type: Pohoda\MKasa\MKasaResponse
+        inventoryListsResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: inventoryListsResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getInventoryListsResponse
+                setter: setInventoryListsResponse
+            type: Pohoda\InventoryLists\InventoryListsResponse
+        listUserCodeResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: listUserCodeResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListUserCodeResponse
+                setter: setListUserCodeResponse
+            type: Pohoda\List\ListUserCodeResponse
+        supplierResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: supplierResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/supplier.xsd'
+            accessor:
+                getter: getSupplierResponse
+                setter: setSupplierResponse
+            type: Pohoda\Supplier\SupplierResponse
+        categoryResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: categoryResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/category.xsd'
+            accessor:
+                getter: getCategoryResponse
+                setter: setCategoryResponse
+            type: Pohoda\Category\CategoryResponse
+        gDPRResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: GDPRResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/GDPR.xsd'
+            accessor:
+                getter: getGDPRResponse
+                setter: setGDPRResponse
+            type: Pohoda\Gdpr\GDPRResponse
+        accountingSalesVouchersResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: accountingSalesVouchersResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            accessor:
+                getter: getAccountingSalesVouchersResponse
+                setter: setAccountingSalesVouchersResponse
+            type: Pohoda\AccountingSalesVouchers\AccountingSalesVouchersResponse
+        productRequirementResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: productRequirementResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getProductRequirementResponse
+                setter: setProductRequirementResponse
+            type: Pohoda\ProductRequirement\ProductRequirementResponse
+        bankResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: bankResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bank.xsd'
+            accessor:
+                getter: getBankResponse
+                setter: setBankResponse
+            type: Pohoda\Bank\BankResponse
+        bankAccountResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: bankAccountResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getBankAccountResponse
+                setter: setBankAccountResponse
+            type: Pohoda\BankAccount\BankAccountResponse
+        rulesPairingResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: rulesPairingResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/rulesPairing.xsd'
+            accessor:
+                getter: getRulesPairingResponse
+                setter: setRulesPairingResponse
+            type: Pohoda\RulesPairing\RulesPairingResponse
+        liquidationWithoutLinkResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: liquidationWithoutLinkResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd'
+            accessor:
+                getter: getLiquidationWithoutLinkResponse
+                setter: setLiquidationWithoutLinkResponse
+            type: Pohoda\LiquidationWithoutLink\LiquidationWithoutLinkResponse
+        discountResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: discountResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/discount.xsd'
+            accessor:
+                getter: getDiscountResponse
+                setter: setDiscountResponse
+            type: Pohoda\Discount\DiscountResponse
+        automaticLiquidationResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: automaticLiquidationResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd'
+            accessor:
+                getter: getAutomaticLiquidationResponse
+                setter: setAutomaticLiquidationResponse
+            type: Pohoda\AutomaticLiquidationResponse
+        serviceResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: serviceResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'
+            accessor:
+                getter: getServiceResponse
+                setter: setServiceResponse
+            type: Pohoda\Service\ServiceResponse
+        listCentre:
+            expose: true
+            access_type: public_method
+            serialized_name: listCentre
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_centre.xsd'
+            accessor:
+                getter: getListCentre
+                setter: setListCentre
+            type: Pohoda\ListCentre\ListCentre
+        listActivity:
+            expose: true
+            access_type: public_method
+            serialized_name: listActivity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_activity.xsd'
+            accessor:
+                getter: getListActivity
+                setter: setListActivity
+            type: Pohoda\ListActivity\ListActivity
+        listContract:
+            expose: true
+            access_type: public_method
+            serialized_name: listContract
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_contract.xsd'
+            accessor:
+                getter: getListContract
+                setter: setListContract
+            type: Pohoda\ListContract\ListContract
+        listCash:
+            expose: true
+            access_type: public_method
+            serialized_name: listCash
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListCash
+                setter: setListCash
+            type: Pohoda\List\ListCash
+        listCashRegister:
+            expose: true
+            access_type: public_method
+            serialized_name: listCashRegister
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListCashRegister
+                setter: setListCashRegister
+            type: Pohoda\List\ListCashRegister
+        listBankAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: listBankAccount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListBankAccount
+                setter: setListBankAccount
+            type: Pohoda\List\ListBankAccount
+        listAccountingSingleEntry:
+            expose: true
+            access_type: public_method
+            serialized_name: listAccountingSingleEntry
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListAccountingSingleEntry
+                setter: setListAccountingSingleEntry
+            type: Pohoda\List\ListAccountingSingleEntry
+        listAccountingDoubleEntry:
+            expose: true
+            access_type: public_method
+            serialized_name: listAccountingDoubleEntry
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListAccountingDoubleEntry
+                setter: setListAccountingDoubleEntry
+            type: Pohoda\List\ListAccountingDoubleEntry
+        listAccount:
+            expose: true
+            access_type: public_method
+            serialized_name: listAccount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListAccount
+                setter: setListAccount
+            type: Pohoda\List\ListAccount
+        listStorage:
+            expose: true
+            access_type: public_method
+            serialized_name: listStorage
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListStorage
+                setter: setListStorage
+            type: Pohoda\List\ListStorage
+        listSellingPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: listSellingPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListSellingPrice
+                setter: setListSellingPrice
+            type: Pohoda\List\ListSellingPrice
+        listNumericSeries:
+            expose: true
+            access_type: public_method
+            serialized_name: listNumericSeries
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListNumericSeries
+                setter: setListNumericSeries
+            type: Pohoda\List\ListNumericSeries
+        createAccountingDoubleEntryResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: createAccountingDoubleEntryResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getCreateAccountingDoubleEntryResponse
+                setter: setCreateAccountingDoubleEntryResponse
+            type: Pohoda\List\CreateAccountingDoubleEntryResponse
+        listAccountingUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: listAccountingUnit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingunit.xsd'
+            accessor:
+                getter: getListAccountingUnit
+                setter: setListAccountingUnit
+            type: Pohoda\Accountingunit\ListAccountingUnit
+        listStock:
+            expose: true
+            access_type: public_method
+            serialized_name: listStock
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_stock.xsd'
+            accessor:
+                getter: getListStock
+                setter: setListStock
+            type: Pohoda\ListStock\ListStock
+        listInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: listInvoice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListInvoice
+                setter: setListInvoice
+            type: Pohoda\List\ListInvoice
+        listAddressBook:
+            expose: true
+            access_type: public_method
+            serialized_name: listAddressBook
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_addBook.xsd'
+            accessor:
+                getter: getListAddressBook
+                setter: setListAddressBook
+            type: Pohoda\ListAddBook\ListAddressBook
+        listOrder:
+            expose: true
+            access_type: public_method
+            serialized_name: listOrder
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListOrder
+                setter: setListOrder
+            type: Pohoda\List\ListOrder
+        listEnquiry:
+            expose: true
+            access_type: public_method
+            serialized_name: listEnquiry
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListEnquiry
+                setter: setListEnquiry
+            type: Pohoda\List\ListEnquiry
+        listOffer:
+            expose: true
+            access_type: public_method
+            serialized_name: listOffer
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListOffer
+                setter: setListOffer
+            type: Pohoda\List\ListOffer
+        listParameter:
+            expose: true
+            access_type: public_method
+            serialized_name: listParameter
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListParameter
+                setter: setListParameter
+            type: Pohoda\List\ListParameter
+        listUserCodePack:
+            expose: true
+            access_type: public_method
+            serialized_name: listUserCodePack
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListUserCodePack
+                setter: setListUserCodePack
+            type: Pohoda\List\ListUserCodePack
+        listVydejka:
+            expose: true
+            access_type: public_method
+            serialized_name: listVydejka
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListVydejka
+                setter: setListVydejka
+            type: Pohoda\List\ListVydejka
+        listPrijemka:
+            expose: true
+            access_type: public_method
+            serialized_name: listPrijemka
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListPrijemka
+                setter: setListPrijemka
+            type: Pohoda\List\ListPrijemka
+        listBalance:
+            expose: true
+            access_type: public_method
+            serialized_name: listBalance
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListBalance
+                setter: setListBalance
+            type: Pohoda\List\ListBalance
+        listCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: listCategory
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListCategory
+                setter: setListCategory
+            type: Pohoda\List\ListCategory
+        listIntParam:
+            expose: true
+            access_type: public_method
+            serialized_name: listIntParam
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListIntParam
+                setter: setListIntParam
+            type: Pohoda\List\ListIntParam
+        listIntDoc:
+            expose: true
+            access_type: public_method
+            serialized_name: listIntDoc
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListIntDoc
+                setter: setListIntDoc
+            type: Pohoda\List\ListIntDoc
+        listProdejka:
+            expose: true
+            access_type: public_method
+            serialized_name: listProdejka
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListProdejka
+                setter: setListProdejka
+            type: Pohoda\List\ListProdejka
+        listVoucher:
+            expose: true
+            access_type: public_method
+            serialized_name: listVoucher
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListVoucher
+                setter: setListVoucher
+            type: Pohoda\List\ListVoucher
+        listPrevodka:
+            expose: true
+            access_type: public_method
+            serialized_name: listPrevodka
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListPrevodka
+                setter: setListPrevodka
+            type: Pohoda\List\ListPrevodka
+        listVyroba:
+            expose: true
+            access_type: public_method
+            serialized_name: listVyroba
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListVyroba
+                setter: setListVyroba
+            type: Pohoda\List\ListVyroba
+        taxDataResponse:
+            expose: true
+            access_type: public_method
+            serialized_name: taxDataResponse
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getTaxDataResponse
+                setter: setTaxDataResponse
+            type: Pohoda\List\TaxDataResponse
+        listIndividualPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: listIndividualPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListIndividualPrice
+                setter: setListIndividualPrice
+            type: Pohoda\List\ListIndividualPrice
+        listBank:
+            expose: true
+            access_type: public_method
+            serialized_name: listBank
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListBank
+                setter: setListBank
+            type: Pohoda\List\ListBank
+        listAccountancy:
+            expose: true
+            access_type: public_method
+            serialized_name: listAccountancy
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListAccountancy
+                setter: setListAccountancy
+            type: Pohoda\List\ListAccountancy
+        listStore:
+            expose: true
+            access_type: public_method
+            serialized_name: listStore
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListStore
+                setter: setListStore
+            type: Pohoda\List\ListStore
+        listSupplier:
+            expose: true
+            access_type: public_method
+            serialized_name: listSupplier
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListSupplier
+                setter: setListSupplier
+            type: Pohoda\List\ListSupplier
+        listGroupStocks:
+            expose: true
+            access_type: public_method
+            serialized_name: listGroupStocks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListGroupStocks
+                setter: setListGroupStocks
+            type: Pohoda\List\ListGroupStocks
+        listActionPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: listActionPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListActionPrice
+                setter: setListActionPrice
+            type: Pohoda\List\ListActionPrice
+        listInventoryLists:
+            expose: true
+            access_type: public_method
+            serialized_name: listInventoryLists
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListInventoryLists
+                setter: setListInventoryLists
+            type: Pohoda\List\ListInventoryLists
+        listPayment:
+            expose: true
+            access_type: public_method
+            serialized_name: listPayment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListPayment
+                setter: setListPayment
+            type: Pohoda\List\ListPayment
+        listNumericalSeries:
+            expose: true
+            access_type: public_method
+            serialized_name: listNumericalSeries
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListNumericalSeries
+                setter: setListNumericalSeries
+            type: Pohoda\List\ListNumericalSeries
+        listGDPR:
+            expose: true
+            access_type: public_method
+            serialized_name: listGDPR
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListGDPR
+                setter: setListGDPR
+            type: Pohoda\List\ListGDPR
+        listEstablishment:
+            expose: true
+            access_type: public_method
+            serialized_name: listEstablishment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListEstablishment
+                setter: setListEstablishment
+            type: Pohoda\List\ListEstablishment
+        listAccountingFormOfPayment:
+            expose: true
+            access_type: public_method
+            serialized_name: listAccountingFormOfPayment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListAccountingFormOfPayment
+                setter: setListAccountingFormOfPayment
+            type: Pohoda\List\ListAccountingFormOfPayment
+        listClassificationVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: listClassificationVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListClassificationVAT
+                setter: setListClassificationVAT
+            type: Pohoda\List\ListClassificationVAT
+        listGlobalSettings:
+            expose: true
+            access_type: public_method
+            serialized_name: listGlobalSettings
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListGlobalSettings
+                setter: setListGlobalSettings
+            type: Pohoda\List\ListGlobalSettings
+        listRegistrationNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: listRegistrationNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListRegistrationNumber
+                setter: setListRegistrationNumber
+            type: Pohoda\List\ListRegistrationNumber
+        listProductRequirement:
+            expose: true
+            access_type: public_method
+            serialized_name: listProductRequirement
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListProductRequirement
+                setter: setListProductRequirement
+            type: Pohoda\List\ListProductRequirement
+        listMovement:
+            expose: true
+            access_type: public_method
+            serialized_name: listMovement
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListMovement
+                setter: setListMovement
+            type: Pohoda\List\ListMovement
+        listRecyclingContrib:
+            expose: true
+            access_type: public_method
+            serialized_name: listRecyclingContrib
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListRecyclingContrib
+                setter: setListRecyclingContrib
+            type: Pohoda\List\ListRecyclingContrib
+        listService:
+            expose: true
+            access_type: public_method
+            serialized_name: listService
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListService
+                setter: setListService
+            type: Pohoda\List\ListService
+        listRulesPairing:
+            expose: true
+            access_type: public_method
+            serialized_name: listRulesPairing
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getListRulesPairing
+                setter: setListRulesPairing
+            type: Pohoda\List\ListRulesPairing

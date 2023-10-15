@@ -1,0 +1,22 @@
+Pohoda\Type\SourceDocumentItemType:
+    properties:
+        sourceItemId:
+            expose: true
+            access_type: public_method
+            serialized_name: sourceItemId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getSourceItemId
+                setter: setSourceItemId
+            type: int
+        sourceItemExtId:
+            expose: true
+            access_type: public_method
+            serialized_name: sourceItemExtId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getSourceItemExtId
+                setter: setSourceItemExtId
+            type: Pohoda\Type\ExtIdType

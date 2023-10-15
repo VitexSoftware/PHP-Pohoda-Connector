@@ -1,0 +1,22 @@
+Pohoda\Isdoc\AttachmentType:
+    properties:
+        preview:
+            expose: true
+            access_type: public_method
+            serialized_name: preview
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/isdoc.xsd'
+            accessor:
+                getter: getPreview
+                setter: setPreview
+            type: string
+        fileName:
+            expose: true
+            access_type: public_method
+            serialized_name: fileName
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/isdoc.xsd'
+            accessor:
+                getter: getFileName
+                setter: setFileName
+            type: string

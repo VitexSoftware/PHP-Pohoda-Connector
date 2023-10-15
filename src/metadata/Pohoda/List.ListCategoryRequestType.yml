@@ -1,0 +1,30 @@
+Pohoda\List\ListCategoryRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        categoryVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: categoryVersion
+            accessor:
+                getter: getCategoryVersion
+                setter: setCategoryVersion
+            xml_attribute: true
+            type: string
+        requestCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: requestCategory
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestCategory
+                setter: setRequestCategory
+            type: Pohoda\List\RequestCategoryType

@@ -1,0 +1,16 @@
+Pohoda\IndividualPrice\PriceGroupsType:
+    properties:
+        priceGroupItem:
+            expose: true
+            access_type: public_method
+            serialized_name: priceGroupItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getPriceGroupItem
+                setter: setPriceGroupItem
+            xml_list:
+                inline: true
+                entry_name: priceGroupItem
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            type: array<Pohoda\IndividualPrice\PriceGroupItemType>

@@ -1,0 +1,19 @@
+Pohoda\Stock\StockHeaderType\SellingPriceAType:
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: float
+        payVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: payVAT
+            accessor:
+                getter: getPayVAT
+                setter: setPayVAT
+            xml_attribute: true
+            type: bool

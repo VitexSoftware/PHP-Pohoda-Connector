@@ -1,0 +1,3 @@
+Pohoda\Store\StoreResponse:
+    xml_root_name: storeResponse
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/store.xsd'

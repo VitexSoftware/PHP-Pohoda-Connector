@@ -1,0 +1,3 @@
+Pohoda\ActionPrice\ActionPrice:
+    xml_root_name: actionPrice
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'

@@ -1,0 +1,106 @@
+Pohoda\Stock\StockType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: Pohoda\Stock\ActionTypeType
+        stockHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: stockHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getStockHeader
+                setter: setStockHeader
+            type: Pohoda\Stock\StockHeaderType
+        stockDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: stockDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getStockDetail
+                setter: setStockDetail
+            type: array<Pohoda\Stock\StockItemType>
+            xml_list:
+                inline: false
+                entry_name: stockItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        stockAttach:
+            expose: true
+            access_type: public_method
+            serialized_name: stockAttach
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getStockAttach
+                setter: setStockAttach
+            type: array<Pohoda\Stock\AttachItemType>
+            xml_list:
+                inline: false
+                entry_name: attachItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        stockSerialNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: stockSerialNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getStockSerialNumber
+                setter: setStockSerialNumber
+            type: array<Pohoda\Stock\SerialNumberItemType>
+            xml_list:
+                inline: false
+                entry_name: serialNumberItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        stockPriceItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockPriceItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getStockPriceItem
+                setter: setStockPriceItem
+            type: array<Pohoda\Type\StockPriceType>
+            xml_list:
+                inline: false
+                entry_name: stockPrice
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

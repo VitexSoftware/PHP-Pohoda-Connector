@@ -1,0 +1,12 @@
+Pohoda\Storage\SubStoragesType:
+    properties:
+        itemStorage:
+            expose: true
+            access_type: public_method
+            serialized_name: itemStorage
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/storage.xsd'
+            accessor:
+                getter: getItemStorage
+                setter: setItemStorage
+            type: Pohoda\Storage\ItemStorageType

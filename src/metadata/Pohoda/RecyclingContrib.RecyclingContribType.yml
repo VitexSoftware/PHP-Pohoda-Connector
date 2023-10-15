@@ -1,0 +1,21 @@
+Pohoda\RecyclingContrib\RecyclingContribType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        recyclingContribHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: recyclingContribHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/recyclingContrib.xsd'
+            accessor:
+                getter: getRecyclingContribHeader
+                setter: setRecyclingContribHeader
+            type: Pohoda\RecyclingContrib\RecyclingContribHeaderType

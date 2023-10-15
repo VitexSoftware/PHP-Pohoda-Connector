@@ -1,0 +1,20 @@
+Pohoda\Filter\RequestStockActionType:
+    properties:
+        update:
+            expose: true
+            access_type: public_method
+            serialized_name: update
+            accessor:
+                getter: getUpdate
+                setter: setUpdate
+            xml_attribute: true
+            type: string
+        add:
+            expose: true
+            access_type: public_method
+            serialized_name: add
+            accessor:
+                getter: getAdd
+                setter: setAdd
+            xml_attribute: true
+            type: string

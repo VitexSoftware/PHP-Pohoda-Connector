@@ -1,0 +1,76 @@
+Pohoda\IntDoc\IntDocType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        taxDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: taxDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            accessor:
+                getter: getTaxDocument
+                setter: setTaxDocument
+            type: Pohoda\IntDoc\TaxDocumentType
+        intDocHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: intDocHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            accessor:
+                getter: getIntDocHeader
+                setter: setIntDocHeader
+            type: Pohoda\IntDoc\IntDocHeaderType
+        intDocDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: intDocDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            accessor:
+                getter: getIntDocDetail
+                setter: setIntDocDetail
+            type: Pohoda\IntDoc\IntDocDetailType
+        intDocSummary:
+            expose: true
+            access_type: public_method
+            serialized_name: intDocSummary
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            accessor:
+                getter: getIntDocSummary
+                setter: setIntDocSummary
+            type: Pohoda\IntDoc\IntDocSummaryType
+        linkedDocuments:
+            expose: true
+            access_type: public_method
+            serialized_name: linkedDocuments
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            accessor:
+                getter: getLinkedDocuments
+                setter: setLinkedDocuments
+            type: Pohoda\Type\LinksType
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

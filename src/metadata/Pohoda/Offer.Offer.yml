@@ -1,0 +1,3 @@
+Pohoda\Offer\Offer:
+    xml_root_name: offer
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/offer.xsd'

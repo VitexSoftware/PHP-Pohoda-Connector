@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+			xmlns:mov="http://www.stormware.cz/schema/version_2/movement.xsd"
+			xmlns:stk="http://www.stormware.cz/schema/version_2/stock.xsd"
+			xmlns="http://www.stormware.cz/schema/version_2/movement.xsd"
+			targetNamespace="http://www.stormware.cz/schema/version_2/movement.xsd"
+			elementFormDefault="qualified">
+
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+  <xsd:import namespace="http://www.stormware.cz/schema/version_2/stock.xsd" schemaLocation="stock.xsd"/>
+
+  <!-- **************************************************************************
+		Agenda Pohyby
+	 ************************************************************************** -->
+
+  <!-- REQUEST -->
+  <xsd:element name="movement" type="mov:movementType"/>
+
+  <xsd:complexType name="movementType">
+    <xsd:sequence minOccurs="0">
+      <xsd:element name="movementHeader" type="mov:movementHeaderType"/>
+    </xsd:sequence>
+    <xsd:attribute name="version" type="mov:movementVersionType" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="movementHeaderType">
+    <xsd:annotation>
+      <xsd:documentation>Pohyby.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:all>
+      <xsd:element name="id" type="typ:idType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>ID záznamu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="markRecord" type="typ:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Označení.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="agenda" type="typ:agendaMovementType">
+        <xsd:annotation>
+          <xsd:documentation>Agenda.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="stockType" type="stk:stockTypeType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Typ zásoby.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="typePrice" type="typ:refType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Cenová skupina. Tento element je vyžadován při vytvoření dokladu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="stockItem" type="typ:stockItemMovementType">
+        <xsd:annotation>
+          <xsd:documentation>Odkaz na skladovou položku.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="unit" type="typ:unitType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Měrná jednotka.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="date" type="xsd:date" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Datum pohybu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="movementType" type="mov:movementTypeType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Typ pohybu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="quantity" type="xsd:float" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Množství.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="unitPrice" type="typ:currencyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Částka.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="price" type="typ:currencyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Celkem.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="weightedPurchasePrice" type="typ:currencyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Vážená nákupní cena.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="valuation" type="typ:currencyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Ocenění.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+       <xsd:element name="profitUnit" type="typ:currencyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Zisk/m. j.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="profit" type="typ:currencyType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Zisk.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="count" type="xsd:float" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Stav zásoby.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="number" type="typ:documentNumberType">
+        <xsd:annotation>
+          <xsd:documentation>Číslo dokladu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="address" type="typ:address" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Adresa a dodací adresa.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="centre" type="typ:refType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Středisko</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="activity" type="typ:refType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Činnost</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="contract" type="typ:refType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Zakázka</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="regNumber" type="typ:string48">
+        <xsd:annotation>
+          <xsd:documentation>Evidenční číslo.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="labels" type="typ:labelsType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Štítky záznamu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:simpleType name="movementTypeType">
+    <xsd:annotation>
+      <xsd:documentation>Typ pohybu.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="expense">
+        <xsd:annotation>
+          <xsd:documentation>Výdej.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="receipt">
+        <xsd:annotation>
+          <xsd:documentation>Příjem.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="movementVersionType">
+    <xsd:annotation>
+      <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="2.0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- RESPONSE -->
+
+</xsd:schema>

@@ -1,0 +1,36 @@
+Pohoda\Type\EETType:
+    properties:
+        stateEET:
+            expose: true
+            access_type: public_method
+            serialized_name: stateEET
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getStateEET
+                setter: setStateEET
+            type: string
+        detailEET:
+            expose: true
+            access_type: public_method
+            serialized_name: detailEET
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getDetailEET
+                setter: setDetailEET
+            xml_list:
+                inline: true
+                entry_name: detailEET
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            type: array<Pohoda\Type\DetailEETType>
+        profile:
+            expose: true
+            access_type: public_method
+            serialized_name: profile
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getProfile
+                setter: setProfile
+            type: Pohoda\Type\RefType

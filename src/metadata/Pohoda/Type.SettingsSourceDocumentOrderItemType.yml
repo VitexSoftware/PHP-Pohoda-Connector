@@ -1,0 +1,22 @@
+Pohoda\Type\SettingsSourceDocumentOrderItemType:
+    properties:
+        linkOrderItemToInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: linkOrderItemToInvoice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLinkOrderItemToInvoice
+                setter: setLinkOrderItemToInvoice
+            type: string
+        linkOrderItemToIssueSlip:
+            expose: true
+            access_type: public_method
+            serialized_name: linkOrderItemToIssueSlip
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getLinkOrderItemToIssueSlip
+                setter: setLinkOrderItemToIssueSlip
+            type: string

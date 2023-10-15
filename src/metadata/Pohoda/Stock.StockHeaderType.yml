@@ -1,0 +1,937 @@
+Pohoda\Stock\StockHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        extId:
+            expose: true
+            access_type: public_method
+            serialized_name: extId
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getExtId
+                setter: setExtId
+            type: Pohoda\Type\ExtIdType
+        stockType:
+            expose: true
+            access_type: public_method
+            serialized_name: stockType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getStockType
+                setter: setStockType
+            type: string
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getCode
+                setter: setCode
+            type: string
+        eAN:
+            expose: true
+            access_type: public_method
+            serialized_name: EAN
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getEAN
+                setter: setEAN
+            type: string
+        pLU:
+            expose: true
+            access_type: public_method
+            serialized_name: PLU
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getPLU
+                setter: setPLU
+            type: int
+        isSales:
+            expose: true
+            access_type: public_method
+            serialized_name: isSales
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIsSales
+                setter: setIsSales
+            type: string
+        isSerialNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: isSerialNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIsSerialNumber
+                setter: setIsSerialNumber
+            type: string
+        isInternet:
+            expose: true
+            access_type: public_method
+            serialized_name: isInternet
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIsInternet
+                setter: setIsInternet
+            type: string
+        isBatch:
+            expose: true
+            access_type: public_method
+            serialized_name: isBatch
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIsBatch
+                setter: setIsBatch
+            type: string
+        purchasingRateVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: purchasingRateVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getPurchasingRateVAT
+                setter: setPurchasingRateVAT
+            type: Pohoda\Type\VatRateType
+        sellingRateVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: sellingRateVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getSellingRateVAT
+                setter: setSellingRateVAT
+            type: Pohoda\Type\VatRateType
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        nameComplement:
+            expose: true
+            access_type: public_method
+            serialized_name: nameComplement
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getNameComplement
+                setter: setNameComplement
+            type: string
+        unit:
+            expose: true
+            access_type: public_method
+            serialized_name: unit
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getUnit
+                setter: setUnit
+            type: string
+        unit2:
+            expose: true
+            access_type: public_method
+            serialized_name: unit2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getUnit2
+                setter: setUnit2
+            type: string
+        unit3:
+            expose: true
+            access_type: public_method
+            serialized_name: unit3
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getUnit3
+                setter: setUnit3
+            type: string
+        coefficient2:
+            expose: true
+            access_type: public_method
+            serialized_name: coefficient2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getCoefficient2
+                setter: setCoefficient2
+            type: float
+        coefficient3:
+            expose: true
+            access_type: public_method
+            serialized_name: coefficient3
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getCoefficient3
+                setter: setCoefficient3
+            type: float
+        storage:
+            expose: true
+            access_type: public_method
+            serialized_name: storage
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getStorage
+                setter: setStorage
+            type: Pohoda\Type\RefTypeStorageType
+        typePrice:
+            expose: true
+            access_type: public_method
+            serialized_name: typePrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getTypePrice
+                setter: setTypePrice
+            type: Pohoda\Type\RefType
+        weightedPurchasePrice:
+            expose: true
+            access_type: public_method
+            serialized_name: weightedPurchasePrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getWeightedPurchasePrice
+                setter: setWeightedPurchasePrice
+            type: float
+        purchasingPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: purchasingPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getPurchasingPrice
+                setter: setPurchasingPrice
+            type: Pohoda\Stock\StockHeaderType\PurchasingPriceAType
+        sellingPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: sellingPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getSellingPrice
+                setter: setSellingPrice
+            type: Pohoda\Stock\StockHeaderType\SellingPriceAType
+        fixation:
+            expose: true
+            access_type: public_method
+            serialized_name: fixation
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getFixation
+                setter: setFixation
+            type: string
+        limitMin:
+            expose: true
+            access_type: public_method
+            serialized_name: limitMin
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getLimitMin
+                setter: setLimitMin
+            type: float
+        limitMax:
+            expose: true
+            access_type: public_method
+            serialized_name: limitMax
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getLimitMax
+                setter: setLimitMax
+            type: float
+        mass:
+            expose: true
+            access_type: public_method
+            serialized_name: mass
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getMass
+                setter: setMass
+            type: float
+        volume:
+            expose: true
+            access_type: public_method
+            serialized_name: volume
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getVolume
+                setter: setVolume
+            type: float
+        count:
+            expose: true
+            access_type: public_method
+            serialized_name: count
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getCount
+                setter: setCount
+            type: float
+        countReceivedOrders:
+            expose: true
+            access_type: public_method
+            serialized_name: countReceivedOrders
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getCountReceivedOrders
+                setter: setCountReceivedOrders
+            type: float
+        reservation:
+            expose: true
+            access_type: public_method
+            serialized_name: reservation
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getReservation
+                setter: setReservation
+            type: float
+        supplier:
+            expose: true
+            access_type: public_method
+            serialized_name: supplier
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getSupplier
+                setter: setSupplier
+            type: Pohoda\Type\CompanyType
+        orderName:
+            expose: true
+            access_type: public_method
+            serialized_name: orderName
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getOrderName
+                setter: setOrderName
+            type: string
+        orderQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: orderQuantity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getOrderQuantity
+                setter: setOrderQuantity
+            type: float
+        countIssuedOrders:
+            expose: true
+            access_type: public_method
+            serialized_name: countIssuedOrders
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getCountIssuedOrders
+                setter: setCountIssuedOrders
+            type: float
+        reclamation:
+            expose: true
+            access_type: public_method
+            serialized_name: reclamation
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getReclamation
+                setter: setReclamation
+            type: float
+        service:
+            expose: true
+            access_type: public_method
+            serialized_name: service
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getService
+                setter: setService
+            type: float
+        shortName:
+            expose: true
+            access_type: public_method
+            serialized_name: shortName
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getShortName
+                setter: setShortName
+            type: string
+        typeRP:
+            expose: true
+            access_type: public_method
+            serialized_name: typeRP
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getTypeRP
+                setter: setTypeRP
+            type: Pohoda\Type\RefType
+        guaranteeType:
+            expose: true
+            access_type: public_method
+            serialized_name: guaranteeType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getGuaranteeType
+                setter: setGuaranteeType
+            type: string
+        guarantee:
+            expose: true
+            access_type: public_method
+            serialized_name: guarantee
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getGuarantee
+                setter: setGuarantee
+            type: int
+        producer:
+            expose: true
+            access_type: public_method
+            serialized_name: producer
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getProducer
+                setter: setProducer
+            type: string
+        unitOfMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: unitOfMeasure
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getUnitOfMeasure
+                setter: setUnitOfMeasure
+            type: string
+        coefficientOfMeasure:
+            expose: true
+            access_type: public_method
+            serialized_name: coefficientOfMeasure
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getCoefficientOfMeasure
+                setter: setCoefficientOfMeasure
+            type: float
+        eETItem:
+            expose: true
+            access_type: public_method
+            serialized_name: EETItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getEETItem
+                setter: setEETItem
+            type: string
+        dicPP:
+            expose: true
+            access_type: public_method
+            serialized_name: dicPP
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getDicPP
+                setter: setDicPP
+            type: string
+        eKasaItem:
+            expose: true
+            access_type: public_method
+            serialized_name: eKasaItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getEKasaItem
+                setter: setEKasaItem
+            type: Pohoda\Stock\EKasaItemType
+        yield:
+            expose: true
+            access_type: public_method
+            serialized_name: yield
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getYield
+                setter: setYield
+            type: string
+        cost:
+            expose: true
+            access_type: public_method
+            serialized_name: cost
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getCost
+                setter: setCost
+            type: string
+        classificationVATReceipt:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationVATReceipt
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getClassificationVATReceipt
+                setter: setClassificationVATReceipt
+            type: Pohoda\Type\ClassificationVATType
+        classificationKVDPHReceipt:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationKVDPHReceipt
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getClassificationKVDPHReceipt
+                setter: setClassificationKVDPHReceipt
+            type: Pohoda\Type\RefType
+        classificationVATIssue:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationVATIssue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getClassificationVATIssue
+                setter: setClassificationVATIssue
+            type: Pohoda\Type\ClassificationVATType
+        classificationKVDPHIssue:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationKVDPHIssue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getClassificationKVDPHIssue
+                setter: setClassificationKVDPHIssue
+            type: Pohoda\Type\RefType
+        classOfStock:
+            expose: true
+            access_type: public_method
+            serialized_name: classOfStock
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getClassOfStock
+                setter: setClassOfStock
+            type: string
+        acc:
+            expose: true
+            access_type: public_method
+            serialized_name: acc
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getAcc
+                setter: setAcc
+            type: string
+        typeServiceMOSS:
+            expose: true
+            access_type: public_method
+            serialized_name: typeServiceMOSS
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getTypeServiceMOSS
+                setter: setTypeServiceMOSS
+            type: Pohoda\Type\MOSStypeType
+        controlLimitTaxLiability:
+            expose: true
+            access_type: public_method
+            serialized_name: controlLimitTaxLiability
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getControlLimitTaxLiability
+                setter: setControlLimitTaxLiability
+            type: string
+        pDP:
+            expose: true
+            access_type: public_method
+            serialized_name: PDP
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getPDP
+                setter: setPDP
+            type: string
+        pDPclassificationVATIssue:
+            expose: true
+            access_type: public_method
+            serialized_name: PDPclassificationVATIssue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getPDPclassificationVATIssue
+                setter: setPDPclassificationVATIssue
+            type: Pohoda\Type\ClassificationVATType
+        pDPclassificationKVDPHIssue:
+            expose: true
+            access_type: public_method
+            serialized_name: PDPclassificationKVDPHIssue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getPDPclassificationKVDPHIssue
+                setter: setPDPclassificationKVDPHIssue
+            type: Pohoda\Type\RefType
+        codePDP:
+            expose: true
+            access_type: public_method
+            serialized_name: CodePDP
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getCodePDP
+                setter: setCodePDP
+            type: string
+        recyclingContrib:
+            expose: true
+            access_type: public_method
+            serialized_name: recyclingContrib
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getRecyclingContrib
+                setter: setRecyclingContrib
+            type: Pohoda\Stock\RecyclingContribType
+        intrastat:
+            expose: true
+            access_type: public_method
+            serialized_name: intrastat
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIntrastat
+                setter: setIntrastat
+            type: Pohoda\Stock\InstrastatType
+        news:
+            expose: true
+            access_type: public_method
+            serialized_name: news
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getNews
+                setter: setNews
+            type: string
+        clearanceSale:
+            expose: true
+            access_type: public_method
+            serialized_name: clearanceSale
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getClearanceSale
+                setter: setClearanceSale
+            type: string
+        sale:
+            expose: true
+            access_type: public_method
+            serialized_name: sale
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getSale
+                setter: setSale
+            type: string
+        recommended:
+            expose: true
+            access_type: public_method
+            serialized_name: recommended
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getRecommended
+                setter: setRecommended
+            type: string
+        discount:
+            expose: true
+            access_type: public_method
+            serialized_name: discount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getDiscount
+                setter: setDiscount
+            type: string
+        prepare:
+            expose: true
+            access_type: public_method
+            serialized_name: prepare
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getPrepare
+                setter: setPrepare
+            type: string
+        availability:
+            expose: true
+            access_type: public_method
+            serialized_name: availability
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getAvailability
+                setter: setAvailability
+            type: string
+        handlingInformation:
+            expose: true
+            access_type: public_method
+            serialized_name: handlingInformation
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getHandlingInformation
+                setter: setHandlingInformation
+            type: string
+        foreignName1:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignName1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getForeignName1
+                setter: setForeignName1
+            type: string
+        foreignNameComplement1:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignNameComplement1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getForeignNameComplement1
+                setter: setForeignNameComplement1
+            type: string
+        foreignName2:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignName2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getForeignName2
+                setter: setForeignName2
+            type: string
+        foreignNameComplement2:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignNameComplement2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getForeignNameComplement2
+                setter: setForeignNameComplement2
+            type: string
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: description
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            type: string
+        description2:
+            expose: true
+            access_type: public_method
+            serialized_name: description2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getDescription2
+                setter: setDescription2
+            type: string
+        pictures:
+            expose: true
+            access_type: public_method
+            serialized_name: pictures
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getPictures
+                setter: setPictures
+            type: array<Pohoda\Stock\PictureType>
+            xml_list:
+                inline: false
+                entry_name: picture
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        categories:
+            expose: true
+            access_type: public_method
+            serialized_name: categories
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getCategories
+                setter: setCategories
+            type: array<int>
+            xml_list:
+                inline: false
+                entry_name: idCategory
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        relatedFiles:
+            expose: true
+            access_type: public_method
+            serialized_name: relatedFiles
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getRelatedFiles
+                setter: setRelatedFiles
+            type: array<Pohoda\Stock\RelatedFileType>
+            xml_list:
+                inline: false
+                entry_name: relatedFile
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        relatedLinks:
+            expose: true
+            access_type: public_method
+            serialized_name: relatedLinks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getRelatedLinks
+                setter: setRelatedLinks
+            type: array<Pohoda\Stock\RelatedLinkType>
+            xml_list:
+                inline: false
+                entry_name: relatedLink
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        relatedStocks:
+            expose: true
+            access_type: public_method
+            serialized_name: relatedStocks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getRelatedStocks
+                setter: setRelatedStocks
+            type: array<Pohoda\Type\OrderStockItemType>
+            xml_list:
+                inline: false
+                entry_name: idStocks
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        alternativeStocks:
+            expose: true
+            access_type: public_method
+            serialized_name: alternativeStocks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getAlternativeStocks
+                setter: setAlternativeStocks
+            type: array<Pohoda\Type\OrderStockItemType>
+            xml_list:
+                inline: false
+                entry_name: idStocks
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        intParameters:
+            expose: true
+            access_type: public_method
+            serialized_name: intParameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIntParameters
+                setter: setIntParameters
+            type: array<Pohoda\Stock\IntParameterType>
+            xml_list:
+                inline: false
+                entry_name: intParameter
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        markRecord:
+            expose: true
+            access_type: public_method
+            serialized_name: markRecord
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getMarkRecord
+                setter: setMarkRecord
+            type: string
+        labels:
+            expose: true
+            access_type: public_method
+            serialized_name: labels
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getLabels
+                setter: setLabels
+            type: array<Pohoda\Type\LabelType>
+            xml_list:
+                inline: false
+                entry_name: label
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+        parameters:
+            expose: true
+            access_type: public_method
+            serialized_name: parameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            type: array<Pohoda\Type\ParameterDocType>
+            xml_list:
+                inline: false
+                entry_name: parameter
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'

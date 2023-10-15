@@ -1,0 +1,112 @@
+Pohoda\Type\TypeCurrencyHomeType:
+    properties:
+        priceNone:
+            expose: true
+            access_type: public_method
+            serialized_name: priceNone
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceNone
+                setter: setPriceNone
+            type: float
+        priceLow:
+            expose: true
+            access_type: public_method
+            serialized_name: priceLow
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceLow
+                setter: setPriceLow
+            type: float
+        priceLowVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: priceLowVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceLowVAT
+                setter: setPriceLowVAT
+            type: Pohoda\Type\CurrencyVATType
+        priceLowSum:
+            expose: true
+            access_type: public_method
+            serialized_name: priceLowSum
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceLowSum
+                setter: setPriceLowSum
+            type: float
+        priceHigh:
+            expose: true
+            access_type: public_method
+            serialized_name: priceHigh
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceHigh
+                setter: setPriceHigh
+            type: float
+        priceHighVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: priceHighVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceHighVAT
+                setter: setPriceHighVAT
+            type: Pohoda\Type\CurrencyVATType
+        priceHighSum:
+            expose: true
+            access_type: public_method
+            serialized_name: priceHighSum
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceHighSum
+                setter: setPriceHighSum
+            type: float
+        price3:
+            expose: true
+            access_type: public_method
+            serialized_name: price3
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPrice3
+                setter: setPrice3
+            type: float
+        price3VAT:
+            expose: true
+            access_type: public_method
+            serialized_name: price3VAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPrice3VAT
+                setter: setPrice3VAT
+            type: Pohoda\Type\CurrencyVATType
+        price3Sum:
+            expose: true
+            access_type: public_method
+            serialized_name: price3Sum
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPrice3Sum
+                setter: setPrice3Sum
+            type: float
+        round:
+            expose: true
+            access_type: public_method
+            serialized_name: round
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getRound
+                setter: setRound
+            type: Pohoda\Type\TypeRoundType

@@ -1,0 +1,86 @@
+Pohoda\Order\OrderType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        links:
+            expose: true
+            access_type: public_method
+            serialized_name: links
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getLinks
+                setter: setLinks
+            type: Pohoda\Type\LinksType
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: Pohoda\Order\ActionTypeType
+        orderHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: orderHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getOrderHeader
+                setter: setOrderHeader
+            type: Pohoda\Order\OrderHeaderType
+        orderDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: orderDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getOrderDetail
+                setter: setOrderDetail
+            type: Pohoda\Order\OrderDetailType
+        orderSummary:
+            expose: true
+            access_type: public_method
+            serialized_name: orderSummary
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getOrderSummary
+                setter: setOrderSummary
+            type: Pohoda\Order\OrderSummaryType
+        linkedDocuments:
+            expose: true
+            access_type: public_method
+            serialized_name: linkedDocuments
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getLinkedDocuments
+                setter: setLinkedDocuments
+            type: Pohoda\Type\LinksType
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: false
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

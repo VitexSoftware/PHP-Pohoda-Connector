@@ -1,0 +1,12 @@
+Pohoda\Isdoc\SecureHashAlgorithmType:
+    properties:
+        hashAlgorithm:
+            expose: true
+            access_type: public_method
+            serialized_name: hashAlgorithm
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/isdoc.xsd'
+            accessor:
+                getter: getHashAlgorithm
+                setter: setHashAlgorithm
+            type: string

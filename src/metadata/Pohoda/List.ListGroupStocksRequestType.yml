@@ -1,0 +1,30 @@
+Pohoda\List\ListGroupStocksRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        groupStocksVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: groupStocksVersion
+            accessor:
+                getter: getGroupStocksVersion
+                setter: setGroupStocksVersion
+            xml_attribute: true
+            type: string
+        requestGroupStocks:
+            expose: true
+            access_type: public_method
+            serialized_name: requestGroupStocks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestGroupStocks
+                setter: setRequestGroupStocks
+            type: Pohoda\Filter\RequestGroupStocksType

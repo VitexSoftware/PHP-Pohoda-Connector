@@ -1,0 +1,52 @@
+Pohoda\Type\StockItemMovementType\StockItemAType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        eAN:
+            expose: true
+            access_type: public_method
+            serialized_name: EAN
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getEAN
+                setter: setEAN
+            type: string
+        ids:
+            expose: true
+            access_type: public_method
+            serialized_name: ids
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getIds
+                setter: setIds
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        nameComplement:
+            expose: true
+            access_type: public_method
+            serialized_name: nameComplement
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getNameComplement
+                setter: setNameComplement
+            type: string

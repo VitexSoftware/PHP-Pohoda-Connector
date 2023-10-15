@@ -1,0 +1,76 @@
+Pohoda\Prijemka\PrijemkaType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        links:
+            expose: true
+            access_type: public_method
+            serialized_name: links
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            accessor:
+                getter: getLinks
+                setter: setLinks
+            type: Pohoda\Type\LinksType
+        prijemkaHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: prijemkaHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            accessor:
+                getter: getPrijemkaHeader
+                setter: setPrijemkaHeader
+            type: Pohoda\Prijemka\PrijemkaHeaderType
+        prijemkaDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: prijemkaDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            accessor:
+                getter: getPrijemkaDetail
+                setter: setPrijemkaDetail
+            type: Pohoda\Prijemka\PrijemkaDetailType
+        prijemkaSummary:
+            expose: true
+            access_type: public_method
+            serialized_name: prijemkaSummary
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            accessor:
+                getter: getPrijemkaSummary
+                setter: setPrijemkaSummary
+            type: Pohoda\Prijemka\PrijemkaSummaryType
+        linkedDocuments:
+            expose: true
+            access_type: public_method
+            serialized_name: linkedDocuments
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            accessor:
+                getter: getLinkedDocuments
+                setter: setLinkedDocuments
+            type: Pohoda\Type\LinksType
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prijemka.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

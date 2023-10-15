@@ -1,0 +1,32 @@
+Pohoda\GroupStocks\ActionTypeType:
+    properties:
+        add:
+            expose: true
+            access_type: public_method
+            serialized_name: add
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            accessor:
+                getter: getAdd
+                setter: setAdd
+            type: Pohoda\Filter\RequestGroupStocksActionType
+        update:
+            expose: true
+            access_type: public_method
+            serialized_name: update
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            accessor:
+                getter: getUpdate
+                setter: setUpdate
+            type: Pohoda\Filter\RequestGroupStocksActionType
+        delete:
+            expose: true
+            access_type: public_method
+            serialized_name: delete
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            accessor:
+                getter: getDelete
+                setter: setDelete
+            type: Pohoda\Filter\RequestGroupStocksType

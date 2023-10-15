@@ -1,0 +1,32 @@
+Pohoda\ActionPrice\TypeAcpCurrencyForeignType:
+    properties:
+        currency:
+            expose: true
+            access_type: public_method
+            serialized_name: currency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getCurrency
+                setter: setCurrency
+            type: Pohoda\Type\RefType
+        rate:
+            expose: true
+            access_type: public_method
+            serialized_name: rate
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getRate
+                setter: setRate
+            type: float
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: amount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: int

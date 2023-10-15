@@ -1,0 +1,31 @@
+Pohoda\AccountingSalesVouchers\AccountingSalesVouchersType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        recordFilter:
+            expose: true
+            access_type: public_method
+            serialized_name: recordFilter
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            accessor:
+                getter: getRecordFilter
+                setter: setRecordFilter
+            type: Pohoda\Filter\RequestProdejkaType
+        centre:
+            expose: true
+            access_type: public_method
+            serialized_name: centre
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd'
+            accessor:
+                getter: getCentre
+                setter: setCentre
+            type: Pohoda\Type\RefType

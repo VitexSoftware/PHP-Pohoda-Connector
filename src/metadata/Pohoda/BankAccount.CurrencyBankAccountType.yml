@@ -1,0 +1,22 @@
+Pohoda\BankAccount\CurrencyBankAccountType:
+    properties:
+        currency:
+            expose: true
+            access_type: public_method
+            serialized_name: currency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getCurrency
+                setter: setCurrency
+            type: Pohoda\Type\RefType
+        rate:
+            expose: true
+            access_type: public_method
+            serialized_name: rate
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getRate
+                setter: setRate
+            type: string

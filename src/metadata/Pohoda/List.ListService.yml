@@ -1,0 +1,3 @@
+Pohoda\List\ListService:
+    xml_root_name: listService
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'

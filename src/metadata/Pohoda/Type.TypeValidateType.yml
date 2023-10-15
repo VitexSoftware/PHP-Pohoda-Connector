@@ -1,0 +1,12 @@
+Pohoda\Type\TypeValidateType:
+    properties:
+        inStock:
+            expose: true
+            access_type: public_method
+            serialized_name: inStock
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getInStock
+                setter: setInStock
+            type: string

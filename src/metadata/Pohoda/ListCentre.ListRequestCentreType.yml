@@ -1,0 +1,34 @@
+Pohoda\ListCentre\ListRequestCentreType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        centreVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: centreVersion
+            accessor:
+                getter: getCentreVersion
+                setter: setCentreVersion
+            xml_attribute: true
+            type: string
+        requestCentre:
+            expose: true
+            access_type: public_method
+            serialized_name: requestCentre
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list_centre.xsd'
+            accessor:
+                getter: getRequestCentre
+                setter: setRequestCentre
+            xml_list:
+                inline: true
+                entry_name: requestCentre
+                namespace: 'http://www.stormware.cz/schema/version_2/list_centre.xsd'
+            type: array<Pohoda\ListCentre\RequestCentreType>

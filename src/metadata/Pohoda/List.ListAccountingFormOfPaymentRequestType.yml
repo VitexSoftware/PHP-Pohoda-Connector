@@ -1,0 +1,34 @@
+Pohoda\List\ListAccountingFormOfPaymentRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        accountingFormOfPaymentVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: accountingFormOfPaymentVersion
+            accessor:
+                getter: getAccountingFormOfPaymentVersion
+                setter: setAccountingFormOfPaymentVersion
+            xml_attribute: true
+            type: string
+        requestAccountingFormOfPayment:
+            expose: true
+            access_type: public_method
+            serialized_name: requestAccountingFormOfPayment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestAccountingFormOfPayment
+                setter: setRequestAccountingFormOfPayment
+            xml_list:
+                inline: true
+                entry_name: requestAccountingFormOfPayment
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\RequestAccountingFormOfPaymentType>

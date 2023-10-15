@@ -1,0 +1,42 @@
+Pohoda\IndividualPrice\SetPricesType:
+    properties:
+        stocks:
+            expose: true
+            access_type: public_method
+            serialized_name: stocks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getStocks
+                setter: setStocks
+            type: array<Pohoda\IndividualPrice\StockItemType>
+            xml_list:
+                inline: false
+                entry_name: stockItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+        priceGroups:
+            expose: true
+            access_type: public_method
+            serialized_name: priceGroups
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getPriceGroups
+                setter: setPriceGroups
+            type: array<Pohoda\IndividualPrice\PriceGroupItemType>
+            xml_list:
+                inline: false
+                entry_name: priceGroupItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+        allStocks:
+            expose: true
+            access_type: public_method
+            serialized_name: allStocks
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/individualPrice.xsd'
+            accessor:
+                getter: getAllStocks
+                setter: setAllStocks
+            type: Pohoda\IndividualPrice\AllStocksType

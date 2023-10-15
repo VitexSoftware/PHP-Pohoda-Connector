@@ -1,0 +1,16 @@
+Pohoda\List\ListClassificationVATType:
+    properties:
+        classificationVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getClassificationVAT
+                setter: setClassificationVAT
+            xml_list:
+                inline: true
+                entry_name: classificationVAT
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\ClassificationVAT\ClassificationVATType>

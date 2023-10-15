@@ -1,0 +1,3 @@
+Pohoda\MKasa\MKasaRequest:
+    xml_root_name: mKasaRequest
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'

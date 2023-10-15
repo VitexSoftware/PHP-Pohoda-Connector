@@ -1,0 +1,3 @@
+Pohoda\Centre\Centre:
+    xml_root_name: centre
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/centre.xsd'

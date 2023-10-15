@@ -1,0 +1,29 @@
+Pohoda\List\ItemContractType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: int
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            accessor:
+                getter: getCode
+                setter: setCode
+            xml_attribute: true
+            type: string
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            accessor:
+                getter: getName
+                setter: setName
+            xml_attribute: true
+            type: string

@@ -1,0 +1,12 @@
+Pohoda\Balance\BalanceHeaderType:
+    properties:
+        dateTo:
+            expose: true
+            access_type: public_method
+            serialized_name: dateTo
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/balance.xsd'
+            accessor:
+                getter: getDateTo
+                setter: setDateTo
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date

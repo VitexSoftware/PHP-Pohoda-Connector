@@ -1,0 +1,16 @@
+Pohoda\List\ListAccountingSingleEntryType:
+    properties:
+        itemAccounting:
+            expose: true
+            access_type: public_method
+            serialized_name: itemAccounting
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getItemAccounting
+                setter: setItemAccounting
+            xml_list:
+                inline: true
+                entry_name: itemAccounting
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\ItemAccountingTypeSingleEntryType>

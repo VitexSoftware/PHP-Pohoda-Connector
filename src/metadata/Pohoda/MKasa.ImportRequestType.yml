@@ -1,0 +1,42 @@
+Pohoda\MKasa\ImportRequestType:
+    properties:
+        mKasaPackNum:
+            expose: true
+            access_type: public_method
+            serialized_name: mKasaPackNum
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getMKasaPackNum
+                setter: setMKasaPackNum
+            type: int
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        deviceGuid:
+            expose: true
+            access_type: public_method
+            serialized_name: deviceGuid
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getDeviceGuid
+                setter: setDeviceGuid
+            type: string
+        overwriteDeviceGuid:
+            expose: true
+            access_type: public_method
+            serialized_name: overwriteDeviceGuid
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getOverwriteDeviceGuid
+                setter: setOverwriteDeviceGuid
+            type: string

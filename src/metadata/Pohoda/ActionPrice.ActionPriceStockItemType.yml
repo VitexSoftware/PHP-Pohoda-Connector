@@ -1,0 +1,52 @@
+Pohoda\ActionPrice\ActionPriceStockItemType:
+    properties:
+        stock:
+            expose: true
+            access_type: public_method
+            serialized_name: stock
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getStock
+                setter: setStock
+            type: Pohoda\ActionPrice\StockType
+        text:
+            expose: true
+            access_type: public_method
+            serialized_name: text
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getText
+                setter: setText
+            type: string
+        storage:
+            expose: true
+            access_type: public_method
+            serialized_name: storage
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getStorage
+                setter: setStorage
+            type: Pohoda\Type\RefTypeStorageType
+        defaultPriceStock:
+            expose: true
+            access_type: public_method
+            serialized_name: defaultPriceStock
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getDefaultPriceStock
+                setter: setDefaultPriceStock
+            type: Pohoda\ActionPrice\DefaultPriceStockType
+        actionPriceStock:
+            expose: true
+            access_type: public_method
+            serialized_name: actionPriceStock
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getActionPriceStock
+                setter: setActionPriceStock
+            type: Pohoda\ActionPrice\ActionPriceStockType

@@ -1,0 +1,82 @@
+Pohoda\MKasa\KasaEstablishmentType:
+    properties:
+        company:
+            expose: true
+            access_type: public_method
+            serialized_name: company
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getCompany
+                setter: setCompany
+            type: string
+        city:
+            expose: true
+            access_type: public_method
+            serialized_name: city
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getCity
+                setter: setCity
+            type: string
+        street:
+            expose: true
+            access_type: public_method
+            serialized_name: street
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getStreet
+                setter: setStreet
+            type: string
+        zip:
+            expose: true
+            access_type: public_method
+            serialized_name: zip
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getZip
+                setter: setZip
+            type: string
+        phone:
+            expose: true
+            access_type: public_method
+            serialized_name: phone
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getPhone
+                setter: setPhone
+            type: string
+        mobilPhone:
+            expose: true
+            access_type: public_method
+            serialized_name: mobilPhone
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getMobilPhone
+                setter: setMobilPhone
+            type: string
+        fax:
+            expose: true
+            access_type: public_method
+            serialized_name: fax
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getFax
+                setter: setFax
+            type: string
+        email:
+            expose: true
+            access_type: public_method
+            serialized_name: email
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getEmail
+                setter: setEmail
+            type: string

@@ -1,0 +1,66 @@
+Pohoda\Storage\ItemStorageType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            accessor:
+                getter: getId
+                setter: setId
+            xml_attribute: true
+            type: int
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            accessor:
+                getter: getCode
+                setter: setCode
+            xml_attribute: true
+            type: string
+        idStore:
+            expose: true
+            access_type: public_method
+            serialized_name: idStore
+            accessor:
+                getter: getIdStore
+                setter: setIdStore
+            xml_attribute: true
+            type: int
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            accessor:
+                getter: getName
+                setter: setName
+            xml_attribute: true
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_attribute: true
+            type: string
+        offerTo:
+            expose: true
+            access_type: public_method
+            serialized_name: offerTo
+            accessor:
+                getter: getOfferTo
+                setter: setOfferTo
+            xml_attribute: true
+            type: string
+        subStorages:
+            expose: true
+            access_type: public_method
+            serialized_name: subStorages
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/storage.xsd'
+            accessor:
+                getter: getSubStorages
+                setter: setSubStorages
+            type: Pohoda\Storage\SubStoragesType

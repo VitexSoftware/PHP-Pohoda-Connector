@@ -1,0 +1,32 @@
+Pohoda\MKasa\VatPayerType:
+    properties:
+        vatPayerWholePeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: vatPayerWholePeriod
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getVatPayerWholePeriod
+                setter: setVatPayerWholePeriod
+            type: Pohoda\MKasa\VatPayerWholePeriodType
+        nonVatPayerWholePeriod:
+            expose: true
+            access_type: public_method
+            serialized_name: nonVatPayerWholePeriod
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getNonVatPayerWholePeriod
+                setter: setNonVatPayerWholePeriod
+            type: Pohoda\MKasa\NonVatPayerWholePeriodType
+        changeOfModeInCalendarYear:
+            expose: true
+            access_type: public_method
+            serialized_name: changeOfModeInCalendarYear
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/mKasa.xsd'
+            accessor:
+                getter: getChangeOfModeInCalendarYear
+                setter: setChangeOfModeInCalendarYear
+            type: Pohoda\MKasa\ChangeOfModeInCalendarYearType

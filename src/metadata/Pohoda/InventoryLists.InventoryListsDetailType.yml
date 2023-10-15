@@ -1,0 +1,16 @@
+Pohoda\InventoryLists\InventoryListsDetailType:
+    properties:
+        inventoryListsItem:
+            expose: true
+            access_type: public_method
+            serialized_name: inventoryListsItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            accessor:
+                getter: getInventoryListsItem
+                setter: setInventoryListsItem
+            xml_list:
+                inline: true
+                entry_name: inventoryListsItem
+                namespace: 'http://www.stormware.cz/schema/version_2/inventoryLists.xsd'
+            type: array<Pohoda\InventoryLists\InventoryListsItemType>

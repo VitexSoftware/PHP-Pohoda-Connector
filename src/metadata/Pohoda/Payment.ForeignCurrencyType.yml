@@ -1,0 +1,52 @@
+Pohoda\Payment\ForeignCurrencyType:
+    properties:
+        currency:
+            expose: true
+            access_type: public_method
+            serialized_name: currency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/payment.xsd'
+            accessor:
+                getter: getCurrency
+                setter: setCurrency
+            type: Pohoda\Type\RefType
+        rate:
+            expose: true
+            access_type: public_method
+            serialized_name: rate
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/payment.xsd'
+            accessor:
+                getter: getRate
+                setter: setRate
+            type: float
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: amount
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/payment.xsd'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: int
+        rateAutomaticaly:
+            expose: true
+            access_type: public_method
+            serialized_name: rateAutomaticaly
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/payment.xsd'
+            accessor:
+                getter: getRateAutomaticaly
+                setter: setRateAutomaticaly
+            type: string
+        useYesterdayRate:
+            expose: true
+            access_type: public_method
+            serialized_name: useYesterdayRate
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/payment.xsd'
+            accessor:
+                getter: getUseYesterdayRate
+                setter: setUseYesterdayRate
+            type: string

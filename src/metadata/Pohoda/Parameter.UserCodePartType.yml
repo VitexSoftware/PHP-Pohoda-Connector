@@ -1,0 +1,52 @@
+Pohoda\Parameter\UserCodePartType:
+    properties:
+        part0:
+            expose: true
+            access_type: public_method
+            serialized_name: part0
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getPart0
+                setter: setPart0
+            type: string
+        part1:
+            expose: true
+            access_type: public_method
+            serialized_name: part1
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getPart1
+                setter: setPart1
+            type: string
+        part2:
+            expose: true
+            access_type: public_method
+            serialized_name: part2
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getPart2
+                setter: setPart2
+            type: string
+        part3:
+            expose: true
+            access_type: public_method
+            serialized_name: part3
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getPart3
+                setter: setPart3
+            type: string
+        part4:
+            expose: true
+            access_type: public_method
+            serialized_name: part4
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/parameter.xsd'
+            accessor:
+                getter: getPart4
+                setter: setPart4
+            type: string

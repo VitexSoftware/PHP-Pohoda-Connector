@@ -1,0 +1,38 @@
+Pohoda\Type\RectangleType:
+    properties:
+        left:
+            expose: true
+            access_type: public_method
+            serialized_name: left
+            accessor:
+                getter: getLeft
+                setter: setLeft
+            xml_attribute: true
+            type: int
+        top:
+            expose: true
+            access_type: public_method
+            serialized_name: top
+            accessor:
+                getter: getTop
+                setter: setTop
+            xml_attribute: true
+            type: int
+        right:
+            expose: true
+            access_type: public_method
+            serialized_name: right
+            accessor:
+                getter: getRight
+                setter: setRight
+            xml_attribute: true
+            type: int
+        bottom:
+            expose: true
+            access_type: public_method
+            serialized_name: bottom
+            accessor:
+                getter: getBottom
+                setter: setBottom
+            xml_attribute: true
+            type: int

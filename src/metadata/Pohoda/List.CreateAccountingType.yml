@@ -1,0 +1,47 @@
+Pohoda\List\CreateAccountingType:
+    properties:
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            accessor:
+                getter: getCode
+                setter: setCode
+            xml_attribute: true
+            type: string
+        accounting:
+            expose: true
+            access_type: public_method
+            serialized_name: accounting
+            accessor:
+                getter: getAccounting
+                setter: setAccounting
+            xml_attribute: true
+            type: string
+        agenda:
+            expose: true
+            access_type: public_method
+            serialized_name: agenda
+            accessor:
+                getter: getAgenda
+                setter: setAgenda
+            xml_attribute: true
+            type: string
+        debit:
+            expose: true
+            access_type: public_method
+            serialized_name: debit
+            accessor:
+                getter: getDebit
+                setter: setDebit
+            xml_attribute: true
+            type: string
+        credit:
+            expose: true
+            access_type: public_method
+            serialized_name: credit
+            accessor:
+                getter: getCredit
+                setter: setCredit
+            xml_attribute: true
+            type: string

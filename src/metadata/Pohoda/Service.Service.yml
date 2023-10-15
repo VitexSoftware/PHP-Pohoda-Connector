@@ -1,0 +1,3 @@
+Pohoda\Service\Service:
+    xml_root_name: service
+    xml_root_namespace: 'http://www.stormware.cz/schema/version_2/service.xsd'

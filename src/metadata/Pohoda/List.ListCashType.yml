@@ -1,0 +1,16 @@
+Pohoda\List\ListCashType:
+    properties:
+        itemCash:
+            expose: true
+            access_type: public_method
+            serialized_name: itemCash
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getItemCash
+                setter: setItemCash
+            xml_list:
+                inline: true
+                entry_name: itemCash
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\List\ItemCashType>

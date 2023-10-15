@@ -1,0 +1,67 @@
+Pohoda\Stock\IntParameterType:
+    properties:
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: Pohoda\Type\ActionTypeItemType
+        intParameterID:
+            expose: true
+            access_type: public_method
+            serialized_name: intParameterID
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIntParameterID
+                setter: setIntParameterID
+            type: int
+        intParameterName:
+            expose: true
+            access_type: public_method
+            serialized_name: intParameterName
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIntParameterName
+                setter: setIntParameterName
+            type: string
+        intParameterOrder:
+            expose: true
+            access_type: public_method
+            serialized_name: intParameterOrder
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIntParameterOrder
+                setter: setIntParameterOrder
+            type: int
+        intParameterType:
+            expose: true
+            access_type: public_method
+            serialized_name: intParameterType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIntParameterType
+                setter: setIntParameterType
+            type: string
+        intParameterValues:
+            expose: true
+            access_type: public_method
+            serialized_name: intParameterValues
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getIntParameterValues
+                setter: setIntParameterValues
+            type: array<Pohoda\Stock\IntParameterValueType>
+            xml_list:
+                inline: false
+                entry_name: intParameterValue
+                skip_when_empty: false
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'

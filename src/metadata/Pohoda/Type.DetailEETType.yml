@@ -1,0 +1,302 @@
+Pohoda\Type\DetailEETType:
+    properties:
+        numberOfDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: numberOfDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getNumberOfDocument
+                setter: setNumberOfDocument
+            type: string
+        dateOfSale:
+            expose: true
+            access_type: public_method
+            serialized_name: dateOfSale
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getDateOfSale
+                setter: setDateOfSale
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        price:
+            expose: true
+            access_type: public_method
+            serialized_name: price
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPrice
+                setter: setPrice
+            type: float
+        pKP:
+            expose: true
+            access_type: public_method
+            serialized_name: PKP
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPKP
+                setter: setPKP
+            type: GoetasWebservices\Xsd\XsdToPhp\Jms\Base64Encoded
+        bKP:
+            expose: true
+            access_type: public_method
+            serialized_name: BKP
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getBKP
+                setter: setBKP
+            type: string
+        fIK:
+            expose: true
+            access_type: public_method
+            serialized_name: FIK
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getFIK
+                setter: setFIK
+            type: string
+        establishment:
+            expose: true
+            access_type: public_method
+            serialized_name: establishment
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getEstablishment
+                setter: setEstablishment
+            type: string
+        cashDevice:
+            expose: true
+            access_type: public_method
+            serialized_name: cashDevice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getCashDevice
+                setter: setCashDevice
+            type: string
+        mode:
+            expose: true
+            access_type: public_method
+            serialized_name: mode
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getMode
+                setter: setMode
+            type: string
+        dateOfSend:
+            expose: true
+            access_type: public_method
+            serialized_name: dateOfSend
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getDateOfSend
+                setter: setDateOfSend
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        dateOfAcceptance:
+            expose: true
+            access_type: public_method
+            serialized_name: dateOfAcceptance
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getDateOfAcceptance
+                setter: setDateOfAcceptance
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        testMode:
+            expose: true
+            access_type: public_method
+            serialized_name: testMode
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getTestMode
+                setter: setTestMode
+            type: string
+        vATIdOfPayer:
+            expose: true
+            access_type: public_method
+            serialized_name: VATIdOfPayer
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getVATIdOfPayer
+                setter: setVATIdOfPayer
+            type: string
+        vATIdOfAuthPayer:
+            expose: true
+            access_type: public_method
+            serialized_name: VATIdOfAuthPayer
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getVATIdOfAuthPayer
+                setter: setVATIdOfAuthPayer
+            type: string
+        priceExempt:
+            expose: true
+            access_type: public_method
+            serialized_name: priceExempt
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceExempt
+                setter: setPriceExempt
+            type: float
+        priceBasic:
+            expose: true
+            access_type: public_method
+            serialized_name: priceBasic
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceBasic
+                setter: setPriceBasic
+            type: float
+        vATBasic:
+            expose: true
+            access_type: public_method
+            serialized_name: VATBasic
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getVATBasic
+                setter: setVATBasic
+            type: float
+        priceReduced:
+            expose: true
+            access_type: public_method
+            serialized_name: priceReduced
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceReduced
+                setter: setPriceReduced
+            type: float
+        vATReduced:
+            expose: true
+            access_type: public_method
+            serialized_name: VATReduced
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getVATReduced
+                setter: setVATReduced
+            type: float
+        priceSecondReduced:
+            expose: true
+            access_type: public_method
+            serialized_name: priceSecondReduced
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getPriceSecondReduced
+                setter: setPriceSecondReduced
+            type: float
+        vATSecondReduced:
+            expose: true
+            access_type: public_method
+            serialized_name: VATSecondReduced
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getVATSecondReduced
+                setter: setVATSecondReduced
+            type: float
+        travelService:
+            expose: true
+            access_type: public_method
+            serialized_name: travelService
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getTravelService
+                setter: setTravelService
+            type: float
+        usedGoodsBasic:
+            expose: true
+            access_type: public_method
+            serialized_name: usedGoodsBasic
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getUsedGoodsBasic
+                setter: setUsedGoodsBasic
+            type: float
+        usedGoodsFirstReduced:
+            expose: true
+            access_type: public_method
+            serialized_name: usedGoodsFirstReduced
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getUsedGoodsFirstReduced
+                setter: setUsedGoodsFirstReduced
+            type: float
+        usedGoodsSecondReduced:
+            expose: true
+            access_type: public_method
+            serialized_name: usedGoodsSecondReduced
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getUsedGoodsSecondReduced
+                setter: setUsedGoodsSecondReduced
+            type: float
+        forApply:
+            expose: true
+            access_type: public_method
+            serialized_name: forApply
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getForApply
+                setter: setForApply
+            type: float
+        apply:
+            expose: true
+            access_type: public_method
+            serialized_name: apply
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getApply
+                setter: setApply
+            type: float
+        firstSending:
+            expose: true
+            access_type: public_method
+            serialized_name: firstSending
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getFirstSending
+                setter: setFirstSending
+            type: bool
+        uUID:
+            expose: true
+            access_type: public_method
+            serialized_name: UUID
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getUUID
+                setter: setUUID
+            type: string
+        protocolVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: protocolVersion
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getProtocolVersion
+                setter: setProtocolVersion
+            type: int

@@ -1,0 +1,51 @@
+Pohoda\ProductRequirement\ProductRequirementType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        productRequirementHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: productRequirementHeader
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getProductRequirementHeader
+                setter: setProductRequirementHeader
+            type: Pohoda\ProductRequirement\ProductRequirementHeaderType
+        productRequirementDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: productRequirementDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getProductRequirementDetail
+                setter: setProductRequirementDetail
+            type: array<Pohoda\ProductRequirement\ProductRequirementItemType>
+            xml_list:
+                inline: false
+                entry_name: productRequirementItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+        print:
+            expose: true
+            access_type: public_method
+            serialized_name: print
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getPrint
+                setter: setPrint
+            type: array<Pohoda\Print\PrinterSettingsType>
+            xml_list:
+                inline: false
+                entry_name: printerSettings
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'

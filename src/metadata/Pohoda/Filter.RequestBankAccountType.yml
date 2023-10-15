@@ -1,0 +1,22 @@
+Pohoda\Filter\RequestBankAccountType:
+    properties:
+        filter:
+            expose: true
+            access_type: public_method
+            serialized_name: filter
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getFilter
+                setter: setFilter
+            type: Pohoda\Filter\FilterIDType
+        userFilterName:
+            expose: true
+            access_type: public_method
+            serialized_name: userFilterName
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/filter.xsd'
+            accessor:
+                getter: getUserFilterName
+                setter: setUserFilterName
+            type: string

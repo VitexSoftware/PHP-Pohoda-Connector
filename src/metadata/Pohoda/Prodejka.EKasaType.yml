@@ -1,0 +1,52 @@
+Pohoda\Prodejka\EKasaType:
+    properties:
+        eKasaID:
+            expose: true
+            access_type: public_method
+            serialized_name: eKasaID
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getEKasaID
+                setter: setEKasaID
+            type: string
+        eKasaOKP:
+            expose: true
+            access_type: public_method
+            serialized_name: eKasaOKP
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getEKasaOKP
+                setter: setEKasaOKP
+            type: string
+        eKasaParNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: eKasaParNumber
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getEKasaParNumber
+                setter: setEKasaParNumber
+            type: int
+        eKasaDateOfPar:
+            expose: true
+            access_type: public_method
+            serialized_name: eKasaDateOfPar
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getEKasaDateOfPar
+                setter: setEKasaDateOfPar
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        printFM:
+            expose: true
+            access_type: public_method
+            serialized_name: printFM
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/prodejka.xsd'
+            accessor:
+                getter: getPrintFM
+                setter: setPrintFM
+            type: string

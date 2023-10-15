@@ -1,0 +1,30 @@
+Pohoda\Archive\VariableType:
+    properties:
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            accessor:
+                getter: getName
+                setter: setName
+            xml_attribute: true
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            accessor:
+                getter: getNote
+                setter: setNote
+            xml_attribute: true
+            type: string
+        value:
+            expose: true
+            access_type: public_method
+            serialized_name: value
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/archive.xsd'
+            accessor:
+                getter: getValue
+                setter: setValue
+            type: string

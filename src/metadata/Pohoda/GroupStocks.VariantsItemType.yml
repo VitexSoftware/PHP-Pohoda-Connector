@@ -1,0 +1,52 @@
+Pohoda\GroupStocks\VariantsItemType:
+    properties:
+        actionType:
+            expose: true
+            access_type: public_method
+            serialized_name: actionType
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            accessor:
+                getter: getActionType
+                setter: setActionType
+            type: Pohoda\Type\ActionTypeItemAddDeleteType
+        stockItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            accessor:
+                getter: getStockItem
+                setter: setStockItem
+            type: Pohoda\Type\StockItemType
+        order:
+            expose: true
+            access_type: public_method
+            serialized_name: order
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            accessor:
+                getter: getOrder
+                setter: setOrder
+            type: int
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: quantity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/groupStocks.xsd'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: float

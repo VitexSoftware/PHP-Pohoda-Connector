@@ -1,0 +1,82 @@
+Pohoda\ActionPrice\ActionPriceHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        description:
+            expose: true
+            access_type: public_method
+            serialized_name: description
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getDescription
+                setter: setDescription
+            type: string
+        validityAction:
+            expose: true
+            access_type: public_method
+            serialized_name: validityAction
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getValidityAction
+                setter: setValidityAction
+            type: Pohoda\ActionPrice\ValidityActionType
+        discountPercentage:
+            expose: true
+            access_type: public_method
+            serialized_name: discountPercentage
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getDiscountPercentage
+                setter: setDiscountPercentage
+            type: float
+        deriveFromAccesoryPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: deriveFromAccesoryPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getDeriveFromAccesoryPrice
+                setter: setDeriveFromAccesoryPrice
+            type: string
+        rounding:
+            expose: true
+            access_type: public_method
+            serialized_name: rounding
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getRounding
+                setter: setRounding
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/actionPrice.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string

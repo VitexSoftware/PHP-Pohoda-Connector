@@ -1,0 +1,34 @@
+Pohoda\List\ListRecyclingContribRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        recyclingContribVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: recyclingContribVersion
+            accessor:
+                getter: getRecyclingContribVersion
+                setter: setRecyclingContribVersion
+            xml_attribute: true
+            type: string
+        requestRecyclingContrib:
+            expose: true
+            access_type: public_method
+            serialized_name: requestRecyclingContrib
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestRecyclingContrib
+                setter: setRequestRecyclingContrib
+            xml_list:
+                inline: true
+                entry_name: requestRecyclingContrib
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Filter\RequestRecyclingContribType>

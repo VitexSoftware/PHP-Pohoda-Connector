@@ -1,0 +1,39 @@
+Pohoda\List\ListBalanceRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        balanceVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: balanceVersion
+            accessor:
+                getter: getBalanceVersion
+                setter: setBalanceVersion
+            xml_attribute: true
+            type: string
+        extSystem:
+            expose: true
+            access_type: public_method
+            serialized_name: extSystem
+            accessor:
+                getter: getExtSystem
+                setter: setExtSystem
+            xml_attribute: true
+            type: string
+        requestBalance:
+            expose: true
+            access_type: public_method
+            serialized_name: requestBalance
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestBalance
+                setter: setRequestBalance
+            type: Pohoda\List\RequestBalanceType

@@ -1,0 +1,26 @@
+Pohoda\IntDoc\IntDocDetailType:
+    properties:
+        intDocItem:
+            expose: true
+            access_type: public_method
+            serialized_name: intDocItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            accessor:
+                getter: getIntDocItem
+                setter: setIntDocItem
+            xml_list:
+                inline: true
+                entry_name: intDocItem
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            type: array<Pohoda\IntDoc\IntDocItemType>
+        roundingItem:
+            expose: true
+            access_type: public_method
+            serialized_name: roundingItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/intDoc.xsd'
+            accessor:
+                getter: getRoundingItem
+                setter: setRoundingItem
+            type: Pohoda\Type\RoundingItemType

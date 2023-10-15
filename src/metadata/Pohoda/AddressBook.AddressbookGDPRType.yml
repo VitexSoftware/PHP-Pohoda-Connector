@@ -1,0 +1,57 @@
+Pohoda\AddressBook\AddressbookGDPRType:
+    properties:
+        restrictProcessing:
+            expose: true
+            access_type: public_method
+            serialized_name: restrictProcessing
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getRestrictProcessing
+                setter: setRestrictProcessing
+            type: string
+        dateSale:
+            expose: true
+            access_type: public_method
+            serialized_name: dateSale
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getDateSale
+                setter: setDateSale
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        datePreSale:
+            expose: true
+            access_type: public_method
+            serialized_name: datePreSale
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getDatePreSale
+                setter: setDatePreSale
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        dateAfterSale:
+            expose: true
+            access_type: public_method
+            serialized_name: dateAfterSale
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getDateAfterSale
+                setter: setDateAfterSale
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        gDPRItems:
+            expose: true
+            access_type: public_method
+            serialized_name: GDPRItems
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'
+            accessor:
+                getter: getGDPRItems
+                setter: setGDPRItems
+            type: array<Pohoda\AddressBook\GDPRItemType>
+            xml_list:
+                inline: false
+                entry_name: GDPRItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/addressbook.xsd'

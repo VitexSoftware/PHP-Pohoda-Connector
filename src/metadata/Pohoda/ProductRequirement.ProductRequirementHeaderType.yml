@@ -1,0 +1,192 @@
+Pohoda\ProductRequirement\ProductRequirementHeaderType:
+    properties:
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getId
+                setter: setId
+            type: int
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: Pohoda\Type\NumberType
+        date:
+            expose: true
+            access_type: public_method
+            serialized_name: date
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getDate
+                setter: setDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        dateTill:
+            expose: true
+            access_type: public_method
+            serialized_name: dateTill
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getDateTill
+                setter: setDateTill
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        text:
+            expose: true
+            access_type: public_method
+            serialized_name: text
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getText
+                setter: setText
+            type: string
+        partnerIdentity:
+            expose: true
+            access_type: public_method
+            serialized_name: partnerIdentity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getPartnerIdentity
+                setter: setPartnerIdentity
+            type: Pohoda\Type\AddressType
+        centreSource:
+            expose: true
+            access_type: public_method
+            serialized_name: centreSource
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getCentreSource
+                setter: setCentreSource
+            type: Pohoda\Type\RefType
+        centreDestination:
+            expose: true
+            access_type: public_method
+            serialized_name: centreDestination
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getCentreDestination
+                setter: setCentreDestination
+            type: Pohoda\Type\RefType
+        activity:
+            expose: true
+            access_type: public_method
+            serialized_name: activity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getActivity
+                setter: setActivity
+            type: Pohoda\Type\RefType
+        contract:
+            expose: true
+            access_type: public_method
+            serialized_name: contract
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getContract
+                setter: setContract
+            type: Pohoda\Type\RefType
+        isExecuted:
+            expose: true
+            access_type: public_method
+            serialized_name: isExecuted
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getIsExecuted
+                setter: setIsExecuted
+            type: string
+        isProduced:
+            expose: true
+            access_type: public_method
+            serialized_name: isProduced
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getIsProduced
+                setter: setIsProduced
+            type: string
+        isReserved:
+            expose: true
+            access_type: public_method
+            serialized_name: isReserved
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getIsReserved
+                setter: setIsReserved
+            type: string
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        intNote:
+            expose: true
+            access_type: public_method
+            serialized_name: intNote
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getIntNote
+                setter: setIntNote
+            type: string
+        markRecord:
+            expose: true
+            access_type: public_method
+            serialized_name: markRecord
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getMarkRecord
+                setter: setMarkRecord
+            type: string
+        labels:
+            expose: true
+            access_type: public_method
+            serialized_name: labels
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getLabels
+                setter: setLabels
+            type: array<Pohoda\Type\LabelType>
+            xml_list:
+                inline: false
+                entry_name: label
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+        parameters:
+            expose: true
+            access_type: public_method
+            serialized_name: parameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/productRequirement.xsd'
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            type: array<Pohoda\Type\ParameterDocType>
+            xml_list:
+                inline: false
+                entry_name: parameter
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'

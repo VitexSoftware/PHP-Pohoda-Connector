@@ -1,0 +1,22 @@
+Pohoda\Print\PDFType:
+    properties:
+        fileName:
+            expose: true
+            access_type: public_method
+            serialized_name: fileName
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getFileName
+                setter: setFileName
+            type: string
+        isdoc:
+            expose: true
+            access_type: public_method
+            serialized_name: isdoc
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getIsdoc
+                setter: setIsdoc
+            type: Pohoda\Print\IsdocType

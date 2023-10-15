@@ -1,0 +1,16 @@
+Pohoda\Stock\StockPriceItemType:
+    properties:
+        stockPrice:
+            expose: true
+            access_type: public_method
+            serialized_name: stockPrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            accessor:
+                getter: getStockPrice
+                setter: setStockPrice
+            xml_list:
+                inline: true
+                entry_name: stockPrice
+                namespace: 'http://www.stormware.cz/schema/version_2/stock.xsd'
+            type: array<Pohoda\Type\StockPriceType>

@@ -1,0 +1,16 @@
+Pohoda\List\ListRequestAgendasType\AgendasAType:
+    properties:
+        agenda:
+            expose: true
+            access_type: public_method
+            serialized_name: agenda
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getAgenda
+                setter: setAgenda
+            xml_list:
+                inline: true
+                entry_name: agenda
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<string>

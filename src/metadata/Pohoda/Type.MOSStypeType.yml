@@ -1,0 +1,12 @@
+Pohoda\Type\MOSStypeType:
+    properties:
+        ids:
+            expose: true
+            access_type: public_method
+            serialized_name: ids
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/type.xsd'
+            accessor:
+                getter: getIds
+                setter: setIds
+            type: string

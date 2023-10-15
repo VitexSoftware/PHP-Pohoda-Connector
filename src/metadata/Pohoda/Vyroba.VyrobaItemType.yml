@@ -1,0 +1,57 @@
+Pohoda\Vyroba\VyrobaItemType:
+    properties:
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: quantity
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: float
+        stockItem:
+            expose: true
+            access_type: public_method
+            serialized_name: stockItem
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'
+            accessor:
+                getter: getStockItem
+                setter: setStockItem
+            type: Pohoda\Type\StockItemType
+        expirationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: expirationDate
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'
+            accessor:
+                getter: getExpirationDate
+                setter: setExpirationDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        note:
+            expose: true
+            access_type: public_method
+            serialized_name: note
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'
+            accessor:
+                getter: getNote
+                setter: setNote
+            type: string
+        productionList:
+            expose: true
+            access_type: public_method
+            serialized_name: productionList
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'
+            accessor:
+                getter: getProductionList
+                setter: setProductionList
+            type: array<Pohoda\Vyroba\ProductionListItemType>
+            xml_list:
+                inline: false
+                entry_name: productionListItem
+                skip_when_empty: true
+                namespace: 'http://www.stormware.cz/schema/version_2/vyroba.xsd'

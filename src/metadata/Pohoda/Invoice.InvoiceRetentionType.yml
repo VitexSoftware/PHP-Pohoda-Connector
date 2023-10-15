@@ -1,0 +1,62 @@
+Pohoda\Invoice\InvoiceRetentionType:
+    properties:
+        date:
+            expose: true
+            access_type: public_method
+            serialized_name: date
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getDate
+                setter: setDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        dateDue:
+            expose: true
+            access_type: public_method
+            serialized_name: dateDue
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getDateDue
+                setter: setDateDue
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        homeCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: homeCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getHomeCurrency
+                setter: setHomeCurrency
+            type: float
+        liquidation:
+            expose: true
+            access_type: public_method
+            serialized_name: liquidation
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getLiquidation
+                setter: setLiquidation
+            type: Pohoda\Type\LiquidationType
+        text:
+            expose: true
+            access_type: public_method
+            serialized_name: text
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getText
+                setter: setText
+            type: string
+        accounting:
+            expose: true
+            access_type: public_method
+            serialized_name: accounting
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/invoice.xsd'
+            accessor:
+                getter: getAccounting
+                setter: setAccounting
+            type: Pohoda\Type\RefType

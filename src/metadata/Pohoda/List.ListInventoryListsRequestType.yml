@@ -1,0 +1,34 @@
+Pohoda\List\ListInventoryListsRequestType:
+    properties:
+        version:
+            expose: true
+            access_type: public_method
+            serialized_name: version
+            accessor:
+                getter: getVersion
+                setter: setVersion
+            xml_attribute: true
+            type: string
+        inventoryListsVersion:
+            expose: true
+            access_type: public_method
+            serialized_name: inventoryListsVersion
+            accessor:
+                getter: getInventoryListsVersion
+                setter: setInventoryListsVersion
+            xml_attribute: true
+            type: string
+        requestInventoryLists:
+            expose: true
+            access_type: public_method
+            serialized_name: requestInventoryLists
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getRequestInventoryLists
+                setter: setRequestInventoryLists
+            xml_list:
+                inline: true
+                entry_name: requestInventoryLists
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\Filter\RequestInventoryListsType>

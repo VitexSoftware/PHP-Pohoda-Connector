@@ -1,0 +1,29 @@
+Pohoda\List\ItemAccountingTypeSingleEntryType:
+    properties:
+        accounting:
+            expose: true
+            access_type: public_method
+            serialized_name: accounting
+            accessor:
+                getter: getAccounting
+                setter: setAccounting
+            xml_attribute: true
+            type: string
+        agenda:
+            expose: true
+            access_type: public_method
+            serialized_name: agenda
+            accessor:
+                getter: getAgenda
+                setter: setAgenda
+            xml_attribute: true
+            type: string
+        accountingType:
+            expose: true
+            access_type: public_method
+            serialized_name: accountingType
+            accessor:
+                getter: getAccountingType
+                setter: setAccountingType
+            xml_attribute: true
+            type: string

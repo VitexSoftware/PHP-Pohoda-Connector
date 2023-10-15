@@ -1,0 +1,29 @@
+Pohoda\List\ItemNumericSeriesType:
+    properties:
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            accessor:
+                getter: getName
+                setter: setName
+            xml_attribute: true
+            type: string
+        agenda:
+            expose: true
+            access_type: public_method
+            serialized_name: agenda
+            accessor:
+                getter: getAgenda
+                setter: setAgenda
+            xml_attribute: true
+            type: string
+        year:
+            expose: true
+            access_type: public_method
+            serialized_name: year
+            accessor:
+                getter: getYear
+                setter: setYear
+            xml_attribute: true
+            type: int

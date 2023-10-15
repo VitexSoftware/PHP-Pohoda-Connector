@@ -1,0 +1,62 @@
+Pohoda\Order\OrderSummaryType:
+    properties:
+        roundingDocument:
+            expose: true
+            access_type: public_method
+            serialized_name: roundingDocument
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getRoundingDocument
+                setter: setRoundingDocument
+            type: string
+        roundingVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: roundingVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getRoundingVAT
+                setter: setRoundingVAT
+            type: string
+        calculateVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: calculateVAT
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getCalculateVAT
+                setter: setCalculateVAT
+            type: bool
+        typeCalculateVATInclusivePrice:
+            expose: true
+            access_type: public_method
+            serialized_name: typeCalculateVATInclusivePrice
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getTypeCalculateVATInclusivePrice
+                setter: setTypeCalculateVATInclusivePrice
+            type: string
+        homeCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: homeCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getHomeCurrency
+                setter: setHomeCurrency
+            type: Pohoda\Type\TypeCurrencyHomeType
+        foreignCurrency:
+            expose: true
+            access_type: public_method
+            serialized_name: foreignCurrency
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/order.xsd'
+            accessor:
+                getter: getForeignCurrency
+                setter: setForeignCurrency
+            type: Pohoda\Type\TypeCurrencyForeignType

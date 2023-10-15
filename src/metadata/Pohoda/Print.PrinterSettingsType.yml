@@ -1,0 +1,42 @@
+Pohoda\Print\PrinterSettingsType:
+    properties:
+        report:
+            expose: true
+            access_type: public_method
+            serialized_name: report
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getReport
+                setter: setReport
+            type: Pohoda\Print\ReportType
+        printer:
+            expose: true
+            access_type: public_method
+            serialized_name: printer
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getPrinter
+                setter: setPrinter
+            type: string
+        pdf:
+            expose: true
+            access_type: public_method
+            serialized_name: pdf
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getPdf
+                setter: setPdf
+            type: Pohoda\Print\PDFType
+        parameters:
+            expose: true
+            access_type: public_method
+            serialized_name: parameters
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/print.xsd'
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            type: Pohoda\Print\ParametersType

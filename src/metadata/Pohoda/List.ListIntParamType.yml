@@ -1,0 +1,16 @@
+Pohoda\List\ListIntParamType:
+    properties:
+        intParamDetail:
+            expose: true
+            access_type: public_method
+            serialized_name: intParamDetail
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            accessor:
+                getter: getIntParamDetail
+                setter: setIntParamDetail
+            xml_list:
+                inline: true
+                entry_name: intParamDetail
+                namespace: 'http://www.stormware.cz/schema/version_2/list.xsd'
+            type: array<Pohoda\IntParam\IntParamDetailType>

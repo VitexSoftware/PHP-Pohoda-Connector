@@ -1,0 +1,12 @@
+Pohoda\BankAccount\ActionTypeType:
+    properties:
+        add:
+            expose: true
+            access_type: public_method
+            serialized_name: add
+            xml_element:
+                namespace: 'http://www.stormware.cz/schema/version_2/bankAccount.xsd'
+            accessor:
+                getter: getAdd
+                setter: setAdd
+            type: Pohoda\Filter\RequestExtIdActionType
