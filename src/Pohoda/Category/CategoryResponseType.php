@@ -13,4 +13,3 @@ use Pohoda\Documentresponse\DocumentResponseType;
 class CategoryResponseType extends DocumentResponseType
 {
 }
-

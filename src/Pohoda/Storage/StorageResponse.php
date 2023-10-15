@@ -8,4 +8,3 @@ namespace Pohoda\Storage;
 class StorageResponse extends StorageResponseType
 {
 }
-

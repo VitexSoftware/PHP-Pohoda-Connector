@@ -175,4 +175,3 @@ class ActionPriceStockItemType
         return $this;
     }
 }
-

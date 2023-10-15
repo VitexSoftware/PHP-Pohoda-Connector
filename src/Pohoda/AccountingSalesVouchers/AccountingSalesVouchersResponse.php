@@ -8,4 +8,3 @@ namespace Pohoda\AccountingSalesVouchers;
 class AccountingSalesVouchersResponse extends AccountingSalesVouchersResponesType
 {
 }
-

@@ -208,4 +208,3 @@ class OrderSummaryType
         return $this;
     }
 }
-

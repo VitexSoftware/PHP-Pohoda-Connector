@@ -175,4 +175,3 @@ class VariantsItemType
         return $this;
     }
 }
-

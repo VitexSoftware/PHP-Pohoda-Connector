@@ -127,4 +127,3 @@ class ImportRequestType
         return $this;
     }
 }
-

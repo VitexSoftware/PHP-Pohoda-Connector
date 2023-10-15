@@ -16,7 +16,7 @@ class LockSettingsType
      * @var string[] $lock1
      */
     private $lock1 = [
-        
+
     ];
 
     /**
@@ -25,7 +25,7 @@ class LockSettingsType
      * @var string[] $lock2
      */
     private $lock2 = [
-        
+
     ];
 
     /**
@@ -160,4 +160,3 @@ class LockSettingsType
         return $this;
     }
 }
-

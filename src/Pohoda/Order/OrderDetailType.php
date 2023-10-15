@@ -14,7 +14,7 @@ class OrderDetailType
      * @var \Pohoda\Order\OrderItemType[] $orderItem
      */
     private $orderItem = [
-        
+
     ];
 
     /**
@@ -106,4 +106,3 @@ class OrderDetailType
         return $this;
     }
 }
-

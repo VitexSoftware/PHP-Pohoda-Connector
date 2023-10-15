@@ -64,4 +64,3 @@ class RefTypeSupplierAddressType
         return $this;
     }
 }
-

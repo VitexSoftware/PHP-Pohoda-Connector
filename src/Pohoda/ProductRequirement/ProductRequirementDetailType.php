@@ -14,7 +14,7 @@ class ProductRequirementDetailType
      * @var \Pohoda\ProductRequirement\ProductRequirementItemType[] $productRequirementItem
      */
     private $productRequirementItem = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class ProductRequirementDetailType
         return $this;
     }
 }
-

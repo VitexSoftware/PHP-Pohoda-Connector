@@ -97,4 +97,3 @@ class LabelType
         return $this;
     }
 }
-

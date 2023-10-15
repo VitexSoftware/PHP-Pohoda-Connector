@@ -103,4 +103,3 @@ class AutomaticLiquidationType
         return $this;
     }
 }
-

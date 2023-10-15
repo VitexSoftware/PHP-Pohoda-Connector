@@ -64,4 +64,3 @@ class RequestParameterType
         return $this;
     }
 }
-

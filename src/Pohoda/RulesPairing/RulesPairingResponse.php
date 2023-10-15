@@ -10,4 +10,3 @@ namespace Pohoda\RulesPairing;
 class RulesPairingResponse extends RulesPairingResponseType
 {
 }
-

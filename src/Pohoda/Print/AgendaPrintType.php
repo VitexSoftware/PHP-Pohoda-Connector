@@ -14,7 +14,7 @@ class AgendaPrintType
      * @var \Pohoda\Print\PrinterSettingsType[] $printerSettings
      */
     private $printerSettings = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class AgendaPrintType
         return $this;
     }
 }
-

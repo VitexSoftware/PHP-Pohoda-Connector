@@ -103,4 +103,3 @@ class RecordLockType
         return $this;
     }
 }
-

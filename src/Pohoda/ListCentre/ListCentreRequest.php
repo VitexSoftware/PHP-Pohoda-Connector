@@ -8,4 +8,3 @@ namespace Pohoda\ListCentre;
 class ListCentreRequest extends ListRequestCentreType
 {
 }
-

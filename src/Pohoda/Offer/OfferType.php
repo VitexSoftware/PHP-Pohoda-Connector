@@ -191,4 +191,3 @@ class OfferType
         return $this;
     }
 }
-

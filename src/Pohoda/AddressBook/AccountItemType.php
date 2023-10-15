@@ -208,4 +208,3 @@ class AccountItemType
         return $this;
     }
 }
-

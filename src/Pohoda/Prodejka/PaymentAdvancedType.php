@@ -208,4 +208,3 @@ class PaymentAdvancedType
         return $this;
     }
 }
-

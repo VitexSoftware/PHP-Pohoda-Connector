@@ -16,7 +16,7 @@ class ListPrijemkaType extends ListVersionType
      * @var \Pohoda\Prijemka\PrijemkaType[] $prijemka
      */
     private $prijemka = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListPrijemkaType extends ListVersionType
         return $this;
     }
 }
-

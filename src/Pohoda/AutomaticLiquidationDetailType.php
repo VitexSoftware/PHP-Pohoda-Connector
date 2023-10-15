@@ -76,4 +76,3 @@ class AutomaticLiquidationDetailType
         return $this;
     }
 }
-

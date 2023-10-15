@@ -208,4 +208,3 @@ class ForeignCurrencyType
         return $this;
     }
 }
-

@@ -40,7 +40,7 @@ class ItemSellingPriceType
     private $name = null;
 
     /**
-     * Platnost slevy resp. vedlejší ceny může být trvalá nebo časově omezená; v tom případě uveďte data platnosti do polí od a do. 
+     * Platnost slevy resp. vedlejší ceny může být trvalá nebo časově omezená; v tom případě uveďte data platnosti do polí od a do.
      *  Platnost ceny lze také pozastavit, takže se nenabízí při výdeji.
      *
      * @var string $discountValidity
@@ -226,7 +226,7 @@ class ItemSellingPriceType
     /**
      * Gets as discountValidity
      *
-     * Platnost slevy resp. vedlejší ceny může být trvalá nebo časově omezená; v tom případě uveďte data platnosti do polí od a do. 
+     * Platnost slevy resp. vedlejší ceny může být trvalá nebo časově omezená; v tom případě uveďte data platnosti do polí od a do.
      *  Platnost ceny lze také pozastavit, takže se nenabízí při výdeji.
      *
      * @return string
@@ -239,7 +239,7 @@ class ItemSellingPriceType
     /**
      * Sets a new discountValidity
      *
-     * Platnost slevy resp. vedlejší ceny může být trvalá nebo časově omezená; v tom případě uveďte data platnosti do polí od a do. 
+     * Platnost slevy resp. vedlejší ceny může být trvalá nebo časově omezená; v tom případě uveďte data platnosti do polí od a do.
      *  Platnost ceny lze také pozastavit, takže se nenabízí při výdeji.
      *
      * @param string $discountValidity
@@ -511,4 +511,3 @@ class ItemSellingPriceType
         return $this;
     }
 }
-

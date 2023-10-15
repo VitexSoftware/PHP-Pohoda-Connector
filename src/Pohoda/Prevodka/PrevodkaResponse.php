@@ -8,4 +8,3 @@ namespace Pohoda\Prevodka;
 class PrevodkaResponse extends PrevodkaResponseType
 {
 }
-

@@ -64,4 +64,3 @@ class RefTypeRegVATinEUType
         return $this;
     }
 }
-

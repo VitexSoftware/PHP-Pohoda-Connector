@@ -71,4 +71,3 @@ class ListRequestStoresType extends ListRequestType
         return $this;
     }
 }
-

@@ -64,4 +64,3 @@ class AccountingFormOfPaymentTypeRootType
         return $this;
     }
 }
-

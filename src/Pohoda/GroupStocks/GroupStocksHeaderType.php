@@ -268,4 +268,3 @@ class GroupStocksHeaderType
         return $this;
     }
 }
-

@@ -14,7 +14,7 @@ class ActionPriceStocksType
      * @var \Pohoda\ActionPrice\ActionPriceStockItemType[] $actionPriceStockItem
      */
     private $actionPriceStockItem = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class ActionPriceStocksType
         return $this;
     }
 }
-

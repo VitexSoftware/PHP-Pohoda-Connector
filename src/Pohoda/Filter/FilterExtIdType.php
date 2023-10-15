@@ -76,4 +76,3 @@ class FilterExtIdType
         return $this;
     }
 }
-

@@ -16,7 +16,7 @@ class GroupStocksDetailType
      * @var \Pohoda\GroupStocks\VariantsItemType[] $variant
      */
     private $variant = [
-        
+
     ];
 
     /**
@@ -85,4 +85,3 @@ class GroupStocksDetailType
         return $this;
     }
 }
-

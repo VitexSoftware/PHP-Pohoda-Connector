@@ -61,4 +61,3 @@ class PaymentAccountAType
         return $this;
     }
 }
-

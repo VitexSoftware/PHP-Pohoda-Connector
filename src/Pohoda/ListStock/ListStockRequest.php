@@ -8,4 +8,3 @@ namespace Pohoda\ListStock;
 class ListStockRequest extends ListRequestStockType
 {
 }
-

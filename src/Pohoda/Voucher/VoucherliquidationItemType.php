@@ -23,7 +23,7 @@ class VoucherliquidationItemType
      * @var \Pohoda\Voucher\LiquidationItemType[] $liquidationItem
      */
     private $liquidationItem = [
-        
+
     ];
 
     /**
@@ -118,4 +118,3 @@ class VoucherliquidationItemType
         return $this;
     }
 }
-

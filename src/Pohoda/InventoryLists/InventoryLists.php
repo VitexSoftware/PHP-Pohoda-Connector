@@ -8,4 +8,3 @@ namespace Pohoda\InventoryLists;
 class InventoryLists extends InventoryListsType
 {
 }
-

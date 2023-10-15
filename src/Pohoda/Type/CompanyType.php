@@ -43,4 +43,3 @@ class CompanyType
         return $this;
     }
 }
-

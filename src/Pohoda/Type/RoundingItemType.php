@@ -235,4 +235,3 @@ class RoundingItemType
         return $this;
     }
 }
-

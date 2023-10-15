@@ -76,4 +76,3 @@ class StockItemMovementType
         return $this;
     }
 }
-

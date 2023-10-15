@@ -307,4 +307,3 @@ class DocumentType
         return $this;
     }
 }
-

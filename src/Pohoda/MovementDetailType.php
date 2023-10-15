@@ -208,4 +208,3 @@ class MovementDetailType
         return $this;
     }
 }
-

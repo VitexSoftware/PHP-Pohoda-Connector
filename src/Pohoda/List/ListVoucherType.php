@@ -16,7 +16,7 @@ class ListVoucherType extends ListVersionType
      * @var \Pohoda\Voucher\VoucherType[] $voucher
      */
     private $voucher = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListVoucherType extends ListVersionType
         return $this;
     }
 }
-

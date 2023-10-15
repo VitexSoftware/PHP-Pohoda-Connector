@@ -97,4 +97,3 @@ class ListAccountancyRequestType
         return $this;
     }
 }
-

@@ -8,4 +8,3 @@ namespace Pohoda\MKasa;
 class MKasaResponse extends MKasaResponseType
 {
 }
-

@@ -14,7 +14,7 @@ class SubCategoriesType
      * @var \Pohoda\Category\CategoryType[] $category
      */
     private $category = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class SubCategoriesType
         return $this;
     }
 }
-

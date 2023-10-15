@@ -76,4 +76,3 @@ class PriceType
         return $this;
     }
 }
-

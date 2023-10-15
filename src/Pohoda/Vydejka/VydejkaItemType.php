@@ -1067,4 +1067,3 @@ class VydejkaItemType
         return $this;
     }
 }
-

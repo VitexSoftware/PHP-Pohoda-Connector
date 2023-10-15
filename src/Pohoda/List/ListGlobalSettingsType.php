@@ -39,4 +39,3 @@ class ListGlobalSettingsType extends ListVersionType
         return $this;
     }
 }
-

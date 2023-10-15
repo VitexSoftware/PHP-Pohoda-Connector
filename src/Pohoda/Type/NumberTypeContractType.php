@@ -103,4 +103,3 @@ class NumberTypeContractType
         return $this;
     }
 }
-

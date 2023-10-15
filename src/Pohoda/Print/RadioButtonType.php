@@ -76,4 +76,3 @@ class RadioButtonType
         return $this;
     }
 }
-

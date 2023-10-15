@@ -266,4 +266,3 @@ class PrijemkaType
         return $this;
     }
 }
-

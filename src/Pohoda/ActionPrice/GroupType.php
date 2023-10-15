@@ -76,4 +76,3 @@ class GroupType
         return $this;
     }
 }
-

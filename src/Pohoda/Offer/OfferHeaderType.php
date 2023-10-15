@@ -1123,4 +1123,3 @@ class OfferHeaderType
         return $this;
     }
 }
-

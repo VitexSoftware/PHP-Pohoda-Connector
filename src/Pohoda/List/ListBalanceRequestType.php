@@ -130,4 +130,3 @@ class ListBalanceRequestType
         return $this;
     }
 }
-

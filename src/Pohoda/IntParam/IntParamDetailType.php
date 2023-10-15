@@ -19,7 +19,7 @@ class IntParamDetailType
      * @var \Pohoda\IntParam\IntParamType[] $intParam
      */
     private $intParam = [
-        
+
     ];
 
     /**
@@ -100,4 +100,3 @@ class IntParamDetailType
         return $this;
     }
 }
-

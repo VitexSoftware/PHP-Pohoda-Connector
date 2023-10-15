@@ -8,4 +8,3 @@ namespace Pohoda\ListContract;
 class ListContract extends ListContractType
 {
 }
-

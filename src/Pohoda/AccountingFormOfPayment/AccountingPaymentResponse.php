@@ -8,4 +8,3 @@ namespace Pohoda\AccountingFormOfPayment;
 class AccountingPaymentResponse extends AccountingPaymentResponseType
 {
 }
-

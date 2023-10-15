@@ -109,4 +109,3 @@ class ClassificationVATType
         return $this;
     }
 }
-

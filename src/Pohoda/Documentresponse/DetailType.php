@@ -208,4 +208,3 @@ class DetailType
         return $this;
     }
 }
-

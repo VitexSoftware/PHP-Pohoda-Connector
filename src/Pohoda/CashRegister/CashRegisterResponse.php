@@ -8,4 +8,3 @@ namespace Pohoda\CashRegister;
 class CashRegisterResponse extends CashRegisterResponseType
 {
 }
-

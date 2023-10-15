@@ -14,7 +14,7 @@ class RelatedLinksType
      * @var \Pohoda\Stock\RelatedLinkType[] $relatedLink
      */
     private $relatedLink = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class RelatedLinksType
         return $this;
     }
 }
-

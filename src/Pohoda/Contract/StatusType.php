@@ -78,4 +78,3 @@ class StatusType extends RefTypeLongType
         return $this;
     }
 }
-

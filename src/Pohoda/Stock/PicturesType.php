@@ -14,7 +14,7 @@ class PicturesType
      * @var \Pohoda\Stock\PictureType[] $picture
      */
     private $picture = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class PicturesType
         return $this;
     }
 }
-

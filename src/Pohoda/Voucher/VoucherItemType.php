@@ -908,4 +908,3 @@ class VoucherItemType
         return $this;
     }
 }
-

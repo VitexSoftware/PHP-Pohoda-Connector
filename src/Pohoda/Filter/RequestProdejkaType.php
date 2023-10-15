@@ -76,4 +76,3 @@ class RequestProdejkaType
         return $this;
     }
 }
-

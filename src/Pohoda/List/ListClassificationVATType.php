@@ -16,7 +16,7 @@ class ListClassificationVATType extends ListVersionType
      * @var \Pohoda\ClassificationVAT\ClassificationVATType[] $classificationVAT
      */
     private $classificationVAT = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListClassificationVATType extends ListVersionType
         return $this;
     }
 }
-

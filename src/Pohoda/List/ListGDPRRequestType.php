@@ -26,7 +26,7 @@ class ListGDPRRequestType
      * @var \Pohoda\List\RequestGDPRType[] $requestGDPR
      */
     private $requestGDPR = [
-        
+
     ];
 
     /**
@@ -133,4 +133,3 @@ class ListGDPRRequestType
         return $this;
     }
 }
-

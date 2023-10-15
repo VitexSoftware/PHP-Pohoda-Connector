@@ -103,4 +103,3 @@ class RecordliquidationWithoutLinkType
         return $this;
     }
 }
-

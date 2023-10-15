@@ -1192,4 +1192,3 @@ class BankHeaderType
         return $this;
     }
 }
-

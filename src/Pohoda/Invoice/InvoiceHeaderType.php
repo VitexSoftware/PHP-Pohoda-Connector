@@ -47,7 +47,7 @@ class InvoiceHeaderType
     private $sphereType = null;
 
     /**
-     * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená 
+     * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená
      *  v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
      *
      * @var \Pohoda\Type\NumberType $number
@@ -111,7 +111,7 @@ class InvoiceHeaderType
     private $dateKHDPH = null;
 
     /**
-     * Datum splatnosti. Pokud hodnota není zadaná, vyplní v závislosti na datu vystavení 
+     * Datum splatnosti. Pokud hodnota není zadaná, vyplní v závislosti na datu vystavení
      *  faktury dle nastavení v poli "Splatnost pohledávek" agendy "Globální nastavení".
      *
      * @var \DateTime $dateDue
@@ -210,7 +210,7 @@ class InvoiceHeaderType
     private $dateOrder = null;
 
     /**
-     * Cenová hladina odběratele. Používá se jen u typů vydaná faktura, 
+     * Cenová hladina odběratele. Používá se jen u typů vydaná faktura,
      *  vydaný vrubopis, vydaná zálohová faktura, vydaná proforma faktura.
      *
      * @var \Pohoda\Type\RefType $priceLevel
@@ -225,8 +225,8 @@ class InvoiceHeaderType
     private $paymentType = null;
 
     /**
-     * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku. 
-     *  (Používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení 
+     * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku.
+     *  (Používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení
      *  uživatele (pod kterým je spuštěn XML import).
      *
      * @var \Pohoda\Type\AccountType $account
@@ -431,7 +431,7 @@ class InvoiceHeaderType
     private $validate = null;
 
     /**
-     * Odložený výdej. Hodnota 'true' nastaví vkládání skladových zásob ve formě textových položek (s vazbou na agendu Zásoby). 
+     * Odložený výdej. Hodnota 'true' nastaví vkládání skladových zásob ve formě textových položek (s vazbou na agendu Zásoby).
      *  Takto vložená položka nevytváří ve faktuře skladový pohyb. Ve stavovém řádku vydané faktury je označena jako Textová položka (s vazbou na agendu Zásoby). Používá se jen v agendě Vydané faktury.
      * .
      *
@@ -574,7 +574,7 @@ class InvoiceHeaderType
     /**
      * Gets as number
      *
-     * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená 
+     * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená
      *  v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
      *
      * @return \Pohoda\Type\NumberType
@@ -587,7 +587,7 @@ class InvoiceHeaderType
     /**
      * Sets a new number
      *
-     * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená 
+     * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená
      *  v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
      *
      * @param \Pohoda\Type\NumberType $number
@@ -810,7 +810,7 @@ class InvoiceHeaderType
     /**
      * Gets as dateDue
      *
-     * Datum splatnosti. Pokud hodnota není zadaná, vyplní v závislosti na datu vystavení 
+     * Datum splatnosti. Pokud hodnota není zadaná, vyplní v závislosti na datu vystavení
      *  faktury dle nastavení v poli "Splatnost pohledávek" agendy "Globální nastavení".
      *
      * @return \DateTime
@@ -823,7 +823,7 @@ class InvoiceHeaderType
     /**
      * Sets a new dateDue
      *
-     * Datum splatnosti. Pokud hodnota není zadaná, vyplní v závislosti na datu vystavení 
+     * Datum splatnosti. Pokud hodnota není zadaná, vyplní v závislosti na datu vystavení
      *  faktury dle nastavení v poli "Splatnost pohledávek" agendy "Globální nastavení".
      *
      * @param \DateTime $dateDue
@@ -1176,7 +1176,7 @@ class InvoiceHeaderType
     /**
      * Gets as priceLevel
      *
-     * Cenová hladina odběratele. Používá se jen u typů vydaná faktura, 
+     * Cenová hladina odběratele. Používá se jen u typů vydaná faktura,
      *  vydaný vrubopis, vydaná zálohová faktura, vydaná proforma faktura.
      *
      * @return \Pohoda\Type\RefType
@@ -1189,7 +1189,7 @@ class InvoiceHeaderType
     /**
      * Sets a new priceLevel
      *
-     * Cenová hladina odběratele. Používá se jen u typů vydaná faktura, 
+     * Cenová hladina odběratele. Používá se jen u typů vydaná faktura,
      *  vydaný vrubopis, vydaná zálohová faktura, vydaná proforma faktura.
      *
      * @param \Pohoda\Type\RefType $priceLevel
@@ -1230,8 +1230,8 @@ class InvoiceHeaderType
     /**
      * Gets as account
      *
-     * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku. 
-     *  (Používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení 
+     * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku.
+     *  (Používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení
      *  uživatele (pod kterým je spuštěn XML import).
      *
      * @return \Pohoda\Type\AccountType
@@ -1244,8 +1244,8 @@ class InvoiceHeaderType
     /**
      * Sets a new account
      *
-     * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku. 
-     *  (Používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení 
+     * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku.
+     *  (Používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení
      *  uživatele (pod kterým je spuštěn XML import).
      *
      * @param \Pohoda\Type\AccountType $account
@@ -2110,7 +2110,7 @@ class InvoiceHeaderType
     /**
      * Gets as postponedIssue
      *
-     * Odložený výdej. Hodnota 'true' nastaví vkládání skladových zásob ve formě textových položek (s vazbou na agendu Zásoby). 
+     * Odložený výdej. Hodnota 'true' nastaví vkládání skladových zásob ve formě textových položek (s vazbou na agendu Zásoby).
      *  Takto vložená položka nevytváří ve faktuře skladový pohyb. Ve stavovém řádku vydané faktury je označena jako Textová položka (s vazbou na agendu Zásoby). Používá se jen v agendě Vydané faktury.
      * .
      *
@@ -2124,7 +2124,7 @@ class InvoiceHeaderType
     /**
      * Sets a new postponedIssue
      *
-     * Odložený výdej. Hodnota 'true' nastaví vkládání skladových zásob ve formě textových položek (s vazbou na agendu Zásoby). 
+     * Odložený výdej. Hodnota 'true' nastaví vkládání skladových zásob ve formě textových položek (s vazbou na agendu Zásoby).
      *  Takto vložená položka nevytváří ve faktuře skladový pohyb. Ve stavovém řádku vydané faktury je označena jako Textová položka (s vazbou na agendu Zásoby). Používá se jen v agendě Vydané faktury.
      * .
      *
@@ -2137,4 +2137,3 @@ class InvoiceHeaderType
         return $this;
     }
 }
-

@@ -14,7 +14,7 @@ class ParametersType
      * @var \Pohoda\Type\ParameterDocType[] $parameter
      */
     private $parameter = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class ParametersType
         return $this;
     }
 }
-

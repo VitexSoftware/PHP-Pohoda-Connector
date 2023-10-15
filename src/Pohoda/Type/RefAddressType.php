@@ -91,4 +91,3 @@ class RefAddressType
         return $this;
     }
 }
-

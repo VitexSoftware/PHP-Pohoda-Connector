@@ -8,4 +8,3 @@ namespace Pohoda\ListActivity;
 class ListActivityRequest extends ListRequestActivityType
 {
 }
-

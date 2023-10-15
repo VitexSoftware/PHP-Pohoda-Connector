@@ -37,4 +37,3 @@ class LiquidationType
         return $this;
     }
 }
-

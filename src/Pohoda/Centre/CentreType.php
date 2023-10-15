@@ -64,4 +64,3 @@ class CentreType
         return $this;
     }
 }
-

@@ -76,4 +76,3 @@ class RequestPrevodkaType
         return $this;
     }
 }
-

@@ -3310,4 +3310,3 @@ class StockHeaderType
         return $this;
     }
 }
-

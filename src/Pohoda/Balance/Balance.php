@@ -8,4 +8,3 @@ namespace Pohoda\Balance;
 class Balance extends BalanceType
 {
 }
-

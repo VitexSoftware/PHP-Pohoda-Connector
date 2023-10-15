@@ -37,4 +37,3 @@ class ServiceSubjectType
         return $this;
     }
 }
-

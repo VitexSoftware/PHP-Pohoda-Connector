@@ -16,7 +16,7 @@ class ListServiceType extends ListVersionType
      * @var \Pohoda\Service\ServiceType[] $service
      */
     private $service = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListServiceType extends ListVersionType
         return $this;
     }
 }
-

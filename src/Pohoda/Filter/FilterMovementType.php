@@ -175,4 +175,3 @@ class FilterMovementType
         return $this;
     }
 }
-

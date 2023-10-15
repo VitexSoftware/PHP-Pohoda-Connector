@@ -8,4 +8,3 @@ namespace Pohoda\List;
 class ListOrderRequest extends ListOrderRequestType
 {
 }
-

@@ -76,4 +76,3 @@ class ComboboxType
         return $this;
     }
 }
-

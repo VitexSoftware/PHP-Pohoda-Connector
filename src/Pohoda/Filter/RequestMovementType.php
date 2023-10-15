@@ -76,4 +76,3 @@ class RequestMovementType
         return $this;
     }
 }
-

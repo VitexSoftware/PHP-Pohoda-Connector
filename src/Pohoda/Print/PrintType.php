@@ -28,7 +28,7 @@ class PrintType
      * @var \Pohoda\Print\PrinterSettingsType[] $printerSettings
      */
     private $printerSettings = [
-        
+
     ];
 
     /**
@@ -145,4 +145,3 @@ class PrintType
         return $this;
     }
 }
-

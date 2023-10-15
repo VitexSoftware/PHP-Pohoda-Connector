@@ -8,4 +8,3 @@ namespace Pohoda\IndividualPrice;
 class IndividualPrice extends IndividualPriceType
 {
 }
-

@@ -33,7 +33,7 @@ class ListPrijemkaRequestType
      * @var \Pohoda\Filter\RequestPrijemkaType[] $requestPrijemka
      */
     private $requestPrijemka = [
-        
+
     ];
 
     /**
@@ -42,7 +42,7 @@ class ListPrijemkaRequestType
      * @var \Pohoda\List\RestrictionDocParamType[] $restrictionData
      */
     private $restrictionData = [
-        
+
     ];
 
     /**
@@ -241,4 +241,3 @@ class ListPrijemkaRequestType
         return $this;
     }
 }
-

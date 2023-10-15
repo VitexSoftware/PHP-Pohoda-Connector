@@ -8,4 +8,3 @@ namespace Pohoda\Establishment;
 class Establishment extends EstablishmentType
 {
 }
-

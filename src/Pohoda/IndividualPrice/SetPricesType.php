@@ -189,4 +189,3 @@ class SetPricesType
         return $this;
     }
 }
-

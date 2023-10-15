@@ -33,7 +33,7 @@ class ListIndividualPriceRequestType
      * @var \Pohoda\Filter\RequestIndividualPriceType[] $requestIndividualPrice
      */
     private $requestIndividualPrice = [
-        
+
     ];
 
     /**
@@ -166,4 +166,3 @@ class ListIndividualPriceRequestType
         return $this;
     }
 }
-

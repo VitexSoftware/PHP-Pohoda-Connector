@@ -274,4 +274,3 @@ class ActionPriceHeaderType
         return $this;
     }
 }
-

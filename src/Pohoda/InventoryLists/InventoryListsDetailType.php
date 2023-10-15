@@ -14,7 +14,7 @@ class InventoryListsDetailType
      * @var \Pohoda\InventoryLists\InventoryListsItemType[] $inventoryListsItem
      */
     private $inventoryListsItem = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class InventoryListsDetailType
         return $this;
     }
 }
-

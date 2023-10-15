@@ -842,4 +842,3 @@ class BankItemType
         return $this;
     }
 }
-

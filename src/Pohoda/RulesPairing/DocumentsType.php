@@ -14,7 +14,7 @@ class DocumentsType
      * @var string[] $document
      */
     private $document = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class DocumentsType
         return $this;
     }
 }
-

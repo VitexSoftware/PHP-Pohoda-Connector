@@ -37,4 +37,3 @@ class RequestUserCodeType
         return $this;
     }
 }
-

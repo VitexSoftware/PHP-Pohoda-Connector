@@ -175,4 +175,3 @@ class LinkItemType
         return $this;
     }
 }
-

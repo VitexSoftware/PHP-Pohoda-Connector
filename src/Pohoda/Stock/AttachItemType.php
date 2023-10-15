@@ -479,4 +479,3 @@ class AttachItemType
         return $this;
     }
 }
-

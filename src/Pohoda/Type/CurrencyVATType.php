@@ -76,4 +76,3 @@ class CurrencyVATType
         return $this;
     }
 }
-

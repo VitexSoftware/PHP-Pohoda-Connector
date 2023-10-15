@@ -10,4 +10,3 @@ namespace Pohoda\Supplier;
 class SupplierResponse extends SupplierResponseType
 {
 }
-

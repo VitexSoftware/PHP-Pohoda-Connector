@@ -8,4 +8,3 @@ namespace Pohoda\List;
 class ListNumericSeriesRequest extends ListRequestAgendasType
 {
 }
-

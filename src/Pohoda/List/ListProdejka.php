@@ -8,4 +8,3 @@ namespace Pohoda\List;
 class ListProdejka extends ListProdejkaType
 {
 }
-

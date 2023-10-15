@@ -8,4 +8,3 @@ namespace Pohoda\Voucher;
 class Voucher extends VoucherType
 {
 }
-

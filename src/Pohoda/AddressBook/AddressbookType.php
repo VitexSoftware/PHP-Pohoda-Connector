@@ -258,4 +258,3 @@ class AddressbookType
         return $this;
     }
 }
-

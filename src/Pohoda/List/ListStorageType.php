@@ -16,7 +16,7 @@ class ListStorageType extends ListVersionType
      * @var \Pohoda\List\ItemStorageType[] $itemStorage
      */
     private $itemStorage = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListStorageType extends ListVersionType
         return $this;
     }
 }
-

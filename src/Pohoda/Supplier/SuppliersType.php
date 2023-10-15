@@ -14,7 +14,7 @@ class SuppliersType
      * @var \Pohoda\Supplier\SupplierItemType[] $supplierItem
      */
     private $supplierItem = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class SuppliersType
         return $this;
     }
 }
-

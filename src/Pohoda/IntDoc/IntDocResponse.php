@@ -8,4 +8,3 @@ namespace Pohoda\IntDoc;
 class IntDocResponse extends IntDocResponseType
 {
 }
-

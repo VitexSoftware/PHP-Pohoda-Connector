@@ -14,7 +14,7 @@ class RulesPairingDetailType
      * @var \Pohoda\RulesPairing\RulesPairingItemType[] $rulesPairingItem
      */
     private $rulesPairingItem = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class RulesPairingDetailType
         return $this;
     }
 }
-

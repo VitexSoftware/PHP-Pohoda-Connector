@@ -446,4 +446,3 @@ class RegistrationNumberHeaderType
         return $this;
     }
 }
-

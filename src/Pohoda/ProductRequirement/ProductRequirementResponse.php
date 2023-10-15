@@ -8,4 +8,3 @@ namespace Pohoda\ProductRequirement;
 class ProductRequirementResponse extends ProductRequirementResponseType
 {
 }
-

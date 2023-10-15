@@ -10,4 +10,3 @@ namespace Pohoda\IndividualPrice;
 class IndividualPriceResponse extends IndividualPriceResponseType
 {
 }
-

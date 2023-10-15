@@ -57,7 +57,7 @@ class ParameterType
      * @var \Pohoda\Parameter\FormItemListType[] $userForm
      */
     private $userForm = [
-        
+
     ];
 
     /**
@@ -408,4 +408,3 @@ class ParameterType
         return $this;
     }
 }
-

@@ -13,7 +13,7 @@ class NumberRequestedAType
     private $__value = null;
 
     /**
-     * Pokud je hodnota 'true', nedovolí se vytvořit doklad, pokud zadané číslo již existuje. 
+     * Pokud je hodnota 'true', nedovolí se vytvořit doklad, pokud zadané číslo již existuje.
      *  Pokud je hodnota 'false', doklad se vytvoří s upraveným číslem (do response se zapíše warning).
      *
      * @var string $checkDuplicity
@@ -57,7 +57,7 @@ class NumberRequestedAType
     /**
      * Gets as checkDuplicity
      *
-     * Pokud je hodnota 'true', nedovolí se vytvořit doklad, pokud zadané číslo již existuje. 
+     * Pokud je hodnota 'true', nedovolí se vytvořit doklad, pokud zadané číslo již existuje.
      *  Pokud je hodnota 'false', doklad se vytvoří s upraveným číslem (do response se zapíše warning).
      *
      * @return string
@@ -70,7 +70,7 @@ class NumberRequestedAType
     /**
      * Sets a new checkDuplicity
      *
-     * Pokud je hodnota 'true', nedovolí se vytvořit doklad, pokud zadané číslo již existuje. 
+     * Pokud je hodnota 'true', nedovolí se vytvořit doklad, pokud zadané číslo již existuje.
      *  Pokud je hodnota 'false', doklad se vytvoří s upraveným číslem (do response se zapíše warning).
      *
      * @param string $checkDuplicity
@@ -82,4 +82,3 @@ class NumberRequestedAType
         return $this;
     }
 }
-

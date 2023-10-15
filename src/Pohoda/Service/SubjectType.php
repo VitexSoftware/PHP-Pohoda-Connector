@@ -809,4 +809,3 @@ class SubjectType
         return $this;
     }
 }
-

@@ -244,4 +244,3 @@ class CentreHeaderType
         return $this;
     }
 }
-

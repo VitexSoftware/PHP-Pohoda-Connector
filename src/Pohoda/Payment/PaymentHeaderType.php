@@ -442,4 +442,3 @@ class PaymentHeaderType
         return $this;
     }
 }
-

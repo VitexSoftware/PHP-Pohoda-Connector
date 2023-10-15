@@ -28,7 +28,7 @@ class ListParameterRequestType
      * @var \Pohoda\List\RequestParameterType[] $requestParameter
      */
     private $requestParameter = [
-        
+
     ];
 
     /**
@@ -145,4 +145,3 @@ class ListParameterRequestType
         return $this;
     }
 }
-

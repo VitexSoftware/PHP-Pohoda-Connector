@@ -26,7 +26,7 @@ class ListRegistrationNumberRequestType
      * @var \Pohoda\Filter\RequestRegistrationNumberType[] $requestRegistrationNumber
      */
     private $requestRegistrationNumber = [
-        
+
     ];
 
     /**
@@ -35,7 +35,7 @@ class ListRegistrationNumberRequestType
      * @var \Pohoda\List\RestrictionDocParamType[] $restrictionData
      */
     private $restrictionData = [
-        
+
     ];
 
     /**
@@ -208,4 +208,3 @@ class ListRegistrationNumberRequestType
         return $this;
     }
 }
-

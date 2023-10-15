@@ -142,4 +142,3 @@ class PriceGroupItemType
         return $this;
     }
 }
-

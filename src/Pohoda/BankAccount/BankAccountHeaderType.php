@@ -508,4 +508,3 @@ class BankAccountHeaderType
         return $this;
     }
 }
-

@@ -13,7 +13,7 @@ class StoresAType
      * @var \Pohoda\Type\RefType[] $store
      */
     private $store = [
-        
+
     ];
 
     /**
@@ -82,4 +82,3 @@ class StoresAType
         return $this;
     }
 }
-

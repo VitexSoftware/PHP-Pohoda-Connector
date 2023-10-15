@@ -109,4 +109,3 @@ class ActionPriceStockType
         return $this;
     }
 }
-

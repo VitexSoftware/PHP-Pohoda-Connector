@@ -968,4 +968,3 @@ class ProdejkaItemType
         return $this;
     }
 }
-

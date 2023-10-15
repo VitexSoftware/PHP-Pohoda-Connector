@@ -816,4 +816,3 @@ class VyrobaHeaderType
         return $this;
     }
 }
-

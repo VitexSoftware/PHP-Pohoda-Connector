@@ -26,7 +26,7 @@ class ListServiceRequestType
      * @var \Pohoda\Filter\RequestServiceType[] $requestService
      */
     private $requestService = [
-        
+
     ];
 
     /**
@@ -133,4 +133,3 @@ class ListServiceRequestType
         return $this;
     }
 }
-

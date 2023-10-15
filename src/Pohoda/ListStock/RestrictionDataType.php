@@ -406,4 +406,3 @@ class RestrictionDataType
         return $this;
     }
 }
-

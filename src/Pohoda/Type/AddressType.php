@@ -23,7 +23,7 @@ class AddressType
      * @var \Pohoda\Type\ExtIdType[] $extId
      */
     private $extId = [
-        
+
     ];
 
     /**
@@ -35,7 +35,7 @@ class AddressType
      * @var \Pohoda\Type\ShipToAddressType[] $shipToAddress
      */
     private $shipToAddress = [
-        
+
     ];
 
     /**
@@ -208,4 +208,3 @@ class AddressType
         return $this;
     }
 }
-

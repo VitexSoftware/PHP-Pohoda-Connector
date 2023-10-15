@@ -70,4 +70,3 @@ class SendEETType
         return $this;
     }
 }
-

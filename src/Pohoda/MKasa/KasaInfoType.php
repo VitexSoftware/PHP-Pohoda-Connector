@@ -334,4 +334,3 @@ class KasaInfoType
         return $this;
     }
 }
-

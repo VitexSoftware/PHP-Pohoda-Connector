@@ -340,4 +340,3 @@ class ParameterDocType
         return $this;
     }
 }
-

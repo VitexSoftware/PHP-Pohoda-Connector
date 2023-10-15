@@ -307,4 +307,3 @@ class StockItemType
         return $this;
     }
 }
-

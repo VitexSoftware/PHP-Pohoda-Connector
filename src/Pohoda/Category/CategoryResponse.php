@@ -10,4 +10,3 @@ namespace Pohoda\Category;
 class CategoryResponse extends CategoryResponseType
 {
 }
-

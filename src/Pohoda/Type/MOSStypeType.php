@@ -37,4 +37,3 @@ class MOSStypeType
         return $this;
     }
 }
-

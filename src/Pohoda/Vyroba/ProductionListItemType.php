@@ -142,4 +142,3 @@ class ProductionListItemType
         return $this;
     }
 }
-

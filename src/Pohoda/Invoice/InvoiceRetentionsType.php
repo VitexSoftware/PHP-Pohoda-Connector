@@ -16,7 +16,7 @@ class InvoiceRetentionsType
      * @var \Pohoda\Invoice\InvoiceRetentionType[] $invoiceRetention
      */
     private $invoiceRetention = [
-        
+
     ];
 
     /**
@@ -85,4 +85,3 @@ class InvoiceRetentionsType
         return $this;
     }
 }
-

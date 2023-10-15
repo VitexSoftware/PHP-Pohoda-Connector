@@ -26,7 +26,7 @@ class ListRequestCentreType
      * @var \Pohoda\ListCentre\RequestCentreType[] $requestCentre
      */
     private $requestCentre = [
-        
+
     ];
 
     /**
@@ -133,4 +133,3 @@ class ListRequestCentreType
         return $this;
     }
 }
-

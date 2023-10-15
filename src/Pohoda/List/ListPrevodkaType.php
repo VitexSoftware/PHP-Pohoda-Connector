@@ -16,7 +16,7 @@ class ListPrevodkaType extends ListVersionType
      * @var \Pohoda\Prevodka\PrevodkaType[] $prevodka
      */
     private $prevodka = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListPrevodkaType extends ListVersionType
         return $this;
     }
 }
-

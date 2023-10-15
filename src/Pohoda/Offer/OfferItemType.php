@@ -869,4 +869,3 @@ class OfferItemType
         return $this;
     }
 }
-

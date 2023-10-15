@@ -439,4 +439,3 @@ class LiquidationItemType
         return $this;
     }
 }
-

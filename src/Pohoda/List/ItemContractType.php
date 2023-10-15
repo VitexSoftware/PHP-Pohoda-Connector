@@ -91,4 +91,3 @@ class ItemContractType
         return $this;
     }
 }
-

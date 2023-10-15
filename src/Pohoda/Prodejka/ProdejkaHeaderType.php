@@ -885,4 +885,3 @@ class ProdejkaHeaderType
         return $this;
     }
 }
-

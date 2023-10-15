@@ -604,4 +604,3 @@ class IntrastatItemType
         return $this;
     }
 }
-

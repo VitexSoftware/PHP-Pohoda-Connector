@@ -8,4 +8,3 @@ namespace Pohoda\Supplier;
 class Supplier extends SupplierType
 {
 }
-

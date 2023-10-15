@@ -8,4 +8,3 @@ namespace Pohoda\Lock;
 class LockResponse extends LockResponseType
 {
 }
-

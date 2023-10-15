@@ -175,4 +175,3 @@ class BankSummaryType
         return $this;
     }
 }
-

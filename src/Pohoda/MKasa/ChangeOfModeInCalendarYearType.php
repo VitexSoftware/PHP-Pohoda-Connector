@@ -91,4 +91,3 @@ class ChangeOfModeInCalendarYearType
         return $this;
     }
 }
-

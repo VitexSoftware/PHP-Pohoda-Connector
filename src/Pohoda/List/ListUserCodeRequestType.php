@@ -28,7 +28,7 @@ class ListUserCodeRequestType
      * @var \Pohoda\List\RequestUserCodeType[] $requestUserCode
      */
     private $requestUserCode = [
-        
+
     ];
 
     /**
@@ -145,4 +145,3 @@ class ListUserCodeRequestType
         return $this;
     }
 }
-

@@ -539,4 +539,3 @@ class StoreType
         return $this;
     }
 }
-

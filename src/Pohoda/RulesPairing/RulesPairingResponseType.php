@@ -13,4 +13,3 @@ use Pohoda\Documentresponse\DocumentResponseType;
 class RulesPairingResponseType extends DocumentResponseType
 {
 }
-

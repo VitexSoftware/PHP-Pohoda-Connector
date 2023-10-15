@@ -8,4 +8,3 @@ namespace Pohoda\Print;
 class PrintResponse extends PrintResponseType
 {
 }
-

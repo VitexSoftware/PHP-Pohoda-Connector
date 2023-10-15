@@ -10,4 +10,3 @@ namespace Pohoda\ActionPrice;
 class ActionPriceResponse extends ActionPriceResponseType
 {
 }
-

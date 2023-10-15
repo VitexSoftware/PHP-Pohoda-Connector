@@ -16,7 +16,7 @@ class ListCentreType extends ListVersionType
      * @var \Pohoda\Centre\CentreType[] $centre
      */
     private $centre = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListCentreType extends ListVersionType
         return $this;
     }
 }
-

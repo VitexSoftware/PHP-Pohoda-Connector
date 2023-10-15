@@ -11,4 +11,3 @@ namespace Pohoda\List;
 class RequestrequestGlobalSettingsType
 {
 }
-

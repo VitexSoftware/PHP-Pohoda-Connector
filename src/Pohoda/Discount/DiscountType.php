@@ -19,7 +19,7 @@ class DiscountType
      * @var \Pohoda\Discount\DiscountStockItemType[] $discountStockItem
      */
     private $discountStockItem = [
-        
+
     ];
 
     /**
@@ -100,4 +100,3 @@ class DiscountType
         return $this;
     }
 }
-

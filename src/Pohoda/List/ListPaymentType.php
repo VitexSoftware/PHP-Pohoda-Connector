@@ -16,7 +16,7 @@ class ListPaymentType extends ListVersionType
      * @var \Pohoda\Payment\PaymentTypeRootType[] $payment
      */
     private $payment = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListPaymentType extends ListVersionType
         return $this;
     }
 }
-

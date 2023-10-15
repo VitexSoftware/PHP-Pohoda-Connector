@@ -16,7 +16,7 @@ class ListNumericalSeriesType extends ListVersionType
      * @var \Pohoda\NumericalSeries\NumericalSeriesType[] $numericalSeries
      */
     private $numericalSeries = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListNumericalSeriesType extends ListVersionType
         return $this;
     }
 }
-

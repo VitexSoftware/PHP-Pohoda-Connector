@@ -37,4 +37,3 @@ class SubStoragesType
         return $this;
     }
 }
-

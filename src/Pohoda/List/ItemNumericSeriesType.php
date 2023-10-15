@@ -91,4 +91,3 @@ class ItemNumericSeriesType extends ItemType
         return $this;
     }
 }
-

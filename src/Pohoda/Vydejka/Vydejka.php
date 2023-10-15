@@ -8,4 +8,3 @@ namespace Pohoda\Vydejka;
 class Vydejka extends VydejkaType
 {
 }
-

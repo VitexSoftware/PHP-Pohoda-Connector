@@ -1354,4 +1354,3 @@ class IntDocHeaderType
         return $this;
     }
 }
-

@@ -16,7 +16,7 @@ class ListUserCodePackType extends ListVersionType
      * @var \Pohoda\List\ListUserCodeType[] $listUserCode
      */
     private $listUserCode = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListUserCodePackType extends ListVersionType
         return $this;
     }
 }
-

@@ -76,4 +76,3 @@ class RequestCashRegisterType
         return $this;
     }
 }
-

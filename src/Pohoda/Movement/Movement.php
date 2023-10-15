@@ -8,4 +8,3 @@ namespace Pohoda\Movement;
 class Movement extends MovementType
 {
 }
-

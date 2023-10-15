@@ -76,4 +76,3 @@ class RequestActionPriceType
         return $this;
     }
 }
-

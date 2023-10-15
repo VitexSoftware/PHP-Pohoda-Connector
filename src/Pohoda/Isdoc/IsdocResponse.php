@@ -8,4 +8,3 @@ namespace Pohoda\Isdoc;
 class IsdocResponse extends IsdocResponseType
 {
 }
-

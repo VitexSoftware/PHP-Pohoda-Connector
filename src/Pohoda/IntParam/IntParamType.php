@@ -241,4 +241,3 @@ class IntParamType
         return $this;
     }
 }
-

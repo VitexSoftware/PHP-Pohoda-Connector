@@ -235,4 +235,3 @@ class ItemStorageType
         return $this;
     }
 }
-

@@ -97,4 +97,3 @@ class ListBankRequestType
         return $this;
     }
 }
-

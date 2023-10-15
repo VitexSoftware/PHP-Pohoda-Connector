@@ -10,4 +10,3 @@ namespace Pohoda\GroupStocks;
 class GroupStocksResponse extends GroupStocksResponseType
 {
 }
-

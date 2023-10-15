@@ -76,4 +76,3 @@ class RequestBankType
         return $this;
     }
 }
-

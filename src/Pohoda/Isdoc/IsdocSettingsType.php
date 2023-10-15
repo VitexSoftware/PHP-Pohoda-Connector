@@ -248,4 +248,3 @@ class IsdocSettingsType
         return $this;
     }
 }
-

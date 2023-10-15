@@ -226,4 +226,3 @@ class KasaEstablishmentType
         return $this;
     }
 }
-

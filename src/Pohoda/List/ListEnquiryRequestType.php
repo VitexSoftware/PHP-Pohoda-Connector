@@ -38,7 +38,7 @@ class ListEnquiryRequestType
      * @var \Pohoda\Filter\RequestEnquiryType[] $requestEnquiry
      */
     private $requestEnquiry = [
-        
+
     ];
 
     /**
@@ -193,4 +193,3 @@ class ListEnquiryRequestType
         return $this;
     }
 }
-

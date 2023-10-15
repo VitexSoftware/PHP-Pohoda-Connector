@@ -8,4 +8,3 @@ namespace Pohoda\List;
 class ListPayment extends ListPaymentType
 {
 }
-

@@ -1169,4 +1169,3 @@ class InvoiceItemType
         return $this;
     }
 }
-

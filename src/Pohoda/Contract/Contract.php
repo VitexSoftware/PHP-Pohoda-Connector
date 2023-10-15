@@ -8,4 +8,3 @@ namespace Pohoda\Contract;
 class Contract extends ContractType
 {
 }
-

@@ -14,7 +14,7 @@ class IntDocDetailType
      * @var \Pohoda\IntDoc\IntDocItemType[] $intDocItem
      */
     private $intDocItem = [
-        
+
     ];
 
     /**
@@ -106,4 +106,3 @@ class IntDocDetailType
         return $this;
     }
 }
-

@@ -16,7 +16,7 @@ class ListStockType extends ListVersionType
      * @var \Pohoda\Stock\StockType[] $stock
      */
     private $stock = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListStockType extends ListVersionType
         return $this;
     }
 }
-

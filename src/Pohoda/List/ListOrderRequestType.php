@@ -38,7 +38,7 @@ class ListOrderRequestType
      * @var \Pohoda\Filter\RequestOrderType[] $requestOrder
      */
     private $requestOrder = [
-        
+
     ];
 
     /**
@@ -47,7 +47,7 @@ class ListOrderRequestType
      * @var \Pohoda\List\RestrictionDocParamType[] $restrictionData
      */
     private $restrictionData = [
-        
+
     ];
 
     /**
@@ -268,4 +268,3 @@ class ListOrderRequestType
         return $this;
     }
 }
-

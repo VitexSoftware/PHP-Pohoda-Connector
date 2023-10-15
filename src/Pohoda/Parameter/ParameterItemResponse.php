@@ -8,4 +8,3 @@ namespace Pohoda\Parameter;
 class ParameterItemResponse extends ParameterItemResponseType
 {
 }
-

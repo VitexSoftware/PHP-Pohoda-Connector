@@ -152,4 +152,3 @@ class ParameterSettingsType
         return $this;
     }
 }
-

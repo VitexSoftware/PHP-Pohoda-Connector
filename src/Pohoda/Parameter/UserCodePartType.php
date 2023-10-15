@@ -145,4 +145,3 @@ class UserCodePartType
         return $this;
     }
 }
-

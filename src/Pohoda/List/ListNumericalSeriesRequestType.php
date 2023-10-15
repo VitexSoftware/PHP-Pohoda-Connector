@@ -26,7 +26,7 @@ class ListNumericalSeriesRequestType
      * @var \Pohoda\Filter\RequestNumericalSeriesType[] $requestNumericalSeries
      */
     private $requestNumericalSeries = [
-        
+
     ];
 
     /**
@@ -133,4 +133,3 @@ class ListNumericalSeriesRequestType
         return $this;
     }
 }
-

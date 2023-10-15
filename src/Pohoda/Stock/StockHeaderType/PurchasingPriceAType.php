@@ -79,4 +79,3 @@ class PurchasingPriceAType
         return $this;
     }
 }
-

@@ -8,4 +8,3 @@ namespace Pohoda\Enquiry;
 class Enquiry extends EnquiryType
 {
 }
-

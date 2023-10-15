@@ -37,4 +37,3 @@ class NonVatPayerWholePeriodType
         return $this;
     }
 }
-

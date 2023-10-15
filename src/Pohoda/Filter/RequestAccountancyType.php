@@ -76,4 +76,3 @@ class RequestAccountancyType
         return $this;
     }
 }
-

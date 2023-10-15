@@ -241,4 +241,3 @@ class PaymentItemType
         return $this;
     }
 }
-

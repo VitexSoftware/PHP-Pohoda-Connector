@@ -16,7 +16,7 @@ class ProductionListType
      * @var \Pohoda\Vyroba\ProductionListItemType[] $productionListItem
      */
     private $productionListItem = [
-        
+
     ];
 
     /**
@@ -85,4 +85,3 @@ class ProductionListType
         return $this;
     }
 }
-

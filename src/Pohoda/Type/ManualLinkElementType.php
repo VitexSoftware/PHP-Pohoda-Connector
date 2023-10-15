@@ -76,4 +76,3 @@ class ManualLinkElementType
         return $this;
     }
 }
-

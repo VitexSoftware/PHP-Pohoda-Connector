@@ -8,4 +8,3 @@ namespace Pohoda\SendEET;
 class SendEETResponse extends SendEETResponseType
 {
 }
-

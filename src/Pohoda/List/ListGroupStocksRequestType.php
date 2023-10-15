@@ -97,4 +97,3 @@ class ListGroupStocksRequestType
         return $this;
     }
 }
-

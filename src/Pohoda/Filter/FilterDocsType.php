@@ -361,4 +361,3 @@ class FilterDocsType
         return $this;
     }
 }
-

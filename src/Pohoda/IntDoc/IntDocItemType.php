@@ -869,4 +869,3 @@ class IntDocItemType
         return $this;
     }
 }
-

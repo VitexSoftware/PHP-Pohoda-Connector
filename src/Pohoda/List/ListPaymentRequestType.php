@@ -26,7 +26,7 @@ class ListPaymentRequestType
      * @var \Pohoda\Filter\RequestPaymentType[] $requestPayment
      */
     private $requestPayment = [
-        
+
     ];
 
     /**
@@ -133,4 +133,3 @@ class ListPaymentRequestType
         return $this;
     }
 }
-

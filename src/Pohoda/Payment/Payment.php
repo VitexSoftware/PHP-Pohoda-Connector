@@ -8,4 +8,3 @@ namespace Pohoda\Payment;
 class Payment extends PaymentTypeRootType
 {
 }
-

@@ -8,4 +8,3 @@ namespace Pohoda\MKasa;
 class MKasaRequest extends MKasaRequestType
 {
 }
-

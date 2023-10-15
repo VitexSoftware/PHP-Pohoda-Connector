@@ -578,4 +578,3 @@ class AccountingItemType
         return $this;
     }
 }
-

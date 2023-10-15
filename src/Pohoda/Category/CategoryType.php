@@ -39,7 +39,7 @@ class CategoryType
     private $description = null;
 
     /**
-     * Prostřednictvím pole Pořadí můžete určovat pořadí kategorií v jednotlivých větvích stromu. Kategorie s nejmenší hodnotou je na prvním místě. 
+     * Prostřednictvím pole Pořadí můžete určovat pořadí kategorií v jednotlivých větvích stromu. Kategorie s nejmenší hodnotou je na prvním místě.
      *  Každá zadaná kategorie má svoje ID.
      *
      * @var int $sequence
@@ -189,7 +189,7 @@ class CategoryType
     /**
      * Gets as sequence
      *
-     * Prostřednictvím pole Pořadí můžete určovat pořadí kategorií v jednotlivých větvích stromu. Kategorie s nejmenší hodnotou je na prvním místě. 
+     * Prostřednictvím pole Pořadí můžete určovat pořadí kategorií v jednotlivých větvích stromu. Kategorie s nejmenší hodnotou je na prvním místě.
      *  Každá zadaná kategorie má svoje ID.
      *
      * @return int
@@ -202,7 +202,7 @@ class CategoryType
     /**
      * Sets a new sequence
      *
-     * Prostřednictvím pole Pořadí můžete určovat pořadí kategorií v jednotlivých větvích stromu. Kategorie s nejmenší hodnotou je na prvním místě. 
+     * Prostřednictvím pole Pořadí můžete určovat pořadí kategorií v jednotlivých větvích stromu. Kategorie s nejmenší hodnotou je na prvním místě.
      *  Každá zadaná kategorie má svoje ID.
      *
      * @param int $sequence
@@ -392,4 +392,3 @@ class CategoryType
         return $this;
     }
 }
-

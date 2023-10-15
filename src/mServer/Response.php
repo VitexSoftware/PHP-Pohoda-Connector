@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHPmServer - Response parser class
  *
@@ -104,7 +105,6 @@ class Response extends \Ease\Sand
     {
 
         foreach ($responsePackItem as $name => $responsePackSubitem) {
-
             switch ($name) {
                 case 'lAdb:listAddressBook':
                     $this->processResponseData($responsePackSubitem);
@@ -232,9 +232,9 @@ class Response extends \Ease\Sand
 
     /**
      * Obtain response data
-     * 
+     *
      * @param string $agenda
-     * 
+     *
      * @return array item or array of items
      */
     public function getAgendaData($agenda)
@@ -294,8 +294,7 @@ class Response extends \Ease\Sand
         $arrayData = self::xmlToArray($xmlNode, array(
                     'alwaysArray' => $alwaysArrayElements,
                     'autoText' => false,
-                        )
-        );
+                        ));
         return $arrayData;
     }
 
@@ -406,9 +405,9 @@ class Response extends \Ease\Sand
 
     /**
      * Strip adb: prefix form key names
-     * 
+     *
      * @param array $entryData
-     * 
+     *
      * @return array
      */
     static function adbToArray($entryData)

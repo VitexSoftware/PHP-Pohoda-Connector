@@ -109,4 +109,3 @@ class LinkedDocumentType
         return $this;
     }
 }
-

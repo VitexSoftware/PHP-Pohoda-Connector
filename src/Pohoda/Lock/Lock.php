@@ -10,4 +10,3 @@ namespace Pohoda\Lock;
 class Lock extends LockType
 {
 }
-

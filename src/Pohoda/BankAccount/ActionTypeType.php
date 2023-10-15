@@ -43,4 +43,3 @@ class ActionTypeType
         return $this;
     }
 }
-

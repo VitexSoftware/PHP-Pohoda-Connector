@@ -809,4 +809,3 @@ class PrijemkaItemType
         return $this;
     }
 }
-

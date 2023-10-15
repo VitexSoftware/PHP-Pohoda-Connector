@@ -240,4 +240,3 @@ class PrevodkaType
         return $this;
     }
 }
-

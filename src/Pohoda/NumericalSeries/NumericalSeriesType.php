@@ -64,4 +64,3 @@ class NumericalSeriesType
         return $this;
     }
 }
-

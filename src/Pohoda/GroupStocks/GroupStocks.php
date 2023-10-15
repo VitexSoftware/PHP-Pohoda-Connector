@@ -8,4 +8,3 @@ namespace Pohoda\GroupStocks;
 class GroupStocks extends GroupStocksType
 {
 }
-

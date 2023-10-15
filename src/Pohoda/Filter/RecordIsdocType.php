@@ -103,4 +103,3 @@ class RecordIsdocType
         return $this;
     }
 }
-

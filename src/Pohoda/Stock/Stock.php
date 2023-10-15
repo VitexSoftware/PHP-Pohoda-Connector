@@ -8,4 +8,3 @@ namespace Pohoda\Stock;
 class Stock extends StockType
 {
 }
-

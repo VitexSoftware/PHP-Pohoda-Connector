@@ -8,4 +8,3 @@ namespace Pohoda\Offer;
 class Offer extends OfferType
 {
 }
-

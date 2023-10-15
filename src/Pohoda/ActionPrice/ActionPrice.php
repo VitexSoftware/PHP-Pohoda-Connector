@@ -8,4 +8,3 @@ namespace Pohoda\ActionPrice;
 class ActionPrice extends ActionPriceType
 {
 }
-

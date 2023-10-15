@@ -33,7 +33,7 @@ class ListVydejkaRequestType
      * @var \Pohoda\Filter\RequestVydejkaType[] $requestVydejka
      */
     private $requestVydejka = [
-        
+
     ];
 
     /**
@@ -166,4 +166,3 @@ class ListVydejkaRequestType
         return $this;
     }
 }
-

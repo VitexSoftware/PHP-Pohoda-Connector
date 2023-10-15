@@ -14,7 +14,7 @@ class IntParametersType
      * @var \Pohoda\Stock\IntParameterType[] $intParameter
      */
     private $intParameter = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class IntParametersType
         return $this;
     }
 }
-

@@ -16,7 +16,7 @@ class ListEnquiryType extends ListVersionType
      * @var \Pohoda\Enquiry\EnquiryType[] $enquiry
      */
     private $enquiry = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListEnquiryType extends ListVersionType
         return $this;
     }
 }
-

@@ -23,7 +23,7 @@ class InternetParamsType
      * @var \Pohoda\Type\RefTypeLongType[] $intParameter
      */
     private $intParameter = [
-        
+
     ];
 
     /**
@@ -118,4 +118,3 @@ class InternetParamsType
         return $this;
     }
 }
-

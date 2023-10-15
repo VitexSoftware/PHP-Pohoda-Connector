@@ -34,4 +34,3 @@ class GlobalSettingsAType
         return $this;
     }
 }
-

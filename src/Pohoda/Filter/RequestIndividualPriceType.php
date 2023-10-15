@@ -76,4 +76,3 @@ class RequestIndividualPriceType
         return $this;
     }
 }
-

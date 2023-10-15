@@ -684,4 +684,3 @@ class ProductRequirementHeaderType
         return $this;
     }
 }
-

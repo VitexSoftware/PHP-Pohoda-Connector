@@ -76,4 +76,3 @@ class RequestStockActionType extends RequestStockType
         return $this;
     }
 }
-

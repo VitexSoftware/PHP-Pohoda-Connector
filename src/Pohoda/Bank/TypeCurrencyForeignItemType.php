@@ -43,4 +43,3 @@ class TypeCurrencyForeignItemType
         return $this;
     }
 }
-

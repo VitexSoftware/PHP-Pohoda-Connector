@@ -10,4 +10,3 @@ namespace Pohoda\Service;
 class ServiceResponse extends ServiceResponseType
 {
 }
-

@@ -11,7 +11,7 @@ namespace Pohoda\Invoice;
 class InvoiceSummaryType
 {
     /**
-     * Zaokrouhlení celkové částky dokladu + typ zaokrouhlení. 
+     * Zaokrouhlení celkové částky dokladu + typ zaokrouhlení.
      *  Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
      *
      * @var string $roundingDocument
@@ -56,7 +56,7 @@ class InvoiceSummaryType
     /**
      * Gets as roundingDocument
      *
-     * Zaokrouhlení celkové částky dokladu + typ zaokrouhlení. 
+     * Zaokrouhlení celkové částky dokladu + typ zaokrouhlení.
      *  Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
      *
      * @return string
@@ -69,7 +69,7 @@ class InvoiceSummaryType
     /**
      * Sets a new roundingDocument
      *
-     * Zaokrouhlení celkové částky dokladu + typ zaokrouhlení. 
+     * Zaokrouhlení celkové částky dokladu + typ zaokrouhlení.
      *  Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
      *
      * @param string $roundingDocument
@@ -211,4 +211,3 @@ class InvoiceSummaryType
         return $this;
     }
 }
-

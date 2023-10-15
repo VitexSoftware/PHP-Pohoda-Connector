@@ -76,4 +76,3 @@ class NumberType
         return $this;
     }
 }
-

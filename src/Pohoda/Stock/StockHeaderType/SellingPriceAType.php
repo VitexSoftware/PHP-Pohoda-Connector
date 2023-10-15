@@ -79,4 +79,3 @@ class SellingPriceAType
         return $this;
     }
 }
-

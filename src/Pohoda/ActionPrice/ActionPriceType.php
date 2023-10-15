@@ -332,4 +332,3 @@ class ActionPriceType
         return $this;
     }
 }
-

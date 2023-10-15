@@ -137,4 +137,3 @@ class ContractType
         return $this;
     }
 }
-

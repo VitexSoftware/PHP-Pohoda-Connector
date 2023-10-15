@@ -10,4 +10,3 @@ namespace Pohoda\Print;
 class PrintXsd extends PrintType
 {
 }
-

@@ -124,4 +124,3 @@ class TypeRoundType
         return $this;
     }
 }
-

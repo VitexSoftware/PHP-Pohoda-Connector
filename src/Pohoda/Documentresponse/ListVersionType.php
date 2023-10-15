@@ -264,4 +264,3 @@ class ListVersionType
         return $this;
     }
 }
-

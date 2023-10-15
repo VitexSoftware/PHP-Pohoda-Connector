@@ -8,4 +8,3 @@ namespace Pohoda\Discount;
 class DiscountResponse extends DiscountResponseType
 {
 }
-

@@ -145,4 +145,3 @@ class CtrlDefType
         return $this;
     }
 }
-

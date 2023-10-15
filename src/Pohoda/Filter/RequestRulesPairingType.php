@@ -76,4 +76,3 @@ class RequestRulesPairingType
         return $this;
     }
 }
-

@@ -14,7 +14,7 @@ class ParameterListType
      * @var \Pohoda\IntParam\ParameterListItemType[] $parameterListItem
      */
     private $parameterListItem = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class ParameterListType
         return $this;
     }
 }
-

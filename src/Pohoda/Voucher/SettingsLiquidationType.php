@@ -142,4 +142,3 @@ class SettingsLiquidationType
         return $this;
     }
 }
-

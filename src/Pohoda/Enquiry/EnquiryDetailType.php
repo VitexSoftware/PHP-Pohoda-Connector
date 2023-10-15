@@ -14,7 +14,7 @@ class EnquiryDetailType
      * @var \Pohoda\Enquiry\EnquiryItemType[] $enquiryItem
      */
     private $enquiryItem = [
-        
+
     ];
 
     /**
@@ -106,4 +106,3 @@ class EnquiryDetailType
         return $this;
     }
 }
-

@@ -16,7 +16,7 @@ class ListOrderType extends ListVersionType
      * @var \Pohoda\Order\OrderType[] $order
      */
     private $order = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListOrderType extends ListVersionType
         return $this;
     }
 }
-

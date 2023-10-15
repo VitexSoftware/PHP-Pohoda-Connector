@@ -8,4 +8,3 @@ namespace Pohoda\Category;
 class CategoryDetail extends CategoryDetailType
 {
 }
-

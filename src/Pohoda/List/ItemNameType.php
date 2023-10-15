@@ -37,4 +37,3 @@ class ItemNameType extends ItemType
         return $this;
     }
 }
-

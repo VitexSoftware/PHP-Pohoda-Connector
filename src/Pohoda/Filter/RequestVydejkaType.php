@@ -76,4 +76,3 @@ class RequestVydejkaType
         return $this;
     }
 }
-

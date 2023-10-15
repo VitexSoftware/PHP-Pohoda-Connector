@@ -1288,4 +1288,3 @@ class VoucherHeaderType
         return $this;
     }
 }
-

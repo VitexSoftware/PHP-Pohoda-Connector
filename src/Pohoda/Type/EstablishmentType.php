@@ -118,4 +118,3 @@ class EstablishmentType
         return $this;
     }
 }
-

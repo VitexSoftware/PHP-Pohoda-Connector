@@ -66,4 +66,3 @@ class MKasaResponseType extends ListVersionType
         return $this;
     }
 }
-

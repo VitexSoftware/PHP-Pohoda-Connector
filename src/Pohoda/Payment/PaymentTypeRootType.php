@@ -64,4 +64,3 @@ class PaymentTypeRootType
         return $this;
     }
 }
-

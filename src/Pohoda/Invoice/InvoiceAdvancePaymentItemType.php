@@ -737,4 +737,3 @@ class InvoiceAdvancePaymentItemType
         return $this;
     }
 }
-

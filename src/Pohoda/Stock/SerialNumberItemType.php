@@ -175,4 +175,3 @@ class SerialNumberItemType
         return $this;
     }
 }
-

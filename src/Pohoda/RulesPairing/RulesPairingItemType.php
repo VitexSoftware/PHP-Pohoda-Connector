@@ -354,4 +354,3 @@ class RulesPairingItemType
         return $this;
     }
 }
-

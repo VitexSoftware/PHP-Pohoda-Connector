@@ -103,4 +103,3 @@ class RecordPrintType
         return $this;
     }
 }
-

@@ -142,4 +142,3 @@ class StockItemAType
         return $this;
     }
 }
-

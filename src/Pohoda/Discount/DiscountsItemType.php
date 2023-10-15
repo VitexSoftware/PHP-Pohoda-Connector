@@ -175,4 +175,3 @@ class DiscountsItemType
         return $this;
     }
 }
-

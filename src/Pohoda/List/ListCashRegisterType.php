@@ -16,7 +16,7 @@ class ListCashRegisterType extends ListVersionType
      * @var \Pohoda\CashRegister\CashRegisterType[] $cashRegister
      */
     private $cashRegister = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListCashRegisterType extends ListVersionType
         return $this;
     }
 }
-

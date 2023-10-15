@@ -76,4 +76,3 @@ class RequestGroupStocksActionType extends RequestGroupStocksType
         return $this;
     }
 }
-

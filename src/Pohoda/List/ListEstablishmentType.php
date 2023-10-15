@@ -16,7 +16,7 @@ class ListEstablishmentType extends ListVersionType
      * @var \Pohoda\Establishment\EstablishmentType[] $establishment
      */
     private $establishment = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListEstablishmentType extends ListVersionType
         return $this;
     }
 }
-

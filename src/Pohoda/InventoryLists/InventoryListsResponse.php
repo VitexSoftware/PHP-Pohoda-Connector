@@ -10,4 +10,3 @@ namespace Pohoda\InventoryLists;
 class InventoryListsResponse extends InventoryListsResponseType
 {
 }
-

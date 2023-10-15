@@ -523,4 +523,3 @@ class PohodaRestrictionType
         return $this;
     }
 }
-

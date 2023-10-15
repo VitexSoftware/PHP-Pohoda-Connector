@@ -8,4 +8,3 @@ namespace Pohoda\NumericalSeries;
 class NumericalSeries extends NumericalSeriesType
 {
 }
-

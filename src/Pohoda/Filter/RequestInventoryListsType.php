@@ -76,4 +76,3 @@ class RequestInventoryListsType
         return $this;
     }
 }
-

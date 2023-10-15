@@ -64,4 +64,3 @@ class ItemCashType extends ItemType
         return $this;
     }
 }
-

@@ -20,7 +20,7 @@ class InvoiceType
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
      *  Povolené jsou vazby z agendy:
      *  - Přijaté objednávky (do agendy Vydané zálohové faktury)
-     *  - Přijaté objednávky (do agendy Vydané faktury) 
+     *  - Přijaté objednávky (do agendy Vydané faktury)
      *  - Vydané objednávky (do agendy Přijaté zálohové faktury)
      *  - Vydané objednávky (do agendy Přijaté faktury)
      *  - Výdejky (do agendy Vydané faktury, typ Faktura)
@@ -30,7 +30,7 @@ class InvoiceType
     private $links = null;
 
     /**
-     * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad. 
+     * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
      *
      * @var \Pohoda\Type\CancelDocumentType $cancelDocument
@@ -122,7 +122,7 @@ class InvoiceType
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
      *  Povolené jsou vazby z agendy:
      *  - Přijaté objednávky (do agendy Vydané zálohové faktury)
-     *  - Přijaté objednávky (do agendy Vydané faktury) 
+     *  - Přijaté objednávky (do agendy Vydané faktury)
      *  - Vydané objednávky (do agendy Přijaté zálohové faktury)
      *  - Vydané objednávky (do agendy Přijaté faktury)
      *  - Výdejky (do agendy Vydané faktury, typ Faktura)
@@ -141,7 +141,7 @@ class InvoiceType
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
      *  Povolené jsou vazby z agendy:
      *  - Přijaté objednávky (do agendy Vydané zálohové faktury)
-     *  - Přijaté objednávky (do agendy Vydané faktury) 
+     *  - Přijaté objednávky (do agendy Vydané faktury)
      *  - Vydané objednávky (do agendy Přijaté zálohové faktury)
      *  - Vydané objednávky (do agendy Přijaté faktury)
      *  - Výdejky (do agendy Vydané faktury, typ Faktura)
@@ -158,7 +158,7 @@ class InvoiceType
     /**
      * Gets as cancelDocument
      *
-     * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad. 
+     * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
      *
      * @return \Pohoda\Type\CancelDocumentType
@@ -171,7 +171,7 @@ class InvoiceType
     /**
      * Sets a new cancelDocument
      *
-     * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad. 
+     * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
      *
      * @param \Pohoda\Type\CancelDocumentType $cancelDocument
@@ -523,4 +523,3 @@ class InvoiceType
         return $this;
     }
 }
-

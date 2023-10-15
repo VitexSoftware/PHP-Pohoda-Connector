@@ -202,4 +202,3 @@ class PictureType
         return $this;
     }
 }
-

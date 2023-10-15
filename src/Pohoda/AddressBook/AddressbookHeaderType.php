@@ -116,7 +116,7 @@ class AddressbookHeaderType
     private $priceIDS = null;
 
     /**
-     * Splatno. Počet dnů splatnosti pohledávek (vydané faktury, vydané zálohové faktury, ostatní pohledávky). 
+     * Splatno. Počet dnů splatnosti pohledávek (vydané faktury, vydané zálohové faktury, ostatní pohledávky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
      *
      * @var int $maturity
@@ -124,7 +124,7 @@ class AddressbookHeaderType
     private $maturity = null;
 
     /**
-     * Splatno. Počet dnů splatnosti závazků (přijaté faktury, přijaté zálohové faktury, ostatní závazky). 
+     * Splatno. Počet dnů splatnosti závazků (přijaté faktury, přijaté zálohové faktury, ostatní závazky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
      *
      * @var int $maturityCommitments
@@ -797,7 +797,7 @@ class AddressbookHeaderType
     /**
      * Gets as maturity
      *
-     * Splatno. Počet dnů splatnosti pohledávek (vydané faktury, vydané zálohové faktury, ostatní pohledávky). 
+     * Splatno. Počet dnů splatnosti pohledávek (vydané faktury, vydané zálohové faktury, ostatní pohledávky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
      *
      * @return int
@@ -810,7 +810,7 @@ class AddressbookHeaderType
     /**
      * Sets a new maturity
      *
-     * Splatno. Počet dnů splatnosti pohledávek (vydané faktury, vydané zálohové faktury, ostatní pohledávky). 
+     * Splatno. Počet dnů splatnosti pohledávek (vydané faktury, vydané zálohové faktury, ostatní pohledávky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
      *
      * @param int $maturity
@@ -825,7 +825,7 @@ class AddressbookHeaderType
     /**
      * Gets as maturityCommitments
      *
-     * Splatno. Počet dnů splatnosti závazků (přijaté faktury, přijaté zálohové faktury, ostatní závazky). 
+     * Splatno. Počet dnů splatnosti závazků (přijaté faktury, přijaté zálohové faktury, ostatní závazky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
      *
      * @return int
@@ -838,7 +838,7 @@ class AddressbookHeaderType
     /**
      * Sets a new maturityCommitments
      *
-     * Splatno. Počet dnů splatnosti závazků (přijaté faktury, přijaté zálohové faktury, ostatní závazky). 
+     * Splatno. Počet dnů splatnosti závazků (přijaté faktury, přijaté zálohové faktury, ostatní závazky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
      *
      * @param int $maturityCommitments
@@ -1944,4 +1944,3 @@ class AddressbookHeaderType
         return $this;
     }
 }
-

@@ -211,4 +211,3 @@ class ProducedDetailsType
         return $this;
     }
 }
-

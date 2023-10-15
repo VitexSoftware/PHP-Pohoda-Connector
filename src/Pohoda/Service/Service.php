@@ -8,4 +8,3 @@ namespace Pohoda\Service;
 class Service extends ServiceType
 {
 }
-

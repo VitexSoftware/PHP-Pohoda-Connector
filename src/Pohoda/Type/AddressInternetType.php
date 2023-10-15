@@ -442,4 +442,3 @@ class AddressInternetType
         return $this;
     }
 }
-

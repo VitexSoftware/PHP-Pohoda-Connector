@@ -16,7 +16,7 @@ class ListContractType extends ListVersionType
      * @var \Pohoda\List\ItemContractType[] $itemContract
      */
     private $itemContract = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListContractType extends ListVersionType
         return $this;
     }
 }
-

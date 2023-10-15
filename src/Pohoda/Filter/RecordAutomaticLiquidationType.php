@@ -76,4 +76,3 @@ class RecordAutomaticLiquidationType
         return $this;
     }
 }
-

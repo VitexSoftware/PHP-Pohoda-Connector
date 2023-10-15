@@ -8,4 +8,3 @@ namespace Pohoda\Response;
 class ResponsePack extends ResponsePackType
 {
 }
-

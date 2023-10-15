@@ -64,4 +64,3 @@ class RefTypeLongType
         return $this;
     }
 }
-

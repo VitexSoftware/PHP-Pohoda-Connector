@@ -10,4 +10,3 @@ namespace Pohoda\List;
 class ListUserCodeResponse extends ListUserCodeResponseType
 {
 }
-

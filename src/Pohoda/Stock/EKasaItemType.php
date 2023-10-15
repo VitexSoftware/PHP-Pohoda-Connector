@@ -43,4 +43,3 @@ class EKasaItemType
         return $this;
     }
 }
-

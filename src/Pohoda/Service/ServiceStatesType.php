@@ -14,7 +14,7 @@ class ServiceStatesType
      * @var \Pohoda\Service\StateType[] $state
      */
     private $state = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class ServiceStatesType
         return $this;
     }
 }
-

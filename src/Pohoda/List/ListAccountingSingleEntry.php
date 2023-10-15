@@ -8,4 +8,3 @@ namespace Pohoda\List;
 class ListAccountingSingleEntry extends ListAccountingSingleEntryType
 {
 }
-

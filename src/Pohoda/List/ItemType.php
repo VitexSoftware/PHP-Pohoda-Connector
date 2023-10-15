@@ -64,4 +64,3 @@ class ItemType
         return $this;
     }
 }
-

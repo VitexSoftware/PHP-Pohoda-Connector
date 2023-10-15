@@ -343,4 +343,3 @@ class InventoryListsHeaderType
         return $this;
     }
 }
-

@@ -16,7 +16,7 @@ class ListOfferType extends ListVersionType
      * @var \Pohoda\Offer\OfferType[] $offer
      */
     private $offer = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListOfferType extends ListVersionType
         return $this;
     }
 }
-

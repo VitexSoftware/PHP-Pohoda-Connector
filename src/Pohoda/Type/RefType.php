@@ -91,4 +91,3 @@ class RefType
         return $this;
     }
 }
-

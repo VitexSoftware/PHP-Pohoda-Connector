@@ -241,4 +241,3 @@ class RecyclingContribHeaderType
         return $this;
     }
 }
-

@@ -38,7 +38,7 @@ class ListOfferRequestType
      * @var \Pohoda\Filter\RequestOfferType[] $requestOffer
      */
     private $requestOffer = [
-        
+
     ];
 
     /**
@@ -193,4 +193,3 @@ class ListOfferRequestType
         return $this;
     }
 }
-

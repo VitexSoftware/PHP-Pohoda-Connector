@@ -85,4 +85,3 @@ class AutomaticLiquidationResponseType extends DocumentResponseType
         return $this;
     }
 }
-

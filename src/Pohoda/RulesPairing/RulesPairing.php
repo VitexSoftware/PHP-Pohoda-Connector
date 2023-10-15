@@ -8,4 +8,3 @@ namespace Pohoda\RulesPairing;
 class RulesPairing extends RulesPairingType
 {
 }
-

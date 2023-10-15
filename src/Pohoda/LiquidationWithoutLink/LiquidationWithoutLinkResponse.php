@@ -8,4 +8,3 @@ namespace Pohoda\LiquidationWithoutLink;
 class LiquidationWithoutLinkResponse extends LiquidationWithoutLinkResponseType
 {
 }
-

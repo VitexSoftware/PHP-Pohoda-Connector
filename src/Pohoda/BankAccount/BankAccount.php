@@ -8,4 +8,3 @@ namespace Pohoda\BankAccount;
 class BankAccount extends BankAccountType
 {
 }
-

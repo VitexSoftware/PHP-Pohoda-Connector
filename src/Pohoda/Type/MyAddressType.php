@@ -64,4 +64,3 @@ class MyAddressType
         return $this;
     }
 }
-

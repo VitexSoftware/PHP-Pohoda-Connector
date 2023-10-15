@@ -16,7 +16,7 @@ class ListAccountingFormOfPaymentType extends ListVersionType
      * @var \Pohoda\AccountingFormOfPayment\AccountingFormOfPaymentTypeRootType[] $accountingFormOfPayment
      */
     private $accountingFormOfPayment = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListAccountingFormOfPaymentType extends ListVersionType
         return $this;
     }
 }
-

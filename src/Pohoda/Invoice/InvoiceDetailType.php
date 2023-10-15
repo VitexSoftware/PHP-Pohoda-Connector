@@ -16,7 +16,7 @@ class InvoiceDetailType
      * @var \Pohoda\Invoice\InvoiceItemType[] $invoiceItem
      */
     private $invoiceItem = [
-        
+
     ];
 
     /**
@@ -25,7 +25,7 @@ class InvoiceDetailType
      * @var \Pohoda\Invoice\InvoiceAdvancePaymentItemType[] $invoiceAdvancePaymentItem
      */
     private $invoiceAdvancePaymentItem = [
-        
+
     ];
 
     /**
@@ -34,7 +34,7 @@ class InvoiceDetailType
      * @var \Pohoda\Type\RoundingItemType[] $roundingItem
      */
     private $roundingItem = [
-        
+
     ];
 
     /**
@@ -235,4 +235,3 @@ class InvoiceDetailType
         return $this;
     }
 }
-

@@ -64,4 +64,3 @@ class CreateAccountingResponseType extends ItemAccountingTypeDoubleEntryType
         return $this;
     }
 }
-

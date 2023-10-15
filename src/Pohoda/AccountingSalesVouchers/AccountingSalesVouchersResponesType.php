@@ -85,4 +85,3 @@ class AccountingSalesVouchersResponesType extends DocumentResponseType
         return $this;
     }
 }
-

@@ -109,4 +109,3 @@ class NumberType
         return $this;
     }
 }
-

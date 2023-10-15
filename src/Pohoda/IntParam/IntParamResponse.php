@@ -10,4 +10,3 @@ namespace Pohoda\IntParam;
 class IntParamResponse extends IntParamResponseType
 {
 }
-

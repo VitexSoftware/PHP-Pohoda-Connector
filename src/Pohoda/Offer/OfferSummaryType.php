@@ -208,4 +208,3 @@ class OfferSummaryType
         return $this;
     }
 }
-

@@ -76,4 +76,3 @@ class CurrencyBankAccountType
         return $this;
     }
 }
-

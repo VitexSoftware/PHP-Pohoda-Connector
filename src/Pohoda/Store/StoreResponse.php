@@ -8,4 +8,3 @@ namespace Pohoda\Store;
 class StoreResponse extends StoreResponseType
 {
 }
-

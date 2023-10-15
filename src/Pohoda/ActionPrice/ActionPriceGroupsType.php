@@ -14,7 +14,7 @@ class ActionPriceGroupsType
      * @var \Pohoda\ActionPrice\GroupType[] $group
      */
     private $group = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class ActionPriceGroupsType
         return $this;
     }
 }
-

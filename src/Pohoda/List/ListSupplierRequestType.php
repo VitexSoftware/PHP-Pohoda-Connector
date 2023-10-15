@@ -33,7 +33,7 @@ class ListSupplierRequestType
      * @var \Pohoda\Filter\RequestStockType[] $requestSupplier
      */
     private $requestSupplier = [
-        
+
     ];
 
     /**
@@ -166,4 +166,3 @@ class ListSupplierRequestType
         return $this;
     }
 }
-

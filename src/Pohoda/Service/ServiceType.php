@@ -240,4 +240,3 @@ class ServiceType
         return $this;
     }
 }
-

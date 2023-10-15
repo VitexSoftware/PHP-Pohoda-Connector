@@ -103,4 +103,3 @@ class IndividualPriceType
         return $this;
     }
 }
-

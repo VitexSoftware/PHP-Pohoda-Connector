@@ -8,4 +8,3 @@ namespace Pohoda\Accountingunit;
 class ListAccountingUnit extends ListAccountingUnitType
 {
 }
-

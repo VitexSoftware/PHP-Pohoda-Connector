@@ -8,4 +8,3 @@ namespace Pohoda\Accountancy;
 class Accountancy extends AccountancyType
 {
 }
-

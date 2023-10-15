@@ -442,4 +442,3 @@ class EstablishmentHeaderType
         return $this;
     }
 }
-

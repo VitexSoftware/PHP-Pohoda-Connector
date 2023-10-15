@@ -8,4 +8,3 @@ namespace Pohoda\Order;
 class OrderResponse extends OrderResponseType
 {
 }
-

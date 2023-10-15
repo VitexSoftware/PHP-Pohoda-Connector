@@ -8,4 +8,3 @@ namespace Pohoda\Activity;
 class Activity extends ActivityType
 {
 }
-

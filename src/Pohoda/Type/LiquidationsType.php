@@ -14,7 +14,7 @@ class LiquidationsType
      * @var \Pohoda\Type\LiquidationItemType[] $liquidation
      */
     private $liquidation = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class LiquidationsType
         return $this;
     }
 }
-

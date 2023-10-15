@@ -16,7 +16,7 @@ class ListAddressBookType extends ListVersionType
      * @var \Pohoda\AddressBook\AddressbookType[] $addressbook
      */
     private $addressbook = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListAddressBookType extends ListVersionType
         return $this;
     }
 }
-

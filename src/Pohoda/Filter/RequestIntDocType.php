@@ -76,4 +76,3 @@ class RequestIntDocType
         return $this;
     }
 }
-

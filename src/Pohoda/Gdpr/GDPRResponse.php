@@ -10,4 +10,3 @@ namespace Pohoda\Gdpr;
 class GDPRResponse extends GDPRResponseType
 {
 }
-

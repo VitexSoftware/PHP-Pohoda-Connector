@@ -14,7 +14,7 @@ class RelatedStocksType
      * @var \Pohoda\Type\OrderStockItemType[] $idStocks
      */
     private $idStocks = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class RelatedStocksType
         return $this;
     }
 }
-

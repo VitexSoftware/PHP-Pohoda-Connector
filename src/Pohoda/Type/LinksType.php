@@ -16,7 +16,7 @@ class LinksType
      * @var \Pohoda\Type\LinkElemetType[] $link
      */
     private $link = [
-        
+
     ];
 
     /**
@@ -25,7 +25,7 @@ class LinksType
      * @var \Pohoda\Type\ManualLinkElementType[] $manualLink
      */
     private $manualLink = [
-        
+
     ];
 
     /**
@@ -160,4 +160,3 @@ class LinksType
         return $this;
     }
 }
-

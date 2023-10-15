@@ -103,4 +103,3 @@ class RelatedLinkType
         return $this;
     }
 }
-

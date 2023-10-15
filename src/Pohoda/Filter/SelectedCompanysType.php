@@ -16,7 +16,7 @@ class SelectedCompanysType
      * @var string[] $company
      */
     private $company = [
-        
+
     ];
 
     /**
@@ -85,4 +85,3 @@ class SelectedCompanysType
         return $this;
     }
 }
-

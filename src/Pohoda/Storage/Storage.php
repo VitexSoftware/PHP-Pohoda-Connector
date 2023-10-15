@@ -8,4 +8,3 @@ namespace Pohoda\Storage;
 class Storage extends StorageType
 {
 }
-

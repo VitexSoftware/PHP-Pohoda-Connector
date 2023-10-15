@@ -16,7 +16,7 @@ class ListSupplierType extends ListVersionType
      * @var \Pohoda\Supplier\SupplierType[] $supplier
      */
     private $supplier = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListSupplierType extends ListVersionType
         return $this;
     }
 }
-

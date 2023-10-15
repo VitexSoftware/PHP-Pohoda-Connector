@@ -1212,4 +1212,3 @@ class ServiceHeaderType
         return $this;
     }
 }
-

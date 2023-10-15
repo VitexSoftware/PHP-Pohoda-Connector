@@ -175,4 +175,3 @@ class FilterRegNumberType
         return $this;
     }
 }
-

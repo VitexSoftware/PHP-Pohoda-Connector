@@ -8,4 +8,3 @@ namespace Pohoda\ClassificationVAT;
 class ClassificationVAT extends ClassificationVATType
 {
 }
-

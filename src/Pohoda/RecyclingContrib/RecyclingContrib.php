@@ -8,4 +8,3 @@ namespace Pohoda\RecyclingContrib;
 class RecyclingContrib extends RecyclingContribType
 {
 }
-

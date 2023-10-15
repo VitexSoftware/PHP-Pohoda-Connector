@@ -215,4 +215,3 @@ class AddressbookGDPRType
         return $this;
     }
 }
-

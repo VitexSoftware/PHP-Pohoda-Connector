@@ -8,4 +8,3 @@ namespace Pohoda\Invoice;
 class Invoice extends InvoiceType
 {
 }
-

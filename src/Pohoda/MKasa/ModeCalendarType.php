@@ -334,4 +334,3 @@ class ModeCalendarType
         return $this;
     }
 }
-

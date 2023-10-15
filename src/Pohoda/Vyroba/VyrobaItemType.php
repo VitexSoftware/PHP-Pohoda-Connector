@@ -215,4 +215,3 @@ class VyrobaItemType
         return $this;
     }
 }
-

@@ -109,4 +109,3 @@ class SourceDocumentType
         return $this;
     }
 }
-

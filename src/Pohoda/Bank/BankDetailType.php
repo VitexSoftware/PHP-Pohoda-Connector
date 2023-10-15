@@ -14,7 +14,7 @@ class BankDetailType
      * @var \Pohoda\Bank\BankItemType[] $bankItem
      */
     private $bankItem = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class BankDetailType
         return $this;
     }
 }
-

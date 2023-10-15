@@ -269,4 +269,3 @@ class VydejkaType
         return $this;
     }
 }
-

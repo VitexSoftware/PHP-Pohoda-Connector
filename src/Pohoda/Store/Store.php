@@ -8,4 +8,3 @@ namespace Pohoda\Store;
 class Store extends StoreType
 {
 }
-

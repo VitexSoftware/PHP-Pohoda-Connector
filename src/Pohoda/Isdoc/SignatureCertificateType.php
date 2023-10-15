@@ -43,4 +43,3 @@ class SignatureCertificateType
         return $this;
     }
 }
-

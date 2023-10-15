@@ -64,4 +64,3 @@ class ServiceAddressType
         return $this;
     }
 }
-

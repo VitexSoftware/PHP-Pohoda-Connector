@@ -217,4 +217,3 @@ class StockRefType
         return $this;
     }
 }
-

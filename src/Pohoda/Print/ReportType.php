@@ -109,4 +109,3 @@ class ReportType
         return $this;
     }
 }
-

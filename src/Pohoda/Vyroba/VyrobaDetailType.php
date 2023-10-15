@@ -14,7 +14,7 @@ class VyrobaDetailType
      * @var \Pohoda\Vyroba\VyrobaItemType[] $vyrobaItem
      */
     private $vyrobaItem = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class VyrobaDetailType
         return $this;
     }
 }
-

@@ -76,4 +76,3 @@ class RequestEnquiryType
         return $this;
     }
 }
-

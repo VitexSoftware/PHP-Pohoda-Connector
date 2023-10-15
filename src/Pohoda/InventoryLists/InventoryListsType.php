@@ -125,4 +125,3 @@ class InventoryListsType
         return $this;
     }
 }
-

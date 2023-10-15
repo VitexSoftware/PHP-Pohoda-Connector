@@ -16,7 +16,7 @@ class ListStoreType extends ListVersionType
      * @var \Pohoda\Store\StoreType[] $store
      */
     private $store = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListStoreType extends ListVersionType
         return $this;
     }
 }
-

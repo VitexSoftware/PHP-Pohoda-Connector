@@ -8,4 +8,3 @@ namespace Pohoda\List;
 class ListNumericalSeries extends ListNumericalSeriesType
 {
 }
-

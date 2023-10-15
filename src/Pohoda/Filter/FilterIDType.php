@@ -43,4 +43,3 @@ class FilterIDType
         return $this;
     }
 }
-

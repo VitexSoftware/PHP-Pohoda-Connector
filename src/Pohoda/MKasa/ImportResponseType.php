@@ -91,4 +91,3 @@ class ImportResponseType
         return $this;
     }
 }
-

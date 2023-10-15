@@ -43,4 +43,3 @@ class DeleteOrderType
         return $this;
     }
 }
-

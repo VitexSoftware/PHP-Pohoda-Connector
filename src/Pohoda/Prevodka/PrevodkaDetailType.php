@@ -14,7 +14,7 @@ class PrevodkaDetailType
      * @var \Pohoda\Prevodka\PrevodkaItemType[] $prevodkaItem
      */
     private $prevodkaItem = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class PrevodkaDetailType
         return $this;
     }
 }
-

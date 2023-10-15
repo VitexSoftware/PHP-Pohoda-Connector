@@ -23,7 +23,6 @@ use Riesenia\Pohoda;
  */
 class Client extends \Ease\Sand
 {
-
     use \Ease\RecordKey;
 
     /**
@@ -226,8 +225,8 @@ class Client extends \Ease\Sand
     public function logBanner($prefix = null, $suffix = null)
     {
         parent::logBanner(
-                $prefix,
-                'mServer ' . str_replace('://', '://' . $this->user . '@', $this->url) . ' PHPmServer v' . self::$libVersion . ' ease-core v' . Atom::$frameworkVersion . ' ' .
+            $prefix,
+            'mServer ' . str_replace('://', '://' . $this->user . '@', $this->url) . ' PHPmServer v' . self::$libVersion . ' ease-core v' . Atom::$frameworkVersion . ' ' .
                 $suffix
         );
     }
@@ -341,14 +340,13 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Prepare data to send 
+     * Prepare data to send
      *
      * @param string $data
      */
     public function setPostFields($data)
     {
         if ($this->debug) {
-
         }
         $this->postFields = $data;
     }
@@ -378,12 +376,12 @@ class Client extends \Ease\Sand
         $this->lastCurlError = curl_error($this->curl);
         if (strlen($this->lastCurlError)) {
             $this->addStatusMessage(
-                    sprintf(
-                            'Curl Error (HTTP %d): %s',
-                            $this->lastResponseCode,
-                            $this->lastCurlError
-                    ),
-                    'error'
+                sprintf(
+                    'Curl Error (HTTP %d): %s',
+                    $this->lastResponseCode,
+                    $this->lastCurlError
+                ),
+                'error'
             );
         }
         return $this->lastResponseCode;
@@ -486,14 +484,14 @@ class Client extends \Ease\Sand
 
     /**
      * Check mServer availbilty
-     * 
+     *
      * @return boolean
      */
     public function isOnline()
     {
         $this->responseStats = [];
         $this->errors = [];
-        return ($this->doCurlRequest($this->url . '/status', 'POST') === 200) && 
+        return ($this->doCurlRequest($this->url . '/status', 'POST') === 200) &&
                 str_contains($this->lastCurlResponse, 'Response from POHODA mServer');
     }
 

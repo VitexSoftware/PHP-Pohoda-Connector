@@ -8,4 +8,3 @@ namespace Pohoda\Centre;
 class Centre extends CentreType
 {
 }
-

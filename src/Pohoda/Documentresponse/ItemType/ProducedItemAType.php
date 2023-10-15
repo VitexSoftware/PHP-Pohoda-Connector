@@ -11,7 +11,7 @@ class ProducedItemAType
      * @var string[] $id
      */
     private $id = [
-        
+
     ];
 
     /**
@@ -70,4 +70,3 @@ class ProducedItemAType
         return $this;
     }
 }
-

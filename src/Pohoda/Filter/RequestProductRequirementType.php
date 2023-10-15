@@ -76,4 +76,3 @@ class RequestProductRequirementType
         return $this;
     }
 }
-

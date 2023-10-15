@@ -16,7 +16,7 @@ class PrijemkaDetailType
      * @var \Pohoda\Prijemka\PrijemkaItemType[] $prijemkaItem
      */
     private $prijemkaItem = [
-        
+
     ];
 
     /**
@@ -25,7 +25,7 @@ class PrijemkaDetailType
      * @var \Pohoda\Type\RoundingItemType[] $roundingItem
      */
     private $roundingItem = [
-        
+
     ];
 
     /**
@@ -34,7 +34,7 @@ class PrijemkaDetailType
      * @var \Pohoda\Prijemka\PrijemkaAccessoryChargesItemType[] $prijemkaAccessoryChargesItem
      */
     private $prijemkaAccessoryChargesItem = [
-        
+
     ];
 
     /**
@@ -235,4 +235,3 @@ class PrijemkaDetailType
         return $this;
     }
 }
-

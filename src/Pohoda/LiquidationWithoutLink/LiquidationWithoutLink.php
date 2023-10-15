@@ -10,4 +10,3 @@ namespace Pohoda\LiquidationWithoutLink;
 class LiquidationWithoutLink extends LiquidationWithoutLinkType
 {
 }
-

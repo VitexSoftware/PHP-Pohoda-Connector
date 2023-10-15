@@ -16,7 +16,7 @@ class ListInvoiceType extends ListVersionType
      * @var \Pohoda\Invoice\InvoiceType[] $invoice
      */
     private $invoice = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListInvoiceType extends ListVersionType
         return $this;
     }
 }
-

@@ -8,4 +8,3 @@ namespace Pohoda\ListCentre;
 class ListCentre extends ListCentreType
 {
 }
-

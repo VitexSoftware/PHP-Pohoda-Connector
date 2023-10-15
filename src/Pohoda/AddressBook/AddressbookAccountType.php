@@ -14,7 +14,7 @@ class AddressbookAccountType
      * @var \Pohoda\AddressBook\AccountItemType[] $accountItem
      */
     private $accountItem = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class AddressbookAccountType
         return $this;
     }
 }
-

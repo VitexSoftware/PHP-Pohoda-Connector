@@ -241,4 +241,3 @@ class AccStockAType
         return $this;
     }
 }
-

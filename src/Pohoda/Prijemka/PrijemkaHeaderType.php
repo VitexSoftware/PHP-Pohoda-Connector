@@ -849,4 +849,3 @@ class PrijemkaHeaderType
         return $this;
     }
 }
-

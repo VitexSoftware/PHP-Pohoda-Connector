@@ -16,7 +16,7 @@ class ListAccountingSingleEntryType extends ListVersionType
      * @var \Pohoda\List\ItemAccountingTypeSingleEntryType[] $itemAccounting
      */
     private $itemAccounting = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListAccountingSingleEntryType extends ListVersionType
         return $this;
     }
 }
-

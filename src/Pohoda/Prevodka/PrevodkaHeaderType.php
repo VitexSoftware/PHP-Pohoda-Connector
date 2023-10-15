@@ -743,4 +743,3 @@ class PrevodkaHeaderType
         return $this;
     }
 }
-

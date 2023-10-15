@@ -208,4 +208,3 @@ class InvoiceRetentionType
         return $this;
     }
 }
-

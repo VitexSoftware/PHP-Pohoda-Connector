@@ -19,7 +19,7 @@ class CategoryDetailType
      * @var \Pohoda\Category\CategoryType[] $category
      */
     private $category = [
-        
+
     ];
 
     /**
@@ -100,4 +100,3 @@ class CategoryDetailType
         return $this;
     }
 }
-

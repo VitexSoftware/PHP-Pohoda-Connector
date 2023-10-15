@@ -1420,4 +1420,3 @@ class OrderHeaderType
         return $this;
     }
 }
-

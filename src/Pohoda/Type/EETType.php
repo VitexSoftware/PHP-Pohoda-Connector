@@ -23,7 +23,7 @@ class EETType
      * @var \Pohoda\Type\DetailEETType[] $detailEET
      */
     private $detailEET = [
-        
+
     ];
 
     /**
@@ -151,4 +151,3 @@ class EETType
         return $this;
     }
 }
-

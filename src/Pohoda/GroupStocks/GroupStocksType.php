@@ -158,4 +158,3 @@ class GroupStocksType
         return $this;
     }
 }
-

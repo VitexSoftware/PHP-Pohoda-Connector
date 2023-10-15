@@ -76,4 +76,3 @@ class RequestStoreType
         return $this;
     }
 }
-

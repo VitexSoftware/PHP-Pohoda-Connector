@@ -14,7 +14,7 @@ class ResourcesMOSStypeType
      * @var string[] $ids
      */
     private $ids = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class ResourcesMOSStypeType
         return $this;
     }
 }
-

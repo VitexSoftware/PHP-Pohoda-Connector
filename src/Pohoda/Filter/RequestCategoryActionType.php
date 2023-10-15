@@ -142,4 +142,3 @@ class RequestCategoryActionType
         return $this;
     }
 }
-

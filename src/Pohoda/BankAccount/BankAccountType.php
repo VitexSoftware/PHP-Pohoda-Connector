@@ -97,4 +97,3 @@ class BankAccountType
         return $this;
     }
 }
-

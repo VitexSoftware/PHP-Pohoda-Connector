@@ -91,4 +91,3 @@ class ItemAccountingTypeSingleEntryType extends ItemType
         return $this;
     }
 }
-

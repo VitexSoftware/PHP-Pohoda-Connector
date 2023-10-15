@@ -26,7 +26,7 @@ class ListAccountingFormOfPaymentRequestType
      * @var \Pohoda\List\RequestAccountingFormOfPaymentType[] $requestAccountingFormOfPayment
      */
     private $requestAccountingFormOfPayment = [
-        
+
     ];
 
     /**
@@ -133,4 +133,3 @@ class ListAccountingFormOfPaymentRequestType
         return $this;
     }
 }
-

@@ -175,4 +175,3 @@ class EKasaType
         return $this;
     }
 }
-

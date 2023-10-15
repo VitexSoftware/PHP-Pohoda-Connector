@@ -43,4 +43,3 @@ class RequestExtIdType
         return $this;
     }
 }
-

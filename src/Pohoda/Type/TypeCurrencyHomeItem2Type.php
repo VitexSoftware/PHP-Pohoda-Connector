@@ -142,4 +142,3 @@ class TypeCurrencyHomeItem2Type
         return $this;
     }
 }
-

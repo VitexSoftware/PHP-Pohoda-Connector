@@ -208,4 +208,3 @@ class ServiceSummaryType
         return $this;
     }
 }
-

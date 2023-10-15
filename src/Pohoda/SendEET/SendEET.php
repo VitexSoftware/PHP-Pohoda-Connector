@@ -10,4 +10,3 @@ namespace Pohoda\SendEET;
 class SendEET extends SendEETType
 {
 }
-

@@ -175,4 +175,3 @@ class ProdejkaSummaryType
         return $this;
     }
 }
-

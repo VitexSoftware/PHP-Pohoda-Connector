@@ -109,4 +109,3 @@ class ActionTypeStockItemType
         return $this;
     }
 }
-

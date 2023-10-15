@@ -2656,4 +2656,3 @@ class ResponsePackItemType
         return $this;
     }
 }
-

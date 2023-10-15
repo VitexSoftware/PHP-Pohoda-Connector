@@ -8,4 +8,3 @@ namespace Pohoda\Data;
 class DataPack extends DataPackType
 {
 }
-

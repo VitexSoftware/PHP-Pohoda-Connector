@@ -125,4 +125,3 @@ class RulesPairingType
         return $this;
     }
 }
-

@@ -71,4 +71,3 @@ class ListRequestAgendasType extends ListRequestType
         return $this;
     }
 }
-

@@ -172,4 +172,3 @@ class ConfigurationType
         return $this;
     }
 }
-

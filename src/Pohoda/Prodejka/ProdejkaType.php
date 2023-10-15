@@ -423,4 +423,3 @@ class ProdejkaType
         return $this;
     }
 }
-

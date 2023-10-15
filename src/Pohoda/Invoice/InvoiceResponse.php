@@ -10,4 +10,3 @@ namespace Pohoda\Invoice;
 class InvoiceResponse extends InvoiceResponseType
 {
 }
-

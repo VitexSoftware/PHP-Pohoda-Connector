@@ -19,7 +19,7 @@ class FormItemListType
      * @var \Pohoda\Parameter\CtrlDefType[] $ctrlDef
      */
     private $ctrlDef = [
-        
+
     ];
 
     /**
@@ -100,4 +100,3 @@ class FormItemListType
         return $this;
     }
 }
-

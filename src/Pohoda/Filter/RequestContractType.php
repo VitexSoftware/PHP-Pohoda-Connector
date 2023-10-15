@@ -76,4 +76,3 @@ class RequestContractType
         return $this;
     }
 }
-

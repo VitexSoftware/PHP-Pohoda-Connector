@@ -340,4 +340,3 @@ class IntrastatType
         return $this;
     }
 }
-

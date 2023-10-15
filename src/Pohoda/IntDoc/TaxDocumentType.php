@@ -43,4 +43,3 @@ class TaxDocumentType
         return $this;
     }
 }
-

@@ -64,4 +64,3 @@ class MovementType
         return $this;
     }
 }
-

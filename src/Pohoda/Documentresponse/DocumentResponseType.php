@@ -170,4 +170,3 @@ class DocumentResponseType
         return $this;
     }
 }
-

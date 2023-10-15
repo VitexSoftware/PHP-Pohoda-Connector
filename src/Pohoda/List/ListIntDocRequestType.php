@@ -33,7 +33,7 @@ class ListIntDocRequestType
      * @var \Pohoda\Filter\RequestIntDocType[] $requestIntDoc
      */
     private $requestIntDoc = [
-        
+
     ];
 
     /**
@@ -42,7 +42,7 @@ class ListIntDocRequestType
      * @var \Pohoda\List\RestrictionDocParamType[] $restrictionData
      */
     private $restrictionData = [
-        
+
     ];
 
     /**
@@ -241,4 +241,3 @@ class ListIntDocRequestType
         return $this;
     }
 }
-

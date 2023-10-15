@@ -109,4 +109,3 @@ class HomeCurrencyType
         return $this;
     }
 }
-

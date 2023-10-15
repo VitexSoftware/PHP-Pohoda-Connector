@@ -253,4 +253,3 @@ class CompanyInfoType
         return $this;
     }
 }
-

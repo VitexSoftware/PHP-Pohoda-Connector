@@ -91,4 +91,3 @@ class MKasaRequestType
         return $this;
     }
 }
-

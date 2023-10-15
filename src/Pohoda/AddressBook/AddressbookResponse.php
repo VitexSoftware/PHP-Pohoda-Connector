@@ -8,4 +8,3 @@ namespace Pohoda\AddressBook;
 class AddressbookResponse extends AddressbookResponseType
 {
 }
-

@@ -10,4 +10,3 @@ namespace Pohoda\AccountingSalesVouchers;
 class AccountingSalesVouchers extends AccountingSalesVouchersType
 {
 }
-

@@ -76,4 +76,3 @@ class SettingsSourceDocumentOrderItemType
         return $this;
     }
 }
-

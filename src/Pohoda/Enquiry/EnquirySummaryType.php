@@ -208,4 +208,3 @@ class EnquirySummaryType
         return $this;
     }
 }
-

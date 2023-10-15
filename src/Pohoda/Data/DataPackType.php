@@ -75,7 +75,7 @@ class DataPackType
      * @var \Pohoda\Data\DataPackItemType[] $dataPackItem
      */
     private $dataPackItem = [
-        
+
     ];
 
     /**
@@ -364,4 +364,3 @@ class DataPackType
         return $this;
     }
 }
-

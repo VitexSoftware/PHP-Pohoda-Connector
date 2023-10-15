@@ -76,4 +76,3 @@ class ValidityActionType
         return $this;
     }
 }
-

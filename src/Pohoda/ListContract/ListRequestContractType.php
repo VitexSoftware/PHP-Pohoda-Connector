@@ -26,7 +26,7 @@ class ListRequestContractType
      * @var \Pohoda\Filter\RequestContractType[] $requestContract
      */
     private $requestContract = [
-        
+
     ];
 
     /**
@@ -133,4 +133,3 @@ class ListRequestContractType
         return $this;
     }
 }
-

@@ -968,4 +968,3 @@ class OrderItemType
         return $this;
     }
 }
-

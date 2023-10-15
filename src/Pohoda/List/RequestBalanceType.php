@@ -208,4 +208,3 @@ class RequestBalanceType
         return $this;
     }
 }
-

@@ -684,4 +684,3 @@ class ContractDescType
         return $this;
     }
 }
-

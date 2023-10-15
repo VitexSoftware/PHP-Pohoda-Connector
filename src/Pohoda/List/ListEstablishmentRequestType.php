@@ -26,7 +26,7 @@ class ListEstablishmentRequestType
      * @var \Pohoda\List\RequestEstablishmentType[] $requestEstablishment
      */
     private $requestEstablishment = [
-        
+
     ];
 
     /**
@@ -133,4 +133,3 @@ class ListEstablishmentRequestType
         return $this;
     }
 }
-

@@ -125,4 +125,3 @@ class SupplierType
         return $this;
     }
 }
-

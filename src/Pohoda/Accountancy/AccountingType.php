@@ -76,4 +76,3 @@ class AccountingType
         return $this;
     }
 }
-

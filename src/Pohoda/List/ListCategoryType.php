@@ -16,7 +16,7 @@ class ListCategoryType extends ListVersionType
      * @var \Pohoda\Category\CategoryDetailType[] $categoryDetail
      */
     private $categoryDetail = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListCategoryType extends ListVersionType
         return $this;
     }
 }
-

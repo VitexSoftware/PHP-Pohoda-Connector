@@ -299,4 +299,3 @@ class OrderType
         return $this;
     }
 }
-

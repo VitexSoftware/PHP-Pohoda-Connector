@@ -16,7 +16,7 @@ class ListVydejkaType extends ListVersionType
      * @var \Pohoda\Vydejka\VydejkaType[] $vydejka
      */
     private $vydejka = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListVydejkaType extends ListVersionType
         return $this;
     }
 }
-

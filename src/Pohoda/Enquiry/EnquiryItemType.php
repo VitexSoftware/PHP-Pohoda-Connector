@@ -809,4 +809,3 @@ class EnquiryItemType
         return $this;
     }
 }
-

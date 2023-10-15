@@ -109,4 +109,3 @@ class DefaultPriceStockType
         return $this;
     }
 }
-

@@ -24,7 +24,7 @@ class BalanceType
      * @var \Pohoda\Balance\BalanceItemType[] $balanceItem
      */
     private $balanceItem = [
-        
+
     ];
 
     /**
@@ -127,4 +127,3 @@ class BalanceType
         return $this;
     }
 }
-

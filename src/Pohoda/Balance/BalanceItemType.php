@@ -505,4 +505,3 @@ class BalanceItemType
         return $this;
     }
 }
-

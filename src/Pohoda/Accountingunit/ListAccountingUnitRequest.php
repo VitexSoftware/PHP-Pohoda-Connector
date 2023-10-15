@@ -10,4 +10,3 @@ use Pohoda\List\ListRequestType;
 class ListAccountingUnitRequest extends ListRequestType
 {
 }
-

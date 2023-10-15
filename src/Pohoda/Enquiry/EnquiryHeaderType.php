@@ -955,4 +955,3 @@ class EnquiryHeaderType
         return $this;
     }
 }
-

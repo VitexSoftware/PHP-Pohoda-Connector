@@ -373,4 +373,3 @@ class TypeCurrencyHomeType
         return $this;
     }
 }
-

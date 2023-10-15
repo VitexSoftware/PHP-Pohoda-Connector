@@ -8,4 +8,3 @@ namespace Pohoda\IntParam;
 class IntParamDetail extends IntParamDetailType
 {
 }
-

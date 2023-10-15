@@ -8,4 +8,3 @@ namespace Pohoda\Gdpr;
 class GDPR extends GDPRType
 {
 }
-

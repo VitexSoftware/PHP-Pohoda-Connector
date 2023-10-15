@@ -58,7 +58,7 @@ class ResponsePackType
      * @var \Pohoda\Response\ResponsePackItemType[] $responsePackItem
      */
     private $responsePackItem = [
-        
+
     ];
 
     /**
@@ -301,4 +301,3 @@ class ResponsePackType
         return $this;
     }
 }
-

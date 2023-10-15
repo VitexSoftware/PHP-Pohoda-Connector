@@ -43,4 +43,3 @@ class RestrictionDataVyrobaType
         return $this;
     }
 }
-

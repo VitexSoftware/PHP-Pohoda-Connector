@@ -10,4 +10,3 @@ namespace Pohoda;
 class AutomaticLiquidation extends AutomaticLiquidationType
 {
 }
-

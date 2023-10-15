@@ -182,4 +182,3 @@ class AccountingDocumentType
         return $this;
     }
 }
-

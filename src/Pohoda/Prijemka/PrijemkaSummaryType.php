@@ -208,4 +208,3 @@ class PrijemkaSummaryType
         return $this;
     }
 }
-

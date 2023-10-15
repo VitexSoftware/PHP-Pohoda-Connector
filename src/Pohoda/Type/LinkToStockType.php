@@ -64,4 +64,3 @@ class LinkToStockType
         return $this;
     }
 }
-

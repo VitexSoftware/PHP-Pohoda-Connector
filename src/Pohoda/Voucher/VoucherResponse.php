@@ -8,4 +8,3 @@ namespace Pohoda\Voucher;
 class VoucherResponse extends VoucherResponseType
 {
 }
-

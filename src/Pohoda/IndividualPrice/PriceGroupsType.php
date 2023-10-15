@@ -16,7 +16,7 @@ class PriceGroupsType
      * @var \Pohoda\IndividualPrice\PriceGroupItemType[] $priceGroupItem
      */
     private $priceGroupItem = [
-        
+
     ];
 
     /**
@@ -85,4 +85,3 @@ class PriceGroupsType
         return $this;
     }
 }
-

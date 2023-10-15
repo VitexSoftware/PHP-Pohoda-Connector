@@ -8,4 +8,3 @@ namespace Pohoda\Prijemka;
 class Prijemka extends PrijemkaType
 {
 }
-

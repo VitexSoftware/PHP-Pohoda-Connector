@@ -64,4 +64,3 @@ class ItemUserCodeType extends ItemType
         return $this;
     }
 }
-

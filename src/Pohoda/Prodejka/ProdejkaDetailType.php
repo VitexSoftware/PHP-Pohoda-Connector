@@ -14,7 +14,7 @@ class ProdejkaDetailType
      * @var \Pohoda\Prodejka\ProdejkaItemType[] $prodejkaItem
      */
     private $prodejkaItem = [
-        
+
     ];
 
     /**
@@ -106,4 +106,3 @@ class ProdejkaDetailType
         return $this;
     }
 }
-

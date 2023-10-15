@@ -8,4 +8,3 @@ namespace Pohoda\List;
 class ListRecyclingContribRequest extends ListRecyclingContribRequestType
 {
 }
-

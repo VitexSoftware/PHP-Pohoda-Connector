@@ -8,4 +8,3 @@ namespace Pohoda\ListActivity;
 class ListActivity extends ListActivityType
 {
 }
-

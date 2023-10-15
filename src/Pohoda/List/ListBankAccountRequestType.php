@@ -33,7 +33,7 @@ class ListBankAccountRequestType
      * @var \Pohoda\Filter\RequestBankAccountType[] $requestBankAccount
      */
     private $requestBankAccount = [
-        
+
     ];
 
     /**
@@ -166,4 +166,3 @@ class ListBankAccountRequestType
         return $this;
     }
 }
-

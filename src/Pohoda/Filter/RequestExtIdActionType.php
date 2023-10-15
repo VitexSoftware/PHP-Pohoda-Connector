@@ -76,4 +76,3 @@ class RequestExtIdActionType extends RequestExtIdType
         return $this;
     }
 }
-

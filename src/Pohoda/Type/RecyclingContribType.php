@@ -175,4 +175,3 @@ class RecyclingContribType
         return $this;
     }
 }
-

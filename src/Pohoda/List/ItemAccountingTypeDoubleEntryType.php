@@ -37,4 +37,3 @@ class ItemAccountingTypeDoubleEntryType extends CreateAccountingType
         return $this;
     }
 }
-

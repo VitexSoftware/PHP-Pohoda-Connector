@@ -274,4 +274,3 @@ class GDPRHeaderType
         return $this;
     }
 }
-

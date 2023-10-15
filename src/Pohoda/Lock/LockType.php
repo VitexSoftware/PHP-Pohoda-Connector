@@ -103,4 +103,3 @@ class LockType
         return $this;
     }
 }
-

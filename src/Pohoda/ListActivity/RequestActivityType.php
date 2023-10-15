@@ -11,4 +11,3 @@ namespace Pohoda\ListActivity;
 class RequestActivityType
 {
 }
-

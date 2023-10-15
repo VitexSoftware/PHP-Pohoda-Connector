@@ -842,4 +842,3 @@ class MovementHeaderType
         return $this;
     }
 }
-

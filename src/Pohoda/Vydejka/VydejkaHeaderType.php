@@ -1222,4 +1222,3 @@ class VydejkaHeaderType
         return $this;
     }
 }
-

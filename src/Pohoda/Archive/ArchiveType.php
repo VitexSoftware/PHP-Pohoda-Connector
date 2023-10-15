@@ -19,7 +19,7 @@ class ArchiveType
      * @var \Pohoda\Archive\VariableType[] $variable
      */
     private $variable = [
-        
+
     ];
 
     /**
@@ -100,4 +100,3 @@ class ArchiveType
         return $this;
     }
 }
-

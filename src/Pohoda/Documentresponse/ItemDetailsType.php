@@ -19,7 +19,7 @@ class ItemDetailsType
      * @var \Pohoda\Documentresponse\ItemType[] $item
      */
     private $item = [
-        
+
     ];
 
     /**
@@ -100,4 +100,3 @@ class ItemDetailsType
         return $this;
     }
 }
-

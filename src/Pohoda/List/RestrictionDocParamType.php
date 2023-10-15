@@ -109,4 +109,3 @@ class RestrictionDocParamType
         return $this;
     }
 }
-

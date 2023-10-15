@@ -8,4 +8,3 @@ namespace Pohoda\Prodejka;
 class Prodejka extends ProdejkaType
 {
 }
-

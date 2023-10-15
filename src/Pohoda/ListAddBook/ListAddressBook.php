@@ -8,4 +8,3 @@ namespace Pohoda\ListAddBook;
 class ListAddressBook extends ListAddressBookType
 {
 }
-

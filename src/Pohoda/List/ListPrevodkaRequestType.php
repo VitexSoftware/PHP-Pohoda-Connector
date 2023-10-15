@@ -33,7 +33,7 @@ class ListPrevodkaRequestType
      * @var \Pohoda\Filter\RequestPrevodkaType[] $requestPrevodka
      */
     private $requestPrevodka = [
-        
+
     ];
 
     /**
@@ -166,4 +166,3 @@ class ListPrevodkaRequestType
         return $this;
     }
 }
-

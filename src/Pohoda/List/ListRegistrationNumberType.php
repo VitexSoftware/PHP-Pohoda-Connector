@@ -16,7 +16,7 @@ class ListRegistrationNumberType extends ListVersionType
      * @var \Pohoda\RegistrationNumber\RegistrationNumberType[] $registrationNumber
      */
     private $registrationNumber = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListRegistrationNumberType extends ListVersionType
         return $this;
     }
 }
-

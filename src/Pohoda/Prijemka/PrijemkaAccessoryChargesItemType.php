@@ -479,4 +479,3 @@ class PrijemkaAccessoryChargesItemType
         return $this;
     }
 }
-

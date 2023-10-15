@@ -16,7 +16,7 @@ class ListSellingPriceType extends ListVersionType
      * @var \Pohoda\List\ItemSellingPriceType[] $itemSellingPrice
      */
     private $itemSellingPrice = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListSellingPriceType extends ListVersionType
         return $this;
     }
 }
-

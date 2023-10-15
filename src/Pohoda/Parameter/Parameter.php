@@ -8,4 +8,3 @@ namespace Pohoda\Parameter;
 class Parameter extends ParameterType
 {
 }
-

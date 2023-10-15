@@ -16,7 +16,7 @@ class ListBankType extends ListVersionType
      * @var \Pohoda\Bank\BankType[] $bank
      */
     private $bank = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListBankType extends ListVersionType
         return $this;
     }
 }
-

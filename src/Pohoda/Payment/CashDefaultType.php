@@ -43,4 +43,3 @@ class CashDefaultType
         return $this;
     }
 }
-

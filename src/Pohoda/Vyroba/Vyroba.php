@@ -8,4 +8,3 @@ namespace Pohoda\Vyroba;
 class Vyroba extends VyrobaType
 {
 }
-

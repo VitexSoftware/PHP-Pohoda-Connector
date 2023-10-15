@@ -10,4 +10,3 @@ namespace Pohoda\Discount;
 class Discount extends DiscountType
 {
 }
-

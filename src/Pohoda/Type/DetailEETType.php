@@ -994,4 +994,3 @@ class DetailEETType
         return $this;
     }
 }
-

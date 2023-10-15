@@ -8,4 +8,3 @@ namespace Pohoda\List;
 class ListAccountingDoubleEntry extends ListAccountingDoubleEntryType
 {
 }
-

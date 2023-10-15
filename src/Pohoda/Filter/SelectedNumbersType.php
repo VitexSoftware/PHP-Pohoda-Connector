@@ -16,7 +16,7 @@ class SelectedNumbersType
      * @var \Pohoda\Type\NumberType[] $number
      */
     private $number = [
-        
+
     ];
 
     /**
@@ -85,4 +85,3 @@ class SelectedNumbersType
         return $this;
     }
 }
-

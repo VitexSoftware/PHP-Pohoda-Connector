@@ -14,7 +14,7 @@ class ActionPriceCustomersType
      * @var \Pohoda\ActionPrice\CustomerType[] $customer
      */
     private $customer = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class ActionPriceCustomersType
         return $this;
     }
 }
-

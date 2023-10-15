@@ -16,7 +16,7 @@ class ListAccountingUnitType extends ListVersionType
      * @var \Pohoda\Accountingunit\ItemAccountingUnitType[] $itemAccountingUnit
      */
     private $itemAccountingUnit = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListAccountingUnitType extends ListVersionType
         return $this;
     }
 }
-

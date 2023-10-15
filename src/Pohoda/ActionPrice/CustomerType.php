@@ -79,4 +79,3 @@ class CustomerType
         return $this;
     }
 }
-

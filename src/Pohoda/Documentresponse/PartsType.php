@@ -14,7 +14,7 @@ class PartsType
      * @var string[] $part
      */
     private $part = [
-        
+
     ];
 
     /**
@@ -73,4 +73,3 @@ class PartsType
         return $this;
     }
 }
-

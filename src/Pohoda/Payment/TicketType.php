@@ -43,4 +43,3 @@ class TicketType
         return $this;
     }
 }
-

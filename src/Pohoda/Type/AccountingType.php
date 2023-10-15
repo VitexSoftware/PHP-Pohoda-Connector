@@ -109,4 +109,3 @@ class AccountingType
         return $this;
     }
 }
-

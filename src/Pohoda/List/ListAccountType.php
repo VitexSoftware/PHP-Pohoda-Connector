@@ -16,7 +16,7 @@ class ListAccountType extends ListVersionType
      * @var \Pohoda\List\ItemAccountType[] $itemAccount
      */
     private $itemAccount = [
-        
+
     ];
 
     /**
@@ -75,4 +75,3 @@ class ListAccountType extends ListVersionType
         return $this;
     }
 }
-
