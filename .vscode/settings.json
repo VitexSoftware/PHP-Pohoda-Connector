@@ -1,5 +1,26 @@
 {
     "cSpell.words": [
         "Pohoda"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#ba3b14",
+        "titleBar.activeBackground": "#ba3b14",
+        "titleBar.activeForeground": "#000000",
+        "titleBar.inactiveBackground": "#ba3b14",
+        "titleBar.inactiveForeground": "#000000",
+        "titleBar.border": "#ba3b14",
+        "activityBar.foreground": "#000000",
+        "statusBar.background": "#ba3b14",
+        "statusBar.foreground": "#000000",
+        "statusBar.debuggingBackground": "#ba3b14",
+        "statusBar.debuggingForeground": "#000000",
+        "tab.activeBorder": "#ba3b14",
+        "iLoveWorkSpaceColors": true,
+        "iLoveWorkSpaceRandom": false,
+        "activityBar.inactiveForeground": "#b69ed6",
+        "activityBar.activeBorder": "#f8fbf5",
+        "activityBar.activeBackground": "#AB0552",
+        "activityBar.border": "#AB0552",
+        "statusBar.border": "#AB0552"
+    }
 }
