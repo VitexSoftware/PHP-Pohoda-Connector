@@ -1,2 +1,3 @@
-src/mServer/*.php	        /usr/share/php/AbraFlexi
-debian/composer.json		/usr/share/php/AbraFlexi
+src/mServer/*.php	        /usr/share/php/mServer
+debian/config/composer.json	/usr/share/php/mServer
+
