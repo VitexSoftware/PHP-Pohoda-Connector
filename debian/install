@@ -1,0 +1,2 @@
+src/mServer/*.php	        /usr/share/php/AbraFlexi
+debian/composer.json		/usr/share/php/AbraFlexi
