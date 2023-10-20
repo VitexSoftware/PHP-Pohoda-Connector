@@ -1,33 +1,35 @@
 {
-  "name": "deb/pohoda",
-  "description": "Library for easy interaction with czech accounting system AbraFlexi.",
-  "homepage": "https://github.com/VitexSoftware/PHP-Pohoda-Connector",
-  "license": "MIT",
-  "type": "library",
-  "authors": [
-    {
-      "name": "Vítězslav Dvořák",
-      "email": "vitex@vitexsoftware.cz"
-    }
-  ],
-  "require": {
-    "ext-json": "*",
-    "ext-curl": "*",
-    "deb/ease-core": "*"
-  },
-  "autoload": {
-    "psr-4": {
-      "mServer\\": "."
-    }
-  },
-  "config": {
-    "vendor-dir": "/var/lib/php-vitexsoftware-pohoda-connector"
-  },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "/usr/share/php/EaseCore"
-    }
-  ],
-  "version": "0.4.1"
+    "name": "deb/pohoda",
+    "description": "Library for easy interaction with czech accounting system AbraFlexi.",
+    "homepage": "https://github.com/VitexSoftware/PHP-Pohoda-Connector",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Vítězslav Dvořák",
+            "email": "vitex@vitexsoftware.cz"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "ext-curl": "*",
+        "deb/ease-core": "*",
+        "lightools/xml": "v2.0.0",
+        "riesenia/pohoda": ">=1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "mServer\\": "."
+        }
+    },
+    "config": {
+        "vendor-dir": "/var/lib/php-vitexsoftware-pohoda-connector"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/usr/share/php/EaseCore"
+        }
+    ],
+    "version": "0.4.1"
 }
