@@ -68,7 +68,7 @@ class Response extends \Ease\Sand
     /**
      * Create a new Response Instance
      *
-     * @param string $caller parent object
+     * @param Client $caller parent object
      */
     public function __construct(Client $caller)
     {
@@ -109,6 +109,7 @@ class Response extends \Ease\Sand
                 case 'lAdb:listAddressBook':
                     $this->processResponseData($responsePackSubitem);
                     break;
+                case 'bnk:bankResponse':
                 case 'adb:addressbookResponse':
                     $this->processResponseData($responsePackSubitem);
                     break;

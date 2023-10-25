@@ -2,3 +2,5 @@
 /vendor/
 /nbproject/
 /composer.lock
+/.env
+/debian/php-vitexsoftware-pohoda-connector/

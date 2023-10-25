@@ -944,7 +944,8 @@
         "goetas-webservices/xsd2php-runtime": "^0.2.16",
         "lightools/xml": "v2.0.0",
         "riesenia/pohoda": ">=1.5 || dev-master",
-        "vitexsoftware/ease-core": ">=1.41"
+        "vitexsoftware/ease-core": ">=1.41",
+        "jms/serializer": "^3.28"
     },
     "require-dev": {
         "goetas-webservices/xsd2php": "^0.4.11",

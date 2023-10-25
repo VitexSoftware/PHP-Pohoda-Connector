@@ -4,7 +4,7 @@
  * PHPmServer - Invoice helper Class
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Vitex Software
+ * @copyright  (C) 2020-2023 Vitex Software
  */
 
 namespace mServer;
