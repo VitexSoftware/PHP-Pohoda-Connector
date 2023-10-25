@@ -347,7 +347,8 @@ class Client extends \Ease\Sand
         if ($this->debug) {
             $tmpfile = sys_get_temp_dir() . '/' . time() . '.xml';
             file_put_contents($tmpfile, $data);
-            system('netbeans ' . $tmpfile);
+            $this->addStatusMessage('request: ' . $tmpfile, 'debug');
+            //system('netbeans ' . $tmpfile);
         }
         $this->postFields = $data;
     }
@@ -388,7 +389,8 @@ class Client extends \Ease\Sand
         if ($this->debug) {
             $tmpName = sys_get_temp_dir() . '/response' . time() . '.xml';
             file_put_contents($tmpName, $this->lastCurlResponse);
-            system('netbeans ' . $tmpName);
+            $this->addStatusMessage('request: ' . $tmpName, 'debug');
+            //system('netbeans ' . $tmpName);
         }
         return $this->lastResponseCode;
     }
