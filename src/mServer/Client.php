@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHPmServer - Client Class
  *
@@ -22,8 +23,8 @@ use Riesenia\Pohoda;
  */
 class Client extends \Ease\Sand
 {
-
     use \Ease\RecordKey;
+
     /**
      * Curl Handle.
      *
@@ -223,8 +224,8 @@ class Client extends \Ease\Sand
     public function logBanner($prefix = null, $suffix = null)
     {
         parent::logBanner(
-                $prefix,
-                'mServer ' . str_replace('://', '://' . $this->user . '@', $this->url) . ' PHPmServer v' . self::libVersion() .
+            $prefix,
+            'mServer ' . str_replace('://', '://' . $this->user . '@', $this->url) . ' PHPmServer v' . self::libVersion() .
                 $suffix
         );
     }
@@ -376,12 +377,12 @@ class Client extends \Ease\Sand
         $this->lastCurlError = \curl_error($this->curl);
         if (strlen($this->lastCurlError)) {
             $this->addStatusMessage(
-                    sprintf(
-                            'Curl Error (HTTP %d): %s',
-                            $this->lastResponseCode,
-                            $this->lastCurlError
-                    ),
-                    'error'
+                sprintf(
+                    'Curl Error (HTTP %d): %s',
+                    $this->lastResponseCode,
+                    $this->lastCurlError
+                ),
+                'error'
             );
         }
         if ($this->debug) {
