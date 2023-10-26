@@ -49,6 +49,11 @@ class Bank extends Client
         return $taken + $this->addSummary($summaryData);
     }
 
+    public function setObjectName($forceName)
+    {
+        parent::setObjectName($this->getDataValue('account') . '@' . $this->getObjectName());
+    }
+
     public function addSummary($data)
     {
 
