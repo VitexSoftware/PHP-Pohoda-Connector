@@ -38,6 +38,13 @@ class Bank extends Client
         $this->requestXml = $this->pohoda->createBank($data);
     }
 
+    /**
+     * Take data into XML
+     *
+     * @param array $data
+     *
+     * @return int
+     */
     public function takeData($data)
     {
         $summaryData = [];
@@ -49,16 +56,24 @@ class Bank extends Client
         return $taken + $this->addSummary($summaryData);
     }
 
-    public function setObjectName($forceName)
+    /**
+     * @inheritDoc
+     */
+    public function setObjectName($forceName = '')
     {
-        parent::setObjectName($this->getDataValue('account') . '@' . $this->getObjectName());
+        return parent::setObjectName($forceName ? $forceName : $this->getDataValue('account') . '@' . $this->getObjectName());
     }
 
+    /**
+     * Add Summary part of bnk:bank item
+     *
+     * @param array $data
+     */
     public function addSummary($data)
     {
-
         $this->requestXml->addSummary($data);
     }
+
     /**
      * AddressBook records name column
      * @var string

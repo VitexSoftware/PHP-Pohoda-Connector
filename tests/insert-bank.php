@@ -42,3 +42,8 @@ $bankRecord = [
 ];
 $banker = new Bank($bankRecord);
 $banker->addToPohoda();
+$result = $banker->commit();
+
+print_r($result);
+
+

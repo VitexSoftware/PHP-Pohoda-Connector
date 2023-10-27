@@ -201,9 +201,12 @@ class Client extends \Ease\Sand
         }
     }
 
+    /**
+     * @inheritDoc
+     */
     public function setObjectName($forceName = '')
     {
-        parent::setObjectName(($this->getMyKey() ? $this->getMyKey() . '@' : '') . \Ease\Logger\Message::getCallerName($this));
+        return parent::setObjectName(($this->getMyKey() ? $this->getMyKey() . '@' : '') . \Ease\Logger\Message::getCallerName($this));
     }
 
     /**

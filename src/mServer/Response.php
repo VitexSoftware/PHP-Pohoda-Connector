@@ -253,7 +253,7 @@ class Response extends \Ease\Sand
 
     public static function prepareElement($elementData)
     {
-        $name = self::stripNsUri($elementData['name']);
+        $name = /* self::stripNsUri */($elementData['name']);
         $data = [];
         foreach ($elementData['value'] as $subitems) {
             foreach ($subitems as $subitem) {
@@ -295,7 +295,7 @@ class Response extends \Ease\Sand
         $arrayData = self::xmlToArray($xmlNode, array(
                     'alwaysArray' => $alwaysArrayElements,
                     'autoText' => false,
-                        ));
+        ));
         return $arrayData;
     }
 

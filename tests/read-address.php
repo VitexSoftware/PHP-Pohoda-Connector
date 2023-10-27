@@ -8,9 +8,10 @@
  */
 
 require_once '../vendor/autoload.php';
-\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], '../.env');
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__ . '/.env');
 $addresser = new \mServer\Adressbook();
-print_r($addresser->getColumnsFromPohoda(['id', 'jmeno', 'email', 'web'], ['city' => 'Prague']));
+print_r($addresser->getColumnsFromPohoda(['id', 'jmeno', 'email', 'web']));
+//print_r($addresser->getColumnsFromPohoda(['id', 'jmeno', 'email', 'web'], ['city' => 'Prague']));
 
 
 //echo "-----------------------------------------------------------\n";
