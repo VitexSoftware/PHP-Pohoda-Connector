@@ -1,5 +1,5 @@
 {
-  "name": "deb/pohoda",
+  "name": "deb/pohoda-connector",
   "description": "Library for easy interaction with czech accounting system AbraFlexi.",
   "homepage": "https://github.com/VitexSoftware/PHP-Pohoda-Connector",
   "license": "MIT",
