@@ -33,7 +33,6 @@ class ListVoucherRequestType
      * @var \Pohoda\Filter\RequestVoucherType[] $requestVoucher
      */
     private $requestVoucher = [
-
     ];
 
     /**

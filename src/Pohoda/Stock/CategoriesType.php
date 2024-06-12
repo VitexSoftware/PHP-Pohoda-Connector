@@ -14,7 +14,6 @@ class CategoriesType
      * @var int[] $idCategory
      */
     private $idCategory = [
-
     ];
 
     /**

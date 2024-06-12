@@ -28,7 +28,6 @@ class PrintType
      * @var \Pohoda\Print\PrinterSettingsType[] $printerSettings
      */
     private $printerSettings = [
-
     ];
 
     /**

@@ -14,7 +14,6 @@ class ServiceItemsType
      * @var \Pohoda\Service\ItemType[] $item
      */
     private $item = [
-
     ];
 
     /**

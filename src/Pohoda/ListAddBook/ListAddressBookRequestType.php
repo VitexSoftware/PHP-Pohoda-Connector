@@ -33,7 +33,6 @@ class ListAddressBookRequestType
      * @var \Pohoda\Filter\RequestAddressBookType[] $requestAddressBook
      */
     private $requestAddressBook = [
-
     ];
 
     /**

@@ -16,7 +16,6 @@ class ListSellingPriceType extends ListVersionType
      * @var \Pohoda\List\ItemSellingPriceType[] $itemSellingPrice
      */
     private $itemSellingPrice = [
-
     ];
 
     /**

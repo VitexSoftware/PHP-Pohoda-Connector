@@ -54,7 +54,6 @@ class ListUserCodeType
      * @var \Pohoda\List\ItemUserCodeType[] $itemUserCode
      */
     private $itemUserCode = [
-
     ];
 
     /**

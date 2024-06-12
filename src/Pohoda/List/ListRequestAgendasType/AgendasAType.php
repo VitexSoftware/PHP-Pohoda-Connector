@@ -13,7 +13,6 @@ class AgendasAType
      * @var string[] $agenda
      */
     private $agenda = [
-
     ];
 
     /**

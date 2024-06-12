@@ -19,7 +19,6 @@ class CategoryDetailType
      * @var \Pohoda\Category\CategoryType[] $category
      */
     private $category = [
-
     ];
 
     /**

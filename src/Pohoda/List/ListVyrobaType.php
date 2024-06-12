@@ -16,7 +16,6 @@ class ListVyrobaType extends ListVersionType
      * @var \Pohoda\Vyroba\VyrobaType[] $vyroba
      */
     private $vyroba = [
-
     ];
 
     /**

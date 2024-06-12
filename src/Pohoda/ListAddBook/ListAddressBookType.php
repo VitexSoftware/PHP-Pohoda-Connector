@@ -16,7 +16,6 @@ class ListAddressBookType extends ListVersionType
      * @var \Pohoda\AddressBook\AddressbookType[] $addressbook
      */
     private $addressbook = [
-
     ];
 
     /**

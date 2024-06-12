@@ -16,7 +16,6 @@ class ListParameterType extends ListVersionType
      * @var \Pohoda\Parameter\ParameterType[] $parameter
      */
     private $parameter = [
-
     ];
 
     /**

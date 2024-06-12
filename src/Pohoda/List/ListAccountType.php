@@ -16,7 +16,6 @@ class ListAccountType extends ListVersionType
      * @var \Pohoda\List\ItemAccountType[] $itemAccount
      */
     private $itemAccount = [
-
     ];
 
     /**

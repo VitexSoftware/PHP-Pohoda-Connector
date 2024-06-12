@@ -499,7 +499,7 @@ class Client extends \Ease\Sand
                 break;
         }
 
-        return $this->response->isOk();
+        return is_object($this->response) && $this->response->isOk();
     }
 
     /**
@@ -519,8 +519,9 @@ class Client extends \Ease\Sand
      * Use data in object
      *
      * @param array   $data  raw document data
+     * @param boolean $reset replace current content
      */
-    public function takeData($data)
+    public function takeData($data, $reset = false)
     {
         parent::takeData($data);
         $created = $this->create($this->getData());
@@ -551,8 +552,11 @@ class Client extends \Ease\Sand
         if (!empty($data)) {
             $this->takeData($data);
         }
-        if (method_exists($this->requestXml, 'addActionType')) {
-            $this->requestXml->addActionType('add'); // "add", "add/update", "update", "delete"
+        if ($this->requestXml) {
+            if (method_exists($this->requestXml, 'addActionType')) {
+                $this->requestXml->addActionType('add'); // "add", "add/update", "update", "delete"
+            }
+            $this->pohoda->addItem(2, $this->requestXml);
         }
         $this->pohoda->addItem(2, $this->requestXml);
         return 1;

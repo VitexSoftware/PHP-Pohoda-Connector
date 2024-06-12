@@ -14,7 +14,6 @@ class StockAttachType
      * @var \Pohoda\Stock\AttachItemType[] $attachItem
      */
     private $attachItem = [
-
     ];
 
     /**

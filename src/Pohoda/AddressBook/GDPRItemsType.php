@@ -14,7 +14,6 @@ class GDPRItemsType
      * @var \Pohoda\AddressBook\GDPRItemType[] $gDPRItem
      */
     private $gDPRItem = [
-
     ];
 
     /**

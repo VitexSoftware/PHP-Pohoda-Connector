@@ -26,7 +26,6 @@ class ListInventoryListsRequestType
      * @var \Pohoda\Filter\RequestInventoryListsType[] $requestInventoryLists
      */
     private $requestInventoryLists = [
-
     ];
 
     /**

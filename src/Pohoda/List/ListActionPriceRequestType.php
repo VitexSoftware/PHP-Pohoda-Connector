@@ -26,7 +26,6 @@ class ListActionPriceRequestType
      * @var \Pohoda\Filter\RequestActionPriceType[] $requestActionPrice
      */
     private $requestActionPrice = [
-
     ];
 
     /**

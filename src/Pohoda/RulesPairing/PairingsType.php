@@ -14,7 +14,6 @@ class PairingsType
      * @var string[] $pairing
      */
     private $pairing = [
-
     ];
 
     /**

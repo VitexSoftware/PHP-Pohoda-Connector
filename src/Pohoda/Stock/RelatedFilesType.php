@@ -14,7 +14,6 @@ class RelatedFilesType
      * @var \Pohoda\Stock\RelatedFileType[] $relatedFile
      */
     private $relatedFile = [
-
     ];
 
     /**

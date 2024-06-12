@@ -16,7 +16,6 @@ class ListCategoryType extends ListVersionType
      * @var \Pohoda\Category\CategoryDetailType[] $categoryDetail
      */
     private $categoryDetail = [
-
     ];
 
     /**

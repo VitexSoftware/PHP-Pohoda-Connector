@@ -16,7 +16,6 @@ class ListBankAccountType extends ListVersionType
      * @var \Pohoda\BankAccount\BankAccountType[] $bankAccount
      */
     private $bankAccount = [
-
     ];
 
     /**

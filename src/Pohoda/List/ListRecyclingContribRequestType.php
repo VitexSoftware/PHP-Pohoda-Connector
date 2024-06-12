@@ -26,7 +26,6 @@ class ListRecyclingContribRequestType
      * @var \Pohoda\Filter\RequestRecyclingContribType[] $requestRecyclingContrib
      */
     private $requestRecyclingContrib = [
-
     ];
 
     /**

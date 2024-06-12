@@ -14,7 +14,6 @@ class OrderDetailType
      * @var \Pohoda\Order\OrderItemType[] $orderItem
      */
     private $orderItem = [
-
     ];
 
     /**

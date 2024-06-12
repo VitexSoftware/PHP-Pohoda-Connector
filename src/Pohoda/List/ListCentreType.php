@@ -16,7 +16,6 @@ class ListCentreType extends ListVersionType
      * @var \Pohoda\List\ItemNameType[] $itemCentre
      */
     private $itemCentre = [
-
     ];
 
     /**

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHPmPohoda - address import example
  *
@@ -9,7 +10,9 @@
 namespace mServer;
 
 require_once __DIR__ . '/../vendor/autoload.php';
+
 \Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__ . '/.env');
+
 $bankRecord = [
 //    "MOSS" => ['ids' => '213'],
     'account' => 'KB',
@@ -40,6 +43,17 @@ $bankRecord = [
     "text" => 'Testing income ' . time(),
     'homeCurrency' => ['priceNone' => '1001']
 ];
+
+//        $resolver->setAllowedValues('bankType', ['receipt', 'expense']);
+//        $resolver->setNormalizer('symVar', $resolver->getNormalizer('string20'));
+//        $resolver->setNormalizer('dateStatement', $resolver->getNormalizer('date'));
+//        $resolver->setNormalizer('datePayment', $resolver->getNormalizer('date'));
+//        $resolver->setNormalizer('text', $resolver->getNormalizer('string96'));
+//        $resolver->setNormalizer('symConst', $resolver->getNormalizer('string4'));
+//        $resolver->setNormalizer('symSpec', $resolver->getNormalizer('string16'));
+//        $resolver->setNormalizer('symPar', $resolver->getNormalizer('string20'));
+//        $resolver->setNormalizer('accountingPeriodMOSS', $resolver->getNormalizer('string7'));
+
 $banker = new Bank($bankRecord);
 $banker->addToPohoda();
 $result = $banker->commit();

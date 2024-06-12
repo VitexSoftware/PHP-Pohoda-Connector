@@ -16,7 +16,6 @@ class SelectedIcoType
      * @var string[] $ico
      */
     private $ico = [
-
     ];
 
     /**

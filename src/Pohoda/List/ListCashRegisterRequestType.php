@@ -33,7 +33,6 @@ class ListCashRegisterRequestType
      * @var \Pohoda\Filter\RequestCashRegisterType[] $requestCashRegister
      */
     private $requestCashRegister = [
-
     ];
 
     /**

@@ -28,7 +28,6 @@ class ListParameterRequestType
      * @var \Pohoda\List\RequestParameterType[] $requestParameter
      */
     private $requestParameter = [
-
     ];
 
     /**

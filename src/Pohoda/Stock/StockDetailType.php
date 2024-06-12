@@ -14,7 +14,6 @@ class StockDetailType
      * @var \Pohoda\Stock\StockItemType[] $stockItem
      */
     private $stockItem = [
-
     ];
 
     /**

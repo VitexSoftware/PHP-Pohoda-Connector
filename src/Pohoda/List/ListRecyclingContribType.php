@@ -16,7 +16,6 @@ class ListRecyclingContribType extends ListVersionType
      * @var \Pohoda\RecyclingContrib\RecyclingContribType[] $recyclingContrib
      */
     private $recyclingContrib = [
-
     ];
 
     /**

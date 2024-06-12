@@ -14,7 +14,6 @@ class PicturesType
      * @var \Pohoda\Stock\PictureType[] $picture
      */
     private $picture = [
-
     ];
 
     /**

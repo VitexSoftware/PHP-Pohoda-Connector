@@ -38,7 +38,6 @@ class ListInvoiceRequestType
      * @var \Pohoda\Filter\RequestInvoiceType[] $requestInvoice
      */
     private $requestInvoice = [
-
     ];
 
     /**
@@ -47,7 +46,6 @@ class ListInvoiceRequestType
      * @var \Pohoda\List\RestrictionDocParamType[] $restrictionData
      */
     private $restrictionData = [
-
     ];
 
     /**

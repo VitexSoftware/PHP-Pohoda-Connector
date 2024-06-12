@@ -14,7 +14,6 @@ class DiscountsType
      * @var \Pohoda\Discount\DiscountsItemType[] $discountsItem
      */
     private $discountsItem = [
-
     ];
 
     /**

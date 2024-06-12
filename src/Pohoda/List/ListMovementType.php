@@ -16,7 +16,6 @@ class ListMovementType extends ListVersionType
      * @var \Pohoda\Movement\MovementType[] $movement
      */
     private $movement = [
-
     ];
 
     /**

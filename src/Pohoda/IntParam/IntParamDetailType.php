@@ -19,7 +19,6 @@ class IntParamDetailType
      * @var \Pohoda\IntParam\IntParamType[] $intParam
      */
     private $intParam = [
-
     ];
 
     /**

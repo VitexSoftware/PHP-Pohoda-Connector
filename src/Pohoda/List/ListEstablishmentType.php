@@ -16,7 +16,6 @@ class ListEstablishmentType extends ListVersionType
      * @var \Pohoda\Establishment\EstablishmentType[] $establishment
      */
     private $establishment = [
-
     ];
 
     /**

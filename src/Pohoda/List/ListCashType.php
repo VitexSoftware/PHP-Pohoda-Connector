@@ -16,7 +16,6 @@ class ListCashType extends ListVersionType
      * @var \Pohoda\List\ItemCashType[] $itemCash
      */
     private $itemCash = [
-
     ];
 
     /**

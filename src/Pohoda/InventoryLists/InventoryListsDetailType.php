@@ -14,7 +14,6 @@ class InventoryListsDetailType
      * @var \Pohoda\InventoryLists\InventoryListsItemType[] $inventoryListsItem
      */
     private $inventoryListsItem = [
-
     ];
 
     /**

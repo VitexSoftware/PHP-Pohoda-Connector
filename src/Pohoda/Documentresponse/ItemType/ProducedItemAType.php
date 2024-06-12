@@ -11,7 +11,6 @@ class ProducedItemAType
      * @var string[] $id
      */
     private $id = [
-
     ];
 
     /**

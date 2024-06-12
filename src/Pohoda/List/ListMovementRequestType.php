@@ -26,7 +26,6 @@ class ListMovementRequestType
      * @var \Pohoda\Filter\RequestMovementType[] $requestMovement
      */
     private $requestMovement = [
-
     ];
 
     /**

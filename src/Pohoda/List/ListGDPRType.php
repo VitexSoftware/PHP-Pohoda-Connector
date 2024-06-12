@@ -16,7 +16,6 @@ class ListGDPRType extends ListVersionType
      * @var \Pohoda\Gdpr\GDPRType[] $gDPR
      */
     private $gDPR = [
-
     ];
 
     /**

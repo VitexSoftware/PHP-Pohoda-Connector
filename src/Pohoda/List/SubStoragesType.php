@@ -14,7 +14,6 @@ class SubStoragesType
      * @var \Pohoda\List\ItemStorageType[] $itemStorage
      */
     private $itemStorage = [
-
     ];
 
     /**

@@ -14,7 +14,6 @@ class DocumentsType
      * @var \Pohoda\DocumentType[] $document
      */
     private $document = [
-
     ];
 
     /**

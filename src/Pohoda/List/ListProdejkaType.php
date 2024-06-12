@@ -16,7 +16,6 @@ class ListProdejkaType extends ListVersionType
      * @var \Pohoda\Prodejka\ProdejkaType[] $prodejka
      */
     private $prodejka = [
-
     ];
 
     /**

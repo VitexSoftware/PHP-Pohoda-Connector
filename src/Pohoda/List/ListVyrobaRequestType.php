@@ -33,7 +33,6 @@ class ListVyrobaRequestType
      * @var \Pohoda\Filter\RequestVyrobaType[] $requestVyroba
      */
     private $requestVyroba = [
-
     ];
 
     /**
@@ -42,7 +41,6 @@ class ListVyrobaRequestType
      * @var \Pohoda\List\RestrictionDocParamType[] $restrictionData
      */
     private $restrictionData = [
-
     ];
 
     /**

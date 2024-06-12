@@ -26,7 +26,6 @@ class ListGlobalSettingsRequestType
      * @var \Pohoda\List\RequestrequestGlobalSettingsType[] $requestGlobalSettings
      */
     private $requestGlobalSettings = [
-
     ];
 
     /**

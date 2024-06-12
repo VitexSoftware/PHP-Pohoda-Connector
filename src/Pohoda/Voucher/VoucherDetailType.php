@@ -16,7 +16,6 @@ class VoucherDetailType
      * @var \Pohoda\Voucher\VoucherItemType[] $voucherItem
      */
     private $voucherItem = [
-
     ];
 
     /**
@@ -25,7 +24,6 @@ class VoucherDetailType
      * @var \Pohoda\Voucher\VoucherliquidationItemType[] $voucherLiquidationItem
      */
     private $voucherLiquidationItem = [
-
     ];
 
     /**

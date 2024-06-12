@@ -14,7 +14,6 @@ class VyrobaDetailType
      * @var \Pohoda\Vyroba\VyrobaItemType[] $vyrobaItem
      */
     private $vyrobaItem = [
-
     ];
 
     /**

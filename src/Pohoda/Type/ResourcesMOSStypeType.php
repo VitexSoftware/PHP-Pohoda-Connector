@@ -14,7 +14,6 @@ class ResourcesMOSStypeType
      * @var string[] $ids
      */
     private $ids = [
-
     ];
 
     /**

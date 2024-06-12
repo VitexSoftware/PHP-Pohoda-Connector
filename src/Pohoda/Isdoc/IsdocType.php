@@ -28,7 +28,6 @@ class IsdocType
      * @var \Pohoda\Isdoc\IsdocSettingsType[] $isdocSettings
      */
     private $isdocSettings = [
-
     ];
 
     /**

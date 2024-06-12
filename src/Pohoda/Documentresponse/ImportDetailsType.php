@@ -14,7 +14,6 @@ class ImportDetailsType
      * @var \Pohoda\Documentresponse\DetailType[] $detail
      */
     private $detail = [
-
     ];
 
     /**

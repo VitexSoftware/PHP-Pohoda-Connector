@@ -26,7 +26,6 @@ class ListProductRequirementRequestType
      * @var \Pohoda\Filter\RequestProductRequirementType[] $requestProductRequirement
      */
     private $requestProductRequirement = [
-
     ];
 
     /**

@@ -14,7 +14,6 @@ class LabelsType
      * @var \Pohoda\Type\LabelType[] $label
      */
     private $label = [
-
     ];
 
     /**

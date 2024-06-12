@@ -16,7 +16,6 @@ class ProducedAccountingDocsType
      * @var \Pohoda\AccountingSalesVouchers\AccountingDocumentType[] $accountingDocument
      */
     private $accountingDocument = [
-
     ];
 
     /**

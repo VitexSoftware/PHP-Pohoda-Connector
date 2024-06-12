@@ -16,7 +16,6 @@ class ListActivityType extends ListVersionType
      * @var \Pohoda\List\ItemNameType[] $itemActivity
      */
     private $itemActivity = [
-
     ];
 
     /**

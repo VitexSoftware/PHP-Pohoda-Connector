@@ -16,7 +16,6 @@ class ListSupplierType extends ListVersionType
      * @var \Pohoda\Supplier\SupplierType[] $supplier
      */
     private $supplier = [
-
     ];
 
     /**

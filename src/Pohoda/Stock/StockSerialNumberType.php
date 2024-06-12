@@ -14,7 +14,6 @@ class StockSerialNumberType
      * @var \Pohoda\Stock\SerialNumberItemType[] $serialNumberItem
      */
     private $serialNumberItem = [
-
     ];
 
     /**

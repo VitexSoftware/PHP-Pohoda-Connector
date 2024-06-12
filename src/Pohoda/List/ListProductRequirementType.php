@@ -16,7 +16,6 @@ class ListProductRequirementType extends ListVersionType
      * @var \Pohoda\ProductRequirement\ProductRequirementType[] $productRequirement
      */
     private $productRequirement = [
-
     ];
 
     /**

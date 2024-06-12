@@ -26,7 +26,6 @@ class ListRequestActivityType
      * @var \Pohoda\ListActivity\RequestActivityType[] $requestActivity
      */
     private $requestActivity = [
-
     ];
 
     /**

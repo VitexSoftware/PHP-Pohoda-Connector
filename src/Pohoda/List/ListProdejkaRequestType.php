@@ -33,7 +33,6 @@ class ListProdejkaRequestType
      * @var \Pohoda\Filter\RequestProdejkaType[] $requestProdejka
      */
     private $requestProdejka = [
-
     ];
 
     /**
@@ -42,7 +41,6 @@ class ListProdejkaRequestType
      * @var \Pohoda\List\RestrictionDocParamType[] $restrictionData
      */
     private $restrictionData = [
-
     ];
 
     /**

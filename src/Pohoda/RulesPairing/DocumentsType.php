@@ -14,7 +14,6 @@ class DocumentsType
      * @var string[] $document
      */
     private $document = [
-
     ];
 
     /**

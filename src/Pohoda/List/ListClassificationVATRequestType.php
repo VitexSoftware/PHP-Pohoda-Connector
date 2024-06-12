@@ -26,7 +26,6 @@ class ListClassificationVATRequestType
      * @var \Pohoda\List\RequestClassificationVATType[] $requestClassificationVAT
      */
     private $requestClassificationVAT = [
-
     ];
 
     /**

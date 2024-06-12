@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHPmPohoda - connection checek tool
  *

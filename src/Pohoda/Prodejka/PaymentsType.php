@@ -16,7 +16,6 @@ class PaymentsType
      * @var \Pohoda\Prodejka\PaymentItemType[] $paymentItem
      */
     private $paymentItem = [
-
     ];
 
     /**

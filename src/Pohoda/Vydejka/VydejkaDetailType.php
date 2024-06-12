@@ -14,7 +14,6 @@ class VydejkaDetailType
      * @var \Pohoda\Vydejka\VydejkaItemType[] $vydejkaItem
      */
     private $vydejkaItem = [
-
     ];
 
     /**

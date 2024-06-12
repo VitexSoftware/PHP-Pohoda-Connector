@@ -14,7 +14,6 @@ class OfferDetailType
      * @var \Pohoda\Offer\OfferItemType[] $offerItem
      */
     private $offerItem = [
-
     ];
 
     /**

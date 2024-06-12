@@ -16,7 +16,6 @@ class ListIntParamType extends ListVersionType
      * @var \Pohoda\IntParam\IntParamDetailType[] $intParamDetail
      */
     private $intParamDetail = [
-
     ];
 
     /**

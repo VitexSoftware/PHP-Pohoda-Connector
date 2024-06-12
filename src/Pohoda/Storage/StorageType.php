@@ -19,7 +19,6 @@ class StorageType
      * @var \Pohoda\Storage\ItemStorageType[] $itemStorage
      */
     private $itemStorage = [
-
     ];
 
     /**

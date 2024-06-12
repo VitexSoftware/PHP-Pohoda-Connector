@@ -4,4 +4,7 @@
 /composer.lock
 /.env
 /debian/php-vitexsoftware-pohoda-connector/
+/debian/php-vitexsoftware-pohoda-connector.substvars
 /debian/.debhelper/
+/debian/debhelper-build-stamp
+/debian/files

@@ -16,7 +16,6 @@ class ListInventoryListsType extends ListVersionType
      * @var \Pohoda\InventoryLists\InventoryListsType[] $inventoryLists
      */
     private $inventoryLists = [
-
     ];
 
     /**

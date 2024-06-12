@@ -16,7 +16,6 @@ class ListRulesPairingType extends ListVersionType
      * @var \Pohoda\RulesPairing\RulesPairingType[] $rulesPairing
      */
     private $rulesPairing = [
-
     ];
 
     /**

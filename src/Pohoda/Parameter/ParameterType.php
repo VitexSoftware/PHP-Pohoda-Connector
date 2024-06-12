@@ -57,7 +57,6 @@ class ParameterType
      * @var \Pohoda\Parameter\FormItemListType[] $userForm
      */
     private $userForm = [
-
     ];
 
     /**

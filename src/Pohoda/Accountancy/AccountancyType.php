@@ -21,7 +21,6 @@ class AccountancyType
      * @var \Pohoda\Accountancy\AccountingItemType[] $accountingItem
      */
     private $accountingItem = [
-
     ];
 
     /**

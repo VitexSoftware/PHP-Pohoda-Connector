@@ -28,7 +28,6 @@ class ListRequestStockType
      * @var \Pohoda\Filter\RequestStockType[] $requestStock
      */
     private $requestStock = [
-
     ];
 
     /**
@@ -37,7 +36,6 @@ class ListRequestStockType
      * @var \Pohoda\ListStock\RestrictionDataType[] $restrictionData
      */
     private $restrictionData = [
-
     ];
 
     /**

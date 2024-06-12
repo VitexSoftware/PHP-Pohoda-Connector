@@ -16,7 +16,6 @@ class GroupStocksDetailType
      * @var \Pohoda\GroupStocks\VariantsItemType[] $variant
      */
     private $variant = [
-
     ];
 
     /**

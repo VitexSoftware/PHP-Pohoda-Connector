@@ -14,7 +14,6 @@ class AttachmentsType
      * @var \Pohoda\Isdoc\AttachmentType[] $attachment
      */
     private $attachment = [
-
     ];
 
     /**

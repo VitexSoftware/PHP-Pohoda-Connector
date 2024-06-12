@@ -16,7 +16,6 @@ class SelectedCompanysType
      * @var string[] $company
      */
     private $company = [
-
     ];
 
     /**

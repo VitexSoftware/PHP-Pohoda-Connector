@@ -16,7 +16,6 @@ class ListOrderType extends ListVersionType
      * @var \Pohoda\Order\OrderType[] $order
      */
     private $order = [
-
     ];
 
     /**

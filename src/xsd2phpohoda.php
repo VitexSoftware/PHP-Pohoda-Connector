@@ -5,7 +5,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\Handler\HandlerRegistryInterface;
 use GoetasWebservices\Xsd\XsdToPhpRuntime\Jms\Handler\BaseTypesHandler;
@@ -19,7 +18,6 @@ $serializerBuilder->configureHandlers(function (HandlerRegistryInterface $handle
     $serializerBuilder->addDefaultHandlers();
     $handler->registerSubscribingHandler(new BaseTypesHandler()); // XMLSchema List handling
     $handler->registerSubscribingHandler(new XmlSchemaDateHandler()); // XMLSchema date handling
-
     // $handler->registerSubscribingHandler(new YourhandlerHere());
 });
 
@@ -29,7 +27,6 @@ $serializer = $serializerBuilder->build();
 $object = $serializer->deserialize(file_get_contents(dirname(__DIR__) . '/tests/getBank.xml'), 'Pohoda\Data\DataPack', 'xml');
 
 // some code ....
-
 // serialize the Demo\MyObject back into XML
 $newXml = $serializer->serialize($object, 'xml');
 

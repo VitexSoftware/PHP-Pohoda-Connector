@@ -16,7 +16,6 @@ class ListPaymentType extends ListVersionType
      * @var \Pohoda\Payment\PaymentTypeRootType[] $payment
      */
     private $payment = [
-
     ];
 
     /**

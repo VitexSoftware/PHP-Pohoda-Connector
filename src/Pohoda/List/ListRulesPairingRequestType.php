@@ -26,7 +26,6 @@ class ListRulesPairingRequestType
      * @var \Pohoda\Filter\RequestRulesPairingType[] $requestRulesPairing
      */
     private $requestRulesPairing = [
-
     ];
 
     /**
