@@ -519,9 +519,8 @@ class Client extends \Ease\Sand
      * Use data in object
      *
      * @param array   $data  raw document data
-     * @param boolean $reset replace current content
      */
-    public function takeData($data, $reset = false)
+    public function takeData($data)
     {
         parent::takeData($data);
         $created = $this->create($this->getData());
