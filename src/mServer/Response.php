@@ -100,7 +100,7 @@ class Response extends \Ease\Sand
     public function processResponsePack($responsePackData)
     {
         if (array_key_exists('rsp:responsePackItem', $responsePackData)) {
-            $this->processResponsePackItem($responsePackData['rsp:responsePackItem'][0]);
+            $this->processResponsePackItem($responsePackData['rsp:responsePackItem']);
         } else {
             $this->state = $responsePackData['@state'];
             $this->note = $responsePackData['@note'];
