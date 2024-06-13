@@ -3,6 +3,7 @@
 /nbproject/
 /composer.lock
 /.env
+/tests/.env
 /debian/php-vitexsoftware-pohoda-connector/
 /debian/php-vitexsoftware-pohoda-connector.substvars
 /debian/.debhelper/

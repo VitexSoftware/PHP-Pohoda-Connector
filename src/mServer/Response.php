@@ -30,6 +30,11 @@ class Response extends \Ease\Sand
     const STATE_OK = 'ok';
 
     /**
+     * State when file was imported with warning
+     */
+    const STATE_WARNING = 'warning';
+
+    /**
      * Parsed Result
      * @var array
      */
@@ -72,6 +77,7 @@ class Response extends \Ease\Sand
      */
     public function __construct(Client $caller)
     {
+        $this->setObjectName();
         $this->useCaller($caller);
     }
 
@@ -94,7 +100,7 @@ class Response extends \Ease\Sand
     public function processResponsePack($responsePackData)
     {
         if (array_key_exists('rsp:responsePackItem', $responsePackData)) {
-            $this->processResponsePackItem($responsePackData['rsp:responsePackItem']);
+            $this->processResponsePackItem($responsePackData['rsp:responsePackItem'][0]);
         } else {
             $this->state = $responsePackData['@state'];
             $this->note = $responsePackData['@note'];
@@ -219,6 +225,16 @@ class Response extends \Ease\Sand
     public function isOk()
     {
         return $this->getState() == static::STATE_OK;
+    }
+
+    /**
+     * Checks if import produced warnings
+     *
+     * @return bool
+     */
+    public function isWarning()
+    {
+        return $this->getState() == static::STATE_WARNING;
     }
 
     /**

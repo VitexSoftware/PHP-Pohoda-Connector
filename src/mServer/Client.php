@@ -401,7 +401,8 @@ class Client extends \Ease\Sand
         if ($this->debug) {
             $tmpName = sys_get_temp_dir() . '/response' . time() . '.xml';
             file_put_contents($tmpName, $this->lastCurlResponse);
-            $this->addStatusMessage('request: ' . $tmpName, 'debug');
+            $this->addStatusMessage('response: ' . $tmpName, 'debug');
+            // xmllint --schema doc/xsd/data.xsd /tmp/1718209563.xml --noout
             //system('netbeans ' . $tmpName);
         }
         return $this->lastResponseCode;
@@ -565,6 +566,9 @@ class Client extends \Ease\Sand
     {
         $this->pohoda->close();
         $this->setPostFields(file_get_contents($this->xmlCache));
+        if ($this->debug) {
+            $this->addStatusMessage('validate request by: xmllint --schema ' . dirname(dirname(__DIR__)) . '/doc/xsd/data.xsd ' . $this->xmlCache . ' --noout', 'debug');
+        }
         return $this->performRequest('/xml');
     }
 
