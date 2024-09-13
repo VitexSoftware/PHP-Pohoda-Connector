@@ -1,37 +1,38 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Bank;
 
 /**
- * Class representing BankType
- *
+ * Class representing BankType.
  *
  * XSD Type: bankType
  */
 class BankType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \Pohoda\Bank\BankHeaderType $bankHeader = null;
 
     /**
-     * @var \Pohoda\Bank\BankHeaderType $bankHeader
+     * @var \Pohoda\Bank\BankItemType[]
      */
-    private $bankHeader = null;
+    private array $bankDetail = null;
+    private \Pohoda\Bank\BankSummaryType $bankSummary = null;
 
     /**
-     * @var \Pohoda\Bank\BankItemType[] $bankDetail
-     */
-    private $bankDetail = null;
-
-    /**
-     * @var \Pohoda\Bank\BankSummaryType $bankSummary
-     */
-    private $bankSummary = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -41,19 +42,21 @@ class BankType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as bankHeader
+     * Gets as bankHeader.
      *
      * @return \Pohoda\Bank\BankHeaderType
      */
@@ -63,33 +66,34 @@ class BankType
     }
 
     /**
-     * Sets a new bankHeader
+     * Sets a new bankHeader.
      *
-     * @param \Pohoda\Bank\BankHeaderType $bankHeader
      * @return self
      */
     public function setBankHeader(?\Pohoda\Bank\BankHeaderType $bankHeader = null)
     {
         $this->bankHeader = $bankHeader;
+
         return $this;
     }
 
     /**
-     * Adds as bankItem
+     * Adds as bankItem.
      *
      * @return self
-     * @param \Pohoda\Bank\BankItemType $bankItem
      */
     public function addToBankDetail(\Pohoda\Bank\BankItemType $bankItem)
     {
         $this->bankDetail[] = $bankItem;
+
         return $this;
     }
 
     /**
-     * isset bankDetail
+     * isset bankDetail.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetBankDetail($index)
@@ -98,18 +102,17 @@ class BankType
     }
 
     /**
-     * unset bankDetail
+     * unset bankDetail.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetBankDetail($index)
+    public function unsetBankDetail($index): void
     {
         unset($this->bankDetail[$index]);
     }
 
     /**
-     * Gets as bankDetail
+     * Gets as bankDetail.
      *
      * @return \Pohoda\Bank\BankItemType[]
      */
@@ -119,19 +122,21 @@ class BankType
     }
 
     /**
-     * Sets a new bankDetail
+     * Sets a new bankDetail.
      *
      * @param \Pohoda\Bank\BankItemType[] $bankDetail
+     *
      * @return self
      */
-    public function setBankDetail(array $bankDetail = null)
+    public function setBankDetail(?array $bankDetail = null)
     {
         $this->bankDetail = $bankDetail;
+
         return $this;
     }
 
     /**
-     * Gets as bankSummary
+     * Gets as bankSummary.
      *
      * @return \Pohoda\Bank\BankSummaryType
      */
@@ -141,14 +146,14 @@ class BankType
     }
 
     /**
-     * Sets a new bankSummary
+     * Sets a new bankSummary.
      *
-     * @param \Pohoda\Bank\BankSummaryType $bankSummary
      * @return self
      */
     public function setBankSummary(?\Pohoda\Bank\BankSummaryType $bankSummary = null)
     {
         $this->bankSummary = $bankSummary;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing FilterNumeciralSeriesType
- *
+ * Class representing FilterNumeciralSeriesType.
  *
  * XSD Type: filterNumeciralSeriesType
  */
@@ -12,27 +24,21 @@ class FilterNumeciralSeriesType
 {
     /**
      * Filtr podle ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Typ období účetní jednotky (běžné/přechodné).
-     *
-     * @var string $period
      */
-    private $period = null;
+    private string $period = null;
 
     /**
      * Typ agendy.
-     *
-     * @var string $agenda
      */
-    private $agenda = null;
+    private string $agenda = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Filtr podle ID záznamu.
      *
@@ -44,21 +50,23 @@ class FilterNumeciralSeriesType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Filtr podle ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as period
+     * Gets as period.
      *
      * Typ období účetní jednotky (běžné/přechodné).
      *
@@ -70,21 +78,23 @@ class FilterNumeciralSeriesType
     }
 
     /**
-     * Sets a new period
+     * Sets a new period.
      *
      * Typ období účetní jednotky (běžné/přechodné).
      *
      * @param string $period
+     *
      * @return self
      */
     public function setPeriod($period)
     {
         $this->period = $period;
+
         return $this;
     }
 
     /**
-     * Gets as agenda
+     * Gets as agenda.
      *
      * Typ agendy.
      *
@@ -96,16 +106,18 @@ class FilterNumeciralSeriesType
     }
 
     /**
-     * Sets a new agenda
+     * Sets a new agenda.
      *
      * Typ agendy.
      *
      * @param string $agenda
+     *
      * @return self
      */
     public function setAgenda($agenda)
     {
         $this->agenda = $agenda;
+
         return $this;
     }
 }

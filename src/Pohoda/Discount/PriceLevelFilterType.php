@@ -1,22 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Discount;
 
 /**
- * Class representing PriceLevelFilterType
- *
+ * Class representing PriceLevelFilterType.
  *
  * XSD Type: priceLevelFilterType
  */
 class PriceLevelFilterType
 {
-    /**
-     * @var \Pohoda\Type\RefType $priceLevel
-     */
-    private $priceLevel = null;
+    private \Pohoda\Type\RefType $priceLevel = null;
 
     /**
-     * Gets as priceLevel
+     * Gets as priceLevel.
      *
      * @return \Pohoda\Type\RefType
      */
@@ -26,14 +35,14 @@ class PriceLevelFilterType
     }
 
     /**
-     * Sets a new priceLevel
+     * Sets a new priceLevel.
      *
-     * @param \Pohoda\Type\RefType $priceLevel
      * @return self
      */
     public function setPriceLevel(\Pohoda\Type\RefType $priceLevel)
     {
         $this->priceLevel = $priceLevel;
+
         return $this;
     }
 }

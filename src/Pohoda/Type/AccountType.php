@@ -1,42 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing AccountType
+ * Class representing AccountType.
  *
  * Účet kam zaplatit.
  * XSD Type: accountType
  */
 class AccountType
 {
-    /**
-     * @var int $id
-     */
-    private $id = null;
+    private int $id = null;
+    private string $ids = null;
+    private string $accountNo = null;
+    private string $bankCode = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
-     * @var string $ids
-     */
-    private $ids = null;
-
-    /**
-     * @var string $accountNo
-     */
-    private $accountNo = null;
-
-    /**
-     * @var string $bankCode
-     */
-    private $bankCode = null;
-
-    /**
-     * @var \Pohoda\Type\ExtIdType $extId
-     */
-    private $extId = null;
-
-    /**
-     * Gets as id
+     * Gets as id.
      *
      * @return int
      */
@@ -46,19 +40,21 @@ class AccountType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as ids
+     * Gets as ids.
      *
      * @return string
      */
@@ -68,19 +64,21 @@ class AccountType
     }
 
     /**
-     * Sets a new ids
+     * Sets a new ids.
      *
      * @param string $ids
+     *
      * @return self
      */
     public function setIds($ids)
     {
         $this->ids = $ids;
+
         return $this;
     }
 
     /**
-     * Gets as accountNo
+     * Gets as accountNo.
      *
      * @return string
      */
@@ -90,19 +88,21 @@ class AccountType
     }
 
     /**
-     * Sets a new accountNo
+     * Sets a new accountNo.
      *
      * @param string $accountNo
+     *
      * @return self
      */
     public function setAccountNo($accountNo)
     {
         $this->accountNo = $accountNo;
+
         return $this;
     }
 
     /**
-     * Gets as bankCode
+     * Gets as bankCode.
      *
      * @return string
      */
@@ -112,19 +112,21 @@ class AccountType
     }
 
     /**
-     * Sets a new bankCode
+     * Sets a new bankCode.
      *
      * @param string $bankCode
+     *
      * @return self
      */
     public function setBankCode($bankCode)
     {
         $this->bankCode = $bankCode;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * @return \Pohoda\Type\ExtIdType
      */
@@ -134,14 +136,14 @@ class AccountType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 }

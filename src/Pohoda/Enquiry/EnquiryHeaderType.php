@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Enquiry;
 
 /**
- * Class representing EnquiryHeaderType
- *
+ * Class representing EnquiryHeaderType.
  *
  * XSD Type: enquiryHeaderType
  */
@@ -12,181 +24,137 @@ class EnquiryHeaderType
 {
     /**
      * ID záznamu. Používá se při requestu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Typ poptávky.
-     *
-     * @var string $enquiryType
      */
-    private $enquiryType = null;
+    private string $enquiryType = null;
 
     /**
      * Evidenční číslo dokladu.
-     *
-     * @var \Pohoda\Type\NumberType $number
      */
-    private $number = null;
+    private \Pohoda\Type\NumberType $number = null;
 
     /**
      * Datum. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var \DateTime $date
      */
-    private $date = null;
+    private \DateTime $date = null;
 
     /**
      * Platnost.
-     *
-     * @var \DateTime $validTill
      */
-    private $validTill = null;
+    private \DateTime $validTill = null;
 
     /**
      * Text dokladu.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Zákazníkova adresa. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var \Pohoda\Type\AddressType $partnerIdentity
      */
-    private $partnerIdentity = null;
+    private \Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Osobní adresa.
-     *
-     * @var \Pohoda\Type\MyAddressType $myIdentity
      */
-    private $myIdentity = null;
+    private \Pohoda\Type\MyAddressType $myIdentity = null;
 
     /**
      * Cenová hladinu odběratele.
-     *
-     * @var \Pohoda\Type\RefType $priceLevel
      */
-    private $priceLevel = null;
+    private \Pohoda\Type\RefType $priceLevel = null;
 
     /**
      * Středisko.
-     *
-     * @var \Pohoda\Type\RefType $centre
      */
-    private $centre = null;
+    private \Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
-     *
-     * @var \Pohoda\Type\RefType $activity
      */
-    private $activity = null;
+    private \Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
-     *
-     * @var \Pohoda\Type\RefType $contract
      */
-    private $contract = null;
+    private \Pohoda\Type\RefType $contract = null;
 
     /**
      * Registrace DPH v EU.
-     *
-     * @var \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU
      */
-    private $regVATinEU = null;
+    private \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null;
 
     /**
      * Speciální režim registrace DPH v EU, režim One Stop Shop (OSS).
-     *
-     * @var \Pohoda\Type\MOSStypeType $mOSS
      */
-    private $mOSS = null;
+    private \Pohoda\Type\MOSStypeType $mOSS = null;
 
     /**
      * Důkazní prostředky (OSS).
      *
-     * @var string[] $evidentiaryResourcesMOSS
+     * @var string[]
      */
-    private $evidentiaryResourcesMOSS = null;
+    private array $evidentiaryResourcesMOSS = null;
 
     /**
      * Vyřízeno. Používá se jen při exportu dokladu.
-     *
-     * @var string $isExecuted
      */
-    private $isExecuted = null;
+    private string $isExecuted = null;
 
     /**
      * Podrobnosti.
-     *
-     * @var string $details
      */
-    private $details = null;
+    private string $details = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Interní poznámka.
-     *
-     * @var string $intNote
      */
-    private $intNote = null;
+    private string $intNote = null;
 
     /**
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
-     *
-     * @var string $histRate
      */
-    private $histRate = null;
+    private string $histRate = null;
 
     /**
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
-     *
-     * @var string $lock1
      */
-    private $lock1 = null;
+    private string $lock1 = null;
 
     /**
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
-     *
-     * @var string $lock2
      */
-    private $lock2 = null;
+    private string $lock2 = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
-     * @var \Pohoda\Type\LabelType[] $labels
+     * @var \Pohoda\Type\LabelType[]
      */
-    private $labels = null;
+    private array $labels = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu. Používá se při requestu.
      *
@@ -198,21 +166,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu. Používá se při requestu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as enquiryType
+     * Gets as enquiryType.
      *
      * Typ poptávky.
      *
@@ -224,21 +194,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new enquiryType
+     * Sets a new enquiryType.
      *
      * Typ poptávky.
      *
      * @param string $enquiryType
+     *
      * @return self
      */
     public function setEnquiryType($enquiryType)
     {
         $this->enquiryType = $enquiryType;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Evidenční číslo dokladu.
      *
@@ -250,21 +222,21 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Evidenční číslo dokladu.
      *
-     * @param \Pohoda\Type\NumberType $number
      * @return self
      */
     public function setNumber(?\Pohoda\Type\NumberType $number = null)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as date
+     * Gets as date.
      *
      * Datum. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -276,21 +248,21 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
      * Datum. Tento element je vyžadován při vytvoření dokladu.
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(?\DateTime $date = null)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as validTill
+     * Gets as validTill.
      *
      * Platnost.
      *
@@ -302,21 +274,21 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new validTill
+     * Sets a new validTill.
      *
      * Platnost.
      *
-     * @param \DateTime $validTill
      * @return self
      */
     public function setValidTill(?\DateTime $validTill = null)
     {
         $this->validTill = $validTill;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text dokladu.
      *
@@ -328,21 +300,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text dokladu.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as partnerIdentity
+     * Gets as partnerIdentity.
      *
      * Zákazníkova adresa. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -354,21 +328,21 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new partnerIdentity
+     * Sets a new partnerIdentity.
      *
      * Zákazníkova adresa. Tento element je vyžadován při vytvoření dokladu.
      *
-     * @param \Pohoda\Type\AddressType $partnerIdentity
      * @return self
      */
     public function setPartnerIdentity(?\Pohoda\Type\AddressType $partnerIdentity = null)
     {
         $this->partnerIdentity = $partnerIdentity;
+
         return $this;
     }
 
     /**
-     * Gets as myIdentity
+     * Gets as myIdentity.
      *
      * Osobní adresa.
      *
@@ -380,21 +354,21 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new myIdentity
+     * Sets a new myIdentity.
      *
      * Osobní adresa.
      *
-     * @param \Pohoda\Type\MyAddressType $myIdentity
      * @return self
      */
     public function setMyIdentity(?\Pohoda\Type\MyAddressType $myIdentity = null)
     {
         $this->myIdentity = $myIdentity;
+
         return $this;
     }
 
     /**
-     * Gets as priceLevel
+     * Gets as priceLevel.
      *
      * Cenová hladinu odběratele.
      *
@@ -406,21 +380,21 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new priceLevel
+     * Sets a new priceLevel.
      *
      * Cenová hladinu odběratele.
      *
-     * @param \Pohoda\Type\RefType $priceLevel
      * @return self
      */
     public function setPriceLevel(?\Pohoda\Type\RefType $priceLevel = null)
     {
         $this->priceLevel = $priceLevel;
+
         return $this;
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * Středisko.
      *
@@ -432,21 +406,21 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * Středisko.
      *
-     * @param \Pohoda\Type\RefType $centre
      * @return self
      */
     public function setCentre(?\Pohoda\Type\RefType $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 
     /**
-     * Gets as activity
+     * Gets as activity.
      *
      * Činnost.
      *
@@ -458,21 +432,21 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new activity
+     * Sets a new activity.
      *
      * Činnost.
      *
-     * @param \Pohoda\Type\RefType $activity
      * @return self
      */
     public function setActivity(?\Pohoda\Type\RefType $activity = null)
     {
         $this->activity = $activity;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * Zakázka.
      *
@@ -484,21 +458,21 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
      * Zakázka.
      *
-     * @param \Pohoda\Type\RefType $contract
      * @return self
      */
     public function setContract(?\Pohoda\Type\RefType $contract = null)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Gets as regVATinEU
+     * Gets as regVATinEU.
      *
      * Registrace DPH v EU.
      *
@@ -510,21 +484,21 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new regVATinEU
+     * Sets a new regVATinEU.
      *
      * Registrace DPH v EU.
      *
-     * @param \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU
      * @return self
      */
     public function setRegVATinEU(?\Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null)
     {
         $this->regVATinEU = $regVATinEU;
+
         return $this;
     }
 
     /**
-     * Gets as mOSS
+     * Gets as mOSS.
      *
      * Speciální režim registrace DPH v EU, režim One Stop Shop (OSS).
      *
@@ -536,39 +510,42 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new mOSS
+     * Sets a new mOSS.
      *
      * Speciální režim registrace DPH v EU, režim One Stop Shop (OSS).
      *
-     * @param \Pohoda\Type\MOSStypeType $mOSS
      * @return self
      */
     public function setMOSS(?\Pohoda\Type\MOSStypeType $mOSS = null)
     {
         $this->mOSS = $mOSS;
+
         return $this;
     }
 
     /**
-     * Adds as ids
+     * Adds as ids.
      *
      * Důkazní prostředky (OSS).
      *
-     * @return self
      * @param string $ids
+     *
+     * @return self
      */
     public function addToEvidentiaryResourcesMOSS($ids)
     {
         $this->evidentiaryResourcesMOSS[] = $ids;
+
         return $this;
     }
 
     /**
-     * isset evidentiaryResourcesMOSS
+     * isset evidentiaryResourcesMOSS.
      *
      * Důkazní prostředky (OSS).
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetEvidentiaryResourcesMOSS($index)
@@ -577,20 +554,19 @@ class EnquiryHeaderType
     }
 
     /**
-     * unset evidentiaryResourcesMOSS
+     * unset evidentiaryResourcesMOSS.
      *
      * Důkazní prostředky (OSS).
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetEvidentiaryResourcesMOSS($index)
+    public function unsetEvidentiaryResourcesMOSS($index): void
     {
         unset($this->evidentiaryResourcesMOSS[$index]);
     }
 
     /**
-     * Gets as evidentiaryResourcesMOSS
+     * Gets as evidentiaryResourcesMOSS.
      *
      * Důkazní prostředky (OSS).
      *
@@ -602,21 +578,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new evidentiaryResourcesMOSS
+     * Sets a new evidentiaryResourcesMOSS.
      *
      * Důkazní prostředky (OSS).
      *
      * @param string[] $evidentiaryResourcesMOSS
+     *
      * @return self
      */
-    public function setEvidentiaryResourcesMOSS(array $evidentiaryResourcesMOSS = null)
+    public function setEvidentiaryResourcesMOSS(?array $evidentiaryResourcesMOSS = null)
     {
         $this->evidentiaryResourcesMOSS = $evidentiaryResourcesMOSS;
+
         return $this;
     }
 
     /**
-     * Gets as isExecuted
+     * Gets as isExecuted.
      *
      * Vyřízeno. Používá se jen při exportu dokladu.
      *
@@ -628,21 +606,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new isExecuted
+     * Sets a new isExecuted.
      *
      * Vyřízeno. Používá se jen při exportu dokladu.
      *
      * @param string $isExecuted
+     *
      * @return self
      */
     public function setIsExecuted($isExecuted)
     {
         $this->isExecuted = $isExecuted;
+
         return $this;
     }
 
     /**
-     * Gets as details
+     * Gets as details.
      *
      * Podrobnosti.
      *
@@ -654,21 +634,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new details
+     * Sets a new details.
      *
      * Podrobnosti.
      *
      * @param string $details
+     *
      * @return self
      */
     public function setDetails($details)
     {
         $this->details = $details;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -680,21 +662,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as intNote
+     * Gets as intNote.
      *
      * Interní poznámka.
      *
@@ -706,21 +690,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new intNote
+     * Sets a new intNote.
      *
      * Interní poznámka.
      *
      * @param string $intNote
+     *
      * @return self
      */
     public function setIntNote($intNote)
     {
         $this->intNote = $intNote;
+
         return $this;
     }
 
     /**
-     * Gets as histRate
+     * Gets as histRate.
      *
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
      *
@@ -732,21 +718,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new histRate
+     * Sets a new histRate.
      *
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
      *
      * @param string $histRate
+     *
      * @return self
      */
     public function setHistRate($histRate)
     {
         $this->histRate = $histRate;
+
         return $this;
     }
 
     /**
-     * Gets as lock1
+     * Gets as lock1.
      *
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      *
@@ -758,21 +746,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new lock1
+     * Sets a new lock1.
      *
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      *
      * @param string $lock1
+     *
      * @return self
      */
     public function setLock1($lock1)
     {
         $this->lock1 = $lock1;
+
         return $this;
     }
 
     /**
-     * Gets as lock2
+     * Gets as lock2.
      *
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      *
@@ -784,21 +774,23 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new lock2
+     * Sets a new lock2.
      *
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      *
      * @param string $lock2
+     *
      * @return self
      */
     public function setLock2($lock2)
     {
         $this->lock2 = $lock2;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -810,39 +802,42 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as label
+     * Adds as label.
      *
      * Štítky záznamu.
      *
      * @return self
-     * @param \Pohoda\Type\LabelType $label
      */
     public function addToLabels(\Pohoda\Type\LabelType $label)
     {
         $this->labels[] = $label;
+
         return $this;
     }
 
     /**
-     * isset labels
+     * isset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLabels($index)
@@ -851,20 +846,19 @@ class EnquiryHeaderType
     }
 
     /**
-     * unset labels
+     * unset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLabels($index)
+    public function unsetLabels($index): void
     {
         unset($this->labels[$index]);
     }
 
     /**
-     * Gets as labels
+     * Gets as labels.
      *
      * Štítky záznamu.
      *
@@ -876,39 +870,42 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new labels
+     * Sets a new labels.
      *
      * Štítky záznamu.
      *
      * @param \Pohoda\Type\LabelType[] $labels
+     *
      * @return self
      */
-    public function setLabels(array $labels = null)
+    public function setLabels(?array $labels = null)
     {
         $this->labels = $labels;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -917,20 +914,19 @@ class EnquiryHeaderType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -942,16 +938,18 @@ class EnquiryHeaderType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

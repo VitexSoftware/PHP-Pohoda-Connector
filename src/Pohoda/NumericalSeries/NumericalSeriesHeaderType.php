@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\NumericalSeries;
 
 /**
- * Class representing NumericalSeriesHeaderType
- *
+ * Class representing NumericalSeriesHeaderType.
  *
  * XSD Type: numericalSeriesHeaderType
  */
@@ -12,126 +24,94 @@ class NumericalSeriesHeaderType
 {
     /**
      * ID záznamu (pouze pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Prefix číselné řady.
-     *
-     * @var string $prefix
      */
-    private $prefix = null;
+    private string $prefix = null;
 
     /**
      * Číslo.
-     *
-     * @var string $number
      */
-    private $number = null;
+    private string $number = null;
 
     /**
      * Nejvyšší číslo v dané číselné řadě (pouze pro export).
-     *
-     * @var string $topNumber
      */
-    private $topNumber = null;
+    private string $topNumber = null;
 
     /**
      * Název (popis).
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Agenda.
-     *
-     * @var string $agenda
      */
-    private $agenda = null;
+    private string $agenda = null;
 
     /**
      * Typ dokladu. Tento element je vyžadován při vytvoření číselné řady pro agendu, které má více typů dokladů.
-     *
-     * @var string $typeOfDocument
      */
-    private $typeOfDocument = null;
+    private string $typeOfDocument = null;
 
     /**
      * Pokladna. Tento element je vyžadován při vytvoření číselné řady pro agendu "Pokladna".
-     *
-     * @var \Pohoda\Type\RefType $cashAccount
      */
-    private $cashAccount = null;
+    private \Pohoda\Type\RefType $cashAccount = null;
 
     /**
      * Kasa. Tento element je vyžadován při vytvoření číselné řady pro agendu "Prodejky".
-     *
-     * @var \Pohoda\Type\RefType $cashbox
      */
-    private $cashbox = null;
+    private \Pohoda\Type\RefType $cashbox = null;
 
     /**
      * Období plastnosti číselné řady.
-     *
-     * @var string $period
      */
-    private $period = null;
+    private string $period = null;
 
     /**
      * Období plastnosti účetní jednotky.
-     *
-     * @var \Pohoda\NumericalSeries\PeriodAccountUnitType $periodAccountUnit
      */
-    private $periodAccountUnit = null;
+    private \Pohoda\NumericalSeries\PeriodAccountUnitType $periodAccountUnit = null;
 
     /**
      * Jednotka PZD. Nastavení vlastníka číselné řady v režimu „Pobočkové zpracování dat“.
-     *
-     * @var \Pohoda\Type\RefType $unitPZD
      */
-    private $unitPZD = null;
+    private \Pohoda\Type\RefType $unitPZD = null;
 
     /**
      * Rok běžného nebo přechodné období. V případě, že ještě nedošlo k přepnutí přechodného období, řada do následujícího období se nenaimportuje.
-     *
-     * @var int $year
      */
-    private $year = null;
+    private int $year = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu (pouze pro export).
      *
@@ -143,21 +123,23 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu (pouze pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -170,22 +152,22 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as prefix
+     * Gets as prefix.
      *
      * Prefix číselné řady.
      *
@@ -197,21 +179,23 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new prefix
+     * Sets a new prefix.
      *
      * Prefix číselné řady.
      *
      * @param string $prefix
+     *
      * @return self
      */
     public function setPrefix($prefix)
     {
         $this->prefix = $prefix;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Číslo.
      *
@@ -223,21 +207,23 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Číslo.
      *
      * @param string $number
+     *
      * @return self
      */
     public function setNumber($number)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as topNumber
+     * Gets as topNumber.
      *
      * Nejvyšší číslo v dané číselné řadě (pouze pro export).
      *
@@ -249,21 +235,23 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new topNumber
+     * Sets a new topNumber.
      *
      * Nejvyšší číslo v dané číselné řadě (pouze pro export).
      *
      * @param string $topNumber
+     *
      * @return self
      */
     public function setTopNumber($topNumber)
     {
         $this->topNumber = $topNumber;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název (popis).
      *
@@ -275,21 +263,23 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název (popis).
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as agenda
+     * Gets as agenda.
      *
      * Agenda.
      *
@@ -301,21 +291,23 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new agenda
+     * Sets a new agenda.
      *
      * Agenda.
      *
      * @param string $agenda
+     *
      * @return self
      */
     public function setAgenda($agenda)
     {
         $this->agenda = $agenda;
+
         return $this;
     }
 
     /**
-     * Gets as typeOfDocument
+     * Gets as typeOfDocument.
      *
      * Typ dokladu. Tento element je vyžadován při vytvoření číselné řady pro agendu, které má více typů dokladů.
      *
@@ -327,21 +319,23 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new typeOfDocument
+     * Sets a new typeOfDocument.
      *
      * Typ dokladu. Tento element je vyžadován při vytvoření číselné řady pro agendu, které má více typů dokladů.
      *
      * @param string $typeOfDocument
+     *
      * @return self
      */
     public function setTypeOfDocument($typeOfDocument)
     {
         $this->typeOfDocument = $typeOfDocument;
+
         return $this;
     }
 
     /**
-     * Gets as cashAccount
+     * Gets as cashAccount.
      *
      * Pokladna. Tento element je vyžadován při vytvoření číselné řady pro agendu "Pokladna".
      *
@@ -353,21 +347,21 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new cashAccount
+     * Sets a new cashAccount.
      *
      * Pokladna. Tento element je vyžadován při vytvoření číselné řady pro agendu "Pokladna".
      *
-     * @param \Pohoda\Type\RefType $cashAccount
      * @return self
      */
     public function setCashAccount(?\Pohoda\Type\RefType $cashAccount = null)
     {
         $this->cashAccount = $cashAccount;
+
         return $this;
     }
 
     /**
-     * Gets as cashbox
+     * Gets as cashbox.
      *
      * Kasa. Tento element je vyžadován při vytvoření číselné řady pro agendu "Prodejky".
      *
@@ -379,21 +373,21 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new cashbox
+     * Sets a new cashbox.
      *
      * Kasa. Tento element je vyžadován při vytvoření číselné řady pro agendu "Prodejky".
      *
-     * @param \Pohoda\Type\RefType $cashbox
      * @return self
      */
     public function setCashbox(?\Pohoda\Type\RefType $cashbox = null)
     {
         $this->cashbox = $cashbox;
+
         return $this;
     }
 
     /**
-     * Gets as period
+     * Gets as period.
      *
      * Období plastnosti číselné řady.
      *
@@ -405,21 +399,23 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new period
+     * Sets a new period.
      *
      * Období plastnosti číselné řady.
      *
      * @param string $period
+     *
      * @return self
      */
     public function setPeriod($period)
     {
         $this->period = $period;
+
         return $this;
     }
 
     /**
-     * Gets as periodAccountUnit
+     * Gets as periodAccountUnit.
      *
      * Období plastnosti účetní jednotky.
      *
@@ -431,21 +427,21 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new periodAccountUnit
+     * Sets a new periodAccountUnit.
      *
      * Období plastnosti účetní jednotky.
      *
-     * @param \Pohoda\NumericalSeries\PeriodAccountUnitType $periodAccountUnit
      * @return self
      */
     public function setPeriodAccountUnit(?\Pohoda\NumericalSeries\PeriodAccountUnitType $periodAccountUnit = null)
     {
         $this->periodAccountUnit = $periodAccountUnit;
+
         return $this;
     }
 
     /**
-     * Gets as unitPZD
+     * Gets as unitPZD.
      *
      * Jednotka PZD. Nastavení vlastníka číselné řady v režimu „Pobočkové zpracování dat“.
      *
@@ -457,21 +453,21 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new unitPZD
+     * Sets a new unitPZD.
      *
      * Jednotka PZD. Nastavení vlastníka číselné řady v režimu „Pobočkové zpracování dat“.
      *
-     * @param \Pohoda\Type\RefType $unitPZD
      * @return self
      */
     public function setUnitPZD(?\Pohoda\Type\RefType $unitPZD = null)
     {
         $this->unitPZD = $unitPZD;
+
         return $this;
     }
 
     /**
-     * Gets as year
+     * Gets as year.
      *
      * Rok běžného nebo přechodné období. V případě, že ještě nedošlo k přepnutí přechodného období, řada do následujícího období se nenaimportuje.
      *
@@ -483,21 +479,23 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new year
+     * Sets a new year.
      *
      * Rok běžného nebo přechodné období. V případě, že ještě nedošlo k přepnutí přechodného období, řada do následujícího období se nenaimportuje.
      *
      * @param int $year
+     *
      * @return self
      */
     public function setYear($year)
     {
         $this->year = $year;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -509,21 +507,23 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -535,39 +535,42 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -576,20 +579,19 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -601,16 +603,18 @@ class NumericalSeriesHeaderType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

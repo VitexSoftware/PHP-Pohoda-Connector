@@ -1,19 +1,29 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\MKasa\ConfigurationType;
 
 /**
- * Class representing GlobalSettingsAType
+ * Class representing GlobalSettingsAType.
  */
 class GlobalSettingsAType
 {
-    /**
-     * @var \Pohoda\Archive\Archive $archive
-     */
-    private $archive = null;
+    private \Pohoda\Archive\Archive $archive = null;
 
     /**
-     * Gets as archive
+     * Gets as archive.
      *
      * @return \Pohoda\Archive\Archive
      */
@@ -23,14 +33,14 @@ class GlobalSettingsAType
     }
 
     /**
-     * Sets a new archive
+     * Sets a new archive.
      *
-     * @param \Pohoda\Archive\Archive $archive
      * @return self
      */
     public function setArchive(\Pohoda\Archive\Archive $archive)
     {
         $this->archive = $archive;
+
         return $this;
     }
 }

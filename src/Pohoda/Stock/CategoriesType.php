@@ -1,37 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing CategoriesType
- *
+ * Class representing CategoriesType.
  *
  * XSD Type: categoriesType
  */
 class CategoriesType
 {
     /**
-     * @var int[] $idCategory
+     * @var int[]
      */
-    private $idCategory = [
+    private array $idCategory = [
     ];
 
     /**
-     * Adds as idCategory
+     * Adds as idCategory.
+     *
+     * @param int $idCategory
      *
      * @return self
-     * @param int $idCategory
      */
     public function addToIdCategory($idCategory)
     {
         $this->idCategory[] = $idCategory;
+
         return $this;
     }
 
     /**
-     * isset idCategory
+     * isset idCategory.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetIdCategory($index)
@@ -40,18 +55,17 @@ class CategoriesType
     }
 
     /**
-     * unset idCategory
+     * unset idCategory.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetIdCategory($index)
+    public function unsetIdCategory($index): void
     {
         unset($this->idCategory[$index]);
     }
 
     /**
-     * Gets as idCategory
+     * Gets as idCategory.
      *
      * @return int[]
      */
@@ -61,14 +75,16 @@ class CategoriesType
     }
 
     /**
-     * Sets a new idCategory
+     * Sets a new idCategory.
      *
      * @param int[] $idCategory
+     *
      * @return self
      */
-    public function setIdCategory(array $idCategory = null)
+    public function setIdCategory(?array $idCategory = null)
     {
         $this->idCategory = $idCategory;
+
         return $this;
     }
 }

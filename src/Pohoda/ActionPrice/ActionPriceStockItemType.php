@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ActionPrice;
 
 /**
- * Class representing ActionPriceStockItemType
- *
+ * Class representing ActionPriceStockItemType.
  *
  * XSD Type: actionPriceStockItemType
  */
@@ -12,41 +24,31 @@ class ActionPriceStockItemType
 {
     /**
      * Skladová zásoba.
-     *
-     * @var \Pohoda\ActionPrice\StockType $stock
      */
-    private $stock = null;
+    private \Pohoda\ActionPrice\StockType $stock = null;
 
     /**
      * Název.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Členění.
-     *
-     * @var \Pohoda\Type\RefTypeStorageType $storage
      */
-    private $storage = null;
+    private \Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Původní cena skladové zásoby.
-     *
-     * @var \Pohoda\ActionPrice\DefaultPriceStockType $defaultPriceStock
      */
-    private $defaultPriceStock = null;
+    private \Pohoda\ActionPrice\DefaultPriceStockType $defaultPriceStock = null;
 
     /**
      * Akční cena skladové zásoby.
-     *
-     * @var \Pohoda\ActionPrice\ActionPriceStockType $actionPriceStock
      */
-    private $actionPriceStock = null;
+    private \Pohoda\ActionPrice\ActionPriceStockType $actionPriceStock = null;
 
     /**
-     * Gets as stock
+     * Gets as stock.
      *
      * Skladová zásoba.
      *
@@ -58,21 +60,21 @@ class ActionPriceStockItemType
     }
 
     /**
-     * Sets a new stock
+     * Sets a new stock.
      *
      * Skladová zásoba.
      *
-     * @param \Pohoda\ActionPrice\StockType $stock
      * @return self
      */
     public function setStock(?\Pohoda\ActionPrice\StockType $stock = null)
     {
         $this->stock = $stock;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Název.
      *
@@ -84,21 +86,23 @@ class ActionPriceStockItemType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Název.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as storage
+     * Gets as storage.
      *
      * Členění.
      *
@@ -110,21 +114,21 @@ class ActionPriceStockItemType
     }
 
     /**
-     * Sets a new storage
+     * Sets a new storage.
      *
      * Členění.
      *
-     * @param \Pohoda\Type\RefTypeStorageType $storage
      * @return self
      */
     public function setStorage(?\Pohoda\Type\RefTypeStorageType $storage = null)
     {
         $this->storage = $storage;
+
         return $this;
     }
 
     /**
-     * Gets as defaultPriceStock
+     * Gets as defaultPriceStock.
      *
      * Původní cena skladové zásoby.
      *
@@ -136,21 +140,21 @@ class ActionPriceStockItemType
     }
 
     /**
-     * Sets a new defaultPriceStock
+     * Sets a new defaultPriceStock.
      *
      * Původní cena skladové zásoby.
      *
-     * @param \Pohoda\ActionPrice\DefaultPriceStockType $defaultPriceStock
      * @return self
      */
     public function setDefaultPriceStock(?\Pohoda\ActionPrice\DefaultPriceStockType $defaultPriceStock = null)
     {
         $this->defaultPriceStock = $defaultPriceStock;
+
         return $this;
     }
 
     /**
-     * Gets as actionPriceStock
+     * Gets as actionPriceStock.
      *
      * Akční cena skladové zásoby.
      *
@@ -162,16 +166,16 @@ class ActionPriceStockItemType
     }
 
     /**
-     * Sets a new actionPriceStock
+     * Sets a new actionPriceStock.
      *
      * Akční cena skladové zásoby.
      *
-     * @param \Pohoda\ActionPrice\ActionPriceStockType $actionPriceStock
      * @return self
      */
     public function setActionPriceStock(?\Pohoda\ActionPrice\ActionPriceStockType $actionPriceStock = null)
     {
         $this->actionPriceStock = $actionPriceStock;
+
         return $this;
     }
 }

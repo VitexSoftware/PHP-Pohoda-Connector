@@ -1,27 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Establishment;
 
 /**
- * Class representing EstablishmentType
- *
+ * Class representing EstablishmentType.
  *
  * XSD Type: establishmentType
  */
 class EstablishmentType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \Pohoda\Establishment\EstablishmentHeaderType $establishmentHeader = null;
 
     /**
-     * @var \Pohoda\Establishment\EstablishmentHeaderType $establishmentHeader
-     */
-    private $establishmentHeader = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -31,19 +36,21 @@ class EstablishmentType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as establishmentHeader
+     * Gets as establishmentHeader.
      *
      * @return \Pohoda\Establishment\EstablishmentHeaderType
      */
@@ -53,14 +60,14 @@ class EstablishmentType
     }
 
     /**
-     * Sets a new establishmentHeader
+     * Sets a new establishmentHeader.
      *
-     * @param \Pohoda\Establishment\EstablishmentHeaderType $establishmentHeader
      * @return self
      */
     public function setEstablishmentHeader(?\Pohoda\Establishment\EstablishmentHeaderType $establishmentHeader = null)
     {
         $this->establishmentHeader = $establishmentHeader;
+
         return $this;
     }
 }

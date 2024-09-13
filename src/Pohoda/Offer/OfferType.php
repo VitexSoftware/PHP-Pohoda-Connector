@@ -1,44 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Offer;
 
 /**
- * Class representing OfferType
- *
+ * Class representing OfferType.
  *
  * XSD Type: offerType
  */
 class OfferType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
-
-    /**
-     * @var \Pohoda\Offer\OfferHeaderType $offerHeader
-     */
-    private $offerHeader = null;
-
-    /**
-     * @var \Pohoda\Offer\OfferDetailType $offerDetail
-     */
-    private $offerDetail = null;
-
-    /**
-     * @var \Pohoda\Offer\OfferSummaryType $offerSummary
-     */
-    private $offerSummary = null;
+    private string $version = null;
+    private \Pohoda\Offer\OfferHeaderType $offerHeader = null;
+    private \Pohoda\Offer\OfferDetailType $offerDetail = null;
+    private \Pohoda\Offer\OfferSummaryType $offerSummary = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -48,19 +45,21 @@ class OfferType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as offerHeader
+     * Gets as offerHeader.
      *
      * @return \Pohoda\Offer\OfferHeaderType
      */
@@ -70,19 +69,19 @@ class OfferType
     }
 
     /**
-     * Sets a new offerHeader
+     * Sets a new offerHeader.
      *
-     * @param \Pohoda\Offer\OfferHeaderType $offerHeader
      * @return self
      */
     public function setOfferHeader(\Pohoda\Offer\OfferHeaderType $offerHeader)
     {
         $this->offerHeader = $offerHeader;
+
         return $this;
     }
 
     /**
-     * Gets as offerDetail
+     * Gets as offerDetail.
      *
      * @return \Pohoda\Offer\OfferDetailType
      */
@@ -92,19 +91,19 @@ class OfferType
     }
 
     /**
-     * Sets a new offerDetail
+     * Sets a new offerDetail.
      *
-     * @param \Pohoda\Offer\OfferDetailType $offerDetail
      * @return self
      */
     public function setOfferDetail(\Pohoda\Offer\OfferDetailType $offerDetail)
     {
         $this->offerDetail = $offerDetail;
+
         return $this;
     }
 
     /**
-     * Gets as offerSummary
+     * Gets as offerSummary.
      *
      * @return \Pohoda\Offer\OfferSummaryType
      */
@@ -114,37 +113,38 @@ class OfferType
     }
 
     /**
-     * Sets a new offerSummary
+     * Sets a new offerSummary.
      *
-     * @param \Pohoda\Offer\OfferSummaryType $offerSummary
      * @return self
      */
     public function setOfferSummary(\Pohoda\Offer\OfferSummaryType $offerSummary)
     {
         $this->offerSummary = $offerSummary;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -153,20 +153,19 @@ class OfferType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -178,16 +177,18 @@ class OfferType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
     public function setPrint(array $print)
     {
         $this->print = $print;
+
         return $this;
     }
 }

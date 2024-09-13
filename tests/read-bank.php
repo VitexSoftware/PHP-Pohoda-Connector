@@ -1,20 +1,29 @@
 <?php
+
+declare(strict_types=1);
+
 /**
- * PHPmPohoda - connection checek tool
+ * This file is part of the PHP-Pohoda-Connector package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020-2023 Vitex Software
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace tests;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__ . '/.env');
+require_once __DIR__.'/../vendor/autoload.php';
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__.'/.env');
+
 if (\Ease\Shared::cfg('EASE_LOGGER', false) === false) {
-    define('EASE_LOGGER', 'console');
+    \define('EASE_LOGGER', 'console');
 }
 
-$client = new \mServer\Client(null,['agenda'=>'bank']);
+$client = new \mServer\Client(null, ['agenda' => 'bank']);
+
 if (\Ease\Shared::cfg('APP_DEBUG')) {
     $client->logBanner();
 }
@@ -37,29 +46,24 @@ $dataPack->setIco('12345678');
 $dataPack->setId(time());
 $dataPack->addToDataPackItem($dataPackItem);
 
+$serializer = \JMS\Serializer\SerializerBuilder::create()->setPropertyNamingStrategy(new \JMS\Serializer\Naming\IdenticalPropertyNamingStrategy())->addMetadataDir(\dirname(__DIR__).'/metadata', 'Pohoda')->build();
 
-$serializer = \JMS\Serializer\SerializerBuilder::create()->setPropertyNamingStrategy( new \JMS\Serializer\Naming\IdenticalPropertyNamingStrategy())->addMetadataDir(dirname(__DIR__).'/metadata','Pohoda')->build();
-
-
-$xmlContent = $serializer->serialize($dataPack,'xml');
+$xmlContent = $serializer->serialize($dataPack, 'xml');
 
 echo $xmlContent;
 
-//$response = $client->sendRequest($xmlContent);
+// $response = $client->sendRequest($xmlContent);
 //
-//file_put_contents('bank.xml', $response);
+// file_put_contents('bank.xml', $response);
 //
-//print_r($response);
+// print_r($response);
 
+// $response2 = $client->sendRequest(file_get_contents('getBank.xml'));
 
-//$response2 = $client->sendRequest(file_get_contents('getBank.xml'));
+// $bankResponse = $serializer->deserialize($response2, \Pohoda\Response\ResponsePack::class ,'xml');
 
-//$bankResponse = $serializer->deserialize($response2, \Pohoda\Response\ResponsePack::class ,'xml');
+// file_put_contents('bank2.xml', $response2);
 
+// $bankResponse = $client->getColumnsFromPohoda();
 
-//file_put_contents('bank2.xml', $response2);
-
-
-//$bankResponse = $client->getColumnsFromPohoda();
-
-//print_r($bankResponse);
+// print_r($bankResponse);

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing DeleteOrderType
- *
+ * Class representing DeleteOrderType.
  *
  * XSD Type: deleteOrderType
  */
@@ -12,13 +24,11 @@ class DeleteOrderType
 {
     /**
      * Filtr pro výběr dokladu ke smazání.
-     *
-     * @var \Pohoda\Filter\FilterDocsDeleteType $filter
      */
-    private $filter = null;
+    private \Pohoda\Filter\FilterDocsDeleteType $filter = null;
 
     /**
-     * Gets as filter
+     * Gets as filter.
      *
      * Filtr pro výběr dokladu ke smazání.
      *
@@ -30,16 +40,16 @@ class DeleteOrderType
     }
 
     /**
-     * Sets a new filter
+     * Sets a new filter.
      *
      * Filtr pro výběr dokladu ke smazání.
      *
-     * @param \Pohoda\Filter\FilterDocsDeleteType $filter
      * @return self
      */
     public function setFilter(?\Pohoda\Filter\FilterDocsDeleteType $filter = null)
     {
         $this->filter = $filter;
+
         return $this;
     }
 }

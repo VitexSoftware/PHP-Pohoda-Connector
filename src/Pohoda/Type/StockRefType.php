@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing StockRefType
+ * Class representing StockRefType.
  *
  * Odkaz na skladovou položku. Vazbu lze provést přes elementy: ID, IDS, EAN, PLU.
  *  Použijeme-li více elementů současně, je brán pouze element s nejvyšší prioritou, ostatní se při zpracování ignorují.
@@ -16,45 +29,21 @@ class StockRefType
     /**
      * Změní nastavení vkládání svázaných zásob ze skladu k položce na doklad. Výchozí hodnota(pokud není atribut uveden) je dle nastavení
      *  programu POHODA. Při nastavení atributu: True – vkládá , False – nevkládá svázané zásoby.
-     *
-     * @var bool $insertAttachStock
      */
-    private $insertAttachStock = null;
+    private bool $insertAttachStock = null;
 
     /**
-     * Umožní ignorovat uživatelský filtr na sklady, které je možné v GUI Pohody nastavit v agendě SKLAD/SKLADY. Při nastavení atributu: True – použít nastavený filtr na sklad z programu POHODA, False – ignorovat nastavený filtr na sklad z programu POHODA.
-     *
-     * @var bool $applyUserSettingsFilterOnTheStore
+     * Umožní ignorovat uživatelský filtr na sklady, které je možné v GUI Pohody nastavit v agendě SKLAD/SKLADY. Při nastavení atributu: True – použít nastavený filtr na sklad z programu POHODA, False – ignorovat nastavený filtr na sklad z programu POHODA.
      */
-    private $applyUserSettingsFilterOnTheStore = null;
+    private bool $applyUserSettingsFilterOnTheStore = null;
+    private int $id = null;
+    private string $ids = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
+    private string $eAN = null;
+    private int $pLU = null;
 
     /**
-     * @var int $id
-     */
-    private $id = null;
-
-    /**
-     * @var string $ids
-     */
-    private $ids = null;
-
-    /**
-     * @var \Pohoda\Type\ExtIdType $extId
-     */
-    private $extId = null;
-
-    /**
-     * @var string $eAN
-     */
-    private $eAN = null;
-
-    /**
-     * @var int $pLU
-     */
-    private $pLU = null;
-
-    /**
-     * Gets as insertAttachStock
+     * Gets as insertAttachStock.
      *
      * Změní nastavení vkládání svázaných zásob ze skladu k položce na doklad. Výchozí hodnota(pokud není atribut uveden) je dle nastavení
      *  programu POHODA. Při nastavení atributu: True – vkládá , False – nevkládá svázané zásoby.
@@ -67,24 +56,26 @@ class StockRefType
     }
 
     /**
-     * Sets a new insertAttachStock
+     * Sets a new insertAttachStock.
      *
      * Změní nastavení vkládání svázaných zásob ze skladu k položce na doklad. Výchozí hodnota(pokud není atribut uveden) je dle nastavení
      *  programu POHODA. Při nastavení atributu: True – vkládá , False – nevkládá svázané zásoby.
      *
      * @param bool $insertAttachStock
+     *
      * @return self
      */
     public function setInsertAttachStock($insertAttachStock)
     {
         $this->insertAttachStock = $insertAttachStock;
+
         return $this;
     }
 
     /**
-     * Gets as applyUserSettingsFilterOnTheStore
+     * Gets as applyUserSettingsFilterOnTheStore.
      *
-     * Umožní ignorovat uživatelský filtr na sklady, které je možné v GUI Pohody nastavit v agendě SKLAD/SKLADY. Při nastavení atributu: True – použít nastavený filtr na sklad z programu POHODA, False – ignorovat nastavený filtr na sklad z programu POHODA.
+     * Umožní ignorovat uživatelský filtr na sklady, které je možné v GUI Pohody nastavit v agendě SKLAD/SKLADY. Při nastavení atributu: True – použít nastavený filtr na sklad z programu POHODA, False – ignorovat nastavený filtr na sklad z programu POHODA.
      *
      * @return bool
      */
@@ -94,21 +85,23 @@ class StockRefType
     }
 
     /**
-     * Sets a new applyUserSettingsFilterOnTheStore
+     * Sets a new applyUserSettingsFilterOnTheStore.
      *
-     * Umožní ignorovat uživatelský filtr na sklady, které je možné v GUI Pohody nastavit v agendě SKLAD/SKLADY. Při nastavení atributu: True – použít nastavený filtr na sklad z programu POHODA, False – ignorovat nastavený filtr na sklad z programu POHODA.
+     * Umožní ignorovat uživatelský filtr na sklady, které je možné v GUI Pohody nastavit v agendě SKLAD/SKLADY. Při nastavení atributu: True – použít nastavený filtr na sklad z programu POHODA, False – ignorovat nastavený filtr na sklad z programu POHODA.
      *
      * @param bool $applyUserSettingsFilterOnTheStore
+     *
      * @return self
      */
     public function setApplyUserSettingsFilterOnTheStore($applyUserSettingsFilterOnTheStore)
     {
         $this->applyUserSettingsFilterOnTheStore = $applyUserSettingsFilterOnTheStore;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * @return int
      */
@@ -118,19 +111,21 @@ class StockRefType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as ids
+     * Gets as ids.
      *
      * @return string
      */
@@ -140,19 +135,21 @@ class StockRefType
     }
 
     /**
-     * Sets a new ids
+     * Sets a new ids.
      *
      * @param string $ids
+     *
      * @return self
      */
     public function setIds($ids)
     {
         $this->ids = $ids;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * @return \Pohoda\Type\ExtIdType
      */
@@ -162,19 +159,19 @@ class StockRefType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as eAN
+     * Gets as eAN.
      *
      * @return string
      */
@@ -184,19 +181,21 @@ class StockRefType
     }
 
     /**
-     * Sets a new eAN
+     * Sets a new eAN.
      *
      * @param string $eAN
+     *
      * @return self
      */
     public function setEAN($eAN)
     {
         $this->eAN = $eAN;
+
         return $this;
     }
 
     /**
-     * Gets as pLU
+     * Gets as pLU.
      *
      * @return int
      */
@@ -206,14 +205,16 @@ class StockRefType
     }
 
     /**
-     * Sets a new pLU
+     * Sets a new pLU.
      *
      * @param int $pLU
+     *
      * @return self
      */
     public function setPLU($pLU)
     {
         $this->pLU = $pLU;
+
         return $this;
     }
 }

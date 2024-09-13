@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing FilterAdbsType
- *
+ * Class representing FilterAdbsType.
  *
  * XSD Type: filterAdbsType
  */
@@ -12,83 +24,61 @@ class FilterAdbsType
 {
     /**
      * Vybere záznam dle zadaného ID.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Vybere záznam dle zadaného externího identifikátoru.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Kontrola duplicity v poli Firma.
-     *
-     * @var string $company
      */
-    private $company = null;
+    private string $company = null;
 
     /**
      * Kontrola duplicity v poli Jméno.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Kontrola duplicity v poli Obec.
-     *
-     * @var string $city
      */
-    private $city = null;
+    private string $city = null;
 
     /**
      * Kontrola duplicity v poli Ulice.
-     *
-     * @var string $street
      */
-    private $street = null;
+    private string $street = null;
 
     /**
      * Kontrola duplicity v poli PSČ.
-     *
-     * @var string $zip
      */
-    private $zip = null;
+    private string $zip = null;
 
     /**
      * Kontrola duplicity v poli IČ.
-     *
-     * @var string $ico
      */
-    private $ico = null;
+    private string $ico = null;
 
     /**
      * Kontrola duplicity v poli DIČ.
-     *
-     * @var string $dic
      */
-    private $dic = null;
+    private string $dic = null;
 
     /**
      * Kontrola duplicity v poli Číslo.
-     *
-     * @var \Pohoda\Type\NumberADType $number
      */
-    private $number = null;
+    private \Pohoda\Type\NumberADType $number = null;
 
     /**
      * Vyexportuje záznamy změněné od zadaného data.Pouze pro export.
-     *
-     * @var \DateTime $lastChanges
      */
-    private $lastChanges = null;
+    private \DateTime $lastChanges = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Vybere záznam dle zadaného ID.
      *
@@ -100,21 +90,23 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Vybere záznam dle zadaného ID.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Vybere záznam dle zadaného externího identifikátoru.
      *
@@ -126,21 +118,21 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Vybere záznam dle zadaného externího identifikátoru.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as company
+     * Gets as company.
      *
      * Kontrola duplicity v poli Firma.
      *
@@ -152,21 +144,23 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new company
+     * Sets a new company.
      *
      * Kontrola duplicity v poli Firma.
      *
      * @param string $company
+     *
      * @return self
      */
     public function setCompany($company)
     {
         $this->company = $company;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Kontrola duplicity v poli Jméno.
      *
@@ -178,21 +172,23 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Kontrola duplicity v poli Jméno.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as city
+     * Gets as city.
      *
      * Kontrola duplicity v poli Obec.
      *
@@ -204,21 +200,23 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new city
+     * Sets a new city.
      *
      * Kontrola duplicity v poli Obec.
      *
      * @param string $city
+     *
      * @return self
      */
     public function setCity($city)
     {
         $this->city = $city;
+
         return $this;
     }
 
     /**
-     * Gets as street
+     * Gets as street.
      *
      * Kontrola duplicity v poli Ulice.
      *
@@ -230,21 +228,23 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new street
+     * Sets a new street.
      *
      * Kontrola duplicity v poli Ulice.
      *
      * @param string $street
+     *
      * @return self
      */
     public function setStreet($street)
     {
         $this->street = $street;
+
         return $this;
     }
 
     /**
-     * Gets as zip
+     * Gets as zip.
      *
      * Kontrola duplicity v poli PSČ.
      *
@@ -256,21 +256,23 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new zip
+     * Sets a new zip.
      *
      * Kontrola duplicity v poli PSČ.
      *
      * @param string $zip
+     *
      * @return self
      */
     public function setZip($zip)
     {
         $this->zip = $zip;
+
         return $this;
     }
 
     /**
-     * Gets as ico
+     * Gets as ico.
      *
      * Kontrola duplicity v poli IČ.
      *
@@ -282,21 +284,23 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new ico
+     * Sets a new ico.
      *
      * Kontrola duplicity v poli IČ.
      *
      * @param string $ico
+     *
      * @return self
      */
     public function setIco($ico)
     {
         $this->ico = $ico;
+
         return $this;
     }
 
     /**
-     * Gets as dic
+     * Gets as dic.
      *
      * Kontrola duplicity v poli DIČ.
      *
@@ -308,21 +312,23 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new dic
+     * Sets a new dic.
      *
      * Kontrola duplicity v poli DIČ.
      *
      * @param string $dic
+     *
      * @return self
      */
     public function setDic($dic)
     {
         $this->dic = $dic;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Kontrola duplicity v poli Číslo.
      *
@@ -334,21 +340,21 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Kontrola duplicity v poli Číslo.
      *
-     * @param \Pohoda\Type\NumberADType $number
      * @return self
      */
     public function setNumber(?\Pohoda\Type\NumberADType $number = null)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as lastChanges
+     * Gets as lastChanges.
      *
      * Vyexportuje záznamy změněné od zadaného data.Pouze pro export.
      *
@@ -360,16 +366,16 @@ class FilterAdbsType
     }
 
     /**
-     * Sets a new lastChanges
+     * Sets a new lastChanges.
      *
      * Vyexportuje záznamy změněné od zadaného data.Pouze pro export.
      *
-     * @param \DateTime $lastChanges
      * @return self
      */
     public function setLastChanges(?\DateTime $lastChanges = null)
     {
         $this->lastChanges = $lastChanges;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda;
 
 /**
- * Class representing LiquidationDetailType
- *
+ * Class representing LiquidationDetailType.
  *
  * XSD Type: liquidationDetailType
  */
@@ -12,27 +24,23 @@ class LiquidationDetailType
 {
     /**
      * Celkový výsledek likvidace.
-     *
-     * @var string $state
      */
-    private $state = null;
+    private string $state = null;
 
     /**
      * Popis likvidace.
-     *
-     * @var string $detail
      */
-    private $detail = null;
+    private string $detail = null;
 
     /**
      * Likvidované doklady.
      *
-     * @var \Pohoda\DocumentType[] $documents
+     * @var \Pohoda\DocumentType[]
      */
-    private $documents = null;
+    private array $documents = null;
 
     /**
-     * Gets as state
+     * Gets as state.
      *
      * Celkový výsledek likvidace.
      *
@@ -44,21 +52,23 @@ class LiquidationDetailType
     }
 
     /**
-     * Sets a new state
+     * Sets a new state.
      *
      * Celkový výsledek likvidace.
      *
      * @param string $state
+     *
      * @return self
      */
     public function setState($state)
     {
         $this->state = $state;
+
         return $this;
     }
 
     /**
-     * Gets as detail
+     * Gets as detail.
      *
      * Popis likvidace.
      *
@@ -70,39 +80,42 @@ class LiquidationDetailType
     }
 
     /**
-     * Sets a new detail
+     * Sets a new detail.
      *
      * Popis likvidace.
      *
      * @param string $detail
+     *
      * @return self
      */
     public function setDetail($detail)
     {
         $this->detail = $detail;
+
         return $this;
     }
 
     /**
-     * Adds as document
+     * Adds as document.
      *
      * Likvidované doklady.
      *
      * @return self
-     * @param \Pohoda\DocumentType $document
      */
     public function addToDocuments(\Pohoda\DocumentType $document)
     {
         $this->documents[] = $document;
+
         return $this;
     }
 
     /**
-     * isset documents
+     * isset documents.
      *
      * Likvidované doklady.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetDocuments($index)
@@ -111,20 +124,19 @@ class LiquidationDetailType
     }
 
     /**
-     * unset documents
+     * unset documents.
      *
      * Likvidované doklady.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetDocuments($index)
+    public function unsetDocuments($index): void
     {
         unset($this->documents[$index]);
     }
 
     /**
-     * Gets as documents
+     * Gets as documents.
      *
      * Likvidované doklady.
      *
@@ -136,16 +148,18 @@ class LiquidationDetailType
     }
 
     /**
-     * Sets a new documents
+     * Sets a new documents.
      *
      * Likvidované doklady.
      *
      * @param \Pohoda\DocumentType[] $documents
+     *
      * @return self
      */
-    public function setDocuments(array $documents = null)
+    public function setDocuments(?array $documents = null)
     {
         $this->documents = $documents;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ProductRequirement;
 
 /**
- * Class representing ProductRequirementHeaderType
- *
+ * Class representing ProductRequirementHeaderType.
  *
  * XSD Type: productRequirementHeaderType
  */
@@ -12,132 +24,100 @@ class ProductRequirementHeaderType
 {
     /**
      * ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Číslo dokladu.
-     *
-     * @var \Pohoda\Type\NumberType $number
      */
-    private $number = null;
+    private \Pohoda\Type\NumberType $number = null;
 
     /**
      * Datum výrobního požadavku. Pokud hodnota není uvedena použije se aktuální datum.
-     *
-     * @var \DateTime $date
      */
-    private $date = null;
+    private \DateTime $date = null;
 
     /**
      * Vyřídit do.
-     *
-     * @var \DateTime $dateTill
      */
-    private $dateTill = null;
+    private \DateTime $dateTill = null;
 
     /**
      * Text dokladu.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
-     * Zákazníkova adresa
-     *
-     * @var \Pohoda\Type\AddressType $partnerIdentity
+     * Zákazníkova adresa.
      */
-    private $partnerIdentity = null;
+    private \Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Zdrojové středisko.
-     *
-     * @var \Pohoda\Type\RefType $centreSource
      */
-    private $centreSource = null;
+    private \Pohoda\Type\RefType $centreSource = null;
 
     /**
      * Cílové středisko.
-     *
-     * @var \Pohoda\Type\RefType $centreDestination
      */
-    private $centreDestination = null;
+    private \Pohoda\Type\RefType $centreDestination = null;
 
     /**
      * Činnost.
-     *
-     * @var \Pohoda\Type\RefType $activity
      */
-    private $activity = null;
+    private \Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
-     *
-     * @var \Pohoda\Type\RefType $contract
      */
-    private $contract = null;
+    private \Pohoda\Type\RefType $contract = null;
 
     /**
      * Vyřízeno.
-     *
-     * @var string $isExecuted
      */
-    private $isExecuted = null;
+    private string $isExecuted = null;
 
     /**
      * Přeneseno (Vyrobeno). Pouze pro export.
-     *
-     * @var string $isProduced
      */
-    private $isProduced = null;
+    private string $isProduced = null;
 
     /**
      * Rezervováno.
-     *
-     * @var string $isReserved
      */
-    private $isReserved = null;
+    private string $isReserved = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Interní poznámka.
-     *
-     * @var string $intNote
      */
-    private $intNote = null;
+    private string $intNote = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
-     * @var \Pohoda\Type\LabelType[] $labels
+     * @var \Pohoda\Type\LabelType[]
      */
-    private $labels = null;
+    private array $labels = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu.
      *
@@ -149,21 +129,23 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Číslo dokladu.
      *
@@ -175,21 +157,21 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Číslo dokladu.
      *
-     * @param \Pohoda\Type\NumberType $number
      * @return self
      */
     public function setNumber(?\Pohoda\Type\NumberType $number = null)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as date
+     * Gets as date.
      *
      * Datum výrobního požadavku. Pokud hodnota není uvedena použije se aktuální datum.
      *
@@ -201,21 +183,21 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
      * Datum výrobního požadavku. Pokud hodnota není uvedena použije se aktuální datum.
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(?\DateTime $date = null)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as dateTill
+     * Gets as dateTill.
      *
      * Vyřídit do.
      *
@@ -227,21 +209,21 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new dateTill
+     * Sets a new dateTill.
      *
      * Vyřídit do.
      *
-     * @param \DateTime $dateTill
      * @return self
      */
     public function setDateTill(?\DateTime $dateTill = null)
     {
         $this->dateTill = $dateTill;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text dokladu.
      *
@@ -253,21 +235,23 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text dokladu.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as partnerIdentity
+     * Gets as partnerIdentity.
      *
      * Zákazníkova adresa
      *
@@ -279,21 +263,21 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new partnerIdentity
+     * Sets a new partnerIdentity.
      *
      * Zákazníkova adresa
      *
-     * @param \Pohoda\Type\AddressType $partnerIdentity
      * @return self
      */
     public function setPartnerIdentity(?\Pohoda\Type\AddressType $partnerIdentity = null)
     {
         $this->partnerIdentity = $partnerIdentity;
+
         return $this;
     }
 
     /**
-     * Gets as centreSource
+     * Gets as centreSource.
      *
      * Zdrojové středisko.
      *
@@ -305,21 +289,21 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new centreSource
+     * Sets a new centreSource.
      *
      * Zdrojové středisko.
      *
-     * @param \Pohoda\Type\RefType $centreSource
      * @return self
      */
     public function setCentreSource(?\Pohoda\Type\RefType $centreSource = null)
     {
         $this->centreSource = $centreSource;
+
         return $this;
     }
 
     /**
-     * Gets as centreDestination
+     * Gets as centreDestination.
      *
      * Cílové středisko.
      *
@@ -331,21 +315,21 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new centreDestination
+     * Sets a new centreDestination.
      *
      * Cílové středisko.
      *
-     * @param \Pohoda\Type\RefType $centreDestination
      * @return self
      */
     public function setCentreDestination(?\Pohoda\Type\RefType $centreDestination = null)
     {
         $this->centreDestination = $centreDestination;
+
         return $this;
     }
 
     /**
-     * Gets as activity
+     * Gets as activity.
      *
      * Činnost.
      *
@@ -357,21 +341,21 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new activity
+     * Sets a new activity.
      *
      * Činnost.
      *
-     * @param \Pohoda\Type\RefType $activity
      * @return self
      */
     public function setActivity(?\Pohoda\Type\RefType $activity = null)
     {
         $this->activity = $activity;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * Zakázka.
      *
@@ -383,21 +367,21 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
      * Zakázka.
      *
-     * @param \Pohoda\Type\RefType $contract
      * @return self
      */
     public function setContract(?\Pohoda\Type\RefType $contract = null)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Gets as isExecuted
+     * Gets as isExecuted.
      *
      * Vyřízeno.
      *
@@ -409,21 +393,23 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new isExecuted
+     * Sets a new isExecuted.
      *
      * Vyřízeno.
      *
      * @param string $isExecuted
+     *
      * @return self
      */
     public function setIsExecuted($isExecuted)
     {
         $this->isExecuted = $isExecuted;
+
         return $this;
     }
 
     /**
-     * Gets as isProduced
+     * Gets as isProduced.
      *
      * Přeneseno (Vyrobeno). Pouze pro export.
      *
@@ -435,21 +421,23 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new isProduced
+     * Sets a new isProduced.
      *
      * Přeneseno (Vyrobeno). Pouze pro export.
      *
      * @param string $isProduced
+     *
      * @return self
      */
     public function setIsProduced($isProduced)
     {
         $this->isProduced = $isProduced;
+
         return $this;
     }
 
     /**
-     * Gets as isReserved
+     * Gets as isReserved.
      *
      * Rezervováno.
      *
@@ -461,21 +449,23 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new isReserved
+     * Sets a new isReserved.
      *
      * Rezervováno.
      *
      * @param string $isReserved
+     *
      * @return self
      */
     public function setIsReserved($isReserved)
     {
         $this->isReserved = $isReserved;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -487,21 +477,23 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as intNote
+     * Gets as intNote.
      *
      * Interní poznámka.
      *
@@ -513,21 +505,23 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new intNote
+     * Sets a new intNote.
      *
      * Interní poznámka.
      *
      * @param string $intNote
+     *
      * @return self
      */
     public function setIntNote($intNote)
     {
         $this->intNote = $intNote;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -539,39 +533,42 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as label
+     * Adds as label.
      *
      * Štítky záznamu.
      *
      * @return self
-     * @param \Pohoda\Type\LabelType $label
      */
     public function addToLabels(\Pohoda\Type\LabelType $label)
     {
         $this->labels[] = $label;
+
         return $this;
     }
 
     /**
-     * isset labels
+     * isset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLabels($index)
@@ -580,20 +577,19 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * unset labels
+     * unset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLabels($index)
+    public function unsetLabels($index): void
     {
         unset($this->labels[$index]);
     }
 
     /**
-     * Gets as labels
+     * Gets as labels.
      *
      * Štítky záznamu.
      *
@@ -605,39 +601,42 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new labels
+     * Sets a new labels.
      *
      * Štítky záznamu.
      *
      * @param \Pohoda\Type\LabelType[] $labels
+     *
      * @return self
      */
-    public function setLabels(array $labels = null)
+    public function setLabels(?array $labels = null)
     {
         $this->labels = $labels;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -646,20 +645,19 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -671,16 +669,18 @@ class ProductRequirementHeaderType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

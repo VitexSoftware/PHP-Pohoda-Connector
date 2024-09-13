@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ListStock;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListStockType
- *
+ * Class representing ListStockType.
  *
  * XSD Type: listStockType
  */
 class ListStockType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Stock\StockType[] $stock
+     * @var \Pohoda\Stock\StockType[]
      */
-    private $stock = [
+    private array $stock = [
     ];
 
     /**
-     * Adds as stock
+     * Adds as stock.
      *
      * @return self
-     * @param \Pohoda\Stock\StockType $stock
      */
     public function addToStock(\Pohoda\Stock\StockType $stock)
     {
         $this->stock[] = $stock;
+
         return $this;
     }
 
     /**
-     * isset stock
+     * isset stock.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetStock($index)
@@ -42,18 +55,17 @@ class ListStockType extends ListVersionType
     }
 
     /**
-     * unset stock
+     * unset stock.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetStock($index)
+    public function unsetStock($index): void
     {
         unset($this->stock[$index]);
     }
 
     /**
-     * Gets as stock
+     * Gets as stock.
      *
      * @return \Pohoda\Stock\StockType[]
      */
@@ -63,14 +75,16 @@ class ListStockType extends ListVersionType
     }
 
     /**
-     * Sets a new stock
+     * Sets a new stock.
      *
      * @param \Pohoda\Stock\StockType[] $stock
+     *
      * @return self
      */
-    public function setStock(array $stock = null)
+    public function setStock(?array $stock = null)
     {
         $this->stock = $stock;
+
         return $this;
     }
 }

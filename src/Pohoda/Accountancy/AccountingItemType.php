@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Accountancy;
 
 /**
- * Class representing AccountingItemType
- *
+ * Class representing AccountingItemType.
  *
  * XSD Type: accountingItemType
  */
@@ -12,118 +24,88 @@ class AccountingItemType
 {
     /**
      * Používá se pouze při exportu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Zdroj dokladu.
-     *
-     * @var string $source
      */
-    private $source = null;
+    private string $source = null;
 
     /**
      * Evidenční číslo záznamu .
-     *
-     * @var \Pohoda\Type\NumberType $number
      */
-    private $number = null;
+    private \Pohoda\Type\NumberType $number = null;
 
     /**
      * Párový symbol. Používá se jen v účetnictví (dříve PU).
-     *
-     * @var string $symPar
      */
-    private $symPar = null;
+    private string $symPar = null;
 
     /**
      * Text zdrojového dokladu.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Kč.
-     *
-     * @var \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency
      */
-    private $homeCurrency = null;
+    private \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null;
 
     /**
      * Cizí měna.
-     *
-     * @var \Pohoda\Type\TypeCurrencyForeignType $foreignCurrency
      */
-    private $foreignCurrency = null;
+    private \Pohoda\Type\TypeCurrencyForeignType $foreignCurrency = null;
 
     /**
      * Zaúčtování.
-     *
-     * @var \Pohoda\Accountancy\AccountingType $accounting
      */
-    private $accounting = null;
+    private \Pohoda\Accountancy\AccountingType $accounting = null;
 
     /**
      * Zákazníkova adresa.
-     *
-     * @var \Pohoda\Type\AddressType $address
      */
-    private $address = null;
+    private \Pohoda\Type\AddressType $address = null;
 
     /**
      * Datum vystavení.
-     *
-     * @var \DateTime $date
      */
-    private $date = null;
+    private \DateTime $date = null;
 
     /**
      * Datum zdanitelného plnění / Datum odpočtu.
-     *
-     * @var \DateTime $dateTax
      */
-    private $dateTax = null;
+    private \DateTime $dateTax = null;
 
     /**
      * Středisko.
-     *
-     * @var \Pohoda\Type\RefType $centre
      */
-    private $centre = null;
+    private \Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
-     *
-     * @var \Pohoda\Type\RefType $activity
      */
-    private $activity = null;
+    private \Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
-     *
-     * @var \Pohoda\Type\RefType $contract
      */
-    private $contract = null;
+    private \Pohoda\Type\RefType $contract = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Používá se pouze při exportu.
      *
@@ -135,21 +117,23 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Používá se pouze při exportu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as source
+     * Gets as source.
      *
      * Zdroj dokladu.
      *
@@ -161,21 +145,23 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new source
+     * Sets a new source.
      *
      * Zdroj dokladu.
      *
      * @param string $source
+     *
      * @return self
      */
     public function setSource($source)
     {
         $this->source = $source;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Evidenční číslo záznamu .
      *
@@ -187,21 +173,21 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Evidenční číslo záznamu .
      *
-     * @param \Pohoda\Type\NumberType $number
      * @return self
      */
     public function setNumber(?\Pohoda\Type\NumberType $number = null)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as symPar
+     * Gets as symPar.
      *
      * Párový symbol. Používá se jen v účetnictví (dříve PU).
      *
@@ -213,21 +199,23 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new symPar
+     * Sets a new symPar.
      *
      * Párový symbol. Používá se jen v účetnictví (dříve PU).
      *
      * @param string $symPar
+     *
      * @return self
      */
     public function setSymPar($symPar)
     {
         $this->symPar = $symPar;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text zdrojového dokladu.
      *
@@ -239,21 +227,23 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text zdrojového dokladu.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as homeCurrency
+     * Gets as homeCurrency.
      *
      * Kč.
      *
@@ -265,21 +255,21 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new homeCurrency
+     * Sets a new homeCurrency.
      *
      * Kč.
      *
-     * @param \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency
      * @return self
      */
     public function setHomeCurrency(?\Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null)
     {
         $this->homeCurrency = $homeCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrency
+     * Gets as foreignCurrency.
      *
      * Cizí měna.
      *
@@ -291,21 +281,21 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new foreignCurrency
+     * Sets a new foreignCurrency.
      *
      * Cizí měna.
      *
-     * @param \Pohoda\Type\TypeCurrencyForeignType $foreignCurrency
      * @return self
      */
     public function setForeignCurrency(?\Pohoda\Type\TypeCurrencyForeignType $foreignCurrency = null)
     {
         $this->foreignCurrency = $foreignCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as accounting
+     * Gets as accounting.
      *
      * Zaúčtování.
      *
@@ -317,21 +307,21 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new accounting
+     * Sets a new accounting.
      *
      * Zaúčtování.
      *
-     * @param \Pohoda\Accountancy\AccountingType $accounting
      * @return self
      */
     public function setAccounting(?\Pohoda\Accountancy\AccountingType $accounting = null)
     {
         $this->accounting = $accounting;
+
         return $this;
     }
 
     /**
-     * Gets as address
+     * Gets as address.
      *
      * Zákazníkova adresa.
      *
@@ -343,21 +333,21 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new address
+     * Sets a new address.
      *
      * Zákazníkova adresa.
      *
-     * @param \Pohoda\Type\AddressType $address
      * @return self
      */
     public function setAddress(?\Pohoda\Type\AddressType $address = null)
     {
         $this->address = $address;
+
         return $this;
     }
 
     /**
-     * Gets as date
+     * Gets as date.
      *
      * Datum vystavení.
      *
@@ -369,21 +359,21 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
      * Datum vystavení.
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(?\DateTime $date = null)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as dateTax
+     * Gets as dateTax.
      *
      * Datum zdanitelného plnění / Datum odpočtu.
      *
@@ -395,21 +385,21 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new dateTax
+     * Sets a new dateTax.
      *
      * Datum zdanitelného plnění / Datum odpočtu.
      *
-     * @param \DateTime $dateTax
      * @return self
      */
     public function setDateTax(?\DateTime $dateTax = null)
     {
         $this->dateTax = $dateTax;
+
         return $this;
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * Středisko.
      *
@@ -421,21 +411,21 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * Středisko.
      *
-     * @param \Pohoda\Type\RefType $centre
      * @return self
      */
     public function setCentre(?\Pohoda\Type\RefType $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 
     /**
-     * Gets as activity
+     * Gets as activity.
      *
      * Činnost.
      *
@@ -447,21 +437,21 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new activity
+     * Sets a new activity.
      *
      * Činnost.
      *
-     * @param \Pohoda\Type\RefType $activity
      * @return self
      */
     public function setActivity(?\Pohoda\Type\RefType $activity = null)
     {
         $this->activity = $activity;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * Zakázka.
      *
@@ -473,21 +463,21 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
      * Zakázka.
      *
-     * @param \Pohoda\Type\RefType $contract
      * @return self
      */
     public function setContract(?\Pohoda\Type\RefType $contract = null)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -499,39 +489,42 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -540,20 +533,19 @@ class AccountingItemType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -565,16 +557,18 @@ class AccountingItemType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

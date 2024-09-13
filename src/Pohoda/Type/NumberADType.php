@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing NumberADType
- *
+ * Class representing NumberADType.
  *
  * XSD Type: numberADType
  */
@@ -12,25 +24,17 @@ class NumberADType
 {
     /**
      * Odkaz na číselnou řadu. Vyšší prioritu má element "id".
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Prefix číselné řady.
-     *
-     * @var string $ids
      */
-    private $ids = null;
+    private string $ids = null;
+    private \Pohoda\Type\NumberADType\NumberRequestedAType $numberRequested = null;
 
     /**
-     * @var \Pohoda\Type\NumberADType\NumberRequestedAType $numberRequested
-     */
-    private $numberRequested = null;
-
-    /**
-     * Gets as id
+     * Gets as id.
      *
      * Odkaz na číselnou řadu. Vyšší prioritu má element "id".
      *
@@ -42,21 +46,23 @@ class NumberADType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Odkaz na číselnou řadu. Vyšší prioritu má element "id".
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as ids
+     * Gets as ids.
      *
      * Prefix číselné řady.
      *
@@ -68,21 +74,23 @@ class NumberADType
     }
 
     /**
-     * Sets a new ids
+     * Sets a new ids.
      *
      * Prefix číselné řady.
      *
      * @param string $ids
+     *
      * @return self
      */
     public function setIds($ids)
     {
         $this->ids = $ids;
+
         return $this;
     }
 
     /**
-     * Gets as numberRequested
+     * Gets as numberRequested.
      *
      * @return \Pohoda\Type\NumberADType\NumberRequestedAType
      */
@@ -92,14 +100,14 @@ class NumberADType
     }
 
     /**
-     * Sets a new numberRequested
+     * Sets a new numberRequested.
      *
-     * @param \Pohoda\Type\NumberADType\NumberRequestedAType $numberRequested
      * @return self
      */
     public function setNumberRequested(?\Pohoda\Type\NumberADType\NumberRequestedAType $numberRequested = null)
     {
         $this->numberRequested = $numberRequested;
+
         return $this;
     }
 }

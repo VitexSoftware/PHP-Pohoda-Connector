@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Payment;
 
 /**
- * Class representing ForeignCurrencyType
- *
+ * Class representing ForeignCurrencyType.
  *
  * XSD Type: foreignCurrencyType
  */
@@ -12,41 +24,31 @@ class ForeignCurrencyType
 {
     /**
      * ID - odkaz na cizí měnu, IDS - kod měny.
-     *
-     * @var \Pohoda\Type\RefType $currency
      */
-    private $currency = null;
+    private \Pohoda\Type\RefType $currency = null;
 
     /**
      * Kurz pro přepočet cizí měny na české koruny.
-     *
-     * @var float $rate
      */
-    private $rate = null;
+    private float $rate = null;
 
     /**
      * Množství cizí měny pro kursový přepočet.
-     *
-     * @var int $amount
      */
-    private $amount = null;
+    private int $amount = null;
 
     /**
      * Nastavit kurz automaticky. Kurz je automaticky načten při prvním otevření účetní jednotky toho dne z agendy Kurzový lístek.
-     *
-     * @var string $rateAutomaticaly
      */
-    private $rateAutomaticaly = null;
+    private string $rateAutomaticaly = null;
 
     /**
      * Použít včerejší kurz. Při načtení kurzu použit vždy kurz zveřejněný ČNB předchozí den. Jen CZ verze.
-     *
-     * @var string $useYesterdayRate
      */
-    private $useYesterdayRate = null;
+    private string $useYesterdayRate = null;
 
     /**
-     * Gets as currency
+     * Gets as currency.
      *
      * ID - odkaz na cizí měnu, IDS - kod měny.
      *
@@ -58,21 +60,21 @@ class ForeignCurrencyType
     }
 
     /**
-     * Sets a new currency
+     * Sets a new currency.
      *
      * ID - odkaz na cizí měnu, IDS - kod měny.
      *
-     * @param \Pohoda\Type\RefType $currency
      * @return self
      */
     public function setCurrency(?\Pohoda\Type\RefType $currency = null)
     {
         $this->currency = $currency;
+
         return $this;
     }
 
     /**
-     * Gets as rate
+     * Gets as rate.
      *
      * Kurz pro přepočet cizí měny na české koruny.
      *
@@ -84,21 +86,23 @@ class ForeignCurrencyType
     }
 
     /**
-     * Sets a new rate
+     * Sets a new rate.
      *
      * Kurz pro přepočet cizí měny na české koruny.
      *
      * @param float $rate
+     *
      * @return self
      */
     public function setRate($rate)
     {
         $this->rate = $rate;
+
         return $this;
     }
 
     /**
-     * Gets as amount
+     * Gets as amount.
      *
      * Množství cizí měny pro kursový přepočet.
      *
@@ -110,21 +114,23 @@ class ForeignCurrencyType
     }
 
     /**
-     * Sets a new amount
+     * Sets a new amount.
      *
      * Množství cizí měny pro kursový přepočet.
      *
      * @param int $amount
+     *
      * @return self
      */
     public function setAmount($amount)
     {
         $this->amount = $amount;
+
         return $this;
     }
 
     /**
-     * Gets as rateAutomaticaly
+     * Gets as rateAutomaticaly.
      *
      * Nastavit kurz automaticky. Kurz je automaticky načten při prvním otevření účetní jednotky toho dne z agendy Kurzový lístek.
      *
@@ -136,21 +142,23 @@ class ForeignCurrencyType
     }
 
     /**
-     * Sets a new rateAutomaticaly
+     * Sets a new rateAutomaticaly.
      *
      * Nastavit kurz automaticky. Kurz je automaticky načten při prvním otevření účetní jednotky toho dne z agendy Kurzový lístek.
      *
      * @param string $rateAutomaticaly
+     *
      * @return self
      */
     public function setRateAutomaticaly($rateAutomaticaly)
     {
         $this->rateAutomaticaly = $rateAutomaticaly;
+
         return $this;
     }
 
     /**
-     * Gets as useYesterdayRate
+     * Gets as useYesterdayRate.
      *
      * Použít včerejší kurz. Při načtení kurzu použit vždy kurz zveřejněný ČNB předchozí den. Jen CZ verze.
      *
@@ -162,16 +170,18 @@ class ForeignCurrencyType
     }
 
     /**
-     * Sets a new useYesterdayRate
+     * Sets a new useYesterdayRate.
      *
      * Použít včerejší kurz. Při načtení kurzu použit vždy kurz zveřejněný ČNB předchozí den. Jen CZ verze.
      *
      * @param string $useYesterdayRate
+     *
      * @return self
      */
     public function setUseYesterdayRate($useYesterdayRate)
     {
         $this->useYesterdayRate = $useYesterdayRate;
+
         return $this;
     }
 }

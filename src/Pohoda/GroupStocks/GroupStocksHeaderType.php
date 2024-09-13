@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\GroupStocks;
 
 /**
- * Class representing GroupStocksHeaderType
+ * Class representing GroupStocksHeaderType.
  *
  * Údaje kategorie internetového obchodu.
  * XSD Type: groupStocksHeaderType
@@ -12,60 +25,42 @@ class GroupStocksHeaderType
 {
     /**
      * ID záznamu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Jedinečný "Kód" skupiny zásob.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Název Skupiny zásob.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Textový popis skupiny zásob.
-     *
-     * @var string $description
      */
-    private $description = null;
+    private string $description = null;
 
     /**
      * Zobrazení. Určuje, zda je skupina zásob přenášena na internetový obchod.
-     *
-     * @var string $internet
      */
-    private $internet = null;
+    private string $internet = null;
 
     /**
      * Název obrázku. Soubor se musí nacházet v adresáři Dokumenty\firma\Obrázky\. Název obrázku se uvádí bez cesty.
-     *
-     * @var string $picture
      */
-    private $picture = null;
-
-    /**
-     * @var string $note
-     */
-    private $note = null;
+    private string $picture = null;
+    private string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu (jen pro export).
      *
@@ -77,21 +72,23 @@ class GroupStocksHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Jedinečný "Kód" skupiny zásob.
      *
@@ -103,21 +100,23 @@ class GroupStocksHeaderType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Jedinečný "Kód" skupiny zásob.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název Skupiny zásob.
      *
@@ -129,21 +128,23 @@ class GroupStocksHeaderType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název Skupiny zásob.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as description
+     * Gets as description.
      *
      * Textový popis skupiny zásob.
      *
@@ -155,21 +156,23 @@ class GroupStocksHeaderType
     }
 
     /**
-     * Sets a new description
+     * Sets a new description.
      *
      * Textový popis skupiny zásob.
      *
      * @param string $description
+     *
      * @return self
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
     /**
-     * Gets as internet
+     * Gets as internet.
      *
      * Zobrazení. Určuje, zda je skupina zásob přenášena na internetový obchod.
      *
@@ -181,21 +184,23 @@ class GroupStocksHeaderType
     }
 
     /**
-     * Sets a new internet
+     * Sets a new internet.
      *
      * Zobrazení. Určuje, zda je skupina zásob přenášena na internetový obchod.
      *
      * @param string $internet
+     *
      * @return self
      */
     public function setInternet($internet)
     {
         $this->internet = $internet;
+
         return $this;
     }
 
     /**
-     * Gets as picture
+     * Gets as picture.
      *
      * Název obrázku. Soubor se musí nacházet v adresáři Dokumenty\firma\Obrázky\. Název obrázku se uvádí bez cesty.
      *
@@ -207,21 +212,23 @@ class GroupStocksHeaderType
     }
 
     /**
-     * Sets a new picture
+     * Sets a new picture.
      *
      * Název obrázku. Soubor se musí nacházet v adresáři Dokumenty\firma\Obrázky\. Název obrázku se uvádí bez cesty.
      *
      * @param string $picture
+     *
      * @return self
      */
     public function setPicture($picture)
     {
         $this->picture = $picture;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * @return string
      */
@@ -231,19 +238,21 @@ class GroupStocksHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -255,16 +264,18 @@ class GroupStocksHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 }

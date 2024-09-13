@@ -1,69 +1,72 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing StockType
- *
+ * Class representing StockType.
  *
  * XSD Type: stockType
  */
 class StockType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
-     *
-     * @var \Pohoda\Stock\ActionTypeType $actionType
      */
-    private $actionType = null;
-
-    /**
-     * @var \Pohoda\Stock\StockHeaderType $stockHeader
-     */
-    private $stockHeader = null;
+    private \Pohoda\Stock\ActionTypeType $actionType = null;
+    private \Pohoda\Stock\StockHeaderType $stockHeader = null;
 
     /**
      * Položky zásob u typů karta, služba, textová nebo výrobek (jen pro export).
      *
-     * @var \Pohoda\Stock\StockItemType[] $stockDetail
+     * @var \Pohoda\Stock\StockItemType[]
      */
-    private $stockDetail = null;
+    private array $stockDetail = null;
 
     /**
      * Svázané zásoby. Jako svázanou zásobu nelze vložit skladovou zásobu typu Komplet a Souprava (jen pro export).
      *
-     * @var \Pohoda\Stock\AttachItemType[] $stockAttach
+     * @var \Pohoda\Stock\AttachItemType[]
      */
-    private $stockAttach = null;
+    private array $stockAttach = null;
 
     /**
      * Výrobní čísla nebo šarže zásoby (jen pro export).
      *
-     * @var \Pohoda\Stock\SerialNumberItemType[] $stockSerialNumber
+     * @var \Pohoda\Stock\SerialNumberItemType[]
      */
-    private $stockSerialNumber = null;
+    private array $stockSerialNumber = null;
 
     /**
      * Slevy.
      *
-     * @var \Pohoda\Type\StockPriceType[] $stockPriceItem
+     * @var \Pohoda\Type\StockPriceType[]
      */
-    private $stockPriceItem = null;
+    private array $stockPriceItem = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -73,19 +76,21 @@ class StockType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as actionType
+     * Gets as actionType.
      *
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      *
@@ -97,21 +102,21 @@ class StockType
     }
 
     /**
-     * Sets a new actionType
+     * Sets a new actionType.
      *
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      *
-     * @param \Pohoda\Stock\ActionTypeType $actionType
      * @return self
      */
     public function setActionType(?\Pohoda\Stock\ActionTypeType $actionType = null)
     {
         $this->actionType = $actionType;
+
         return $this;
     }
 
     /**
-     * Gets as stockHeader
+     * Gets as stockHeader.
      *
      * @return \Pohoda\Stock\StockHeaderType
      */
@@ -121,37 +126,38 @@ class StockType
     }
 
     /**
-     * Sets a new stockHeader
+     * Sets a new stockHeader.
      *
-     * @param \Pohoda\Stock\StockHeaderType $stockHeader
      * @return self
      */
     public function setStockHeader(?\Pohoda\Stock\StockHeaderType $stockHeader = null)
     {
         $this->stockHeader = $stockHeader;
+
         return $this;
     }
 
     /**
-     * Adds as stockItem
+     * Adds as stockItem.
      *
      * Položky zásob u typů karta, služba, textová nebo výrobek (jen pro export).
      *
      * @return self
-     * @param \Pohoda\Stock\StockItemType $stockItem
      */
     public function addToStockDetail(\Pohoda\Stock\StockItemType $stockItem)
     {
         $this->stockDetail[] = $stockItem;
+
         return $this;
     }
 
     /**
-     * isset stockDetail
+     * isset stockDetail.
      *
      * Položky zásob u typů karta, služba, textová nebo výrobek (jen pro export).
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetStockDetail($index)
@@ -160,20 +166,19 @@ class StockType
     }
 
     /**
-     * unset stockDetail
+     * unset stockDetail.
      *
      * Položky zásob u typů karta, služba, textová nebo výrobek (jen pro export).
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetStockDetail($index)
+    public function unsetStockDetail($index): void
     {
         unset($this->stockDetail[$index]);
     }
 
     /**
-     * Gets as stockDetail
+     * Gets as stockDetail.
      *
      * Položky zásob u typů karta, služba, textová nebo výrobek (jen pro export).
      *
@@ -185,39 +190,42 @@ class StockType
     }
 
     /**
-     * Sets a new stockDetail
+     * Sets a new stockDetail.
      *
      * Položky zásob u typů karta, služba, textová nebo výrobek (jen pro export).
      *
      * @param \Pohoda\Stock\StockItemType[] $stockDetail
+     *
      * @return self
      */
-    public function setStockDetail(array $stockDetail = null)
+    public function setStockDetail(?array $stockDetail = null)
     {
         $this->stockDetail = $stockDetail;
+
         return $this;
     }
 
     /**
-     * Adds as attachItem
+     * Adds as attachItem.
      *
      * Svázané zásoby. Jako svázanou zásobu nelze vložit skladovou zásobu typu Komplet a Souprava (jen pro export).
      *
      * @return self
-     * @param \Pohoda\Stock\AttachItemType $attachItem
      */
     public function addToStockAttach(\Pohoda\Stock\AttachItemType $attachItem)
     {
         $this->stockAttach[] = $attachItem;
+
         return $this;
     }
 
     /**
-     * isset stockAttach
+     * isset stockAttach.
      *
      * Svázané zásoby. Jako svázanou zásobu nelze vložit skladovou zásobu typu Komplet a Souprava (jen pro export).
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetStockAttach($index)
@@ -226,20 +234,19 @@ class StockType
     }
 
     /**
-     * unset stockAttach
+     * unset stockAttach.
      *
      * Svázané zásoby. Jako svázanou zásobu nelze vložit skladovou zásobu typu Komplet a Souprava (jen pro export).
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetStockAttach($index)
+    public function unsetStockAttach($index): void
     {
         unset($this->stockAttach[$index]);
     }
 
     /**
-     * Gets as stockAttach
+     * Gets as stockAttach.
      *
      * Svázané zásoby. Jako svázanou zásobu nelze vložit skladovou zásobu typu Komplet a Souprava (jen pro export).
      *
@@ -251,39 +258,42 @@ class StockType
     }
 
     /**
-     * Sets a new stockAttach
+     * Sets a new stockAttach.
      *
      * Svázané zásoby. Jako svázanou zásobu nelze vložit skladovou zásobu typu Komplet a Souprava (jen pro export).
      *
      * @param \Pohoda\Stock\AttachItemType[] $stockAttach
+     *
      * @return self
      */
-    public function setStockAttach(array $stockAttach = null)
+    public function setStockAttach(?array $stockAttach = null)
     {
         $this->stockAttach = $stockAttach;
+
         return $this;
     }
 
     /**
-     * Adds as serialNumberItem
+     * Adds as serialNumberItem.
      *
      * Výrobní čísla nebo šarže zásoby (jen pro export).
      *
      * @return self
-     * @param \Pohoda\Stock\SerialNumberItemType $serialNumberItem
      */
     public function addToStockSerialNumber(\Pohoda\Stock\SerialNumberItemType $serialNumberItem)
     {
         $this->stockSerialNumber[] = $serialNumberItem;
+
         return $this;
     }
 
     /**
-     * isset stockSerialNumber
+     * isset stockSerialNumber.
      *
      * Výrobní čísla nebo šarže zásoby (jen pro export).
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetStockSerialNumber($index)
@@ -292,20 +302,19 @@ class StockType
     }
 
     /**
-     * unset stockSerialNumber
+     * unset stockSerialNumber.
      *
      * Výrobní čísla nebo šarže zásoby (jen pro export).
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetStockSerialNumber($index)
+    public function unsetStockSerialNumber($index): void
     {
         unset($this->stockSerialNumber[$index]);
     }
 
     /**
-     * Gets as stockSerialNumber
+     * Gets as stockSerialNumber.
      *
      * Výrobní čísla nebo šarže zásoby (jen pro export).
      *
@@ -317,39 +326,42 @@ class StockType
     }
 
     /**
-     * Sets a new stockSerialNumber
+     * Sets a new stockSerialNumber.
      *
      * Výrobní čísla nebo šarže zásoby (jen pro export).
      *
      * @param \Pohoda\Stock\SerialNumberItemType[] $stockSerialNumber
+     *
      * @return self
      */
-    public function setStockSerialNumber(array $stockSerialNumber = null)
+    public function setStockSerialNumber(?array $stockSerialNumber = null)
     {
         $this->stockSerialNumber = $stockSerialNumber;
+
         return $this;
     }
 
     /**
-     * Adds as stockPrice
+     * Adds as stockPrice.
      *
      * Slevy.
      *
      * @return self
-     * @param \Pohoda\Type\StockPriceType $stockPrice
      */
     public function addToStockPriceItem(\Pohoda\Type\StockPriceType $stockPrice)
     {
         $this->stockPriceItem[] = $stockPrice;
+
         return $this;
     }
 
     /**
-     * isset stockPriceItem
+     * isset stockPriceItem.
      *
      * Slevy.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetStockPriceItem($index)
@@ -358,20 +370,19 @@ class StockType
     }
 
     /**
-     * unset stockPriceItem
+     * unset stockPriceItem.
      *
      * Slevy.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetStockPriceItem($index)
+    public function unsetStockPriceItem($index): void
     {
         unset($this->stockPriceItem[$index]);
     }
 
     /**
-     * Gets as stockPriceItem
+     * Gets as stockPriceItem.
      *
      * Slevy.
      *
@@ -383,39 +394,42 @@ class StockType
     }
 
     /**
-     * Sets a new stockPriceItem
+     * Sets a new stockPriceItem.
      *
      * Slevy.
      *
      * @param \Pohoda\Type\StockPriceType[] $stockPriceItem
+     *
      * @return self
      */
-    public function setStockPriceItem(array $stockPriceItem = null)
+    public function setStockPriceItem(?array $stockPriceItem = null)
     {
         $this->stockPriceItem = $stockPriceItem;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -424,20 +438,19 @@ class StockType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -449,16 +462,18 @@ class StockType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
-    public function setPrint(array $print = null)
+    public function setPrint(?array $print = null)
     {
         $this->print = $print;
+
         return $this;
     }
 }

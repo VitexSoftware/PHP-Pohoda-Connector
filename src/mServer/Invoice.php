@@ -1,32 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PHPmServer - Invoice helper Class
+ * This file is part of the PHP-Pohoda-Connector package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020-2023 Vitex Software
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace mServer;
 
 /**
- * Description of Invoice
+ * Description of Invoice.
  *
  * @author vitex
  */
 class Invoice extends Client
 {
     /**
-     * Current Object's agenda
-     * @var string
+     * Current Object's agenda.
      */
-    public $agenda = 'invoice';
+    public string $agenda = 'invoice';
 
     /**
-     * Request XML helper
-     * @var \Riesenia\Pohoda\Invoice
+     * Request XML helper.
      */
-    public $requestXml = null;
+    public \Riesenia\Pohoda\Invoice $requestXml = null;
 
     /*
       public function getElementMap($extra = []) {
@@ -68,13 +72,13 @@ class Invoice extends Client
      */
 
     /**
-     * Create Agenda document using given data
+     * Create Agenda document using given data.
      *
-     * @param Array $data
+     * @param array $data
      */
-    public function create($data)
+    public function create($data): void
     {
-        if (array_key_exists('invoiceSummary', $data)) {
+        if (\array_key_exists('invoiceSummary', $data)) {
             $summary = $data['invoiceSummary'];
             unset($data['invoiceSummary']);
             $this->requestXml = $this->pohoda->createInvoice($data);
@@ -85,7 +89,7 @@ class Invoice extends Client
     }
 
     /**
-     * Add Item into invoice
+     * Add Item into invoice.
      *
      * @param array $itemRecord Item properties
      *
@@ -93,24 +97,21 @@ class Invoice extends Client
      */
     public function addItem($itemRecord)
     {
-
-        if (array_key_exists('stockItemIDS', $itemRecord)) { //TODO: Finalize
+        if (\array_key_exists('stockItemIDS', $itemRecord)) { // TODO: Finalize
             $stockItemIDS = $itemRecord['stockItemIDS'];
             unset($itemRecord['stockItemIDS']);
             $itemRecord['stockItem']['stockItem']['ids'] = $stockItemIDS;
         }
 
-
         //        $itemRecord['homeCurrency'];
-//        $itemRecord['foreignCurrency'];
-//        $itemRecord['stockItem'];
-
+        //        $itemRecord['foreignCurrency'];
+        //        $itemRecord['stockItem'];
 
         return $this->requestXml->addItem($itemRecord);
     }
 
     /**
-     * set extID for item
+     * set extID for item.
      *
      * @param string $ids
      * @param string $exSystemName
@@ -123,14 +124,14 @@ class Invoice extends Client
         $node = new \SimpleXMLElement('<extId></extId>', 0, false, \Riesenia\Pohoda::$namespaces['typ']);
 
         //                  <typ:extId>
-//                      <typ:ids>268</typ:ids>
-//                      <typ:exSystemName>banager</typ:exSystemName>
-//                      <typ:exSystemText>Benefitka Manager</typ:exSystemText>
-//                  </typ:extId>
+        //                      <typ:ids>268</typ:ids>
+        //                      <typ:exSystemName>banager</typ:exSystemName>
+        //                      <typ:exSystemText>Benefitka Manager</typ:exSystemText>
+        //                  </typ:extId>
 
-        $node->addChild('typ:' . 'ids', \htmlspecialchars((string) $ids), \Riesenia\Pohoda::$namespaces['typ']);
-        $node->addChild('typ:' . 'exSystemName', \htmlspecialchars((string) $exSystemName), \Riesenia\Pohoda::$namespaces['typ']);
-        $node->addChild('typ:' . 'exSystemText', \htmlspecialchars((string) $exSystemText), \Riesenia\Pohoda::$namespaces['typ']);
+        $node->addChild('typ:ids', \htmlspecialchars((string) $ids), \Riesenia\Pohoda::$namespaces['typ']);
+        $node->addChild('typ:exSystemName', \htmlspecialchars((string) $exSystemName), \Riesenia\Pohoda::$namespaces['typ']);
+        $node->addChild('typ:exSystemText', \htmlspecialchars((string) $exSystemText), \Riesenia\Pohoda::$namespaces['typ']);
 
         return $node;
     }

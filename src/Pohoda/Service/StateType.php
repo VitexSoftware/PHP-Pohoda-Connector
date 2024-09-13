@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Service;
 
 /**
- * Class representing StateType
- *
+ * Class representing StateType.
  *
  * XSD Type: stateType
  */
@@ -12,55 +24,41 @@ class StateType
 {
     /**
      * ID položky stavu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Datum.
-     *
-     * @var \DateTime $date
      */
-    private $date = null;
+    private \DateTime $date = null;
 
     /**
-     * Stav servisu
-     *
-     * @var \Pohoda\Type\RefType $status
+     * Stav servisu.
      */
-    private $status = null;
+    private \Pohoda\Type\RefType $status = null;
 
     /**
      * Odpovědná osoba.
-     *
-     * @var \Pohoda\Type\RefTypeLongType $responsiblePerson
      */
-    private $responsiblePerson = null;
+    private \Pohoda\Type\RefTypeLongType $responsiblePerson = null;
 
     /**
      * Firma.
-     *
-     * @var \Pohoda\Service\ServiceAddressType $companyService
      */
-    private $companyService = null;
+    private \Pohoda\Service\ServiceAddressType $companyService = null;
 
     /**
      * Způsob předání opraveného servisovaného předmětu.
-     *
-     * @var \Pohoda\Type\RefType $forwarding
      */
-    private $forwarding = null;
+    private \Pohoda\Type\RefType $forwarding = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID položky stavu (jen pro export).
      *
@@ -72,21 +70,23 @@ class StateType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID položky stavu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as date
+     * Gets as date.
      *
      * Datum.
      *
@@ -98,21 +98,21 @@ class StateType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
      * Datum.
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(\DateTime $date)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as status
+     * Gets as status.
      *
      * Stav servisu
      *
@@ -124,21 +124,21 @@ class StateType
     }
 
     /**
-     * Sets a new status
+     * Sets a new status.
      *
      * Stav servisu
      *
-     * @param \Pohoda\Type\RefType $status
      * @return self
      */
     public function setStatus(\Pohoda\Type\RefType $status)
     {
         $this->status = $status;
+
         return $this;
     }
 
     /**
-     * Gets as responsiblePerson
+     * Gets as responsiblePerson.
      *
      * Odpovědná osoba.
      *
@@ -150,21 +150,21 @@ class StateType
     }
 
     /**
-     * Sets a new responsiblePerson
+     * Sets a new responsiblePerson.
      *
      * Odpovědná osoba.
      *
-     * @param \Pohoda\Type\RefTypeLongType $responsiblePerson
      * @return self
      */
     public function setResponsiblePerson(?\Pohoda\Type\RefTypeLongType $responsiblePerson = null)
     {
         $this->responsiblePerson = $responsiblePerson;
+
         return $this;
     }
 
     /**
-     * Gets as companyService
+     * Gets as companyService.
      *
      * Firma.
      *
@@ -176,21 +176,21 @@ class StateType
     }
 
     /**
-     * Sets a new companyService
+     * Sets a new companyService.
      *
      * Firma.
      *
-     * @param \Pohoda\Service\ServiceAddressType $companyService
      * @return self
      */
     public function setCompanyService(?\Pohoda\Service\ServiceAddressType $companyService = null)
     {
         $this->companyService = $companyService;
+
         return $this;
     }
 
     /**
-     * Gets as forwarding
+     * Gets as forwarding.
      *
      * Způsob předání opraveného servisovaného předmětu.
      *
@@ -202,21 +202,21 @@ class StateType
     }
 
     /**
-     * Sets a new forwarding
+     * Sets a new forwarding.
      *
      * Způsob předání opraveného servisovaného předmětu.
      *
-     * @param \Pohoda\Type\RefType $forwarding
      * @return self
      */
     public function setForwarding(?\Pohoda\Type\RefType $forwarding = null)
     {
         $this->forwarding = $forwarding;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -228,16 +228,18 @@ class StateType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 }

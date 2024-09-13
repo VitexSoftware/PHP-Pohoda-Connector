@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IndividualPrice;
 
 /**
- * Class representing StockItemType
- *
+ * Class representing StockItemType.
  *
  * XSD Type: stockItemType
  */
@@ -12,69 +24,51 @@ class StockItemType
 {
     /**
      * ID skladové zásoby.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Kód skladové zásoby.
-     *
-     * @var string $ids
      */
-    private $ids = null;
+    private string $ids = null;
 
     /**
      * Název skladové zásoby.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Členění skladu.
-     *
-     * @var \Pohoda\Type\RefTypeStorageType $storage
      */
-    private $storage = null;
+    private \Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Cena skladové zásoby.
-     *
-     * @var float $price
      */
-    private $price = null;
+    private float $price = null;
 
     /**
      * Sleva v procentech.
-     *
-     * @var float $discountPercentage
      */
-    private $discountPercentage = null;
+    private float $discountPercentage = null;
 
     /**
      * Individuální cena skladové zásoby.
-     *
-     * @var float $individualPrice
      */
-    private $individualPrice = null;
+    private float $individualPrice = null;
 
     /**
      * ID - odkaz na cizí měnu, IDS - kod měny.
-     *
-     * @var \Pohoda\Type\RefType $currency
      */
-    private $currency = null;
+    private \Pohoda\Type\RefType $currency = null;
 
     /**
      * Cena je uvedena: bez DPH, včetně DPH.
-     *
-     * @var string $payVAT
      */
-    private $payVAT = null;
+    private string $payVAT = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID skladové zásoby.
      *
@@ -86,21 +80,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID skladové zásoby.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as ids
+     * Gets as ids.
      *
      * Kód skladové zásoby.
      *
@@ -112,21 +108,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new ids
+     * Sets a new ids.
      *
      * Kód skladové zásoby.
      *
      * @param string $ids
+     *
      * @return self
      */
     public function setIds($ids)
     {
         $this->ids = $ids;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název skladové zásoby.
      *
@@ -138,21 +136,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název skladové zásoby.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as storage
+     * Gets as storage.
      *
      * Členění skladu.
      *
@@ -164,21 +164,21 @@ class StockItemType
     }
 
     /**
-     * Sets a new storage
+     * Sets a new storage.
      *
      * Členění skladu.
      *
-     * @param \Pohoda\Type\RefTypeStorageType $storage
      * @return self
      */
     public function setStorage(?\Pohoda\Type\RefTypeStorageType $storage = null)
     {
         $this->storage = $storage;
+
         return $this;
     }
 
     /**
-     * Gets as price
+     * Gets as price.
      *
      * Cena skladové zásoby.
      *
@@ -190,21 +190,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new price
+     * Sets a new price.
      *
      * Cena skladové zásoby.
      *
      * @param float $price
+     *
      * @return self
      */
     public function setPrice($price)
     {
         $this->price = $price;
+
         return $this;
     }
 
     /**
-     * Gets as discountPercentage
+     * Gets as discountPercentage.
      *
      * Sleva v procentech.
      *
@@ -216,21 +218,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new discountPercentage
+     * Sets a new discountPercentage.
      *
      * Sleva v procentech.
      *
      * @param float $discountPercentage
+     *
      * @return self
      */
     public function setDiscountPercentage($discountPercentage)
     {
         $this->discountPercentage = $discountPercentage;
+
         return $this;
     }
 
     /**
-     * Gets as individualPrice
+     * Gets as individualPrice.
      *
      * Individuální cena skladové zásoby.
      *
@@ -242,21 +246,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new individualPrice
+     * Sets a new individualPrice.
      *
      * Individuální cena skladové zásoby.
      *
      * @param float $individualPrice
+     *
      * @return self
      */
     public function setIndividualPrice($individualPrice)
     {
         $this->individualPrice = $individualPrice;
+
         return $this;
     }
 
     /**
-     * Gets as currency
+     * Gets as currency.
      *
      * ID - odkaz na cizí měnu, IDS - kod měny.
      *
@@ -268,21 +274,21 @@ class StockItemType
     }
 
     /**
-     * Sets a new currency
+     * Sets a new currency.
      *
      * ID - odkaz na cizí měnu, IDS - kod měny.
      *
-     * @param \Pohoda\Type\RefType $currency
      * @return self
      */
     public function setCurrency(?\Pohoda\Type\RefType $currency = null)
     {
         $this->currency = $currency;
+
         return $this;
     }
 
     /**
-     * Gets as payVAT
+     * Gets as payVAT.
      *
      * Cena je uvedena: bez DPH, včetně DPH.
      *
@@ -294,16 +300,18 @@ class StockItemType
     }
 
     /**
-     * Sets a new payVAT
+     * Sets a new payVAT.
      *
      * Cena je uvedena: bez DPH, včetně DPH.
      *
      * @param string $payVAT
+     *
      * @return self
      */
     public function setPayVAT($payVAT)
     {
         $this->payVAT = $payVAT;
+
         return $this;
     }
 }

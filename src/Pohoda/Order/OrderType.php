@@ -1,68 +1,59 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Order;
 
 /**
- * Class representing OrderType
- *
+ * Class representing OrderType.
  *
  * XSD Type: orderType
  */
 class OrderType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
      *  Povolené jsou vazby z agendy:
-     *  - Vydané nabídky (do agendy Přijaté objednávky)
-     *
-     * @var \Pohoda\Type\LinksType $links
+     *  - Vydané nabídky (do agendy Přijaté objednávky).
      */
-    private $links = null;
+    private \Pohoda\Type\LinksType $links = null;
 
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
-     *
-     * @var \Pohoda\Order\ActionTypeType $actionType
      */
-    private $actionType = null;
-
-    /**
-     * @var \Pohoda\Order\OrderHeaderType $orderHeader
-     */
-    private $orderHeader = null;
-
-    /**
-     * @var \Pohoda\Order\OrderDetailType $orderDetail
-     */
-    private $orderDetail = null;
-
-    /**
-     * @var \Pohoda\Order\OrderSummaryType $orderSummary
-     */
-    private $orderSummary = null;
+    private \Pohoda\Order\ActionTypeType $actionType = null;
+    private \Pohoda\Order\OrderHeaderType $orderHeader = null;
+    private \Pohoda\Order\OrderDetailType $orderDetail = null;
+    private \Pohoda\Order\OrderSummaryType $orderSummary = null;
 
     /**
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
-     *
-     * @var \Pohoda\Type\LinksType $linkedDocuments
      */
-    private $linkedDocuments = null;
+    private \Pohoda\Type\LinksType $linkedDocuments = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -72,19 +63,21 @@ class OrderType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as links
+     * Gets as links.
      *
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
@@ -99,24 +92,24 @@ class OrderType
     }
 
     /**
-     * Sets a new links
+     * Sets a new links.
      *
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
      *  Povolené jsou vazby z agendy:
      *  - Vydané nabídky (do agendy Přijaté objednávky)
      *
-     * @param \Pohoda\Type\LinksType $links
      * @return self
      */
     public function setLinks(\Pohoda\Type\LinksType $links)
     {
         $this->links = $links;
+
         return $this;
     }
 
     /**
-     * Gets as actionType
+     * Gets as actionType.
      *
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      *
@@ -128,21 +121,21 @@ class OrderType
     }
 
     /**
-     * Sets a new actionType
+     * Sets a new actionType.
      *
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      *
-     * @param \Pohoda\Order\ActionTypeType $actionType
      * @return self
      */
     public function setActionType(\Pohoda\Order\ActionTypeType $actionType)
     {
         $this->actionType = $actionType;
+
         return $this;
     }
 
     /**
-     * Gets as orderHeader
+     * Gets as orderHeader.
      *
      * @return \Pohoda\Order\OrderHeaderType
      */
@@ -152,19 +145,19 @@ class OrderType
     }
 
     /**
-     * Sets a new orderHeader
+     * Sets a new orderHeader.
      *
-     * @param \Pohoda\Order\OrderHeaderType $orderHeader
      * @return self
      */
     public function setOrderHeader(\Pohoda\Order\OrderHeaderType $orderHeader)
     {
         $this->orderHeader = $orderHeader;
+
         return $this;
     }
 
     /**
-     * Gets as orderDetail
+     * Gets as orderDetail.
      *
      * @return \Pohoda\Order\OrderDetailType
      */
@@ -174,19 +167,19 @@ class OrderType
     }
 
     /**
-     * Sets a new orderDetail
+     * Sets a new orderDetail.
      *
-     * @param \Pohoda\Order\OrderDetailType $orderDetail
      * @return self
      */
     public function setOrderDetail(\Pohoda\Order\OrderDetailType $orderDetail)
     {
         $this->orderDetail = $orderDetail;
+
         return $this;
     }
 
     /**
-     * Gets as orderSummary
+     * Gets as orderSummary.
      *
      * @return \Pohoda\Order\OrderSummaryType
      */
@@ -196,19 +189,19 @@ class OrderType
     }
 
     /**
-     * Sets a new orderSummary
+     * Sets a new orderSummary.
      *
-     * @param \Pohoda\Order\OrderSummaryType $orderSummary
      * @return self
      */
     public function setOrderSummary(\Pohoda\Order\OrderSummaryType $orderSummary)
     {
         $this->orderSummary = $orderSummary;
+
         return $this;
     }
 
     /**
-     * Gets as linkedDocuments
+     * Gets as linkedDocuments.
      *
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      *
@@ -220,39 +213,40 @@ class OrderType
     }
 
     /**
-     * Sets a new linkedDocuments
+     * Sets a new linkedDocuments.
      *
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      *
-     * @param \Pohoda\Type\LinksType $linkedDocuments
      * @return self
      */
     public function setLinkedDocuments(\Pohoda\Type\LinksType $linkedDocuments)
     {
         $this->linkedDocuments = $linkedDocuments;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -261,20 +255,19 @@ class OrderType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -286,16 +279,18 @@ class OrderType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
     public function setPrint(array $print)
     {
         $this->print = $print;
+
         return $this;
     }
 }

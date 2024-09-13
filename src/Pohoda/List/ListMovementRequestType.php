@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListMovementRequestType
- *
+ * Class representing ListMovementRequestType.
  *
  * XSD Type: listMovementRequestType
  */
 class ListMovementRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $movementVersion
      */
-    private $movementVersion = null;
+    private string $movementVersion = null;
 
     /**
-     * @var \Pohoda\Filter\RequestMovementType[] $requestMovement
+     * @var \Pohoda\Filter\RequestMovementType[]
      */
-    private $requestMovement = [
+    private array $requestMovement = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListMovementRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as movementVersion
+     * Gets as movementVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListMovementRequestType
     }
 
     /**
-     * Sets a new movementVersion
+     * Sets a new movementVersion.
      *
      * Požadovaná verze.
      *
      * @param string $movementVersion
+     *
      * @return self
      */
     public function setMovementVersion($movementVersion)
     {
         $this->movementVersion = $movementVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestMovement
+     * Adds as requestMovement.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestMovementType $requestMovement
      */
     public function addToRequestMovement(\Pohoda\Filter\RequestMovementType $requestMovement)
     {
         $this->requestMovement[] = $requestMovement;
+
         return $this;
     }
 
     /**
-     * isset requestMovement
+     * isset requestMovement.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestMovement($index)
@@ -100,18 +112,17 @@ class ListMovementRequestType
     }
 
     /**
-     * unset requestMovement
+     * unset requestMovement.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestMovement($index)
+    public function unsetRequestMovement($index): void
     {
         unset($this->requestMovement[$index]);
     }
 
     /**
-     * Gets as requestMovement
+     * Gets as requestMovement.
      *
      * @return \Pohoda\Filter\RequestMovementType[]
      */
@@ -121,14 +132,16 @@ class ListMovementRequestType
     }
 
     /**
-     * Sets a new requestMovement
+     * Sets a new requestMovement.
      *
      * @param \Pohoda\Filter\RequestMovementType[] $requestMovement
+     *
      * @return self
      */
     public function setRequestMovement(array $requestMovement)
     {
         $this->requestMovement = $requestMovement;
+
         return $this;
     }
 }

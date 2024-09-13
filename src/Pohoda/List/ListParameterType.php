@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListParameterType
- *
+ * Class representing ListParameterType.
  *
  * XSD Type: listParameterType
  */
 class ListParameterType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Parameter\ParameterType[] $parameter
+     * @var \Pohoda\Parameter\ParameterType[]
      */
-    private $parameter = [
+    private array $parameter = [
     ];
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * @return self
-     * @param \Pohoda\Parameter\ParameterType $parameter
      */
     public function addToParameter(\Pohoda\Parameter\ParameterType $parameter)
     {
         $this->parameter[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameter
+     * isset parameter.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameter($index)
@@ -42,18 +55,17 @@ class ListParameterType extends ListVersionType
     }
 
     /**
-     * unset parameter
+     * unset parameter.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameter($index)
+    public function unsetParameter($index): void
     {
         unset($this->parameter[$index]);
     }
 
     /**
-     * Gets as parameter
+     * Gets as parameter.
      *
      * @return \Pohoda\Parameter\ParameterType[]
      */
@@ -63,14 +75,16 @@ class ListParameterType extends ListVersionType
     }
 
     /**
-     * Sets a new parameter
+     * Sets a new parameter.
      *
      * @param \Pohoda\Parameter\ParameterType[] $parameter
+     *
      * @return self
      */
-    public function setParameter(array $parameter = null)
+    public function setParameter(?array $parameter = null)
     {
         $this->parameter = $parameter;
+
         return $this;
     }
 }

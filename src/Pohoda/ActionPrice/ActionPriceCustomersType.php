@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ActionPrice;
 
 /**
- * Class representing ActionPriceCustomersType
+ * Class representing ActionPriceCustomersType.
  *
  * Odběratelé Akční ceny zásob.
  * XSD Type: actionPriceCustomersType
@@ -11,27 +24,28 @@ namespace Pohoda\ActionPrice;
 class ActionPriceCustomersType
 {
     /**
-     * @var \Pohoda\ActionPrice\CustomerType[] $customer
+     * @var \Pohoda\ActionPrice\CustomerType[]
      */
-    private $customer = [
+    private array $customer = [
     ];
 
     /**
-     * Adds as customer
+     * Adds as customer.
      *
      * @return self
-     * @param \Pohoda\ActionPrice\CustomerType $customer
      */
     public function addToCustomer(\Pohoda\ActionPrice\CustomerType $customer)
     {
         $this->customer[] = $customer;
+
         return $this;
     }
 
     /**
-     * isset customer
+     * isset customer.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetCustomer($index)
@@ -40,18 +54,17 @@ class ActionPriceCustomersType
     }
 
     /**
-     * unset customer
+     * unset customer.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetCustomer($index)
+    public function unsetCustomer($index): void
     {
         unset($this->customer[$index]);
     }
 
     /**
-     * Gets as customer
+     * Gets as customer.
      *
      * @return \Pohoda\ActionPrice\CustomerType[]
      */
@@ -61,14 +74,16 @@ class ActionPriceCustomersType
     }
 
     /**
-     * Sets a new customer
+     * Sets a new customer.
      *
      * @param \Pohoda\ActionPrice\CustomerType[] $customer
+     *
      * @return self
      */
     public function setCustomer(array $customer)
     {
         $this->customer = $customer;
+
         return $this;
     }
 }

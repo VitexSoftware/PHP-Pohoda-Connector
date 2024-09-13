@@ -1,44 +1,55 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Vydejka;
 
 /**
- * Class representing VydejkaDetailType
- *
+ * Class representing VydejkaDetailType.
  *
  * XSD Type: vydejkaDetailType
  */
 class VydejkaDetailType
 {
     /**
-     * @var \Pohoda\Vydejka\VydejkaItemType[] $vydejkaItem
+     * @var \Pohoda\Vydejka\VydejkaItemType[]
      */
-    private $vydejkaItem = [
+    private array $vydejkaItem = [
     ];
 
     /**
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
-     *
-     * @var \Pohoda\Type\RoundingItemType $roundingItem
      */
-    private $roundingItem = null;
+    private \Pohoda\Type\RoundingItemType $roundingItem = null;
 
     /**
-     * Adds as vydejkaItem
+     * Adds as vydejkaItem.
      *
      * @return self
-     * @param \Pohoda\Vydejka\VydejkaItemType $vydejkaItem
      */
     public function addToVydejkaItem(\Pohoda\Vydejka\VydejkaItemType $vydejkaItem)
     {
         $this->vydejkaItem[] = $vydejkaItem;
+
         return $this;
     }
 
     /**
-     * isset vydejkaItem
+     * isset vydejkaItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetVydejkaItem($index)
@@ -47,18 +58,17 @@ class VydejkaDetailType
     }
 
     /**
-     * unset vydejkaItem
+     * unset vydejkaItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetVydejkaItem($index)
+    public function unsetVydejkaItem($index): void
     {
         unset($this->vydejkaItem[$index]);
     }
 
     /**
-     * Gets as vydejkaItem
+     * Gets as vydejkaItem.
      *
      * @return \Pohoda\Vydejka\VydejkaItemType[]
      */
@@ -68,19 +78,21 @@ class VydejkaDetailType
     }
 
     /**
-     * Sets a new vydejkaItem
+     * Sets a new vydejkaItem.
      *
      * @param \Pohoda\Vydejka\VydejkaItemType[] $vydejkaItem
+     *
      * @return self
      */
     public function setVydejkaItem(array $vydejkaItem)
     {
         $this->vydejkaItem = $vydejkaItem;
+
         return $this;
     }
 
     /**
-     * Gets as roundingItem
+     * Gets as roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
@@ -92,16 +104,16 @@ class VydejkaDetailType
     }
 
     /**
-     * Sets a new roundingItem
+     * Sets a new roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
-     * @param \Pohoda\Type\RoundingItemType $roundingItem
      * @return self
      */
     public function setRoundingItem(?\Pohoda\Type\RoundingItemType $roundingItem = null)
     {
         $this->roundingItem = $roundingItem;
+
         return $this;
     }
 }

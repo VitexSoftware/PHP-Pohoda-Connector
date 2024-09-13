@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListClassificationVATRequestType
- *
+ * Class representing ListClassificationVATRequestType.
  *
  * XSD Type: listClassificationVATRequestType
  */
 class ListClassificationVATRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $classificationVATVersion
      */
-    private $classificationVATVersion = null;
+    private string $classificationVATVersion = null;
 
     /**
-     * @var \Pohoda\List\RequestClassificationVATType[] $requestClassificationVAT
+     * @var \Pohoda\List\RequestClassificationVATType[]
      */
-    private $requestClassificationVAT = [
+    private array $requestClassificationVAT = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListClassificationVATRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as classificationVATVersion
+     * Gets as classificationVATVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListClassificationVATRequestType
     }
 
     /**
-     * Sets a new classificationVATVersion
+     * Sets a new classificationVATVersion.
      *
      * Požadovaná verze.
      *
      * @param string $classificationVATVersion
+     *
      * @return self
      */
     public function setClassificationVATVersion($classificationVATVersion)
     {
         $this->classificationVATVersion = $classificationVATVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestClassificationVAT
+     * Adds as requestClassificationVAT.
      *
      * @return self
-     * @param \Pohoda\List\RequestClassificationVATType $requestClassificationVAT
      */
     public function addToRequestClassificationVAT(\Pohoda\List\RequestClassificationVATType $requestClassificationVAT)
     {
         $this->requestClassificationVAT[] = $requestClassificationVAT;
+
         return $this;
     }
 
     /**
-     * isset requestClassificationVAT
+     * isset requestClassificationVAT.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestClassificationVAT($index)
@@ -100,18 +112,17 @@ class ListClassificationVATRequestType
     }
 
     /**
-     * unset requestClassificationVAT
+     * unset requestClassificationVAT.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestClassificationVAT($index)
+    public function unsetRequestClassificationVAT($index): void
     {
         unset($this->requestClassificationVAT[$index]);
     }
 
     /**
-     * Gets as requestClassificationVAT
+     * Gets as requestClassificationVAT.
      *
      * @return \Pohoda\List\RequestClassificationVATType[]
      */
@@ -121,14 +132,16 @@ class ListClassificationVATRequestType
     }
 
     /**
-     * Sets a new requestClassificationVAT
+     * Sets a new requestClassificationVAT.
      *
      * @param \Pohoda\List\RequestClassificationVATType[] $requestClassificationVAT
+     *
      * @return self
      */
     public function setRequestClassificationVAT(array $requestClassificationVAT)
     {
         $this->requestClassificationVAT = $requestClassificationVAT;
+
         return $this;
     }
 }

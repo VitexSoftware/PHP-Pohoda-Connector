@@ -1,32 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ItemNumericSeriesType
- *
+ * Class representing ItemNumericSeriesType.
  *
  * XSD Type: itemNumericSeriesType
  */
 class ItemNumericSeriesType extends ItemType
 {
-    /**
-     * @var string $name
-     */
-    private $name = null;
+    private string $name = null;
+    private string $agenda = null;
+    private int $year = null;
 
     /**
-     * @var string $agenda
-     */
-    private $agenda = null;
-
-    /**
-     * @var int $year
-     */
-    private $year = null;
-
-    /**
-     * Gets as name
+     * Gets as name.
      *
      * @return string
      */
@@ -36,19 +37,21 @@ class ItemNumericSeriesType extends ItemType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as agenda
+     * Gets as agenda.
      *
      * @return string
      */
@@ -58,19 +61,21 @@ class ItemNumericSeriesType extends ItemType
     }
 
     /**
-     * Sets a new agenda
+     * Sets a new agenda.
      *
      * @param string $agenda
+     *
      * @return self
      */
     public function setAgenda($agenda)
     {
         $this->agenda = $agenda;
+
         return $this;
     }
 
     /**
-     * Gets as year
+     * Gets as year.
      *
      * @return int
      */
@@ -80,14 +85,16 @@ class ItemNumericSeriesType extends ItemType
     }
 
     /**
-     * Sets a new year
+     * Sets a new year.
      *
      * @param int $year
+     *
      * @return self
      */
     public function setYear($year)
     {
         $this->year = $year;
+
         return $this;
     }
 }

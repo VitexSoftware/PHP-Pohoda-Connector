@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\RegistrationNumber;
 
 /**
- * Class representing RegistrationNumberHeaderType
+ * Class representing RegistrationNumberHeaderType.
  *
  * Evidenční čísla
  * XSD Type: registrationNumberHeaderType
@@ -12,90 +25,68 @@ class RegistrationNumberHeaderType
 {
     /**
      * ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Identifikátor externího systému.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Evidenční číslo.
-     *
-     * @var string $regNumber
      */
-    private $regNumber = null;
+    private string $regNumber = null;
 
     /**
      * Odkaz na skladovou položku.
-     *
-     * @var \Pohoda\Type\StockItemRegNumberType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemRegNumberType $stockItem = null;
 
     /**
      * Typ evidenčního čísla (výrobní číslo/šarže).
-     *
-     * @var string $regNumberType
      */
-    private $regNumberType = null;
+    private string $regNumberType = null;
 
     /**
      * Datum expirace (pouze pro šarže).
-     *
-     * @var \DateTime $expirationDate
      */
-    private $expirationDate = null;
+    private \DateTime $expirationDate = null;
 
     /**
      * Stav zásoby.
-     *
-     * @var float $count
      */
-    private $count = null;
+    private float $count = null;
 
     /**
      * Stav zásoby v reklamaci.
-     *
-     * @var float $reclamation
      */
-    private $reclamation = null;
+    private float $reclamation = null;
 
     /**
      * Servis.
-     *
-     * @var float $service
      */
-    private $service = null;
+    private float $service = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Volitelné parametry.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu.
      *
@@ -107,21 +98,23 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Identifikátor externího systému.
      *
@@ -133,21 +126,21 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Identifikátor externího systému.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as regNumber
+     * Gets as regNumber.
      *
      * Evidenční číslo.
      *
@@ -159,21 +152,23 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new regNumber
+     * Sets a new regNumber.
      *
      * Evidenční číslo.
      *
      * @param string $regNumber
+     *
      * @return self
      */
     public function setRegNumber($regNumber)
     {
         $this->regNumber = $regNumber;
+
         return $this;
     }
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Odkaz na skladovou položku.
      *
@@ -185,21 +180,21 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Odkaz na skladovou položku.
      *
-     * @param \Pohoda\Type\StockItemRegNumberType $stockItem
      * @return self
      */
     public function setStockItem(\Pohoda\Type\StockItemRegNumberType $stockItem)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as regNumberType
+     * Gets as regNumberType.
      *
      * Typ evidenčního čísla (výrobní číslo/šarže).
      *
@@ -211,21 +206,23 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new regNumberType
+     * Sets a new regNumberType.
      *
      * Typ evidenčního čísla (výrobní číslo/šarže).
      *
      * @param string $regNumberType
+     *
      * @return self
      */
     public function setRegNumberType($regNumberType)
     {
         $this->regNumberType = $regNumberType;
+
         return $this;
     }
 
     /**
-     * Gets as expirationDate
+     * Gets as expirationDate.
      *
      * Datum expirace (pouze pro šarže).
      *
@@ -237,21 +234,21 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new expirationDate
+     * Sets a new expirationDate.
      *
      * Datum expirace (pouze pro šarže).
      *
-     * @param \DateTime $expirationDate
      * @return self
      */
     public function setExpirationDate(?\DateTime $expirationDate = null)
     {
         $this->expirationDate = $expirationDate;
+
         return $this;
     }
 
     /**
-     * Gets as count
+     * Gets as count.
      *
      * Stav zásoby.
      *
@@ -263,21 +260,23 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new count
+     * Sets a new count.
      *
      * Stav zásoby.
      *
      * @param float $count
+     *
      * @return self
      */
     public function setCount($count)
     {
         $this->count = $count;
+
         return $this;
     }
 
     /**
-     * Gets as reclamation
+     * Gets as reclamation.
      *
      * Stav zásoby v reklamaci.
      *
@@ -289,21 +288,23 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new reclamation
+     * Sets a new reclamation.
      *
      * Stav zásoby v reklamaci.
      *
      * @param float $reclamation
+     *
      * @return self
      */
     public function setReclamation($reclamation)
     {
         $this->reclamation = $reclamation;
+
         return $this;
     }
 
     /**
-     * Gets as service
+     * Gets as service.
      *
      * Servis.
      *
@@ -315,21 +316,23 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new service
+     * Sets a new service.
      *
      * Servis.
      *
      * @param float $service
+     *
      * @return self
      */
     public function setService($service)
     {
         $this->service = $service;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -341,21 +344,23 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -367,39 +372,42 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelné parametry.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelné parametry.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -408,20 +416,19 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelné parametry.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelné parametry.
      *
@@ -433,16 +440,18 @@ class RegistrationNumberHeaderType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelné parametry.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\CashRegister;
 
 /**
- * Class representing CurrencyCashRegisterType
- *
+ * Class representing CurrencyCashRegisterType.
  *
  * XSD Type: currencyCashRegisterType
  */
@@ -12,20 +24,16 @@ class CurrencyCashRegisterType
 {
     /**
      * Měna pokladny.
-     *
-     * @var \Pohoda\Type\RefType $currency
      */
-    private $currency = null;
+    private \Pohoda\Type\RefType $currency = null;
 
     /**
      * Kurs použitý pro valutovou pokladnu (denní/pevný).
-     *
-     * @var string $rate
      */
-    private $rate = null;
+    private string $rate = null;
 
     /**
-     * Gets as currency
+     * Gets as currency.
      *
      * Měna pokladny.
      *
@@ -37,21 +45,21 @@ class CurrencyCashRegisterType
     }
 
     /**
-     * Sets a new currency
+     * Sets a new currency.
      *
      * Měna pokladny.
      *
-     * @param \Pohoda\Type\RefType $currency
      * @return self
      */
     public function setCurrency(\Pohoda\Type\RefType $currency)
     {
         $this->currency = $currency;
+
         return $this;
     }
 
     /**
-     * Gets as rate
+     * Gets as rate.
      *
      * Kurs použitý pro valutovou pokladnu (denní/pevný).
      *
@@ -63,16 +71,18 @@ class CurrencyCashRegisterType
     }
 
     /**
-     * Sets a new rate
+     * Sets a new rate.
      *
      * Kurs použitý pro valutovou pokladnu (denní/pevný).
      *
      * @param string $rate
+     *
      * @return self
      */
     public function setRate($rate)
     {
         $this->rate = $rate;
+
         return $this;
     }
 }

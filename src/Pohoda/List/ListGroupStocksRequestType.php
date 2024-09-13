@@ -1,34 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListGroupStocksRequestType
- *
+ * Class representing ListGroupStocksRequestType.
  *
  * XSD Type: listGroupStocksRequestType
  */
 class ListGroupStocksRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze skladů.
-     *
-     * @var string $groupStocksVersion
      */
-    private $groupStocksVersion = null;
+    private string $groupStocksVersion = null;
+    private \Pohoda\Filter\RequestGroupStocksType $requestGroupStocks = null;
 
     /**
-     * @var \Pohoda\Filter\RequestGroupStocksType $requestGroupStocks
-     */
-    private $requestGroupStocks = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -38,19 +41,21 @@ class ListGroupStocksRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as groupStocksVersion
+     * Gets as groupStocksVersion.
      *
      * Požadovaná verze skladů.
      *
@@ -62,21 +67,23 @@ class ListGroupStocksRequestType
     }
 
     /**
-     * Sets a new groupStocksVersion
+     * Sets a new groupStocksVersion.
      *
      * Požadovaná verze skladů.
      *
      * @param string $groupStocksVersion
+     *
      * @return self
      */
     public function setGroupStocksVersion($groupStocksVersion)
     {
         $this->groupStocksVersion = $groupStocksVersion;
+
         return $this;
     }
 
     /**
-     * Gets as requestGroupStocks
+     * Gets as requestGroupStocks.
      *
      * @return \Pohoda\Filter\RequestGroupStocksType
      */
@@ -86,14 +93,14 @@ class ListGroupStocksRequestType
     }
 
     /**
-     * Sets a new requestGroupStocks
+     * Sets a new requestGroupStocks.
      *
-     * @param \Pohoda\Filter\RequestGroupStocksType $requestGroupStocks
      * @return self
      */
     public function setRequestGroupStocks(?\Pohoda\Filter\RequestGroupStocksType $requestGroupStocks = null)
     {
         $this->requestGroupStocks = $requestGroupStocks;
+
         return $this;
     }
 }

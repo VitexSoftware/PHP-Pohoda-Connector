@@ -1,32 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing RefType
+ * Class representing RefType.
  *
  * Odkaz na entitu. Vyšší prioritu má element "id".
  * XSD Type: refType
  */
 class RefType
 {
-    /**
-     * @var int $id
-     */
-    private $id = null;
+    private int $id = null;
+    private string $ids = null;
+    private string $valueType = null;
 
     /**
-     * @var string $ids
-     */
-    private $ids = null;
-
-    /**
-     * @var string $valueType
-     */
-    private $valueType = null;
-
-    /**
-     * Gets as id
+     * Gets as id.
      *
      * @return int
      */
@@ -36,19 +38,21 @@ class RefType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as ids
+     * Gets as ids.
      *
      * @return string
      */
@@ -58,19 +62,21 @@ class RefType
     }
 
     /**
-     * Sets a new ids
+     * Sets a new ids.
      *
      * @param string $ids
+     *
      * @return self
      */
     public function setIds($ids)
     {
         $this->ids = $ids;
+
         return $this;
     }
 
     /**
-     * Gets as valueType
+     * Gets as valueType.
      *
      * @return string
      */
@@ -80,14 +86,16 @@ class RefType
     }
 
     /**
-     * Sets a new valueType
+     * Sets a new valueType.
      *
      * @param string $valueType
+     *
      * @return self
      */
     public function setValueType($valueType)
     {
         $this->valueType = $valueType;
+
         return $this;
     }
 }

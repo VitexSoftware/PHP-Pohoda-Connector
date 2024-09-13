@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ClassificationVAT;
 
 /**
- * Class representing ClassificationVATHeaderType
+ * Class representing ClassificationVATHeaderType.
  *
  * Členění DPH
  * XSD Type: classificationVATHeaderType
@@ -12,126 +25,92 @@ class ClassificationVATHeaderType
 {
     /**
      * ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Zkratka.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Název.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Typ členění DPH.
-     *
-     * @var \Pohoda\Type\RefType $vATType
      */
-    private $vATType = null;
+    private \Pohoda\Type\RefType $vATType = null;
 
     /**
      * Text na dokladu.
-     *
-     * @var string $textOnDocument
      */
-    private $textOnDocument = null;
+    private string $textOnDocument = null;
 
     /**
      * Text pro vyměření DPH.
-     *
-     * @var string $textForVATAssessment
      */
-    private $textForVATAssessment = null;
+    private string $textForVATAssessment = null;
 
     /**
      * Nabízet.
-     *
-     * @var bool $offer
      */
-    private $offer = null;
+    private bool $offer = null;
 
     /**
      * Platnost od.
-     *
-     * @var \DateTime $validFrom
      */
-    private $validFrom = null;
+    private \DateTime $validFrom = null;
 
     /**
      * Platnost do.
-     *
-     * @var \DateTime $validTill
      */
-    private $validTill = null;
+    private \DateTime $validTill = null;
 
     /**
      * Řádek v Přiznání DPH.
-     *
-     * @var string $lineInVATReturn
      */
-    private $lineInVATReturn = null;
+    private string $lineInVATReturn = null;
 
     /**
      * Sekce v Kontrolním hlášení (pouze CZ verze).
-     *
-     * @var string $sectionInVATLedgerStatement
      */
-    private $sectionInVATLedgerStatement = null;
+    private string $sectionInVATLedgerStatement = null;
 
     /**
      * Kód režimu plnění (pouze CZ verze).
-     *
-     * @var string $codeOfSupplyMode
      */
-    private $codeOfSupplyMode = null;
+    private string $codeOfSupplyMode = null;
 
     /**
      * Kód pro souhrnné hlášení.
-     *
-     * @var string $codeForSummaryReport
      */
-    private $codeForSummaryReport = null;
+    private string $codeForSummaryReport = null;
 
     /**
      * Kód předmětu plnění (pouze CZ verze).
-     *
-     * @var string $codeOfObjectOfFulfilment
      */
-    private $codeOfObjectOfFulfilment = null;
+    private string $codeOfObjectOfFulfilment = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu.
      *
@@ -143,21 +122,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -170,22 +151,22 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Zkratka.
      *
@@ -197,21 +178,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Zkratka.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název.
      *
@@ -223,21 +206,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as vATType
+     * Gets as vATType.
      *
      * Typ členění DPH.
      *
@@ -249,21 +234,21 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new vATType
+     * Sets a new vATType.
      *
      * Typ členění DPH.
      *
-     * @param \Pohoda\Type\RefType $vATType
      * @return self
      */
     public function setVATType(\Pohoda\Type\RefType $vATType)
     {
         $this->vATType = $vATType;
+
         return $this;
     }
 
     /**
-     * Gets as textOnDocument
+     * Gets as textOnDocument.
      *
      * Text na dokladu.
      *
@@ -275,21 +260,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new textOnDocument
+     * Sets a new textOnDocument.
      *
      * Text na dokladu.
      *
      * @param string $textOnDocument
+     *
      * @return self
      */
     public function setTextOnDocument($textOnDocument)
     {
         $this->textOnDocument = $textOnDocument;
+
         return $this;
     }
 
     /**
-     * Gets as textForVATAssessment
+     * Gets as textForVATAssessment.
      *
      * Text pro vyměření DPH.
      *
@@ -301,21 +288,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new textForVATAssessment
+     * Sets a new textForVATAssessment.
      *
      * Text pro vyměření DPH.
      *
      * @param string $textForVATAssessment
+     *
      * @return self
      */
     public function setTextForVATAssessment($textForVATAssessment)
     {
         $this->textForVATAssessment = $textForVATAssessment;
+
         return $this;
     }
 
     /**
-     * Gets as offer
+     * Gets as offer.
      *
      * Nabízet.
      *
@@ -327,21 +316,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new offer
+     * Sets a new offer.
      *
      * Nabízet.
      *
      * @param bool $offer
+     *
      * @return self
      */
     public function setOffer($offer)
     {
         $this->offer = $offer;
+
         return $this;
     }
 
     /**
-     * Gets as validFrom
+     * Gets as validFrom.
      *
      * Platnost od.
      *
@@ -353,21 +344,21 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new validFrom
+     * Sets a new validFrom.
      *
      * Platnost od.
      *
-     * @param \DateTime $validFrom
      * @return self
      */
     public function setValidFrom(?\DateTime $validFrom = null)
     {
         $this->validFrom = $validFrom;
+
         return $this;
     }
 
     /**
-     * Gets as validTill
+     * Gets as validTill.
      *
      * Platnost do.
      *
@@ -379,21 +370,21 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new validTill
+     * Sets a new validTill.
      *
      * Platnost do.
      *
-     * @param \DateTime $validTill
      * @return self
      */
     public function setValidTill(?\DateTime $validTill = null)
     {
         $this->validTill = $validTill;
+
         return $this;
     }
 
     /**
-     * Gets as lineInVATReturn
+     * Gets as lineInVATReturn.
      *
      * Řádek v Přiznání DPH.
      *
@@ -405,21 +396,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new lineInVATReturn
+     * Sets a new lineInVATReturn.
      *
      * Řádek v Přiznání DPH.
      *
      * @param string $lineInVATReturn
+     *
      * @return self
      */
     public function setLineInVATReturn($lineInVATReturn)
     {
         $this->lineInVATReturn = $lineInVATReturn;
+
         return $this;
     }
 
     /**
-     * Gets as sectionInVATLedgerStatement
+     * Gets as sectionInVATLedgerStatement.
      *
      * Sekce v Kontrolním hlášení (pouze CZ verze).
      *
@@ -431,21 +424,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new sectionInVATLedgerStatement
+     * Sets a new sectionInVATLedgerStatement.
      *
      * Sekce v Kontrolním hlášení (pouze CZ verze).
      *
      * @param string $sectionInVATLedgerStatement
+     *
      * @return self
      */
     public function setSectionInVATLedgerStatement($sectionInVATLedgerStatement)
     {
         $this->sectionInVATLedgerStatement = $sectionInVATLedgerStatement;
+
         return $this;
     }
 
     /**
-     * Gets as codeOfSupplyMode
+     * Gets as codeOfSupplyMode.
      *
      * Kód režimu plnění (pouze CZ verze).
      *
@@ -457,21 +452,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new codeOfSupplyMode
+     * Sets a new codeOfSupplyMode.
      *
      * Kód režimu plnění (pouze CZ verze).
      *
      * @param string $codeOfSupplyMode
+     *
      * @return self
      */
     public function setCodeOfSupplyMode($codeOfSupplyMode)
     {
         $this->codeOfSupplyMode = $codeOfSupplyMode;
+
         return $this;
     }
 
     /**
-     * Gets as codeForSummaryReport
+     * Gets as codeForSummaryReport.
      *
      * Kód pro souhrnné hlášení.
      *
@@ -483,21 +480,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new codeForSummaryReport
+     * Sets a new codeForSummaryReport.
      *
      * Kód pro souhrnné hlášení.
      *
      * @param string $codeForSummaryReport
+     *
      * @return self
      */
     public function setCodeForSummaryReport($codeForSummaryReport)
     {
         $this->codeForSummaryReport = $codeForSummaryReport;
+
         return $this;
     }
 
     /**
-     * Gets as codeOfObjectOfFulfilment
+     * Gets as codeOfObjectOfFulfilment.
      *
      * Kód předmětu plnění (pouze CZ verze).
      *
@@ -509,21 +508,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new codeOfObjectOfFulfilment
+     * Sets a new codeOfObjectOfFulfilment.
      *
      * Kód předmětu plnění (pouze CZ verze).
      *
      * @param string $codeOfObjectOfFulfilment
+     *
      * @return self
      */
     public function setCodeOfObjectOfFulfilment($codeOfObjectOfFulfilment)
     {
         $this->codeOfObjectOfFulfilment = $codeOfObjectOfFulfilment;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -535,21 +536,23 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -561,16 +564,18 @@ class ClassificationVATHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 }

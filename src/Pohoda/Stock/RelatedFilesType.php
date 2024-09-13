@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing RelatedFilesType
- *
+ * Class representing RelatedFilesType.
  *
  * XSD Type: relatedFilesType
  */
 class RelatedFilesType
 {
     /**
-     * @var \Pohoda\Stock\RelatedFileType[] $relatedFile
+     * @var \Pohoda\Stock\RelatedFileType[]
      */
-    private $relatedFile = [
+    private array $relatedFile = [
     ];
 
     /**
-     * Adds as relatedFile
+     * Adds as relatedFile.
      *
      * @return self
-     * @param \Pohoda\Stock\RelatedFileType $relatedFile
      */
     public function addToRelatedFile(\Pohoda\Stock\RelatedFileType $relatedFile)
     {
         $this->relatedFile[] = $relatedFile;
+
         return $this;
     }
 
     /**
-     * isset relatedFile
+     * isset relatedFile.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRelatedFile($index)
@@ -40,18 +53,17 @@ class RelatedFilesType
     }
 
     /**
-     * unset relatedFile
+     * unset relatedFile.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRelatedFile($index)
+    public function unsetRelatedFile($index): void
     {
         unset($this->relatedFile[$index]);
     }
 
     /**
-     * Gets as relatedFile
+     * Gets as relatedFile.
      *
      * @return \Pohoda\Stock\RelatedFileType[]
      */
@@ -61,14 +73,16 @@ class RelatedFilesType
     }
 
     /**
-     * Sets a new relatedFile
+     * Sets a new relatedFile.
      *
      * @param \Pohoda\Stock\RelatedFileType[] $relatedFile
+     *
      * @return self
      */
     public function setRelatedFile(array $relatedFile)
     {
         $this->relatedFile = $relatedFile;
+
         return $this;
     }
 }

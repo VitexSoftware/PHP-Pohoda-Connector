@@ -1,34 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Documentresponse\ItemType;
 
 /**
- * Class representing ProducedItemAType
+ * Class representing ProducedItemAType.
  */
 class ProducedItemAType
 {
     /**
-     * @var string[] $id
+     * @var string[]
      */
-    private $id = [
+    private array $id = [
     ];
 
     /**
-     * Adds as id
+     * Adds as id.
+     *
+     * @param string $id
      *
      * @return self
-     * @param string $id
      */
     public function addToId($id)
     {
         $this->id[] = $id;
+
         return $this;
     }
 
     /**
-     * isset id
+     * isset id.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetId($index)
@@ -37,18 +53,17 @@ class ProducedItemAType
     }
 
     /**
-     * unset id
+     * unset id.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetId($index)
+    public function unsetId($index): void
     {
         unset($this->id[$index]);
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * @return string[]
      */
@@ -58,14 +73,16 @@ class ProducedItemAType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param string[] $id
+     *
      * @return self
      */
-    public function setId(array $id = null)
+    public function setId(?array $id = null)
     {
         $this->id = $id;
+
         return $this;
     }
 }

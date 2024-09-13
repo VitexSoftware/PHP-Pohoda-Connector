@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing RoundingItemType
- *
+ * Class representing RoundingItemType.
  *
  * XSD Type: roundingItemType
  */
@@ -12,53 +24,37 @@ class RoundingItemType
 {
     /**
      * ID položky dokladu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Text položky - „Zaokrouhlení“.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Množství.
-     *
-     * @var float $quantity
      */
-    private $quantity = null;
+    private float $quantity = null;
 
     /**
      * Ceny jsou uvedeny:bez DPH/včetně DPH.Fixní hodnota „false“.
-     *
-     * @var string $payVAT
      */
-    private $payVAT = null;
+    private string $payVAT = null;
 
     /**
      * Sazba DPH.
-     *
-     * @var \Pohoda\Type\VatRateType $rateVAT
      */
-    private $rateVAT = null;
+    private \Pohoda\Type\VatRateType $rateVAT = null;
 
     /**
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
-     *
-     * @var float $percentVAT
      */
-    private $percentVAT = null;
+    private float $percentVAT = null;
+    private \Pohoda\Type\TypeCurrencyHomeItemRoundingType $homeCurrency = null;
 
     /**
-     * @var \Pohoda\Type\TypeCurrencyHomeItemRoundingType $homeCurrency
-     */
-    private $homeCurrency = null;
-
-    /**
-     * Gets as id
+     * Gets as id.
      *
      * ID položky dokladu (jen pro export).
      *
@@ -70,21 +66,23 @@ class RoundingItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID položky dokladu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text položky - „Zaokrouhlení“.
      *
@@ -96,21 +94,23 @@ class RoundingItemType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text položky - „Zaokrouhlení“.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as quantity
+     * Gets as quantity.
      *
      * Množství.
      *
@@ -122,21 +122,23 @@ class RoundingItemType
     }
 
     /**
-     * Sets a new quantity
+     * Sets a new quantity.
      *
      * Množství.
      *
      * @param float $quantity
+     *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
     /**
-     * Gets as payVAT
+     * Gets as payVAT.
      *
      * Ceny jsou uvedeny:bez DPH/včetně DPH.Fixní hodnota „false“.
      *
@@ -148,21 +150,23 @@ class RoundingItemType
     }
 
     /**
-     * Sets a new payVAT
+     * Sets a new payVAT.
      *
      * Ceny jsou uvedeny:bez DPH/včetně DPH.Fixní hodnota „false“.
      *
      * @param string $payVAT
+     *
      * @return self
      */
     public function setPayVAT($payVAT)
     {
         $this->payVAT = $payVAT;
+
         return $this;
     }
 
     /**
-     * Gets as rateVAT
+     * Gets as rateVAT.
      *
      * Sazba DPH.
      *
@@ -174,21 +178,21 @@ class RoundingItemType
     }
 
     /**
-     * Sets a new rateVAT
+     * Sets a new rateVAT.
      *
      * Sazba DPH.
      *
-     * @param \Pohoda\Type\VatRateType $rateVAT
      * @return self
      */
     public function setRateVAT(\Pohoda\Type\VatRateType $rateVAT)
     {
         $this->rateVAT = $rateVAT;
+
         return $this;
     }
 
     /**
-     * Gets as percentVAT
+     * Gets as percentVAT.
      *
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      *
@@ -200,21 +204,23 @@ class RoundingItemType
     }
 
     /**
-     * Sets a new percentVAT
+     * Sets a new percentVAT.
      *
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      *
      * @param float $percentVAT
+     *
      * @return self
      */
     public function setPercentVAT($percentVAT)
     {
         $this->percentVAT = $percentVAT;
+
         return $this;
     }
 
     /**
-     * Gets as homeCurrency
+     * Gets as homeCurrency.
      *
      * @return \Pohoda\Type\TypeCurrencyHomeItemRoundingType
      */
@@ -224,14 +230,14 @@ class RoundingItemType
     }
 
     /**
-     * Sets a new homeCurrency
+     * Sets a new homeCurrency.
      *
-     * @param \Pohoda\Type\TypeCurrencyHomeItemRoundingType $homeCurrency
      * @return self
      */
     public function setHomeCurrency(?\Pohoda\Type\TypeCurrencyHomeItemRoundingType $homeCurrency = null)
     {
         $this->homeCurrency = $homeCurrency;
+
         return $this;
     }
 }

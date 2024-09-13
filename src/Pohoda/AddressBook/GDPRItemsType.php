@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\AddressBook;
 
 /**
- * Class representing GDPRItemsType
- *
+ * Class representing GDPRItemsType.
  *
  * XSD Type: GDPRItemsType
  */
 class GDPRItemsType
 {
     /**
-     * @var \Pohoda\AddressBook\GDPRItemType[] $gDPRItem
+     * @var \Pohoda\AddressBook\GDPRItemType[]
      */
-    private $gDPRItem = [
+    private array $gDPRItem = [
     ];
 
     /**
-     * Adds as gDPRItem
+     * Adds as gDPRItem.
      *
      * @return self
-     * @param \Pohoda\AddressBook\GDPRItemType $gDPRItem
      */
     public function addToGDPRItem(\Pohoda\AddressBook\GDPRItemType $gDPRItem)
     {
         $this->gDPRItem[] = $gDPRItem;
+
         return $this;
     }
 
     /**
-     * isset gDPRItem
+     * isset gDPRItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetGDPRItem($index)
@@ -40,18 +53,17 @@ class GDPRItemsType
     }
 
     /**
-     * unset gDPRItem
+     * unset gDPRItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetGDPRItem($index)
+    public function unsetGDPRItem($index): void
     {
         unset($this->gDPRItem[$index]);
     }
 
     /**
-     * Gets as gDPRItem
+     * Gets as gDPRItem.
      *
      * @return \Pohoda\AddressBook\GDPRItemType[]
      */
@@ -61,14 +73,16 @@ class GDPRItemsType
     }
 
     /**
-     * Sets a new gDPRItem
+     * Sets a new gDPRItem.
      *
      * @param \Pohoda\AddressBook\GDPRItemType[] $gDPRItem
+     *
      * @return self
      */
     public function setGDPRItem(array $gDPRItem)
     {
         $this->gDPRItem = $gDPRItem;
+
         return $this;
     }
 }

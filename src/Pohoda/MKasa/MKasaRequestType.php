@@ -1,32 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\MKasa;
 
 /**
- * Class representing MKasaRequestType
- *
+ * Class representing MKasaRequestType.
  *
  * XSD Type: mKasaRequestType
  */
 class MKasaRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \Pohoda\MKasa\ExportRequestType $export = null;
+    private \Pohoda\MKasa\ImportRequestType $import = null;
 
     /**
-     * @var \Pohoda\MKasa\ExportRequestType $export
-     */
-    private $export = null;
-
-    /**
-     * @var \Pohoda\MKasa\ImportRequestType $import
-     */
-    private $import = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -36,19 +37,21 @@ class MKasaRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as export
+     * Gets as export.
      *
      * @return \Pohoda\MKasa\ExportRequestType
      */
@@ -58,19 +61,19 @@ class MKasaRequestType
     }
 
     /**
-     * Sets a new export
+     * Sets a new export.
      *
-     * @param \Pohoda\MKasa\ExportRequestType $export
      * @return self
      */
     public function setExport(?\Pohoda\MKasa\ExportRequestType $export = null)
     {
         $this->export = $export;
+
         return $this;
     }
 
     /**
-     * Gets as import
+     * Gets as import.
      *
      * @return \Pohoda\MKasa\ImportRequestType
      */
@@ -80,14 +83,14 @@ class MKasaRequestType
     }
 
     /**
-     * Sets a new import
+     * Sets a new import.
      *
-     * @param \Pohoda\MKasa\ImportRequestType $import
      * @return self
      */
     public function setImport(?\Pohoda\MKasa\ImportRequestType $import = null)
     {
         $this->import = $import;
+
         return $this;
     }
 }

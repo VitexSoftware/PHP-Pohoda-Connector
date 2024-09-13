@@ -1,28 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IntParam;
 
 /**
- * Class representing IntParamDetailType
- *
+ * Class representing IntParamDetailType.
  *
  * XSD Type: intParamDetailType
  */
 class IntParamDetailType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
-     * @var \Pohoda\IntParam\IntParamType[] $intParam
+     * @var \Pohoda\IntParam\IntParamType[]
      */
-    private $intParam = [
+    private array $intParam = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -32,33 +41,36 @@ class IntParamDetailType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Adds as intParam
+     * Adds as intParam.
      *
      * @return self
-     * @param \Pohoda\IntParam\IntParamType $intParam
      */
     public function addToIntParam(\Pohoda\IntParam\IntParamType $intParam)
     {
         $this->intParam[] = $intParam;
+
         return $this;
     }
 
     /**
-     * isset intParam
+     * isset intParam.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetIntParam($index)
@@ -67,18 +79,17 @@ class IntParamDetailType
     }
 
     /**
-     * unset intParam
+     * unset intParam.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetIntParam($index)
+    public function unsetIntParam($index): void
     {
         unset($this->intParam[$index]);
     }
 
     /**
-     * Gets as intParam
+     * Gets as intParam.
      *
      * @return \Pohoda\IntParam\IntParamType[]
      */
@@ -88,14 +99,16 @@ class IntParamDetailType
     }
 
     /**
-     * Sets a new intParam
+     * Sets a new intParam.
      *
      * @param \Pohoda\IntParam\IntParamType[] $intParam
+     *
      * @return self
      */
-    public function setIntParam(array $intParam = null)
+    public function setIntParam(?array $intParam = null)
     {
         $this->intParam = $intParam;
+
         return $this;
     }
 }

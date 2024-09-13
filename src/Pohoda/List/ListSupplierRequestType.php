@@ -1,42 +1,47 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListSupplierRequestType
- *
+ * Class representing ListSupplierRequestType.
  *
  * XSD Type: listSupplierRequestType
  */
 class ListSupplierRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze dodavatele.
-     *
-     * @var string $supplierVersion
      */
-    private $supplierVersion = null;
+    private string $supplierVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
 
     /**
-     * @var \Pohoda\Filter\RequestStockType[] $requestSupplier
+     * @var \Pohoda\Filter\RequestStockType[]
      */
-    private $requestSupplier = [
+    private array $requestSupplier = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -46,19 +51,21 @@ class ListSupplierRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as supplierVersion
+     * Gets as supplierVersion.
      *
      * Požadovaná verze dodavatele.
      *
@@ -70,21 +77,23 @@ class ListSupplierRequestType
     }
 
     /**
-     * Sets a new supplierVersion
+     * Sets a new supplierVersion.
      *
      * Požadovaná verze dodavatele.
      *
      * @param string $supplierVersion
+     *
      * @return self
      */
     public function setSupplierVersion($supplierVersion)
     {
         $this->supplierVersion = $supplierVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -96,35 +105,38 @@ class ListSupplierRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Adds as requestSupplier
+     * Adds as requestSupplier.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestStockType $requestSupplier
      */
     public function addToRequestSupplier(\Pohoda\Filter\RequestStockType $requestSupplier)
     {
         $this->requestSupplier[] = $requestSupplier;
+
         return $this;
     }
 
     /**
-     * isset requestSupplier
+     * isset requestSupplier.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestSupplier($index)
@@ -133,18 +145,17 @@ class ListSupplierRequestType
     }
 
     /**
-     * unset requestSupplier
+     * unset requestSupplier.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestSupplier($index)
+    public function unsetRequestSupplier($index): void
     {
         unset($this->requestSupplier[$index]);
     }
 
     /**
-     * Gets as requestSupplier
+     * Gets as requestSupplier.
      *
      * @return \Pohoda\Filter\RequestStockType[]
      */
@@ -154,14 +165,16 @@ class ListSupplierRequestType
     }
 
     /**
-     * Sets a new requestSupplier
+     * Sets a new requestSupplier.
      *
      * @param \Pohoda\Filter\RequestStockType[] $requestSupplier
+     *
      * @return self
      */
     public function setRequestSupplier(array $requestSupplier)
     {
         $this->requestSupplier = $requestSupplier;
+
         return $this;
     }
 }

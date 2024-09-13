@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Invoice;
 
 /**
- * Class representing InvoiceRetentionsType
- *
+ * Class representing InvoiceRetentionsType.
  *
  * XSD Type: invoiceRetentionsType
  */
@@ -13,31 +25,32 @@ class InvoiceRetentionsType
     /**
      * Údaje o pozastávce k vydané nebo přijaté faktuře. Pouze pro export.
      *
-     * @var \Pohoda\Invoice\InvoiceRetentionType[] $invoiceRetention
+     * @var \Pohoda\Invoice\InvoiceRetentionType[]
      */
-    private $invoiceRetention = [
+    private array $invoiceRetention = [
     ];
 
     /**
-     * Adds as invoiceRetention
+     * Adds as invoiceRetention.
      *
      * Údaje o pozastávce k vydané nebo přijaté faktuře. Pouze pro export.
      *
      * @return self
-     * @param \Pohoda\Invoice\InvoiceRetentionType $invoiceRetention
      */
     public function addToInvoiceRetention(\Pohoda\Invoice\InvoiceRetentionType $invoiceRetention)
     {
         $this->invoiceRetention[] = $invoiceRetention;
+
         return $this;
     }
 
     /**
-     * isset invoiceRetention
+     * isset invoiceRetention.
      *
      * Údaje o pozastávce k vydané nebo přijaté faktuře. Pouze pro export.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetInvoiceRetention($index)
@@ -46,20 +59,19 @@ class InvoiceRetentionsType
     }
 
     /**
-     * unset invoiceRetention
+     * unset invoiceRetention.
      *
      * Údaje o pozastávce k vydané nebo přijaté faktuře. Pouze pro export.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetInvoiceRetention($index)
+    public function unsetInvoiceRetention($index): void
     {
         unset($this->invoiceRetention[$index]);
     }
 
     /**
-     * Gets as invoiceRetention
+     * Gets as invoiceRetention.
      *
      * Údaje o pozastávce k vydané nebo přijaté faktuře. Pouze pro export.
      *
@@ -71,16 +83,18 @@ class InvoiceRetentionsType
     }
 
     /**
-     * Sets a new invoiceRetention
+     * Sets a new invoiceRetention.
      *
      * Údaje o pozastávce k vydané nebo přijaté faktuře. Pouze pro export.
      *
      * @param \Pohoda\Invoice\InvoiceRetentionType[] $invoiceRetention
+     *
      * @return self
      */
     public function setInvoiceRetention(array $invoiceRetention)
     {
         $this->invoiceRetention = $invoiceRetention;
+
         return $this;
     }
 }

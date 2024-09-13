@@ -1,44 +1,55 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Offer;
 
 /**
- * Class representing OfferDetailType
- *
+ * Class representing OfferDetailType.
  *
  * XSD Type: offerDetailType
  */
 class OfferDetailType
 {
     /**
-     * @var \Pohoda\Offer\OfferItemType[] $offerItem
+     * @var \Pohoda\Offer\OfferItemType[]
      */
-    private $offerItem = [
+    private array $offerItem = [
     ];
 
     /**
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
-     *
-     * @var \Pohoda\Type\RoundingItemType $roundingItem
      */
-    private $roundingItem = null;
+    private \Pohoda\Type\RoundingItemType $roundingItem = null;
 
     /**
-     * Adds as offerItem
+     * Adds as offerItem.
      *
      * @return self
-     * @param \Pohoda\Offer\OfferItemType $offerItem
      */
     public function addToOfferItem(\Pohoda\Offer\OfferItemType $offerItem)
     {
         $this->offerItem[] = $offerItem;
+
         return $this;
     }
 
     /**
-     * isset offerItem
+     * isset offerItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetOfferItem($index)
@@ -47,18 +58,17 @@ class OfferDetailType
     }
 
     /**
-     * unset offerItem
+     * unset offerItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetOfferItem($index)
+    public function unsetOfferItem($index): void
     {
         unset($this->offerItem[$index]);
     }
 
     /**
-     * Gets as offerItem
+     * Gets as offerItem.
      *
      * @return \Pohoda\Offer\OfferItemType[]
      */
@@ -68,19 +78,21 @@ class OfferDetailType
     }
 
     /**
-     * Sets a new offerItem
+     * Sets a new offerItem.
      *
      * @param \Pohoda\Offer\OfferItemType[] $offerItem
+     *
      * @return self
      */
     public function setOfferItem(array $offerItem)
     {
         $this->offerItem = $offerItem;
+
         return $this;
     }
 
     /**
-     * Gets as roundingItem
+     * Gets as roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
@@ -92,16 +104,16 @@ class OfferDetailType
     }
 
     /**
-     * Sets a new roundingItem
+     * Sets a new roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
-     * @param \Pohoda\Type\RoundingItemType $roundingItem
      * @return self
      */
     public function setRoundingItem(?\Pohoda\Type\RoundingItemType $roundingItem = null)
     {
         $this->roundingItem = $roundingItem;
+
         return $this;
     }
 }

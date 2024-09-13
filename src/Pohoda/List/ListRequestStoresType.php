@@ -1,36 +1,49 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListRequestStoresType
- *
+ * Class representing ListRequestStoresType.
  *
  * XSD Type: listRequestStoresType
  */
 class ListRequestStoresType extends ListRequestType
 {
     /**
-     * @var \Pohoda\Type\RefType[] $stores
+     * @var \Pohoda\Type\RefType[]
      */
-    private $stores = null;
+    private array $stores = null;
 
     /**
-     * Adds as store
+     * Adds as store.
      *
      * @return self
-     * @param \Pohoda\Type\RefType $store
      */
     public function addToStores(\Pohoda\Type\RefType $store)
     {
         $this->stores[] = $store;
+
         return $this;
     }
 
     /**
-     * isset stores
+     * isset stores.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetStores($index)
@@ -39,18 +52,17 @@ class ListRequestStoresType extends ListRequestType
     }
 
     /**
-     * unset stores
+     * unset stores.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetStores($index)
+    public function unsetStores($index): void
     {
         unset($this->stores[$index]);
     }
 
     /**
-     * Gets as stores
+     * Gets as stores.
      *
      * @return \Pohoda\Type\RefType[]
      */
@@ -60,14 +72,16 @@ class ListRequestStoresType extends ListRequestType
     }
 
     /**
-     * Sets a new stores
+     * Sets a new stores.
      *
      * @param \Pohoda\Type\RefType[] $stores
+     *
      * @return self
      */
-    public function setStores(array $stores = null)
+    public function setStores(?array $stores = null)
     {
         $this->stores = $stores;
+
         return $this;
     }
 }

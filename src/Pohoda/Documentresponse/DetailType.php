@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Documentresponse;
 
 /**
- * Class representing DetailType
- *
+ * Class representing DetailType.
  *
  * XSD Type: detailType
  */
@@ -12,48 +24,36 @@ class DetailType
 {
     /**
      * Typ problému při zpracování (ok, warning nebo error).
-     *
-     * @var string $state
      */
-    private $state = null;
+    private string $state = null;
 
     /**
      * Unikátní číslo chyby.
-     *
-     * @var int $errno
      */
-    private $errno = null;
+    private int $errno = null;
 
     /**
      * Komentář.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * XPath - cesta.
-     *
-     * @var string $xPath
      */
-    private $xPath = null;
+    private string $xPath = null;
 
     /**
      * Požadovaná hodnota.
-     *
-     * @var string $valueRequested
      */
-    private $valueRequested = null;
+    private string $valueRequested = null;
 
     /**
      * Vytvořená hodnota.
-     *
-     * @var string $valueProduced
      */
-    private $valueProduced = null;
+    private string $valueProduced = null;
 
     /**
-     * Gets as state
+     * Gets as state.
      *
      * Typ problému při zpracování (ok, warning nebo error).
      *
@@ -65,21 +65,23 @@ class DetailType
     }
 
     /**
-     * Sets a new state
+     * Sets a new state.
      *
      * Typ problému při zpracování (ok, warning nebo error).
      *
      * @param string $state
+     *
      * @return self
      */
     public function setState($state)
     {
         $this->state = $state;
+
         return $this;
     }
 
     /**
-     * Gets as errno
+     * Gets as errno.
      *
      * Unikátní číslo chyby.
      *
@@ -91,21 +93,23 @@ class DetailType
     }
 
     /**
-     * Sets a new errno
+     * Sets a new errno.
      *
      * Unikátní číslo chyby.
      *
      * @param int $errno
+     *
      * @return self
      */
     public function setErrno($errno)
     {
         $this->errno = $errno;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Komentář.
      *
@@ -117,21 +121,23 @@ class DetailType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Komentář.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as xPath
+     * Gets as xPath.
      *
      * XPath - cesta.
      *
@@ -143,21 +149,23 @@ class DetailType
     }
 
     /**
-     * Sets a new xPath
+     * Sets a new xPath.
      *
      * XPath - cesta.
      *
      * @param string $xPath
+     *
      * @return self
      */
     public function setXPath($xPath)
     {
         $this->xPath = $xPath;
+
         return $this;
     }
 
     /**
-     * Gets as valueRequested
+     * Gets as valueRequested.
      *
      * Požadovaná hodnota.
      *
@@ -169,21 +177,23 @@ class DetailType
     }
 
     /**
-     * Sets a new valueRequested
+     * Sets a new valueRequested.
      *
      * Požadovaná hodnota.
      *
      * @param string $valueRequested
+     *
      * @return self
      */
     public function setValueRequested($valueRequested)
     {
         $this->valueRequested = $valueRequested;
+
         return $this;
     }
 
     /**
-     * Gets as valueProduced
+     * Gets as valueProduced.
      *
      * Vytvořená hodnota.
      *
@@ -195,16 +205,18 @@ class DetailType
     }
 
     /**
-     * Sets a new valueProduced
+     * Sets a new valueProduced.
      *
      * Vytvořená hodnota.
      *
      * @param string $valueProduced
+     *
      * @return self
      */
     public function setValueProduced($valueProduced)
     {
         $this->valueProduced = $valueProduced;
+
         return $this;
     }
 }

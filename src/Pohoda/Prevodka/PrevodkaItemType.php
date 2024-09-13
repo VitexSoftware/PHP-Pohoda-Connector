@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prevodka;
 
 /**
- * Class representing PrevodkaItemType
- *
+ * Class representing PrevodkaItemType.
  *
  * XSD Type: prevodkaItemType
  */
@@ -12,41 +24,33 @@ class PrevodkaItemType
 {
     /**
      * Pomocí tohoto bloku lze vytvořit položku z jiného dokladu. Vložený doklad lze upravit pomocí zadanách parametrů u dokladu.
-     *
-     * @var \Pohoda\Type\LinkItemType $link
      */
-    private $link = null;
+    private \Pohoda\Type\LinkItemType $link = null;
 
     /**
      * Množství.
-     *
-     * @var float $quantity
      */
-    private $quantity = null;
+    private float $quantity = null;
 
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
-     *
-     * @var \Pohoda\Type\StockItemType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Volitelné parametry.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as link
+     * Gets as link.
      *
      * Pomocí tohoto bloku lze vytvořit položku z jiného dokladu. Vložený doklad lze upravit pomocí zadanách parametrů u dokladu.
      *
@@ -58,21 +62,21 @@ class PrevodkaItemType
     }
 
     /**
-     * Sets a new link
+     * Sets a new link.
      *
      * Pomocí tohoto bloku lze vytvořit položku z jiného dokladu. Vložený doklad lze upravit pomocí zadanách parametrů u dokladu.
      *
-     * @param \Pohoda\Type\LinkItemType $link
      * @return self
      */
     public function setLink(?\Pohoda\Type\LinkItemType $link = null)
     {
         $this->link = $link;
+
         return $this;
     }
 
     /**
-     * Gets as quantity
+     * Gets as quantity.
      *
      * Množství.
      *
@@ -84,21 +88,23 @@ class PrevodkaItemType
     }
 
     /**
-     * Sets a new quantity
+     * Sets a new quantity.
      *
      * Množství.
      *
      * @param float $quantity
+     *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      *
@@ -110,21 +116,21 @@ class PrevodkaItemType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      *
-     * @param \Pohoda\Type\StockItemType $stockItem
      * @return self
      */
     public function setStockItem(?\Pohoda\Type\StockItemType $stockItem = null)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -136,39 +142,42 @@ class PrevodkaItemType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelné parametry.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelné parametry.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -177,20 +186,19 @@ class PrevodkaItemType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelné parametry.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelné parametry.
      *
@@ -202,16 +210,18 @@ class PrevodkaItemType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelné parametry.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

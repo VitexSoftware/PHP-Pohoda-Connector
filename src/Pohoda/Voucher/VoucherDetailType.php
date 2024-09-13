@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Voucher;
 
 /**
- * Class representing VoucherDetailType
- *
+ * Class representing VoucherDetailType.
  *
  * XSD Type: voucherDetailType
  */
@@ -13,46 +25,45 @@ class VoucherDetailType
     /**
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
-     * @var \Pohoda\Voucher\VoucherItemType[] $voucherItem
+     * @var \Pohoda\Voucher\VoucherItemType[]
      */
-    private $voucherItem = [
+    private array $voucherItem = [
     ];
 
     /**
      * Definice položek pro likvidaci dokladu (Pohledávky/Závazku). Pouze pro import.
      *
-     * @var \Pohoda\Voucher\VoucherliquidationItemType[] $voucherLiquidationItem
+     * @var \Pohoda\Voucher\VoucherliquidationItemType[]
      */
-    private $voucherLiquidationItem = [
+    private array $voucherLiquidationItem = [
     ];
 
     /**
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
-     *
-     * @var \Pohoda\Type\RoundingItemType $roundingItem
      */
-    private $roundingItem = null;
+    private \Pohoda\Type\RoundingItemType $roundingItem = null;
 
     /**
-     * Adds as voucherItem
+     * Adds as voucherItem.
      *
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
      * @return self
-     * @param \Pohoda\Voucher\VoucherItemType $voucherItem
      */
     public function addToVoucherItem(\Pohoda\Voucher\VoucherItemType $voucherItem)
     {
         $this->voucherItem[] = $voucherItem;
+
         return $this;
     }
 
     /**
-     * isset voucherItem
+     * isset voucherItem.
      *
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetVoucherItem($index)
@@ -61,20 +72,19 @@ class VoucherDetailType
     }
 
     /**
-     * unset voucherItem
+     * unset voucherItem.
      *
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetVoucherItem($index)
+    public function unsetVoucherItem($index): void
     {
         unset($this->voucherItem[$index]);
     }
 
     /**
-     * Gets as voucherItem
+     * Gets as voucherItem.
      *
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
@@ -86,39 +96,42 @@ class VoucherDetailType
     }
 
     /**
-     * Sets a new voucherItem
+     * Sets a new voucherItem.
      *
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
      * @param \Pohoda\Voucher\VoucherItemType[] $voucherItem
+     *
      * @return self
      */
-    public function setVoucherItem(array $voucherItem = null)
+    public function setVoucherItem(?array $voucherItem = null)
     {
         $this->voucherItem = $voucherItem;
+
         return $this;
     }
 
     /**
-     * Adds as voucherLiquidationItem
+     * Adds as voucherLiquidationItem.
      *
      * Definice položek pro likvidaci dokladu (Pohledávky/Závazku). Pouze pro import.
      *
      * @return self
-     * @param \Pohoda\Voucher\VoucherliquidationItemType $voucherLiquidationItem
      */
     public function addToVoucherLiquidationItem(\Pohoda\Voucher\VoucherliquidationItemType $voucherLiquidationItem)
     {
         $this->voucherLiquidationItem[] = $voucherLiquidationItem;
+
         return $this;
     }
 
     /**
-     * isset voucherLiquidationItem
+     * isset voucherLiquidationItem.
      *
      * Definice položek pro likvidaci dokladu (Pohledávky/Závazku). Pouze pro import.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetVoucherLiquidationItem($index)
@@ -127,20 +140,19 @@ class VoucherDetailType
     }
 
     /**
-     * unset voucherLiquidationItem
+     * unset voucherLiquidationItem.
      *
      * Definice položek pro likvidaci dokladu (Pohledávky/Závazku). Pouze pro import.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetVoucherLiquidationItem($index)
+    public function unsetVoucherLiquidationItem($index): void
     {
         unset($this->voucherLiquidationItem[$index]);
     }
 
     /**
-     * Gets as voucherLiquidationItem
+     * Gets as voucherLiquidationItem.
      *
      * Definice položek pro likvidaci dokladu (Pohledávky/Závazku). Pouze pro import.
      *
@@ -152,21 +164,23 @@ class VoucherDetailType
     }
 
     /**
-     * Sets a new voucherLiquidationItem
+     * Sets a new voucherLiquidationItem.
      *
      * Definice položek pro likvidaci dokladu (Pohledávky/Závazku). Pouze pro import.
      *
      * @param \Pohoda\Voucher\VoucherliquidationItemType[] $voucherLiquidationItem
+     *
      * @return self
      */
-    public function setVoucherLiquidationItem(array $voucherLiquidationItem = null)
+    public function setVoucherLiquidationItem(?array $voucherLiquidationItem = null)
     {
         $this->voucherLiquidationItem = $voucherLiquidationItem;
+
         return $this;
     }
 
     /**
-     * Gets as roundingItem
+     * Gets as roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
@@ -178,16 +192,16 @@ class VoucherDetailType
     }
 
     /**
-     * Sets a new roundingItem
+     * Sets a new roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
-     * @param \Pohoda\Type\RoundingItemType $roundingItem
      * @return self
      */
     public function setRoundingItem(?\Pohoda\Type\RoundingItemType $roundingItem = null)
     {
         $this->roundingItem = $roundingItem;
+
         return $this;
     }
 }

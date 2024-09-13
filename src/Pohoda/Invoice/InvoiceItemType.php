@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Invoice;
 
 /**
- * Class representing InvoiceItemType
- *
+ * Class representing InvoiceItemType.
  *
  * XSD Type: invoiceItemType
  */
@@ -13,242 +25,174 @@ class InvoiceItemType
     /**
      * Pomocí tohoto bloku lze vytvořit položku z jiného dokladu. Vložený doklad lze upravit pomocí zadaných parametrů u dokladu.
      *  Povolené jsou vazby: - přijatá objednávka do vydaných faktur.
-     *
-     * @var \Pohoda\Type\LinkItemType $link
      */
-    private $link = null;
+    private \Pohoda\Type\LinkItemType $link = null;
 
     /**
      * Vazba na doklad. Informace o vazbě položky exportovaného dokladu na položku jiného dokladu. Např. Faktura - Objednávka. Faktury - Vydaná zálohová faktura. Faktura - Výdejka (pouze pro export).
-     *
-     * @var \Pohoda\Type\LinkedDocumentType $linkedDocument
      */
-    private $linkedDocument = null;
+    private \Pohoda\Type\LinkedDocumentType $linkedDocument = null;
 
     /**
      * ID položky dokladu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
-
-    /**
-     * @var string $extId
-     */
-    private $extId = null;
+    private int $id = null;
+    private string $extId = null;
 
     /**
      * Text položky.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Množství.
-     *
-     * @var float $quantity
      */
-    private $quantity = null;
+    private float $quantity = null;
 
     /**
      * Měrná jednotka.
-     *
-     * @var string $unit
      */
-    private $unit = null;
+    private string $unit = null;
 
     /**
      * Koeficient (pouze pro export).
-     *
-     * @var float $coefficient
      */
-    private $coefficient = null;
+    private float $coefficient = null;
 
     /**
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
-     *
-     * @var string $payVAT
      */
-    private $payVAT = null;
+    private string $payVAT = null;
 
     /**
      * Sazba DPH.
-     *
-     * @var \Pohoda\Type\VatRateType $rateVAT
      */
-    private $rateVAT = null;
+    private \Pohoda\Type\VatRateType $rateVAT = null;
 
     /**
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
-     *
-     * @var float $percentVAT
      */
-    private $percentVAT = null;
+    private float $percentVAT = null;
 
     /**
      * Sleva v procentech. Pokud není uvedena, bere se jako hodnota slevy z priceLevel dokumentu. Pokud není definován ani priceLevel bere se jako NULOVÁ.
-     *
-     * @var float $discountPercentage
      */
-    private $discountPercentage = null;
+    private float $discountPercentage = null;
 
     /**
      * Kč.
-     *
-     * @var \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency
      */
-    private $homeCurrency = null;
+    private \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null;
 
     /**
      * Cizí měna.
-     *
-     * @var \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency
      */
-    private $foreignCurrency = null;
+    private \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency = null;
 
     /**
      * Druh služby (OSS).
-     *
-     * @var \Pohoda\Type\MOSStypeType $typeServiceMOSS
      */
-    private $typeServiceMOSS = null;
+    private \Pohoda\Type\MOSStypeType $typeServiceMOSS = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Kód.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Délka záruky.
-     *
-     * @var int $guarantee
      */
-    private $guarantee = null;
+    private int $guarantee = null;
 
     /**
      * Typ záruky.
-     *
-     * @var string $guaranteeType
      */
-    private $guaranteeType = null;
+    private string $guaranteeType = null;
 
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
-     *
-     * @var \Pohoda\Type\StockItemType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Identifikátor zásoby u textových položek s vazbou na sklad (pouze pro export).
-     *
-     * @var \Pohoda\Type\LinkToStockType $linkToStock
      */
-    private $linkToStock = null;
+    private \Pohoda\Type\LinkToStockType $linkToStock = null;
 
     /**
      * Předkontace.
-     *
-     * @var \Pohoda\Type\RefType $accounting
      */
-    private $accounting = null;
+    private \Pohoda\Type\RefType $accounting = null;
 
     /**
      * Členění DPH.
-     *
-     * @var \Pohoda\Type\ClassificationVATType $classificationVAT
      */
-    private $classificationVAT = null;
+    private \Pohoda\Type\ClassificationVATType $classificationVAT = null;
 
     /**
      * Členění KV DPH (pouze SK verze).
-     *
-     * @var \Pohoda\Type\RefType $classificationKVDPH
      */
-    private $classificationKVDPH = null;
+    private \Pohoda\Type\RefType $classificationKVDPH = null;
 
     /**
      * Příznak Přenesení daňové povinnosti (pouze pro Vydané faktury, Vydané zálohové faktury a Ostatní pohledávky).
-     *
-     * @var bool $pDP
      */
-    private $pDP = null;
+    private bool $pDP = null;
 
     /**
      * Kód zboží (pouze pro Vydané faktury, Vydané zálohové faktury a Ostatní pohledávky v SK verzi).
-     *
-     * @var string $codePDP
      */
-    private $codePDP = null;
+    private string $codePDP = null;
 
     /**
      * Recyklační příspěvek položky. Pokud při importu dokladu tento element není na položce uveden, bude na skladové položce dokladu nastaven dle skladové zásoby. U textové položky nebude nastaven.
-     *
-     * @var \Pohoda\Type\RecyclingContribType $recyclingContrib
      */
-    private $recyclingContrib = null;
+    private \Pohoda\Type\RecyclingContribType $recyclingContrib = null;
 
     /**
      * Středisko.
-     *
-     * @var \Pohoda\Type\RefType $centre
      */
-    private $centre = null;
+    private \Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
-     *
-     * @var \Pohoda\Type\RefType $activity
      */
-    private $activity = null;
+    private \Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
-     *
-     * @var \Pohoda\Type\RefType $contract
      */
-    private $contract = null;
+    private \Pohoda\Type\RefType $contract = null;
 
     /**
      * Datum expirace.
-     *
-     * @var \DateTime $expirationDate
      */
-    private $expirationDate = null;
+    private \DateTime $expirationDate = null;
 
     /**
      * Výkaz pro intrastat. U skladových položek nelze vložit ke složené zásobě a k zásobě typu komplet nebo souprava.
-     *
-     * @var \Pohoda\Invoice\IntrastatItemType $intrastatItem
      */
-    private $intrastatItem = null;
+    private \Pohoda\Invoice\IntrastatItemType $intrastatItem = null;
 
     /**
      * Typ položky EET (pouze CZ verze).
-     *
-     * @var string $eETItem
      */
-    private $eETItem = null;
+    private string $eETItem = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as link
+     * Gets as link.
      *
      * Pomocí tohoto bloku lze vytvořit položku z jiného dokladu. Vložený doklad lze upravit pomocí zadaných parametrů u dokladu.
      *  Povolené jsou vazby: - přijatá objednávka do vydaných faktur.
@@ -261,22 +205,22 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new link
+     * Sets a new link.
      *
      * Pomocí tohoto bloku lze vytvořit položku z jiného dokladu. Vložený doklad lze upravit pomocí zadaných parametrů u dokladu.
      *  Povolené jsou vazby: - přijatá objednávka do vydaných faktur.
      *
-     * @param \Pohoda\Type\LinkItemType $link
      * @return self
      */
     public function setLink(?\Pohoda\Type\LinkItemType $link = null)
     {
         $this->link = $link;
+
         return $this;
     }
 
     /**
-     * Gets as linkedDocument
+     * Gets as linkedDocument.
      *
      * Vazba na doklad. Informace o vazbě položky exportovaného dokladu na položku jiného dokladu. Např. Faktura - Objednávka. Faktury - Vydaná zálohová faktura. Faktura - Výdejka (pouze pro export).
      *
@@ -288,21 +232,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new linkedDocument
+     * Sets a new linkedDocument.
      *
      * Vazba na doklad. Informace o vazbě položky exportovaného dokladu na položku jiného dokladu. Např. Faktura - Objednávka. Faktury - Vydaná zálohová faktura. Faktura - Výdejka (pouze pro export).
      *
-     * @param \Pohoda\Type\LinkedDocumentType $linkedDocument
      * @return self
      */
     public function setLinkedDocument(?\Pohoda\Type\LinkedDocumentType $linkedDocument = null)
     {
         $this->linkedDocument = $linkedDocument;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID položky dokladu (jen pro export).
      *
@@ -314,21 +258,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID položky dokladu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * @return string
      */
@@ -338,19 +284,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * @param string $extId
+     *
      * @return self
      */
     public function setExtId($extId)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text položky.
      *
@@ -362,21 +310,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text položky.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as quantity
+     * Gets as quantity.
      *
      * Množství.
      *
@@ -388,21 +338,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new quantity
+     * Sets a new quantity.
      *
      * Množství.
      *
      * @param float $quantity
+     *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
     /**
-     * Gets as unit
+     * Gets as unit.
      *
      * Měrná jednotka.
      *
@@ -414,21 +366,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * Měrná jednotka.
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as coefficient
+     * Gets as coefficient.
      *
      * Koeficient (pouze pro export).
      *
@@ -440,21 +394,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new coefficient
+     * Sets a new coefficient.
      *
      * Koeficient (pouze pro export).
      *
      * @param float $coefficient
+     *
      * @return self
      */
     public function setCoefficient($coefficient)
     {
         $this->coefficient = $coefficient;
+
         return $this;
     }
 
     /**
-     * Gets as payVAT
+     * Gets as payVAT.
      *
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
      *
@@ -466,21 +422,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new payVAT
+     * Sets a new payVAT.
      *
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
      *
      * @param string $payVAT
+     *
      * @return self
      */
     public function setPayVAT($payVAT)
     {
         $this->payVAT = $payVAT;
+
         return $this;
     }
 
     /**
-     * Gets as rateVAT
+     * Gets as rateVAT.
      *
      * Sazba DPH.
      *
@@ -492,21 +450,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new rateVAT
+     * Sets a new rateVAT.
      *
      * Sazba DPH.
      *
-     * @param \Pohoda\Type\VatRateType $rateVAT
      * @return self
      */
     public function setRateVAT(?\Pohoda\Type\VatRateType $rateVAT = null)
     {
         $this->rateVAT = $rateVAT;
+
         return $this;
     }
 
     /**
-     * Gets as percentVAT
+     * Gets as percentVAT.
      *
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      *
@@ -518,21 +476,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new percentVAT
+     * Sets a new percentVAT.
      *
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      *
      * @param float $percentVAT
+     *
      * @return self
      */
     public function setPercentVAT($percentVAT)
     {
         $this->percentVAT = $percentVAT;
+
         return $this;
     }
 
     /**
-     * Gets as discountPercentage
+     * Gets as discountPercentage.
      *
      * Sleva v procentech. Pokud není uvedena, bere se jako hodnota slevy z priceLevel dokumentu. Pokud není definován ani priceLevel bere se jako NULOVÁ.
      *
@@ -544,21 +504,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new discountPercentage
+     * Sets a new discountPercentage.
      *
      * Sleva v procentech. Pokud není uvedena, bere se jako hodnota slevy z priceLevel dokumentu. Pokud není definován ani priceLevel bere se jako NULOVÁ.
      *
      * @param float $discountPercentage
+     *
      * @return self
      */
     public function setDiscountPercentage($discountPercentage)
     {
         $this->discountPercentage = $discountPercentage;
+
         return $this;
     }
 
     /**
-     * Gets as homeCurrency
+     * Gets as homeCurrency.
      *
      * Kč.
      *
@@ -570,21 +532,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new homeCurrency
+     * Sets a new homeCurrency.
      *
      * Kč.
      *
-     * @param \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency
      * @return self
      */
     public function setHomeCurrency(?\Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null)
     {
         $this->homeCurrency = $homeCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrency
+     * Gets as foreignCurrency.
      *
      * Cizí měna.
      *
@@ -596,21 +558,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new foreignCurrency
+     * Sets a new foreignCurrency.
      *
      * Cizí měna.
      *
-     * @param \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency
      * @return self
      */
     public function setForeignCurrency(?\Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency = null)
     {
         $this->foreignCurrency = $foreignCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as typeServiceMOSS
+     * Gets as typeServiceMOSS.
      *
      * Druh služby (OSS).
      *
@@ -622,21 +584,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new typeServiceMOSS
+     * Sets a new typeServiceMOSS.
      *
      * Druh služby (OSS).
      *
-     * @param \Pohoda\Type\MOSStypeType $typeServiceMOSS
      * @return self
      */
     public function setTypeServiceMOSS(?\Pohoda\Type\MOSStypeType $typeServiceMOSS = null)
     {
         $this->typeServiceMOSS = $typeServiceMOSS;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -648,21 +610,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Kód.
      *
@@ -674,21 +638,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Kód.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as guarantee
+     * Gets as guarantee.
      *
      * Délka záruky.
      *
@@ -700,21 +666,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new guarantee
+     * Sets a new guarantee.
      *
      * Délka záruky.
      *
      * @param int $guarantee
+     *
      * @return self
      */
     public function setGuarantee($guarantee)
     {
         $this->guarantee = $guarantee;
+
         return $this;
     }
 
     /**
-     * Gets as guaranteeType
+     * Gets as guaranteeType.
      *
      * Typ záruky.
      *
@@ -726,21 +694,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new guaranteeType
+     * Sets a new guaranteeType.
      *
      * Typ záruky.
      *
      * @param string $guaranteeType
+     *
      * @return self
      */
     public function setGuaranteeType($guaranteeType)
     {
         $this->guaranteeType = $guaranteeType;
+
         return $this;
     }
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      *
@@ -752,21 +722,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      *
-     * @param \Pohoda\Type\StockItemType $stockItem
      * @return self
      */
     public function setStockItem(?\Pohoda\Type\StockItemType $stockItem = null)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as linkToStock
+     * Gets as linkToStock.
      *
      * Identifikátor zásoby u textových položek s vazbou na sklad (pouze pro export).
      *
@@ -778,21 +748,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new linkToStock
+     * Sets a new linkToStock.
      *
      * Identifikátor zásoby u textových položek s vazbou na sklad (pouze pro export).
      *
-     * @param \Pohoda\Type\LinkToStockType $linkToStock
      * @return self
      */
     public function setLinkToStock(?\Pohoda\Type\LinkToStockType $linkToStock = null)
     {
         $this->linkToStock = $linkToStock;
+
         return $this;
     }
 
     /**
-     * Gets as accounting
+     * Gets as accounting.
      *
      * Předkontace.
      *
@@ -804,21 +774,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new accounting
+     * Sets a new accounting.
      *
      * Předkontace.
      *
-     * @param \Pohoda\Type\RefType $accounting
      * @return self
      */
     public function setAccounting(?\Pohoda\Type\RefType $accounting = null)
     {
         $this->accounting = $accounting;
+
         return $this;
     }
 
     /**
-     * Gets as classificationVAT
+     * Gets as classificationVAT.
      *
      * Členění DPH.
      *
@@ -830,21 +800,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new classificationVAT
+     * Sets a new classificationVAT.
      *
      * Členění DPH.
      *
-     * @param \Pohoda\Type\ClassificationVATType $classificationVAT
      * @return self
      */
     public function setClassificationVAT(?\Pohoda\Type\ClassificationVATType $classificationVAT = null)
     {
         $this->classificationVAT = $classificationVAT;
+
         return $this;
     }
 
     /**
-     * Gets as classificationKVDPH
+     * Gets as classificationKVDPH.
      *
      * Členění KV DPH (pouze SK verze).
      *
@@ -856,21 +826,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new classificationKVDPH
+     * Sets a new classificationKVDPH.
      *
      * Členění KV DPH (pouze SK verze).
      *
-     * @param \Pohoda\Type\RefType $classificationKVDPH
      * @return self
      */
     public function setClassificationKVDPH(?\Pohoda\Type\RefType $classificationKVDPH = null)
     {
         $this->classificationKVDPH = $classificationKVDPH;
+
         return $this;
     }
 
     /**
-     * Gets as pDP
+     * Gets as pDP.
      *
      * Příznak Přenesení daňové povinnosti (pouze pro Vydané faktury, Vydané zálohové faktury a Ostatní pohledávky).
      *
@@ -882,21 +852,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new pDP
+     * Sets a new pDP.
      *
      * Příznak Přenesení daňové povinnosti (pouze pro Vydané faktury, Vydané zálohové faktury a Ostatní pohledávky).
      *
      * @param bool $pDP
+     *
      * @return self
      */
     public function setPDP($pDP)
     {
         $this->pDP = $pDP;
+
         return $this;
     }
 
     /**
-     * Gets as codePDP
+     * Gets as codePDP.
      *
      * Kód zboží (pouze pro Vydané faktury, Vydané zálohové faktury a Ostatní pohledávky v SK verzi).
      *
@@ -908,21 +880,23 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new codePDP
+     * Sets a new codePDP.
      *
      * Kód zboží (pouze pro Vydané faktury, Vydané zálohové faktury a Ostatní pohledávky v SK verzi).
      *
      * @param string $codePDP
+     *
      * @return self
      */
     public function setCodePDP($codePDP)
     {
         $this->codePDP = $codePDP;
+
         return $this;
     }
 
     /**
-     * Gets as recyclingContrib
+     * Gets as recyclingContrib.
      *
      * Recyklační příspěvek položky. Pokud při importu dokladu tento element není na položce uveden, bude na skladové položce dokladu nastaven dle skladové zásoby. U textové položky nebude nastaven.
      *
@@ -934,21 +908,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new recyclingContrib
+     * Sets a new recyclingContrib.
      *
      * Recyklační příspěvek položky. Pokud při importu dokladu tento element není na položce uveden, bude na skladové položce dokladu nastaven dle skladové zásoby. U textové položky nebude nastaven.
      *
-     * @param \Pohoda\Type\RecyclingContribType $recyclingContrib
      * @return self
      */
     public function setRecyclingContrib(?\Pohoda\Type\RecyclingContribType $recyclingContrib = null)
     {
         $this->recyclingContrib = $recyclingContrib;
+
         return $this;
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * Středisko.
      *
@@ -960,21 +934,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * Středisko.
      *
-     * @param \Pohoda\Type\RefType $centre
      * @return self
      */
     public function setCentre(?\Pohoda\Type\RefType $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 
     /**
-     * Gets as activity
+     * Gets as activity.
      *
      * Činnost.
      *
@@ -986,21 +960,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new activity
+     * Sets a new activity.
      *
      * Činnost.
      *
-     * @param \Pohoda\Type\RefType $activity
      * @return self
      */
     public function setActivity(?\Pohoda\Type\RefType $activity = null)
     {
         $this->activity = $activity;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * Zakázka.
      *
@@ -1012,21 +986,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
      * Zakázka.
      *
-     * @param \Pohoda\Type\RefType $contract
      * @return self
      */
     public function setContract(?\Pohoda\Type\RefType $contract = null)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Gets as expirationDate
+     * Gets as expirationDate.
      *
      * Datum expirace.
      *
@@ -1038,21 +1012,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new expirationDate
+     * Sets a new expirationDate.
      *
      * Datum expirace.
      *
-     * @param \DateTime $expirationDate
      * @return self
      */
     public function setExpirationDate(?\DateTime $expirationDate = null)
     {
         $this->expirationDate = $expirationDate;
+
         return $this;
     }
 
     /**
-     * Gets as intrastatItem
+     * Gets as intrastatItem.
      *
      * Výkaz pro intrastat. U skladových položek nelze vložit ke složené zásobě a k zásobě typu komplet nebo souprava.
      *
@@ -1064,21 +1038,21 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new intrastatItem
+     * Sets a new intrastatItem.
      *
      * Výkaz pro intrastat. U skladových položek nelze vložit ke složené zásobě a k zásobě typu komplet nebo souprava.
      *
-     * @param \Pohoda\Invoice\IntrastatItemType $intrastatItem
      * @return self
      */
     public function setIntrastatItem(?\Pohoda\Invoice\IntrastatItemType $intrastatItem = null)
     {
         $this->intrastatItem = $intrastatItem;
+
         return $this;
     }
 
     /**
-     * Gets as eETItem
+     * Gets as eETItem.
      *
      * Typ položky EET (pouze CZ verze).
      *
@@ -1090,39 +1064,42 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new eETItem
+     * Sets a new eETItem.
      *
      * Typ položky EET (pouze CZ verze).
      *
      * @param string $eETItem
+     *
      * @return self
      */
     public function setEETItem($eETItem)
     {
         $this->eETItem = $eETItem;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -1131,20 +1108,19 @@ class InvoiceItemType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -1156,16 +1132,18 @@ class InvoiceItemType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

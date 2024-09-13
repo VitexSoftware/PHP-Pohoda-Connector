@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Establishment;
 
 /**
- * Class representing EstablishmentHeaderType
+ * Class representing EstablishmentHeaderType.
  *
  * Provozovny.
  * XSD Type: establishmentHeaderType
@@ -12,98 +25,72 @@ class EstablishmentHeaderType
 {
     /**
      * ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Zkratka.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Název.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Ulice.
-     *
-     * @var string $street
      */
-    private $street = null;
+    private string $street = null;
 
     /**
      * PSČ.
-     *
-     * @var string $zip
      */
-    private $zip = null;
+    private string $zip = null;
 
     /**
      * Obec.
-     *
-     * @var string $city
      */
-    private $city = null;
+    private string $city = null;
 
     /**
      * Telefon.
-     *
-     * @var string $phone
      */
-    private $phone = null;
+    private string $phone = null;
 
     /**
      * Mobil.
-     *
-     * @var string $mobil
      */
-    private $mobil = null;
+    private string $mobil = null;
 
     /**
      * Fax.
-     *
-     * @var string $fax
      */
-    private $fax = null;
+    private string $fax = null;
 
     /**
      * Email.
-     *
-     * @var string $email
      */
-    private $email = null;
+    private string $email = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu.
      *
@@ -115,21 +102,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -142,22 +131,22 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Zkratka.
      *
@@ -169,21 +158,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Zkratka.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název.
      *
@@ -195,21 +186,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as street
+     * Gets as street.
      *
      * Ulice.
      *
@@ -221,21 +214,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new street
+     * Sets a new street.
      *
      * Ulice.
      *
      * @param string $street
+     *
      * @return self
      */
     public function setStreet($street)
     {
         $this->street = $street;
+
         return $this;
     }
 
     /**
-     * Gets as zip
+     * Gets as zip.
      *
      * PSČ.
      *
@@ -247,21 +242,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new zip
+     * Sets a new zip.
      *
      * PSČ.
      *
      * @param string $zip
+     *
      * @return self
      */
     public function setZip($zip)
     {
         $this->zip = $zip;
+
         return $this;
     }
 
     /**
-     * Gets as city
+     * Gets as city.
      *
      * Obec.
      *
@@ -273,21 +270,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new city
+     * Sets a new city.
      *
      * Obec.
      *
      * @param string $city
+     *
      * @return self
      */
     public function setCity($city)
     {
         $this->city = $city;
+
         return $this;
     }
 
     /**
-     * Gets as phone
+     * Gets as phone.
      *
      * Telefon.
      *
@@ -299,21 +298,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new phone
+     * Sets a new phone.
      *
      * Telefon.
      *
      * @param string $phone
+     *
      * @return self
      */
     public function setPhone($phone)
     {
         $this->phone = $phone;
+
         return $this;
     }
 
     /**
-     * Gets as mobil
+     * Gets as mobil.
      *
      * Mobil.
      *
@@ -325,21 +326,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new mobil
+     * Sets a new mobil.
      *
      * Mobil.
      *
      * @param string $mobil
+     *
      * @return self
      */
     public function setMobil($mobil)
     {
         $this->mobil = $mobil;
+
         return $this;
     }
 
     /**
-     * Gets as fax
+     * Gets as fax.
      *
      * Fax.
      *
@@ -351,21 +354,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new fax
+     * Sets a new fax.
      *
      * Fax.
      *
      * @param string $fax
+     *
      * @return self
      */
     public function setFax($fax)
     {
         $this->fax = $fax;
+
         return $this;
     }
 
     /**
-     * Gets as email
+     * Gets as email.
      *
      * Email.
      *
@@ -377,21 +382,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new email
+     * Sets a new email.
      *
      * Email.
      *
      * @param string $email
+     *
      * @return self
      */
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -403,21 +410,23 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X".
      *
@@ -429,16 +438,18 @@ class EstablishmentHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing FilterIDType
- *
+ * Class representing FilterIDType.
  *
  * XSD Type: filterIDType
  */
@@ -12,13 +24,11 @@ class FilterIDType
 {
     /**
      * Filtr podle ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Filtr podle ID záznamu.
      *
@@ -30,16 +40,18 @@ class FilterIDType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Filtr podle ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 }

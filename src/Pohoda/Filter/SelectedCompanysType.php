@@ -1,43 +1,58 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing SelectedCompanysType
- *
+ * Class representing SelectedCompanysType.
  *
  * XSD Type: selectedCompanysType
  */
 class SelectedCompanysType
 {
     /**
-     * Firma
+     * Firma.
      *
-     * @var string[] $company
+     * @var string[]
      */
-    private $company = [
+    private array $company = [
     ];
 
     /**
-     * Adds as company
+     * Adds as company.
      *
      * Firma
      *
-     * @return self
      * @param string $company
+     *
+     * @return self
      */
     public function addToCompany($company)
     {
         $this->company[] = $company;
+
         return $this;
     }
 
     /**
-     * isset company
+     * isset company.
      *
      * Firma
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetCompany($index)
@@ -46,20 +61,19 @@ class SelectedCompanysType
     }
 
     /**
-     * unset company
+     * unset company.
      *
      * Firma
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetCompany($index)
+    public function unsetCompany($index): void
     {
         unset($this->company[$index]);
     }
 
     /**
-     * Gets as company
+     * Gets as company.
      *
      * Firma
      *
@@ -71,16 +85,18 @@ class SelectedCompanysType
     }
 
     /**
-     * Sets a new company
+     * Sets a new company.
      *
      * Firma
      *
      * @param string $company
+     *
      * @return self
      */
     public function setCompany(array $company)
     {
         $this->company = $company;
+
         return $this;
     }
 }

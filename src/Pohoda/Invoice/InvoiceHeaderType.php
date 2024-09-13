@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Invoice;
 
 /**
- * Class representing InvoiceHeaderType
- *
+ * Class representing InvoiceHeaderType.
  *
  * XSD Type: invoiceHeaderType
  */
@@ -12,435 +24,321 @@ class InvoiceHeaderType
 {
     /**
      * ID záznamu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Typ faktury.
-     *
-     * @var string $invoiceType
      */
-    private $invoiceType = null;
+    private string $invoiceType = null;
 
     /**
      * Příznak „Storno/Stornujícího“ dokladu (pouze pro export).
-     *
-     * @var string $storno
      */
-    private $storno = null;
+    private string $storno = null;
 
     /**
      * Typ ostatní pohledávky, závazku. Používá se jen v Daňové evidenci.
-     *
-     * @var string $sphereType
      */
-    private $sphereType = null;
+    private string $sphereType = null;
 
     /**
      * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená
      *  v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
-     *
-     * @var \Pohoda\Type\NumberType $number
      */
-    private $number = null;
+    private \Pohoda\Type\NumberType $number = null;
 
     /**
      * Variabilní symbol. Pokud není hodnota zadána, použije se z čísla dokladu vypuštěním nečíselných znaků.
-     *
-     * @var string $symVar
      */
-    private $symVar = null;
+    private string $symVar = null;
 
     /**
      * Číslo dokladu, používá se jako variabilní symbol při vystavení příkazu k úhradě a při likvidaci.
-     *
-     * @var string $originalDocument
      */
-    private $originalDocument = null;
+    private string $originalDocument = null;
 
     /**
      * Původní číslo dokladu, pro doklady typu Dobropis, Vrubopis (pouze SK verze).
-     *
-     * @var string $originalDocumentNumber
      */
-    private $originalDocumentNumber = null;
+    private string $originalDocumentNumber = null;
 
     /**
      * Párový symbol. Používá se jen v účetnictví (dříve PU).
-     *
-     * @var string $symPar
      */
-    private $symPar = null;
+    private string $symPar = null;
 
     /**
      * Datum vystavení faktury. Pokud není hodnota zadaná, použije se aktuální datum nebo datum posledního záznamu, dle volby v uživatelském nastavení.
-     *
-     * @var \DateTime $date
      */
-    private $date = null;
+    private \DateTime $date = null;
 
     /**
      * Datum zdanitelného plnění / Datum odpočtu. Pokud není hodnota zadaná, použije se hodnota z elementu "date".
-     *
-     * @var \DateTime $dateTax
      */
-    private $dateTax = null;
+    private \DateTime $dateTax = null;
 
     /**
      * Datum účetního případu. Pokud není hodnota zadaná, použije se hodnota z elementu "date".
-     *
-     * @var \DateTime $dateAccounting
      */
-    private $dateAccounting = null;
+    private \DateTime $dateAccounting = null;
 
     /**
      * Datum KH DPH. Pokud není datum KH DPH uveden, nebude na dokladu nastaven. Pouze pro doklady typu Přijatá faktura, Ostatní závazek, Vydaná Faktura - opravný daňový doklad (pouze CZ verze).
-     *
-     * @var \DateTime $dateKHDPH
      */
-    private $dateKHDPH = null;
+    private \DateTime $dateKHDPH = null;
 
     /**
      * Datum splatnosti. Pokud hodnota není zadaná, vyplní v závislosti na datu vystavení
      *  faktury dle nastavení v poli "Splatnost pohledávek" agendy "Globální nastavení".
-     *
-     * @var \DateTime $dateDue
      */
-    private $dateDue = null;
+    private \DateTime $dateDue = null;
 
     /**
      * Datum uplatnění DPH.Datum pro zařazení dobropisu, resp. opravného daňového dokladu do přiznání k dani z přidané hodnoty a uplatnění odpočtu DPH.
-     *
-     * @var \DateTime $dateApplicationVAT
      */
-    private $dateApplicationVAT = null;
+    private \DateTime $dateApplicationVAT = null;
 
     /**
      * Datum dodání tovaru (pouze SK verze, Ostatní závazky, Přijaté faktury).
-     *
-     * @var \DateTime $dateDelivery
      */
-    private $dateDelivery = null;
+    private \DateTime $dateDelivery = null;
 
     /**
      * Předkontace. Pokud není uveden typ předkontace, je nastavena předkontace dle uživatelského nastavení programu Pohoda.
-     *
-     * @var \Pohoda\Type\AccountingType $accounting
      */
-    private $accounting = null;
+    private \Pohoda\Type\AccountingType $accounting = null;
 
     /**
      * Členění DPH, přednastavená hodnota je "inland". Nepoužívá se u typů "Proforma" a "Zálohová" faktura.
-     *
-     * @var \Pohoda\Type\ClassificationVATType $classificationVAT
      */
-    private $classificationVAT = null;
+    private \Pohoda\Type\ClassificationVATType $classificationVAT = null;
 
     /**
      * Členění KV DPH (pouze SK verze).
-     *
-     * @var \Pohoda\Type\RefType $classificationKVDPH
      */
-    private $classificationKVDPH = null;
+    private \Pohoda\Type\RefType $classificationKVDPH = null;
 
     /**
      * Evidenční číslo KH DPH. Pokud je na dokladu uvedeno, použije se pro kontrolní hlášení. Jen Ostatní pohledávky, Vydané Faktury (podmíněno v Globálním nastavení). Pouze CZ verze.
-     *
-     * @var string $numberKHDPH
      */
-    private $numberKHDPH = null;
+    private string $numberKHDPH = null;
 
     /**
      * Pořadové číslo KV DPH. Jen Ostatní pohledávky, Vydané Faktury (podmíněno v Globálním nastavení). Pouze SK verze.
-     *
-     * @var string $numberKVDPH
      */
-    private $numberKVDPH = null;
+    private string $numberKVDPH = null;
 
     /**
      * Text dokladu. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Zákazníkova adresa.
-     *
-     * @var \Pohoda\Type\AddressType $partnerIdentity
      */
-    private $partnerIdentity = null;
+    private \Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Osobní adresa.
-     *
-     * @var \Pohoda\Type\MyAddressType $myIdentity
      */
-    private $myIdentity = null;
+    private \Pohoda\Type\MyAddressType $myIdentity = null;
 
     /**
      * Objednávka.
-     *
-     * @var \Pohoda\Type\RefType $order
      */
-    private $order = null;
+    private \Pohoda\Type\RefType $order = null;
 
     /**
      * Číslo objednávky na jejímž základě byla faktura vystavena.
-     *
-     * @var string $numberOrder
      */
-    private $numberOrder = null;
+    private string $numberOrder = null;
 
     /**
      * Datum objednávky.
-     *
-     * @var \DateTime $dateOrder
      */
-    private $dateOrder = null;
+    private \DateTime $dateOrder = null;
 
     /**
      * Cenová hladina odběratele. Používá se jen u typů vydaná faktura,
      *  vydaný vrubopis, vydaná zálohová faktura, vydaná proforma faktura.
-     *
-     * @var \Pohoda\Type\RefType $priceLevel
      */
-    private $priceLevel = null;
+    private \Pohoda\Type\RefType $priceLevel = null;
 
     /**
      * Forma úhrady. Implicitně je nastaveno příkazem.
-     *
-     * @var \Pohoda\Type\PaymentType $paymentType
      */
-    private $paymentType = null;
+    private \Pohoda\Type\PaymentType $paymentType = null;
 
     /**
      * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku.
      *  (Používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení
      *  uživatele (pod kterým je spuštěn XML import).
-     *
-     * @var \Pohoda\Type\AccountType $account
      */
-    private $account = null;
+    private \Pohoda\Type\AccountType $account = null;
 
     /**
      * Konstantní symbol.
-     *
-     * @var string $symConst
      */
-    private $symConst = null;
+    private string $symConst = null;
 
     /**
      * Specifický symbol. Používá se jen u závazků.
-     *
-     * @var string $symSpec
      */
-    private $symSpec = null;
+    private string $symSpec = null;
 
     /**
      * Číslo bankovního účtu, na který dlužnou částku proplatíme. Číslo bude uvedeno na příkazu k úhradě.
      *  (Používá se jen závazků, dobropisu - vydané faktury).
-     *
-     * @var \Pohoda\Invoice\InvoiceHeaderType\PaymentAccountAType $paymentAccount
      */
-    private $paymentAccount = null;
+    private \Pohoda\Invoice\InvoiceHeaderType\PaymentAccountAType $paymentAccount = null;
 
     /**
      * Zpráva pro příjemce (Přijaté faktury, Přijaté zálohové faktury a Ostatní závazky).
-     *
-     * @var string $messageForRecipient
      */
-    private $messageForRecipient = null;
+    private string $messageForRecipient = null;
 
     /**
      * Datum vystavení příkazu k úhradě (pouze pro export Přijatých faktur, Přijatých zálohových faktur a Ostatních závazků).
-     *
-     * @var \DateTime $dateOfPaymentOrder
      */
-    private $dateOfPaymentOrder = null;
+    private \DateTime $dateOfPaymentOrder = null;
 
     /**
      * Příznak dokladu "Placeno přes terminál".Pouze pro doklad, který má nastaven typ úhrady "Platební kartou".
-     *
-     * @var string $paymentTerminal
      */
-    private $paymentTerminal = null;
+    private string $paymentTerminal = null;
 
     /**
      * Středisko.
-     *
-     * @var \Pohoda\Type\RefType $centre
      */
-    private $centre = null;
+    private \Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
-     *
-     * @var \Pohoda\Type\RefType $activity
      */
-    private $activity = null;
+    private \Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
-     *
-     * @var \Pohoda\Type\RefType $contract
      */
-    private $contract = null;
+    private \Pohoda\Type\RefType $contract = null;
 
     /**
      * Registrace DPH v EU.
-     *
-     * @var \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU
      */
-    private $regVATinEU = null;
+    private \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null;
 
     /**
      * Speciální režim registrace DPH v EU, režim One Stop Shop (OSS).
-     *
-     * @var \Pohoda\Type\MOSStypeType $mOSS
      */
-    private $mOSS = null;
+    private \Pohoda\Type\MOSStypeType $mOSS = null;
 
     /**
      * Důkazní prostředky (OSS).
      *
-     * @var string[] $evidentiaryResourcesMOSS
+     * @var string[]
      */
-    private $evidentiaryResourcesMOSS = null;
+    private array $evidentiaryResourcesMOSS = null;
 
     /**
      * Účetní období (OSS).
-     *
-     * @var string $accountingPeriodMOSS
      */
-    private $accountingPeriodMOSS = null;
+    private string $accountingPeriodMOSS = null;
 
     /**
      * Datum uskutečnění zdanitelného plnění OSS (pouze pro opravné daňové doklady, dobropisy nebo vrubopisy).
-     *
-     * @var \DateTime $dateTaxOriginalDocumentMOSS
      */
-    private $dateTaxOriginalDocumentMOSS = null;
+    private \DateTime $dateTaxOriginalDocumentMOSS = null;
 
     /**
      * Vykázat doklad jako opravu OSS (pouze pro opravné daňové doklady, dobropisy nebo vrubopisy).
-     *
-     * @var string $correctionMOSS
      */
-    private $correctionMOSS = null;
+    private string $correctionMOSS = null;
 
     /**
      * Dopravce (pouze vydané faktury a vydané zálohové faktury).
-     *
-     * @var \Pohoda\Type\CarrierType $carrier
      */
-    private $carrier = null;
+    private \Pohoda\Type\CarrierType $carrier = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Interní poznámka, libovolný text, který nevstupuje do tiskových sestav.
-     *
-     * @var string $intNote
      */
-    private $intNote = null;
+    private string $intNote = null;
 
     /**
      * Stav likvidace faktury. Pouze pro export, při importu je ignorováno.
-     *
-     * @var \Pohoda\Type\LiquidationType $liquidation
      */
-    private $liquidation = null;
+    private \Pohoda\Type\LiquidationType $liquidation = null;
 
     /**
      * Hodnota pole Uplatněno. Pouze vydané a přijaté zálohové faktury. Jen pro export.
-     *
-     * @var float $applied
      */
-    private $applied = null;
+    private float $applied = null;
 
     /**
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
-     *
-     * @var string $histRate
      */
-    private $histRate = null;
+    private string $histRate = null;
 
     /**
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
-     *
-     * @var string $lock1
      */
-    private $lock1 = null;
+    private string $lock1 = null;
 
     /**
      * Zámek (v E1 verzi označení Zámek II). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
-     *
-     * @var string $lock2
      */
-    private $lock2 = null;
+    private string $lock2 = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
-     * @var \Pohoda\Type\LabelType[] $labels
+     * @var \Pohoda\Type\LabelType[]
      */
-    private $labels = null;
+    private array $labels = null;
 
     /**
      * Výkaz pro intrastat.
-     *
-     * @var \Pohoda\Invoice\IntrastatType $intrastat
      */
-    private $intrastat = null;
+    private \Pohoda\Invoice\IntrastatType $intrastat = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
      * Podmíněná kontrola dokladu.
-     *
-     * @var \Pohoda\Type\TypeValidateType $validate
      */
-    private $validate = null;
+    private \Pohoda\Type\TypeValidateType $validate = null;
 
     /**
      * Odložený výdej. Hodnota 'true' nastaví vkládání skladových zásob ve formě textových položek (s vazbou na agendu Zásoby).
      *  Takto vložená položka nevytváří ve faktuře skladový pohyb. Ve stavovém řádku vydané faktury je označena jako Textová položka (s vazbou na agendu Zásoby). Používá se jen v agendě Vydané faktury.
      * .
-     *
-     * @var string $postponedIssue
      */
-    private $postponedIssue = null;
+    private string $postponedIssue = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu (jen pro export).
      *
@@ -452,21 +350,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -479,22 +379,22 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as invoiceType
+     * Gets as invoiceType.
      *
      * Typ faktury.
      *
@@ -506,21 +406,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new invoiceType
+     * Sets a new invoiceType.
      *
      * Typ faktury.
      *
      * @param string $invoiceType
+     *
      * @return self
      */
     public function setInvoiceType($invoiceType)
     {
         $this->invoiceType = $invoiceType;
+
         return $this;
     }
 
     /**
-     * Gets as storno
+     * Gets as storno.
      *
      * Příznak „Storno/Stornujícího“ dokladu (pouze pro export).
      *
@@ -532,21 +434,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new storno
+     * Sets a new storno.
      *
      * Příznak „Storno/Stornujícího“ dokladu (pouze pro export).
      *
      * @param string $storno
+     *
      * @return self
      */
     public function setStorno($storno)
     {
         $this->storno = $storno;
+
         return $this;
     }
 
     /**
-     * Gets as sphereType
+     * Gets as sphereType.
      *
      * Typ ostatní pohledávky, závazku. Používá se jen v Daňové evidenci.
      *
@@ -558,21 +462,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new sphereType
+     * Sets a new sphereType.
      *
      * Typ ostatní pohledávky, závazku. Používá se jen v Daňové evidenci.
      *
      * @param string $sphereType
+     *
      * @return self
      */
     public function setSphereType($sphereType)
     {
         $this->sphereType = $sphereType;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená
      *  v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
@@ -585,22 +491,22 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená
      *  v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
      *
-     * @param \Pohoda\Type\NumberType $number
      * @return self
      */
     public function setNumber(?\Pohoda\Type\NumberType $number = null)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as symVar
+     * Gets as symVar.
      *
      * Variabilní symbol. Pokud není hodnota zadána, použije se z čísla dokladu vypuštěním nečíselných znaků.
      *
@@ -612,21 +518,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new symVar
+     * Sets a new symVar.
      *
      * Variabilní symbol. Pokud není hodnota zadána, použije se z čísla dokladu vypuštěním nečíselných znaků.
      *
      * @param string $symVar
+     *
      * @return self
      */
     public function setSymVar($symVar)
     {
         $this->symVar = $symVar;
+
         return $this;
     }
 
     /**
-     * Gets as originalDocument
+     * Gets as originalDocument.
      *
      * Číslo dokladu, používá se jako variabilní symbol při vystavení příkazu k úhradě a při likvidaci.
      *
@@ -638,21 +546,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new originalDocument
+     * Sets a new originalDocument.
      *
      * Číslo dokladu, používá se jako variabilní symbol při vystavení příkazu k úhradě a při likvidaci.
      *
      * @param string $originalDocument
+     *
      * @return self
      */
     public function setOriginalDocument($originalDocument)
     {
         $this->originalDocument = $originalDocument;
+
         return $this;
     }
 
     /**
-     * Gets as originalDocumentNumber
+     * Gets as originalDocumentNumber.
      *
      * Původní číslo dokladu, pro doklady typu Dobropis, Vrubopis (pouze SK verze).
      *
@@ -664,21 +574,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new originalDocumentNumber
+     * Sets a new originalDocumentNumber.
      *
      * Původní číslo dokladu, pro doklady typu Dobropis, Vrubopis (pouze SK verze).
      *
      * @param string $originalDocumentNumber
+     *
      * @return self
      */
     public function setOriginalDocumentNumber($originalDocumentNumber)
     {
         $this->originalDocumentNumber = $originalDocumentNumber;
+
         return $this;
     }
 
     /**
-     * Gets as symPar
+     * Gets as symPar.
      *
      * Párový symbol. Používá se jen v účetnictví (dříve PU).
      *
@@ -690,21 +602,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new symPar
+     * Sets a new symPar.
      *
      * Párový symbol. Používá se jen v účetnictví (dříve PU).
      *
      * @param string $symPar
+     *
      * @return self
      */
     public function setSymPar($symPar)
     {
         $this->symPar = $symPar;
+
         return $this;
     }
 
     /**
-     * Gets as date
+     * Gets as date.
      *
      * Datum vystavení faktury. Pokud není hodnota zadaná, použije se aktuální datum nebo datum posledního záznamu, dle volby v uživatelském nastavení.
      *
@@ -716,21 +630,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
      * Datum vystavení faktury. Pokud není hodnota zadaná, použije se aktuální datum nebo datum posledního záznamu, dle volby v uživatelském nastavení.
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(?\DateTime $date = null)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as dateTax
+     * Gets as dateTax.
      *
      * Datum zdanitelného plnění / Datum odpočtu. Pokud není hodnota zadaná, použije se hodnota z elementu "date".
      *
@@ -742,21 +656,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new dateTax
+     * Sets a new dateTax.
      *
      * Datum zdanitelného plnění / Datum odpočtu. Pokud není hodnota zadaná, použije se hodnota z elementu "date".
      *
-     * @param \DateTime $dateTax
      * @return self
      */
     public function setDateTax(?\DateTime $dateTax = null)
     {
         $this->dateTax = $dateTax;
+
         return $this;
     }
 
     /**
-     * Gets as dateAccounting
+     * Gets as dateAccounting.
      *
      * Datum účetního případu. Pokud není hodnota zadaná, použije se hodnota z elementu "date".
      *
@@ -768,21 +682,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new dateAccounting
+     * Sets a new dateAccounting.
      *
      * Datum účetního případu. Pokud není hodnota zadaná, použije se hodnota z elementu "date".
      *
-     * @param \DateTime $dateAccounting
      * @return self
      */
     public function setDateAccounting(?\DateTime $dateAccounting = null)
     {
         $this->dateAccounting = $dateAccounting;
+
         return $this;
     }
 
     /**
-     * Gets as dateKHDPH
+     * Gets as dateKHDPH.
      *
      * Datum KH DPH. Pokud není datum KH DPH uveden, nebude na dokladu nastaven. Pouze pro doklady typu Přijatá faktura, Ostatní závazek, Vydaná Faktura - opravný daňový doklad (pouze CZ verze).
      *
@@ -794,21 +708,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new dateKHDPH
+     * Sets a new dateKHDPH.
      *
      * Datum KH DPH. Pokud není datum KH DPH uveden, nebude na dokladu nastaven. Pouze pro doklady typu Přijatá faktura, Ostatní závazek, Vydaná Faktura - opravný daňový doklad (pouze CZ verze).
      *
-     * @param \DateTime $dateKHDPH
      * @return self
      */
     public function setDateKHDPH(?\DateTime $dateKHDPH = null)
     {
         $this->dateKHDPH = $dateKHDPH;
+
         return $this;
     }
 
     /**
-     * Gets as dateDue
+     * Gets as dateDue.
      *
      * Datum splatnosti. Pokud hodnota není zadaná, vyplní v závislosti na datu vystavení
      *  faktury dle nastavení v poli "Splatnost pohledávek" agendy "Globální nastavení".
@@ -821,22 +735,22 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new dateDue
+     * Sets a new dateDue.
      *
      * Datum splatnosti. Pokud hodnota není zadaná, vyplní v závislosti na datu vystavení
      *  faktury dle nastavení v poli "Splatnost pohledávek" agendy "Globální nastavení".
      *
-     * @param \DateTime $dateDue
      * @return self
      */
     public function setDateDue(?\DateTime $dateDue = null)
     {
         $this->dateDue = $dateDue;
+
         return $this;
     }
 
     /**
-     * Gets as dateApplicationVAT
+     * Gets as dateApplicationVAT.
      *
      * Datum uplatnění DPH.Datum pro zařazení dobropisu, resp. opravného daňového dokladu do přiznání k dani z přidané hodnoty a uplatnění odpočtu DPH.
      *
@@ -848,21 +762,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new dateApplicationVAT
+     * Sets a new dateApplicationVAT.
      *
      * Datum uplatnění DPH.Datum pro zařazení dobropisu, resp. opravného daňového dokladu do přiznání k dani z přidané hodnoty a uplatnění odpočtu DPH.
      *
-     * @param \DateTime $dateApplicationVAT
      * @return self
      */
     public function setDateApplicationVAT(?\DateTime $dateApplicationVAT = null)
     {
         $this->dateApplicationVAT = $dateApplicationVAT;
+
         return $this;
     }
 
     /**
-     * Gets as dateDelivery
+     * Gets as dateDelivery.
      *
      * Datum dodání tovaru (pouze SK verze, Ostatní závazky, Přijaté faktury).
      *
@@ -874,21 +788,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new dateDelivery
+     * Sets a new dateDelivery.
      *
      * Datum dodání tovaru (pouze SK verze, Ostatní závazky, Přijaté faktury).
      *
-     * @param \DateTime $dateDelivery
      * @return self
      */
     public function setDateDelivery(?\DateTime $dateDelivery = null)
     {
         $this->dateDelivery = $dateDelivery;
+
         return $this;
     }
 
     /**
-     * Gets as accounting
+     * Gets as accounting.
      *
      * Předkontace. Pokud není uveden typ předkontace, je nastavena předkontace dle uživatelského nastavení programu Pohoda.
      *
@@ -900,21 +814,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new accounting
+     * Sets a new accounting.
      *
      * Předkontace. Pokud není uveden typ předkontace, je nastavena předkontace dle uživatelského nastavení programu Pohoda.
      *
-     * @param \Pohoda\Type\AccountingType $accounting
      * @return self
      */
     public function setAccounting(?\Pohoda\Type\AccountingType $accounting = null)
     {
         $this->accounting = $accounting;
+
         return $this;
     }
 
     /**
-     * Gets as classificationVAT
+     * Gets as classificationVAT.
      *
      * Členění DPH, přednastavená hodnota je "inland". Nepoužívá se u typů "Proforma" a "Zálohová" faktura.
      *
@@ -926,21 +840,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new classificationVAT
+     * Sets a new classificationVAT.
      *
      * Členění DPH, přednastavená hodnota je "inland". Nepoužívá se u typů "Proforma" a "Zálohová" faktura.
      *
-     * @param \Pohoda\Type\ClassificationVATType $classificationVAT
      * @return self
      */
     public function setClassificationVAT(?\Pohoda\Type\ClassificationVATType $classificationVAT = null)
     {
         $this->classificationVAT = $classificationVAT;
+
         return $this;
     }
 
     /**
-     * Gets as classificationKVDPH
+     * Gets as classificationKVDPH.
      *
      * Členění KV DPH (pouze SK verze).
      *
@@ -952,21 +866,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new classificationKVDPH
+     * Sets a new classificationKVDPH.
      *
      * Členění KV DPH (pouze SK verze).
      *
-     * @param \Pohoda\Type\RefType $classificationKVDPH
      * @return self
      */
     public function setClassificationKVDPH(?\Pohoda\Type\RefType $classificationKVDPH = null)
     {
         $this->classificationKVDPH = $classificationKVDPH;
+
         return $this;
     }
 
     /**
-     * Gets as numberKHDPH
+     * Gets as numberKHDPH.
      *
      * Evidenční číslo KH DPH. Pokud je na dokladu uvedeno, použije se pro kontrolní hlášení. Jen Ostatní pohledávky, Vydané Faktury (podmíněno v Globálním nastavení). Pouze CZ verze.
      *
@@ -978,21 +892,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new numberKHDPH
+     * Sets a new numberKHDPH.
      *
      * Evidenční číslo KH DPH. Pokud je na dokladu uvedeno, použije se pro kontrolní hlášení. Jen Ostatní pohledávky, Vydané Faktury (podmíněno v Globálním nastavení). Pouze CZ verze.
      *
      * @param string $numberKHDPH
+     *
      * @return self
      */
     public function setNumberKHDPH($numberKHDPH)
     {
         $this->numberKHDPH = $numberKHDPH;
+
         return $this;
     }
 
     /**
-     * Gets as numberKVDPH
+     * Gets as numberKVDPH.
      *
      * Pořadové číslo KV DPH. Jen Ostatní pohledávky, Vydané Faktury (podmíněno v Globálním nastavení). Pouze SK verze.
      *
@@ -1004,21 +920,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new numberKVDPH
+     * Sets a new numberKVDPH.
      *
      * Pořadové číslo KV DPH. Jen Ostatní pohledávky, Vydané Faktury (podmíněno v Globálním nastavení). Pouze SK verze.
      *
      * @param string $numberKVDPH
+     *
      * @return self
      */
     public function setNumberKVDPH($numberKVDPH)
     {
         $this->numberKVDPH = $numberKVDPH;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text dokladu. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -1030,21 +948,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text dokladu. Tento element je vyžadován při vytvoření dokladu.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as partnerIdentity
+     * Gets as partnerIdentity.
      *
      * Zákazníkova adresa.
      *
@@ -1056,21 +976,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new partnerIdentity
+     * Sets a new partnerIdentity.
      *
      * Zákazníkova adresa.
      *
-     * @param \Pohoda\Type\AddressType $partnerIdentity
      * @return self
      */
     public function setPartnerIdentity(?\Pohoda\Type\AddressType $partnerIdentity = null)
     {
         $this->partnerIdentity = $partnerIdentity;
+
         return $this;
     }
 
     /**
-     * Gets as myIdentity
+     * Gets as myIdentity.
      *
      * Osobní adresa.
      *
@@ -1082,21 +1002,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new myIdentity
+     * Sets a new myIdentity.
      *
      * Osobní adresa.
      *
-     * @param \Pohoda\Type\MyAddressType $myIdentity
      * @return self
      */
     public function setMyIdentity(?\Pohoda\Type\MyAddressType $myIdentity = null)
     {
         $this->myIdentity = $myIdentity;
+
         return $this;
     }
 
     /**
-     * Gets as order
+     * Gets as order.
      *
      * Objednávka.
      *
@@ -1108,21 +1028,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new order
+     * Sets a new order.
      *
      * Objednávka.
      *
-     * @param \Pohoda\Type\RefType $order
      * @return self
      */
     public function setOrder(?\Pohoda\Type\RefType $order = null)
     {
         $this->order = $order;
+
         return $this;
     }
 
     /**
-     * Gets as numberOrder
+     * Gets as numberOrder.
      *
      * Číslo objednávky na jejímž základě byla faktura vystavena.
      *
@@ -1134,21 +1054,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new numberOrder
+     * Sets a new numberOrder.
      *
      * Číslo objednávky na jejímž základě byla faktura vystavena.
      *
      * @param string $numberOrder
+     *
      * @return self
      */
     public function setNumberOrder($numberOrder)
     {
         $this->numberOrder = $numberOrder;
+
         return $this;
     }
 
     /**
-     * Gets as dateOrder
+     * Gets as dateOrder.
      *
      * Datum objednávky.
      *
@@ -1160,21 +1082,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new dateOrder
+     * Sets a new dateOrder.
      *
      * Datum objednávky.
      *
-     * @param \DateTime $dateOrder
      * @return self
      */
     public function setDateOrder(?\DateTime $dateOrder = null)
     {
         $this->dateOrder = $dateOrder;
+
         return $this;
     }
 
     /**
-     * Gets as priceLevel
+     * Gets as priceLevel.
      *
      * Cenová hladina odběratele. Používá se jen u typů vydaná faktura,
      *  vydaný vrubopis, vydaná zálohová faktura, vydaná proforma faktura.
@@ -1187,22 +1109,22 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new priceLevel
+     * Sets a new priceLevel.
      *
      * Cenová hladina odběratele. Používá se jen u typů vydaná faktura,
      *  vydaný vrubopis, vydaná zálohová faktura, vydaná proforma faktura.
      *
-     * @param \Pohoda\Type\RefType $priceLevel
      * @return self
      */
     public function setPriceLevel(?\Pohoda\Type\RefType $priceLevel = null)
     {
         $this->priceLevel = $priceLevel;
+
         return $this;
     }
 
     /**
-     * Gets as paymentType
+     * Gets as paymentType.
      *
      * Forma úhrady. Implicitně je nastaveno příkazem.
      *
@@ -1214,21 +1136,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new paymentType
+     * Sets a new paymentType.
      *
      * Forma úhrady. Implicitně je nastaveno příkazem.
      *
-     * @param \Pohoda\Type\PaymentType $paymentType
      * @return self
      */
     public function setPaymentType(?\Pohoda\Type\PaymentType $paymentType = null)
     {
         $this->paymentType = $paymentType;
+
         return $this;
     }
 
     /**
-     * Gets as account
+     * Gets as account.
      *
      * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku.
      *  (Používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení
@@ -1242,23 +1164,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new account
+     * Sets a new account.
      *
      * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku.
      *  (Používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení
      *  uživatele (pod kterým je spuštěn XML import).
      *
-     * @param \Pohoda\Type\AccountType $account
      * @return self
      */
     public function setAccount(?\Pohoda\Type\AccountType $account = null)
     {
         $this->account = $account;
+
         return $this;
     }
 
     /**
-     * Gets as symConst
+     * Gets as symConst.
      *
      * Konstantní symbol.
      *
@@ -1270,21 +1192,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new symConst
+     * Sets a new symConst.
      *
      * Konstantní symbol.
      *
      * @param string $symConst
+     *
      * @return self
      */
     public function setSymConst($symConst)
     {
         $this->symConst = $symConst;
+
         return $this;
     }
 
     /**
-     * Gets as symSpec
+     * Gets as symSpec.
      *
      * Specifický symbol. Používá se jen u závazků.
      *
@@ -1296,21 +1220,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new symSpec
+     * Sets a new symSpec.
      *
      * Specifický symbol. Používá se jen u závazků.
      *
      * @param string $symSpec
+     *
      * @return self
      */
     public function setSymSpec($symSpec)
     {
         $this->symSpec = $symSpec;
+
         return $this;
     }
 
     /**
-     * Gets as paymentAccount
+     * Gets as paymentAccount.
      *
      * Číslo bankovního účtu, na který dlužnou částku proplatíme. Číslo bude uvedeno na příkazu k úhradě.
      *  (Používá se jen závazků, dobropisu - vydané faktury).
@@ -1323,22 +1249,22 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new paymentAccount
+     * Sets a new paymentAccount.
      *
      * Číslo bankovního účtu, na který dlužnou částku proplatíme. Číslo bude uvedeno na příkazu k úhradě.
      *  (Používá se jen závazků, dobropisu - vydané faktury).
      *
-     * @param \Pohoda\Invoice\InvoiceHeaderType\PaymentAccountAType $paymentAccount
      * @return self
      */
     public function setPaymentAccount(?\Pohoda\Invoice\InvoiceHeaderType\PaymentAccountAType $paymentAccount = null)
     {
         $this->paymentAccount = $paymentAccount;
+
         return $this;
     }
 
     /**
-     * Gets as messageForRecipient
+     * Gets as messageForRecipient.
      *
      * Zpráva pro příjemce (Přijaté faktury, Přijaté zálohové faktury a Ostatní závazky).
      *
@@ -1350,21 +1276,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new messageForRecipient
+     * Sets a new messageForRecipient.
      *
      * Zpráva pro příjemce (Přijaté faktury, Přijaté zálohové faktury a Ostatní závazky).
      *
      * @param string $messageForRecipient
+     *
      * @return self
      */
     public function setMessageForRecipient($messageForRecipient)
     {
         $this->messageForRecipient = $messageForRecipient;
+
         return $this;
     }
 
     /**
-     * Gets as dateOfPaymentOrder
+     * Gets as dateOfPaymentOrder.
      *
      * Datum vystavení příkazu k úhradě (pouze pro export Přijatých faktur, Přijatých zálohových faktur a Ostatních závazků).
      *
@@ -1376,21 +1304,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new dateOfPaymentOrder
+     * Sets a new dateOfPaymentOrder.
      *
      * Datum vystavení příkazu k úhradě (pouze pro export Přijatých faktur, Přijatých zálohových faktur a Ostatních závazků).
      *
-     * @param \DateTime $dateOfPaymentOrder
      * @return self
      */
     public function setDateOfPaymentOrder(?\DateTime $dateOfPaymentOrder = null)
     {
         $this->dateOfPaymentOrder = $dateOfPaymentOrder;
+
         return $this;
     }
 
     /**
-     * Gets as paymentTerminal
+     * Gets as paymentTerminal.
      *
      * Příznak dokladu "Placeno přes terminál".Pouze pro doklad, který má nastaven typ úhrady "Platební kartou".
      *
@@ -1402,21 +1330,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new paymentTerminal
+     * Sets a new paymentTerminal.
      *
      * Příznak dokladu "Placeno přes terminál".Pouze pro doklad, který má nastaven typ úhrady "Platební kartou".
      *
      * @param string $paymentTerminal
+     *
      * @return self
      */
     public function setPaymentTerminal($paymentTerminal)
     {
         $this->paymentTerminal = $paymentTerminal;
+
         return $this;
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * Středisko.
      *
@@ -1428,21 +1358,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * Středisko.
      *
-     * @param \Pohoda\Type\RefType $centre
      * @return self
      */
     public function setCentre(?\Pohoda\Type\RefType $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 
     /**
-     * Gets as activity
+     * Gets as activity.
      *
      * Činnost.
      *
@@ -1454,21 +1384,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new activity
+     * Sets a new activity.
      *
      * Činnost.
      *
-     * @param \Pohoda\Type\RefType $activity
      * @return self
      */
     public function setActivity(?\Pohoda\Type\RefType $activity = null)
     {
         $this->activity = $activity;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * Zakázka.
      *
@@ -1480,21 +1410,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
      * Zakázka.
      *
-     * @param \Pohoda\Type\RefType $contract
      * @return self
      */
     public function setContract(?\Pohoda\Type\RefType $contract = null)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Gets as regVATinEU
+     * Gets as regVATinEU.
      *
      * Registrace DPH v EU.
      *
@@ -1506,21 +1436,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new regVATinEU
+     * Sets a new regVATinEU.
      *
      * Registrace DPH v EU.
      *
-     * @param \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU
      * @return self
      */
     public function setRegVATinEU(?\Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null)
     {
         $this->regVATinEU = $regVATinEU;
+
         return $this;
     }
 
     /**
-     * Gets as mOSS
+     * Gets as mOSS.
      *
      * Speciální režim registrace DPH v EU, režim One Stop Shop (OSS).
      *
@@ -1532,39 +1462,42 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new mOSS
+     * Sets a new mOSS.
      *
      * Speciální režim registrace DPH v EU, režim One Stop Shop (OSS).
      *
-     * @param \Pohoda\Type\MOSStypeType $mOSS
      * @return self
      */
     public function setMOSS(?\Pohoda\Type\MOSStypeType $mOSS = null)
     {
         $this->mOSS = $mOSS;
+
         return $this;
     }
 
     /**
-     * Adds as ids
+     * Adds as ids.
      *
      * Důkazní prostředky (OSS).
      *
-     * @return self
      * @param string $ids
+     *
+     * @return self
      */
     public function addToEvidentiaryResourcesMOSS($ids)
     {
         $this->evidentiaryResourcesMOSS[] = $ids;
+
         return $this;
     }
 
     /**
-     * isset evidentiaryResourcesMOSS
+     * isset evidentiaryResourcesMOSS.
      *
      * Důkazní prostředky (OSS).
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetEvidentiaryResourcesMOSS($index)
@@ -1573,20 +1506,19 @@ class InvoiceHeaderType
     }
 
     /**
-     * unset evidentiaryResourcesMOSS
+     * unset evidentiaryResourcesMOSS.
      *
      * Důkazní prostředky (OSS).
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetEvidentiaryResourcesMOSS($index)
+    public function unsetEvidentiaryResourcesMOSS($index): void
     {
         unset($this->evidentiaryResourcesMOSS[$index]);
     }
 
     /**
-     * Gets as evidentiaryResourcesMOSS
+     * Gets as evidentiaryResourcesMOSS.
      *
      * Důkazní prostředky (OSS).
      *
@@ -1598,21 +1530,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new evidentiaryResourcesMOSS
+     * Sets a new evidentiaryResourcesMOSS.
      *
      * Důkazní prostředky (OSS).
      *
      * @param string[] $evidentiaryResourcesMOSS
+     *
      * @return self
      */
-    public function setEvidentiaryResourcesMOSS(array $evidentiaryResourcesMOSS = null)
+    public function setEvidentiaryResourcesMOSS(?array $evidentiaryResourcesMOSS = null)
     {
         $this->evidentiaryResourcesMOSS = $evidentiaryResourcesMOSS;
+
         return $this;
     }
 
     /**
-     * Gets as accountingPeriodMOSS
+     * Gets as accountingPeriodMOSS.
      *
      * Účetní období (OSS).
      *
@@ -1624,21 +1558,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new accountingPeriodMOSS
+     * Sets a new accountingPeriodMOSS.
      *
      * Účetní období (OSS).
      *
      * @param string $accountingPeriodMOSS
+     *
      * @return self
      */
     public function setAccountingPeriodMOSS($accountingPeriodMOSS)
     {
         $this->accountingPeriodMOSS = $accountingPeriodMOSS;
+
         return $this;
     }
 
     /**
-     * Gets as dateTaxOriginalDocumentMOSS
+     * Gets as dateTaxOriginalDocumentMOSS.
      *
      * Datum uskutečnění zdanitelného plnění OSS (pouze pro opravné daňové doklady, dobropisy nebo vrubopisy).
      *
@@ -1650,21 +1586,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new dateTaxOriginalDocumentMOSS
+     * Sets a new dateTaxOriginalDocumentMOSS.
      *
      * Datum uskutečnění zdanitelného plnění OSS (pouze pro opravné daňové doklady, dobropisy nebo vrubopisy).
      *
-     * @param \DateTime $dateTaxOriginalDocumentMOSS
      * @return self
      */
     public function setDateTaxOriginalDocumentMOSS(?\DateTime $dateTaxOriginalDocumentMOSS = null)
     {
         $this->dateTaxOriginalDocumentMOSS = $dateTaxOriginalDocumentMOSS;
+
         return $this;
     }
 
     /**
-     * Gets as correctionMOSS
+     * Gets as correctionMOSS.
      *
      * Vykázat doklad jako opravu OSS (pouze pro opravné daňové doklady, dobropisy nebo vrubopisy).
      *
@@ -1676,21 +1612,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new correctionMOSS
+     * Sets a new correctionMOSS.
      *
      * Vykázat doklad jako opravu OSS (pouze pro opravné daňové doklady, dobropisy nebo vrubopisy).
      *
      * @param string $correctionMOSS
+     *
      * @return self
      */
     public function setCorrectionMOSS($correctionMOSS)
     {
         $this->correctionMOSS = $correctionMOSS;
+
         return $this;
     }
 
     /**
-     * Gets as carrier
+     * Gets as carrier.
      *
      * Dopravce (pouze vydané faktury a vydané zálohové faktury).
      *
@@ -1702,21 +1640,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new carrier
+     * Sets a new carrier.
      *
      * Dopravce (pouze vydané faktury a vydané zálohové faktury).
      *
-     * @param \Pohoda\Type\CarrierType $carrier
      * @return self
      */
     public function setCarrier(?\Pohoda\Type\CarrierType $carrier = null)
     {
         $this->carrier = $carrier;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -1728,21 +1666,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as intNote
+     * Gets as intNote.
      *
      * Interní poznámka, libovolný text, který nevstupuje do tiskových sestav.
      *
@@ -1754,21 +1694,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new intNote
+     * Sets a new intNote.
      *
      * Interní poznámka, libovolný text, který nevstupuje do tiskových sestav.
      *
      * @param string $intNote
+     *
      * @return self
      */
     public function setIntNote($intNote)
     {
         $this->intNote = $intNote;
+
         return $this;
     }
 
     /**
-     * Gets as liquidation
+     * Gets as liquidation.
      *
      * Stav likvidace faktury. Pouze pro export, při importu je ignorováno.
      *
@@ -1780,21 +1722,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new liquidation
+     * Sets a new liquidation.
      *
      * Stav likvidace faktury. Pouze pro export, při importu je ignorováno.
      *
-     * @param \Pohoda\Type\LiquidationType $liquidation
      * @return self
      */
     public function setLiquidation(?\Pohoda\Type\LiquidationType $liquidation = null)
     {
         $this->liquidation = $liquidation;
+
         return $this;
     }
 
     /**
-     * Gets as applied
+     * Gets as applied.
      *
      * Hodnota pole Uplatněno. Pouze vydané a přijaté zálohové faktury. Jen pro export.
      *
@@ -1806,21 +1748,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new applied
+     * Sets a new applied.
      *
      * Hodnota pole Uplatněno. Pouze vydané a přijaté zálohové faktury. Jen pro export.
      *
      * @param float $applied
+     *
      * @return self
      */
     public function setApplied($applied)
     {
         $this->applied = $applied;
+
         return $this;
     }
 
     /**
-     * Gets as histRate
+     * Gets as histRate.
      *
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
      *
@@ -1832,21 +1776,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new histRate
+     * Sets a new histRate.
      *
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
      *
      * @param string $histRate
+     *
      * @return self
      */
     public function setHistRate($histRate)
     {
         $this->histRate = $histRate;
+
         return $this;
     }
 
     /**
-     * Gets as lock1
+     * Gets as lock1.
      *
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      *
@@ -1858,21 +1804,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new lock1
+     * Sets a new lock1.
      *
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      *
      * @param string $lock1
+     *
      * @return self
      */
     public function setLock1($lock1)
     {
         $this->lock1 = $lock1;
+
         return $this;
     }
 
     /**
-     * Gets as lock2
+     * Gets as lock2.
      *
      * Zámek (v E1 verzi označení Zámek II). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      *
@@ -1884,21 +1832,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new lock2
+     * Sets a new lock2.
      *
      * Zámek (v E1 verzi označení Zámek II). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      *
      * @param string $lock2
+     *
      * @return self
      */
     public function setLock2($lock2)
     {
         $this->lock2 = $lock2;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -1910,39 +1860,42 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as label
+     * Adds as label.
      *
      * Štítky záznamu.
      *
      * @return self
-     * @param \Pohoda\Type\LabelType $label
      */
     public function addToLabels(\Pohoda\Type\LabelType $label)
     {
         $this->labels[] = $label;
+
         return $this;
     }
 
     /**
-     * isset labels
+     * isset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLabels($index)
@@ -1951,20 +1904,19 @@ class InvoiceHeaderType
     }
 
     /**
-     * unset labels
+     * unset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLabels($index)
+    public function unsetLabels($index): void
     {
         unset($this->labels[$index]);
     }
 
     /**
-     * Gets as labels
+     * Gets as labels.
      *
      * Štítky záznamu.
      *
@@ -1976,21 +1928,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new labels
+     * Sets a new labels.
      *
      * Štítky záznamu.
      *
      * @param \Pohoda\Type\LabelType[] $labels
+     *
      * @return self
      */
-    public function setLabels(array $labels = null)
+    public function setLabels(?array $labels = null)
     {
         $this->labels = $labels;
+
         return $this;
     }
 
     /**
-     * Gets as intrastat
+     * Gets as intrastat.
      *
      * Výkaz pro intrastat.
      *
@@ -2002,39 +1956,40 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new intrastat
+     * Sets a new intrastat.
      *
      * Výkaz pro intrastat.
      *
-     * @param \Pohoda\Invoice\IntrastatType $intrastat
      * @return self
      */
     public function setIntrastat(?\Pohoda\Invoice\IntrastatType $intrastat = null)
     {
         $this->intrastat = $intrastat;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -2043,20 +1998,19 @@ class InvoiceHeaderType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -2068,21 +2022,23 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 
     /**
-     * Gets as validate
+     * Gets as validate.
      *
      * Podmíněná kontrola dokladu.
      *
@@ -2094,21 +2050,21 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new validate
+     * Sets a new validate.
      *
      * Podmíněná kontrola dokladu.
      *
-     * @param \Pohoda\Type\TypeValidateType $validate
      * @return self
      */
     public function setValidate(?\Pohoda\Type\TypeValidateType $validate = null)
     {
         $this->validate = $validate;
+
         return $this;
     }
 
     /**
-     * Gets as postponedIssue
+     * Gets as postponedIssue.
      *
      * Odložený výdej. Hodnota 'true' nastaví vkládání skladových zásob ve formě textových položek (s vazbou na agendu Zásoby).
      *  Takto vložená položka nevytváří ve faktuře skladový pohyb. Ve stavovém řádku vydané faktury je označena jako Textová položka (s vazbou na agendu Zásoby). Používá se jen v agendě Vydané faktury.
@@ -2122,18 +2078,20 @@ class InvoiceHeaderType
     }
 
     /**
-     * Sets a new postponedIssue
+     * Sets a new postponedIssue.
      *
      * Odložený výdej. Hodnota 'true' nastaví vkládání skladových zásob ve formě textových položek (s vazbou na agendu Zásoby).
      *  Takto vložená položka nevytváří ve faktuře skladový pohyb. Ve stavovém řádku vydané faktury je označena jako Textová položka (s vazbou na agendu Zásoby). Používá se jen v agendě Vydané faktury.
      * .
      *
      * @param string $postponedIssue
+     *
      * @return self
      */
     public function setPostponedIssue($postponedIssue)
     {
         $this->postponedIssue = $postponedIssue;
+
         return $this;
     }
 }

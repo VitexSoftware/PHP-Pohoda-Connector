@@ -1,119 +1,56 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Supplier;
 
 /**
- * Class representing SupplierItemType
- *
+ * Class representing SupplierItemType.
  *
  * XSD Type: supplierItemType
  */
 class SupplierItemType
 {
-    /**
-     * @var bool $default
-     */
-    private $default = null;
-
-    /**
-     * @var \Pohoda\Type\ActionTypeItemType $actionType
-     */
-    private $actionType = null;
-
-    /**
-     * @var int $id
-     */
-    private $id = null;
-
-    /**
-     * @var \Pohoda\Type\RefTypeSupplierAddressType $refAd
-     */
-    private $refAd = null;
-
-    /**
-     * @var string $orderCode
-     */
-    private $orderCode = null;
-
-    /**
-     * @var string $orderName
-     */
-    private $orderName = null;
-
-    /**
-     * @var float $purchasingPrice
-     */
-    private $purchasingPrice = null;
-
-    /**
-     * @var \Pohoda\Type\RefType $currency
-     */
-    private $currency = null;
-
-    /**
-     * @var float $rate
-     */
-    private $rate = null;
-
-    /**
-     * @var string $payVAT
-     */
-    private $payVAT = null;
-
-    /**
-     * @var string $ean
-     */
-    private $ean = null;
-
-    /**
-     * @var string $printEAN
-     */
-    private $printEAN = null;
-
-    /**
-     * @var string $unitEAN
-     */
-    private $unitEAN = null;
-
-    /**
-     * @var float $unitCoefEAN
-     */
-    private $unitCoefEAN = null;
-
-    /**
-     * @var int $deliveryTime
-     */
-    private $deliveryTime = null;
-
-    /**
-     * @var \Pohoda\Type\RefType $deliveryPeriod
-     */
-    private $deliveryPeriod = null;
-
-    /**
-     * @var float $minQuantity
-     */
-    private $minQuantity = null;
-
-    /**
-     * @var string $unit
-     */
-    private $unit = null;
-
-    /**
-     * @var string $note
-     */
-    private $note = null;
+    private bool $default = null;
+    private \Pohoda\Type\ActionTypeItemType $actionType = null;
+    private int $id = null;
+    private \Pohoda\Type\RefTypeSupplierAddressType $refAd = null;
+    private string $orderCode = null;
+    private string $orderName = null;
+    private float $purchasingPrice = null;
+    private \Pohoda\Type\RefType $currency = null;
+    private float $rate = null;
+    private string $payVAT = null;
+    private string $ean = null;
+    private string $printEAN = null;
+    private string $unitEAN = null;
+    private float $unitCoefEAN = null;
+    private int $deliveryTime = null;
+    private \Pohoda\Type\RefType $deliveryPeriod = null;
+    private float $minQuantity = null;
+    private string $unit = null;
+    private string $note = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as default
+     * Gets as default.
      *
      * @return bool
      */
@@ -123,19 +60,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new default
+     * Sets a new default.
      *
      * @param bool $default
+     *
      * @return self
      */
     public function setDefault($default)
     {
         $this->default = $default;
+
         return $this;
     }
 
     /**
-     * Gets as actionType
+     * Gets as actionType.
      *
      * @return \Pohoda\Type\ActionTypeItemType
      */
@@ -145,19 +84,19 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new actionType
+     * Sets a new actionType.
      *
-     * @param \Pohoda\Type\ActionTypeItemType $actionType
      * @return self
      */
     public function setActionType(?\Pohoda\Type\ActionTypeItemType $actionType = null)
     {
         $this->actionType = $actionType;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * @return int
      */
@@ -167,19 +106,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as refAd
+     * Gets as refAd.
      *
      * @return \Pohoda\Type\RefTypeSupplierAddressType
      */
@@ -189,19 +130,19 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new refAd
+     * Sets a new refAd.
      *
-     * @param \Pohoda\Type\RefTypeSupplierAddressType $refAd
      * @return self
      */
     public function setRefAd(?\Pohoda\Type\RefTypeSupplierAddressType $refAd = null)
     {
         $this->refAd = $refAd;
+
         return $this;
     }
 
     /**
-     * Gets as orderCode
+     * Gets as orderCode.
      *
      * @return string
      */
@@ -211,19 +152,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new orderCode
+     * Sets a new orderCode.
      *
      * @param string $orderCode
+     *
      * @return self
      */
     public function setOrderCode($orderCode)
     {
         $this->orderCode = $orderCode;
+
         return $this;
     }
 
     /**
-     * Gets as orderName
+     * Gets as orderName.
      *
      * @return string
      */
@@ -233,19 +176,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new orderName
+     * Sets a new orderName.
      *
      * @param string $orderName
+     *
      * @return self
      */
     public function setOrderName($orderName)
     {
         $this->orderName = $orderName;
+
         return $this;
     }
 
     /**
-     * Gets as purchasingPrice
+     * Gets as purchasingPrice.
      *
      * @return float
      */
@@ -255,19 +200,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new purchasingPrice
+     * Sets a new purchasingPrice.
      *
      * @param float $purchasingPrice
+     *
      * @return self
      */
     public function setPurchasingPrice($purchasingPrice)
     {
         $this->purchasingPrice = $purchasingPrice;
+
         return $this;
     }
 
     /**
-     * Gets as currency
+     * Gets as currency.
      *
      * @return \Pohoda\Type\RefType
      */
@@ -277,19 +224,19 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new currency
+     * Sets a new currency.
      *
-     * @param \Pohoda\Type\RefType $currency
      * @return self
      */
     public function setCurrency(?\Pohoda\Type\RefType $currency = null)
     {
         $this->currency = $currency;
+
         return $this;
     }
 
     /**
-     * Gets as rate
+     * Gets as rate.
      *
      * @return float
      */
@@ -299,19 +246,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new rate
+     * Sets a new rate.
      *
      * @param float $rate
+     *
      * @return self
      */
     public function setRate($rate)
     {
         $this->rate = $rate;
+
         return $this;
     }
 
     /**
-     * Gets as payVAT
+     * Gets as payVAT.
      *
      * @return string
      */
@@ -321,19 +270,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new payVAT
+     * Sets a new payVAT.
      *
      * @param string $payVAT
+     *
      * @return self
      */
     public function setPayVAT($payVAT)
     {
         $this->payVAT = $payVAT;
+
         return $this;
     }
 
     /**
-     * Gets as ean
+     * Gets as ean.
      *
      * @return string
      */
@@ -343,19 +294,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new ean
+     * Sets a new ean.
      *
      * @param string $ean
+     *
      * @return self
      */
     public function setEan($ean)
     {
         $this->ean = $ean;
+
         return $this;
     }
 
     /**
-     * Gets as printEAN
+     * Gets as printEAN.
      *
      * @return string
      */
@@ -365,19 +318,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new printEAN
+     * Sets a new printEAN.
      *
      * @param string $printEAN
+     *
      * @return self
      */
     public function setPrintEAN($printEAN)
     {
         $this->printEAN = $printEAN;
+
         return $this;
     }
 
     /**
-     * Gets as unitEAN
+     * Gets as unitEAN.
      *
      * @return string
      */
@@ -387,19 +342,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new unitEAN
+     * Sets a new unitEAN.
      *
      * @param string $unitEAN
+     *
      * @return self
      */
     public function setUnitEAN($unitEAN)
     {
         $this->unitEAN = $unitEAN;
+
         return $this;
     }
 
     /**
-     * Gets as unitCoefEAN
+     * Gets as unitCoefEAN.
      *
      * @return float
      */
@@ -409,19 +366,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new unitCoefEAN
+     * Sets a new unitCoefEAN.
      *
      * @param float $unitCoefEAN
+     *
      * @return self
      */
     public function setUnitCoefEAN($unitCoefEAN)
     {
         $this->unitCoefEAN = $unitCoefEAN;
+
         return $this;
     }
 
     /**
-     * Gets as deliveryTime
+     * Gets as deliveryTime.
      *
      * @return int
      */
@@ -431,19 +390,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new deliveryTime
+     * Sets a new deliveryTime.
      *
      * @param int $deliveryTime
+     *
      * @return self
      */
     public function setDeliveryTime($deliveryTime)
     {
         $this->deliveryTime = $deliveryTime;
+
         return $this;
     }
 
     /**
-     * Gets as deliveryPeriod
+     * Gets as deliveryPeriod.
      *
      * @return \Pohoda\Type\RefType
      */
@@ -453,19 +414,19 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new deliveryPeriod
+     * Sets a new deliveryPeriod.
      *
-     * @param \Pohoda\Type\RefType $deliveryPeriod
      * @return self
      */
     public function setDeliveryPeriod(?\Pohoda\Type\RefType $deliveryPeriod = null)
     {
         $this->deliveryPeriod = $deliveryPeriod;
+
         return $this;
     }
 
     /**
-     * Gets as minQuantity
+     * Gets as minQuantity.
      *
      * @return float
      */
@@ -475,19 +436,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new minQuantity
+     * Sets a new minQuantity.
      *
      * @param float $minQuantity
+     *
      * @return self
      */
     public function setMinQuantity($minQuantity)
     {
         $this->minQuantity = $minQuantity;
+
         return $this;
     }
 
     /**
-     * Gets as unit
+     * Gets as unit.
      *
      * @return string
      */
@@ -497,19 +460,21 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * @return string
      */
@@ -519,37 +484,40 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -558,20 +526,19 @@ class SupplierItemType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -583,16 +550,18 @@ class SupplierItemType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

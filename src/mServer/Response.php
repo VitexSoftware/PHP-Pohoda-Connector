@@ -1,77 +1,57 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PHPmServer - Response parser class
+ * This file is part of the PHP-Pohoda-Connector package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Vitex Software
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace mServer;
 
 /**
- * Class ResponseXML
+ * Class ResponseXML.
  */
 class Response extends \Ease\Sand
 {
     /**
-     * @var \SimpleXMLElement
+     * State when file was imported successfully.
      */
-    protected $xml;
+    public const STATE_OK = 'ok';
 
     /**
-     * @var array
+     * State when file was imported with warning.
      */
-    protected $ns = array();
+    public const STATE_WARNING = 'warning';
+    public array $messages = ['error' => [], 'warning' => []];
+    public array $producedDetails;
+    protected \SimpleXMLElement $xml;
+    protected array $ns = [];
 
     /**
-     * State when file was imported successfully
+     * Parsed Result.
      */
-    const STATE_OK = 'ok';
+    private array $parsed = [];
+    private Client $caller;
 
     /**
-     * State when file was imported with warning
+     * Operation status.
      */
-    const STATE_WARNING = 'warning';
+    private string $state = '';
 
     /**
-     * Parsed Result
-     * @var array
+     * Operation status note.
      */
-    private $parsed;
+    private string $note = '';
 
     /**
-     *
-     * @var Client
-     */
-    private $caller;
-
-    /**
-     *
-     * @var array
-     */
-    public $messages = ['error' => [], 'warning' => []];
-
-    /**
-     *
-     * @var array
-     */
-    public $producedDetails;
-
-    /**
-     * Operation status
-     * @var string
-     */
-    private $state;
-
-    /**
-     * Operation status note
-     * @var string
-     */
-    private $note;
-
-    /**
-     * Create a new Response Instance
+     * Create a new Response Instance.
      *
      * @param Client $caller parent object
      */
@@ -81,13 +61,10 @@ class Response extends \Ease\Sand
         $this->useCaller($caller);
     }
 
-    /**
-     *
-     * @param Client $caller
-     */
-    public function useCaller(Client $caller)
+    public function useCaller(Client $caller): void
     {
         $this->caller = $caller;
+
         if ($caller->lastCurlResponse) {
             $parsed = $this->parse($this->caller->lastCurlResponse, []);
             $this->processResponsePack($parsed['responsePack']);
@@ -97,9 +74,9 @@ class Response extends \Ease\Sand
         }
     }
 
-    public function processResponsePack($responsePackData)
+    public function processResponsePack($responsePackData): void
     {
-        if (array_key_exists('rsp:responsePackItem', $responsePackData)) {
+        if (\array_key_exists('rsp:responsePackItem', $responsePackData)) {
             $this->processResponsePackItem($responsePackData['rsp:responsePackItem']);
         } else {
             $this->state = $responsePackData['@state'];
@@ -107,23 +84,26 @@ class Response extends \Ease\Sand
         }
     }
 
-    public function processResponsePackItem($responsePackItem)
+    public function processResponsePackItem($responsePackItem): void
     {
-
         foreach ($responsePackItem as $name => $responsePackSubitem) {
             switch ($name) {
                 case 'lAdb:listAddressBook':
                     $this->processResponseData($responsePackSubitem);
+
                     break;
                 case 'bnk:bankResponse':
                 case 'adb:addressbookResponse':
                     $this->processResponseData($responsePackSubitem);
+
                     break;
                 case '@state':
                     $this->state = $responsePackSubitem;
+
                     break;
                 case '':
                     break;
+
                 default:
                     //                    throw new Exception('Unknown element to process: ' . $name);
                     break;
@@ -131,14 +111,14 @@ class Response extends \Ease\Sand
         }
     }
 
-    public function processProducedDetails($productDetails)
+    public function processProducedDetails($productDetails): void
     {
         $this->producedDetails = self::typeToArray($productDetails);
     }
 
-    public function processImportDetails($importDetails)
+    public function processImportDetails($importDetails): void
     {
-        if (array_key_exists('rdc:state', $importDetails['rdc:detail'])) {
+        if (\array_key_exists('rdc:state', $importDetails['rdc:detail'])) {
             $importDetail = self::typeToArray($importDetails['rdc:detail']);
             $this->messages[$importDetail['state']][] = $importDetail;
         } else {
@@ -147,30 +127,33 @@ class Response extends \Ease\Sand
             }
         }
 
-        if (count($this->messages['error'])) {
+        if (\count($this->messages['error'])) {
             $this->state = 'error';
-        } elseif (count($this->messages['warning'])) {
+        } elseif (\count($this->messages['warning'])) {
             $this->state = 'warning';
         }
     }
 
     /**
-     *
      * @param array $responseData
      */
-    function processResponseData($responseData)
+    public function processResponseData($responseData): void
     {
         foreach ($responseData as $key => $value) {
             switch ($key) {
                 case 'lAdb:addressbook':
                     $this->parsed = $this->processListAddressBook($value);
+
                     break;
                 case 'rdc:producedDetails':
                     $this->processProducedDetails($value);
+
                     break;
                 case 'rdc:importDetails':
                     $this->processImportDetails($value);
+
                     break;
+
                 default:
                     //                    $this->addStatusMessage(_('Unknown response section') . ': ' . $responseData['name'], 'debug');
                     break;
@@ -179,37 +162,34 @@ class Response extends \Ease\Sand
     }
 
     /**
-     *
-     * @param array $source
-     *
      * @return array
      */
     public static function typesToArray(array $source)
     {
         $details = [];
+
         foreach ($source as $did => $detail) {
             $details[$did] = self::typeToArray($detail);
         }
+
         return $details;
     }
 
     /**
-     *
-     * @param array $type
-     *
      * @return array
      */
     public static function typeToArray(array $type)
     {
         $details = [];
+
         foreach ($type as $key => $value) {
-            $details[str_replace(['rdc:', 'typ:'], '', $key)] = is_array($value) ? (array_key_exists('$', $value) ? $value['$'] : self::typeToArray($value)) : $value;
+            $details[str_replace(['rdc:', 'typ:'], '', $key)] = \is_array($value) ? (\array_key_exists('$', $value) ? $value['$'] : self::typeToArray($value)) : $value;
         }
+
         return $details;
     }
 
     /**
-     *
      * @return string
      */
     public function getNote()
@@ -218,27 +198,27 @@ class Response extends \Ease\Sand
     }
 
     /**
-     * Checks if import was successful
+     * Checks if import was successful.
      *
      * @return bool
      */
     public function isOk()
     {
-        return $this->getState() == static::STATE_OK;
+        return $this->getState() === static::STATE_OK;
     }
 
     /**
-     * Checks if import produced warnings
+     * Checks if import produced warnings.
      *
      * @return bool
      */
     public function isWarning()
     {
-        return $this->getState() == static::STATE_WARNING;
+        return $this->getState() === static::STATE_WARNING;
     }
 
     /**
-     * Return state of whole file
+     * Return state of whole file.
      *
      * @return string
      */
@@ -248,7 +228,7 @@ class Response extends \Ease\Sand
     }
 
     /**
-     * Obtain response data
+     * Obtain response data.
      *
      * @param string $agenda
      *
@@ -256,25 +236,28 @@ class Response extends \Ease\Sand
      */
     public function getAgendaData($agenda)
     {
-        if (array_key_exists(0, $this->parsed)) {
+        if (\array_key_exists(0, $this->parsed)) {
             $data = [];
+
             foreach (current($this->parsed[0]['value']) as $packItemData) {
                 $data[current($packItemData)['id']] = current($packItemData);
             }
         } else {
             $data = $this->parsed;
         }
+
         return $data;
     }
 
     public static function prepareElement($elementData)
     {
-        $name = /* self::stripNsUri */($elementData['name']);
+        $name = /* self::stripNsUri */ $elementData['name'];
         $data = [];
+
         foreach ($elementData['value'] as $subitems) {
             foreach ($subitems as $subitem) {
-                if (is_array($subitem)) {
-                    if (array_key_exists('name', $subitem)) {
+                if (\is_array($subitem)) {
+                    if (\array_key_exists('name', $subitem)) {
                         $data = array_merge($data, self::prepareElement($subitem));
                     }
                 } else {
@@ -282,159 +265,170 @@ class Response extends \Ease\Sand
                 }
             }
         }
+
         return [$name => $data];
     }
 
     /**
-     * Convert Pohoda Response XML to Array
+     * Convert Pohoda Response XML to Array.
      *
-     * @param string|\rawXML $xml
+     * @param \rawXML|string $xml
      *
      * @return array
      */
     public function anyXmlToArray($xml)
     {
-        return self::xmlToArray(is_string($xml) ? simplexml_load_string($xml) : $xml);
+        return self::xmlToArray(\is_string($xml) ? simplexml_load_string($xml) : $xml);
     }
 
     /**
-     * Convert XML to Array
+     * Convert XML to Array.
      *
      * @param string $xml
-     * @param array $alwaysArrayElements
      *
      * @return array
      */
     public static function parse($xml, array $alwaysArrayElements)
     {
-        $xmlNode = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
-        $arrayData = self::xmlToArray($xmlNode, array(
-                    'alwaysArray' => $alwaysArrayElements,
-                    'autoText' => false,
-        ));
-        return $arrayData;
+        $xmlNode = simplexml_load_string($xml, 'SimpleXMLElement', \LIBXML_NOCDATA);
+
+        return self::xmlToArray($xmlNode, [
+            'alwaysArray' => $alwaysArrayElements,
+            'autoText' => false,
+        ]);
     }
 
     /**
-     * @param \SimpleXMLElement $xml
      * @param array $options
      *
      * @return array
      *
      * @author Tamlyn Rhodes
-     * @link http://outlandish.com/blog/xml-to-json/
+     *
+     * @see http://outlandish.com/blog/xml-to-json/
      */
-    public static function xmlToArray(\SimpleXMLElement $xml, $options = array())
+    public static function xmlToArray(\SimpleXMLElement $xml, $options = [])
     {
-        $defaults = array(
+        $defaults = [
             'namespaceSeparator' => ':',
-            //you may want this to be something other than a colon
+            // you may want this to be something other than a colon
             'attributePrefix' => '@',
-            //to distinguish between attributes and nodes with the same name
-            'alwaysArray' => array(),
-            //array of xml tag names which should always become arrays
+            // to distinguish between attributes and nodes with the same name
+            'alwaysArray' => [],
+            // array of xml tag names which should always become arrays
             'autoArray' => true,
-            //only create arrays for tags which appear more than once
+            // only create arrays for tags which appear more than once
             'textContent' => '$',
-            //key used for the text content of elements
+            // key used for the text content of elements
             'autoText' => true,
-            //skip textContent key if node has no attributes or child nodes
+            // skip textContent key if node has no attributes or child nodes
             'keySearch' => false,
-            //optional search and replace on tag and attribute names
-            'keyReplace' => false //replace values for above search values (as passed to str_replace())
-        );
+            // optional search and replace on tag and attribute names
+            'keyReplace' => false, // replace values for above search values (as passed to str_replace())
+        ];
         $options = array_merge($defaults, $options);
         $namespaces = $xml->getDocNamespaces();
-        $namespaces[''] = null; //add base (empty) namespace
-        //get attributes from all namespaces
-        $attributesArray = array();
+        $namespaces[''] = null; // add base (empty) namespace
+        // get attributes from all namespaces
+        $attributesArray = [];
+
         foreach ($namespaces as $prefix => $namespace) {
             foreach ($xml->attributes($namespace) as $attributeName => $attribute) {
-                //replace characters in attribute name
+                // replace characters in attribute name
                 if ($options['keySearch']) {
                     $attributeName = str_replace($options['keySearch'], $options['keyReplace'], $attributeName);
                 }
+
                 $attributeKey = $options['attributePrefix']
-                        . ($prefix ? $prefix . $options['namespaceSeparator'] : '')
-                        . $attributeName;
+                        .($prefix ? $prefix.$options['namespaceSeparator'] : '')
+                        .$attributeName;
                 $attributesArray[$attributeKey] = (string) $attribute;
             }
         }
 
-        //get child nodes from all namespaces
-        $tagsArray = array();
+        // get child nodes from all namespaces
+        $tagsArray = [];
+
         foreach ($namespaces as $prefix => $namespace) {
             foreach ($xml->children($namespace) as $childXml) {
-                //recurse into child nodes
+                // recurse into child nodes
                 $childArray = self::xmlToArray($childXml, $options);
                 $childTagName = key($childArray);
                 $childProperties = current($childArray);
-                //list($childTagName, $childProperties) = each($childArray);
-                //replace characters in tag name
+
+                // list($childTagName, $childProperties) = each($childArray);
+                // replace characters in tag name
                 if ($options['keySearch']) {
                     $childTagName = str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
                 }
-                //add namespace prefix, if any
+
+                // add namespace prefix, if any
                 if ($prefix) {
-                    $childTagName = $prefix . $options['namespaceSeparator'] . $childTagName;
+                    $childTagName = $prefix.$options['namespaceSeparator'].$childTagName;
                 }
 
                 if (!isset($tagsArray[$childTagName])) {
-                    //only entry with this key
-                    //test if tags of this type should always be arrays, no matter the element count
-                    $tagsArray[$childTagName] = in_array($childTagName, $options['alwaysArray']) || !$options['autoArray'] ? array($childProperties) : $childProperties;
+                    // only entry with this key
+                    // test if tags of this type should always be arrays, no matter the element count
+                    $tagsArray[$childTagName] = \in_array($childTagName, $options['alwaysArray'], true) || !$options['autoArray'] ? [$childProperties] : $childProperties;
                 } elseif (
-                        is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName]) === range(0, count($tagsArray[$childTagName]) - 1)
+                    \is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName]) === range(0, \count($tagsArray[$childTagName]) - 1)
                 ) {
-                    //key already exists and is integer indexed array
+                    // key already exists and is integer indexed array
                     $tagsArray[$childTagName][] = $childProperties;
                 } else {
-                    //key exists so convert to integer indexed array with previous value in position 0
-                    $tagsArray[$childTagName] = array($tagsArray[$childTagName], $childProperties);
+                    // key exists so convert to integer indexed array with previous value in position 0
+                    $tagsArray[$childTagName] = [$tagsArray[$childTagName], $childProperties];
                 }
             }
         }
 
-        //get text content of node
-        $textContentArray = array();
+        // get text content of node
+        $textContentArray = [];
         $plainText = trim((string) $xml);
+
         if ($plainText !== '') {
             $textContentArray[$options['textContent']] = $plainText;
         }
 
-        //stick it all together
+        // stick it all together
         $propertiesArray = !$options['autoText'] || $attributesArray || $tagsArray || ($plainText === '') ? array_merge($attributesArray, $tagsArray, $textContentArray) : $plainText;
-        //return node as array
-        return array(
-            $xml->getName() => $propertiesArray
-        );
+
+        // return node as array
+        return [
+            $xml->getName() => $propertiesArray,
+        ];
     }
 
     public function processListAddressBook($listAddressBook)
     {
         $addressBook = [];
+
         foreach ($listAddressBook as $apos => $addressEntry) {
             $addressData = self::adbToArray($addressEntry);
             $addressBook[$addressData['addressbookHeader']['id']] = $addressData;
         }
+
         return $addressBook;
     }
 
     /**
-     * Strip adb: prefix form key names
+     * Strip adb: prefix form key names.
      *
      * @param array $entryData
      *
      * @return array
      */
-    static function adbToArray($entryData)
+    public static function adbToArray($entryData)
     {
         $entry = [];
+
         foreach ($entryData as $entryKey => $entryValue) {
             if (preg_match('/^adb:/', $entryKey)) {
-                $entry[str_replace('adb:', '', $entryKey)] = array_key_exists('$', $entryValue) ? $entryValue['$'] : self::adbToArray($entryValue);
+                $entry[str_replace('adb:', '', $entryKey)] = \array_key_exists('$', $entryValue) ? $entryValue['$'] : self::adbToArray($entryValue);
             }
         }
+
         return $entry;
     }
 }

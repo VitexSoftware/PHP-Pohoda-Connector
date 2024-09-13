@@ -1,112 +1,49 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\MKasa;
 
 /**
- * Class representing PohodaRestrictionType
- *
+ * Class representing PohodaRestrictionType.
  *
  * XSD Type: pohodaRestrictionType
  */
 class PohodaRestrictionType
 {
-    /**
-     * @var string $lockPin
-     */
-    private $lockPin = null;
+    private string $lockPin = null;
+    private string $administration = null;
+    private string $administrationPass = null;
+    private bool $createCustomer = null;
+    private string $changePrize = null;
+    private string $textItems = null;
+    private string $depositsWithdrawals = null;
+    private string $delayedDocument = null;
+    private string $agendaHistory = null;
+    private string $createSKPV = null;
+    private string $changeEet = null;
+    private string $deleteRecords = null;
+    private string $exportXml = null;
+    private string $createBackup = null;
+    private string $restoreBackup = null;
+    private string $createCashRegisterDoc = null;
+    private string $refund = null;
+    private bool $accountDayByDay = null;
+    private bool $canDoDiffExport = null;
 
     /**
-     * @var string $administration
-     */
-    private $administration = null;
-
-    /**
-     * @var string $administrationPass
-     */
-    private $administrationPass = null;
-
-    /**
-     * @var bool $createCustomer
-     */
-    private $createCustomer = null;
-
-    /**
-     * @var string $changePrize
-     */
-    private $changePrize = null;
-
-    /**
-     * @var string $textItems
-     */
-    private $textItems = null;
-
-    /**
-     * @var string $depositsWithdrawals
-     */
-    private $depositsWithdrawals = null;
-
-    /**
-     * @var string $delayedDocument
-     */
-    private $delayedDocument = null;
-
-    /**
-     * @var string $agendaHistory
-     */
-    private $agendaHistory = null;
-
-    /**
-     * @var string $createSKPV
-     */
-    private $createSKPV = null;
-
-    /**
-     * @var string $changeEet
-     */
-    private $changeEet = null;
-
-    /**
-     * @var string $deleteRecords
-     */
-    private $deleteRecords = null;
-
-    /**
-     * @var string $exportXml
-     */
-    private $exportXml = null;
-
-    /**
-     * @var string $createBackup
-     */
-    private $createBackup = null;
-
-    /**
-     * @var string $restoreBackup
-     */
-    private $restoreBackup = null;
-
-    /**
-     * @var string $createCashRegisterDoc
-     */
-    private $createCashRegisterDoc = null;
-
-    /**
-     * @var string $refund
-     */
-    private $refund = null;
-
-    /**
-     * @var bool $accountDayByDay
-     */
-    private $accountDayByDay = null;
-
-    /**
-     * @var bool $canDoDiffExport
-     */
-    private $canDoDiffExport = null;
-
-    /**
-     * Gets as lockPin
+     * Gets as lockPin.
      *
      * @return string
      */
@@ -116,19 +53,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new lockPin
+     * Sets a new lockPin.
      *
      * @param string $lockPin
+     *
      * @return self
      */
     public function setLockPin($lockPin)
     {
         $this->lockPin = $lockPin;
+
         return $this;
     }
 
     /**
-     * Gets as administration
+     * Gets as administration.
      *
      * @return string
      */
@@ -138,19 +77,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new administration
+     * Sets a new administration.
      *
      * @param string $administration
+     *
      * @return self
      */
     public function setAdministration($administration)
     {
         $this->administration = $administration;
+
         return $this;
     }
 
     /**
-     * Gets as administrationPass
+     * Gets as administrationPass.
      *
      * @return string
      */
@@ -160,19 +101,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new administrationPass
+     * Sets a new administrationPass.
      *
      * @param string $administrationPass
+     *
      * @return self
      */
     public function setAdministrationPass($administrationPass)
     {
         $this->administrationPass = $administrationPass;
+
         return $this;
     }
 
     /**
-     * Gets as createCustomer
+     * Gets as createCustomer.
      *
      * @return bool
      */
@@ -182,19 +125,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new createCustomer
+     * Sets a new createCustomer.
      *
      * @param bool $createCustomer
+     *
      * @return self
      */
     public function setCreateCustomer($createCustomer)
     {
         $this->createCustomer = $createCustomer;
+
         return $this;
     }
 
     /**
-     * Gets as changePrize
+     * Gets as changePrize.
      *
      * @return string
      */
@@ -204,19 +149,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new changePrize
+     * Sets a new changePrize.
      *
      * @param string $changePrize
+     *
      * @return self
      */
     public function setChangePrize($changePrize)
     {
         $this->changePrize = $changePrize;
+
         return $this;
     }
 
     /**
-     * Gets as textItems
+     * Gets as textItems.
      *
      * @return string
      */
@@ -226,19 +173,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new textItems
+     * Sets a new textItems.
      *
      * @param string $textItems
+     *
      * @return self
      */
     public function setTextItems($textItems)
     {
         $this->textItems = $textItems;
+
         return $this;
     }
 
     /**
-     * Gets as depositsWithdrawals
+     * Gets as depositsWithdrawals.
      *
      * @return string
      */
@@ -248,19 +197,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new depositsWithdrawals
+     * Sets a new depositsWithdrawals.
      *
      * @param string $depositsWithdrawals
+     *
      * @return self
      */
     public function setDepositsWithdrawals($depositsWithdrawals)
     {
         $this->depositsWithdrawals = $depositsWithdrawals;
+
         return $this;
     }
 
     /**
-     * Gets as delayedDocument
+     * Gets as delayedDocument.
      *
      * @return string
      */
@@ -270,19 +221,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new delayedDocument
+     * Sets a new delayedDocument.
      *
      * @param string $delayedDocument
+     *
      * @return self
      */
     public function setDelayedDocument($delayedDocument)
     {
         $this->delayedDocument = $delayedDocument;
+
         return $this;
     }
 
     /**
-     * Gets as agendaHistory
+     * Gets as agendaHistory.
      *
      * @return string
      */
@@ -292,19 +245,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new agendaHistory
+     * Sets a new agendaHistory.
      *
      * @param string $agendaHistory
+     *
      * @return self
      */
     public function setAgendaHistory($agendaHistory)
     {
         $this->agendaHistory = $agendaHistory;
+
         return $this;
     }
 
     /**
-     * Gets as createSKPV
+     * Gets as createSKPV.
      *
      * @return string
      */
@@ -314,19 +269,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new createSKPV
+     * Sets a new createSKPV.
      *
      * @param string $createSKPV
+     *
      * @return self
      */
     public function setCreateSKPV($createSKPV)
     {
         $this->createSKPV = $createSKPV;
+
         return $this;
     }
 
     /**
-     * Gets as changeEet
+     * Gets as changeEet.
      *
      * @return string
      */
@@ -336,19 +293,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new changeEet
+     * Sets a new changeEet.
      *
      * @param string $changeEet
+     *
      * @return self
      */
     public function setChangeEet($changeEet)
     {
         $this->changeEet = $changeEet;
+
         return $this;
     }
 
     /**
-     * Gets as deleteRecords
+     * Gets as deleteRecords.
      *
      * @return string
      */
@@ -358,19 +317,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new deleteRecords
+     * Sets a new deleteRecords.
      *
      * @param string $deleteRecords
+     *
      * @return self
      */
     public function setDeleteRecords($deleteRecords)
     {
         $this->deleteRecords = $deleteRecords;
+
         return $this;
     }
 
     /**
-     * Gets as exportXml
+     * Gets as exportXml.
      *
      * @return string
      */
@@ -380,19 +341,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new exportXml
+     * Sets a new exportXml.
      *
      * @param string $exportXml
+     *
      * @return self
      */
     public function setExportXml($exportXml)
     {
         $this->exportXml = $exportXml;
+
         return $this;
     }
 
     /**
-     * Gets as createBackup
+     * Gets as createBackup.
      *
      * @return string
      */
@@ -402,19 +365,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new createBackup
+     * Sets a new createBackup.
      *
      * @param string $createBackup
+     *
      * @return self
      */
     public function setCreateBackup($createBackup)
     {
         $this->createBackup = $createBackup;
+
         return $this;
     }
 
     /**
-     * Gets as restoreBackup
+     * Gets as restoreBackup.
      *
      * @return string
      */
@@ -424,19 +389,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new restoreBackup
+     * Sets a new restoreBackup.
      *
      * @param string $restoreBackup
+     *
      * @return self
      */
     public function setRestoreBackup($restoreBackup)
     {
         $this->restoreBackup = $restoreBackup;
+
         return $this;
     }
 
     /**
-     * Gets as createCashRegisterDoc
+     * Gets as createCashRegisterDoc.
      *
      * @return string
      */
@@ -446,19 +413,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new createCashRegisterDoc
+     * Sets a new createCashRegisterDoc.
      *
      * @param string $createCashRegisterDoc
+     *
      * @return self
      */
     public function setCreateCashRegisterDoc($createCashRegisterDoc)
     {
         $this->createCashRegisterDoc = $createCashRegisterDoc;
+
         return $this;
     }
 
     /**
-     * Gets as refund
+     * Gets as refund.
      *
      * @return string
      */
@@ -468,19 +437,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new refund
+     * Sets a new refund.
      *
      * @param string $refund
+     *
      * @return self
      */
     public function setRefund($refund)
     {
         $this->refund = $refund;
+
         return $this;
     }
 
     /**
-     * Gets as accountDayByDay
+     * Gets as accountDayByDay.
      *
      * @return bool
      */
@@ -490,19 +461,21 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new accountDayByDay
+     * Sets a new accountDayByDay.
      *
      * @param bool $accountDayByDay
+     *
      * @return self
      */
     public function setAccountDayByDay($accountDayByDay)
     {
         $this->accountDayByDay = $accountDayByDay;
+
         return $this;
     }
 
     /**
-     * Gets as canDoDiffExport
+     * Gets as canDoDiffExport.
      *
      * @return bool
      */
@@ -512,14 +485,16 @@ class PohodaRestrictionType
     }
 
     /**
-     * Sets a new canDoDiffExport
+     * Sets a new canDoDiffExport.
      *
      * @param bool $canDoDiffExport
+     *
      * @return self
      */
     public function setCanDoDiffExport($canDoDiffExport)
     {
         $this->canDoDiffExport = $canDoDiffExport;
+
         return $this;
     }
 }

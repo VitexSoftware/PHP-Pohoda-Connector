@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing LiquidationsType
+ * Class representing LiquidationsType.
  *
  * Informace o likvidacích faktury.
  * XSD Type: liquidationsType
@@ -11,27 +24,28 @@ namespace Pohoda\Type;
 class LiquidationsType
 {
     /**
-     * @var \Pohoda\Type\LiquidationItemType[] $liquidation
+     * @var \Pohoda\Type\LiquidationItemType[]
      */
-    private $liquidation = [
+    private array $liquidation = [
     ];
 
     /**
-     * Adds as liquidation
+     * Adds as liquidation.
      *
      * @return self
-     * @param \Pohoda\Type\LiquidationItemType $liquidation
      */
     public function addToLiquidation(\Pohoda\Type\LiquidationItemType $liquidation)
     {
         $this->liquidation[] = $liquidation;
+
         return $this;
     }
 
     /**
-     * isset liquidation
+     * isset liquidation.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLiquidation($index)
@@ -40,18 +54,17 @@ class LiquidationsType
     }
 
     /**
-     * unset liquidation
+     * unset liquidation.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLiquidation($index)
+    public function unsetLiquidation($index): void
     {
         unset($this->liquidation[$index]);
     }
 
     /**
-     * Gets as liquidation
+     * Gets as liquidation.
      *
      * @return \Pohoda\Type\LiquidationItemType[]
      */
@@ -61,14 +74,16 @@ class LiquidationsType
     }
 
     /**
-     * Sets a new liquidation
+     * Sets a new liquidation.
      *
      * @param \Pohoda\Type\LiquidationItemType[] $liquidation
+     *
      * @return self
      */
     public function setLiquidation(array $liquidation)
     {
         $this->liquidation = $liquidation;
+
         return $this;
     }
 }

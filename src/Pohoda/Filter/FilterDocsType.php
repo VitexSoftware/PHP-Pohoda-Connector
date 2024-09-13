@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing FilterDocsType
- *
+ * Class representing FilterDocsType.
  *
  * XSD Type: filterDocsType
  */
@@ -12,57 +24,47 @@ class FilterDocsType
 {
     /**
      * Filtr podle ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Datum od.
-     *
-     * @var \DateTime $dateFrom
      */
-    private $dateFrom = null;
+    private \DateTime $dateFrom = null;
 
     /**
      * Datum do.
-     *
-     * @var \DateTime $dateTill
      */
-    private $dateTill = null;
+    private \DateTime $dateTill = null;
 
     /**
-     * @var \Pohoda\Type\NumberType[] $selectedNumbers
+     * @var \Pohoda\Type\NumberType[]
      */
-    private $selectedNumbers = null;
+    private array $selectedNumbers = null;
 
     /**
-     * @var string[] $selectedCompanys
+     * @var string[]
      */
-    private $selectedCompanys = null;
+    private array $selectedCompanys = null;
 
     /**
-     * @var string[] $selectedIco
+     * @var string[]
      */
-    private $selectedIco = null;
+    private array $selectedIco = null;
 
     /**
      * Vyexportuje záznamy změněné od zadaného data.
-     *
-     * @var \DateTime $lastChanges
      */
-    private $lastChanges = null;
+    private \DateTime $lastChanges = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Filtr podle ID záznamu.
      *
@@ -74,21 +76,23 @@ class FilterDocsType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Filtr podle ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -101,22 +105,22 @@ class FilterDocsType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as dateFrom
+     * Gets as dateFrom.
      *
      * Datum od.
      *
@@ -128,21 +132,21 @@ class FilterDocsType
     }
 
     /**
-     * Sets a new dateFrom
+     * Sets a new dateFrom.
      *
      * Datum od.
      *
-     * @param \DateTime $dateFrom
      * @return self
      */
     public function setDateFrom(?\DateTime $dateFrom = null)
     {
         $this->dateFrom = $dateFrom;
+
         return $this;
     }
 
     /**
-     * Gets as dateTill
+     * Gets as dateTill.
      *
      * Datum do.
      *
@@ -154,35 +158,36 @@ class FilterDocsType
     }
 
     /**
-     * Sets a new dateTill
+     * Sets a new dateTill.
      *
      * Datum do.
      *
-     * @param \DateTime $dateTill
      * @return self
      */
     public function setDateTill(?\DateTime $dateTill = null)
     {
         $this->dateTill = $dateTill;
+
         return $this;
     }
 
     /**
-     * Adds as number
+     * Adds as number.
      *
      * @return self
-     * @param \Pohoda\Type\NumberType $number
      */
     public function addToSelectedNumbers(\Pohoda\Type\NumberType $number)
     {
         $this->selectedNumbers[] = $number;
+
         return $this;
     }
 
     /**
-     * isset selectedNumbers
+     * isset selectedNumbers.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetSelectedNumbers($index)
@@ -191,18 +196,17 @@ class FilterDocsType
     }
 
     /**
-     * unset selectedNumbers
+     * unset selectedNumbers.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetSelectedNumbers($index)
+    public function unsetSelectedNumbers($index): void
     {
         unset($this->selectedNumbers[$index]);
     }
 
     /**
-     * Gets as selectedNumbers
+     * Gets as selectedNumbers.
      *
      * @return \Pohoda\Type\NumberType[]
      */
@@ -212,33 +216,38 @@ class FilterDocsType
     }
 
     /**
-     * Sets a new selectedNumbers
+     * Sets a new selectedNumbers.
      *
      * @param \Pohoda\Type\NumberType[] $selectedNumbers
+     *
      * @return self
      */
-    public function setSelectedNumbers(array $selectedNumbers = null)
+    public function setSelectedNumbers(?array $selectedNumbers = null)
     {
         $this->selectedNumbers = $selectedNumbers;
+
         return $this;
     }
 
     /**
-     * Adds as company
+     * Adds as company.
+     *
+     * @param string $company
      *
      * @return self
-     * @param string $company
      */
     public function addToSelectedCompanys($company)
     {
         $this->selectedCompanys[] = $company;
+
         return $this;
     }
 
     /**
-     * isset selectedCompanys
+     * isset selectedCompanys.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetSelectedCompanys($index)
@@ -247,18 +256,17 @@ class FilterDocsType
     }
 
     /**
-     * unset selectedCompanys
+     * unset selectedCompanys.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetSelectedCompanys($index)
+    public function unsetSelectedCompanys($index): void
     {
         unset($this->selectedCompanys[$index]);
     }
 
     /**
-     * Gets as selectedCompanys
+     * Gets as selectedCompanys.
      *
      * @return string[]
      */
@@ -268,33 +276,38 @@ class FilterDocsType
     }
 
     /**
-     * Sets a new selectedCompanys
+     * Sets a new selectedCompanys.
      *
      * @param string $selectedCompanys
+     *
      * @return self
      */
-    public function setSelectedCompanys(array $selectedCompanys = null)
+    public function setSelectedCompanys(?array $selectedCompanys = null)
     {
         $this->selectedCompanys = $selectedCompanys;
+
         return $this;
     }
 
     /**
-     * Adds as ico
+     * Adds as ico.
+     *
+     * @param string $ico
      *
      * @return self
-     * @param string $ico
      */
     public function addToSelectedIco($ico)
     {
         $this->selectedIco[] = $ico;
+
         return $this;
     }
 
     /**
-     * isset selectedIco
+     * isset selectedIco.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetSelectedIco($index)
@@ -303,18 +316,17 @@ class FilterDocsType
     }
 
     /**
-     * unset selectedIco
+     * unset selectedIco.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetSelectedIco($index)
+    public function unsetSelectedIco($index): void
     {
         unset($this->selectedIco[$index]);
     }
 
     /**
-     * Gets as selectedIco
+     * Gets as selectedIco.
      *
      * @return string[]
      */
@@ -324,19 +336,21 @@ class FilterDocsType
     }
 
     /**
-     * Sets a new selectedIco
+     * Sets a new selectedIco.
      *
      * @param string $selectedIco
+     *
      * @return self
      */
-    public function setSelectedIco(array $selectedIco = null)
+    public function setSelectedIco(?array $selectedIco = null)
     {
         $this->selectedIco = $selectedIco;
+
         return $this;
     }
 
     /**
-     * Gets as lastChanges
+     * Gets as lastChanges.
      *
      * Vyexportuje záznamy změněné od zadaného data.
      *
@@ -348,16 +362,16 @@ class FilterDocsType
     }
 
     /**
-     * Sets a new lastChanges
+     * Sets a new lastChanges.
      *
      * Vyexportuje záznamy změněné od zadaného data.
      *
-     * @param \DateTime $lastChanges
      * @return self
      */
     public function setLastChanges(?\DateTime $lastChanges = null)
     {
         $this->lastChanges = $lastChanges;
+
         return $this;
     }
 }

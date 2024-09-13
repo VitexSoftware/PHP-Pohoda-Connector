@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing SubStoragesType
- *
+ * Class representing SubStoragesType.
  *
  * XSD Type: subStoragesType
  */
 class SubStoragesType
 {
     /**
-     * @var \Pohoda\List\ItemStorageType[] $itemStorage
+     * @var \Pohoda\List\ItemStorageType[]
      */
-    private $itemStorage = [
+    private array $itemStorage = [
     ];
 
     /**
-     * Adds as itemStorage
+     * Adds as itemStorage.
      *
      * @return self
-     * @param \Pohoda\List\ItemStorageType $itemStorage
      */
     public function addToItemStorage(\Pohoda\List\ItemStorageType $itemStorage)
     {
         $this->itemStorage[] = $itemStorage;
+
         return $this;
     }
 
     /**
-     * isset itemStorage
+     * isset itemStorage.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetItemStorage($index)
@@ -40,18 +53,17 @@ class SubStoragesType
     }
 
     /**
-     * unset itemStorage
+     * unset itemStorage.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetItemStorage($index)
+    public function unsetItemStorage($index): void
     {
         unset($this->itemStorage[$index]);
     }
 
     /**
-     * Gets as itemStorage
+     * Gets as itemStorage.
      *
      * @return \Pohoda\List\ItemStorageType[]
      */
@@ -61,14 +73,16 @@ class SubStoragesType
     }
 
     /**
-     * Sets a new itemStorage
+     * Sets a new itemStorage.
      *
      * @param \Pohoda\List\ItemStorageType[] $itemStorage
+     *
      * @return self
      */
     public function setItemStorage(array $itemStorage)
     {
         $this->itemStorage = $itemStorage;
+
         return $this;
     }
 }

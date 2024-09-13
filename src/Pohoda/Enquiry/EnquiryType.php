@@ -1,44 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Enquiry;
 
 /**
- * Class representing EnquiryType
- *
+ * Class representing EnquiryType.
  *
  * XSD Type: enquiryType
  */
 class EnquiryType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
-
-    /**
-     * @var \Pohoda\Enquiry\EnquiryHeaderType $enquiryHeader
-     */
-    private $enquiryHeader = null;
-
-    /**
-     * @var \Pohoda\Enquiry\EnquiryDetailType $enquiryDetail
-     */
-    private $enquiryDetail = null;
-
-    /**
-     * @var \Pohoda\Enquiry\EnquirySummaryType $enquirySummary
-     */
-    private $enquirySummary = null;
+    private string $version = null;
+    private \Pohoda\Enquiry\EnquiryHeaderType $enquiryHeader = null;
+    private \Pohoda\Enquiry\EnquiryDetailType $enquiryDetail = null;
+    private \Pohoda\Enquiry\EnquirySummaryType $enquirySummary = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -48,19 +45,21 @@ class EnquiryType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as enquiryHeader
+     * Gets as enquiryHeader.
      *
      * @return \Pohoda\Enquiry\EnquiryHeaderType
      */
@@ -70,19 +69,19 @@ class EnquiryType
     }
 
     /**
-     * Sets a new enquiryHeader
+     * Sets a new enquiryHeader.
      *
-     * @param \Pohoda\Enquiry\EnquiryHeaderType $enquiryHeader
      * @return self
      */
     public function setEnquiryHeader(\Pohoda\Enquiry\EnquiryHeaderType $enquiryHeader)
     {
         $this->enquiryHeader = $enquiryHeader;
+
         return $this;
     }
 
     /**
-     * Gets as enquiryDetail
+     * Gets as enquiryDetail.
      *
      * @return \Pohoda\Enquiry\EnquiryDetailType
      */
@@ -92,19 +91,19 @@ class EnquiryType
     }
 
     /**
-     * Sets a new enquiryDetail
+     * Sets a new enquiryDetail.
      *
-     * @param \Pohoda\Enquiry\EnquiryDetailType $enquiryDetail
      * @return self
      */
     public function setEnquiryDetail(\Pohoda\Enquiry\EnquiryDetailType $enquiryDetail)
     {
         $this->enquiryDetail = $enquiryDetail;
+
         return $this;
     }
 
     /**
-     * Gets as enquirySummary
+     * Gets as enquirySummary.
      *
      * @return \Pohoda\Enquiry\EnquirySummaryType
      */
@@ -114,37 +113,38 @@ class EnquiryType
     }
 
     /**
-     * Sets a new enquirySummary
+     * Sets a new enquirySummary.
      *
-     * @param \Pohoda\Enquiry\EnquirySummaryType $enquirySummary
      * @return self
      */
     public function setEnquirySummary(\Pohoda\Enquiry\EnquirySummaryType $enquirySummary)
     {
         $this->enquirySummary = $enquirySummary;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -153,20 +153,19 @@ class EnquiryType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -178,16 +177,18 @@ class EnquiryType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
     public function setPrint(array $print)
     {
         $this->print = $print;
+
         return $this;
     }
 }

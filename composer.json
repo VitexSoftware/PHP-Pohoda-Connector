@@ -944,13 +944,21 @@
         "goetas-webservices/xsd2php-runtime": "^0.2.16",
         "lightools/xml": "v2.0.0",
         "riesenia/pohoda": ">=1.5 || dev-master",
-        "vitexsoftware/ease-core": ">=1.41",
+        "vitexsoftware/ease-core": "dev-main",
         "jms/serializer": "^3.28"
     },
     "require-dev": {
         "goetas-webservices/xsd2php": "^0.4.11",
-        "phpstan/phpstan": "^0.12.52",
-        "phpunit/phpunit": "^9"
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "*",
+        "friendsofphp/php-cs-fixer": "^3.61",
+        "ergebnis/composer-normalize": "^2.43",
+        "ergebnis/php-cs-fixer-config": "^6.34"
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        }
     },
     "scripts": {
         "phpstan": "vendor/bin/phpstan analyse --ansi --memory-limit=4G"

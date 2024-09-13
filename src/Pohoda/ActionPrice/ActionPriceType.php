@@ -1,51 +1,56 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ActionPrice;
 
 /**
- * Class representing ActionPriceType
- *
+ * Class representing ActionPriceType.
  *
  * XSD Type: actionPriceType
  */
 class ActionPriceType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \Pohoda\ActionPrice\ActionPriceHeaderType $actionPriceHeader = null;
 
     /**
-     * @var \Pohoda\ActionPrice\ActionPriceHeaderType $actionPriceHeader
-     */
-    private $actionPriceHeader = null;
-
-    /**
-     * Verze 2.0
+     * Verze 2.0.
      *
-     * @var \Pohoda\ActionPrice\ActionPriceStockItemType[] $actionPriceItem
+     * @var \Pohoda\ActionPrice\ActionPriceStockItemType[]
      */
-    private $actionPriceItem = null;
+    private array $actionPriceItem = null;
 
     /**
-     * Verze 2.1 a vyšší
+     * Verze 2.1 a vyšší.
      *
-     * @var \Pohoda\ActionPrice\ActionPriceStockItemType[] $actionPriceStocks
+     * @var \Pohoda\ActionPrice\ActionPriceStockItemType[]
      */
-    private $actionPriceStocks = null;
+    private array $actionPriceStocks = null;
 
     /**
-     * @var \Pohoda\ActionPrice\CustomerType[] $actionPriceCustomers
+     * @var \Pohoda\ActionPrice\CustomerType[]
      */
-    private $actionPriceCustomers = null;
+    private array $actionPriceCustomers = null;
 
     /**
-     * @var \Pohoda\ActionPrice\GroupType[] $actionPriceGroups
+     * @var \Pohoda\ActionPrice\GroupType[]
      */
-    private $actionPriceGroups = null;
+    private array $actionPriceGroups = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -55,19 +60,21 @@ class ActionPriceType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as actionPriceHeader
+     * Gets as actionPriceHeader.
      *
      * @return \Pohoda\ActionPrice\ActionPriceHeaderType
      */
@@ -77,37 +84,38 @@ class ActionPriceType
     }
 
     /**
-     * Sets a new actionPriceHeader
+     * Sets a new actionPriceHeader.
      *
-     * @param \Pohoda\ActionPrice\ActionPriceHeaderType $actionPriceHeader
      * @return self
      */
     public function setActionPriceHeader(?\Pohoda\ActionPrice\ActionPriceHeaderType $actionPriceHeader = null)
     {
         $this->actionPriceHeader = $actionPriceHeader;
+
         return $this;
     }
 
     /**
-     * Adds as actionPriceStockItem
+     * Adds as actionPriceStockItem.
      *
      * Verze 2.0
      *
      * @return self
-     * @param \Pohoda\ActionPrice\ActionPriceStockItemType $actionPriceStockItem
      */
     public function addToActionPriceItem(\Pohoda\ActionPrice\ActionPriceStockItemType $actionPriceStockItem)
     {
         $this->actionPriceItem[] = $actionPriceStockItem;
+
         return $this;
     }
 
     /**
-     * isset actionPriceItem
+     * isset actionPriceItem.
      *
      * Verze 2.0
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetActionPriceItem($index)
@@ -116,20 +124,19 @@ class ActionPriceType
     }
 
     /**
-     * unset actionPriceItem
+     * unset actionPriceItem.
      *
      * Verze 2.0
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetActionPriceItem($index)
+    public function unsetActionPriceItem($index): void
     {
         unset($this->actionPriceItem[$index]);
     }
 
     /**
-     * Gets as actionPriceItem
+     * Gets as actionPriceItem.
      *
      * Verze 2.0
      *
@@ -141,39 +148,42 @@ class ActionPriceType
     }
 
     /**
-     * Sets a new actionPriceItem
+     * Sets a new actionPriceItem.
      *
      * Verze 2.0
      *
      * @param \Pohoda\ActionPrice\ActionPriceStockItemType[] $actionPriceItem
+     *
      * @return self
      */
-    public function setActionPriceItem(array $actionPriceItem = null)
+    public function setActionPriceItem(?array $actionPriceItem = null)
     {
         $this->actionPriceItem = $actionPriceItem;
+
         return $this;
     }
 
     /**
-     * Adds as actionPriceStockItem
+     * Adds as actionPriceStockItem.
      *
      * Verze 2.1 a vyšší
      *
      * @return self
-     * @param \Pohoda\ActionPrice\ActionPriceStockItemType $actionPriceStockItem
      */
     public function addToActionPriceStocks(\Pohoda\ActionPrice\ActionPriceStockItemType $actionPriceStockItem)
     {
         $this->actionPriceStocks[] = $actionPriceStockItem;
+
         return $this;
     }
 
     /**
-     * isset actionPriceStocks
+     * isset actionPriceStocks.
      *
      * Verze 2.1 a vyšší
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetActionPriceStocks($index)
@@ -182,20 +192,19 @@ class ActionPriceType
     }
 
     /**
-     * unset actionPriceStocks
+     * unset actionPriceStocks.
      *
      * Verze 2.1 a vyšší
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetActionPriceStocks($index)
+    public function unsetActionPriceStocks($index): void
     {
         unset($this->actionPriceStocks[$index]);
     }
 
     /**
-     * Gets as actionPriceStocks
+     * Gets as actionPriceStocks.
      *
      * Verze 2.1 a vyšší
      *
@@ -207,35 +216,38 @@ class ActionPriceType
     }
 
     /**
-     * Sets a new actionPriceStocks
+     * Sets a new actionPriceStocks.
      *
      * Verze 2.1 a vyšší
      *
      * @param \Pohoda\ActionPrice\ActionPriceStockItemType[] $actionPriceStocks
+     *
      * @return self
      */
-    public function setActionPriceStocks(array $actionPriceStocks = null)
+    public function setActionPriceStocks(?array $actionPriceStocks = null)
     {
         $this->actionPriceStocks = $actionPriceStocks;
+
         return $this;
     }
 
     /**
-     * Adds as customer
+     * Adds as customer.
      *
      * @return self
-     * @param \Pohoda\ActionPrice\CustomerType $customer
      */
     public function addToActionPriceCustomers(\Pohoda\ActionPrice\CustomerType $customer)
     {
         $this->actionPriceCustomers[] = $customer;
+
         return $this;
     }
 
     /**
-     * isset actionPriceCustomers
+     * isset actionPriceCustomers.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetActionPriceCustomers($index)
@@ -244,18 +256,17 @@ class ActionPriceType
     }
 
     /**
-     * unset actionPriceCustomers
+     * unset actionPriceCustomers.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetActionPriceCustomers($index)
+    public function unsetActionPriceCustomers($index): void
     {
         unset($this->actionPriceCustomers[$index]);
     }
 
     /**
-     * Gets as actionPriceCustomers
+     * Gets as actionPriceCustomers.
      *
      * @return \Pohoda\ActionPrice\CustomerType[]
      */
@@ -265,33 +276,36 @@ class ActionPriceType
     }
 
     /**
-     * Sets a new actionPriceCustomers
+     * Sets a new actionPriceCustomers.
      *
      * @param \Pohoda\ActionPrice\CustomerType[] $actionPriceCustomers
+     *
      * @return self
      */
-    public function setActionPriceCustomers(array $actionPriceCustomers = null)
+    public function setActionPriceCustomers(?array $actionPriceCustomers = null)
     {
         $this->actionPriceCustomers = $actionPriceCustomers;
+
         return $this;
     }
 
     /**
-     * Adds as group
+     * Adds as group.
      *
      * @return self
-     * @param \Pohoda\ActionPrice\GroupType $group
      */
     public function addToActionPriceGroups(\Pohoda\ActionPrice\GroupType $group)
     {
         $this->actionPriceGroups[] = $group;
+
         return $this;
     }
 
     /**
-     * isset actionPriceGroups
+     * isset actionPriceGroups.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetActionPriceGroups($index)
@@ -300,18 +314,17 @@ class ActionPriceType
     }
 
     /**
-     * unset actionPriceGroups
+     * unset actionPriceGroups.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetActionPriceGroups($index)
+    public function unsetActionPriceGroups($index): void
     {
         unset($this->actionPriceGroups[$index]);
     }
 
     /**
-     * Gets as actionPriceGroups
+     * Gets as actionPriceGroups.
      *
      * @return \Pohoda\ActionPrice\GroupType[]
      */
@@ -321,14 +334,16 @@ class ActionPriceType
     }
 
     /**
-     * Sets a new actionPriceGroups
+     * Sets a new actionPriceGroups.
      *
      * @param \Pohoda\ActionPrice\GroupType[] $actionPriceGroups
+     *
      * @return self
      */
-    public function setActionPriceGroups(array $actionPriceGroups = null)
+    public function setActionPriceGroups(?array $actionPriceGroups = null)
     {
         $this->actionPriceGroups = $actionPriceGroups;
+
         return $this;
     }
 }

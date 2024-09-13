@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Service;
 
 /**
- * Class representing SubjectType
- *
+ * Class representing SubjectType.
  *
  * XSD Type: subjectType
  */
@@ -12,167 +24,123 @@ class SubjectType
 {
     /**
      * ID položky dokladu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Text položky.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Množství.
-     *
-     * @var float $quantity
      */
-    private $quantity = null;
+    private float $quantity = null;
 
     /**
      * Měrná jednotka.
-     *
-     * @var string $unit
      */
-    private $unit = null;
+    private string $unit = null;
 
     /**
      * Koeficient.
-     *
-     * @var float $coefficient
      */
-    private $coefficient = null;
+    private float $coefficient = null;
 
     /**
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
-     *
-     * @var string $payVAT
      */
-    private $payVAT = null;
+    private string $payVAT = null;
 
     /**
      * Sazba DPH.
-     *
-     * @var \Pohoda\Type\VatRateType $rateVAT
      */
-    private $rateVAT = null;
+    private \Pohoda\Type\VatRateType $rateVAT = null;
 
     /**
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
-     *
-     * @var float $percentVAT
      */
-    private $percentVAT = null;
+    private float $percentVAT = null;
 
     /**
      * Sleva v procentech. Pokud není uvedena, bere se jako hodnota slevy z priceLevel dokumentu. Pokud není definován ani priceLevel bere se jako NULOVÁ.
-     *
-     * @var float $discountPercentage
      */
-    private $discountPercentage = null;
+    private float $discountPercentage = null;
 
     /**
      * Kč.
-     *
-     * @var \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency
      */
-    private $homeCurrency = null;
+    private \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null;
 
     /**
      * Cizí měna.
-     *
-     * @var \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency
      */
-    private $foreignCurrency = null;
+    private \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Kód.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Délka záruky.
-     *
-     * @var int $guarantee
      */
-    private $guarantee = null;
+    private int $guarantee = null;
 
     /**
      * Typ záruky.
-     *
-     * @var string $guaranteeType
      */
-    private $guaranteeType = null;
+    private string $guaranteeType = null;
 
     /**
      * Popis závady.
-     *
-     * @var string $defectDescription
      */
-    private $defectDescription = null;
+    private string $defectDescription = null;
 
     /**
      * Popis stavu při převzetí.
-     *
-     * @var string $statusDeliveryDescription
      */
-    private $statusDeliveryDescription = null;
+    private string $statusDeliveryDescription = null;
 
     /**
      * Navrhovaný způsob řešení.
-     *
-     * @var string $solutionDescription
      */
-    private $solutionDescription = null;
+    private string $solutionDescription = null;
 
     /**
      * Příslušenství přiložené k předmětu servisu.
-     *
-     * @var string $accessory
      */
-    private $accessory = null;
+    private string $accessory = null;
 
     /**
      * Informace zda se mají vracet vadné díly.
-     *
-     * @var \Pohoda\Type\RefType $returnParts
      */
-    private $returnParts = null;
+    private \Pohoda\Type\RefType $returnParts = null;
 
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
-     *
-     * @var \Pohoda\Type\StockItemType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Datum expirace.
-     *
-     * @var \DateTime $expirationDate
      */
-    private $expirationDate = null;
+    private \DateTime $expirationDate = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID položky dokladu (jen pro export).
      *
@@ -184,21 +152,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID položky dokladu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text položky.
      *
@@ -210,21 +180,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text položky.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as quantity
+     * Gets as quantity.
      *
      * Množství.
      *
@@ -236,21 +208,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new quantity
+     * Sets a new quantity.
      *
      * Množství.
      *
      * @param float $quantity
+     *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
     /**
-     * Gets as unit
+     * Gets as unit.
      *
      * Měrná jednotka.
      *
@@ -262,21 +236,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * Měrná jednotka.
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as coefficient
+     * Gets as coefficient.
      *
      * Koeficient.
      *
@@ -288,21 +264,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new coefficient
+     * Sets a new coefficient.
      *
      * Koeficient.
      *
      * @param float $coefficient
+     *
      * @return self
      */
     public function setCoefficient($coefficient)
     {
         $this->coefficient = $coefficient;
+
         return $this;
     }
 
     /**
-     * Gets as payVAT
+     * Gets as payVAT.
      *
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
      *
@@ -314,21 +292,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new payVAT
+     * Sets a new payVAT.
      *
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
      *
      * @param string $payVAT
+     *
      * @return self
      */
     public function setPayVAT($payVAT)
     {
         $this->payVAT = $payVAT;
+
         return $this;
     }
 
     /**
-     * Gets as rateVAT
+     * Gets as rateVAT.
      *
      * Sazba DPH.
      *
@@ -340,21 +320,21 @@ class SubjectType
     }
 
     /**
-     * Sets a new rateVAT
+     * Sets a new rateVAT.
      *
      * Sazba DPH.
      *
-     * @param \Pohoda\Type\VatRateType $rateVAT
      * @return self
      */
     public function setRateVAT(?\Pohoda\Type\VatRateType $rateVAT = null)
     {
         $this->rateVAT = $rateVAT;
+
         return $this;
     }
 
     /**
-     * Gets as percentVAT
+     * Gets as percentVAT.
      *
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      *
@@ -366,21 +346,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new percentVAT
+     * Sets a new percentVAT.
      *
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      *
      * @param float $percentVAT
+     *
      * @return self
      */
     public function setPercentVAT($percentVAT)
     {
         $this->percentVAT = $percentVAT;
+
         return $this;
     }
 
     /**
-     * Gets as discountPercentage
+     * Gets as discountPercentage.
      *
      * Sleva v procentech. Pokud není uvedena, bere se jako hodnota slevy z priceLevel dokumentu. Pokud není definován ani priceLevel bere se jako NULOVÁ.
      *
@@ -392,21 +374,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new discountPercentage
+     * Sets a new discountPercentage.
      *
      * Sleva v procentech. Pokud není uvedena, bere se jako hodnota slevy z priceLevel dokumentu. Pokud není definován ani priceLevel bere se jako NULOVÁ.
      *
      * @param float $discountPercentage
+     *
      * @return self
      */
     public function setDiscountPercentage($discountPercentage)
     {
         $this->discountPercentage = $discountPercentage;
+
         return $this;
     }
 
     /**
-     * Gets as homeCurrency
+     * Gets as homeCurrency.
      *
      * Kč.
      *
@@ -418,21 +402,21 @@ class SubjectType
     }
 
     /**
-     * Sets a new homeCurrency
+     * Sets a new homeCurrency.
      *
      * Kč.
      *
-     * @param \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency
      * @return self
      */
     public function setHomeCurrency(?\Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null)
     {
         $this->homeCurrency = $homeCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrency
+     * Gets as foreignCurrency.
      *
      * Cizí měna.
      *
@@ -444,21 +428,21 @@ class SubjectType
     }
 
     /**
-     * Sets a new foreignCurrency
+     * Sets a new foreignCurrency.
      *
      * Cizí měna.
      *
-     * @param \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency
      * @return self
      */
     public function setForeignCurrency(?\Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency = null)
     {
         $this->foreignCurrency = $foreignCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -470,21 +454,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Kód.
      *
@@ -496,21 +482,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Kód.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as guarantee
+     * Gets as guarantee.
      *
      * Délka záruky.
      *
@@ -522,21 +510,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new guarantee
+     * Sets a new guarantee.
      *
      * Délka záruky.
      *
      * @param int $guarantee
+     *
      * @return self
      */
     public function setGuarantee($guarantee)
     {
         $this->guarantee = $guarantee;
+
         return $this;
     }
 
     /**
-     * Gets as guaranteeType
+     * Gets as guaranteeType.
      *
      * Typ záruky.
      *
@@ -548,21 +538,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new guaranteeType
+     * Sets a new guaranteeType.
      *
      * Typ záruky.
      *
      * @param string $guaranteeType
+     *
      * @return self
      */
     public function setGuaranteeType($guaranteeType)
     {
         $this->guaranteeType = $guaranteeType;
+
         return $this;
     }
 
     /**
-     * Gets as defectDescription
+     * Gets as defectDescription.
      *
      * Popis závady.
      *
@@ -574,21 +566,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new defectDescription
+     * Sets a new defectDescription.
      *
      * Popis závady.
      *
      * @param string $defectDescription
+     *
      * @return self
      */
     public function setDefectDescription($defectDescription)
     {
         $this->defectDescription = $defectDescription;
+
         return $this;
     }
 
     /**
-     * Gets as statusDeliveryDescription
+     * Gets as statusDeliveryDescription.
      *
      * Popis stavu při převzetí.
      *
@@ -600,21 +594,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new statusDeliveryDescription
+     * Sets a new statusDeliveryDescription.
      *
      * Popis stavu při převzetí.
      *
      * @param string $statusDeliveryDescription
+     *
      * @return self
      */
     public function setStatusDeliveryDescription($statusDeliveryDescription)
     {
         $this->statusDeliveryDescription = $statusDeliveryDescription;
+
         return $this;
     }
 
     /**
-     * Gets as solutionDescription
+     * Gets as solutionDescription.
      *
      * Navrhovaný způsob řešení.
      *
@@ -626,21 +622,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new solutionDescription
+     * Sets a new solutionDescription.
      *
      * Navrhovaný způsob řešení.
      *
      * @param string $solutionDescription
+     *
      * @return self
      */
     public function setSolutionDescription($solutionDescription)
     {
         $this->solutionDescription = $solutionDescription;
+
         return $this;
     }
 
     /**
-     * Gets as accessory
+     * Gets as accessory.
      *
      * Příslušenství přiložené k předmětu servisu.
      *
@@ -652,21 +650,23 @@ class SubjectType
     }
 
     /**
-     * Sets a new accessory
+     * Sets a new accessory.
      *
      * Příslušenství přiložené k předmětu servisu.
      *
      * @param string $accessory
+     *
      * @return self
      */
     public function setAccessory($accessory)
     {
         $this->accessory = $accessory;
+
         return $this;
     }
 
     /**
-     * Gets as returnParts
+     * Gets as returnParts.
      *
      * Informace zda se mají vracet vadné díly.
      *
@@ -678,21 +678,21 @@ class SubjectType
     }
 
     /**
-     * Sets a new returnParts
+     * Sets a new returnParts.
      *
      * Informace zda se mají vracet vadné díly.
      *
-     * @param \Pohoda\Type\RefType $returnParts
      * @return self
      */
     public function setReturnParts(?\Pohoda\Type\RefType $returnParts = null)
     {
         $this->returnParts = $returnParts;
+
         return $this;
     }
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      *
@@ -704,21 +704,21 @@ class SubjectType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      *
-     * @param \Pohoda\Type\StockItemType $stockItem
      * @return self
      */
     public function setStockItem(?\Pohoda\Type\StockItemType $stockItem = null)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as expirationDate
+     * Gets as expirationDate.
      *
      * Datum expirace.
      *
@@ -730,39 +730,40 @@ class SubjectType
     }
 
     /**
-     * Sets a new expirationDate
+     * Sets a new expirationDate.
      *
      * Datum expirace.
      *
-     * @param \DateTime $expirationDate
      * @return self
      */
     public function setExpirationDate(?\DateTime $expirationDate = null)
     {
         $this->expirationDate = $expirationDate;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -771,20 +772,19 @@ class SubjectType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -796,16 +796,18 @@ class SubjectType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

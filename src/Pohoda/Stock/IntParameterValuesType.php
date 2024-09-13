@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing IntParameterValuesType
- *
+ * Class representing IntParameterValuesType.
  *
  * XSD Type: intParameterValuesType
  */
@@ -13,31 +25,32 @@ class IntParameterValuesType
     /**
      * Hodnota internetového parametru, je různá dle typu.
      *
-     * @var \Pohoda\Stock\IntParameterValueType[] $intParameterValue
+     * @var \Pohoda\Stock\IntParameterValueType[]
      */
-    private $intParameterValue = [
+    private array $intParameterValue = [
     ];
 
     /**
-     * Adds as intParameterValue
+     * Adds as intParameterValue.
      *
      * Hodnota internetového parametru, je různá dle typu.
      *
      * @return self
-     * @param \Pohoda\Stock\IntParameterValueType $intParameterValue
      */
     public function addToIntParameterValue(\Pohoda\Stock\IntParameterValueType $intParameterValue)
     {
         $this->intParameterValue[] = $intParameterValue;
+
         return $this;
     }
 
     /**
-     * isset intParameterValue
+     * isset intParameterValue.
      *
      * Hodnota internetového parametru, je různá dle typu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetIntParameterValue($index)
@@ -46,20 +59,19 @@ class IntParameterValuesType
     }
 
     /**
-     * unset intParameterValue
+     * unset intParameterValue.
      *
      * Hodnota internetového parametru, je různá dle typu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetIntParameterValue($index)
+    public function unsetIntParameterValue($index): void
     {
         unset($this->intParameterValue[$index]);
     }
 
     /**
-     * Gets as intParameterValue
+     * Gets as intParameterValue.
      *
      * Hodnota internetového parametru, je různá dle typu.
      *
@@ -71,16 +83,18 @@ class IntParameterValuesType
     }
 
     /**
-     * Sets a new intParameterValue
+     * Sets a new intParameterValue.
      *
      * Hodnota internetového parametru, je různá dle typu.
      *
      * @param \Pohoda\Stock\IntParameterValueType[] $intParameterValue
+     *
      * @return self
      */
-    public function setIntParameterValue(array $intParameterValue = null)
+    public function setIntParameterValue(?array $intParameterValue = null)
     {
         $this->intParameterValue = $intParameterValue;
+
         return $this;
     }
 }

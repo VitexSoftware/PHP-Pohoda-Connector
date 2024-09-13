@@ -1,12 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PHP mServer client Test setup
+ * This file is part of the PHP-Pohoda-Connector package
  *
- * @author     Vítězslav Dvořák <vitex@arachne.cz>
- * @copyright  2015-2020 Spoje.Net
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 require_once file_exists('../vendor/autoload.php') ? '../vendor/autoload.php' : 'vendor/autoload.php';
 
-\Ease\Shared::instanced()->loadConfig(__DIR__ . '/.env',true);
+\Ease\Shared::instanced()->loadConfig(__DIR__.'/.env', true);

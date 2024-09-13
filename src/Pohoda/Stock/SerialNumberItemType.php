@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing SerialNumberItemType
- *
+ * Class representing SerialNumberItemType.
  *
  * XSD Type: serialNumberItemType
  */
@@ -12,41 +24,31 @@ class SerialNumberItemType
 {
     /**
      * ID výrobní číslo nebo šarže.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Výrobní číslo nebo šarže. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var string $serialNumber
      */
-    private $serialNumber = null;
+    private string $serialNumber = null;
 
     /**
      * Stav zásoby.
-     *
-     * @var float $count
      */
-    private $count = null;
+    private float $count = null;
 
     /**
      * Datum expirace skladové zásoby uvedené šarže.
-     *
-     * @var \DateTime $expiration
      */
-    private $expiration = null;
+    private \DateTime $expiration = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID výrobní číslo nebo šarže.
      *
@@ -58,21 +60,23 @@ class SerialNumberItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID výrobní číslo nebo šarže.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as serialNumber
+     * Gets as serialNumber.
      *
      * Výrobní číslo nebo šarže. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -84,21 +88,23 @@ class SerialNumberItemType
     }
 
     /**
-     * Sets a new serialNumber
+     * Sets a new serialNumber.
      *
      * Výrobní číslo nebo šarže. Tento element je vyžadován při vytvoření dokladu.
      *
      * @param string $serialNumber
+     *
      * @return self
      */
     public function setSerialNumber($serialNumber)
     {
         $this->serialNumber = $serialNumber;
+
         return $this;
     }
 
     /**
-     * Gets as count
+     * Gets as count.
      *
      * Stav zásoby.
      *
@@ -110,21 +116,23 @@ class SerialNumberItemType
     }
 
     /**
-     * Sets a new count
+     * Sets a new count.
      *
      * Stav zásoby.
      *
      * @param float $count
+     *
      * @return self
      */
     public function setCount($count)
     {
         $this->count = $count;
+
         return $this;
     }
 
     /**
-     * Gets as expiration
+     * Gets as expiration.
      *
      * Datum expirace skladové zásoby uvedené šarže.
      *
@@ -136,21 +144,21 @@ class SerialNumberItemType
     }
 
     /**
-     * Sets a new expiration
+     * Sets a new expiration.
      *
      * Datum expirace skladové zásoby uvedené šarže.
      *
-     * @param \DateTime $expiration
      * @return self
      */
     public function setExpiration(?\DateTime $expiration = null)
     {
         $this->expiration = $expiration;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -162,16 +170,18 @@ class SerialNumberItemType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 }

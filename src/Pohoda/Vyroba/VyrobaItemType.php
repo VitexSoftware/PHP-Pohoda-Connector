@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Vyroba;
 
 /**
- * Class representing VyrobaItemType
- *
+ * Class representing VyrobaItemType.
  *
  * XSD Type: vyrobaItemType
  */
@@ -12,41 +24,33 @@ class VyrobaItemType
 {
     /**
      * Množství.
-     *
-     * @var float $quantity
      */
-    private $quantity = null;
+    private float $quantity = null;
 
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky.
-     *
-     * @var \Pohoda\Type\StockItemType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Datum expirace.
-     *
-     * @var \DateTime $expirationDate
      */
-    private $expirationDate = null;
+    private \DateTime $expirationDate = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Položky výrobku (Výrobní list). Není-li element uveden, použije se definice výrobku v agendě Zásoby. Export elementu je podmíněn atributem "lst:productionList". Pouze POHODA E1.
      *
-     * @var \Pohoda\Vyroba\ProductionListItemType[] $productionList
+     * @var \Pohoda\Vyroba\ProductionListItemType[]
      */
-    private $productionList = null;
+    private array $productionList = null;
 
     /**
-     * Gets as quantity
+     * Gets as quantity.
      *
      * Množství.
      *
@@ -58,21 +62,23 @@ class VyrobaItemType
     }
 
     /**
-     * Sets a new quantity
+     * Sets a new quantity.
      *
      * Množství.
      *
      * @param float $quantity
+     *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky.
      *
@@ -84,21 +90,21 @@ class VyrobaItemType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky.
      *
-     * @param \Pohoda\Type\StockItemType $stockItem
      * @return self
      */
     public function setStockItem(?\Pohoda\Type\StockItemType $stockItem = null)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as expirationDate
+     * Gets as expirationDate.
      *
      * Datum expirace.
      *
@@ -110,21 +116,21 @@ class VyrobaItemType
     }
 
     /**
-     * Sets a new expirationDate
+     * Sets a new expirationDate.
      *
      * Datum expirace.
      *
-     * @param \DateTime $expirationDate
      * @return self
      */
     public function setExpirationDate(?\DateTime $expirationDate = null)
     {
         $this->expirationDate = $expirationDate;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -136,39 +142,42 @@ class VyrobaItemType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Adds as productionListItem
+     * Adds as productionListItem.
      *
      * Položky výrobku (Výrobní list). Není-li element uveden, použije se definice výrobku v agendě Zásoby. Export elementu je podmíněn atributem "lst:productionList". Pouze POHODA E1.
      *
      * @return self
-     * @param \Pohoda\Vyroba\ProductionListItemType $productionListItem
      */
     public function addToProductionList(\Pohoda\Vyroba\ProductionListItemType $productionListItem)
     {
         $this->productionList[] = $productionListItem;
+
         return $this;
     }
 
     /**
-     * isset productionList
+     * isset productionList.
      *
      * Položky výrobku (Výrobní list). Není-li element uveden, použije se definice výrobku v agendě Zásoby. Export elementu je podmíněn atributem "lst:productionList". Pouze POHODA E1.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetProductionList($index)
@@ -177,20 +186,19 @@ class VyrobaItemType
     }
 
     /**
-     * unset productionList
+     * unset productionList.
      *
      * Položky výrobku (Výrobní list). Není-li element uveden, použije se definice výrobku v agendě Zásoby. Export elementu je podmíněn atributem "lst:productionList". Pouze POHODA E1.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetProductionList($index)
+    public function unsetProductionList($index): void
     {
         unset($this->productionList[$index]);
     }
 
     /**
-     * Gets as productionList
+     * Gets as productionList.
      *
      * Položky výrobku (Výrobní list). Není-li element uveden, použije se definice výrobku v agendě Zásoby. Export elementu je podmíněn atributem "lst:productionList". Pouze POHODA E1.
      *
@@ -202,16 +210,18 @@ class VyrobaItemType
     }
 
     /**
-     * Sets a new productionList
+     * Sets a new productionList.
      *
      * Položky výrobku (Výrobní list). Není-li element uveden, použije se definice výrobku v agendě Zásoby. Export elementu je podmíněn atributem "lst:productionList". Pouze POHODA E1.
      *
      * @param \Pohoda\Vyroba\ProductionListItemType[] $productionList
+     *
      * @return self
      */
-    public function setProductionList(array $productionList = null)
+    public function setProductionList(?array $productionList = null)
     {
         $this->productionList = $productionList;
+
         return $this;
     }
 }

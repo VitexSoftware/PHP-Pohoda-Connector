@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListRulesPairingRequestType
- *
+ * Class representing ListRulesPairingRequestType.
  *
  * XSD Type: listRulesPairingRequestType
  */
 class ListRulesPairingRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $rulesPairingVersion
      */
-    private $rulesPairingVersion = null;
+    private string $rulesPairingVersion = null;
 
     /**
-     * @var \Pohoda\Filter\RequestRulesPairingType[] $requestRulesPairing
+     * @var \Pohoda\Filter\RequestRulesPairingType[]
      */
-    private $requestRulesPairing = [
+    private array $requestRulesPairing = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListRulesPairingRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as rulesPairingVersion
+     * Gets as rulesPairingVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListRulesPairingRequestType
     }
 
     /**
-     * Sets a new rulesPairingVersion
+     * Sets a new rulesPairingVersion.
      *
      * Požadovaná verze.
      *
      * @param string $rulesPairingVersion
+     *
      * @return self
      */
     public function setRulesPairingVersion($rulesPairingVersion)
     {
         $this->rulesPairingVersion = $rulesPairingVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestRulesPairing
+     * Adds as requestRulesPairing.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestRulesPairingType $requestRulesPairing
      */
     public function addToRequestRulesPairing(\Pohoda\Filter\RequestRulesPairingType $requestRulesPairing)
     {
         $this->requestRulesPairing[] = $requestRulesPairing;
+
         return $this;
     }
 
     /**
-     * isset requestRulesPairing
+     * isset requestRulesPairing.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestRulesPairing($index)
@@ -100,18 +112,17 @@ class ListRulesPairingRequestType
     }
 
     /**
-     * unset requestRulesPairing
+     * unset requestRulesPairing.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestRulesPairing($index)
+    public function unsetRequestRulesPairing($index): void
     {
         unset($this->requestRulesPairing[$index]);
     }
 
     /**
-     * Gets as requestRulesPairing
+     * Gets as requestRulesPairing.
      *
      * @return \Pohoda\Filter\RequestRulesPairingType[]
      */
@@ -121,14 +132,16 @@ class ListRulesPairingRequestType
     }
 
     /**
-     * Sets a new requestRulesPairing
+     * Sets a new requestRulesPairing.
      *
      * @param \Pohoda\Filter\RequestRulesPairingType[] $requestRulesPairing
+     *
      * @return self
      */
     public function setRequestRulesPairing(array $requestRulesPairing)
     {
         $this->requestRulesPairing = $requestRulesPairing;
+
         return $this;
     }
 }

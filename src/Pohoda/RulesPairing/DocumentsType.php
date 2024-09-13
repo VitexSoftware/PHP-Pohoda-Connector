@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\RulesPairing;
 
 /**
- * Class representing DocumentsType
+ * Class representing DocumentsType.
  *
  * Doklady.
  * XSD Type: documentsType
@@ -11,27 +24,30 @@ namespace Pohoda\RulesPairing;
 class DocumentsType
 {
     /**
-     * @var string[] $document
+     * @var string[]
      */
-    private $document = [
+    private array $document = [
     ];
 
     /**
-     * Adds as document
+     * Adds as document.
+     *
+     * @param string $document
      *
      * @return self
-     * @param string $document
      */
     public function addToDocument($document)
     {
         $this->document[] = $document;
+
         return $this;
     }
 
     /**
-     * isset document
+     * isset document.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetDocument($index)
@@ -40,18 +56,17 @@ class DocumentsType
     }
 
     /**
-     * unset document
+     * unset document.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetDocument($index)
+    public function unsetDocument($index): void
     {
         unset($this->document[$index]);
     }
 
     /**
-     * Gets as document
+     * Gets as document.
      *
      * @return string[]
      */
@@ -61,14 +76,16 @@ class DocumentsType
     }
 
     /**
-     * Sets a new document
+     * Sets a new document.
      *
      * @param string $document
+     *
      * @return self
      */
     public function setDocument(array $document)
     {
         $this->document = $document;
+
         return $this;
     }
 }

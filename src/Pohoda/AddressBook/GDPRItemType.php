@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\AddressBook;
 
 /**
- * Class representing GDPRItemType
- *
+ * Class representing GDPRItemType.
  *
  * XSD Type: GDPRItemType
  */
@@ -12,62 +24,46 @@ class GDPRItemType
 {
     /**
      * Typ práce se záznamem GDPR. Výchozí hodnota je přidání nového záznamu.
-     *
-     * @var \Pohoda\Type\ActionTypeItemType $actionType
      */
-    private $actionType = null;
+    private \Pohoda\Type\ActionTypeItemType $actionType = null;
 
     /**
      * ID položky GDPR (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Typ důvodu zpracování dat GDPR.
-     *
-     * @var \Pohoda\Type\RefTypeLongType $name
      */
-    private $name = null;
+    private \Pohoda\Type\RefTypeLongType $name = null;
 
     /**
      * Důvod zpracování (jen pro export).
-     *
-     * @var string $description
      */
-    private $description = null;
+    private string $description = null;
 
     /**
      * Datum od. Pokud není uvedeno, bude nastaveno na aktuální datum.
-     *
-     * @var \DateTime $dateFrom
      */
-    private $dateFrom = null;
+    private \DateTime $dateFrom = null;
 
     /**
      * Datum do.
-     *
-     * @var \DateTime $dateTill
      */
-    private $dateTill = null;
+    private \DateTime $dateTill = null;
 
     /**
      * Datum a čas odvolání GDPR.
-     *
-     * @var \DateTime $revokeGDPR
      */
-    private $revokeGDPR = null;
+    private \DateTime $revokeGDPR = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
-     * Gets as actionType
+     * Gets as actionType.
      *
      * Typ práce se záznamem GDPR. Výchozí hodnota je přidání nového záznamu.
      *
@@ -79,21 +75,21 @@ class GDPRItemType
     }
 
     /**
-     * Sets a new actionType
+     * Sets a new actionType.
      *
      * Typ práce se záznamem GDPR. Výchozí hodnota je přidání nového záznamu.
      *
-     * @param \Pohoda\Type\ActionTypeItemType $actionType
      * @return self
      */
     public function setActionType(?\Pohoda\Type\ActionTypeItemType $actionType = null)
     {
         $this->actionType = $actionType;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID položky GDPR (jen pro export).
      *
@@ -105,21 +101,23 @@ class GDPRItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID položky GDPR (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Typ důvodu zpracování dat GDPR.
      *
@@ -131,21 +129,21 @@ class GDPRItemType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Typ důvodu zpracování dat GDPR.
      *
-     * @param \Pohoda\Type\RefTypeLongType $name
      * @return self
      */
     public function setName(\Pohoda\Type\RefTypeLongType $name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as description
+     * Gets as description.
      *
      * Důvod zpracování (jen pro export).
      *
@@ -157,21 +155,23 @@ class GDPRItemType
     }
 
     /**
-     * Sets a new description
+     * Sets a new description.
      *
      * Důvod zpracování (jen pro export).
      *
      * @param string $description
+     *
      * @return self
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
     /**
-     * Gets as dateFrom
+     * Gets as dateFrom.
      *
      * Datum od. Pokud není uvedeno, bude nastaveno na aktuální datum.
      *
@@ -183,21 +183,21 @@ class GDPRItemType
     }
 
     /**
-     * Sets a new dateFrom
+     * Sets a new dateFrom.
      *
      * Datum od. Pokud není uvedeno, bude nastaveno na aktuální datum.
      *
-     * @param \DateTime $dateFrom
      * @return self
      */
     public function setDateFrom(?\DateTime $dateFrom = null)
     {
         $this->dateFrom = $dateFrom;
+
         return $this;
     }
 
     /**
-     * Gets as dateTill
+     * Gets as dateTill.
      *
      * Datum do.
      *
@@ -209,21 +209,21 @@ class GDPRItemType
     }
 
     /**
-     * Sets a new dateTill
+     * Sets a new dateTill.
      *
      * Datum do.
      *
-     * @param \DateTime $dateTill
      * @return self
      */
     public function setDateTill(?\DateTime $dateTill = null)
     {
         $this->dateTill = $dateTill;
+
         return $this;
     }
 
     /**
-     * Gets as revokeGDPR
+     * Gets as revokeGDPR.
      *
      * Datum a čas odvolání GDPR.
      *
@@ -235,21 +235,21 @@ class GDPRItemType
     }
 
     /**
-     * Sets a new revokeGDPR
+     * Sets a new revokeGDPR.
      *
      * Datum a čas odvolání GDPR.
      *
-     * @param \DateTime $revokeGDPR
      * @return self
      */
     public function setRevokeGDPR(?\DateTime $revokeGDPR = null)
     {
         $this->revokeGDPR = $revokeGDPR;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -261,16 +261,18 @@ class GDPRItemType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 }

@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListAccountType
- *
+ * Class representing ListAccountType.
  *
  * XSD Type: listAccountType
  */
 class ListAccountType extends ListVersionType
 {
     /**
-     * @var \Pohoda\List\ItemAccountType[] $itemAccount
+     * @var \Pohoda\List\ItemAccountType[]
      */
-    private $itemAccount = [
+    private array $itemAccount = [
     ];
 
     /**
-     * Adds as itemAccount
+     * Adds as itemAccount.
      *
      * @return self
-     * @param \Pohoda\List\ItemAccountType $itemAccount
      */
     public function addToItemAccount(\Pohoda\List\ItemAccountType $itemAccount)
     {
         $this->itemAccount[] = $itemAccount;
+
         return $this;
     }
 
     /**
-     * isset itemAccount
+     * isset itemAccount.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetItemAccount($index)
@@ -42,18 +55,17 @@ class ListAccountType extends ListVersionType
     }
 
     /**
-     * unset itemAccount
+     * unset itemAccount.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetItemAccount($index)
+    public function unsetItemAccount($index): void
     {
         unset($this->itemAccount[$index]);
     }
 
     /**
-     * Gets as itemAccount
+     * Gets as itemAccount.
      *
      * @return \Pohoda\List\ItemAccountType[]
      */
@@ -63,14 +75,16 @@ class ListAccountType extends ListVersionType
     }
 
     /**
-     * Sets a new itemAccount
+     * Sets a new itemAccount.
      *
      * @param \Pohoda\List\ItemAccountType[] $itemAccount
+     *
      * @return self
      */
-    public function setItemAccount(array $itemAccount = null)
+    public function setItemAccount(?array $itemAccount = null)
     {
         $this->itemAccount = $itemAccount;
+
         return $this;
     }
 }

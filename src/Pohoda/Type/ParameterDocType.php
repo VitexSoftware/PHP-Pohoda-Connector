@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing ParameterDocType
+ * Class representing ParameterDocType.
  *
  * Data volitelného parametru.
  * XSD Type: parameterDocType
@@ -12,76 +25,56 @@ class ParameterDocType
 {
     /**
      * Název db.pole.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Data typu Text.
-     *
-     * @var string $textValue
      */
-    private $textValue = null;
+    private string $textValue = null;
 
     /**
      * Data typu Text (dlouhý).
-     *
-     * @var string $memoValue
      */
-    private $memoValue = null;
+    private string $memoValue = null;
 
     /**
      * Data typu Měna.
-     *
-     * @var float $currencyValue
      */
-    private $currencyValue = null;
+    private float $currencyValue = null;
 
     /**
      * Data typu Ano/Ne.
-     *
-     * @var string $booleanValue
      */
-    private $booleanValue = null;
+    private string $booleanValue = null;
 
     /**
      * Data typu Číslo.
-     *
-     * @var float $numberValue
      */
-    private $numberValue = null;
+    private float $numberValue = null;
 
     /**
      * Data typu Datum.
-     *
-     * @var \DateTime $datetimeValue
      */
-    private $datetimeValue = null;
+    private \DateTime $datetimeValue = null;
 
     /**
      * Data typu Seznam.
-     *
-     * @var \Pohoda\Type\RefType $listValueRef
      */
-    private $listValueRef = null;
+    private \Pohoda\Type\RefType $listValueRef = null;
 
     /**
      * Data typu Číslo(celé).
-     *
-     * @var int $integerValue
      */
-    private $integerValue = null;
+    private int $integerValue = null;
 
     /**
      * Seznam na který je parametr napojen.
-     *
-     * @var \Pohoda\Type\RefType $list
      */
-    private $list = null;
+    private \Pohoda\Type\RefType $list = null;
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název db.pole.
      *
@@ -93,21 +86,23 @@ class ParameterDocType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název db.pole.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as textValue
+     * Gets as textValue.
      *
      * Data typu Text.
      *
@@ -119,21 +114,23 @@ class ParameterDocType
     }
 
     /**
-     * Sets a new textValue
+     * Sets a new textValue.
      *
      * Data typu Text.
      *
      * @param string $textValue
+     *
      * @return self
      */
     public function setTextValue($textValue)
     {
         $this->textValue = $textValue;
+
         return $this;
     }
 
     /**
-     * Gets as memoValue
+     * Gets as memoValue.
      *
      * Data typu Text (dlouhý).
      *
@@ -145,21 +142,23 @@ class ParameterDocType
     }
 
     /**
-     * Sets a new memoValue
+     * Sets a new memoValue.
      *
      * Data typu Text (dlouhý).
      *
      * @param string $memoValue
+     *
      * @return self
      */
     public function setMemoValue($memoValue)
     {
         $this->memoValue = $memoValue;
+
         return $this;
     }
 
     /**
-     * Gets as currencyValue
+     * Gets as currencyValue.
      *
      * Data typu Měna.
      *
@@ -171,21 +170,23 @@ class ParameterDocType
     }
 
     /**
-     * Sets a new currencyValue
+     * Sets a new currencyValue.
      *
      * Data typu Měna.
      *
      * @param float $currencyValue
+     *
      * @return self
      */
     public function setCurrencyValue($currencyValue)
     {
         $this->currencyValue = $currencyValue;
+
         return $this;
     }
 
     /**
-     * Gets as booleanValue
+     * Gets as booleanValue.
      *
      * Data typu Ano/Ne.
      *
@@ -197,21 +198,23 @@ class ParameterDocType
     }
 
     /**
-     * Sets a new booleanValue
+     * Sets a new booleanValue.
      *
      * Data typu Ano/Ne.
      *
      * @param string $booleanValue
+     *
      * @return self
      */
     public function setBooleanValue($booleanValue)
     {
         $this->booleanValue = $booleanValue;
+
         return $this;
     }
 
     /**
-     * Gets as numberValue
+     * Gets as numberValue.
      *
      * Data typu Číslo.
      *
@@ -223,21 +226,23 @@ class ParameterDocType
     }
 
     /**
-     * Sets a new numberValue
+     * Sets a new numberValue.
      *
      * Data typu Číslo.
      *
      * @param float $numberValue
+     *
      * @return self
      */
     public function setNumberValue($numberValue)
     {
         $this->numberValue = $numberValue;
+
         return $this;
     }
 
     /**
-     * Gets as datetimeValue
+     * Gets as datetimeValue.
      *
      * Data typu Datum.
      *
@@ -249,21 +254,21 @@ class ParameterDocType
     }
 
     /**
-     * Sets a new datetimeValue
+     * Sets a new datetimeValue.
      *
      * Data typu Datum.
      *
-     * @param \DateTime $datetimeValue
      * @return self
      */
     public function setDatetimeValue(?\DateTime $datetimeValue = null)
     {
         $this->datetimeValue = $datetimeValue;
+
         return $this;
     }
 
     /**
-     * Gets as listValueRef
+     * Gets as listValueRef.
      *
      * Data typu Seznam.
      *
@@ -275,21 +280,21 @@ class ParameterDocType
     }
 
     /**
-     * Sets a new listValueRef
+     * Sets a new listValueRef.
      *
      * Data typu Seznam.
      *
-     * @param \Pohoda\Type\RefType $listValueRef
      * @return self
      */
     public function setListValueRef(?\Pohoda\Type\RefType $listValueRef = null)
     {
         $this->listValueRef = $listValueRef;
+
         return $this;
     }
 
     /**
-     * Gets as integerValue
+     * Gets as integerValue.
      *
      * Data typu Číslo(celé).
      *
@@ -301,21 +306,23 @@ class ParameterDocType
     }
 
     /**
-     * Sets a new integerValue
+     * Sets a new integerValue.
      *
      * Data typu Číslo(celé).
      *
      * @param int $integerValue
+     *
      * @return self
      */
     public function setIntegerValue($integerValue)
     {
         $this->integerValue = $integerValue;
+
         return $this;
     }
 
     /**
-     * Gets as list
+     * Gets as list.
      *
      * Seznam na který je parametr napojen.
      *
@@ -327,16 +334,16 @@ class ParameterDocType
     }
 
     /**
-     * Sets a new list
+     * Sets a new list.
      *
      * Seznam na který je parametr napojen.
      *
-     * @param \Pohoda\Type\RefType $list
      * @return self
      */
     public function setList(?\Pohoda\Type\RefType $list = null)
     {
         $this->list = $list;
+
         return $this;
     }
 }

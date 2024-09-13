@@ -1,24 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Bank\BankHeaderType;
 
 /**
- * Class representing PaymentAccountAType
+ * Class representing PaymentAccountAType.
  */
 class PaymentAccountAType
 {
-    /**
-     * @var string $accountNo
-     */
-    private $accountNo = null;
+    private string $accountNo = null;
+    private string $bankCode = null;
 
     /**
-     * @var string $bankCode
-     */
-    private $bankCode = null;
-
-    /**
-     * Gets as accountNo
+     * Gets as accountNo.
      *
      * @return string
      */
@@ -28,19 +34,21 @@ class PaymentAccountAType
     }
 
     /**
-     * Sets a new accountNo
+     * Sets a new accountNo.
      *
      * @param string $accountNo
+     *
      * @return self
      */
     public function setAccountNo($accountNo)
     {
         $this->accountNo = $accountNo;
+
         return $this;
     }
 
     /**
-     * Gets as bankCode
+     * Gets as bankCode.
      *
      * @return string
      */
@@ -50,14 +58,16 @@ class PaymentAccountAType
     }
 
     /**
-     * Sets a new bankCode
+     * Sets a new bankCode.
      *
      * @param string $bankCode
+     *
      * @return self
      */
     public function setBankCode($bankCode)
     {
         $this->bankCode = $bankCode;
+
         return $this;
     }
 }

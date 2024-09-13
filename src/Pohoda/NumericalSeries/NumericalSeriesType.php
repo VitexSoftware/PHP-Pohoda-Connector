@@ -1,27 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\NumericalSeries;
 
 /**
- * Class representing NumericalSeriesType
- *
+ * Class representing NumericalSeriesType.
  *
  * XSD Type: numericalSeriesType
  */
 class NumericalSeriesType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \Pohoda\NumericalSeries\NumericalSeriesHeaderType $numericalSeriesHeader = null;
 
     /**
-     * @var \Pohoda\NumericalSeries\NumericalSeriesHeaderType $numericalSeriesHeader
-     */
-    private $numericalSeriesHeader = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -31,19 +36,21 @@ class NumericalSeriesType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as numericalSeriesHeader
+     * Gets as numericalSeriesHeader.
      *
      * @return \Pohoda\NumericalSeries\NumericalSeriesHeaderType
      */
@@ -53,14 +60,14 @@ class NumericalSeriesType
     }
 
     /**
-     * Sets a new numericalSeriesHeader
+     * Sets a new numericalSeriesHeader.
      *
-     * @param \Pohoda\NumericalSeries\NumericalSeriesHeaderType $numericalSeriesHeader
      * @return self
      */
     public function setNumericalSeriesHeader(?\Pohoda\NumericalSeries\NumericalSeriesHeaderType $numericalSeriesHeader = null)
     {
         $this->numericalSeriesHeader = $numericalSeriesHeader;
+
         return $this;
     }
 }

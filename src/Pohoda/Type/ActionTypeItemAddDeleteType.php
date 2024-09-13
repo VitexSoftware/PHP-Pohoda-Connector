@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing ActionTypeItemAddDeleteType
- *
+ * Class representing ActionTypeItemAddDeleteType.
  *
  * XSD Type: actionTypeItemAddDelete
  */
@@ -12,20 +24,16 @@ class ActionTypeItemAddDeleteType
 {
     /**
      * Vložení nového záznamu. Výchozí hodnota.
-     *
-     * @var string $add
      */
-    private $add = null;
+    private string $add = null;
 
     /**
      * Odstranění záznamu.
-     *
-     * @var \Pohoda\Filter\RequestItemType $delete
      */
-    private $delete = null;
+    private \Pohoda\Filter\RequestItemType $delete = null;
 
     /**
-     * Gets as add
+     * Gets as add.
      *
      * Vložení nového záznamu. Výchozí hodnota.
      *
@@ -37,21 +45,23 @@ class ActionTypeItemAddDeleteType
     }
 
     /**
-     * Sets a new add
+     * Sets a new add.
      *
      * Vložení nového záznamu. Výchozí hodnota.
      *
      * @param string $add
+     *
      * @return self
      */
     public function setAdd($add)
     {
         $this->add = $add;
+
         return $this;
     }
 
     /**
-     * Gets as delete
+     * Gets as delete.
      *
      * Odstranění záznamu.
      *
@@ -63,16 +73,16 @@ class ActionTypeItemAddDeleteType
     }
 
     /**
-     * Sets a new delete
+     * Sets a new delete.
      *
      * Odstranění záznamu.
      *
-     * @param \Pohoda\Filter\RequestItemType $delete
      * @return self
      */
     public function setDelete(?\Pohoda\Filter\RequestItemType $delete = null)
     {
         $this->delete = $delete;
+
         return $this;
     }
 }

@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListRecyclingContribType
- *
+ * Class representing ListRecyclingContribType.
  *
  * XSD Type: listRecyclingContribType
  */
 class ListRecyclingContribType extends ListVersionType
 {
     /**
-     * @var \Pohoda\RecyclingContrib\RecyclingContribType[] $recyclingContrib
+     * @var \Pohoda\RecyclingContrib\RecyclingContribType[]
      */
-    private $recyclingContrib = [
+    private array $recyclingContrib = [
     ];
 
     /**
-     * Adds as recyclingContrib
+     * Adds as recyclingContrib.
      *
      * @return self
-     * @param \Pohoda\RecyclingContrib\RecyclingContribType $recyclingContrib
      */
     public function addToRecyclingContrib(\Pohoda\RecyclingContrib\RecyclingContribType $recyclingContrib)
     {
         $this->recyclingContrib[] = $recyclingContrib;
+
         return $this;
     }
 
     /**
-     * isset recyclingContrib
+     * isset recyclingContrib.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRecyclingContrib($index)
@@ -42,18 +55,17 @@ class ListRecyclingContribType extends ListVersionType
     }
 
     /**
-     * unset recyclingContrib
+     * unset recyclingContrib.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRecyclingContrib($index)
+    public function unsetRecyclingContrib($index): void
     {
         unset($this->recyclingContrib[$index]);
     }
 
     /**
-     * Gets as recyclingContrib
+     * Gets as recyclingContrib.
      *
      * @return \Pohoda\RecyclingContrib\RecyclingContribType[]
      */
@@ -63,14 +75,16 @@ class ListRecyclingContribType extends ListVersionType
     }
 
     /**
-     * Sets a new recyclingContrib
+     * Sets a new recyclingContrib.
      *
      * @param \Pohoda\RecyclingContrib\RecyclingContribType[] $recyclingContrib
+     *
      * @return self
      */
-    public function setRecyclingContrib(array $recyclingContrib = null)
+    public function setRecyclingContrib(?array $recyclingContrib = null)
     {
         $this->recyclingContrib = $recyclingContrib;
+
         return $this;
     }
 }

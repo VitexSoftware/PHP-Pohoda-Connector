@@ -1,29 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IndividualPrice;
 
 /**
- * Class representing AllStocksType
- *
+ * Class representing AllStocksType.
  *
  * XSD Type: allStocksType
  */
 class AllStocksType
 {
-    /**
-     * @var string $description
-     */
-    private $description = null;
+    private string $description = null;
 
     /**
      * Sleva v procentech.
-     *
-     * @var float $discountPercentage
      */
-    private $discountPercentage = null;
+    private float $discountPercentage = null;
 
     /**
-     * Gets as description
+     * Gets as description.
      *
      * @return string
      */
@@ -33,19 +40,21 @@ class AllStocksType
     }
 
     /**
-     * Sets a new description
+     * Sets a new description.
      *
      * @param string $description
+     *
      * @return self
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
     /**
-     * Gets as discountPercentage
+     * Gets as discountPercentage.
      *
      * Sleva v procentech.
      *
@@ -57,16 +66,18 @@ class AllStocksType
     }
 
     /**
-     * Sets a new discountPercentage
+     * Sets a new discountPercentage.
      *
      * Sleva v procentech.
      *
      * @param float $discountPercentage
+     *
      * @return self
      */
     public function setDiscountPercentage($discountPercentage)
     {
         $this->discountPercentage = $discountPercentage;
+
         return $this;
     }
 }

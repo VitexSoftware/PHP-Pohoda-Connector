@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListGlobalSettingsRequestType
- *
+ * Class representing ListGlobalSettingsRequestType.
  *
  * XSD Type: listGlobalSettingsRequestType
  */
 class ListGlobalSettingsRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $globalSettingsVersion
      */
-    private $globalSettingsVersion = null;
+    private string $globalSettingsVersion = null;
 
     /**
-     * @var \Pohoda\List\RequestrequestGlobalSettingsType[] $requestGlobalSettings
+     * @var \Pohoda\List\RequestrequestGlobalSettingsType[]
      */
-    private $requestGlobalSettings = [
+    private array $requestGlobalSettings = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListGlobalSettingsRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as globalSettingsVersion
+     * Gets as globalSettingsVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListGlobalSettingsRequestType
     }
 
     /**
-     * Sets a new globalSettingsVersion
+     * Sets a new globalSettingsVersion.
      *
      * Požadovaná verze.
      *
      * @param string $globalSettingsVersion
+     *
      * @return self
      */
     public function setGlobalSettingsVersion($globalSettingsVersion)
     {
         $this->globalSettingsVersion = $globalSettingsVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestGlobalSettings
+     * Adds as requestGlobalSettings.
      *
      * @return self
-     * @param \Pohoda\List\RequestrequestGlobalSettingsType $requestGlobalSettings
      */
     public function addToRequestGlobalSettings(\Pohoda\List\RequestrequestGlobalSettingsType $requestGlobalSettings)
     {
         $this->requestGlobalSettings[] = $requestGlobalSettings;
+
         return $this;
     }
 
     /**
-     * isset requestGlobalSettings
+     * isset requestGlobalSettings.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestGlobalSettings($index)
@@ -100,18 +112,17 @@ class ListGlobalSettingsRequestType
     }
 
     /**
-     * unset requestGlobalSettings
+     * unset requestGlobalSettings.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestGlobalSettings($index)
+    public function unsetRequestGlobalSettings($index): void
     {
         unset($this->requestGlobalSettings[$index]);
     }
 
     /**
-     * Gets as requestGlobalSettings
+     * Gets as requestGlobalSettings.
      *
      * @return \Pohoda\List\RequestrequestGlobalSettingsType[]
      */
@@ -121,14 +132,16 @@ class ListGlobalSettingsRequestType
     }
 
     /**
-     * Sets a new requestGlobalSettings
+     * Sets a new requestGlobalSettings.
      *
      * @param \Pohoda\List\RequestrequestGlobalSettingsType[] $requestGlobalSettings
+     *
      * @return self
      */
     public function setRequestGlobalSettings(array $requestGlobalSettings)
     {
         $this->requestGlobalSettings = $requestGlobalSettings;
+
         return $this;
     }
 }

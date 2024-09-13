@@ -1,42 +1,47 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListVydejkaRequestType
- *
+ * Class representing ListVydejkaRequestType.
  *
  * XSD Type: listVydejkaRequestType
  */
 class ListVydejkaRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze výdejky.
-     *
-     * @var string $vydejkaVersion
      */
-    private $vydejkaVersion = null;
+    private string $vydejkaVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
 
     /**
-     * @var \Pohoda\Filter\RequestVydejkaType[] $requestVydejka
+     * @var \Pohoda\Filter\RequestVydejkaType[]
      */
-    private $requestVydejka = [
+    private array $requestVydejka = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -46,19 +51,21 @@ class ListVydejkaRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as vydejkaVersion
+     * Gets as vydejkaVersion.
      *
      * Požadovaná verze výdejky.
      *
@@ -70,21 +77,23 @@ class ListVydejkaRequestType
     }
 
     /**
-     * Sets a new vydejkaVersion
+     * Sets a new vydejkaVersion.
      *
      * Požadovaná verze výdejky.
      *
      * @param string $vydejkaVersion
+     *
      * @return self
      */
     public function setVydejkaVersion($vydejkaVersion)
     {
         $this->vydejkaVersion = $vydejkaVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -96,35 +105,38 @@ class ListVydejkaRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Adds as requestVydejka
+     * Adds as requestVydejka.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestVydejkaType $requestVydejka
      */
     public function addToRequestVydejka(\Pohoda\Filter\RequestVydejkaType $requestVydejka)
     {
         $this->requestVydejka[] = $requestVydejka;
+
         return $this;
     }
 
     /**
-     * isset requestVydejka
+     * isset requestVydejka.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestVydejka($index)
@@ -133,18 +145,17 @@ class ListVydejkaRequestType
     }
 
     /**
-     * unset requestVydejka
+     * unset requestVydejka.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestVydejka($index)
+    public function unsetRequestVydejka($index): void
     {
         unset($this->requestVydejka[$index]);
     }
 
     /**
-     * Gets as requestVydejka
+     * Gets as requestVydejka.
      *
      * @return \Pohoda\Filter\RequestVydejkaType[]
      */
@@ -154,14 +165,16 @@ class ListVydejkaRequestType
     }
 
     /**
-     * Sets a new requestVydejka
+     * Sets a new requestVydejka.
      *
      * @param \Pohoda\Filter\RequestVydejkaType[] $requestVydejka
+     *
      * @return self
      */
     public function setRequestVydejka(array $requestVydejka)
     {
         $this->requestVydejka = $requestVydejka;
+
         return $this;
     }
 }

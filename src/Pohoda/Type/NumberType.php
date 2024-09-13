@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing NumberType
- *
+ * Class representing NumberType.
  *
  * XSD Type: numberType
  */
@@ -12,27 +24,21 @@ class NumberType
 {
     /**
      * Odkaz na číselnou řadu. Vyšší prioritu má element "id".
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Prefix číselné řady.
-     *
-     * @var string $ids
      */
-    private $ids = null;
+    private string $ids = null;
 
     /**
      * Číslo dokladu, bez vazby na číselnou řadu.
-     *
-     * @var \Pohoda\Type\NumberType\NumberRequestedAType $numberRequested
      */
-    private $numberRequested = null;
+    private \Pohoda\Type\NumberType\NumberRequestedAType $numberRequested = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Odkaz na číselnou řadu. Vyšší prioritu má element "id".
      *
@@ -44,21 +50,23 @@ class NumberType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Odkaz na číselnou řadu. Vyšší prioritu má element "id".
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as ids
+     * Gets as ids.
      *
      * Prefix číselné řady.
      *
@@ -70,21 +78,23 @@ class NumberType
     }
 
     /**
-     * Sets a new ids
+     * Sets a new ids.
      *
      * Prefix číselné řady.
      *
      * @param string $ids
+     *
      * @return self
      */
     public function setIds($ids)
     {
         $this->ids = $ids;
+
         return $this;
     }
 
     /**
-     * Gets as numberRequested
+     * Gets as numberRequested.
      *
      * Číslo dokladu, bez vazby na číselnou řadu.
      *
@@ -96,16 +106,16 @@ class NumberType
     }
 
     /**
-     * Sets a new numberRequested
+     * Sets a new numberRequested.
      *
      * Číslo dokladu, bez vazby na číselnou řadu.
      *
-     * @param \Pohoda\Type\NumberType\NumberRequestedAType $numberRequested
      * @return self
      */
     public function setNumberRequested(?\Pohoda\Type\NumberType\NumberRequestedAType $numberRequested = null)
     {
         $this->numberRequested = $numberRequested;
+
         return $this;
     }
 }

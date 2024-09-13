@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Service;
 
 /**
- * Class representing ServiceHeaderType
- *
+ * Class representing ServiceHeaderType.
  *
  * XSD Type: serviceHeaderType
  */
@@ -12,244 +24,180 @@ class ServiceHeaderType
 {
     /**
      * ID záznamu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Typ servisního záznamu.
-     *
-     * @var string $serviceType
      */
-    private $serviceType = null;
+    private string $serviceType = null;
 
     /**
      * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
-     *
-     * @var \Pohoda\Type\NumberType $number
      */
-    private $number = null;
+    private \Pohoda\Type\NumberType $number = null;
 
     /**
      * Datum přijetí do servisu. Pokud není hodnota zadaná, použije se aktuální datum nebo datum posledního záznamu, dle volby v uživatelském nastavení.
-     *
-     * @var \DateTime $received
      */
-    private $received = null;
+    private \DateTime $received = null;
 
     /**
      * Vyřídit do.
-     *
-     * @var \DateTime $settleUntil
      */
-    private $settleUntil = null;
+    private \DateTime $settleUntil = null;
 
     /**
      * Ukončeno.
-     *
-     * @var \DateTime $finished
      */
-    private $finished = null;
+    private \DateTime $finished = null;
 
     /**
      * Vyřízeno (jen pro export).
-     *
-     * @var \DateTime $executed
      */
-    private $executed = null;
+    private \DateTime $executed = null;
 
     /**
      * Odhadovaná cena servisních prací.
-     *
-     * @var float $expectedPrice
      */
-    private $expectedPrice = null;
+    private float $expectedPrice = null;
 
     /**
      * Odhadovaná cena servisních prací v cizí měně.
-     *
-     * @var float $expectedPriceFC
      */
-    private $expectedPriceFC = null;
+    private float $expectedPriceFC = null;
 
     /**
      * Částka zálohy přijaté od zákazníka na provedení servisních prací.
-     *
-     * @var float $advancePrice
      */
-    private $advancePrice = null;
+    private float $advancePrice = null;
 
     /**
      * Částka zálohy přijaté od zákazníka na provedení servisních prací v cizí měně.
-     *
-     * @var float $advancePriceFC
      */
-    private $advancePriceFC = null;
+    private float $advancePriceFC = null;
 
     /**
      * Stav servisu. Jen pro export. Vyplňuje se automaticky, dle záložky Stav servisu.
-     *
-     * @var \Pohoda\Type\RefType $status
      */
-    private $status = null;
+    private \Pohoda\Type\RefType $status = null;
 
     /**
      * Odpovědná osoba.
-     *
-     * @var \Pohoda\Type\RefTypeLongType $responsiblePerson
      */
-    private $responsiblePerson = null;
+    private \Pohoda\Type\RefTypeLongType $responsiblePerson = null;
 
     /**
      * Text dokladu servisu.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Zákazníkova adresa.
-     *
-     * @var \Pohoda\Type\AddressType $partnerIdentity
      */
-    private $partnerIdentity = null;
+    private \Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Jméno a příjmení kontaktní osoby.
-     *
-     * @var string $contactName
      */
-    private $contactName = null;
+    private string $contactName = null;
 
     /**
      * Doplňující údaje ke kontaktní osobě např. titul.
-     *
-     * @var string $contactDetail
      */
-    private $contactDetail = null;
+    private string $contactDetail = null;
 
     /**
      * Cenová hladina odběratele.
-     *
-     * @var \Pohoda\Type\RefType $priceLevel
      */
-    private $priceLevel = null;
+    private \Pohoda\Type\RefType $priceLevel = null;
 
     /**
      * Vyřízeno.
-     *
-     * @var string $isExecuted
      */
-    private $isExecuted = null;
+    private string $isExecuted = null;
 
     /**
      * Číslo nebo jiná identifikace daňového dokladu, kterým bylo zboží původně vyskladněno.
-     *
-     * @var string $numberDocument
      */
-    private $numberDocument = null;
+    private string $numberDocument = null;
 
     /**
      * Datum vystavení daňového dokladu, kterým bylo zboží původně vyskladněno.
-     *
-     * @var \DateTime $dateDocument
      */
-    private $dateDocument = null;
+    private \DateTime $dateDocument = null;
 
     /**
      * Způsob přijetí servisovaného předmětu.
-     *
-     * @var \Pohoda\Type\RefSrvDeliveryType $receiving
      */
-    private $receiving = null;
+    private \Pohoda\Type\RefSrvDeliveryType $receiving = null;
 
     /**
      * Způsob předání opraveného servisovaného předmětu.
-     *
-     * @var \Pohoda\Type\RefSrvDeliveryType $forwarding
      */
-    private $forwarding = null;
+    private \Pohoda\Type\RefSrvDeliveryType $forwarding = null;
 
     /**
      * Středisko.
-     *
-     * @var \Pohoda\Type\RefType $centre
      */
-    private $centre = null;
+    private \Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
-     *
-     * @var \Pohoda\Type\RefType $activity
      */
-    private $activity = null;
+    private \Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
-     *
-     * @var \Pohoda\Type\RefType $contract
      */
-    private $contract = null;
+    private \Pohoda\Type\RefType $contract = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Interní poznámka, libovolný text, který nevstupuje do tiskových sestav.
-     *
-     * @var string $intNote
      */
-    private $intNote = null;
+    private string $intNote = null;
 
     /**
      * Popis závady.
-     *
-     * @var string $recognizedDefect
      */
-    private $recognizedDefect = null;
+    private string $recognizedDefect = null;
 
     /**
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
-     *
-     * @var string $lock1
      */
-    private $lock1 = null;
+    private string $lock1 = null;
 
     /**
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
-     *
-     * @var string $lock2
      */
-    private $lock2 = null;
+    private string $lock2 = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
-     * @var \Pohoda\Type\LabelType[] $labels
+     * @var \Pohoda\Type\LabelType[]
      */
-    private $labels = null;
+    private array $labels = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu (jen pro export).
      *
@@ -261,21 +209,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as serviceType
+     * Gets as serviceType.
      *
      * Typ servisního záznamu.
      *
@@ -287,21 +237,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new serviceType
+     * Sets a new serviceType.
      *
      * Typ servisního záznamu.
      *
      * @param string $serviceType
+     *
      * @return self
      */
     public function setServiceType($serviceType)
     {
         $this->serviceType = $serviceType;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
      *
@@ -313,21 +265,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
      *
-     * @param \Pohoda\Type\NumberType $number
      * @return self
      */
     public function setNumber(?\Pohoda\Type\NumberType $number = null)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as received
+     * Gets as received.
      *
      * Datum přijetí do servisu. Pokud není hodnota zadaná, použije se aktuální datum nebo datum posledního záznamu, dle volby v uživatelském nastavení.
      *
@@ -339,21 +291,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new received
+     * Sets a new received.
      *
      * Datum přijetí do servisu. Pokud není hodnota zadaná, použije se aktuální datum nebo datum posledního záznamu, dle volby v uživatelském nastavení.
      *
-     * @param \DateTime $received
      * @return self
      */
     public function setReceived(?\DateTime $received = null)
     {
         $this->received = $received;
+
         return $this;
     }
 
     /**
-     * Gets as settleUntil
+     * Gets as settleUntil.
      *
      * Vyřídit do.
      *
@@ -365,21 +317,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new settleUntil
+     * Sets a new settleUntil.
      *
      * Vyřídit do.
      *
-     * @param \DateTime $settleUntil
      * @return self
      */
     public function setSettleUntil(?\DateTime $settleUntil = null)
     {
         $this->settleUntil = $settleUntil;
+
         return $this;
     }
 
     /**
-     * Gets as finished
+     * Gets as finished.
      *
      * Ukončeno.
      *
@@ -391,21 +343,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new finished
+     * Sets a new finished.
      *
      * Ukončeno.
      *
-     * @param \DateTime $finished
      * @return self
      */
     public function setFinished(?\DateTime $finished = null)
     {
         $this->finished = $finished;
+
         return $this;
     }
 
     /**
-     * Gets as executed
+     * Gets as executed.
      *
      * Vyřízeno (jen pro export).
      *
@@ -417,21 +369,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new executed
+     * Sets a new executed.
      *
      * Vyřízeno (jen pro export).
      *
-     * @param \DateTime $executed
      * @return self
      */
     public function setExecuted(?\DateTime $executed = null)
     {
         $this->executed = $executed;
+
         return $this;
     }
 
     /**
-     * Gets as expectedPrice
+     * Gets as expectedPrice.
      *
      * Odhadovaná cena servisních prací.
      *
@@ -443,21 +395,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new expectedPrice
+     * Sets a new expectedPrice.
      *
      * Odhadovaná cena servisních prací.
      *
      * @param float $expectedPrice
+     *
      * @return self
      */
     public function setExpectedPrice($expectedPrice)
     {
         $this->expectedPrice = $expectedPrice;
+
         return $this;
     }
 
     /**
-     * Gets as expectedPriceFC
+     * Gets as expectedPriceFC.
      *
      * Odhadovaná cena servisních prací v cizí měně.
      *
@@ -469,21 +423,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new expectedPriceFC
+     * Sets a new expectedPriceFC.
      *
      * Odhadovaná cena servisních prací v cizí měně.
      *
      * @param float $expectedPriceFC
+     *
      * @return self
      */
     public function setExpectedPriceFC($expectedPriceFC)
     {
         $this->expectedPriceFC = $expectedPriceFC;
+
         return $this;
     }
 
     /**
-     * Gets as advancePrice
+     * Gets as advancePrice.
      *
      * Částka zálohy přijaté od zákazníka na provedení servisních prací.
      *
@@ -495,21 +451,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new advancePrice
+     * Sets a new advancePrice.
      *
      * Částka zálohy přijaté od zákazníka na provedení servisních prací.
      *
      * @param float $advancePrice
+     *
      * @return self
      */
     public function setAdvancePrice($advancePrice)
     {
         $this->advancePrice = $advancePrice;
+
         return $this;
     }
 
     /**
-     * Gets as advancePriceFC
+     * Gets as advancePriceFC.
      *
      * Částka zálohy přijaté od zákazníka na provedení servisních prací v cizí měně.
      *
@@ -521,21 +479,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new advancePriceFC
+     * Sets a new advancePriceFC.
      *
      * Částka zálohy přijaté od zákazníka na provedení servisních prací v cizí měně.
      *
      * @param float $advancePriceFC
+     *
      * @return self
      */
     public function setAdvancePriceFC($advancePriceFC)
     {
         $this->advancePriceFC = $advancePriceFC;
+
         return $this;
     }
 
     /**
-     * Gets as status
+     * Gets as status.
      *
      * Stav servisu. Jen pro export. Vyplňuje se automaticky, dle záložky Stav servisu.
      *
@@ -547,21 +507,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new status
+     * Sets a new status.
      *
      * Stav servisu. Jen pro export. Vyplňuje se automaticky, dle záložky Stav servisu.
      *
-     * @param \Pohoda\Type\RefType $status
      * @return self
      */
     public function setStatus(?\Pohoda\Type\RefType $status = null)
     {
         $this->status = $status;
+
         return $this;
     }
 
     /**
-     * Gets as responsiblePerson
+     * Gets as responsiblePerson.
      *
      * Odpovědná osoba.
      *
@@ -573,21 +533,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new responsiblePerson
+     * Sets a new responsiblePerson.
      *
      * Odpovědná osoba.
      *
-     * @param \Pohoda\Type\RefTypeLongType $responsiblePerson
      * @return self
      */
     public function setResponsiblePerson(?\Pohoda\Type\RefTypeLongType $responsiblePerson = null)
     {
         $this->responsiblePerson = $responsiblePerson;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text dokladu servisu.
      *
@@ -599,21 +559,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text dokladu servisu.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as partnerIdentity
+     * Gets as partnerIdentity.
      *
      * Zákazníkova adresa.
      *
@@ -625,21 +587,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new partnerIdentity
+     * Sets a new partnerIdentity.
      *
      * Zákazníkova adresa.
      *
-     * @param \Pohoda\Type\AddressType $partnerIdentity
      * @return self
      */
     public function setPartnerIdentity(?\Pohoda\Type\AddressType $partnerIdentity = null)
     {
         $this->partnerIdentity = $partnerIdentity;
+
         return $this;
     }
 
     /**
-     * Gets as contactName
+     * Gets as contactName.
      *
      * Jméno a příjmení kontaktní osoby.
      *
@@ -651,21 +613,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new contactName
+     * Sets a new contactName.
      *
      * Jméno a příjmení kontaktní osoby.
      *
      * @param string $contactName
+     *
      * @return self
      */
     public function setContactName($contactName)
     {
         $this->contactName = $contactName;
+
         return $this;
     }
 
     /**
-     * Gets as contactDetail
+     * Gets as contactDetail.
      *
      * Doplňující údaje ke kontaktní osobě např. titul.
      *
@@ -677,21 +641,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new contactDetail
+     * Sets a new contactDetail.
      *
      * Doplňující údaje ke kontaktní osobě např. titul.
      *
      * @param string $contactDetail
+     *
      * @return self
      */
     public function setContactDetail($contactDetail)
     {
         $this->contactDetail = $contactDetail;
+
         return $this;
     }
 
     /**
-     * Gets as priceLevel
+     * Gets as priceLevel.
      *
      * Cenová hladina odběratele.
      *
@@ -703,21 +669,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new priceLevel
+     * Sets a new priceLevel.
      *
      * Cenová hladina odběratele.
      *
-     * @param \Pohoda\Type\RefType $priceLevel
      * @return self
      */
     public function setPriceLevel(?\Pohoda\Type\RefType $priceLevel = null)
     {
         $this->priceLevel = $priceLevel;
+
         return $this;
     }
 
     /**
-     * Gets as isExecuted
+     * Gets as isExecuted.
      *
      * Vyřízeno.
      *
@@ -729,21 +695,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new isExecuted
+     * Sets a new isExecuted.
      *
      * Vyřízeno.
      *
      * @param string $isExecuted
+     *
      * @return self
      */
     public function setIsExecuted($isExecuted)
     {
         $this->isExecuted = $isExecuted;
+
         return $this;
     }
 
     /**
-     * Gets as numberDocument
+     * Gets as numberDocument.
      *
      * Číslo nebo jiná identifikace daňového dokladu, kterým bylo zboží původně vyskladněno.
      *
@@ -755,21 +723,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new numberDocument
+     * Sets a new numberDocument.
      *
      * Číslo nebo jiná identifikace daňového dokladu, kterým bylo zboží původně vyskladněno.
      *
      * @param string $numberDocument
+     *
      * @return self
      */
     public function setNumberDocument($numberDocument)
     {
         $this->numberDocument = $numberDocument;
+
         return $this;
     }
 
     /**
-     * Gets as dateDocument
+     * Gets as dateDocument.
      *
      * Datum vystavení daňového dokladu, kterým bylo zboží původně vyskladněno.
      *
@@ -781,21 +751,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new dateDocument
+     * Sets a new dateDocument.
      *
      * Datum vystavení daňového dokladu, kterým bylo zboží původně vyskladněno.
      *
-     * @param \DateTime $dateDocument
      * @return self
      */
     public function setDateDocument(?\DateTime $dateDocument = null)
     {
         $this->dateDocument = $dateDocument;
+
         return $this;
     }
 
     /**
-     * Gets as receiving
+     * Gets as receiving.
      *
      * Způsob přijetí servisovaného předmětu.
      *
@@ -807,21 +777,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new receiving
+     * Sets a new receiving.
      *
      * Způsob přijetí servisovaného předmětu.
      *
-     * @param \Pohoda\Type\RefSrvDeliveryType $receiving
      * @return self
      */
     public function setReceiving(?\Pohoda\Type\RefSrvDeliveryType $receiving = null)
     {
         $this->receiving = $receiving;
+
         return $this;
     }
 
     /**
-     * Gets as forwarding
+     * Gets as forwarding.
      *
      * Způsob předání opraveného servisovaného předmětu.
      *
@@ -833,21 +803,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new forwarding
+     * Sets a new forwarding.
      *
      * Způsob předání opraveného servisovaného předmětu.
      *
-     * @param \Pohoda\Type\RefSrvDeliveryType $forwarding
      * @return self
      */
     public function setForwarding(?\Pohoda\Type\RefSrvDeliveryType $forwarding = null)
     {
         $this->forwarding = $forwarding;
+
         return $this;
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * Středisko.
      *
@@ -859,21 +829,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * Středisko.
      *
-     * @param \Pohoda\Type\RefType $centre
      * @return self
      */
     public function setCentre(?\Pohoda\Type\RefType $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 
     /**
-     * Gets as activity
+     * Gets as activity.
      *
      * Činnost.
      *
@@ -885,21 +855,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new activity
+     * Sets a new activity.
      *
      * Činnost.
      *
-     * @param \Pohoda\Type\RefType $activity
      * @return self
      */
     public function setActivity(?\Pohoda\Type\RefType $activity = null)
     {
         $this->activity = $activity;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * Zakázka.
      *
@@ -911,21 +881,21 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
      * Zakázka.
      *
-     * @param \Pohoda\Type\RefType $contract
      * @return self
      */
     public function setContract(?\Pohoda\Type\RefType $contract = null)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -937,21 +907,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as intNote
+     * Gets as intNote.
      *
      * Interní poznámka, libovolný text, který nevstupuje do tiskových sestav.
      *
@@ -963,21 +935,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new intNote
+     * Sets a new intNote.
      *
      * Interní poznámka, libovolný text, který nevstupuje do tiskových sestav.
      *
      * @param string $intNote
+     *
      * @return self
      */
     public function setIntNote($intNote)
     {
         $this->intNote = $intNote;
+
         return $this;
     }
 
     /**
-     * Gets as recognizedDefect
+     * Gets as recognizedDefect.
      *
      * Popis závady.
      *
@@ -989,21 +963,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new recognizedDefect
+     * Sets a new recognizedDefect.
      *
      * Popis závady.
      *
      * @param string $recognizedDefect
+     *
      * @return self
      */
     public function setRecognizedDefect($recognizedDefect)
     {
         $this->recognizedDefect = $recognizedDefect;
+
         return $this;
     }
 
     /**
-     * Gets as lock1
+     * Gets as lock1.
      *
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      *
@@ -1015,21 +991,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new lock1
+     * Sets a new lock1.
      *
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      *
      * @param string $lock1
+     *
      * @return self
      */
     public function setLock1($lock1)
     {
         $this->lock1 = $lock1;
+
         return $this;
     }
 
     /**
-     * Gets as lock2
+     * Gets as lock2.
      *
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      *
@@ -1041,21 +1019,23 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new lock2
+     * Sets a new lock2.
      *
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      *
      * @param string $lock2
+     *
      * @return self
      */
     public function setLock2($lock2)
     {
         $this->lock2 = $lock2;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -1067,39 +1047,42 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as label
+     * Adds as label.
      *
      * Štítky záznamu.
      *
      * @return self
-     * @param \Pohoda\Type\LabelType $label
      */
     public function addToLabels(\Pohoda\Type\LabelType $label)
     {
         $this->labels[] = $label;
+
         return $this;
     }
 
     /**
-     * isset labels
+     * isset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLabels($index)
@@ -1108,20 +1091,19 @@ class ServiceHeaderType
     }
 
     /**
-     * unset labels
+     * unset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLabels($index)
+    public function unsetLabels($index): void
     {
         unset($this->labels[$index]);
     }
 
     /**
-     * Gets as labels
+     * Gets as labels.
      *
      * Štítky záznamu.
      *
@@ -1133,39 +1115,42 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new labels
+     * Sets a new labels.
      *
      * Štítky záznamu.
      *
      * @param \Pohoda\Type\LabelType[] $labels
+     *
      * @return self
      */
-    public function setLabels(array $labels = null)
+    public function setLabels(?array $labels = null)
     {
         $this->labels = $labels;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -1174,20 +1159,19 @@ class ServiceHeaderType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -1199,16 +1183,18 @@ class ServiceHeaderType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

@@ -1,36 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\AccountingSalesVouchers;
 
 /**
- * Class representing AccountingSalesVouchersType
- *
+ * Class representing AccountingSalesVouchersType.
  *
  * XSD Type: accountingSalesVouchersType
  */
 class AccountingSalesVouchersType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Výběr záznamu.
-     *
-     * @var \Pohoda\Filter\RequestProdejkaType $recordFilter
      */
-    private $recordFilter = null;
+    private \Pohoda\Filter\RequestProdejkaType $recordFilter = null;
 
     /**
-     * Středisko které se nastaví do hlavičky zaúčtovávacích dokladů
-     *
-     * @var \Pohoda\Type\RefType $centre
+     * Středisko které se nastaví do hlavičky zaúčtovávacích dokladů.
      */
-    private $centre = null;
+    private \Pohoda\Type\RefType $centre = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -40,19 +45,21 @@ class AccountingSalesVouchersType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as recordFilter
+     * Gets as recordFilter.
      *
      * Výběr záznamu.
      *
@@ -64,21 +71,21 @@ class AccountingSalesVouchersType
     }
 
     /**
-     * Sets a new recordFilter
+     * Sets a new recordFilter.
      *
      * Výběr záznamu.
      *
-     * @param \Pohoda\Filter\RequestProdejkaType $recordFilter
      * @return self
      */
     public function setRecordFilter(?\Pohoda\Filter\RequestProdejkaType $recordFilter = null)
     {
         $this->recordFilter = $recordFilter;
+
         return $this;
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * Středisko které se nastaví do hlavičky zaúčtovávacích dokladů
      *
@@ -90,16 +97,16 @@ class AccountingSalesVouchersType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * Středisko které se nastaví do hlavičky zaúčtovávacích dokladů
      *
-     * @param \Pohoda\Type\RefType $centre
      * @return self
      */
     public function setCentre(?\Pohoda\Type\RefType $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 }

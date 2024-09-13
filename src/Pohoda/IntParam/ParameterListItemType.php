@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IntParam;
 
 /**
- * Class representing ParameterListItemType
- *
+ * Class representing ParameterListItemType.
  *
  * XSD Type: parameterListItemType
  */
@@ -12,28 +24,14 @@ class ParameterListItemType
 {
     /**
      * ID záznamu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
+    private string $name = null;
+    private string $description = null;
+    private int $sequence = null;
 
     /**
-     * @var string $name
-     */
-    private $name = null;
-
-    /**
-     * @var string $description
-     */
-    private $description = null;
-
-    /**
-     * @var int $sequence
-     */
-    private $sequence = null;
-
-    /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu (jen pro export).
      *
@@ -45,21 +43,23 @@ class ParameterListItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * @return string
      */
@@ -69,19 +69,21 @@ class ParameterListItemType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as description
+     * Gets as description.
      *
      * @return string
      */
@@ -91,19 +93,21 @@ class ParameterListItemType
     }
 
     /**
-     * Sets a new description
+     * Sets a new description.
      *
      * @param string $description
+     *
      * @return self
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
     /**
-     * Gets as sequence
+     * Gets as sequence.
      *
      * @return int
      */
@@ -113,14 +117,16 @@ class ParameterListItemType
     }
 
     /**
-     * Sets a new sequence
+     * Sets a new sequence.
      *
      * @param int $sequence
+     *
      * @return self
      */
     public function setSequence($sequence)
     {
         $this->sequence = $sequence;
+
         return $this;
     }
 }

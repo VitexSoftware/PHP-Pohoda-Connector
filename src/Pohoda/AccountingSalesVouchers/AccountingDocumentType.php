@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\AccountingSalesVouchers;
 
 /**
- * Class representing AccountingDocumentType
- *
+ * Class representing AccountingDocumentType.
  *
  * XSD Type: accountingDocumentType
  */
@@ -12,34 +24,28 @@ class AccountingDocumentType
 {
     /**
      * Agenda dokladu.
-     *
-     * @var string $agenda
      */
-    private $agenda = null;
+    private string $agenda = null;
 
     /**
      * ID dokladu.
-     *
-     * @var string $id
      */
-    private $id = null;
+    private string $id = null;
 
     /**
      * Číslo dokladu.
-     *
-     * @var string $number
      */
-    private $number = null;
+    private string $number = null;
 
     /**
      * Agenda.
      *
-     * @var \Pohoda\AccountingSalesVouchers\LinkedDocumentType[] $linkedDocuments
+     * @var \Pohoda\AccountingSalesVouchers\LinkedDocumentType[]
      */
-    private $linkedDocuments = null;
+    private array $linkedDocuments = null;
 
     /**
-     * Gets as agenda
+     * Gets as agenda.
      *
      * Agenda dokladu.
      *
@@ -51,21 +57,23 @@ class AccountingDocumentType
     }
 
     /**
-     * Sets a new agenda
+     * Sets a new agenda.
      *
      * Agenda dokladu.
      *
      * @param string $agenda
+     *
      * @return self
      */
     public function setAgenda($agenda)
     {
         $this->agenda = $agenda;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID dokladu.
      *
@@ -77,21 +85,23 @@ class AccountingDocumentType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID dokladu.
      *
      * @param string $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Číslo dokladu.
      *
@@ -103,39 +113,42 @@ class AccountingDocumentType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Číslo dokladu.
      *
      * @param string $number
+     *
      * @return self
      */
     public function setNumber($number)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Adds as linkedDocument
+     * Adds as linkedDocument.
      *
      * Agenda.
      *
      * @return self
-     * @param \Pohoda\AccountingSalesVouchers\LinkedDocumentType $linkedDocument
      */
     public function addToLinkedDocuments(\Pohoda\AccountingSalesVouchers\LinkedDocumentType $linkedDocument)
     {
         $this->linkedDocuments[] = $linkedDocument;
+
         return $this;
     }
 
     /**
-     * isset linkedDocuments
+     * isset linkedDocuments.
      *
      * Agenda.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLinkedDocuments($index)
@@ -144,20 +157,19 @@ class AccountingDocumentType
     }
 
     /**
-     * unset linkedDocuments
+     * unset linkedDocuments.
      *
      * Agenda.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLinkedDocuments($index)
+    public function unsetLinkedDocuments($index): void
     {
         unset($this->linkedDocuments[$index]);
     }
 
     /**
-     * Gets as linkedDocuments
+     * Gets as linkedDocuments.
      *
      * Agenda.
      *
@@ -169,16 +181,18 @@ class AccountingDocumentType
     }
 
     /**
-     * Sets a new linkedDocuments
+     * Sets a new linkedDocuments.
      *
      * Agenda.
      *
      * @param \Pohoda\AccountingSalesVouchers\LinkedDocumentType[] $linkedDocuments
+     *
      * @return self
      */
-    public function setLinkedDocuments(array $linkedDocuments = null)
+    public function setLinkedDocuments(?array $linkedDocuments = null)
     {
         $this->linkedDocuments = $linkedDocuments;
+
         return $this;
     }
 }

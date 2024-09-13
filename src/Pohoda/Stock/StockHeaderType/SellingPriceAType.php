@@ -1,26 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock\StockHeaderType;
 
 /**
- * Class representing SellingPriceAType
+ * Class representing SellingPriceAType.
  */
 class SellingPriceAType
 {
-    /**
-     * @var float $__value
-     */
-    private $__value = null;
+    private float $__value = null;
 
     /**
      * Příznak určuje zda se jedná o prodejní cenu s/bez DPH. Pokud není uveden atribut payVAT, jedná se o „Prodejní cena bez DPH“.
-     *
-     * @var bool $payVAT
      */
-    private $payVAT = null;
+    private bool $payVAT = null;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param float $value
      */
@@ -30,31 +38,31 @@ class SellingPriceAType
     }
 
     /**
-     * Gets or sets the inner value
-     *
-     * @param float $value
-     * @return float
-     */
-    public function value()
-    {
-        if ($args = func_get_args()) {
-            $this->__value = $args[0];
-        }
-        return $this->__value;
-    }
-
-    /**
-     * Gets a string value
+     * Gets a string value.
      *
      * @return string
      */
     public function __toString()
     {
-        return strval($this->__value);
+        return (string) $this->__value;
     }
 
     /**
-     * Gets as payVAT
+     * Gets or sets the inner value.
+     *
+     * @return float
+     */
+    public function value()
+    {
+        if ($args = \func_get_args()) {
+            $this->__value = $args[0];
+        }
+
+        return $this->__value;
+    }
+
+    /**
+     * Gets as payVAT.
      *
      * Příznak určuje zda se jedná o prodejní cenu s/bez DPH. Pokud není uveden atribut payVAT, jedná se o „Prodejní cena bez DPH“.
      *
@@ -66,16 +74,18 @@ class SellingPriceAType
     }
 
     /**
-     * Sets a new payVAT
+     * Sets a new payVAT.
      *
      * Příznak určuje zda se jedná o prodejní cenu s/bez DPH. Pokud není uveden atribut payVAT, jedná se o „Prodejní cena bez DPH“.
      *
      * @param bool $payVAT
+     *
      * @return self
      */
     public function setPayVAT($payVAT)
     {
         $this->payVAT = $payVAT;
+
         return $this;
     }
 }

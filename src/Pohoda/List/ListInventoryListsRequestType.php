@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListInventoryListsRequestType
- *
+ * Class representing ListInventoryListsRequestType.
  *
  * XSD Type: listInventoryListsRequestType
  */
 class ListInventoryListsRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $inventoryListsVersion
      */
-    private $inventoryListsVersion = null;
+    private string $inventoryListsVersion = null;
 
     /**
-     * @var \Pohoda\Filter\RequestInventoryListsType[] $requestInventoryLists
+     * @var \Pohoda\Filter\RequestInventoryListsType[]
      */
-    private $requestInventoryLists = [
+    private array $requestInventoryLists = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListInventoryListsRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as inventoryListsVersion
+     * Gets as inventoryListsVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListInventoryListsRequestType
     }
 
     /**
-     * Sets a new inventoryListsVersion
+     * Sets a new inventoryListsVersion.
      *
      * Požadovaná verze.
      *
      * @param string $inventoryListsVersion
+     *
      * @return self
      */
     public function setInventoryListsVersion($inventoryListsVersion)
     {
         $this->inventoryListsVersion = $inventoryListsVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestInventoryLists
+     * Adds as requestInventoryLists.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestInventoryListsType $requestInventoryLists
      */
     public function addToRequestInventoryLists(\Pohoda\Filter\RequestInventoryListsType $requestInventoryLists)
     {
         $this->requestInventoryLists[] = $requestInventoryLists;
+
         return $this;
     }
 
     /**
-     * isset requestInventoryLists
+     * isset requestInventoryLists.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestInventoryLists($index)
@@ -100,18 +112,17 @@ class ListInventoryListsRequestType
     }
 
     /**
-     * unset requestInventoryLists
+     * unset requestInventoryLists.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestInventoryLists($index)
+    public function unsetRequestInventoryLists($index): void
     {
         unset($this->requestInventoryLists[$index]);
     }
 
     /**
-     * Gets as requestInventoryLists
+     * Gets as requestInventoryLists.
      *
      * @return \Pohoda\Filter\RequestInventoryListsType[]
      */
@@ -121,14 +132,16 @@ class ListInventoryListsRequestType
     }
 
     /**
-     * Sets a new requestInventoryLists
+     * Sets a new requestInventoryLists.
      *
      * @param \Pohoda\Filter\RequestInventoryListsType[] $requestInventoryLists
+     *
      * @return self
      */
     public function setRequestInventoryLists(array $requestInventoryLists)
     {
         $this->requestInventoryLists = $requestInventoryLists;
+
         return $this;
     }
 }

@@ -1,34 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\CashRegister;
 
 /**
- * Class representing CashRegisterType
- *
+ * Class representing CashRegisterType.
  *
  * XSD Type: cashRegisterType
  */
 class CashRegisterType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
-     *
-     * @var \Pohoda\CashRegister\ActionTypeType $actionType
      */
-    private $actionType = null;
+    private \Pohoda\CashRegister\ActionTypeType $actionType = null;
+    private \Pohoda\CashRegister\CashRegisterHeaderType $cashRegisterHeader = null;
 
     /**
-     * @var \Pohoda\CashRegister\CashRegisterHeaderType $cashRegisterHeader
-     */
-    private $cashRegisterHeader = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -38,19 +41,21 @@ class CashRegisterType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as actionType
+     * Gets as actionType.
      *
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      *
@@ -62,21 +67,21 @@ class CashRegisterType
     }
 
     /**
-     * Sets a new actionType
+     * Sets a new actionType.
      *
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      *
-     * @param \Pohoda\CashRegister\ActionTypeType $actionType
      * @return self
      */
     public function setActionType(?\Pohoda\CashRegister\ActionTypeType $actionType = null)
     {
         $this->actionType = $actionType;
+
         return $this;
     }
 
     /**
-     * Gets as cashRegisterHeader
+     * Gets as cashRegisterHeader.
      *
      * @return \Pohoda\CashRegister\CashRegisterHeaderType
      */
@@ -86,14 +91,14 @@ class CashRegisterType
     }
 
     /**
-     * Sets a new cashRegisterHeader
+     * Sets a new cashRegisterHeader.
      *
-     * @param \Pohoda\CashRegister\CashRegisterHeaderType $cashRegisterHeader
      * @return self
      */
     public function setCashRegisterHeader(?\Pohoda\CashRegister\CashRegisterHeaderType $cashRegisterHeader = null)
     {
         $this->cashRegisterHeader = $cashRegisterHeader;
+
         return $this;
     }
 }

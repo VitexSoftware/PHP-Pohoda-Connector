@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing ShipToAddressType
+ * Class representing ShipToAddressType.
  *
  * Dodací adresa.
  * XSD Type: shipToAddressType
@@ -12,81 +25,39 @@ class ShipToAddressType
 {
     /**
      * Typ práce s dodací adresou. Výchozí hodnota je přidání nového dodací adresy.
-     *
-     * @var \Pohoda\Type\ActionTypeItemType $actionType
      */
-    private $actionType = null;
+    private \Pohoda\Type\ActionTypeItemType $actionType = null;
 
     /**
      * ID dodací adresy.
-     *
-     * @var int $id
      */
-    private $id = null;
-
-    /**
-     * @var string $extId
-     */
-    private $extId = null;
-
-    /**
-     * @var string $company
-     */
-    private $company = null;
-
-    /**
-     * @var string $division
-     */
-    private $division = null;
-
-    /**
-     * @var string $name
-     */
-    private $name = null;
-
-    /**
-     * @var string $city
-     */
-    private $city = null;
-
-    /**
-     * @var string $street
-     */
-    private $street = null;
-
-    /**
-     * @var string $zip
-     */
-    private $zip = null;
-
-    /**
-     * @var \Pohoda\Type\RefType $country
-     */
-    private $country = null;
+    private int $id = null;
+    private string $extId = null;
+    private string $company = null;
+    private string $division = null;
+    private string $name = null;
+    private string $city = null;
+    private string $street = null;
+    private string $zip = null;
+    private \Pohoda\Type\RefType $country = null;
 
     /**
      * Pouze pro agendy vydané nabídky, přijaté poptávky, přijaté objednávky, vydané faktury, vydané zálohové faktury, ostatní pohledávky, interní doklady, prodejky a výdejky.
-     *
-     * @var string $phone
      */
-    private $phone = null;
+    private string $phone = null;
 
     /**
      * Pouze pro agendy vydané nabídky, přijaté poptávky, přijaté objednávky, vydané faktury, vydané zálohové faktury, ostatní pohledávky, interní doklady, prodejky a výdejky.
-     *
-     * @var string $email
      */
-    private $email = null;
+    private string $email = null;
 
     /**
      * Výchozí dodací adresa.
-     *
-     * @var string $defaultShipAddress
      */
-    private $defaultShipAddress = null;
+    private string $defaultShipAddress = null;
 
     /**
-     * Gets as actionType
+     * Gets as actionType.
      *
      * Typ práce s dodací adresou. Výchozí hodnota je přidání nového dodací adresy.
      *
@@ -98,21 +69,21 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new actionType
+     * Sets a new actionType.
      *
      * Typ práce s dodací adresou. Výchozí hodnota je přidání nového dodací adresy.
      *
-     * @param \Pohoda\Type\ActionTypeItemType $actionType
      * @return self
      */
     public function setActionType(?\Pohoda\Type\ActionTypeItemType $actionType = null)
     {
         $this->actionType = $actionType;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID dodací adresy.
      *
@@ -124,21 +95,23 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID dodací adresy.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * @return string
      */
@@ -148,19 +121,21 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * @param string $extId
+     *
      * @return self
      */
     public function setExtId($extId)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as company
+     * Gets as company.
      *
      * @return string
      */
@@ -170,19 +145,21 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new company
+     * Sets a new company.
      *
      * @param string $company
+     *
      * @return self
      */
     public function setCompany($company)
     {
         $this->company = $company;
+
         return $this;
     }
 
     /**
-     * Gets as division
+     * Gets as division.
      *
      * @return string
      */
@@ -192,19 +169,21 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new division
+     * Sets a new division.
      *
      * @param string $division
+     *
      * @return self
      */
     public function setDivision($division)
     {
         $this->division = $division;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * @return string
      */
@@ -214,19 +193,21 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as city
+     * Gets as city.
      *
      * @return string
      */
@@ -236,19 +217,21 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new city
+     * Sets a new city.
      *
      * @param string $city
+     *
      * @return self
      */
     public function setCity($city)
     {
         $this->city = $city;
+
         return $this;
     }
 
     /**
-     * Gets as street
+     * Gets as street.
      *
      * @return string
      */
@@ -258,19 +241,21 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new street
+     * Sets a new street.
      *
      * @param string $street
+     *
      * @return self
      */
     public function setStreet($street)
     {
         $this->street = $street;
+
         return $this;
     }
 
     /**
-     * Gets as zip
+     * Gets as zip.
      *
      * @return string
      */
@@ -280,19 +265,21 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new zip
+     * Sets a new zip.
      *
      * @param string $zip
+     *
      * @return self
      */
     public function setZip($zip)
     {
         $this->zip = $zip;
+
         return $this;
     }
 
     /**
-     * Gets as country
+     * Gets as country.
      *
      * @return \Pohoda\Type\RefType
      */
@@ -302,19 +289,19 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new country
+     * Sets a new country.
      *
-     * @param \Pohoda\Type\RefType $country
      * @return self
      */
     public function setCountry(?\Pohoda\Type\RefType $country = null)
     {
         $this->country = $country;
+
         return $this;
     }
 
     /**
-     * Gets as phone
+     * Gets as phone.
      *
      * Pouze pro agendy vydané nabídky, přijaté poptávky, přijaté objednávky, vydané faktury, vydané zálohové faktury, ostatní pohledávky, interní doklady, prodejky a výdejky.
      *
@@ -326,21 +313,23 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new phone
+     * Sets a new phone.
      *
      * Pouze pro agendy vydané nabídky, přijaté poptávky, přijaté objednávky, vydané faktury, vydané zálohové faktury, ostatní pohledávky, interní doklady, prodejky a výdejky.
      *
      * @param string $phone
+     *
      * @return self
      */
     public function setPhone($phone)
     {
         $this->phone = $phone;
+
         return $this;
     }
 
     /**
-     * Gets as email
+     * Gets as email.
      *
      * Pouze pro agendy vydané nabídky, přijaté poptávky, přijaté objednávky, vydané faktury, vydané zálohové faktury, ostatní pohledávky, interní doklady, prodejky a výdejky.
      *
@@ -352,21 +341,23 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new email
+     * Sets a new email.
      *
      * Pouze pro agendy vydané nabídky, přijaté poptávky, přijaté objednávky, vydané faktury, vydané zálohové faktury, ostatní pohledávky, interní doklady, prodejky a výdejky.
      *
      * @param string $email
+     *
      * @return self
      */
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
     /**
-     * Gets as defaultShipAddress
+     * Gets as defaultShipAddress.
      *
      * Výchozí dodací adresa.
      *
@@ -378,16 +369,18 @@ class ShipToAddressType
     }
 
     /**
-     * Sets a new defaultShipAddress
+     * Sets a new defaultShipAddress.
      *
      * Výchozí dodací adresa.
      *
      * @param string $defaultShipAddress
+     *
      * @return self
      */
     public function setDefaultShipAddress($defaultShipAddress)
     {
         $this->defaultShipAddress = $defaultShipAddress;
+
         return $this;
     }
 }

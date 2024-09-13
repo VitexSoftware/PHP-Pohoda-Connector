@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Category;
 
 /**
- * Class representing CategoryType
+ * Class representing CategoryType.
  *
  * Údaje kategorie internetového obchodu.
  * XSD Type: categoryType
@@ -12,78 +25,54 @@ class CategoryType
 {
     /**
      * ID nadřazené kategorie (jen pro import). Pokud hodnota není uvedena, jedná se o nejvyšší kategorii. Nelze použít u subCategories.
-     *
-     * @var int $parentId
      */
-    private $parentId = null;
+    private int $parentId = null;
 
     /**
      * ID záznamu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Jedinečný název Kategorie internetového obchodu (např. GUID).
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Textový popis kategorie.
-     *
-     * @var string $description
      */
-    private $description = null;
+    private string $description = null;
 
     /**
      * Prostřednictvím pole Pořadí můžete určovat pořadí kategorií v jednotlivých větvích stromu. Kategorie s nejmenší hodnotou je na prvním místě.
      *  Každá zadaná kategorie má svoje ID.
-     *
-     * @var int $sequence
      */
-    private $sequence = null;
+    private int $sequence = null;
 
     /**
      * Zobrazení. Určuje, zda je kategorie přenášena na internetový obchod.
-     *
-     * @var string $displayed
      */
-    private $displayed = null;
+    private string $displayed = null;
 
     /**
      * Název obrázku. Soubor se musí nacházet v adresáři Dokumenty\firma\Obrázky\. Název obrázku se uvádí bez cesty.
-     *
-     * @var string $picture
      */
-    private $picture = null;
-
-    /**
-     * @var string $note
-     */
-    private $note = null;
+    private string $picture = null;
+    private string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
-     * @var \Pohoda\Category\CategoryType[] $subCategories
+     * @var \Pohoda\Category\CategoryType[]
      */
-    private $subCategories = null;
+    private array $subCategories = null;
+    private \Pohoda\Category\InternetParamsType $internetParams = null;
 
     /**
-     * @var \Pohoda\Category\InternetParamsType $internetParams
-     */
-    private $internetParams = null;
-
-    /**
-     * Gets as parentId
+     * Gets as parentId.
      *
      * ID nadřazené kategorie (jen pro import). Pokud hodnota není uvedena, jedná se o nejvyšší kategorii. Nelze použít u subCategories.
      *
@@ -95,21 +84,23 @@ class CategoryType
     }
 
     /**
-     * Sets a new parentId
+     * Sets a new parentId.
      *
      * ID nadřazené kategorie (jen pro import). Pokud hodnota není uvedena, jedná se o nejvyšší kategorii. Nelze použít u subCategories.
      *
      * @param int $parentId
+     *
      * @return self
      */
     public function setParentId($parentId)
     {
         $this->parentId = $parentId;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu (jen pro export).
      *
@@ -121,21 +112,23 @@ class CategoryType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Jedinečný název Kategorie internetového obchodu (např. GUID).
      *
@@ -147,21 +140,23 @@ class CategoryType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Jedinečný název Kategorie internetového obchodu (např. GUID).
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as description
+     * Gets as description.
      *
      * Textový popis kategorie.
      *
@@ -173,21 +168,23 @@ class CategoryType
     }
 
     /**
-     * Sets a new description
+     * Sets a new description.
      *
      * Textový popis kategorie.
      *
      * @param string $description
+     *
      * @return self
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
     /**
-     * Gets as sequence
+     * Gets as sequence.
      *
      * Prostřednictvím pole Pořadí můžete určovat pořadí kategorií v jednotlivých větvích stromu. Kategorie s nejmenší hodnotou je na prvním místě.
      *  Každá zadaná kategorie má svoje ID.
@@ -200,22 +197,24 @@ class CategoryType
     }
 
     /**
-     * Sets a new sequence
+     * Sets a new sequence.
      *
      * Prostřednictvím pole Pořadí můžete určovat pořadí kategorií v jednotlivých větvích stromu. Kategorie s nejmenší hodnotou je na prvním místě.
      *  Každá zadaná kategorie má svoje ID.
      *
      * @param int $sequence
+     *
      * @return self
      */
     public function setSequence($sequence)
     {
         $this->sequence = $sequence;
+
         return $this;
     }
 
     /**
-     * Gets as displayed
+     * Gets as displayed.
      *
      * Zobrazení. Určuje, zda je kategorie přenášena na internetový obchod.
      *
@@ -227,21 +226,23 @@ class CategoryType
     }
 
     /**
-     * Sets a new displayed
+     * Sets a new displayed.
      *
      * Zobrazení. Určuje, zda je kategorie přenášena na internetový obchod.
      *
      * @param string $displayed
+     *
      * @return self
      */
     public function setDisplayed($displayed)
     {
         $this->displayed = $displayed;
+
         return $this;
     }
 
     /**
-     * Gets as picture
+     * Gets as picture.
      *
      * Název obrázku. Soubor se musí nacházet v adresáři Dokumenty\firma\Obrázky\. Název obrázku se uvádí bez cesty.
      *
@@ -253,21 +254,23 @@ class CategoryType
     }
 
     /**
-     * Sets a new picture
+     * Sets a new picture.
      *
      * Název obrázku. Soubor se musí nacházet v adresáři Dokumenty\firma\Obrázky\. Název obrázku se uvádí bez cesty.
      *
      * @param string $picture
+     *
      * @return self
      */
     public function setPicture($picture)
     {
         $this->picture = $picture;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * @return string
      */
@@ -277,19 +280,21 @@ class CategoryType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -301,35 +306,38 @@ class CategoryType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as category
+     * Adds as category.
      *
      * @return self
-     * @param \Pohoda\Category\CategoryType $category
      */
-    public function addToSubCategories(\Pohoda\Category\CategoryType $category)
+    public function addToSubCategories(self $category)
     {
         $this->subCategories[] = $category;
+
         return $this;
     }
 
     /**
-     * isset subCategories
+     * isset subCategories.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetSubCategories($index)
@@ -338,18 +346,17 @@ class CategoryType
     }
 
     /**
-     * unset subCategories
+     * unset subCategories.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetSubCategories($index)
+    public function unsetSubCategories($index): void
     {
         unset($this->subCategories[$index]);
     }
 
     /**
-     * Gets as subCategories
+     * Gets as subCategories.
      *
      * @return \Pohoda\Category\CategoryType[]
      */
@@ -359,19 +366,21 @@ class CategoryType
     }
 
     /**
-     * Sets a new subCategories
+     * Sets a new subCategories.
      *
      * @param \Pohoda\Category\CategoryType[] $subCategories
+     *
      * @return self
      */
-    public function setSubCategories(array $subCategories = null)
+    public function setSubCategories(?array $subCategories = null)
     {
         $this->subCategories = $subCategories;
+
         return $this;
     }
 
     /**
-     * Gets as internetParams
+     * Gets as internetParams.
      *
      * @return \Pohoda\Category\InternetParamsType
      */
@@ -381,14 +390,14 @@ class CategoryType
     }
 
     /**
-     * Sets a new internetParams
+     * Sets a new internetParams.
      *
-     * @param \Pohoda\Category\InternetParamsType $internetParams
      * @return self
      */
     public function setInternetParams(?\Pohoda\Category\InternetParamsType $internetParams = null)
     {
         $this->internetParams = $internetParams;
+
         return $this;
     }
 }

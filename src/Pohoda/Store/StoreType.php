@@ -1,120 +1,103 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Store;
 
 /**
- * Class representing StoreType
- *
+ * Class representing StoreType.
  *
  * XSD Type: storeType
  */
 class StoreType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * ID záznamu (pouze pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Název skladu.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Popis nebo plný název nebo adresa skladu.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Povolit stav zásob do minusu.
-     *
-     * @var string $allowNegInvBalance
      */
-    private $allowNegInvBalance = null;
+    private string $allowNegInvBalance = null;
 
     /**
      * Skladník.
-     *
-     * @var \Pohoda\Type\RefType $storekeeper
      */
-    private $storekeeper = null;
+    private \Pohoda\Type\RefType $storekeeper = null;
 
     /**
      * PLU.
-     *
-     * @var \Pohoda\Store\PLUtypeType $pLU
      */
-    private $pLU = null;
+    private \Pohoda\Store\PLUtypeType $pLU = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Zdrojový sklad.
-     *
-     * @var bool $sourceStore
      */
-    private $sourceStore = null;
+    private bool $sourceStore = null;
 
     /**
      * Cílový sklad.
-     *
-     * @var bool $destinationStore
      */
-    private $destinationStore = null;
+    private bool $destinationStore = null;
 
     /**
      * Založit skladovou zásobu.
-     *
-     * @var bool $createInventoryCard
      */
-    private $createInventoryCard = null;
+    private bool $createInventoryCard = null;
 
     /**
      * Jednotka PZD. Nastavení vlastníka skladu v režimu „Pobočkové zpracování dat“.
-     *
-     * @var \Pohoda\Type\RefType $unitPZD
      */
-    private $unitPZD = null;
+    private \Pohoda\Type\RefType $unitPZD = null;
 
     /**
      * Sklady A.
-     *
-     * @var \Pohoda\Store\AccStockAType $accStockA
      */
-    private $accStockA = null;
+    private \Pohoda\Store\AccStockAType $accStockA = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -124,19 +107,21 @@ class StoreType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu (pouze pro export).
      *
@@ -148,21 +133,23 @@ class StoreType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu (pouze pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název skladu.
      *
@@ -174,21 +161,23 @@ class StoreType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název skladu.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Popis nebo plný název nebo adresa skladu.
      *
@@ -200,21 +189,23 @@ class StoreType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Popis nebo plný název nebo adresa skladu.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as allowNegInvBalance
+     * Gets as allowNegInvBalance.
      *
      * Povolit stav zásob do minusu.
      *
@@ -226,21 +217,23 @@ class StoreType
     }
 
     /**
-     * Sets a new allowNegInvBalance
+     * Sets a new allowNegInvBalance.
      *
      * Povolit stav zásob do minusu.
      *
      * @param string $allowNegInvBalance
+     *
      * @return self
      */
     public function setAllowNegInvBalance($allowNegInvBalance)
     {
         $this->allowNegInvBalance = $allowNegInvBalance;
+
         return $this;
     }
 
     /**
-     * Gets as storekeeper
+     * Gets as storekeeper.
      *
      * Skladník.
      *
@@ -252,21 +245,21 @@ class StoreType
     }
 
     /**
-     * Sets a new storekeeper
+     * Sets a new storekeeper.
      *
      * Skladník.
      *
-     * @param \Pohoda\Type\RefType $storekeeper
      * @return self
      */
     public function setStorekeeper(?\Pohoda\Type\RefType $storekeeper = null)
     {
         $this->storekeeper = $storekeeper;
+
         return $this;
     }
 
     /**
-     * Gets as pLU
+     * Gets as pLU.
      *
      * PLU.
      *
@@ -278,21 +271,21 @@ class StoreType
     }
 
     /**
-     * Sets a new pLU
+     * Sets a new pLU.
      *
      * PLU.
      *
-     * @param \Pohoda\Store\PLUtypeType $pLU
      * @return self
      */
     public function setPLU(?\Pohoda\Store\PLUtypeType $pLU = null)
     {
         $this->pLU = $pLU;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -304,21 +297,23 @@ class StoreType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -330,21 +325,23 @@ class StoreType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Gets as sourceStore
+     * Gets as sourceStore.
      *
      * Zdrojový sklad.
      *
@@ -356,21 +353,23 @@ class StoreType
     }
 
     /**
-     * Sets a new sourceStore
+     * Sets a new sourceStore.
      *
      * Zdrojový sklad.
      *
      * @param bool $sourceStore
+     *
      * @return self
      */
     public function setSourceStore($sourceStore)
     {
         $this->sourceStore = $sourceStore;
+
         return $this;
     }
 
     /**
-     * Gets as destinationStore
+     * Gets as destinationStore.
      *
      * Cílový sklad.
      *
@@ -382,21 +381,23 @@ class StoreType
     }
 
     /**
-     * Sets a new destinationStore
+     * Sets a new destinationStore.
      *
      * Cílový sklad.
      *
      * @param bool $destinationStore
+     *
      * @return self
      */
     public function setDestinationStore($destinationStore)
     {
         $this->destinationStore = $destinationStore;
+
         return $this;
     }
 
     /**
-     * Gets as createInventoryCard
+     * Gets as createInventoryCard.
      *
      * Založit skladovou zásobu.
      *
@@ -408,21 +409,23 @@ class StoreType
     }
 
     /**
-     * Sets a new createInventoryCard
+     * Sets a new createInventoryCard.
      *
      * Založit skladovou zásobu.
      *
      * @param bool $createInventoryCard
+     *
      * @return self
      */
     public function setCreateInventoryCard($createInventoryCard)
     {
         $this->createInventoryCard = $createInventoryCard;
+
         return $this;
     }
 
     /**
-     * Gets as unitPZD
+     * Gets as unitPZD.
      *
      * Jednotka PZD. Nastavení vlastníka skladu v režimu „Pobočkové zpracování dat“.
      *
@@ -434,21 +437,21 @@ class StoreType
     }
 
     /**
-     * Sets a new unitPZD
+     * Sets a new unitPZD.
      *
      * Jednotka PZD. Nastavení vlastníka skladu v režimu „Pobočkové zpracování dat“.
      *
-     * @param \Pohoda\Type\RefType $unitPZD
      * @return self
      */
     public function setUnitPZD(?\Pohoda\Type\RefType $unitPZD = null)
     {
         $this->unitPZD = $unitPZD;
+
         return $this;
     }
 
     /**
-     * Gets as accStockA
+     * Gets as accStockA.
      *
      * Sklady A.
      *
@@ -460,39 +463,40 @@ class StoreType
     }
 
     /**
-     * Sets a new accStockA
+     * Sets a new accStockA.
      *
      * Sklady A.
      *
-     * @param \Pohoda\Store\AccStockAType $accStockA
      * @return self
      */
     public function setAccStockA(?\Pohoda\Store\AccStockAType $accStockA = null)
     {
         $this->accStockA = $accStockA;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -501,20 +505,19 @@ class StoreType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -526,16 +529,18 @@ class StoreType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

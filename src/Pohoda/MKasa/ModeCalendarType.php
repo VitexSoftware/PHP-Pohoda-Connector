@@ -1,77 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\MKasa;
 
 /**
- * Class representing ModeCalendarType
- *
+ * Class representing ModeCalendarType.
  *
  * XSD Type: modeCalendarType
  */
 class ModeCalendarType
 {
-    /**
-     * @var string $january
-     */
-    private $january = null;
+    private string $january = null;
+    private string $february = null;
+    private string $march = null;
+    private string $april = null;
+    private string $may = null;
+    private string $june = null;
+    private string $july = null;
+    private string $august = null;
+    private string $september = null;
+    private string $october = null;
+    private string $november = null;
+    private string $december = null;
 
     /**
-     * @var string $february
-     */
-    private $february = null;
-
-    /**
-     * @var string $march
-     */
-    private $march = null;
-
-    /**
-     * @var string $april
-     */
-    private $april = null;
-
-    /**
-     * @var string $may
-     */
-    private $may = null;
-
-    /**
-     * @var string $june
-     */
-    private $june = null;
-
-    /**
-     * @var string $july
-     */
-    private $july = null;
-
-    /**
-     * @var string $august
-     */
-    private $august = null;
-
-    /**
-     * @var string $september
-     */
-    private $september = null;
-
-    /**
-     * @var string $october
-     */
-    private $october = null;
-
-    /**
-     * @var string $november
-     */
-    private $november = null;
-
-    /**
-     * @var string $december
-     */
-    private $december = null;
-
-    /**
-     * Gets as january
+     * Gets as january.
      *
      * @return string
      */
@@ -81,19 +46,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new january
+     * Sets a new january.
      *
      * @param string $january
+     *
      * @return self
      */
     public function setJanuary($january)
     {
         $this->january = $january;
+
         return $this;
     }
 
     /**
-     * Gets as february
+     * Gets as february.
      *
      * @return string
      */
@@ -103,19 +70,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new february
+     * Sets a new february.
      *
      * @param string $february
+     *
      * @return self
      */
     public function setFebruary($february)
     {
         $this->february = $february;
+
         return $this;
     }
 
     /**
-     * Gets as march
+     * Gets as march.
      *
      * @return string
      */
@@ -125,19 +94,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new march
+     * Sets a new march.
      *
      * @param string $march
+     *
      * @return self
      */
     public function setMarch($march)
     {
         $this->march = $march;
+
         return $this;
     }
 
     /**
-     * Gets as april
+     * Gets as april.
      *
      * @return string
      */
@@ -147,19 +118,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new april
+     * Sets a new april.
      *
      * @param string $april
+     *
      * @return self
      */
     public function setApril($april)
     {
         $this->april = $april;
+
         return $this;
     }
 
     /**
-     * Gets as may
+     * Gets as may.
      *
      * @return string
      */
@@ -169,19 +142,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new may
+     * Sets a new may.
      *
      * @param string $may
+     *
      * @return self
      */
     public function setMay($may)
     {
         $this->may = $may;
+
         return $this;
     }
 
     /**
-     * Gets as june
+     * Gets as june.
      *
      * @return string
      */
@@ -191,19 +166,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new june
+     * Sets a new june.
      *
      * @param string $june
+     *
      * @return self
      */
     public function setJune($june)
     {
         $this->june = $june;
+
         return $this;
     }
 
     /**
-     * Gets as july
+     * Gets as july.
      *
      * @return string
      */
@@ -213,19 +190,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new july
+     * Sets a new july.
      *
      * @param string $july
+     *
      * @return self
      */
     public function setJuly($july)
     {
         $this->july = $july;
+
         return $this;
     }
 
     /**
-     * Gets as august
+     * Gets as august.
      *
      * @return string
      */
@@ -235,19 +214,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new august
+     * Sets a new august.
      *
      * @param string $august
+     *
      * @return self
      */
     public function setAugust($august)
     {
         $this->august = $august;
+
         return $this;
     }
 
     /**
-     * Gets as september
+     * Gets as september.
      *
      * @return string
      */
@@ -257,19 +238,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new september
+     * Sets a new september.
      *
      * @param string $september
+     *
      * @return self
      */
     public function setSeptember($september)
     {
         $this->september = $september;
+
         return $this;
     }
 
     /**
-     * Gets as october
+     * Gets as october.
      *
      * @return string
      */
@@ -279,19 +262,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new october
+     * Sets a new october.
      *
      * @param string $october
+     *
      * @return self
      */
     public function setOctober($october)
     {
         $this->october = $october;
+
         return $this;
     }
 
     /**
-     * Gets as november
+     * Gets as november.
      *
      * @return string
      */
@@ -301,19 +286,21 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new november
+     * Sets a new november.
      *
      * @param string $november
+     *
      * @return self
      */
     public function setNovember($november)
     {
         $this->november = $november;
+
         return $this;
     }
 
     /**
-     * Gets as december
+     * Gets as december.
      *
      * @return string
      */
@@ -323,14 +310,16 @@ class ModeCalendarType
     }
 
     /**
-     * Sets a new december
+     * Sets a new december.
      *
      * @param string $december
+     *
      * @return self
      */
     public function setDecember($december)
     {
         $this->december = $december;
+
         return $this;
     }
 }

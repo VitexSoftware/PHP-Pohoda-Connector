@@ -1,47 +1,48 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListEnquiryRequestType
- *
+ * Class representing ListEnquiryRequestType.
  *
  * XSD Type: listEnquiryRequestType
  */
 class ListEnquiryRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
-
-    /**
-     * @var string $enquiryType
-     */
-    private $enquiryType = null;
+    private string $version = null;
+    private string $enquiryType = null;
 
     /**
      * Požadovaná verze dokladu.
-     *
-     * @var string $enquiryVersion
      */
-    private $enquiryVersion = null;
+    private string $enquiryVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
 
     /**
-     * @var \Pohoda\Filter\RequestEnquiryType[] $requestEnquiry
+     * @var \Pohoda\Filter\RequestEnquiryType[]
      */
-    private $requestEnquiry = [
+    private array $requestEnquiry = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -51,19 +52,21 @@ class ListEnquiryRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as enquiryType
+     * Gets as enquiryType.
      *
      * @return string
      */
@@ -73,19 +76,21 @@ class ListEnquiryRequestType
     }
 
     /**
-     * Sets a new enquiryType
+     * Sets a new enquiryType.
      *
      * @param string $enquiryType
+     *
      * @return self
      */
     public function setEnquiryType($enquiryType)
     {
         $this->enquiryType = $enquiryType;
+
         return $this;
     }
 
     /**
-     * Gets as enquiryVersion
+     * Gets as enquiryVersion.
      *
      * Požadovaná verze dokladu.
      *
@@ -97,21 +102,23 @@ class ListEnquiryRequestType
     }
 
     /**
-     * Sets a new enquiryVersion
+     * Sets a new enquiryVersion.
      *
      * Požadovaná verze dokladu.
      *
      * @param string $enquiryVersion
+     *
      * @return self
      */
     public function setEnquiryVersion($enquiryVersion)
     {
         $this->enquiryVersion = $enquiryVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -123,35 +130,38 @@ class ListEnquiryRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Adds as requestEnquiry
+     * Adds as requestEnquiry.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestEnquiryType $requestEnquiry
      */
     public function addToRequestEnquiry(\Pohoda\Filter\RequestEnquiryType $requestEnquiry)
     {
         $this->requestEnquiry[] = $requestEnquiry;
+
         return $this;
     }
 
     /**
-     * isset requestEnquiry
+     * isset requestEnquiry.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestEnquiry($index)
@@ -160,18 +170,17 @@ class ListEnquiryRequestType
     }
 
     /**
-     * unset requestEnquiry
+     * unset requestEnquiry.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestEnquiry($index)
+    public function unsetRequestEnquiry($index): void
     {
         unset($this->requestEnquiry[$index]);
     }
 
     /**
-     * Gets as requestEnquiry
+     * Gets as requestEnquiry.
      *
      * @return \Pohoda\Filter\RequestEnquiryType[]
      */
@@ -181,14 +190,16 @@ class ListEnquiryRequestType
     }
 
     /**
-     * Sets a new requestEnquiry
+     * Sets a new requestEnquiry.
      *
      * @param \Pohoda\Filter\RequestEnquiryType[] $requestEnquiry
+     *
      * @return self
      */
     public function setRequestEnquiry(array $requestEnquiry)
     {
         $this->requestEnquiry = $requestEnquiry;
+
         return $this;
     }
 }

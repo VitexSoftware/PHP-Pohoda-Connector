@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListActivityType
- *
+ * Class representing ListActivityType.
  *
  * XSD Type: listActivityType
  */
 class ListActivityType extends ListVersionType
 {
     /**
-     * @var \Pohoda\List\ItemNameType[] $itemActivity
+     * @var \Pohoda\List\ItemNameType[]
      */
-    private $itemActivity = [
+    private array $itemActivity = [
     ];
 
     /**
-     * Adds as itemActivity
+     * Adds as itemActivity.
      *
      * @return self
-     * @param \Pohoda\List\ItemNameType $itemActivity
      */
     public function addToItemActivity(\Pohoda\List\ItemNameType $itemActivity)
     {
         $this->itemActivity[] = $itemActivity;
+
         return $this;
     }
 
     /**
-     * isset itemActivity
+     * isset itemActivity.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetItemActivity($index)
@@ -42,18 +55,17 @@ class ListActivityType extends ListVersionType
     }
 
     /**
-     * unset itemActivity
+     * unset itemActivity.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetItemActivity($index)
+    public function unsetItemActivity($index): void
     {
         unset($this->itemActivity[$index]);
     }
 
     /**
-     * Gets as itemActivity
+     * Gets as itemActivity.
      *
      * @return \Pohoda\List\ItemNameType[]
      */
@@ -63,14 +75,16 @@ class ListActivityType extends ListVersionType
     }
 
     /**
-     * Sets a new itemActivity
+     * Sets a new itemActivity.
      *
      * @param \Pohoda\List\ItemNameType[] $itemActivity
+     *
      * @return self
      */
-    public function setItemActivity(array $itemActivity = null)
+    public function setItemActivity(?array $itemActivity = null)
     {
         $this->itemActivity = $itemActivity;
+
         return $this;
     }
 }

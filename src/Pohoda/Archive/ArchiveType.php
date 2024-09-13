@@ -1,28 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Archive;
 
 /**
- * Class representing ArchiveType
- *
+ * Class representing ArchiveType.
  *
  * XSD Type: archiveType
  */
 class ArchiveType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
-     * @var \Pohoda\Archive\VariableType[] $variable
+     * @var \Pohoda\Archive\VariableType[]
      */
-    private $variable = [
+    private array $variable = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -32,33 +41,36 @@ class ArchiveType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Adds as variable
+     * Adds as variable.
      *
      * @return self
-     * @param \Pohoda\Archive\VariableType $variable
      */
     public function addToVariable(\Pohoda\Archive\VariableType $variable)
     {
         $this->variable[] = $variable;
+
         return $this;
     }
 
     /**
-     * isset variable
+     * isset variable.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetVariable($index)
@@ -67,18 +79,17 @@ class ArchiveType
     }
 
     /**
-     * unset variable
+     * unset variable.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetVariable($index)
+    public function unsetVariable($index): void
     {
         unset($this->variable[$index]);
     }
 
     /**
-     * Gets as variable
+     * Gets as variable.
      *
      * @return \Pohoda\Archive\VariableType[]
      */
@@ -88,14 +99,16 @@ class ArchiveType
     }
 
     /**
-     * Sets a new variable
+     * Sets a new variable.
      *
      * @param \Pohoda\Archive\VariableType[] $variable
+     *
      * @return self
      */
-    public function setVariable(array $variable = null)
+    public function setVariable(?array $variable = null)
     {
         $this->variable = $variable;
+
         return $this;
     }
 }

@@ -1,447 +1,116 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Data;
 
 /**
- * Class representing DataPackItemType
- *
+ * Class representing DataPackItemType.
  *
  * XSD Type: dataPackItemType
  */
 class DataPackItemType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
-
-    /**
-     * @var string $id
-     */
-    private $id = null;
-
-    /**
-     * @var \Pohoda\AddressBook\Addressbook $addressbook
-     */
-    private $addressbook = null;
-
-    /**
-     * @var \Pohoda\Enquiry\Enquiry $enquiry
-     */
-    private $enquiry = null;
-
-    /**
-     * @var \Pohoda\IntDoc\IntDoc $intDoc
-     */
-    private $intDoc = null;
-
-    /**
-     * @var \Pohoda\Invoice\Invoice $invoice
-     */
-    private $invoice = null;
-
-    /**
-     * @var \Pohoda\Offer\Offer $offer
-     */
-    private $offer = null;
-
-    /**
-     * @var \Pohoda\Order\Order $order
-     */
-    private $order = null;
-
-    /**
-     * @var \Pohoda\Prodejka\Prodejka $prodejka
-     */
-    private $prodejka = null;
-
-    /**
-     * @var \Pohoda\Prijemka\Prijemka $prijemka
-     */
-    private $prijemka = null;
-
-    /**
-     * @var \Pohoda\Prevodka\Prevodka $prevodka
-     */
-    private $prevodka = null;
-
-    /**
-     * @var \Pohoda\Stock\Stock $stock
-     */
-    private $stock = null;
-
-    /**
-     * @var \Pohoda\Voucher\Voucher $voucher
-     */
-    private $voucher = null;
-
-    /**
-     * @var \Pohoda\Vydejka\Vydejka $vydejka
-     */
-    private $vydejka = null;
-
-    /**
-     * @var \Pohoda\Vyroba\Vyroba $vyroba
-     */
-    private $vyroba = null;
-
-    /**
-     * @var \Pohoda\Contract\Contract $contract
-     */
-    private $contract = null;
-
-    /**
-     * @var \Pohoda\Store\Store $store
-     */
-    private $store = null;
-
-    /**
-     * @var \Pohoda\GroupStocks\GroupStocks $groupStocks
-     */
-    private $groupStocks = null;
-
-    /**
-     * @var \Pohoda\Storage\Storage $storage
-     */
-    private $storage = null;
-
-    /**
-     * @var \Pohoda\Category\CategoryDetail $categoryDetail
-     */
-    private $categoryDetail = null;
-
-    /**
-     * @var \Pohoda\Parameter\Parameter $parameter
-     */
-    private $parameter = null;
-
-    /**
-     * @var \Pohoda\IntParam\IntParamDetail $intParamDetail
-     */
-    private $intParamDetail = null;
-
-    /**
-     * @var \Pohoda\InventoryLists\InventoryLists $inventoryLists
-     */
-    private $inventoryLists = null;
-
-    /**
-     * @var \Pohoda\NumericalSeries\NumericalSeries $numericalSeries
-     */
-    private $numericalSeries = null;
-
-    /**
-     * @var \Pohoda\Gdpr\GDPR $gDPR
-     */
-    private $gDPR = null;
-
-    /**
-     * @var \Pohoda\ProductRequirement\ProductRequirement $productRequirement
-     */
-    private $productRequirement = null;
-
-    /**
-     * @var \Pohoda\Bank\Bank $bank
-     */
-    private $bank = null;
-
-    /**
-     * @var \Pohoda\BankAccount\BankAccount $bankAccount
-     */
-    private $bankAccount = null;
-
-    /**
-     * @var \Pohoda\RulesPairing\RulesPairing $rulesPairing
-     */
-    private $rulesPairing = null;
-
-    /**
-     * @var \Pohoda\Discount\Discount $discount
-     */
-    private $discount = null;
-
-    /**
-     * @var \Pohoda\Service\Service $service
-     */
-    private $service = null;
-
-    /**
-     * @var \Pohoda\List\ListAccountancyRequest $listAccountancyRequest
-     */
-    private $listAccountancyRequest = null;
-
-    /**
-     * @var \Pohoda\ListAddBook\ListAddressBookRequest $listAddressBookRequest
-     */
-    private $listAddressBookRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListInvoiceRequest $listInvoiceRequest
-     */
-    private $listInvoiceRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListEnquiryRequest $listEnquiryRequest
-     */
-    private $listEnquiryRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListOfferRequest $listOfferRequest
-     */
-    private $listOfferRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListOrderRequest $listOrderRequest
-     */
-    private $listOrderRequest = null;
-
-    /**
-     * @var \Pohoda\ListStock\ListStockRequest $listStockRequest
-     */
-    private $listStockRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListParameterRequest $listParameterRequest
-     */
-    private $listParameterRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListVydejkaRequest $listVydejkaRequest
-     */
-    private $listVydejkaRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListPrijemkaRequest $listPrijemkaRequest
-     */
-    private $listPrijemkaRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListBalanceRequest $listBalanceRequest
-     */
-    private $listBalanceRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListProductRequirementRequest $listProductRequirementRequest
-     */
-    private $listProductRequirementRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListBankRequest $listBankRequest
-     */
-    private $listBankRequest = null;
-
-    /**
-     * @var \Pohoda\List\CreateAccountingDoubleEntry $createAccountingDoubleEntry
-     */
-    private $createAccountingDoubleEntry = null;
-
-    /**
-     * @var \Pohoda\List\ListUserCode $listUserCode
-     */
-    private $listUserCode = null;
-
-    /**
-     * @var \Pohoda\Accountingunit\ListAccountingUnitRequest $listAccountingUnitRequest
-     */
-    private $listAccountingUnitRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListAccountingDoubleEntryRequest $listAccountingDoubleEntryRequest
-     */
-    private $listAccountingDoubleEntryRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListAccountingSingleEntryRequest $listAccountingSingleEntryRequest
-     */
-    private $listAccountingSingleEntryRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListAccountRequest $listAccountRequest
-     */
-    private $listAccountRequest = null;
-
-    /**
-     * @var \Pohoda\ListActivity\ListActivityRequest $listActivityRequest
-     */
-    private $listActivityRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListCashRequest $listCashRequest
-     */
-    private $listCashRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListCashRegisterRequest $listCashRegisterRequest
-     */
-    private $listCashRegisterRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListBankAccountRequest $listBankAccountRequest
-     */
-    private $listBankAccountRequest = null;
-
-    /**
-     * @var \Pohoda\ListContract\ListContractRequest $listContractRequest
-     */
-    private $listContractRequest = null;
-
-    /**
-     * @var \Pohoda\ListCentre\ListCentreRequest $listCentreRequest
-     */
-    private $listCentreRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListNumericSeriesRequest $listNumericSeriesRequest
-     */
-    private $listNumericSeriesRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListUserCodeRequest $listUserCodeRequest
-     */
-    private $listUserCodeRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListStorageRequest $listStorageRequest
-     */
-    private $listStorageRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListSellingPriceRequest $listSellingPriceRequest
-     */
-    private $listSellingPriceRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListCategoryRequest $listCategoryRequest
-     */
-    private $listCategoryRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListIntParamRequest $listIntParamRequest
-     */
-    private $listIntParamRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListStoreRequest $listStoreRequest
-     */
-    private $listStoreRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListGroupStocksRequest $listGroupStocksRequest
-     */
-    private $listGroupStocksRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListActionPriceRequest $listActionPriceRequest
-     */
-    private $listActionPriceRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListPaymentRequest $listPaymentRequest
-     */
-    private $listPaymentRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListNumericalSeriesRequest $listNumericalSeriesRequest
-     */
-    private $listNumericalSeriesRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListGDPRRequest $listGDPRRequest
-     */
-    private $listGDPRRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListEstablishmentRequest $listEstablishmentRequest
-     */
-    private $listEstablishmentRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListClassificationVATRequest $listClassificationVATRequest
-     */
-    private $listClassificationVATRequest = null;
-
-    /**
-     * @var \Pohoda\MKasa\MKasaRequest $mKasaRequest
-     */
-    private $mKasaRequest = null;
-
-    /**
-     * @var \Pohoda\Print\PrintXsd $print
-     */
-    private $print = null;
-
-    /**
-     * @var \Pohoda\Lock\Lock $lock
-     */
-    private $lock = null;
-
-    /**
-     * @var \Pohoda\Isdoc\Isdoc $isdoc
-     */
-    private $isdoc = null;
-
-    /**
-     * @var \Pohoda\SendEET\SendEET $sendEET
-     */
-    private $sendEET = null;
-
-    /**
-     * @var \Pohoda\AccountingSalesVouchers\AccountingSalesVouchers $accountingSalesVouchers
-     */
-    private $accountingSalesVouchers = null;
-
-    /**
-     * @var \Pohoda\List\ListGlobalSettingsRequest $listGlobalSettingsRequest
-     */
-    private $listGlobalSettingsRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListRegistrationNumberRequest $listRegistrationNumberRequest
-     */
-    private $listRegistrationNumberRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListMovementRequest $listMovementRequest
-     */
-    private $listMovementRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListRecyclingContribRequest $listRecyclingContribRequest
-     */
-    private $listRecyclingContribRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListIndividualPriceRequest $listIndividualPriceRequest
-     */
-    private $listIndividualPriceRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListServiceRequest $listServiceRequest
-     */
-    private $listServiceRequest = null;
-
-    /**
-     * @var \Pohoda\List\ListRulesPairingRequest $listRulesPairingRequest
-     */
-    private $listRulesPairingRequest = null;
-
-    /**
-     * @var \Pohoda\LiquidationWithoutLink\LiquidationWithoutLink $liquidationWithoutLink
-     */
-    private $liquidationWithoutLink = null;
-
-    /**
-     * @var \Pohoda\AutomaticLiquidation $automaticLiquidation
-     */
-    private $automaticLiquidation = null;
-
-    /**
-     * @var \Pohoda\List\ListSupplierRequest $listSupplierRequest
-     */
-    private $listSupplierRequest = null;
-
-    /**
-     * Gets as version
+    private string $version = null;
+    private string $id = null;
+    private \Pohoda\AddressBook\Addressbook $addressbook = null;
+    private \Pohoda\Enquiry\Enquiry $enquiry = null;
+    private \Pohoda\IntDoc\IntDoc $intDoc = null;
+    private \Pohoda\Invoice\Invoice $invoice = null;
+    private \Pohoda\Offer\Offer $offer = null;
+    private \Pohoda\Order\Order $order = null;
+    private \Pohoda\Prodejka\Prodejka $prodejka = null;
+    private \Pohoda\Prijemka\Prijemka $prijemka = null;
+    private \Pohoda\Prevodka\Prevodka $prevodka = null;
+    private \Pohoda\Stock\Stock $stock = null;
+    private \Pohoda\Voucher\Voucher $voucher = null;
+    private \Pohoda\Vydejka\Vydejka $vydejka = null;
+    private \Pohoda\Vyroba\Vyroba $vyroba = null;
+    private \Pohoda\Contract\Contract $contract = null;
+    private \Pohoda\Store\Store $store = null;
+    private \Pohoda\GroupStocks\GroupStocks $groupStocks = null;
+    private \Pohoda\Storage\Storage $storage = null;
+    private \Pohoda\Category\CategoryDetail $categoryDetail = null;
+    private \Pohoda\Parameter\Parameter $parameter = null;
+    private \Pohoda\IntParam\IntParamDetail $intParamDetail = null;
+    private \Pohoda\InventoryLists\InventoryLists $inventoryLists = null;
+    private \Pohoda\NumericalSeries\NumericalSeries $numericalSeries = null;
+    private \Pohoda\Gdpr\GDPR $gDPR = null;
+    private \Pohoda\ProductRequirement\ProductRequirement $productRequirement = null;
+    private \Pohoda\Bank\Bank $bank = null;
+    private \Pohoda\BankAccount\BankAccount $bankAccount = null;
+    private \Pohoda\RulesPairing\RulesPairing $rulesPairing = null;
+    private \Pohoda\Discount\Discount $discount = null;
+    private \Pohoda\Service\Service $service = null;
+    private \Pohoda\List\ListAccountancyRequest $listAccountancyRequest = null;
+    private \Pohoda\ListAddBook\ListAddressBookRequest $listAddressBookRequest = null;
+    private \Pohoda\List\ListInvoiceRequest $listInvoiceRequest = null;
+    private \Pohoda\List\ListEnquiryRequest $listEnquiryRequest = null;
+    private \Pohoda\List\ListOfferRequest $listOfferRequest = null;
+    private \Pohoda\List\ListOrderRequest $listOrderRequest = null;
+    private \Pohoda\ListStock\ListStockRequest $listStockRequest = null;
+    private \Pohoda\List\ListParameterRequest $listParameterRequest = null;
+    private \Pohoda\List\ListVydejkaRequest $listVydejkaRequest = null;
+    private \Pohoda\List\ListPrijemkaRequest $listPrijemkaRequest = null;
+    private \Pohoda\List\ListBalanceRequest $listBalanceRequest = null;
+    private \Pohoda\List\ListProductRequirementRequest $listProductRequirementRequest = null;
+    private \Pohoda\List\ListBankRequest $listBankRequest = null;
+    private \Pohoda\List\CreateAccountingDoubleEntry $createAccountingDoubleEntry = null;
+    private \Pohoda\List\ListUserCode $listUserCode = null;
+    private \Pohoda\Accountingunit\ListAccountingUnitRequest $listAccountingUnitRequest = null;
+    private \Pohoda\List\ListAccountingDoubleEntryRequest $listAccountingDoubleEntryRequest = null;
+    private \Pohoda\List\ListAccountingSingleEntryRequest $listAccountingSingleEntryRequest = null;
+    private \Pohoda\List\ListAccountRequest $listAccountRequest = null;
+    private \Pohoda\ListActivity\ListActivityRequest $listActivityRequest = null;
+    private \Pohoda\List\ListCashRequest $listCashRequest = null;
+    private \Pohoda\List\ListCashRegisterRequest $listCashRegisterRequest = null;
+    private \Pohoda\List\ListBankAccountRequest $listBankAccountRequest = null;
+    private \Pohoda\ListContract\ListContractRequest $listContractRequest = null;
+    private \Pohoda\ListCentre\ListCentreRequest $listCentreRequest = null;
+    private \Pohoda\List\ListNumericSeriesRequest $listNumericSeriesRequest = null;
+    private \Pohoda\List\ListUserCodeRequest $listUserCodeRequest = null;
+    private \Pohoda\List\ListStorageRequest $listStorageRequest = null;
+    private \Pohoda\List\ListSellingPriceRequest $listSellingPriceRequest = null;
+    private \Pohoda\List\ListCategoryRequest $listCategoryRequest = null;
+    private \Pohoda\List\ListIntParamRequest $listIntParamRequest = null;
+    private \Pohoda\List\ListStoreRequest $listStoreRequest = null;
+    private \Pohoda\List\ListGroupStocksRequest $listGroupStocksRequest = null;
+    private \Pohoda\List\ListActionPriceRequest $listActionPriceRequest = null;
+    private \Pohoda\List\ListPaymentRequest $listPaymentRequest = null;
+    private \Pohoda\List\ListNumericalSeriesRequest $listNumericalSeriesRequest = null;
+    private \Pohoda\List\ListGDPRRequest $listGDPRRequest = null;
+    private \Pohoda\List\ListEstablishmentRequest $listEstablishmentRequest = null;
+    private \Pohoda\List\ListClassificationVATRequest $listClassificationVATRequest = null;
+    private \Pohoda\MKasa\MKasaRequest $mKasaRequest = null;
+    private \Pohoda\Print\PrintXsd $print = null;
+    private \Pohoda\Lock\Lock $lock = null;
+    private \Pohoda\Isdoc\Isdoc $isdoc = null;
+    private \Pohoda\SendEET\SendEET $sendEET = null;
+    private \Pohoda\AccountingSalesVouchers\AccountingSalesVouchers $accountingSalesVouchers = null;
+    private \Pohoda\List\ListGlobalSettingsRequest $listGlobalSettingsRequest = null;
+    private \Pohoda\List\ListRegistrationNumberRequest $listRegistrationNumberRequest = null;
+    private \Pohoda\List\ListMovementRequest $listMovementRequest = null;
+    private \Pohoda\List\ListRecyclingContribRequest $listRecyclingContribRequest = null;
+    private \Pohoda\List\ListIndividualPriceRequest $listIndividualPriceRequest = null;
+    private \Pohoda\List\ListServiceRequest $listServiceRequest = null;
+    private \Pohoda\List\ListRulesPairingRequest $listRulesPairingRequest = null;
+    private \Pohoda\LiquidationWithoutLink\LiquidationWithoutLink $liquidationWithoutLink = null;
+    private \Pohoda\AutomaticLiquidation $automaticLiquidation = null;
+    private \Pohoda\List\ListSupplierRequest $listSupplierRequest = null;
+
+    /**
+     * Gets as version.
      *
      * @return string
      */
@@ -451,19 +120,21 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * @return string
      */
@@ -473,19 +144,21 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param string $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as addressbook
+     * Gets as addressbook.
      *
      * @return \Pohoda\AddressBook\Addressbook
      */
@@ -495,19 +168,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new addressbook
+     * Sets a new addressbook.
      *
-     * @param \Pohoda\AddressBook\Addressbook $addressbook
      * @return self
      */
     public function setAddressbook(\Pohoda\AddressBook\Addressbook $addressbook)
     {
         $this->addressbook = $addressbook;
+
         return $this;
     }
 
     /**
-     * Gets as enquiry
+     * Gets as enquiry.
      *
      * @return \Pohoda\Enquiry\Enquiry
      */
@@ -517,19 +190,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new enquiry
+     * Sets a new enquiry.
      *
-     * @param \Pohoda\Enquiry\Enquiry $enquiry
      * @return self
      */
     public function setEnquiry(\Pohoda\Enquiry\Enquiry $enquiry)
     {
         $this->enquiry = $enquiry;
+
         return $this;
     }
 
     /**
-     * Gets as intDoc
+     * Gets as intDoc.
      *
      * @return \Pohoda\IntDoc\IntDoc
      */
@@ -539,19 +212,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new intDoc
+     * Sets a new intDoc.
      *
-     * @param \Pohoda\IntDoc\IntDoc $intDoc
      * @return self
      */
     public function setIntDoc(\Pohoda\IntDoc\IntDoc $intDoc)
     {
         $this->intDoc = $intDoc;
+
         return $this;
     }
 
     /**
-     * Gets as invoice
+     * Gets as invoice.
      *
      * @return \Pohoda\Invoice\Invoice
      */
@@ -561,19 +234,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new invoice
+     * Sets a new invoice.
      *
-     * @param \Pohoda\Invoice\Invoice $invoice
      * @return self
      */
     public function setInvoice(\Pohoda\Invoice\Invoice $invoice)
     {
         $this->invoice = $invoice;
+
         return $this;
     }
 
     /**
-     * Gets as offer
+     * Gets as offer.
      *
      * @return \Pohoda\Offer\Offer
      */
@@ -583,19 +256,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new offer
+     * Sets a new offer.
      *
-     * @param \Pohoda\Offer\Offer $offer
      * @return self
      */
     public function setOffer(\Pohoda\Offer\Offer $offer)
     {
         $this->offer = $offer;
+
         return $this;
     }
 
     /**
-     * Gets as order
+     * Gets as order.
      *
      * @return \Pohoda\Order\Order
      */
@@ -605,19 +278,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new order
+     * Sets a new order.
      *
-     * @param \Pohoda\Order\Order $order
      * @return self
      */
     public function setOrder(\Pohoda\Order\Order $order)
     {
         $this->order = $order;
+
         return $this;
     }
 
     /**
-     * Gets as prodejka
+     * Gets as prodejka.
      *
      * @return \Pohoda\Prodejka\Prodejka
      */
@@ -627,19 +300,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new prodejka
+     * Sets a new prodejka.
      *
-     * @param \Pohoda\Prodejka\Prodejka $prodejka
      * @return self
      */
     public function setProdejka(\Pohoda\Prodejka\Prodejka $prodejka)
     {
         $this->prodejka = $prodejka;
+
         return $this;
     }
 
     /**
-     * Gets as prijemka
+     * Gets as prijemka.
      *
      * @return \Pohoda\Prijemka\Prijemka
      */
@@ -649,19 +322,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new prijemka
+     * Sets a new prijemka.
      *
-     * @param \Pohoda\Prijemka\Prijemka $prijemka
      * @return self
      */
     public function setPrijemka(\Pohoda\Prijemka\Prijemka $prijemka)
     {
         $this->prijemka = $prijemka;
+
         return $this;
     }
 
     /**
-     * Gets as prevodka
+     * Gets as prevodka.
      *
      * @return \Pohoda\Prevodka\Prevodka
      */
@@ -671,19 +344,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new prevodka
+     * Sets a new prevodka.
      *
-     * @param \Pohoda\Prevodka\Prevodka $prevodka
      * @return self
      */
     public function setPrevodka(\Pohoda\Prevodka\Prevodka $prevodka)
     {
         $this->prevodka = $prevodka;
+
         return $this;
     }
 
     /**
-     * Gets as stock
+     * Gets as stock.
      *
      * @return \Pohoda\Stock\Stock
      */
@@ -693,19 +366,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new stock
+     * Sets a new stock.
      *
-     * @param \Pohoda\Stock\Stock $stock
      * @return self
      */
     public function setStock(\Pohoda\Stock\Stock $stock)
     {
         $this->stock = $stock;
+
         return $this;
     }
 
     /**
-     * Gets as voucher
+     * Gets as voucher.
      *
      * @return \Pohoda\Voucher\Voucher
      */
@@ -715,19 +388,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new voucher
+     * Sets a new voucher.
      *
-     * @param \Pohoda\Voucher\Voucher $voucher
      * @return self
      */
     public function setVoucher(\Pohoda\Voucher\Voucher $voucher)
     {
         $this->voucher = $voucher;
+
         return $this;
     }
 
     /**
-     * Gets as vydejka
+     * Gets as vydejka.
      *
      * @return \Pohoda\Vydejka\Vydejka
      */
@@ -737,19 +410,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new vydejka
+     * Sets a new vydejka.
      *
-     * @param \Pohoda\Vydejka\Vydejka $vydejka
      * @return self
      */
     public function setVydejka(\Pohoda\Vydejka\Vydejka $vydejka)
     {
         $this->vydejka = $vydejka;
+
         return $this;
     }
 
     /**
-     * Gets as vyroba
+     * Gets as vyroba.
      *
      * @return \Pohoda\Vyroba\Vyroba
      */
@@ -759,19 +432,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new vyroba
+     * Sets a new vyroba.
      *
-     * @param \Pohoda\Vyroba\Vyroba $vyroba
      * @return self
      */
     public function setVyroba(\Pohoda\Vyroba\Vyroba $vyroba)
     {
         $this->vyroba = $vyroba;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * @return \Pohoda\Contract\Contract
      */
@@ -781,19 +454,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
-     * @param \Pohoda\Contract\Contract $contract
      * @return self
      */
     public function setContract(\Pohoda\Contract\Contract $contract)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Gets as store
+     * Gets as store.
      *
      * @return \Pohoda\Store\Store
      */
@@ -803,19 +476,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new store
+     * Sets a new store.
      *
-     * @param \Pohoda\Store\Store $store
      * @return self
      */
     public function setStore(\Pohoda\Store\Store $store)
     {
         $this->store = $store;
+
         return $this;
     }
 
     /**
-     * Gets as groupStocks
+     * Gets as groupStocks.
      *
      * @return \Pohoda\GroupStocks\GroupStocks
      */
@@ -825,19 +498,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new groupStocks
+     * Sets a new groupStocks.
      *
-     * @param \Pohoda\GroupStocks\GroupStocks $groupStocks
      * @return self
      */
     public function setGroupStocks(\Pohoda\GroupStocks\GroupStocks $groupStocks)
     {
         $this->groupStocks = $groupStocks;
+
         return $this;
     }
 
     /**
-     * Gets as storage
+     * Gets as storage.
      *
      * @return \Pohoda\Storage\Storage
      */
@@ -847,19 +520,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new storage
+     * Sets a new storage.
      *
-     * @param \Pohoda\Storage\Storage $storage
      * @return self
      */
     public function setStorage(\Pohoda\Storage\Storage $storage)
     {
         $this->storage = $storage;
+
         return $this;
     }
 
     /**
-     * Gets as categoryDetail
+     * Gets as categoryDetail.
      *
      * @return \Pohoda\Category\CategoryDetail
      */
@@ -869,19 +542,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new categoryDetail
+     * Sets a new categoryDetail.
      *
-     * @param \Pohoda\Category\CategoryDetail $categoryDetail
      * @return self
      */
     public function setCategoryDetail(\Pohoda\Category\CategoryDetail $categoryDetail)
     {
         $this->categoryDetail = $categoryDetail;
+
         return $this;
     }
 
     /**
-     * Gets as parameter
+     * Gets as parameter.
      *
      * @return \Pohoda\Parameter\Parameter
      */
@@ -891,19 +564,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new parameter
+     * Sets a new parameter.
      *
-     * @param \Pohoda\Parameter\Parameter $parameter
      * @return self
      */
     public function setParameter(\Pohoda\Parameter\Parameter $parameter)
     {
         $this->parameter = $parameter;
+
         return $this;
     }
 
     /**
-     * Gets as intParamDetail
+     * Gets as intParamDetail.
      *
      * @return \Pohoda\IntParam\IntParamDetail
      */
@@ -913,19 +586,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new intParamDetail
+     * Sets a new intParamDetail.
      *
-     * @param \Pohoda\IntParam\IntParamDetail $intParamDetail
      * @return self
      */
     public function setIntParamDetail(\Pohoda\IntParam\IntParamDetail $intParamDetail)
     {
         $this->intParamDetail = $intParamDetail;
+
         return $this;
     }
 
     /**
-     * Gets as inventoryLists
+     * Gets as inventoryLists.
      *
      * @return \Pohoda\InventoryLists\InventoryLists
      */
@@ -935,19 +608,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new inventoryLists
+     * Sets a new inventoryLists.
      *
-     * @param \Pohoda\InventoryLists\InventoryLists $inventoryLists
      * @return self
      */
     public function setInventoryLists(\Pohoda\InventoryLists\InventoryLists $inventoryLists)
     {
         $this->inventoryLists = $inventoryLists;
+
         return $this;
     }
 
     /**
-     * Gets as numericalSeries
+     * Gets as numericalSeries.
      *
      * @return \Pohoda\NumericalSeries\NumericalSeries
      */
@@ -957,19 +630,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new numericalSeries
+     * Sets a new numericalSeries.
      *
-     * @param \Pohoda\NumericalSeries\NumericalSeries $numericalSeries
      * @return self
      */
     public function setNumericalSeries(\Pohoda\NumericalSeries\NumericalSeries $numericalSeries)
     {
         $this->numericalSeries = $numericalSeries;
+
         return $this;
     }
 
     /**
-     * Gets as gDPR
+     * Gets as gDPR.
      *
      * @return \Pohoda\Gdpr\GDPR
      */
@@ -979,19 +652,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new gDPR
+     * Sets a new gDPR.
      *
-     * @param \Pohoda\Gdpr\GDPR $gDPR
      * @return self
      */
     public function setGDPR(\Pohoda\Gdpr\GDPR $gDPR)
     {
         $this->gDPR = $gDPR;
+
         return $this;
     }
 
     /**
-     * Gets as productRequirement
+     * Gets as productRequirement.
      *
      * @return \Pohoda\ProductRequirement\ProductRequirement
      */
@@ -1001,19 +674,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new productRequirement
+     * Sets a new productRequirement.
      *
-     * @param \Pohoda\ProductRequirement\ProductRequirement $productRequirement
      * @return self
      */
     public function setProductRequirement(\Pohoda\ProductRequirement\ProductRequirement $productRequirement)
     {
         $this->productRequirement = $productRequirement;
+
         return $this;
     }
 
     /**
-     * Gets as bank
+     * Gets as bank.
      *
      * @return \Pohoda\Bank\Bank
      */
@@ -1023,19 +696,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new bank
+     * Sets a new bank.
      *
-     * @param \Pohoda\Bank\Bank $bank
      * @return self
      */
     public function setBank(\Pohoda\Bank\Bank $bank)
     {
         $this->bank = $bank;
+
         return $this;
     }
 
     /**
-     * Gets as bankAccount
+     * Gets as bankAccount.
      *
      * @return \Pohoda\BankAccount\BankAccount
      */
@@ -1045,19 +718,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new bankAccount
+     * Sets a new bankAccount.
      *
-     * @param \Pohoda\BankAccount\BankAccount $bankAccount
      * @return self
      */
     public function setBankAccount(\Pohoda\BankAccount\BankAccount $bankAccount)
     {
         $this->bankAccount = $bankAccount;
+
         return $this;
     }
 
     /**
-     * Gets as rulesPairing
+     * Gets as rulesPairing.
      *
      * @return \Pohoda\RulesPairing\RulesPairing
      */
@@ -1067,19 +740,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new rulesPairing
+     * Sets a new rulesPairing.
      *
-     * @param \Pohoda\RulesPairing\RulesPairing $rulesPairing
      * @return self
      */
     public function setRulesPairing(\Pohoda\RulesPairing\RulesPairing $rulesPairing)
     {
         $this->rulesPairing = $rulesPairing;
+
         return $this;
     }
 
     /**
-     * Gets as discount
+     * Gets as discount.
      *
      * @return \Pohoda\Discount\Discount
      */
@@ -1089,19 +762,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new discount
+     * Sets a new discount.
      *
-     * @param \Pohoda\Discount\Discount $discount
      * @return self
      */
     public function setDiscount(\Pohoda\Discount\Discount $discount)
     {
         $this->discount = $discount;
+
         return $this;
     }
 
     /**
-     * Gets as service
+     * Gets as service.
      *
      * @return \Pohoda\Service\Service
      */
@@ -1111,19 +784,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new service
+     * Sets a new service.
      *
-     * @param \Pohoda\Service\Service $service
      * @return self
      */
     public function setService(\Pohoda\Service\Service $service)
     {
         $this->service = $service;
+
         return $this;
     }
 
     /**
-     * Gets as listAccountancyRequest
+     * Gets as listAccountancyRequest.
      *
      * @return \Pohoda\List\ListAccountancyRequest
      */
@@ -1133,19 +806,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listAccountancyRequest
+     * Sets a new listAccountancyRequest.
      *
-     * @param \Pohoda\List\ListAccountancyRequest $listAccountancyRequest
      * @return self
      */
     public function setListAccountancyRequest(\Pohoda\List\ListAccountancyRequest $listAccountancyRequest)
     {
         $this->listAccountancyRequest = $listAccountancyRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listAddressBookRequest
+     * Gets as listAddressBookRequest.
      *
      * @return \Pohoda\ListAddBook\ListAddressBookRequest
      */
@@ -1155,19 +828,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listAddressBookRequest
+     * Sets a new listAddressBookRequest.
      *
-     * @param \Pohoda\ListAddBook\ListAddressBookRequest $listAddressBookRequest
      * @return self
      */
     public function setListAddressBookRequest(\Pohoda\ListAddBook\ListAddressBookRequest $listAddressBookRequest)
     {
         $this->listAddressBookRequest = $listAddressBookRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listInvoiceRequest
+     * Gets as listInvoiceRequest.
      *
      * @return \Pohoda\List\ListInvoiceRequest
      */
@@ -1177,19 +850,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listInvoiceRequest
+     * Sets a new listInvoiceRequest.
      *
-     * @param \Pohoda\List\ListInvoiceRequest $listInvoiceRequest
      * @return self
      */
     public function setListInvoiceRequest(\Pohoda\List\ListInvoiceRequest $listInvoiceRequest)
     {
         $this->listInvoiceRequest = $listInvoiceRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listEnquiryRequest
+     * Gets as listEnquiryRequest.
      *
      * @return \Pohoda\List\ListEnquiryRequest
      */
@@ -1199,19 +872,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listEnquiryRequest
+     * Sets a new listEnquiryRequest.
      *
-     * @param \Pohoda\List\ListEnquiryRequest $listEnquiryRequest
      * @return self
      */
     public function setListEnquiryRequest(\Pohoda\List\ListEnquiryRequest $listEnquiryRequest)
     {
         $this->listEnquiryRequest = $listEnquiryRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listOfferRequest
+     * Gets as listOfferRequest.
      *
      * @return \Pohoda\List\ListOfferRequest
      */
@@ -1221,19 +894,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listOfferRequest
+     * Sets a new listOfferRequest.
      *
-     * @param \Pohoda\List\ListOfferRequest $listOfferRequest
      * @return self
      */
     public function setListOfferRequest(\Pohoda\List\ListOfferRequest $listOfferRequest)
     {
         $this->listOfferRequest = $listOfferRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listOrderRequest
+     * Gets as listOrderRequest.
      *
      * @return \Pohoda\List\ListOrderRequest
      */
@@ -1243,19 +916,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listOrderRequest
+     * Sets a new listOrderRequest.
      *
-     * @param \Pohoda\List\ListOrderRequest $listOrderRequest
      * @return self
      */
     public function setListOrderRequest(\Pohoda\List\ListOrderRequest $listOrderRequest)
     {
         $this->listOrderRequest = $listOrderRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listStockRequest
+     * Gets as listStockRequest.
      *
      * @return \Pohoda\ListStock\ListStockRequest
      */
@@ -1265,19 +938,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listStockRequest
+     * Sets a new listStockRequest.
      *
-     * @param \Pohoda\ListStock\ListStockRequest $listStockRequest
      * @return self
      */
     public function setListStockRequest(\Pohoda\ListStock\ListStockRequest $listStockRequest)
     {
         $this->listStockRequest = $listStockRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listParameterRequest
+     * Gets as listParameterRequest.
      *
      * @return \Pohoda\List\ListParameterRequest
      */
@@ -1287,19 +960,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listParameterRequest
+     * Sets a new listParameterRequest.
      *
-     * @param \Pohoda\List\ListParameterRequest $listParameterRequest
      * @return self
      */
     public function setListParameterRequest(\Pohoda\List\ListParameterRequest $listParameterRequest)
     {
         $this->listParameterRequest = $listParameterRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listVydejkaRequest
+     * Gets as listVydejkaRequest.
      *
      * @return \Pohoda\List\ListVydejkaRequest
      */
@@ -1309,19 +982,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listVydejkaRequest
+     * Sets a new listVydejkaRequest.
      *
-     * @param \Pohoda\List\ListVydejkaRequest $listVydejkaRequest
      * @return self
      */
     public function setListVydejkaRequest(\Pohoda\List\ListVydejkaRequest $listVydejkaRequest)
     {
         $this->listVydejkaRequest = $listVydejkaRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listPrijemkaRequest
+     * Gets as listPrijemkaRequest.
      *
      * @return \Pohoda\List\ListPrijemkaRequest
      */
@@ -1331,19 +1004,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listPrijemkaRequest
+     * Sets a new listPrijemkaRequest.
      *
-     * @param \Pohoda\List\ListPrijemkaRequest $listPrijemkaRequest
      * @return self
      */
     public function setListPrijemkaRequest(\Pohoda\List\ListPrijemkaRequest $listPrijemkaRequest)
     {
         $this->listPrijemkaRequest = $listPrijemkaRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listBalanceRequest
+     * Gets as listBalanceRequest.
      *
      * @return \Pohoda\List\ListBalanceRequest
      */
@@ -1353,19 +1026,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listBalanceRequest
+     * Sets a new listBalanceRequest.
      *
-     * @param \Pohoda\List\ListBalanceRequest $listBalanceRequest
      * @return self
      */
     public function setListBalanceRequest(\Pohoda\List\ListBalanceRequest $listBalanceRequest)
     {
         $this->listBalanceRequest = $listBalanceRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listProductRequirementRequest
+     * Gets as listProductRequirementRequest.
      *
      * @return \Pohoda\List\ListProductRequirementRequest
      */
@@ -1375,19 +1048,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listProductRequirementRequest
+     * Sets a new listProductRequirementRequest.
      *
-     * @param \Pohoda\List\ListProductRequirementRequest $listProductRequirementRequest
      * @return self
      */
     public function setListProductRequirementRequest(\Pohoda\List\ListProductRequirementRequest $listProductRequirementRequest)
     {
         $this->listProductRequirementRequest = $listProductRequirementRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listBankRequest
+     * Gets as listBankRequest.
      *
      * @return \Pohoda\List\ListBankRequest
      */
@@ -1397,19 +1070,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listBankRequest
+     * Sets a new listBankRequest.
      *
-     * @param \Pohoda\List\ListBankRequest $listBankRequest
      * @return self
      */
     public function setListBankRequest(\Pohoda\List\ListBankRequest $listBankRequest)
     {
         $this->listBankRequest = $listBankRequest;
+
         return $this;
     }
 
     /**
-     * Gets as createAccountingDoubleEntry
+     * Gets as createAccountingDoubleEntry.
      *
      * @return \Pohoda\List\CreateAccountingDoubleEntry
      */
@@ -1419,19 +1092,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new createAccountingDoubleEntry
+     * Sets a new createAccountingDoubleEntry.
      *
-     * @param \Pohoda\List\CreateAccountingDoubleEntry $createAccountingDoubleEntry
      * @return self
      */
     public function setCreateAccountingDoubleEntry(\Pohoda\List\CreateAccountingDoubleEntry $createAccountingDoubleEntry)
     {
         $this->createAccountingDoubleEntry = $createAccountingDoubleEntry;
+
         return $this;
     }
 
     /**
-     * Gets as listUserCode
+     * Gets as listUserCode.
      *
      * @return \Pohoda\List\ListUserCode
      */
@@ -1441,19 +1114,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listUserCode
+     * Sets a new listUserCode.
      *
-     * @param \Pohoda\List\ListUserCode $listUserCode
      * @return self
      */
     public function setListUserCode(\Pohoda\List\ListUserCode $listUserCode)
     {
         $this->listUserCode = $listUserCode;
+
         return $this;
     }
 
     /**
-     * Gets as listAccountingUnitRequest
+     * Gets as listAccountingUnitRequest.
      *
      * @return \Pohoda\Accountingunit\ListAccountingUnitRequest
      */
@@ -1463,19 +1136,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listAccountingUnitRequest
+     * Sets a new listAccountingUnitRequest.
      *
-     * @param \Pohoda\Accountingunit\ListAccountingUnitRequest $listAccountingUnitRequest
      * @return self
      */
     public function setListAccountingUnitRequest(\Pohoda\Accountingunit\ListAccountingUnitRequest $listAccountingUnitRequest)
     {
         $this->listAccountingUnitRequest = $listAccountingUnitRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listAccountingDoubleEntryRequest
+     * Gets as listAccountingDoubleEntryRequest.
      *
      * @return \Pohoda\List\ListAccountingDoubleEntryRequest
      */
@@ -1485,19 +1158,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listAccountingDoubleEntryRequest
+     * Sets a new listAccountingDoubleEntryRequest.
      *
-     * @param \Pohoda\List\ListAccountingDoubleEntryRequest $listAccountingDoubleEntryRequest
      * @return self
      */
     public function setListAccountingDoubleEntryRequest(\Pohoda\List\ListAccountingDoubleEntryRequest $listAccountingDoubleEntryRequest)
     {
         $this->listAccountingDoubleEntryRequest = $listAccountingDoubleEntryRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listAccountingSingleEntryRequest
+     * Gets as listAccountingSingleEntryRequest.
      *
      * @return \Pohoda\List\ListAccountingSingleEntryRequest
      */
@@ -1507,19 +1180,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listAccountingSingleEntryRequest
+     * Sets a new listAccountingSingleEntryRequest.
      *
-     * @param \Pohoda\List\ListAccountingSingleEntryRequest $listAccountingSingleEntryRequest
      * @return self
      */
     public function setListAccountingSingleEntryRequest(\Pohoda\List\ListAccountingSingleEntryRequest $listAccountingSingleEntryRequest)
     {
         $this->listAccountingSingleEntryRequest = $listAccountingSingleEntryRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listAccountRequest
+     * Gets as listAccountRequest.
      *
      * @return \Pohoda\List\ListAccountRequest
      */
@@ -1529,19 +1202,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listAccountRequest
+     * Sets a new listAccountRequest.
      *
-     * @param \Pohoda\List\ListAccountRequest $listAccountRequest
      * @return self
      */
     public function setListAccountRequest(\Pohoda\List\ListAccountRequest $listAccountRequest)
     {
         $this->listAccountRequest = $listAccountRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listActivityRequest
+     * Gets as listActivityRequest.
      *
      * @return \Pohoda\ListActivity\ListActivityRequest
      */
@@ -1551,19 +1224,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listActivityRequest
+     * Sets a new listActivityRequest.
      *
-     * @param \Pohoda\ListActivity\ListActivityRequest $listActivityRequest
      * @return self
      */
     public function setListActivityRequest(\Pohoda\ListActivity\ListActivityRequest $listActivityRequest)
     {
         $this->listActivityRequest = $listActivityRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listCashRequest
+     * Gets as listCashRequest.
      *
      * @return \Pohoda\List\ListCashRequest
      */
@@ -1573,19 +1246,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listCashRequest
+     * Sets a new listCashRequest.
      *
-     * @param \Pohoda\List\ListCashRequest $listCashRequest
      * @return self
      */
     public function setListCashRequest(\Pohoda\List\ListCashRequest $listCashRequest)
     {
         $this->listCashRequest = $listCashRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listCashRegisterRequest
+     * Gets as listCashRegisterRequest.
      *
      * @return \Pohoda\List\ListCashRegisterRequest
      */
@@ -1595,19 +1268,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listCashRegisterRequest
+     * Sets a new listCashRegisterRequest.
      *
-     * @param \Pohoda\List\ListCashRegisterRequest $listCashRegisterRequest
      * @return self
      */
     public function setListCashRegisterRequest(\Pohoda\List\ListCashRegisterRequest $listCashRegisterRequest)
     {
         $this->listCashRegisterRequest = $listCashRegisterRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listBankAccountRequest
+     * Gets as listBankAccountRequest.
      *
      * @return \Pohoda\List\ListBankAccountRequest
      */
@@ -1617,19 +1290,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listBankAccountRequest
+     * Sets a new listBankAccountRequest.
      *
-     * @param \Pohoda\List\ListBankAccountRequest $listBankAccountRequest
      * @return self
      */
     public function setListBankAccountRequest(\Pohoda\List\ListBankAccountRequest $listBankAccountRequest)
     {
         $this->listBankAccountRequest = $listBankAccountRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listContractRequest
+     * Gets as listContractRequest.
      *
      * @return \Pohoda\ListContract\ListContractRequest
      */
@@ -1639,19 +1312,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listContractRequest
+     * Sets a new listContractRequest.
      *
-     * @param \Pohoda\ListContract\ListContractRequest $listContractRequest
      * @return self
      */
     public function setListContractRequest(\Pohoda\ListContract\ListContractRequest $listContractRequest)
     {
         $this->listContractRequest = $listContractRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listCentreRequest
+     * Gets as listCentreRequest.
      *
      * @return \Pohoda\ListCentre\ListCentreRequest
      */
@@ -1661,19 +1334,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listCentreRequest
+     * Sets a new listCentreRequest.
      *
-     * @param \Pohoda\ListCentre\ListCentreRequest $listCentreRequest
      * @return self
      */
     public function setListCentreRequest(\Pohoda\ListCentre\ListCentreRequest $listCentreRequest)
     {
         $this->listCentreRequest = $listCentreRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listNumericSeriesRequest
+     * Gets as listNumericSeriesRequest.
      *
      * @return \Pohoda\List\ListNumericSeriesRequest
      */
@@ -1683,19 +1356,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listNumericSeriesRequest
+     * Sets a new listNumericSeriesRequest.
      *
-     * @param \Pohoda\List\ListNumericSeriesRequest $listNumericSeriesRequest
      * @return self
      */
     public function setListNumericSeriesRequest(\Pohoda\List\ListNumericSeriesRequest $listNumericSeriesRequest)
     {
         $this->listNumericSeriesRequest = $listNumericSeriesRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listUserCodeRequest
+     * Gets as listUserCodeRequest.
      *
      * @return \Pohoda\List\ListUserCodeRequest
      */
@@ -1705,19 +1378,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listUserCodeRequest
+     * Sets a new listUserCodeRequest.
      *
-     * @param \Pohoda\List\ListUserCodeRequest $listUserCodeRequest
      * @return self
      */
     public function setListUserCodeRequest(\Pohoda\List\ListUserCodeRequest $listUserCodeRequest)
     {
         $this->listUserCodeRequest = $listUserCodeRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listStorageRequest
+     * Gets as listStorageRequest.
      *
      * @return \Pohoda\List\ListStorageRequest
      */
@@ -1727,19 +1400,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listStorageRequest
+     * Sets a new listStorageRequest.
      *
-     * @param \Pohoda\List\ListStorageRequest $listStorageRequest
      * @return self
      */
     public function setListStorageRequest(\Pohoda\List\ListStorageRequest $listStorageRequest)
     {
         $this->listStorageRequest = $listStorageRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listSellingPriceRequest
+     * Gets as listSellingPriceRequest.
      *
      * @return \Pohoda\List\ListSellingPriceRequest
      */
@@ -1749,19 +1422,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listSellingPriceRequest
+     * Sets a new listSellingPriceRequest.
      *
-     * @param \Pohoda\List\ListSellingPriceRequest $listSellingPriceRequest
      * @return self
      */
     public function setListSellingPriceRequest(\Pohoda\List\ListSellingPriceRequest $listSellingPriceRequest)
     {
         $this->listSellingPriceRequest = $listSellingPriceRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listCategoryRequest
+     * Gets as listCategoryRequest.
      *
      * @return \Pohoda\List\ListCategoryRequest
      */
@@ -1771,19 +1444,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listCategoryRequest
+     * Sets a new listCategoryRequest.
      *
-     * @param \Pohoda\List\ListCategoryRequest $listCategoryRequest
      * @return self
      */
     public function setListCategoryRequest(\Pohoda\List\ListCategoryRequest $listCategoryRequest)
     {
         $this->listCategoryRequest = $listCategoryRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listIntParamRequest
+     * Gets as listIntParamRequest.
      *
      * @return \Pohoda\List\ListIntParamRequest
      */
@@ -1793,19 +1466,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listIntParamRequest
+     * Sets a new listIntParamRequest.
      *
-     * @param \Pohoda\List\ListIntParamRequest $listIntParamRequest
      * @return self
      */
     public function setListIntParamRequest(\Pohoda\List\ListIntParamRequest $listIntParamRequest)
     {
         $this->listIntParamRequest = $listIntParamRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listStoreRequest
+     * Gets as listStoreRequest.
      *
      * @return \Pohoda\List\ListStoreRequest
      */
@@ -1815,19 +1488,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listStoreRequest
+     * Sets a new listStoreRequest.
      *
-     * @param \Pohoda\List\ListStoreRequest $listStoreRequest
      * @return self
      */
     public function setListStoreRequest(\Pohoda\List\ListStoreRequest $listStoreRequest)
     {
         $this->listStoreRequest = $listStoreRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listGroupStocksRequest
+     * Gets as listGroupStocksRequest.
      *
      * @return \Pohoda\List\ListGroupStocksRequest
      */
@@ -1837,19 +1510,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listGroupStocksRequest
+     * Sets a new listGroupStocksRequest.
      *
-     * @param \Pohoda\List\ListGroupStocksRequest $listGroupStocksRequest
      * @return self
      */
     public function setListGroupStocksRequest(\Pohoda\List\ListGroupStocksRequest $listGroupStocksRequest)
     {
         $this->listGroupStocksRequest = $listGroupStocksRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listActionPriceRequest
+     * Gets as listActionPriceRequest.
      *
      * @return \Pohoda\List\ListActionPriceRequest
      */
@@ -1859,19 +1532,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listActionPriceRequest
+     * Sets a new listActionPriceRequest.
      *
-     * @param \Pohoda\List\ListActionPriceRequest $listActionPriceRequest
      * @return self
      */
     public function setListActionPriceRequest(\Pohoda\List\ListActionPriceRequest $listActionPriceRequest)
     {
         $this->listActionPriceRequest = $listActionPriceRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listPaymentRequest
+     * Gets as listPaymentRequest.
      *
      * @return \Pohoda\List\ListPaymentRequest
      */
@@ -1881,19 +1554,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listPaymentRequest
+     * Sets a new listPaymentRequest.
      *
-     * @param \Pohoda\List\ListPaymentRequest $listPaymentRequest
      * @return self
      */
     public function setListPaymentRequest(\Pohoda\List\ListPaymentRequest $listPaymentRequest)
     {
         $this->listPaymentRequest = $listPaymentRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listNumericalSeriesRequest
+     * Gets as listNumericalSeriesRequest.
      *
      * @return \Pohoda\List\ListNumericalSeriesRequest
      */
@@ -1903,19 +1576,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listNumericalSeriesRequest
+     * Sets a new listNumericalSeriesRequest.
      *
-     * @param \Pohoda\List\ListNumericalSeriesRequest $listNumericalSeriesRequest
      * @return self
      */
     public function setListNumericalSeriesRequest(\Pohoda\List\ListNumericalSeriesRequest $listNumericalSeriesRequest)
     {
         $this->listNumericalSeriesRequest = $listNumericalSeriesRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listGDPRRequest
+     * Gets as listGDPRRequest.
      *
      * @return \Pohoda\List\ListGDPRRequest
      */
@@ -1925,19 +1598,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listGDPRRequest
+     * Sets a new listGDPRRequest.
      *
-     * @param \Pohoda\List\ListGDPRRequest $listGDPRRequest
      * @return self
      */
     public function setListGDPRRequest(\Pohoda\List\ListGDPRRequest $listGDPRRequest)
     {
         $this->listGDPRRequest = $listGDPRRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listEstablishmentRequest
+     * Gets as listEstablishmentRequest.
      *
      * @return \Pohoda\List\ListEstablishmentRequest
      */
@@ -1947,19 +1620,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listEstablishmentRequest
+     * Sets a new listEstablishmentRequest.
      *
-     * @param \Pohoda\List\ListEstablishmentRequest $listEstablishmentRequest
      * @return self
      */
     public function setListEstablishmentRequest(\Pohoda\List\ListEstablishmentRequest $listEstablishmentRequest)
     {
         $this->listEstablishmentRequest = $listEstablishmentRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listClassificationVATRequest
+     * Gets as listClassificationVATRequest.
      *
      * @return \Pohoda\List\ListClassificationVATRequest
      */
@@ -1969,19 +1642,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listClassificationVATRequest
+     * Sets a new listClassificationVATRequest.
      *
-     * @param \Pohoda\List\ListClassificationVATRequest $listClassificationVATRequest
      * @return self
      */
     public function setListClassificationVATRequest(\Pohoda\List\ListClassificationVATRequest $listClassificationVATRequest)
     {
         $this->listClassificationVATRequest = $listClassificationVATRequest;
+
         return $this;
     }
 
     /**
-     * Gets as mKasaRequest
+     * Gets as mKasaRequest.
      *
      * @return \Pohoda\MKasa\MKasaRequest
      */
@@ -1991,19 +1664,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new mKasaRequest
+     * Sets a new mKasaRequest.
      *
-     * @param \Pohoda\MKasa\MKasaRequest $mKasaRequest
      * @return self
      */
     public function setMKasaRequest(\Pohoda\MKasa\MKasaRequest $mKasaRequest)
     {
         $this->mKasaRequest = $mKasaRequest;
+
         return $this;
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * @return \Pohoda\Print\PrintXsd
      */
@@ -2013,19 +1686,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
-     * @param \Pohoda\Print\PrintXsd $print
      * @return self
      */
     public function setPrint(\Pohoda\Print\PrintXsd $print)
     {
         $this->print = $print;
+
         return $this;
     }
 
     /**
-     * Gets as lock
+     * Gets as lock.
      *
      * @return \Pohoda\Lock\Lock
      */
@@ -2035,19 +1708,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new lock
+     * Sets a new lock.
      *
-     * @param \Pohoda\Lock\Lock $lock
      * @return self
      */
     public function setLock(\Pohoda\Lock\Lock $lock)
     {
         $this->lock = $lock;
+
         return $this;
     }
 
     /**
-     * Gets as isdoc
+     * Gets as isdoc.
      *
      * @return \Pohoda\Isdoc\Isdoc
      */
@@ -2057,19 +1730,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new isdoc
+     * Sets a new isdoc.
      *
-     * @param \Pohoda\Isdoc\Isdoc $isdoc
      * @return self
      */
     public function setIsdoc(\Pohoda\Isdoc\Isdoc $isdoc)
     {
         $this->isdoc = $isdoc;
+
         return $this;
     }
 
     /**
-     * Gets as sendEET
+     * Gets as sendEET.
      *
      * @return \Pohoda\SendEET\SendEET
      */
@@ -2079,19 +1752,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new sendEET
+     * Sets a new sendEET.
      *
-     * @param \Pohoda\SendEET\SendEET $sendEET
      * @return self
      */
     public function setSendEET(\Pohoda\SendEET\SendEET $sendEET)
     {
         $this->sendEET = $sendEET;
+
         return $this;
     }
 
     /**
-     * Gets as accountingSalesVouchers
+     * Gets as accountingSalesVouchers.
      *
      * @return \Pohoda\AccountingSalesVouchers\AccountingSalesVouchers
      */
@@ -2101,19 +1774,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new accountingSalesVouchers
+     * Sets a new accountingSalesVouchers.
      *
-     * @param \Pohoda\AccountingSalesVouchers\AccountingSalesVouchers $accountingSalesVouchers
      * @return self
      */
     public function setAccountingSalesVouchers(\Pohoda\AccountingSalesVouchers\AccountingSalesVouchers $accountingSalesVouchers)
     {
         $this->accountingSalesVouchers = $accountingSalesVouchers;
+
         return $this;
     }
 
     /**
-     * Gets as listGlobalSettingsRequest
+     * Gets as listGlobalSettingsRequest.
      *
      * @return \Pohoda\List\ListGlobalSettingsRequest
      */
@@ -2123,19 +1796,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listGlobalSettingsRequest
+     * Sets a new listGlobalSettingsRequest.
      *
-     * @param \Pohoda\List\ListGlobalSettingsRequest $listGlobalSettingsRequest
      * @return self
      */
     public function setListGlobalSettingsRequest(\Pohoda\List\ListGlobalSettingsRequest $listGlobalSettingsRequest)
     {
         $this->listGlobalSettingsRequest = $listGlobalSettingsRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listRegistrationNumberRequest
+     * Gets as listRegistrationNumberRequest.
      *
      * @return \Pohoda\List\ListRegistrationNumberRequest
      */
@@ -2145,19 +1818,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listRegistrationNumberRequest
+     * Sets a new listRegistrationNumberRequest.
      *
-     * @param \Pohoda\List\ListRegistrationNumberRequest $listRegistrationNumberRequest
      * @return self
      */
     public function setListRegistrationNumberRequest(\Pohoda\List\ListRegistrationNumberRequest $listRegistrationNumberRequest)
     {
         $this->listRegistrationNumberRequest = $listRegistrationNumberRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listMovementRequest
+     * Gets as listMovementRequest.
      *
      * @return \Pohoda\List\ListMovementRequest
      */
@@ -2167,19 +1840,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listMovementRequest
+     * Sets a new listMovementRequest.
      *
-     * @param \Pohoda\List\ListMovementRequest $listMovementRequest
      * @return self
      */
     public function setListMovementRequest(\Pohoda\List\ListMovementRequest $listMovementRequest)
     {
         $this->listMovementRequest = $listMovementRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listRecyclingContribRequest
+     * Gets as listRecyclingContribRequest.
      *
      * @return \Pohoda\List\ListRecyclingContribRequest
      */
@@ -2189,19 +1862,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listRecyclingContribRequest
+     * Sets a new listRecyclingContribRequest.
      *
-     * @param \Pohoda\List\ListRecyclingContribRequest $listRecyclingContribRequest
      * @return self
      */
     public function setListRecyclingContribRequest(\Pohoda\List\ListRecyclingContribRequest $listRecyclingContribRequest)
     {
         $this->listRecyclingContribRequest = $listRecyclingContribRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listIndividualPriceRequest
+     * Gets as listIndividualPriceRequest.
      *
      * @return \Pohoda\List\ListIndividualPriceRequest
      */
@@ -2211,19 +1884,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listIndividualPriceRequest
+     * Sets a new listIndividualPriceRequest.
      *
-     * @param \Pohoda\List\ListIndividualPriceRequest $listIndividualPriceRequest
      * @return self
      */
     public function setListIndividualPriceRequest(\Pohoda\List\ListIndividualPriceRequest $listIndividualPriceRequest)
     {
         $this->listIndividualPriceRequest = $listIndividualPriceRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listServiceRequest
+     * Gets as listServiceRequest.
      *
      * @return \Pohoda\List\ListServiceRequest
      */
@@ -2233,19 +1906,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listServiceRequest
+     * Sets a new listServiceRequest.
      *
-     * @param \Pohoda\List\ListServiceRequest $listServiceRequest
      * @return self
      */
     public function setListServiceRequest(\Pohoda\List\ListServiceRequest $listServiceRequest)
     {
         $this->listServiceRequest = $listServiceRequest;
+
         return $this;
     }
 
     /**
-     * Gets as listRulesPairingRequest
+     * Gets as listRulesPairingRequest.
      *
      * @return \Pohoda\List\ListRulesPairingRequest
      */
@@ -2255,19 +1928,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listRulesPairingRequest
+     * Sets a new listRulesPairingRequest.
      *
-     * @param \Pohoda\List\ListRulesPairingRequest $listRulesPairingRequest
      * @return self
      */
     public function setListRulesPairingRequest(\Pohoda\List\ListRulesPairingRequest $listRulesPairingRequest)
     {
         $this->listRulesPairingRequest = $listRulesPairingRequest;
+
         return $this;
     }
 
     /**
-     * Gets as liquidationWithoutLink
+     * Gets as liquidationWithoutLink.
      *
      * @return \Pohoda\LiquidationWithoutLink\LiquidationWithoutLink
      */
@@ -2277,19 +1950,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new liquidationWithoutLink
+     * Sets a new liquidationWithoutLink.
      *
-     * @param \Pohoda\LiquidationWithoutLink\LiquidationWithoutLink $liquidationWithoutLink
      * @return self
      */
     public function setLiquidationWithoutLink(\Pohoda\LiquidationWithoutLink\LiquidationWithoutLink $liquidationWithoutLink)
     {
         $this->liquidationWithoutLink = $liquidationWithoutLink;
+
         return $this;
     }
 
     /**
-     * Gets as automaticLiquidation
+     * Gets as automaticLiquidation.
      *
      * @return \Pohoda\AutomaticLiquidation
      */
@@ -2299,19 +1972,19 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new automaticLiquidation
+     * Sets a new automaticLiquidation.
      *
-     * @param \Pohoda\AutomaticLiquidation $automaticLiquidation
      * @return self
      */
     public function setAutomaticLiquidation(\Pohoda\AutomaticLiquidation $automaticLiquidation)
     {
         $this->automaticLiquidation = $automaticLiquidation;
+
         return $this;
     }
 
     /**
-     * Gets as listSupplierRequest
+     * Gets as listSupplierRequest.
      *
      * @return \Pohoda\List\ListSupplierRequest
      */
@@ -2321,14 +1994,14 @@ class DataPackItemType
     }
 
     /**
-     * Sets a new listSupplierRequest
+     * Sets a new listSupplierRequest.
      *
-     * @param \Pohoda\List\ListSupplierRequest $listSupplierRequest
      * @return self
      */
     public function setListSupplierRequest(\Pohoda\List\ListSupplierRequest $listSupplierRequest)
     {
         $this->listSupplierRequest = $listSupplierRequest;
+
         return $this;
     }
 }

@@ -1,66 +1,64 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prodejka;
 
 /**
- * Class representing PaymentItemType
- *
+ * Class representing PaymentItemType.
  *
  * XSD Type: paymentItemType
  */
 class PaymentItemType
 {
     /**
-     * Forma úhrady
-     *
-     * @var \Pohoda\Type\PaymentType $paymentType
+     * Forma úhrady.
      */
-    private $paymentType = null;
+    private \Pohoda\Type\PaymentType $paymentType = null;
 
     /**
      * Text (pouze pro export).
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Přijato.
-     *
-     * @var float $received
      */
-    private $received = null;
+    private float $received = null;
 
     /**
      * Přijato (pouze pro export).
-     *
-     * @var float $receivedHomeCurrency
      */
-    private $receivedHomeCurrency = null;
+    private float $receivedHomeCurrency = null;
 
     /**
      * Typ platby.
-     *
-     * @var \Pohoda\Prodejka\PaymentAdvancedType $paymentAdvanced
      */
-    private $paymentAdvanced = null;
+    private \Pohoda\Prodejka\PaymentAdvancedType $paymentAdvanced = null;
 
     /**
      * Vráceno (pouze pro export).
-     *
-     * @var float $returned
      */
-    private $returned = null;
+    private float $returned = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
-     * Gets as paymentType
+     * Gets as paymentType.
      *
      * Forma úhrady
      *
@@ -72,21 +70,21 @@ class PaymentItemType
     }
 
     /**
-     * Sets a new paymentType
+     * Sets a new paymentType.
      *
      * Forma úhrady
      *
-     * @param \Pohoda\Type\PaymentType $paymentType
      * @return self
      */
     public function setPaymentType(\Pohoda\Type\PaymentType $paymentType)
     {
         $this->paymentType = $paymentType;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text (pouze pro export).
      *
@@ -98,21 +96,23 @@ class PaymentItemType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text (pouze pro export).
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as received
+     * Gets as received.
      *
      * Přijato.
      *
@@ -124,21 +124,23 @@ class PaymentItemType
     }
 
     /**
-     * Sets a new received
+     * Sets a new received.
      *
      * Přijato.
      *
      * @param float $received
+     *
      * @return self
      */
     public function setReceived($received)
     {
         $this->received = $received;
+
         return $this;
     }
 
     /**
-     * Gets as receivedHomeCurrency
+     * Gets as receivedHomeCurrency.
      *
      * Přijato (pouze pro export).
      *
@@ -150,21 +152,23 @@ class PaymentItemType
     }
 
     /**
-     * Sets a new receivedHomeCurrency
+     * Sets a new receivedHomeCurrency.
      *
      * Přijato (pouze pro export).
      *
      * @param float $receivedHomeCurrency
+     *
      * @return self
      */
     public function setReceivedHomeCurrency($receivedHomeCurrency)
     {
         $this->receivedHomeCurrency = $receivedHomeCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as paymentAdvanced
+     * Gets as paymentAdvanced.
      *
      * Typ platby.
      *
@@ -176,21 +180,21 @@ class PaymentItemType
     }
 
     /**
-     * Sets a new paymentAdvanced
+     * Sets a new paymentAdvanced.
      *
      * Typ platby.
      *
-     * @param \Pohoda\Prodejka\PaymentAdvancedType $paymentAdvanced
      * @return self
      */
     public function setPaymentAdvanced(?\Pohoda\Prodejka\PaymentAdvancedType $paymentAdvanced = null)
     {
         $this->paymentAdvanced = $paymentAdvanced;
+
         return $this;
     }
 
     /**
-     * Gets as returned
+     * Gets as returned.
      *
      * Vráceno (pouze pro export).
      *
@@ -202,21 +206,23 @@ class PaymentItemType
     }
 
     /**
-     * Sets a new returned
+     * Sets a new returned.
      *
      * Vráceno (pouze pro export).
      *
      * @param float $returned
+     *
      * @return self
      */
     public function setReturned($returned)
     {
         $this->returned = $returned;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -228,16 +234,18 @@ class PaymentItemType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 }

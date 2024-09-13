@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListBankAccountType
- *
+ * Class representing ListBankAccountType.
  *
  * XSD Type: listBankAccountType
  */
 class ListBankAccountType extends ListVersionType
 {
     /**
-     * @var \Pohoda\BankAccount\BankAccountType[] $bankAccount
+     * @var \Pohoda\BankAccount\BankAccountType[]
      */
-    private $bankAccount = [
+    private array $bankAccount = [
     ];
 
     /**
-     * Adds as bankAccount
+     * Adds as bankAccount.
      *
      * @return self
-     * @param \Pohoda\BankAccount\BankAccountType $bankAccount
      */
     public function addToBankAccount(\Pohoda\BankAccount\BankAccountType $bankAccount)
     {
         $this->bankAccount[] = $bankAccount;
+
         return $this;
     }
 
     /**
-     * isset bankAccount
+     * isset bankAccount.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetBankAccount($index)
@@ -42,18 +55,17 @@ class ListBankAccountType extends ListVersionType
     }
 
     /**
-     * unset bankAccount
+     * unset bankAccount.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetBankAccount($index)
+    public function unsetBankAccount($index): void
     {
         unset($this->bankAccount[$index]);
     }
 
     /**
-     * Gets as bankAccount
+     * Gets as bankAccount.
      *
      * @return \Pohoda\BankAccount\BankAccountType[]
      */
@@ -63,14 +75,16 @@ class ListBankAccountType extends ListVersionType
     }
 
     /**
-     * Sets a new bankAccount
+     * Sets a new bankAccount.
      *
      * @param \Pohoda\BankAccount\BankAccountType[] $bankAccount
+     *
      * @return self
      */
-    public function setBankAccount(array $bankAccount = null)
+    public function setBankAccount(?array $bankAccount = null)
     {
         $this->bankAccount = $bankAccount;
+
         return $this;
     }
 }

@@ -1,45 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ListStock;
 
 /**
- * Class representing ListRequestStockType
- *
+ * Class representing ListRequestStockType.
  *
  * XSD Type: listRequestStockType
  */
 class ListRequestStockType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze dokladu.
-     *
-     * @var string $stockVersion
      */
-    private $stockVersion = null;
+    private string $stockVersion = null;
 
     /**
      * Atributy určují filtr pro export zásob. Pokud není zadán žádný filtr, vyexportují se všechny zásoby.
      *
-     * @var \Pohoda\Filter\RequestStockType[] $requestStock
+     * @var \Pohoda\Filter\RequestStockType[]
      */
-    private $requestStock = [
+    private array $requestStock = [
     ];
 
     /**
      * Omezení exportu dat.
      *
-     * @var \Pohoda\ListStock\RestrictionDataType[] $restrictionData
+     * @var \Pohoda\ListStock\RestrictionDataType[]
      */
-    private $restrictionData = [
+    private array $restrictionData = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -49,19 +56,21 @@ class ListRequestStockType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as stockVersion
+     * Gets as stockVersion.
      *
      * Požadovaná verze dokladu.
      *
@@ -73,39 +82,42 @@ class ListRequestStockType
     }
 
     /**
-     * Sets a new stockVersion
+     * Sets a new stockVersion.
      *
      * Požadovaná verze dokladu.
      *
      * @param string $stockVersion
+     *
      * @return self
      */
     public function setStockVersion($stockVersion)
     {
         $this->stockVersion = $stockVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestStock
+     * Adds as requestStock.
      *
      * Atributy určují filtr pro export zásob. Pokud není zadán žádný filtr, vyexportují se všechny zásoby.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestStockType $requestStock
      */
     public function addToRequestStock(\Pohoda\Filter\RequestStockType $requestStock)
     {
         $this->requestStock[] = $requestStock;
+
         return $this;
     }
 
     /**
-     * isset requestStock
+     * isset requestStock.
      *
      * Atributy určují filtr pro export zásob. Pokud není zadán žádný filtr, vyexportují se všechny zásoby.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestStock($index)
@@ -114,20 +126,19 @@ class ListRequestStockType
     }
 
     /**
-     * unset requestStock
+     * unset requestStock.
      *
      * Atributy určují filtr pro export zásob. Pokud není zadán žádný filtr, vyexportují se všechny zásoby.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestStock($index)
+    public function unsetRequestStock($index): void
     {
         unset($this->requestStock[$index]);
     }
 
     /**
-     * Gets as requestStock
+     * Gets as requestStock.
      *
      * Atributy určují filtr pro export zásob. Pokud není zadán žádný filtr, vyexportují se všechny zásoby.
      *
@@ -139,39 +150,42 @@ class ListRequestStockType
     }
 
     /**
-     * Sets a new requestStock
+     * Sets a new requestStock.
      *
      * Atributy určují filtr pro export zásob. Pokud není zadán žádný filtr, vyexportují se všechny zásoby.
      *
      * @param \Pohoda\Filter\RequestStockType[] $requestStock
+     *
      * @return self
      */
     public function setRequestStock(array $requestStock)
     {
         $this->requestStock = $requestStock;
+
         return $this;
     }
 
     /**
-     * Adds as restrictionData
+     * Adds as restrictionData.
      *
      * Omezení exportu dat.
      *
      * @return self
-     * @param \Pohoda\ListStock\RestrictionDataType $restrictionData
      */
     public function addToRestrictionData(\Pohoda\ListStock\RestrictionDataType $restrictionData)
     {
         $this->restrictionData[] = $restrictionData;
+
         return $this;
     }
 
     /**
-     * isset restrictionData
+     * isset restrictionData.
      *
      * Omezení exportu dat.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRestrictionData($index)
@@ -180,20 +194,19 @@ class ListRequestStockType
     }
 
     /**
-     * unset restrictionData
+     * unset restrictionData.
      *
      * Omezení exportu dat.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRestrictionData($index)
+    public function unsetRestrictionData($index): void
     {
         unset($this->restrictionData[$index]);
     }
 
     /**
-     * Gets as restrictionData
+     * Gets as restrictionData.
      *
      * Omezení exportu dat.
      *
@@ -205,16 +218,18 @@ class ListRequestStockType
     }
 
     /**
-     * Sets a new restrictionData
+     * Sets a new restrictionData.
      *
      * Omezení exportu dat.
      *
      * @param \Pohoda\ListStock\RestrictionDataType[] $restrictionData
+     *
      * @return self
      */
     public function setRestrictionData(array $restrictionData)
     {
         $this->restrictionData = $restrictionData;
+
         return $this;
     }
 }

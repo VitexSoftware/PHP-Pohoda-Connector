@@ -1,30 +1,39 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Accountancy;
 
 /**
- * Class representing AccountancyType
- *
+ * Class representing AccountancyType.
  *
  * XSD Type: accountancyType
  */
 class AccountancyType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Účetní doklad.
      *
-     * @var \Pohoda\Accountancy\AccountingItemType[] $accountingItem
+     * @var \Pohoda\Accountancy\AccountingItemType[]
      */
-    private $accountingItem = [
+    private array $accountingItem = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -34,37 +43,40 @@ class AccountancyType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Adds as accountingItem
+     * Adds as accountingItem.
      *
      * Účetní doklad.
      *
      * @return self
-     * @param \Pohoda\Accountancy\AccountingItemType $accountingItem
      */
     public function addToAccountingItem(\Pohoda\Accountancy\AccountingItemType $accountingItem)
     {
         $this->accountingItem[] = $accountingItem;
+
         return $this;
     }
 
     /**
-     * isset accountingItem
+     * isset accountingItem.
      *
      * Účetní doklad.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetAccountingItem($index)
@@ -73,20 +85,19 @@ class AccountancyType
     }
 
     /**
-     * unset accountingItem
+     * unset accountingItem.
      *
      * Účetní doklad.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetAccountingItem($index)
+    public function unsetAccountingItem($index): void
     {
         unset($this->accountingItem[$index]);
     }
 
     /**
-     * Gets as accountingItem
+     * Gets as accountingItem.
      *
      * Účetní doklad.
      *
@@ -98,16 +109,18 @@ class AccountancyType
     }
 
     /**
-     * Sets a new accountingItem
+     * Sets a new accountingItem.
      *
      * Účetní doklad.
      *
      * @param \Pohoda\Accountancy\AccountingItemType[] $accountingItem
+     *
      * @return self
      */
     public function setAccountingItem(array $accountingItem)
     {
         $this->accountingItem = $accountingItem;
+
         return $this;
     }
 }

@@ -1,46 +1,54 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PHPmServer - Addressbook helper class
+ * This file is part of the PHP-Pohoda-Connector package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020,2023 Vitex Software
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace mServer;
 
 /**
- * Address Adresa
+ * Address Adresa.
  *
  * @author vitex
  */
 class Adressbook extends Client
 {
     /**
-     * Current Object's agenda
-     * @var string
+     * Current Object's agenda.
      */
-    public $agenda = 'addressBook';
+    public string $agenda = 'addressBook';
 
     /**
-     * Request XML helper
-     * @var \Riesenia\Pohoda\Addressbook
+     * Request XML helper.
      */
-    public $requestXml = null;
+    public \Riesenia\Pohoda\Addressbook $requestXml = null;
 
     /**
-     * Create Agenda document using given data
+     * AddressBook records name column.
+     */
+    public string $nameColumn = 'address:company';
+
+    /**
+     * AddressBook records name column.
+     */
+    public string $nameColumn = 'address:company';
+
+    /**
+     * Create Agenda document using given data.
      *
      * @param array $data
      */
-    public function create($data)
+    public function create($data): void
     {
         $this->requestXml = $this->pohoda->createAddressbook($data);
     }
-
-    /**
-     * AddressBook records name column
-     * @var string
-     */
-    public $nameColumn = 'address:company';
 }

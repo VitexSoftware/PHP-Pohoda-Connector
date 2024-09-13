@@ -1,39 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type\StockItemMovementType;
 
 /**
- * Class representing StockItemAType
+ * Class representing StockItemAType.
  */
 class StockItemAType
 {
-    /**
-     * @var int $id
-     */
-    private $id = null;
+    private int $id = null;
+    private string $eAN = null;
+    private string $ids = null;
+    private string $name = null;
+    private string $nameComplement = null;
 
     /**
-     * @var string $eAN
-     */
-    private $eAN = null;
-
-    /**
-     * @var string $ids
-     */
-    private $ids = null;
-
-    /**
-     * @var string $name
-     */
-    private $name = null;
-
-    /**
-     * @var string $nameComplement
-     */
-    private $nameComplement = null;
-
-    /**
-     * Gets as id
+     * Gets as id.
      *
      * @return int
      */
@@ -43,19 +37,21 @@ class StockItemAType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as eAN
+     * Gets as eAN.
      *
      * @return string
      */
@@ -65,19 +61,21 @@ class StockItemAType
     }
 
     /**
-     * Sets a new eAN
+     * Sets a new eAN.
      *
      * @param string $eAN
+     *
      * @return self
      */
     public function setEAN($eAN)
     {
         $this->eAN = $eAN;
+
         return $this;
     }
 
     /**
-     * Gets as ids
+     * Gets as ids.
      *
      * @return string
      */
@@ -87,19 +85,21 @@ class StockItemAType
     }
 
     /**
-     * Sets a new ids
+     * Sets a new ids.
      *
      * @param string $ids
+     *
      * @return self
      */
     public function setIds($ids)
     {
         $this->ids = $ids;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * @return string
      */
@@ -109,19 +109,21 @@ class StockItemAType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as nameComplement
+     * Gets as nameComplement.
      *
      * @return string
      */
@@ -131,14 +133,16 @@ class StockItemAType
     }
 
     /**
-     * Sets a new nameComplement
+     * Sets a new nameComplement.
      *
      * @param string $nameComplement
+     *
      * @return self
      */
     public function setNameComplement($nameComplement)
     {
         $this->nameComplement = $nameComplement;
+
         return $this;
     }
 }

@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing IntParametersType
- *
+ * Class representing IntParametersType.
  *
  * XSD Type: intParametersType
  */
 class IntParametersType
 {
     /**
-     * @var \Pohoda\Stock\IntParameterType[] $intParameter
+     * @var \Pohoda\Stock\IntParameterType[]
      */
-    private $intParameter = [
+    private array $intParameter = [
     ];
 
     /**
-     * Adds as intParameter
+     * Adds as intParameter.
      *
      * @return self
-     * @param \Pohoda\Stock\IntParameterType $intParameter
      */
     public function addToIntParameter(\Pohoda\Stock\IntParameterType $intParameter)
     {
         $this->intParameter[] = $intParameter;
+
         return $this;
     }
 
     /**
-     * isset intParameter
+     * isset intParameter.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetIntParameter($index)
@@ -40,18 +53,17 @@ class IntParametersType
     }
 
     /**
-     * unset intParameter
+     * unset intParameter.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetIntParameter($index)
+    public function unsetIntParameter($index): void
     {
         unset($this->intParameter[$index]);
     }
 
     /**
-     * Gets as intParameter
+     * Gets as intParameter.
      *
      * @return \Pohoda\Stock\IntParameterType[]
      */
@@ -61,14 +73,16 @@ class IntParametersType
     }
 
     /**
-     * Sets a new intParameter
+     * Sets a new intParameter.
      *
      * @param \Pohoda\Stock\IntParameterType[] $intParameter
+     *
      * @return self
      */
-    public function setIntParameter(array $intParameter = null)
+    public function setIntParameter(?array $intParameter = null)
     {
         $this->intParameter = $intParameter;
+
         return $this;
     }
 }

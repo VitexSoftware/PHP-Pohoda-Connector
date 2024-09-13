@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing SelectedNumbersType
- *
+ * Class representing SelectedNumbersType.
  *
  * XSD Type: selectedNumbersType
  */
@@ -13,31 +25,32 @@ class SelectedNumbersType
     /**
      * Evidenční číslo dokladu.
      *
-     * @var \Pohoda\Type\NumberType[] $number
+     * @var \Pohoda\Type\NumberType[]
      */
-    private $number = [
+    private array $number = [
     ];
 
     /**
-     * Adds as number
+     * Adds as number.
      *
      * Evidenční číslo dokladu.
      *
      * @return self
-     * @param \Pohoda\Type\NumberType $number
      */
     public function addToNumber(\Pohoda\Type\NumberType $number)
     {
         $this->number[] = $number;
+
         return $this;
     }
 
     /**
-     * isset number
+     * isset number.
      *
      * Evidenční číslo dokladu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetNumber($index)
@@ -46,20 +59,19 @@ class SelectedNumbersType
     }
 
     /**
-     * unset number
+     * unset number.
      *
      * Evidenční číslo dokladu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetNumber($index)
+    public function unsetNumber($index): void
     {
         unset($this->number[$index]);
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Evidenční číslo dokladu.
      *
@@ -71,16 +83,18 @@ class SelectedNumbersType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Evidenční číslo dokladu.
      *
      * @param \Pohoda\Type\NumberType[] $number
+     *
      * @return self
      */
     public function setNumber(array $number)
     {
         $this->number = $number;
+
         return $this;
     }
 }

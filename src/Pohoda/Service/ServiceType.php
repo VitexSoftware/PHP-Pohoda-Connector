@@ -1,47 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Service;
 
 /**
- * Class representing ServiceType
- *
+ * Class representing ServiceType.
  *
  * XSD Type: serviceType
  */
 class ServiceType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \Pohoda\Service\ServiceHeaderType $serviceHeader = null;
+    private \Pohoda\Service\ServiceSubjectType $serviceSubject = null;
 
     /**
-     * @var \Pohoda\Service\ServiceHeaderType $serviceHeader
+     * @var \Pohoda\Service\StateType[]
      */
-    private $serviceHeader = null;
+    private array $serviceStates = null;
 
     /**
-     * @var \Pohoda\Service\ServiceSubjectType $serviceSubject
+     * @var \Pohoda\Service\ItemType[]
      */
-    private $serviceSubject = null;
+    private array $serviceItems = null;
+    private \Pohoda\Service\ServiceSummaryType $serviceSummary = null;
 
     /**
-     * @var \Pohoda\Service\StateType[] $serviceStates
-     */
-    private $serviceStates = null;
-
-    /**
-     * @var \Pohoda\Service\ItemType[] $serviceItems
-     */
-    private $serviceItems = null;
-
-    /**
-     * @var \Pohoda\Service\ServiceSummaryType $serviceSummary
-     */
-    private $serviceSummary = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -51,19 +48,21 @@ class ServiceType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as serviceHeader
+     * Gets as serviceHeader.
      *
      * @return \Pohoda\Service\ServiceHeaderType
      */
@@ -73,19 +72,19 @@ class ServiceType
     }
 
     /**
-     * Sets a new serviceHeader
+     * Sets a new serviceHeader.
      *
-     * @param \Pohoda\Service\ServiceHeaderType $serviceHeader
      * @return self
      */
     public function setServiceHeader(\Pohoda\Service\ServiceHeaderType $serviceHeader)
     {
         $this->serviceHeader = $serviceHeader;
+
         return $this;
     }
 
     /**
-     * Gets as serviceSubject
+     * Gets as serviceSubject.
      *
      * @return \Pohoda\Service\ServiceSubjectType
      */
@@ -95,33 +94,34 @@ class ServiceType
     }
 
     /**
-     * Sets a new serviceSubject
+     * Sets a new serviceSubject.
      *
-     * @param \Pohoda\Service\ServiceSubjectType $serviceSubject
      * @return self
      */
     public function setServiceSubject(\Pohoda\Service\ServiceSubjectType $serviceSubject)
     {
         $this->serviceSubject = $serviceSubject;
+
         return $this;
     }
 
     /**
-     * Adds as state
+     * Adds as state.
      *
      * @return self
-     * @param \Pohoda\Service\StateType $state
      */
     public function addToServiceStates(\Pohoda\Service\StateType $state)
     {
         $this->serviceStates[] = $state;
+
         return $this;
     }
 
     /**
-     * isset serviceStates
+     * isset serviceStates.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetServiceStates($index)
@@ -130,18 +130,17 @@ class ServiceType
     }
 
     /**
-     * unset serviceStates
+     * unset serviceStates.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetServiceStates($index)
+    public function unsetServiceStates($index): void
     {
         unset($this->serviceStates[$index]);
     }
 
     /**
-     * Gets as serviceStates
+     * Gets as serviceStates.
      *
      * @return \Pohoda\Service\StateType[]
      */
@@ -151,33 +150,36 @@ class ServiceType
     }
 
     /**
-     * Sets a new serviceStates
+     * Sets a new serviceStates.
      *
      * @param \Pohoda\Service\StateType[] $serviceStates
+     *
      * @return self
      */
-    public function setServiceStates(array $serviceStates = null)
+    public function setServiceStates(?array $serviceStates = null)
     {
         $this->serviceStates = $serviceStates;
+
         return $this;
     }
 
     /**
-     * Adds as item
+     * Adds as item.
      *
      * @return self
-     * @param \Pohoda\Service\ItemType $item
      */
     public function addToServiceItems(\Pohoda\Service\ItemType $item)
     {
         $this->serviceItems[] = $item;
+
         return $this;
     }
 
     /**
-     * isset serviceItems
+     * isset serviceItems.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetServiceItems($index)
@@ -186,18 +188,17 @@ class ServiceType
     }
 
     /**
-     * unset serviceItems
+     * unset serviceItems.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetServiceItems($index)
+    public function unsetServiceItems($index): void
     {
         unset($this->serviceItems[$index]);
     }
 
     /**
-     * Gets as serviceItems
+     * Gets as serviceItems.
      *
      * @return \Pohoda\Service\ItemType[]
      */
@@ -207,19 +208,21 @@ class ServiceType
     }
 
     /**
-     * Sets a new serviceItems
+     * Sets a new serviceItems.
      *
      * @param \Pohoda\Service\ItemType[] $serviceItems
+     *
      * @return self
      */
-    public function setServiceItems(array $serviceItems = null)
+    public function setServiceItems(?array $serviceItems = null)
     {
         $this->serviceItems = $serviceItems;
+
         return $this;
     }
 
     /**
-     * Gets as serviceSummary
+     * Gets as serviceSummary.
      *
      * @return \Pohoda\Service\ServiceSummaryType
      */
@@ -229,14 +232,14 @@ class ServiceType
     }
 
     /**
-     * Sets a new serviceSummary
+     * Sets a new serviceSummary.
      *
-     * @param \Pohoda\Service\ServiceSummaryType $serviceSummary
      * @return self
      */
     public function setServiceSummary(?\Pohoda\Service\ServiceSummaryType $serviceSummary = null)
     {
         $this->serviceSummary = $serviceSummary;
+
         return $this;
     }
 }

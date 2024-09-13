@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing LinkItemType
- *
+ * Class representing LinkItemType.
  *
  * XSD Type: linkItemType
  */
@@ -12,41 +24,31 @@ class LinkItemType
 {
     /**
      * Agenda zdrojového dokladu.
-     *
-     * @var string $sourceAgenda
      */
-    private $sourceAgenda = null;
+    private string $sourceAgenda = null;
 
     /**
      * ID položky dokladu.
-     *
-     * @var int $sourceItemId
      */
-    private $sourceItemId = null;
+    private int $sourceItemId = null;
 
     /**
      * Externí identifikátor položky dokladu.
-     *
-     * @var \Pohoda\Type\ExtIdType $sourceItemExtId
      */
-    private $sourceItemExtId = null;
+    private \Pohoda\Type\ExtIdType $sourceItemExtId = null;
 
     /**
      * Nastavení příznaků na zdrojovém dokladu po vytvoření vazby přes položky dokladu.
-     *
-     * @var \Pohoda\Type\SettingsSourceDocumentOrderItemType $settingsSourceDocumentOrderItem
      */
-    private $settingsSourceDocumentOrderItem = null;
+    private \Pohoda\Type\SettingsSourceDocumentOrderItemType $settingsSourceDocumentOrderItem = null;
 
     /**
      * Nastavení příznaků na zdrojovém dokladu po vytvoření vazby přes položky dokladu.
-     *
-     * @var \Pohoda\Type\SettingsSourceDocumentItemType $settingsSourceDocumentItem
      */
-    private $settingsSourceDocumentItem = null;
+    private \Pohoda\Type\SettingsSourceDocumentItemType $settingsSourceDocumentItem = null;
 
     /**
-     * Gets as sourceAgenda
+     * Gets as sourceAgenda.
      *
      * Agenda zdrojového dokladu.
      *
@@ -58,21 +60,23 @@ class LinkItemType
     }
 
     /**
-     * Sets a new sourceAgenda
+     * Sets a new sourceAgenda.
      *
      * Agenda zdrojového dokladu.
      *
      * @param string $sourceAgenda
+     *
      * @return self
      */
     public function setSourceAgenda($sourceAgenda)
     {
         $this->sourceAgenda = $sourceAgenda;
+
         return $this;
     }
 
     /**
-     * Gets as sourceItemId
+     * Gets as sourceItemId.
      *
      * ID položky dokladu.
      *
@@ -84,21 +88,23 @@ class LinkItemType
     }
 
     /**
-     * Sets a new sourceItemId
+     * Sets a new sourceItemId.
      *
      * ID položky dokladu.
      *
      * @param int $sourceItemId
+     *
      * @return self
      */
     public function setSourceItemId($sourceItemId)
     {
         $this->sourceItemId = $sourceItemId;
+
         return $this;
     }
 
     /**
-     * Gets as sourceItemExtId
+     * Gets as sourceItemExtId.
      *
      * Externí identifikátor položky dokladu.
      *
@@ -110,21 +116,21 @@ class LinkItemType
     }
 
     /**
-     * Sets a new sourceItemExtId
+     * Sets a new sourceItemExtId.
      *
      * Externí identifikátor položky dokladu.
      *
-     * @param \Pohoda\Type\ExtIdType $sourceItemExtId
      * @return self
      */
     public function setSourceItemExtId(?\Pohoda\Type\ExtIdType $sourceItemExtId = null)
     {
         $this->sourceItemExtId = $sourceItemExtId;
+
         return $this;
     }
 
     /**
-     * Gets as settingsSourceDocumentOrderItem
+     * Gets as settingsSourceDocumentOrderItem.
      *
      * Nastavení příznaků na zdrojovém dokladu po vytvoření vazby přes položky dokladu.
      *
@@ -136,21 +142,21 @@ class LinkItemType
     }
 
     /**
-     * Sets a new settingsSourceDocumentOrderItem
+     * Sets a new settingsSourceDocumentOrderItem.
      *
      * Nastavení příznaků na zdrojovém dokladu po vytvoření vazby přes položky dokladu.
      *
-     * @param \Pohoda\Type\SettingsSourceDocumentOrderItemType $settingsSourceDocumentOrderItem
      * @return self
      */
     public function setSettingsSourceDocumentOrderItem(?\Pohoda\Type\SettingsSourceDocumentOrderItemType $settingsSourceDocumentOrderItem = null)
     {
         $this->settingsSourceDocumentOrderItem = $settingsSourceDocumentOrderItem;
+
         return $this;
     }
 
     /**
-     * Gets as settingsSourceDocumentItem
+     * Gets as settingsSourceDocumentItem.
      *
      * Nastavení příznaků na zdrojovém dokladu po vytvoření vazby přes položky dokladu.
      *
@@ -162,16 +168,16 @@ class LinkItemType
     }
 
     /**
-     * Sets a new settingsSourceDocumentItem
+     * Sets a new settingsSourceDocumentItem.
      *
      * Nastavení příznaků na zdrojovém dokladu po vytvoření vazby přes položky dokladu.
      *
-     * @param \Pohoda\Type\SettingsSourceDocumentItemType $settingsSourceDocumentItem
      * @return self
      */
     public function setSettingsSourceDocumentItem(?\Pohoda\Type\SettingsSourceDocumentItemType $settingsSourceDocumentItem = null)
     {
         $this->settingsSourceDocumentItem = $settingsSourceDocumentItem;
+
         return $this;
     }
 }

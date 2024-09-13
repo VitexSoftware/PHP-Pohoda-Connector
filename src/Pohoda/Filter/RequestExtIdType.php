@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing RequestExtIdType
- *
+ * Class representing RequestExtIdType.
  *
  * XSD Type: requestExtIdType
  */
@@ -12,13 +24,11 @@ class RequestExtIdType
 {
     /**
      * Seznam polí podle kterých se bude filtrovat.
-     *
-     * @var \Pohoda\Filter\FilterExtIdType $filter
      */
-    private $filter = null;
+    private \Pohoda\Filter\FilterExtIdType $filter = null;
 
     /**
-     * Gets as filter
+     * Gets as filter.
      *
      * Seznam polí podle kterých se bude filtrovat.
      *
@@ -30,16 +40,16 @@ class RequestExtIdType
     }
 
     /**
-     * Sets a new filter
+     * Sets a new filter.
      *
      * Seznam polí podle kterých se bude filtrovat.
      *
-     * @param \Pohoda\Filter\FilterExtIdType $filter
      * @return self
      */
     public function setFilter(?\Pohoda\Filter\FilterExtIdType $filter = null)
     {
         $this->filter = $filter;
+
         return $this;
     }
 }

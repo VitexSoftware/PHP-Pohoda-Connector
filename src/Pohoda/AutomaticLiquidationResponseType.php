@@ -1,12 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda;
 
 use Pohoda\Documentresponse\DocumentResponseType;
 
 /**
- * Class representing AutomaticLiquidationResponseType
- *
+ * Class representing AutomaticLiquidationResponseType.
  *
  * XSD Type: automaticLiquidationResponseType
  */
@@ -15,30 +27,31 @@ class AutomaticLiquidationResponseType extends DocumentResponseType
     /**
      * Vytvořené likvidace bankovních dokladů.
      *
-     * @var \Pohoda\AutomaticLiquidationDetailType[] $automaticLiquidationDetails
+     * @var \Pohoda\AutomaticLiquidationDetailType[]
      */
-    private $automaticLiquidationDetails = null;
+    private array $automaticLiquidationDetails = null;
 
     /**
-     * Adds as automaticLiquidationDetail
+     * Adds as automaticLiquidationDetail.
      *
      * Vytvořené likvidace bankovních dokladů.
      *
      * @return self
-     * @param \Pohoda\AutomaticLiquidationDetailType $automaticLiquidationDetail
      */
     public function addToAutomaticLiquidationDetails(\Pohoda\AutomaticLiquidationDetailType $automaticLiquidationDetail)
     {
         $this->automaticLiquidationDetails[] = $automaticLiquidationDetail;
+
         return $this;
     }
 
     /**
-     * isset automaticLiquidationDetails
+     * isset automaticLiquidationDetails.
      *
      * Vytvořené likvidace bankovních dokladů.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetAutomaticLiquidationDetails($index)
@@ -47,20 +60,19 @@ class AutomaticLiquidationResponseType extends DocumentResponseType
     }
 
     /**
-     * unset automaticLiquidationDetails
+     * unset automaticLiquidationDetails.
      *
      * Vytvořené likvidace bankovních dokladů.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetAutomaticLiquidationDetails($index)
+    public function unsetAutomaticLiquidationDetails($index): void
     {
         unset($this->automaticLiquidationDetails[$index]);
     }
 
     /**
-     * Gets as automaticLiquidationDetails
+     * Gets as automaticLiquidationDetails.
      *
      * Vytvořené likvidace bankovních dokladů.
      *
@@ -72,16 +84,18 @@ class AutomaticLiquidationResponseType extends DocumentResponseType
     }
 
     /**
-     * Sets a new automaticLiquidationDetails
+     * Sets a new automaticLiquidationDetails.
      *
      * Vytvořené likvidace bankovních dokladů.
      *
      * @param \Pohoda\AutomaticLiquidationDetailType[] $automaticLiquidationDetails
+     *
      * @return self
      */
-    public function setAutomaticLiquidationDetails(array $automaticLiquidationDetails = null)
+    public function setAutomaticLiquidationDetails(?array $automaticLiquidationDetails = null)
     {
         $this->automaticLiquidationDetails = $automaticLiquidationDetails;
+
         return $this;
     }
 }

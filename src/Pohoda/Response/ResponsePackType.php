@@ -1,67 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Response;
 
 /**
- * Class representing ResponsePackType
- *
+ * Class representing ResponsePackType.
  *
  * XSD Type: responsePackType
  */
 class ResponsePackType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
-
-    /**
-     * @var string $id
-     */
-    private $id = null;
-
-    /**
-     * @var string $state
-     */
-    private $state = null;
-
-    /**
-     * @var string $note
-     */
-    private $note = null;
-
-    /**
-     * @var string $programVersion
-     */
-    private $programVersion = null;
+    private string $version = null;
+    private string $id = null;
+    private string $state = null;
+    private string $note = null;
+    private string $programVersion = null;
 
     /**
      * IČ firmy, která XML zpracovala.
-     *
-     * @var string $ico
      */
-    private $ico = null;
+    private string $ico = null;
 
     /**
      * Jedinečný identifikátor účetnictví firmy, která XML zpracovala.
-     *
-     * @var string $key
      */
-    private $key = null;
+    private string $key = null;
+    private \DateTime $dateTimeStamp = null;
 
     /**
-     * @var \DateTime $dateTimeStamp
+     * @var \Pohoda\Response\ResponsePackItemType[]
      */
-    private $dateTimeStamp = null;
-
-    /**
-     * @var \Pohoda\Response\ResponsePackItemType[] $responsePackItem
-     */
-    private $responsePackItem = [
+    private array $responsePackItem = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -71,19 +56,21 @@ class ResponsePackType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * @return string
      */
@@ -93,19 +80,21 @@ class ResponsePackType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param string $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as state
+     * Gets as state.
      *
      * @return string
      */
@@ -115,19 +104,21 @@ class ResponsePackType
     }
 
     /**
-     * Sets a new state
+     * Sets a new state.
      *
      * @param string $state
+     *
      * @return self
      */
     public function setState($state)
     {
         $this->state = $state;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * @return string
      */
@@ -137,19 +128,21 @@ class ResponsePackType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as programVersion
+     * Gets as programVersion.
      *
      * @return string
      */
@@ -159,19 +152,21 @@ class ResponsePackType
     }
 
     /**
-     * Sets a new programVersion
+     * Sets a new programVersion.
      *
      * @param string $programVersion
+     *
      * @return self
      */
     public function setProgramVersion($programVersion)
     {
         $this->programVersion = $programVersion;
+
         return $this;
     }
 
     /**
-     * Gets as ico
+     * Gets as ico.
      *
      * IČ firmy, která XML zpracovala.
      *
@@ -183,21 +178,23 @@ class ResponsePackType
     }
 
     /**
-     * Sets a new ico
+     * Sets a new ico.
      *
      * IČ firmy, která XML zpracovala.
      *
      * @param string $ico
+     *
      * @return self
      */
     public function setIco($ico)
     {
         $this->ico = $ico;
+
         return $this;
     }
 
     /**
-     * Gets as key
+     * Gets as key.
      *
      * Jedinečný identifikátor účetnictví firmy, která XML zpracovala.
      *
@@ -209,21 +206,23 @@ class ResponsePackType
     }
 
     /**
-     * Sets a new key
+     * Sets a new key.
      *
      * Jedinečný identifikátor účetnictví firmy, která XML zpracovala.
      *
      * @param string $key
+     *
      * @return self
      */
     public function setKey($key)
     {
         $this->key = $key;
+
         return $this;
     }
 
     /**
-     * Gets as dateTimeStamp
+     * Gets as dateTimeStamp.
      *
      * @return \DateTime
      */
@@ -233,33 +232,34 @@ class ResponsePackType
     }
 
     /**
-     * Sets a new dateTimeStamp
+     * Sets a new dateTimeStamp.
      *
-     * @param \DateTime $dateTimeStamp
      * @return self
      */
     public function setDateTimeStamp(\DateTime $dateTimeStamp)
     {
         $this->dateTimeStamp = $dateTimeStamp;
+
         return $this;
     }
 
     /**
-     * Adds as responsePackItem
+     * Adds as responsePackItem.
      *
      * @return self
-     * @param \Pohoda\Response\ResponsePackItemType $responsePackItem
      */
     public function addToResponsePackItem(\Pohoda\Response\ResponsePackItemType $responsePackItem)
     {
         $this->responsePackItem[] = $responsePackItem;
+
         return $this;
     }
 
     /**
-     * isset responsePackItem
+     * isset responsePackItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetResponsePackItem($index)
@@ -268,18 +268,17 @@ class ResponsePackType
     }
 
     /**
-     * unset responsePackItem
+     * unset responsePackItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetResponsePackItem($index)
+    public function unsetResponsePackItem($index): void
     {
         unset($this->responsePackItem[$index]);
     }
 
     /**
-     * Gets as responsePackItem
+     * Gets as responsePackItem.
      *
      * @return \Pohoda\Response\ResponsePackItemType[]
      */
@@ -289,14 +288,16 @@ class ResponsePackType
     }
 
     /**
-     * Sets a new responsePackItem
+     * Sets a new responsePackItem.
      *
      * @param \Pohoda\Response\ResponsePackItemType[] $responsePackItem
+     *
      * @return self
      */
-    public function setResponsePackItem(array $responsePackItem = null)
+    public function setResponsePackItem(?array $responsePackItem = null)
     {
         $this->responsePackItem = $responsePackItem;
+
         return $this;
     }
 }

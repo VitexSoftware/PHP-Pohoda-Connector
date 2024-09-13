@@ -1,62 +1,55 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Vydejka;
 
 /**
- * Class representing VydejkaType
- *
+ * Class representing VydejkaType.
  *
  * XSD Type: vydejkaType
  */
 class VydejkaType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
      *  Povolené jsou vazby z agendy:
      *  - Přijaté objednávky
-     *  - Vydané faktury
-     *
-     * @var \Pohoda\Type\LinksType $links
+     *  - Vydané faktury.
      */
-    private $links = null;
-
-    /**
-     * @var \Pohoda\Vydejka\VydejkaHeaderType $vydejkaHeader
-     */
-    private $vydejkaHeader = null;
-
-    /**
-     * @var \Pohoda\Vydejka\VydejkaDetailType $vydejkaDetail
-     */
-    private $vydejkaDetail = null;
-
-    /**
-     * @var \Pohoda\Vydejka\VydejkaSummaryType $vydejkaSummary
-     */
-    private $vydejkaSummary = null;
+    private \Pohoda\Type\LinksType $links = null;
+    private \Pohoda\Vydejka\VydejkaHeaderType $vydejkaHeader = null;
+    private \Pohoda\Vydejka\VydejkaDetailType $vydejkaDetail = null;
+    private \Pohoda\Vydejka\VydejkaSummaryType $vydejkaSummary = null;
 
     /**
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
-     *
-     * @var \Pohoda\Type\LinksType $linkedDocuments
      */
-    private $linkedDocuments = null;
+    private \Pohoda\Type\LinksType $linkedDocuments = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -66,19 +59,21 @@ class VydejkaType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as links
+     * Gets as links.
      *
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
@@ -94,7 +89,7 @@ class VydejkaType
     }
 
     /**
-     * Sets a new links
+     * Sets a new links.
      *
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
@@ -102,17 +97,17 @@ class VydejkaType
      *  - Přijaté objednávky
      *  - Vydané faktury
      *
-     * @param \Pohoda\Type\LinksType $links
      * @return self
      */
     public function setLinks(?\Pohoda\Type\LinksType $links = null)
     {
         $this->links = $links;
+
         return $this;
     }
 
     /**
-     * Gets as vydejkaHeader
+     * Gets as vydejkaHeader.
      *
      * @return \Pohoda\Vydejka\VydejkaHeaderType
      */
@@ -122,19 +117,19 @@ class VydejkaType
     }
 
     /**
-     * Sets a new vydejkaHeader
+     * Sets a new vydejkaHeader.
      *
-     * @param \Pohoda\Vydejka\VydejkaHeaderType $vydejkaHeader
      * @return self
      */
     public function setVydejkaHeader(?\Pohoda\Vydejka\VydejkaHeaderType $vydejkaHeader = null)
     {
         $this->vydejkaHeader = $vydejkaHeader;
+
         return $this;
     }
 
     /**
-     * Gets as vydejkaDetail
+     * Gets as vydejkaDetail.
      *
      * @return \Pohoda\Vydejka\VydejkaDetailType
      */
@@ -144,19 +139,19 @@ class VydejkaType
     }
 
     /**
-     * Sets a new vydejkaDetail
+     * Sets a new vydejkaDetail.
      *
-     * @param \Pohoda\Vydejka\VydejkaDetailType $vydejkaDetail
      * @return self
      */
     public function setVydejkaDetail(?\Pohoda\Vydejka\VydejkaDetailType $vydejkaDetail = null)
     {
         $this->vydejkaDetail = $vydejkaDetail;
+
         return $this;
     }
 
     /**
-     * Gets as vydejkaSummary
+     * Gets as vydejkaSummary.
      *
      * @return \Pohoda\Vydejka\VydejkaSummaryType
      */
@@ -166,19 +161,19 @@ class VydejkaType
     }
 
     /**
-     * Sets a new vydejkaSummary
+     * Sets a new vydejkaSummary.
      *
-     * @param \Pohoda\Vydejka\VydejkaSummaryType $vydejkaSummary
      * @return self
      */
     public function setVydejkaSummary(?\Pohoda\Vydejka\VydejkaSummaryType $vydejkaSummary = null)
     {
         $this->vydejkaSummary = $vydejkaSummary;
+
         return $this;
     }
 
     /**
-     * Gets as linkedDocuments
+     * Gets as linkedDocuments.
      *
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      *
@@ -190,39 +185,40 @@ class VydejkaType
     }
 
     /**
-     * Sets a new linkedDocuments
+     * Sets a new linkedDocuments.
      *
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      *
-     * @param \Pohoda\Type\LinksType $linkedDocuments
      * @return self
      */
     public function setLinkedDocuments(?\Pohoda\Type\LinksType $linkedDocuments = null)
     {
         $this->linkedDocuments = $linkedDocuments;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -231,20 +227,19 @@ class VydejkaType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -256,16 +251,18 @@ class VydejkaType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
-    public function setPrint(array $print = null)
+    public function setPrint(?array $print = null)
     {
         $this->print = $print;
+
         return $this;
     }
 }

@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing RelatedLinksType
- *
+ * Class representing RelatedLinksType.
  *
  * XSD Type: relatedLinksType
  */
 class RelatedLinksType
 {
     /**
-     * @var \Pohoda\Stock\RelatedLinkType[] $relatedLink
+     * @var \Pohoda\Stock\RelatedLinkType[]
      */
-    private $relatedLink = [
+    private array $relatedLink = [
     ];
 
     /**
-     * Adds as relatedLink
+     * Adds as relatedLink.
      *
      * @return self
-     * @param \Pohoda\Stock\RelatedLinkType $relatedLink
      */
     public function addToRelatedLink(\Pohoda\Stock\RelatedLinkType $relatedLink)
     {
         $this->relatedLink[] = $relatedLink;
+
         return $this;
     }
 
     /**
-     * isset relatedLink
+     * isset relatedLink.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRelatedLink($index)
@@ -40,18 +53,17 @@ class RelatedLinksType
     }
 
     /**
-     * unset relatedLink
+     * unset relatedLink.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRelatedLink($index)
+    public function unsetRelatedLink($index): void
     {
         unset($this->relatedLink[$index]);
     }
 
     /**
-     * Gets as relatedLink
+     * Gets as relatedLink.
      *
      * @return \Pohoda\Stock\RelatedLinkType[]
      */
@@ -61,14 +73,16 @@ class RelatedLinksType
     }
 
     /**
-     * Sets a new relatedLink
+     * Sets a new relatedLink.
      *
      * @param \Pohoda\Stock\RelatedLinkType[] $relatedLink
+     *
      * @return self
      */
     public function setRelatedLink(array $relatedLink)
     {
         $this->relatedLink = $relatedLink;
+
         return $this;
     }
 }

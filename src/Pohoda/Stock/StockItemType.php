@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing StockItemType
- *
+ * Class representing StockItemType.
  *
  * XSD Type: stockItemType
  */
@@ -12,76 +24,58 @@ class StockItemType
 {
     /**
      * ID položky zásoby (od verze 2.1).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
-     * Informace o použité skladové zásobě (od verze 2.1)
-     *
-     * @var \Pohoda\Stock\StockInfoType $stockInfo
+     * Informace o použité skladové zásobě (od verze 2.1).
      */
-    private $stockInfo = null;
+    private \Pohoda\Stock\StockInfoType $stockInfo = null;
 
     /**
      * Členění.
-     *
-     * @var \Pohoda\Type\RefTypeStorageType $storage
      */
-    private $storage = null;
+    private \Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Řetězcový identifikátor skladové položky.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Název skladové položky (jen pro export).
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Stav zásoby (jen pro export).
-     *
-     * @var float $count
      */
-    private $count = null;
+    private float $count = null;
 
     /**
      * Množství.
-     *
-     * @var float $quantity
      */
-    private $quantity = null;
+    private float $quantity = null;
 
     /**
      * Měrná jednotka (jen pro export).
-     *
-     * @var string $unit
      */
-    private $unit = null;
+    private string $unit = null;
 
     /**
      * Pořadí položek (jen pro export).
-     *
-     * @var int $stockOrder
      */
-    private $stockOrder = null;
+    private int $stockOrder = null;
 
     /**
      * Úprava cen položky zásob u jednotlivých cenových hladin. Jen u typu Komplet.
      *
-     * @var \Pohoda\Type\StockPriceType[] $stockPriceItem
+     * @var \Pohoda\Type\StockPriceType[]
      */
-    private $stockPriceItem = null;
+    private array $stockPriceItem = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID položky zásoby (od verze 2.1).
      *
@@ -93,21 +87,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID položky zásoby (od verze 2.1).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as stockInfo
+     * Gets as stockInfo.
      *
      * Informace o použité skladové zásobě (od verze 2.1)
      *
@@ -119,21 +115,21 @@ class StockItemType
     }
 
     /**
-     * Sets a new stockInfo
+     * Sets a new stockInfo.
      *
      * Informace o použité skladové zásobě (od verze 2.1)
      *
-     * @param \Pohoda\Stock\StockInfoType $stockInfo
      * @return self
      */
     public function setStockInfo(?\Pohoda\Stock\StockInfoType $stockInfo = null)
     {
         $this->stockInfo = $stockInfo;
+
         return $this;
     }
 
     /**
-     * Gets as storage
+     * Gets as storage.
      *
      * Členění.
      *
@@ -145,21 +141,21 @@ class StockItemType
     }
 
     /**
-     * Sets a new storage
+     * Sets a new storage.
      *
      * Členění.
      *
-     * @param \Pohoda\Type\RefTypeStorageType $storage
      * @return self
      */
     public function setStorage(?\Pohoda\Type\RefTypeStorageType $storage = null)
     {
         $this->storage = $storage;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Řetězcový identifikátor skladové položky.
      *
@@ -171,21 +167,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Řetězcový identifikátor skladové položky.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název skladové položky (jen pro export).
      *
@@ -197,21 +195,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název skladové položky (jen pro export).
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as count
+     * Gets as count.
      *
      * Stav zásoby (jen pro export).
      *
@@ -223,21 +223,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new count
+     * Sets a new count.
      *
      * Stav zásoby (jen pro export).
      *
      * @param float $count
+     *
      * @return self
      */
     public function setCount($count)
     {
         $this->count = $count;
+
         return $this;
     }
 
     /**
-     * Gets as quantity
+     * Gets as quantity.
      *
      * Množství.
      *
@@ -249,21 +251,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new quantity
+     * Sets a new quantity.
      *
      * Množství.
      *
      * @param float $quantity
+     *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
     /**
-     * Gets as unit
+     * Gets as unit.
      *
      * Měrná jednotka (jen pro export).
      *
@@ -275,21 +279,23 @@ class StockItemType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * Měrná jednotka (jen pro export).
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as stockOrder
+     * Gets as stockOrder.
      *
      * Pořadí položek (jen pro export).
      *
@@ -301,39 +307,42 @@ class StockItemType
     }
 
     /**
-     * Sets a new stockOrder
+     * Sets a new stockOrder.
      *
      * Pořadí položek (jen pro export).
      *
      * @param int $stockOrder
+     *
      * @return self
      */
     public function setStockOrder($stockOrder)
     {
         $this->stockOrder = $stockOrder;
+
         return $this;
     }
 
     /**
-     * Adds as stockPrice
+     * Adds as stockPrice.
      *
      * Úprava cen položky zásob u jednotlivých cenových hladin. Jen u typu Komplet.
      *
      * @return self
-     * @param \Pohoda\Type\StockPriceType $stockPrice
      */
     public function addToStockPriceItem(\Pohoda\Type\StockPriceType $stockPrice)
     {
         $this->stockPriceItem[] = $stockPrice;
+
         return $this;
     }
 
     /**
-     * isset stockPriceItem
+     * isset stockPriceItem.
      *
      * Úprava cen položky zásob u jednotlivých cenových hladin. Jen u typu Komplet.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetStockPriceItem($index)
@@ -342,20 +351,19 @@ class StockItemType
     }
 
     /**
-     * unset stockPriceItem
+     * unset stockPriceItem.
      *
      * Úprava cen položky zásob u jednotlivých cenových hladin. Jen u typu Komplet.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetStockPriceItem($index)
+    public function unsetStockPriceItem($index): void
     {
         unset($this->stockPriceItem[$index]);
     }
 
     /**
-     * Gets as stockPriceItem
+     * Gets as stockPriceItem.
      *
      * Úprava cen položky zásob u jednotlivých cenových hladin. Jen u typu Komplet.
      *
@@ -367,16 +375,18 @@ class StockItemType
     }
 
     /**
-     * Sets a new stockPriceItem
+     * Sets a new stockPriceItem.
      *
      * Úprava cen položky zásob u jednotlivých cenových hladin. Jen u typu Komplet.
      *
      * @param \Pohoda\Type\StockPriceType[] $stockPriceItem
+     *
      * @return self
      */
-    public function setStockPriceItem(array $stockPriceItem = null)
+    public function setStockPriceItem(?array $stockPriceItem = null)
     {
         $this->stockPriceItem = $stockPriceItem;
+
         return $this;
     }
 }

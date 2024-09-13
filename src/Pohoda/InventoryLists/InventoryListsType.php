@@ -1,32 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\InventoryLists;
 
 /**
- * Class representing InventoryListsType
- *
+ * Class representing InventoryListsType.
  *
  * XSD Type: inventoryListsType
  */
 class InventoryListsType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \Pohoda\InventoryLists\InventoryListsHeaderType $inventoryListsHeader = null;
 
     /**
-     * @var \Pohoda\InventoryLists\InventoryListsHeaderType $inventoryListsHeader
+     * @var \Pohoda\InventoryLists\InventoryListsItemType[]
      */
-    private $inventoryListsHeader = null;
+    private array $inventoryListsDetail = null;
 
     /**
-     * @var \Pohoda\InventoryLists\InventoryListsItemType[] $inventoryListsDetail
-     */
-    private $inventoryListsDetail = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -36,19 +41,21 @@ class InventoryListsType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as inventoryListsHeader
+     * Gets as inventoryListsHeader.
      *
      * @return \Pohoda\InventoryLists\InventoryListsHeaderType
      */
@@ -58,33 +65,34 @@ class InventoryListsType
     }
 
     /**
-     * Sets a new inventoryListsHeader
+     * Sets a new inventoryListsHeader.
      *
-     * @param \Pohoda\InventoryLists\InventoryListsHeaderType $inventoryListsHeader
      * @return self
      */
     public function setInventoryListsHeader(?\Pohoda\InventoryLists\InventoryListsHeaderType $inventoryListsHeader = null)
     {
         $this->inventoryListsHeader = $inventoryListsHeader;
+
         return $this;
     }
 
     /**
-     * Adds as inventoryListsItem
+     * Adds as inventoryListsItem.
      *
      * @return self
-     * @param \Pohoda\InventoryLists\InventoryListsItemType $inventoryListsItem
      */
     public function addToInventoryListsDetail(\Pohoda\InventoryLists\InventoryListsItemType $inventoryListsItem)
     {
         $this->inventoryListsDetail[] = $inventoryListsItem;
+
         return $this;
     }
 
     /**
-     * isset inventoryListsDetail
+     * isset inventoryListsDetail.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetInventoryListsDetail($index)
@@ -93,18 +101,17 @@ class InventoryListsType
     }
 
     /**
-     * unset inventoryListsDetail
+     * unset inventoryListsDetail.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetInventoryListsDetail($index)
+    public function unsetInventoryListsDetail($index): void
     {
         unset($this->inventoryListsDetail[$index]);
     }
 
     /**
-     * Gets as inventoryListsDetail
+     * Gets as inventoryListsDetail.
      *
      * @return \Pohoda\InventoryLists\InventoryListsItemType[]
      */
@@ -114,14 +121,16 @@ class InventoryListsType
     }
 
     /**
-     * Sets a new inventoryListsDetail
+     * Sets a new inventoryListsDetail.
      *
      * @param \Pohoda\InventoryLists\InventoryListsItemType[] $inventoryListsDetail
+     *
      * @return self
      */
-    public function setInventoryListsDetail(array $inventoryListsDetail = null)
+    public function setInventoryListsDetail(?array $inventoryListsDetail = null)
     {
         $this->inventoryListsDetail = $inventoryListsDetail;
+
         return $this;
     }
 }

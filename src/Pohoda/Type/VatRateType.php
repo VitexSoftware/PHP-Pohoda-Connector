@@ -1,29 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing VatRateType
- *
+ * Class representing VatRateType.
  *
  * XSD Type: vatRateType
  */
 class VatRateType
 {
-    /**
-     * @var string $__value
-     */
-    private $__value = null;
+    private string $__value = null;
 
     /**
      * Hodnota sazby DPH (pouze export).
-     *
-     * @var float $value
      */
-    private $value = null;
+    private float $value = null;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */
@@ -33,31 +40,31 @@ class VatRateType
     }
 
     /**
-     * Gets or sets the inner value
-     *
-     * @param string $value
-     * @return string
-     */
-    public function value()
-    {
-        if ($args = func_get_args()) {
-            $this->__value = $args[0];
-        }
-        return $this->__value;
-    }
-
-    /**
-     * Gets a string value
+     * Gets a string value.
      *
      * @return string
      */
     public function __toString()
     {
-        return strval($this->__value);
+        return (string) $this->__value;
     }
 
     /**
-     * Gets as value
+     * Gets or sets the inner value.
+     *
+     * @return string
+     */
+    public function value()
+    {
+        if ($args = \func_get_args()) {
+            $this->__value = $args[0];
+        }
+
+        return $this->__value;
+    }
+
+    /**
+     * Gets as value.
      *
      * Hodnota sazby DPH (pouze export).
      *
@@ -69,16 +76,18 @@ class VatRateType
     }
 
     /**
-     * Sets a new value
+     * Sets a new value.
      *
      * Hodnota sazby DPH (pouze export).
      *
      * @param float $value
+     *
      * @return self
      */
     public function setValue($value)
     {
         $this->value = $value;
+
         return $this;
     }
 }

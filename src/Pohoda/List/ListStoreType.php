@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListStoreType
- *
+ * Class representing ListStoreType.
  *
  * XSD Type: listStoreType
  */
 class ListStoreType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Store\StoreType[] $store
+     * @var \Pohoda\Store\StoreType[]
      */
-    private $store = [
+    private array $store = [
     ];
 
     /**
-     * Adds as store
+     * Adds as store.
      *
      * @return self
-     * @param \Pohoda\Store\StoreType $store
      */
     public function addToStore(\Pohoda\Store\StoreType $store)
     {
         $this->store[] = $store;
+
         return $this;
     }
 
     /**
-     * isset store
+     * isset store.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetStore($index)
@@ -42,18 +55,17 @@ class ListStoreType extends ListVersionType
     }
 
     /**
-     * unset store
+     * unset store.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetStore($index)
+    public function unsetStore($index): void
     {
         unset($this->store[$index]);
     }
 
     /**
-     * Gets as store
+     * Gets as store.
      *
      * @return \Pohoda\Store\StoreType[]
      */
@@ -63,14 +75,16 @@ class ListStoreType extends ListVersionType
     }
 
     /**
-     * Sets a new store
+     * Sets a new store.
      *
      * @param \Pohoda\Store\StoreType[] $store
+     *
      * @return self
      */
-    public function setStore(array $store = null)
+    public function setStore(?array $store = null)
     {
         $this->store = $store;
+
         return $this;
     }
 }

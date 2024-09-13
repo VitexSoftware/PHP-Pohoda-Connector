@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing LabelsType
+ * Class representing LabelsType.
  *
  * Seznam štítku záznamu.
  * XSD Type: labelsType
@@ -11,27 +24,28 @@ namespace Pohoda\Type;
 class LabelsType
 {
     /**
-     * @var \Pohoda\Type\LabelType[] $label
+     * @var \Pohoda\Type\LabelType[]
      */
-    private $label = [
+    private array $label = [
     ];
 
     /**
-     * Adds as label
+     * Adds as label.
      *
      * @return self
-     * @param \Pohoda\Type\LabelType $label
      */
     public function addToLabel(\Pohoda\Type\LabelType $label)
     {
         $this->label[] = $label;
+
         return $this;
     }
 
     /**
-     * isset label
+     * isset label.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLabel($index)
@@ -40,18 +54,17 @@ class LabelsType
     }
 
     /**
-     * unset label
+     * unset label.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLabel($index)
+    public function unsetLabel($index): void
     {
         unset($this->label[$index]);
     }
 
     /**
-     * Gets as label
+     * Gets as label.
      *
      * @return \Pohoda\Type\LabelType[]
      */
@@ -61,14 +74,16 @@ class LabelsType
     }
 
     /**
-     * Sets a new label
+     * Sets a new label.
      *
      * @param \Pohoda\Type\LabelType[] $label
+     *
      * @return self
      */
     public function setLabel(array $label)
     {
         $this->label = $label;
+
         return $this;
     }
 }

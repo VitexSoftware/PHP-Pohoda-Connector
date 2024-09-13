@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda;
 
 /**
- * Class representing AutomaticLiquidationDetailsType
- *
+ * Class representing AutomaticLiquidationDetailsType.
  *
  * XSD Type: automaticLiquidationDetailsType
  */
@@ -13,31 +25,32 @@ class AutomaticLiquidationDetailsType
     /**
      * Likvidace bankovního dokladu.
      *
-     * @var \Pohoda\AutomaticLiquidationDetailType[] $automaticLiquidationDetail
+     * @var \Pohoda\AutomaticLiquidationDetailType[]
      */
-    private $automaticLiquidationDetail = [
+    private array $automaticLiquidationDetail = [
     ];
 
     /**
-     * Adds as automaticLiquidationDetail
+     * Adds as automaticLiquidationDetail.
      *
      * Likvidace bankovního dokladu.
      *
      * @return self
-     * @param \Pohoda\AutomaticLiquidationDetailType $automaticLiquidationDetail
      */
     public function addToAutomaticLiquidationDetail(\Pohoda\AutomaticLiquidationDetailType $automaticLiquidationDetail)
     {
         $this->automaticLiquidationDetail[] = $automaticLiquidationDetail;
+
         return $this;
     }
 
     /**
-     * isset automaticLiquidationDetail
+     * isset automaticLiquidationDetail.
      *
      * Likvidace bankovního dokladu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetAutomaticLiquidationDetail($index)
@@ -46,20 +59,19 @@ class AutomaticLiquidationDetailsType
     }
 
     /**
-     * unset automaticLiquidationDetail
+     * unset automaticLiquidationDetail.
      *
      * Likvidace bankovního dokladu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetAutomaticLiquidationDetail($index)
+    public function unsetAutomaticLiquidationDetail($index): void
     {
         unset($this->automaticLiquidationDetail[$index]);
     }
 
     /**
-     * Gets as automaticLiquidationDetail
+     * Gets as automaticLiquidationDetail.
      *
      * Likvidace bankovního dokladu.
      *
@@ -71,16 +83,18 @@ class AutomaticLiquidationDetailsType
     }
 
     /**
-     * Sets a new automaticLiquidationDetail
+     * Sets a new automaticLiquidationDetail.
      *
      * Likvidace bankovního dokladu.
      *
      * @param \Pohoda\AutomaticLiquidationDetailType[] $automaticLiquidationDetail
+     *
      * @return self
      */
-    public function setAutomaticLiquidationDetail(array $automaticLiquidationDetail = null)
+    public function setAutomaticLiquidationDetail(?array $automaticLiquidationDetail = null)
     {
         $this->automaticLiquidationDetail = $automaticLiquidationDetail;
+
         return $this;
     }
 }

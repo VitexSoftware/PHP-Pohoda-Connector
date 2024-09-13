@@ -1,37 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Print;
 
 /**
- * Class representing PrintType
- *
+ * Class representing PrintType.
  *
  * XSD Type: printType
  */
 class PrintType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Výběr záznamu.
-     *
-     * @var \Pohoda\Filter\RecordPrintType $record
      */
-    private $record = null;
+    private \Pohoda\Filter\RecordPrintType $record = null;
 
     /**
      * Parametry tisku.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $printerSettings
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $printerSettings = [
+    private array $printerSettings = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -41,19 +48,21 @@ class PrintType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as record
+     * Gets as record.
      *
      * Výběr záznamu.
      *
@@ -65,39 +74,40 @@ class PrintType
     }
 
     /**
-     * Sets a new record
+     * Sets a new record.
      *
      * Výběr záznamu.
      *
-     * @param \Pohoda\Filter\RecordPrintType $record
      * @return self
      */
     public function setRecord(\Pohoda\Filter\RecordPrintType $record)
     {
         $this->record = $record;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Parametry tisku.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrinterSettings(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->printerSettings[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset printerSettings
+     * isset printerSettings.
      *
      * Parametry tisku.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrinterSettings($index)
@@ -106,20 +116,19 @@ class PrintType
     }
 
     /**
-     * unset printerSettings
+     * unset printerSettings.
      *
      * Parametry tisku.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrinterSettings($index)
+    public function unsetPrinterSettings($index): void
     {
         unset($this->printerSettings[$index]);
     }
 
     /**
-     * Gets as printerSettings
+     * Gets as printerSettings.
      *
      * Parametry tisku.
      *
@@ -131,16 +140,18 @@ class PrintType
     }
 
     /**
-     * Sets a new printerSettings
+     * Sets a new printerSettings.
      *
      * Parametry tisku.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $printerSettings
+     *
      * @return self
      */
     public function setPrinterSettings(array $printerSettings)
     {
         $this->printerSettings = $printerSettings;
+
         return $this;
     }
 }

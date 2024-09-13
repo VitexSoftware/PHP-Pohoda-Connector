@@ -1,15 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PHPmPohoda - address import example
+ * This file is part of the PHP-Pohoda-Connector package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020 Vitex Software
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace mServer;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 $addressBookRecord = [
     'GPS' => '', // GPS souřadnice.
@@ -23,37 +29,37 @@ $addressBookRecord = [
     'email' => '', // Email.
     'fax' => '', // Fax.
     'identity' => [// Základní údaje
-//        'id' => '', //  
+        //        'id' => '', //
         'address' => [// Adresa.
-            'company' => 'Vitex Software', //  
-            'division' => '', //  
-            'name' => 'Vítězslav Dvořák', //  
-            'city' => 'Prague', //  
-            'street' => 'Long', //  
-            'zip' => '15800', //  
-            'ico' => '69438676', //  
-            'dic' => 'CZ7808072811', //  
-            'VATPayerType' => '', //Typ plátce DPH: payer Plátce DPH., non-payer Neplátce DPH., "" Neuvedeno (výchozí hodnota)
-            'icDph' => '', //  
-            'country' => '', //  
-        ], // 
-        'addressLinkToAddress' => '', // 
-//                'extId' => [
-//                    'ids' => 'EXT-001',
-//                    'exSystemName' => 'appslug',
-//                    'exSystemText' => 'app name'
-//                ], // 
+            'company' => 'Vitex Software',
+            'division' => '',
+            'name' => 'Vítězslav Dvořák',
+            'city' => 'Prague',
+            'street' => 'Long',
+            'zip' => '15800',
+            'ico' => '69438676',
+            'dic' => 'CZ7808072811',
+            'VATPayerType' => '', // Typ plátce DPH: payer Plátce DPH., non-payer Neplátce DPH., "" Neuvedeno (výchozí hodnota)
+            'icDph' => '',
+            'country' => '',
+        ],
+        'addressLinkToAddress' => '', //
+        //                'extId' => [
+        //                    'ids' => 'EXT-001',
+        //                    'exSystemName' => 'appslug',
+        //                    'exSystemText' => 'app name'
+        //                ], //
         'shipToAddress' => [// Dodací adresa.
-//            'actionType' => '', //Typ práce s dodací adresou. Výchozí hodnota je přidání nového dodací adresy.
-//            'extId' => '', //
-            'company' => '', //
-            'division' => '', //
-            'name' => '', //
-            'city' => '', //
-            'street' => '', //
-            'zip' => '', //
-            'country' => '', //
-            'defaultShipAddress' => '', //Výchozí dodací adresa.</xsd:documentation>
+            //            'actionType' => '', //Typ práce s dodací adresou. Výchozí hodnota je přidání nového dodací adresy.
+            //            'extId' => '', //
+            'company' => '',
+            'division' => '',
+            'name' => '',
+            'city' => '',
+            'street' => '',
+            'zip' => '',
+            'country' => '',
+            'defaultShipAddress' => '', // Výchozí dodací adresa.</xsd:documentation>
         ],
     ],
     'intNote' => 'maybe duplicated', // Interní poznámka.
@@ -64,20 +70,19 @@ $addressBookRecord = [
     'number' => '', // Číslo dodavatele/odběratele dle zvolené číselné řady (musí být povoleno v Globálním nastavení - Číslování zákazníků).
     'ost1' => '', // Ostatní.
     'ost2' => '', // Ostatní. Používá se také u kontaktní osoby.
-//    'funkce' => '', //Název funkce. Používá se jen u kontaktní osoby. 
+    //    'funkce' => '', //Název funkce. Používá se jen u kontaktní osoby.
     'p1' => false, // Klíč P1 / Dodavatel.
     'p2' => true, // Klíč P2 / Odběratel.
     'p3' => false, // Klíč P3.
     'p4' => false, // Klíč P4.
     'p5' => false, // Klíč P5.
     'p6' => false, // Klíč P6.
-//    'paymentType' => 'cash', // Forma úhrady: draft, cash, postal, delivery, creditcard, advance, encashment, cheque, compensation
+    //    'paymentType' => 'cash', // Forma úhrady: draft, cash, postal, delivery, creditcard, advance, encashment, cheque, compensation
     'phone' => '', // Telefon.
     'priceIDS' => '', // Cenová hladina odběratele.
     'region' => '', // Název kraje.
-    'web' => 'https://www.vitexsoftware.cz', //Adresa www stránek.
+    'web' => 'https://www.vitexsoftware.cz', // Adresa www stránek.
 ];
 
-$addresser = new Adressbook($addressBookRecord, \Ease\Shared::instanced()->loadConfig(__DIR__ . '/.env'));
+$addresser = new Adressbook($addressBookRecord, \Ease\Shared::instanced()->loadConfig(__DIR__.'/.env'));
 $addresser->addToPohoda();
-

@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Parameter;
 
 /**
- * Class representing ParameterItemListType
+ * Class representing ParameterItemListType.
  *
  * Seznam definic volitelných parametrů. U běžných agend je počet programově omezen na 92, uživatelské agendy mají maximálně 128 polí.
  * XSD Type: parameterItemListType
@@ -11,27 +24,28 @@ namespace Pohoda\Parameter;
 class ParameterItemListType
 {
     /**
-     * @var \Pohoda\Parameter\ParameterDefType[] $parameterDef
+     * @var \Pohoda\Parameter\ParameterDefType[]
      */
-    private $parameterDef = [
+    private array $parameterDef = [
     ];
 
     /**
-     * Adds as parameterDef
+     * Adds as parameterDef.
      *
      * @return self
-     * @param \Pohoda\Parameter\ParameterDefType $parameterDef
      */
     public function addToParameterDef(\Pohoda\Parameter\ParameterDefType $parameterDef)
     {
         $this->parameterDef[] = $parameterDef;
+
         return $this;
     }
 
     /**
-     * isset parameterDef
+     * isset parameterDef.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameterDef($index)
@@ -40,18 +54,17 @@ class ParameterItemListType
     }
 
     /**
-     * unset parameterDef
+     * unset parameterDef.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameterDef($index)
+    public function unsetParameterDef($index): void
     {
         unset($this->parameterDef[$index]);
     }
 
     /**
-     * Gets as parameterDef
+     * Gets as parameterDef.
      *
      * @return \Pohoda\Parameter\ParameterDefType[]
      */
@@ -61,14 +74,16 @@ class ParameterItemListType
     }
 
     /**
-     * Sets a new parameterDef
+     * Sets a new parameterDef.
      *
      * @param \Pohoda\Parameter\ParameterDefType[] $parameterDef
+     *
      * @return self
      */
-    public function setParameterDef(array $parameterDef = null)
+    public function setParameterDef(?array $parameterDef = null)
     {
         $this->parameterDef = $parameterDef;
+
         return $this;
     }
 }

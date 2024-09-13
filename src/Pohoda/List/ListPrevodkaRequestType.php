@@ -1,42 +1,47 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListPrevodkaRequestType
- *
+ * Class representing ListPrevodkaRequestType.
  *
  * XSD Type: listPrevodkaRequestType
  */
 class ListPrevodkaRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze dokladu.
-     *
-     * @var string $prevodkaVersion
      */
-    private $prevodkaVersion = null;
+    private string $prevodkaVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
 
     /**
-     * @var \Pohoda\Filter\RequestPrevodkaType[] $requestPrevodka
+     * @var \Pohoda\Filter\RequestPrevodkaType[]
      */
-    private $requestPrevodka = [
+    private array $requestPrevodka = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -46,19 +51,21 @@ class ListPrevodkaRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as prevodkaVersion
+     * Gets as prevodkaVersion.
      *
      * Požadovaná verze dokladu.
      *
@@ -70,21 +77,23 @@ class ListPrevodkaRequestType
     }
 
     /**
-     * Sets a new prevodkaVersion
+     * Sets a new prevodkaVersion.
      *
      * Požadovaná verze dokladu.
      *
      * @param string $prevodkaVersion
+     *
      * @return self
      */
     public function setPrevodkaVersion($prevodkaVersion)
     {
         $this->prevodkaVersion = $prevodkaVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -96,35 +105,38 @@ class ListPrevodkaRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Adds as requestPrevodka
+     * Adds as requestPrevodka.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestPrevodkaType $requestPrevodka
      */
     public function addToRequestPrevodka(\Pohoda\Filter\RequestPrevodkaType $requestPrevodka)
     {
         $this->requestPrevodka[] = $requestPrevodka;
+
         return $this;
     }
 
     /**
-     * isset requestPrevodka
+     * isset requestPrevodka.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestPrevodka($index)
@@ -133,18 +145,17 @@ class ListPrevodkaRequestType
     }
 
     /**
-     * unset requestPrevodka
+     * unset requestPrevodka.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestPrevodka($index)
+    public function unsetRequestPrevodka($index): void
     {
         unset($this->requestPrevodka[$index]);
     }
 
     /**
-     * Gets as requestPrevodka
+     * Gets as requestPrevodka.
      *
      * @return \Pohoda\Filter\RequestPrevodkaType[]
      */
@@ -154,14 +165,16 @@ class ListPrevodkaRequestType
     }
 
     /**
-     * Sets a new requestPrevodka
+     * Sets a new requestPrevodka.
      *
      * @param \Pohoda\Filter\RequestPrevodkaType[] $requestPrevodka
+     *
      * @return self
      */
     public function setRequestPrevodka(array $requestPrevodka)
     {
         $this->requestPrevodka = $requestPrevodka;
+
         return $this;
     }
 }

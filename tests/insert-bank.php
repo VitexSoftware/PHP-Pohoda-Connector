@@ -1,47 +1,53 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PHPmPohoda - address import example
+ * This file is part of the PHP-Pohoda-Connector package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2023 Vitex Software
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace mServer;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
-\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__ . '/.env');
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__.'/.env');
 
 $bankRecord = [
-//    "MOSS" => ['ids' => '213'],
+    //    "MOSS" => ['ids' => '213'],
     'account' => 'KB',
-//    "accounting",
-//    "accountingPeriodMOSS",
-//    "activity" => 'testing',
+    //    "accounting",
+    //    "accountingPeriodMOSS",
+    //    "activity" => 'testing',
     'bankType' => 'receipt',
-//    "centre",
-//    "classificationKVDPH",
-//    "classificationVAT",
-    "contract" => 'n/a',
-    "datePayment" => date('Y-m-d'),
-    "dateStatement" => date('Y-m-d'),
-//    "evidentiaryResourcesMOSS",
-    "intNote" => 'Import works well',
-//    "myIdentity",
-    "note" => 'Automated import',
+    //    "centre",
+    //    "classificationKVDPH",
+    //    "classificationVAT",
+    'contract' => 'n/a',
+    'datePayment' => date('Y-m-d'),
+    'dateStatement' => date('Y-m-d'),
+    //    "evidentiaryResourcesMOSS",
+    'intNote' => 'Import works well',
+    //    "myIdentity",
+    'note' => 'Automated import',
     'partnerIdentity' => ['address' => ['street' => 'dlouha'], 'shipToAddress' => ['street' => 'kratka']],
-    "paymentAccount" => ['accountNo' => '1234', 'bankCode' => '5500'],
+    'paymentAccount' => ['accountNo' => '1234', 'bankCode' => '5500'],
     'statementNumber' => [
         'statementNumber' => (string) time(),
-    //'numberMovement' => (string) time()
+        // 'numberMovement' => (string) time()
     ],
-//    "symConst" => 'XX',
-// ?"symPar",
-    "symSpec" => '23',
-    "symVar" => (string) time(),
-    "text" => 'Testing income ' . time(),
-    'homeCurrency' => ['priceNone' => '1001']
+    //    "symConst" => 'XX',
+    // ?"symPar",
+    'symSpec' => '23',
+    'symVar' => (string) time(),
+    'text' => 'Testing income '.time(),
+    'homeCurrency' => ['priceNone' => '1001'],
 ];
 
 //        $resolver->setAllowedValues('bankType', ['receipt', 'expense']);
@@ -59,5 +65,3 @@ $banker->addToPohoda();
 $result = $banker->commit();
 
 print_r($result);
-
-

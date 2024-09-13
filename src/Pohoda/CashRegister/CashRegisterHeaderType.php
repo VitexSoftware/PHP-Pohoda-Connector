@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\CashRegister;
 
 /**
- * Class representing CashRegisterHeaderType
- *
+ * Class representing CashRegisterHeaderType.
  *
  * XSD Type: cashRegisterHeaderType
  */
@@ -12,77 +24,57 @@ class CashRegisterHeaderType
 {
     /**
      * ID záznamu (pouze pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Zkratka pokladny.
-     *
-     * @var string $ids
      */
-    private $ids = null;
+    private string $ids = null;
 
     /**
      * Název pokladny.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Analytický účet.
-     *
-     * @var \Pohoda\Type\RefType $account
      */
-    private $account = null;
+    private \Pohoda\Type\RefType $account = null;
 
     /**
      * Pokladní.
-     *
-     * @var \Pohoda\Type\RefType $cashier
      */
-    private $cashier = null;
+    private \Pohoda\Type\RefType $cashier = null;
 
     /**
      * Valutová hotovostní pokladna. Pokud je uveden tento element, bude vytvořena valutová pokladna.V ostatních případech tuzemská pokladna.
-     *
-     * @var \Pohoda\CashRegister\CurrencyCashRegisterType $currencyCashRegister
      */
-    private $currencyCashRegister = null;
+    private \Pohoda\CashRegister\CurrencyCashRegisterType $currencyCashRegister = null;
 
     /**
      * Datum zrušení pokladny.
-     *
-     * @var \DateTime $cancelled
      */
-    private $cancelled = null;
+    private \DateTime $cancelled = null;
 
     /**
      * Doklad FM (Pouze Pohoda SK).
-     *
-     * @var string $fM
      */
-    private $fM = null;
+    private string $fM = null;
 
     /**
-     * Poznámka
-     *
-     * @var string $note
+     * Poznámka.
      */
-    private $note = null;
+    private string $note = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu (pouze pro export).
      *
@@ -94,21 +86,23 @@ class CashRegisterHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu (pouze pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -121,22 +115,22 @@ class CashRegisterHeaderType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as ids
+     * Gets as ids.
      *
      * Zkratka pokladny.
      *
@@ -148,21 +142,23 @@ class CashRegisterHeaderType
     }
 
     /**
-     * Sets a new ids
+     * Sets a new ids.
      *
      * Zkratka pokladny.
      *
      * @param string $ids
+     *
      * @return self
      */
     public function setIds($ids)
     {
         $this->ids = $ids;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název pokladny.
      *
@@ -174,21 +170,23 @@ class CashRegisterHeaderType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název pokladny.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as account
+     * Gets as account.
      *
      * Analytický účet.
      *
@@ -200,21 +198,21 @@ class CashRegisterHeaderType
     }
 
     /**
-     * Sets a new account
+     * Sets a new account.
      *
      * Analytický účet.
      *
-     * @param \Pohoda\Type\RefType $account
      * @return self
      */
     public function setAccount(?\Pohoda\Type\RefType $account = null)
     {
         $this->account = $account;
+
         return $this;
     }
 
     /**
-     * Gets as cashier
+     * Gets as cashier.
      *
      * Pokladní.
      *
@@ -226,21 +224,21 @@ class CashRegisterHeaderType
     }
 
     /**
-     * Sets a new cashier
+     * Sets a new cashier.
      *
      * Pokladní.
      *
-     * @param \Pohoda\Type\RefType $cashier
      * @return self
      */
     public function setCashier(?\Pohoda\Type\RefType $cashier = null)
     {
         $this->cashier = $cashier;
+
         return $this;
     }
 
     /**
-     * Gets as currencyCashRegister
+     * Gets as currencyCashRegister.
      *
      * Valutová hotovostní pokladna. Pokud je uveden tento element, bude vytvořena valutová pokladna.V ostatních případech tuzemská pokladna.
      *
@@ -252,21 +250,21 @@ class CashRegisterHeaderType
     }
 
     /**
-     * Sets a new currencyCashRegister
+     * Sets a new currencyCashRegister.
      *
      * Valutová hotovostní pokladna. Pokud je uveden tento element, bude vytvořena valutová pokladna.V ostatních případech tuzemská pokladna.
      *
-     * @param \Pohoda\CashRegister\CurrencyCashRegisterType $currencyCashRegister
      * @return self
      */
     public function setCurrencyCashRegister(?\Pohoda\CashRegister\CurrencyCashRegisterType $currencyCashRegister = null)
     {
         $this->currencyCashRegister = $currencyCashRegister;
+
         return $this;
     }
 
     /**
-     * Gets as cancelled
+     * Gets as cancelled.
      *
      * Datum zrušení pokladny.
      *
@@ -278,21 +276,21 @@ class CashRegisterHeaderType
     }
 
     /**
-     * Sets a new cancelled
+     * Sets a new cancelled.
      *
      * Datum zrušení pokladny.
      *
-     * @param \DateTime $cancelled
      * @return self
      */
     public function setCancelled(?\DateTime $cancelled = null)
     {
         $this->cancelled = $cancelled;
+
         return $this;
     }
 
     /**
-     * Gets as fM
+     * Gets as fM.
      *
      * Doklad FM (Pouze Pohoda SK).
      *
@@ -304,21 +302,23 @@ class CashRegisterHeaderType
     }
 
     /**
-     * Sets a new fM
+     * Sets a new fM.
      *
      * Doklad FM (Pouze Pohoda SK).
      *
      * @param string $fM
+     *
      * @return self
      */
     public function setFM($fM)
     {
         $this->fM = $fM;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka
      *
@@ -330,16 +330,18 @@ class CashRegisterHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 }

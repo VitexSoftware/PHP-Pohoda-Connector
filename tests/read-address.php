@@ -1,24 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PHPmServer - Pohoda Addressbook obtainer example
+ * This file is part of the PHP-Pohoda-Connector package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2023 Vitex Software
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 require_once '../vendor/autoload.php';
-\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__ . '/.env');
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__.'/.env');
 $addresser = new \mServer\Adressbook();
 print_r($addresser->getColumnsFromPohoda(['id', 'jmeno', 'email', 'web']));
-//print_r($addresser->getColumnsFromPohoda(['id', 'jmeno', 'email', 'web'], ['city' => 'Prague']));
+// print_r($addresser->getColumnsFromPohoda(['id', 'jmeno', 'email', 'web'], ['city' => 'Prague']));
 
-
-//echo "-----------------------------------------------------------\n";
+// echo "-----------------------------------------------------------\n";
 //
-//print_r($pragueAddresses);
+// print_r($pragueAddresses);
 
-//$addresser->loadFromPohoda(10);
-//print_r($addresser->getData());
-
-
+// $addresser->loadFromPohoda(10);
+// print_r($addresser->getData());

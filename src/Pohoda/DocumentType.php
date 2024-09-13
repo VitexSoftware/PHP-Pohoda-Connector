@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda;
 
 /**
- * Class representing DocumentType
- *
+ * Class representing DocumentType.
  *
  * XSD Type: documentType
  */
@@ -12,69 +24,51 @@ class DocumentType
 {
     /**
      * Výsledek likvidace.
-     *
-     * @var string $state
      */
-    private $state = null;
+    private string $state = null;
 
     /**
      * Popis likvidace. Případně další infomrace k likvidaci (Vytvožení daňového dokladu, vznik přeplatku, atp.).
-     *
-     * @var string $detail
      */
-    private $detail = null;
+    private string $detail = null;
 
     /**
      * ID likvidovaného dokladu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Číslo likvidovaného dokladu.
-     *
-     * @var string $number
      */
-    private $number = null;
+    private string $number = null;
 
     /**
      * Agenda likvidovaného dokladu.
-     *
-     * @var string $agenda
      */
-    private $agenda = null;
+    private string $agenda = null;
 
     /**
      * Likvidovaná částka.
-     *
-     * @var \Pohoda\HomeCurrencyType $homeCurrency
      */
-    private $homeCurrency = null;
+    private \Pohoda\HomeCurrencyType $homeCurrency = null;
 
     /**
      * Likvidovaná částka.
-     *
-     * @var \Pohoda\ForeignCurrencyType $foreignCurrency
      */
-    private $foreignCurrency = null;
+    private \Pohoda\ForeignCurrencyType $foreignCurrency = null;
 
     /**
      * Textový popis pravidla, které bylo použito k dohledání likvidovaného dokladu.
-     *
-     * @var string $rule
      */
-    private $rule = null;
+    private string $rule = null;
 
     /**
      * Daňový doklad. Element je uveden, jan pokud byl vytvořen daňový doklad.
-     *
-     * @var \Pohoda\TaxDocumentType $taxDocumentNumber
      */
-    private $taxDocumentNumber = null;
+    private \Pohoda\TaxDocumentType $taxDocumentNumber = null;
 
     /**
-     * Gets as state
+     * Gets as state.
      *
      * Výsledek likvidace.
      *
@@ -86,21 +80,23 @@ class DocumentType
     }
 
     /**
-     * Sets a new state
+     * Sets a new state.
      *
      * Výsledek likvidace.
      *
      * @param string $state
+     *
      * @return self
      */
     public function setState($state)
     {
         $this->state = $state;
+
         return $this;
     }
 
     /**
-     * Gets as detail
+     * Gets as detail.
      *
      * Popis likvidace. Případně další infomrace k likvidaci (Vytvožení daňového dokladu, vznik přeplatku, atp.).
      *
@@ -112,21 +108,23 @@ class DocumentType
     }
 
     /**
-     * Sets a new detail
+     * Sets a new detail.
      *
      * Popis likvidace. Případně další infomrace k likvidaci (Vytvožení daňového dokladu, vznik přeplatku, atp.).
      *
      * @param string $detail
+     *
      * @return self
      */
     public function setDetail($detail)
     {
         $this->detail = $detail;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID likvidovaného dokladu.
      *
@@ -138,21 +136,23 @@ class DocumentType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID likvidovaného dokladu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Číslo likvidovaného dokladu.
      *
@@ -164,21 +164,23 @@ class DocumentType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Číslo likvidovaného dokladu.
      *
      * @param string $number
+     *
      * @return self
      */
     public function setNumber($number)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as agenda
+     * Gets as agenda.
      *
      * Agenda likvidovaného dokladu.
      *
@@ -190,21 +192,23 @@ class DocumentType
     }
 
     /**
-     * Sets a new agenda
+     * Sets a new agenda.
      *
      * Agenda likvidovaného dokladu.
      *
      * @param string $agenda
+     *
      * @return self
      */
     public function setAgenda($agenda)
     {
         $this->agenda = $agenda;
+
         return $this;
     }
 
     /**
-     * Gets as homeCurrency
+     * Gets as homeCurrency.
      *
      * Likvidovaná částka.
      *
@@ -216,21 +220,21 @@ class DocumentType
     }
 
     /**
-     * Sets a new homeCurrency
+     * Sets a new homeCurrency.
      *
      * Likvidovaná částka.
      *
-     * @param \Pohoda\HomeCurrencyType $homeCurrency
      * @return self
      */
     public function setHomeCurrency(\Pohoda\HomeCurrencyType $homeCurrency)
     {
         $this->homeCurrency = $homeCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrency
+     * Gets as foreignCurrency.
      *
      * Likvidovaná částka.
      *
@@ -242,21 +246,21 @@ class DocumentType
     }
 
     /**
-     * Sets a new foreignCurrency
+     * Sets a new foreignCurrency.
      *
      * Likvidovaná částka.
      *
-     * @param \Pohoda\ForeignCurrencyType $foreignCurrency
      * @return self
      */
     public function setForeignCurrency(?\Pohoda\ForeignCurrencyType $foreignCurrency = null)
     {
         $this->foreignCurrency = $foreignCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as rule
+     * Gets as rule.
      *
      * Textový popis pravidla, které bylo použito k dohledání likvidovaného dokladu.
      *
@@ -268,21 +272,23 @@ class DocumentType
     }
 
     /**
-     * Sets a new rule
+     * Sets a new rule.
      *
      * Textový popis pravidla, které bylo použito k dohledání likvidovaného dokladu.
      *
      * @param string $rule
+     *
      * @return self
      */
     public function setRule($rule)
     {
         $this->rule = $rule;
+
         return $this;
     }
 
     /**
-     * Gets as taxDocumentNumber
+     * Gets as taxDocumentNumber.
      *
      * Daňový doklad. Element je uveden, jan pokud byl vytvořen daňový doklad.
      *
@@ -294,16 +300,16 @@ class DocumentType
     }
 
     /**
-     * Sets a new taxDocumentNumber
+     * Sets a new taxDocumentNumber.
      *
      * Daňový doklad. Element je uveden, jan pokud byl vytvořen daňový doklad.
      *
-     * @param \Pohoda\TaxDocumentType $taxDocumentNumber
      * @return self
      */
     public function setTaxDocumentNumber(?\Pohoda\TaxDocumentType $taxDocumentNumber = null)
     {
         $this->taxDocumentNumber = $taxDocumentNumber;
+
         return $this;
     }
 }

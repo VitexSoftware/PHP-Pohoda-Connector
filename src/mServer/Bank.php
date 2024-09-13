@@ -1,45 +1,54 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PHPmServer - Addressbook helper class
+ * This file is part of the PHP-Pohoda-Connector package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020,2023 Vitex Software
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace mServer;
 
 /**
- * Address Adresa
+ * Address Adresa.
  *
  * @author vitex
  */
 class Bank extends Client
 {
     /**
-     * Current Object's agenda
-     * @var string
+     * Current Object's agenda.
      */
-    public $agenda = 'bank';
+    public ?string $agenda = 'bank';
 
     /**
-     * Request XML helper
-     * @var \Riesenia\Pohoda\Agenda
+     * Request XML helper.
      */
-    public $requestXml = null;
+    public ?\Riesenia\Pohoda\Agenda $requestXml = null;
 
     /**
-     * Create Agenda document using given data
+     * AddressBook records name column.
+     */
+    public ?string $nameColumn = 'address:company';
+
+    /**
+     * Create Agenda document using given data.
      *
      * @param array $data
      */
-    public function create($data)
+    public function create($data): void
     {
         $this->requestXml = $this->pohoda->createBank($data);
     }
 
     /**
-     * Take data into XML
+     * Take data into XML.
      *
      * @param array $data
      *
@@ -53,30 +62,25 @@ class Bank extends Client
         \Ease\Functions::divDataArray($data, $summaryData, 'homeCurrency');
         \Ease\Functions::divDataArray($data, $summaryData, 'foreignCurrency');
         $taken = parent::takeData($data);
+
         return $taken + $this->addSummary($summaryData);
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function setObjectName($forceName = '')
     {
-        return parent::setObjectName($forceName ? $forceName : $this->getDataValue('account') . '@' . $this->getObjectName());
+        return parent::setObjectName($forceName ?: $this->getDataValue('account').'@'.$this->getObjectName());
     }
 
     /**
-     * Add Summary part of bnk:bank item
+     * Add Summary part of bnk:bank item.
      *
      * @param array $data
      */
-    public function addSummary($data)
+    public function addSummary($data): void
     {
         $this->requestXml->addSummary($data);
     }
-
-    /**
-     * AddressBook records name column
-     * @var string
-     */
-    public $nameColumn = 'address:company';
 }

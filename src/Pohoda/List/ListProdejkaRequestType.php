@@ -1,50 +1,55 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListProdejkaRequestType
- *
+ * Class representing ListProdejkaRequestType.
  *
  * XSD Type: listProdejkaRequestType
  */
 class ListProdejkaRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze dokladu.
-     *
-     * @var string $prodejkaVersion
      */
-    private $prodejkaVersion = null;
+    private string $prodejkaVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
 
     /**
-     * @var \Pohoda\Filter\RequestProdejkaType[] $requestProdejka
+     * @var \Pohoda\Filter\RequestProdejkaType[]
      */
-    private $requestProdejka = [
+    private array $requestProdejka = [
     ];
 
     /**
      * Omezení exportu dat dokladů.
      *
-     * @var \Pohoda\List\RestrictionDocParamType[] $restrictionData
+     * @var \Pohoda\List\RestrictionDocParamType[]
      */
-    private $restrictionData = [
+    private array $restrictionData = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -54,19 +59,21 @@ class ListProdejkaRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as prodejkaVersion
+     * Gets as prodejkaVersion.
      *
      * Požadovaná verze dokladu.
      *
@@ -78,21 +85,23 @@ class ListProdejkaRequestType
     }
 
     /**
-     * Sets a new prodejkaVersion
+     * Sets a new prodejkaVersion.
      *
      * Požadovaná verze dokladu.
      *
      * @param string $prodejkaVersion
+     *
      * @return self
      */
     public function setProdejkaVersion($prodejkaVersion)
     {
         $this->prodejkaVersion = $prodejkaVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -104,35 +113,38 @@ class ListProdejkaRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Adds as requestProdejka
+     * Adds as requestProdejka.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestProdejkaType $requestProdejka
      */
     public function addToRequestProdejka(\Pohoda\Filter\RequestProdejkaType $requestProdejka)
     {
         $this->requestProdejka[] = $requestProdejka;
+
         return $this;
     }
 
     /**
-     * isset requestProdejka
+     * isset requestProdejka.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestProdejka($index)
@@ -141,18 +153,17 @@ class ListProdejkaRequestType
     }
 
     /**
-     * unset requestProdejka
+     * unset requestProdejka.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestProdejka($index)
+    public function unsetRequestProdejka($index): void
     {
         unset($this->requestProdejka[$index]);
     }
 
     /**
-     * Gets as requestProdejka
+     * Gets as requestProdejka.
      *
      * @return \Pohoda\Filter\RequestProdejkaType[]
      */
@@ -162,37 +173,40 @@ class ListProdejkaRequestType
     }
 
     /**
-     * Sets a new requestProdejka
+     * Sets a new requestProdejka.
      *
      * @param \Pohoda\Filter\RequestProdejkaType[] $requestProdejka
+     *
      * @return self
      */
     public function setRequestProdejka(array $requestProdejka)
     {
         $this->requestProdejka = $requestProdejka;
+
         return $this;
     }
 
     /**
-     * Adds as restrictionData
+     * Adds as restrictionData.
      *
      * Omezení exportu dat dokladů.
      *
      * @return self
-     * @param \Pohoda\List\RestrictionDocParamType $restrictionData
      */
     public function addToRestrictionData(\Pohoda\List\RestrictionDocParamType $restrictionData)
     {
         $this->restrictionData[] = $restrictionData;
+
         return $this;
     }
 
     /**
-     * isset restrictionData
+     * isset restrictionData.
      *
      * Omezení exportu dat dokladů.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRestrictionData($index)
@@ -201,20 +215,19 @@ class ListProdejkaRequestType
     }
 
     /**
-     * unset restrictionData
+     * unset restrictionData.
      *
      * Omezení exportu dat dokladů.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRestrictionData($index)
+    public function unsetRestrictionData($index): void
     {
         unset($this->restrictionData[$index]);
     }
 
     /**
-     * Gets as restrictionData
+     * Gets as restrictionData.
      *
      * Omezení exportu dat dokladů.
      *
@@ -226,16 +239,18 @@ class ListProdejkaRequestType
     }
 
     /**
-     * Sets a new restrictionData
+     * Sets a new restrictionData.
      *
      * Omezení exportu dat dokladů.
      *
      * @param \Pohoda\List\RestrictionDocParamType[] $restrictionData
+     *
      * @return self
      */
     public function setRestrictionData(array $restrictionData)
     {
         $this->restrictionData = $restrictionData;
+
         return $this;
     }
 }

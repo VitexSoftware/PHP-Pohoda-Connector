@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ActionPrice;
 
 /**
- * Class representing CustomerType
- *
+ * Class representing CustomerType.
  *
  * XSD Type: customerType
  */
@@ -12,21 +24,17 @@ class CustomerType
 {
     /**
      * Odkaz na ID adresy. Vyšší prioritu má element "id".
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Odkaz na externí ID adresy. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Odkaz na ID adresy. Vyšší prioritu má element "id".
      *
@@ -38,21 +46,23 @@ class CustomerType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Odkaz na ID adresy. Vyšší prioritu má element "id".
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na externí ID adresy. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -65,17 +75,17 @@ class CustomerType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na externí ID adresy. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 }

@@ -1,27 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Movement;
 
 /**
- * Class representing MovementType
- *
+ * Class representing MovementType.
  *
  * XSD Type: movementType
  */
 class MovementType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \Pohoda\Movement\MovementHeaderType $movementHeader = null;
 
     /**
-     * @var \Pohoda\Movement\MovementHeaderType $movementHeader
-     */
-    private $movementHeader = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -31,19 +36,21 @@ class MovementType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as movementHeader
+     * Gets as movementHeader.
      *
      * @return \Pohoda\Movement\MovementHeaderType
      */
@@ -53,14 +60,14 @@ class MovementType
     }
 
     /**
-     * Sets a new movementHeader
+     * Sets a new movementHeader.
      *
-     * @param \Pohoda\Movement\MovementHeaderType $movementHeader
      * @return self
      */
     public function setMovementHeader(?\Pohoda\Movement\MovementHeaderType $movementHeader = null)
     {
         $this->movementHeader = $movementHeader;
+
         return $this;
     }
 }

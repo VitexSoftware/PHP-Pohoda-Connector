@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing EKasaItemType
+ * Class representing EKasaItemType.
  *
  * Informace pro eKasu na zásobě (pouze SK verze).
  * XSD Type: eKasaItemType
@@ -12,13 +25,11 @@ class EKasaItemType
 {
     /**
      * eKasa typ vrátenia.
-     *
-     * @var string $refundType
      */
-    private $refundType = null;
+    private string $refundType = null;
 
     /**
-     * Gets as refundType
+     * Gets as refundType.
      *
      * eKasa typ vrátenia.
      *
@@ -30,16 +41,18 @@ class EKasaItemType
     }
 
     /**
-     * Sets a new refundType
+     * Sets a new refundType.
      *
      * eKasa typ vrátenia.
      *
      * @param string $refundType
+     *
      * @return self
      */
     public function setRefundType($refundType)
     {
         $this->refundType = $refundType;
+
         return $this;
     }
 }

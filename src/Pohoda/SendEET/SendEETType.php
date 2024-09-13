@@ -1,29 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\SendEET;
 
 /**
- * Class representing SendEETType
- *
+ * Class representing SendEETType.
  *
  * XSD Type: sendEETType
  */
 class SendEETType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Výběr záznamu.
-     *
-     * @var \Pohoda\SendEET\RecordSendEETType $record
      */
-    private $record = null;
+    private \Pohoda\SendEET\RecordSendEETType $record = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -33,19 +40,21 @@ class SendEETType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as record
+     * Gets as record.
      *
      * Výběr záznamu.
      *
@@ -57,16 +66,16 @@ class SendEETType
     }
 
     /**
-     * Sets a new record
+     * Sets a new record.
      *
      * Výběr záznamu.
      *
-     * @param \Pohoda\SendEET\RecordSendEETType $record
      * @return self
      */
     public function setRecord(\Pohoda\SendEET\RecordSendEETType $record)
     {
         $this->record = $record;
+
         return $this;
     }
 }

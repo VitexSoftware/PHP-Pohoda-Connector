@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing EETType
+ * Class representing EETType.
  *
  * Elektronická evidence tržeb. Jen CZ verze.
  * XSD Type: EETType
@@ -12,28 +25,24 @@ class EETType
 {
     /**
      * Stav záznamu v agendě EET.
-     *
-     * @var string $stateEET
      */
-    private $stateEET = null;
+    private string $stateEET = null;
 
     /**
      * Podrobné informace o odeslání informací pro EET.
      *
-     * @var \Pohoda\Type\DetailEETType[] $detailEET
+     * @var \Pohoda\Type\DetailEETType[]
      */
-    private $detailEET = [
+    private array $detailEET = [
     ];
 
     /**
      * Profil EET, pod kterým bude tržba evidována na serveru EET.
-     *
-     * @var \Pohoda\Type\RefType $profile
      */
-    private $profile = null;
+    private \Pohoda\Type\RefType $profile = null;
 
     /**
-     * Gets as stateEET
+     * Gets as stateEET.
      *
      * Stav záznamu v agendě EET.
      *
@@ -45,39 +54,42 @@ class EETType
     }
 
     /**
-     * Sets a new stateEET
+     * Sets a new stateEET.
      *
      * Stav záznamu v agendě EET.
      *
      * @param string $stateEET
+     *
      * @return self
      */
     public function setStateEET($stateEET)
     {
         $this->stateEET = $stateEET;
+
         return $this;
     }
 
     /**
-     * Adds as detailEET
+     * Adds as detailEET.
      *
      * Podrobné informace o odeslání informací pro EET.
      *
      * @return self
-     * @param \Pohoda\Type\DetailEETType $detailEET
      */
     public function addToDetailEET(\Pohoda\Type\DetailEETType $detailEET)
     {
         $this->detailEET[] = $detailEET;
+
         return $this;
     }
 
     /**
-     * isset detailEET
+     * isset detailEET.
      *
      * Podrobné informace o odeslání informací pro EET.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetDetailEET($index)
@@ -86,20 +98,19 @@ class EETType
     }
 
     /**
-     * unset detailEET
+     * unset detailEET.
      *
      * Podrobné informace o odeslání informací pro EET.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetDetailEET($index)
+    public function unsetDetailEET($index): void
     {
         unset($this->detailEET[$index]);
     }
 
     /**
-     * Gets as detailEET
+     * Gets as detailEET.
      *
      * Podrobné informace o odeslání informací pro EET.
      *
@@ -111,21 +122,23 @@ class EETType
     }
 
     /**
-     * Sets a new detailEET
+     * Sets a new detailEET.
      *
      * Podrobné informace o odeslání informací pro EET.
      *
      * @param \Pohoda\Type\DetailEETType[] $detailEET
+     *
      * @return self
      */
-    public function setDetailEET(array $detailEET = null)
+    public function setDetailEET(?array $detailEET = null)
     {
         $this->detailEET = $detailEET;
+
         return $this;
     }
 
     /**
-     * Gets as profile
+     * Gets as profile.
      *
      * Profil EET, pod kterým bude tržba evidována na serveru EET.
      *
@@ -137,16 +150,16 @@ class EETType
     }
 
     /**
-     * Sets a new profile
+     * Sets a new profile.
      *
      * Profil EET, pod kterým bude tržba evidována na serveru EET.
      *
-     * @param \Pohoda\Type\RefType $profile
      * @return self
      */
     public function setProfile(?\Pohoda\Type\RefType $profile = null)
     {
         $this->profile = $profile;
+
         return $this;
     }
 }

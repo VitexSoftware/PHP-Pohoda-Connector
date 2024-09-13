@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prijemka;
 
 /**
- * Class representing PrijemkaHeaderType
- *
+ * Class representing PrijemkaHeaderType.
  *
  * XSD Type: prijemkaHeaderType
  */
@@ -12,167 +24,125 @@ class PrijemkaHeaderType
 {
     /**
      * ID záznamu. Používá se při requestu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Příznak „Storno/Stornujícího“ dokladu (pouze pro export).
-     *
-     * @var string $storno
      */
-    private $storno = null;
+    private string $storno = null;
 
     /**
      * Evidenční číslo dokladu.
-     *
-     * @var \Pohoda\Type\NumberType $number
      */
-    private $number = null;
+    private \Pohoda\Type\NumberType $number = null;
 
     /**
      * Datum vystavení dokladu. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var \DateTime $date
      */
-    private $date = null;
+    private \DateTime $date = null;
 
     /**
      * Text dokladu. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
-     * Zákazníkova adresa
-     *
-     * @var \Pohoda\Type\AddressType $partnerIdentity
+     * Zákazníkova adresa.
      */
-    private $partnerIdentity = null;
+    private \Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Účet. Jen u účtování zásob způsobem A.
-     *
-     * @var string $acc
      */
-    private $acc = null;
+    private string $acc = null;
 
     /**
      * Párový symbol. Jen u účtování zásob způsobem A.
-     *
-     * @var string $symPar
      */
-    private $symPar = null;
+    private string $symPar = null;
 
     /**
      * Vyřízeno. Používá se jen při exportu dokladu.
-     *
-     * @var string $isExecuted
      */
-    private $isExecuted = null;
+    private string $isExecuted = null;
 
     /**
      * Přeneseno. Používá se jen při exportu dokladu.
-     *
-     * @var string $isDelivered
      */
-    private $isDelivered = null;
+    private string $isDelivered = null;
 
     /**
      * Středisko.
-     *
-     * @var \Pohoda\Type\RefType $centre
      */
-    private $centre = null;
+    private \Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
-     *
-     * @var \Pohoda\Type\RefType $activity
      */
-    private $activity = null;
+    private \Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
-     *
-     * @var \Pohoda\Type\RefType $contract
      */
-    private $contract = null;
+    private \Pohoda\Type\RefType $contract = null;
 
     /**
      * Registrace DPH v EU.
-     *
-     * @var \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU
      */
-    private $regVATinEU = null;
+    private \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Interní poznámka.
-     *
-     * @var string $intNote
      */
-    private $intNote = null;
+    private string $intNote = null;
 
     /**
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
-     *
-     * @var string $histRate
      */
-    private $histRate = null;
+    private string $histRate = null;
 
     /**
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
-     *
-     * @var string $lock1
      */
-    private $lock1 = null;
+    private string $lock1 = null;
 
     /**
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
-     *
-     * @var string $lock2
      */
-    private $lock2 = null;
+    private string $lock2 = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
-     * @var \Pohoda\Type\LabelType[] $labels
+     * @var \Pohoda\Type\LabelType[]
      */
-    private $labels = null;
+    private array $labels = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
      * Podmíněná kontrola dokladu.
-     *
-     * @var \Pohoda\Type\TypeValidateType $validate
      */
-    private $validate = null;
+    private \Pohoda\Type\TypeValidateType $validate = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu. Používá se při requestu.
      *
@@ -184,21 +154,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu. Používá se při requestu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as storno
+     * Gets as storno.
      *
      * Příznak „Storno/Stornujícího“ dokladu (pouze pro export).
      *
@@ -210,21 +182,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new storno
+     * Sets a new storno.
      *
      * Příznak „Storno/Stornujícího“ dokladu (pouze pro export).
      *
      * @param string $storno
+     *
      * @return self
      */
     public function setStorno($storno)
     {
         $this->storno = $storno;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Evidenční číslo dokladu.
      *
@@ -236,21 +210,21 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Evidenční číslo dokladu.
      *
-     * @param \Pohoda\Type\NumberType $number
      * @return self
      */
     public function setNumber(?\Pohoda\Type\NumberType $number = null)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as date
+     * Gets as date.
      *
      * Datum vystavení dokladu. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -262,21 +236,21 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
      * Datum vystavení dokladu. Tento element je vyžadován při vytvoření dokladu.
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(?\DateTime $date = null)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text dokladu. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -288,21 +262,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text dokladu. Tento element je vyžadován při vytvoření dokladu.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as partnerIdentity
+     * Gets as partnerIdentity.
      *
      * Zákazníkova adresa
      *
@@ -314,21 +290,21 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new partnerIdentity
+     * Sets a new partnerIdentity.
      *
      * Zákazníkova adresa
      *
-     * @param \Pohoda\Type\AddressType $partnerIdentity
      * @return self
      */
     public function setPartnerIdentity(?\Pohoda\Type\AddressType $partnerIdentity = null)
     {
         $this->partnerIdentity = $partnerIdentity;
+
         return $this;
     }
 
     /**
-     * Gets as acc
+     * Gets as acc.
      *
      * Účet. Jen u účtování zásob způsobem A.
      *
@@ -340,21 +316,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new acc
+     * Sets a new acc.
      *
      * Účet. Jen u účtování zásob způsobem A.
      *
      * @param string $acc
+     *
      * @return self
      */
     public function setAcc($acc)
     {
         $this->acc = $acc;
+
         return $this;
     }
 
     /**
-     * Gets as symPar
+     * Gets as symPar.
      *
      * Párový symbol. Jen u účtování zásob způsobem A.
      *
@@ -366,21 +344,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new symPar
+     * Sets a new symPar.
      *
      * Párový symbol. Jen u účtování zásob způsobem A.
      *
      * @param string $symPar
+     *
      * @return self
      */
     public function setSymPar($symPar)
     {
         $this->symPar = $symPar;
+
         return $this;
     }
 
     /**
-     * Gets as isExecuted
+     * Gets as isExecuted.
      *
      * Vyřízeno. Používá se jen při exportu dokladu.
      *
@@ -392,21 +372,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new isExecuted
+     * Sets a new isExecuted.
      *
      * Vyřízeno. Používá se jen při exportu dokladu.
      *
      * @param string $isExecuted
+     *
      * @return self
      */
     public function setIsExecuted($isExecuted)
     {
         $this->isExecuted = $isExecuted;
+
         return $this;
     }
 
     /**
-     * Gets as isDelivered
+     * Gets as isDelivered.
      *
      * Přeneseno. Používá se jen při exportu dokladu.
      *
@@ -418,21 +400,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new isDelivered
+     * Sets a new isDelivered.
      *
      * Přeneseno. Používá se jen při exportu dokladu.
      *
      * @param string $isDelivered
+     *
      * @return self
      */
     public function setIsDelivered($isDelivered)
     {
         $this->isDelivered = $isDelivered;
+
         return $this;
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * Středisko.
      *
@@ -444,21 +428,21 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * Středisko.
      *
-     * @param \Pohoda\Type\RefType $centre
      * @return self
      */
     public function setCentre(?\Pohoda\Type\RefType $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 
     /**
-     * Gets as activity
+     * Gets as activity.
      *
      * Činnost.
      *
@@ -470,21 +454,21 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new activity
+     * Sets a new activity.
      *
      * Činnost.
      *
-     * @param \Pohoda\Type\RefType $activity
      * @return self
      */
     public function setActivity(?\Pohoda\Type\RefType $activity = null)
     {
         $this->activity = $activity;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * Zakázka.
      *
@@ -496,21 +480,21 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
      * Zakázka.
      *
-     * @param \Pohoda\Type\RefType $contract
      * @return self
      */
     public function setContract(?\Pohoda\Type\RefType $contract = null)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Gets as regVATinEU
+     * Gets as regVATinEU.
      *
      * Registrace DPH v EU.
      *
@@ -522,21 +506,21 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new regVATinEU
+     * Sets a new regVATinEU.
      *
      * Registrace DPH v EU.
      *
-     * @param \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU
      * @return self
      */
     public function setRegVATinEU(?\Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null)
     {
         $this->regVATinEU = $regVATinEU;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -548,21 +532,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as intNote
+     * Gets as intNote.
      *
      * Interní poznámka.
      *
@@ -574,21 +560,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new intNote
+     * Sets a new intNote.
      *
      * Interní poznámka.
      *
      * @param string $intNote
+     *
      * @return self
      */
     public function setIntNote($intNote)
     {
         $this->intNote = $intNote;
+
         return $this;
     }
 
     /**
-     * Gets as histRate
+     * Gets as histRate.
      *
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
      *
@@ -600,21 +588,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new histRate
+     * Sets a new histRate.
      *
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
      *
      * @param string $histRate
+     *
      * @return self
      */
     public function setHistRate($histRate)
     {
         $this->histRate = $histRate;
+
         return $this;
     }
 
     /**
-     * Gets as lock1
+     * Gets as lock1.
      *
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      *
@@ -626,21 +616,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new lock1
+     * Sets a new lock1.
      *
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      *
      * @param string $lock1
+     *
      * @return self
      */
     public function setLock1($lock1)
     {
         $this->lock1 = $lock1;
+
         return $this;
     }
 
     /**
-     * Gets as lock2
+     * Gets as lock2.
      *
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      *
@@ -652,21 +644,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new lock2
+     * Sets a new lock2.
      *
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      *
      * @param string $lock2
+     *
      * @return self
      */
     public function setLock2($lock2)
     {
         $this->lock2 = $lock2;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -678,39 +672,42 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as label
+     * Adds as label.
      *
      * Štítky záznamu.
      *
      * @return self
-     * @param \Pohoda\Type\LabelType $label
      */
     public function addToLabels(\Pohoda\Type\LabelType $label)
     {
         $this->labels[] = $label;
+
         return $this;
     }
 
     /**
-     * isset labels
+     * isset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLabels($index)
@@ -719,20 +716,19 @@ class PrijemkaHeaderType
     }
 
     /**
-     * unset labels
+     * unset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLabels($index)
+    public function unsetLabels($index): void
     {
         unset($this->labels[$index]);
     }
 
     /**
-     * Gets as labels
+     * Gets as labels.
      *
      * Štítky záznamu.
      *
@@ -744,39 +740,42 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new labels
+     * Sets a new labels.
      *
      * Štítky záznamu.
      *
      * @param \Pohoda\Type\LabelType[] $labels
+     *
      * @return self
      */
-    public function setLabels(array $labels = null)
+    public function setLabels(?array $labels = null)
     {
         $this->labels = $labels;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -785,20 +784,19 @@ class PrijemkaHeaderType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -810,21 +808,23 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 
     /**
-     * Gets as validate
+     * Gets as validate.
      *
      * Podmíněná kontrola dokladu.
      *
@@ -836,16 +836,16 @@ class PrijemkaHeaderType
     }
 
     /**
-     * Sets a new validate
+     * Sets a new validate.
      *
      * Podmíněná kontrola dokladu.
      *
-     * @param \Pohoda\Type\TypeValidateType $validate
      * @return self
      */
     public function setValidate(?\Pohoda\Type\TypeValidateType $validate = null)
     {
         $this->validate = $validate;
+
         return $this;
     }
 }

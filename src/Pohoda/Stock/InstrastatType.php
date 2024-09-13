@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing InstrastatType
- *
+ * Class representing InstrastatType.
  *
  * XSD Type: instrastatType
  */
@@ -12,48 +24,36 @@ class InstrastatType
 {
     /**
      * Kód zboží.
-     *
-     * @var string $goodsCode
      */
-    private $goodsCode = null;
+    private string $goodsCode = null;
 
     /**
      * Popis zboží (pouze SK verze).
-     *
-     * @var string $description
      */
-    private $description = null;
+    private string $description = null;
 
     /**
      * Statistický znak (pouze CZ verze).
-     *
-     * @var string $statistic
      */
-    private $statistic = null;
+    private string $statistic = null;
 
     /**
      * Kód doplňkové měrné jednotky.
-     *
-     * @var string $unit
      */
-    private $unit = null;
+    private string $unit = null;
 
     /**
      * Koeficient pro přepočet měrné jednotky.
-     *
-     * @var float $coefficient
      */
-    private $coefficient = null;
+    private float $coefficient = null;
 
     /**
      * Stát původu.
-     *
-     * @var string $country
      */
-    private $country = null;
+    private string $country = null;
 
     /**
-     * Gets as goodsCode
+     * Gets as goodsCode.
      *
      * Kód zboží.
      *
@@ -65,21 +65,23 @@ class InstrastatType
     }
 
     /**
-     * Sets a new goodsCode
+     * Sets a new goodsCode.
      *
      * Kód zboží.
      *
      * @param string $goodsCode
+     *
      * @return self
      */
     public function setGoodsCode($goodsCode)
     {
         $this->goodsCode = $goodsCode;
+
         return $this;
     }
 
     /**
-     * Gets as description
+     * Gets as description.
      *
      * Popis zboží (pouze SK verze).
      *
@@ -91,21 +93,23 @@ class InstrastatType
     }
 
     /**
-     * Sets a new description
+     * Sets a new description.
      *
      * Popis zboží (pouze SK verze).
      *
      * @param string $description
+     *
      * @return self
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
     /**
-     * Gets as statistic
+     * Gets as statistic.
      *
      * Statistický znak (pouze CZ verze).
      *
@@ -117,21 +121,23 @@ class InstrastatType
     }
 
     /**
-     * Sets a new statistic
+     * Sets a new statistic.
      *
      * Statistický znak (pouze CZ verze).
      *
      * @param string $statistic
+     *
      * @return self
      */
     public function setStatistic($statistic)
     {
         $this->statistic = $statistic;
+
         return $this;
     }
 
     /**
-     * Gets as unit
+     * Gets as unit.
      *
      * Kód doplňkové měrné jednotky.
      *
@@ -143,21 +149,23 @@ class InstrastatType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * Kód doplňkové měrné jednotky.
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as coefficient
+     * Gets as coefficient.
      *
      * Koeficient pro přepočet měrné jednotky.
      *
@@ -169,21 +177,23 @@ class InstrastatType
     }
 
     /**
-     * Sets a new coefficient
+     * Sets a new coefficient.
      *
      * Koeficient pro přepočet měrné jednotky.
      *
      * @param float $coefficient
+     *
      * @return self
      */
     public function setCoefficient($coefficient)
     {
         $this->coefficient = $coefficient;
+
         return $this;
     }
 
     /**
-     * Gets as country
+     * Gets as country.
      *
      * Stát původu.
      *
@@ -195,16 +205,18 @@ class InstrastatType
     }
 
     /**
-     * Sets a new country
+     * Sets a new country.
      *
      * Stát původu.
      *
      * @param string $country
+     *
      * @return self
      */
     public function setCountry($country)
     {
         $this->country = $country;
+
         return $this;
     }
 }

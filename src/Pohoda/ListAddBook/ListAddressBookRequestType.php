@@ -1,42 +1,47 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ListAddBook;
 
 /**
- * Class representing ListAddressBookRequestType
- *
+ * Class representing ListAddressBookRequestType.
  *
  * XSD Type: listAddressBookRequestType
  */
 class ListAddressBookRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze dokladu.
-     *
-     * @var string $addressBookVersion
      */
-    private $addressBookVersion = null;
+    private string $addressBookVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
 
     /**
-     * @var \Pohoda\Filter\RequestAddressBookType[] $requestAddressBook
+     * @var \Pohoda\Filter\RequestAddressBookType[]
      */
-    private $requestAddressBook = [
+    private array $requestAddressBook = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -46,19 +51,21 @@ class ListAddressBookRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as addressBookVersion
+     * Gets as addressBookVersion.
      *
      * Požadovaná verze dokladu.
      *
@@ -70,21 +77,23 @@ class ListAddressBookRequestType
     }
 
     /**
-     * Sets a new addressBookVersion
+     * Sets a new addressBookVersion.
      *
      * Požadovaná verze dokladu.
      *
      * @param string $addressBookVersion
+     *
      * @return self
      */
     public function setAddressBookVersion($addressBookVersion)
     {
         $this->addressBookVersion = $addressBookVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -96,35 +105,38 @@ class ListAddressBookRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Adds as requestAddressBook
+     * Adds as requestAddressBook.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestAddressBookType $requestAddressBook
      */
     public function addToRequestAddressBook(\Pohoda\Filter\RequestAddressBookType $requestAddressBook)
     {
         $this->requestAddressBook[] = $requestAddressBook;
+
         return $this;
     }
 
     /**
-     * isset requestAddressBook
+     * isset requestAddressBook.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestAddressBook($index)
@@ -133,18 +145,17 @@ class ListAddressBookRequestType
     }
 
     /**
-     * unset requestAddressBook
+     * unset requestAddressBook.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestAddressBook($index)
+    public function unsetRequestAddressBook($index): void
     {
         unset($this->requestAddressBook[$index]);
     }
 
     /**
-     * Gets as requestAddressBook
+     * Gets as requestAddressBook.
      *
      * @return \Pohoda\Filter\RequestAddressBookType[]
      */
@@ -154,14 +165,16 @@ class ListAddressBookRequestType
     }
 
     /**
-     * Sets a new requestAddressBook
+     * Sets a new requestAddressBook.
      *
      * @param \Pohoda\Filter\RequestAddressBookType[] $requestAddressBook
+     *
      * @return self
      */
     public function setRequestAddressBook(array $requestAddressBook)
     {
         $this->requestAddressBook = $requestAddressBook;
+
         return $this;
     }
 }

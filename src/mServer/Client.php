@@ -1,19 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * PHPmServer - Client Class
+ * This file is part of the PHP-Pohoda-Connector package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  (C) 2020,2023 Vitex Software
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace mServer;
 
-use Ease\Atom;
 use Ease\Functions;
-use Ease\Molecule;
-use Lightools\Xml\XmlException;
-use Lightools\Xml\XmlLoader;
 use Riesenia\Pohoda;
 
 /**
@@ -26,150 +28,117 @@ class Client extends \Ease\Sand
     use \Ease\RecordKey;
 
     /**
-     * Curl Handle.
+     * We Connect to server by default.
+     */
+    public bool $offline = false;
+
+    /**
+     * Override cURL timeout.
      *
-     * @var resource
-     */
-    private $curl = null;
-
-    /**
-     * We Connect to server by default
-     * @var boolean
-     */
-    public $offline = false;
-
-    /**
-     * Override cURL timeout
      * @var int seconds
      */
-    public $timeout = null;
+    public ?int $timeout = null;
 
     /**
-     * Body data  for next curl POST operation
-     *
-     * @var string
+     * Body data  for next curl POST operation.
      */
-    public $postFields = null;
+    public ?string $postFields = null;
 
     /**
      * Enable Curl Compress ?
-     * @var boolean
      */
-    public $compress = true;
+    public bool $compress = true;
 
     /**
-     * Raw Content of last curl response
-     *
-     * @var string
+     * Raw Content of last curl response.
      */
-    public $lastCurlResponse;
+    public string $lastCurlResponse;
 
     /**
-     * HTTP Response code of last request
-     *
-     * @var int
+     * HTTP Response code of last request.
      */
-    public $lastResponseCode = null;
+    public ?int $lastResponseCode = null;
 
     /**
      * Informace o poslední HTTP chybě.
-     *
-     * @var string
      */
-    public $lastCurlError = null;
+    public ?string $lastCurlError = null;
 
     /**
      * Informace o posledním HTTP requestu.
-     *
-     * @var mixed
      */
-    public $curlInfo;
+    public mixed $curlInfo;
 
     /**
-     * Array of errors
-     *
-     * @var array
+     * Array of errors.
      */
-    public $errors = [];
+    public array $errors = [];
 
     /**
-     * Response stats live here
-     *
-     * @var array
+     * Response stats live here.
      */
-    public $responseStats = [];
+    public array $responseStats = [];
 
     /**
      * @var array of Http headers attached with every request
      */
-    public $defaultHttpHeaders = [
+    public array $defaultHttpHeaders = [
         'STW-Application' => 'PHPmServer',
         'Accept' => 'application/xml',
-        'Content-Type' => 'application/xml'
+        'Content-Type' => 'application/xml',
     ];
 
     /**
-     * [protocol://]Server[:port]
-     * @var string
+     * [protocol://]Server[:port].
      */
-    public $url = null;
+    public ?string $url = null;
 
     /**
-     * REST API Username
-     * @var string
+     * REST API Username.
      */
-    public $user = null;
+    public ?string $user = null;
 
     /**
-     * REST API Password
-     * @var string
+     * REST API Password.
      */
-    public $password = null;
+    public ?string $password = null;
 
     /**
-     * My Company identification ID
-     * @var string
+     * Current Object's agenda.
      */
-    protected $ico = null;
+    public ?string $agenda = null;
 
     /**
-     * XML Response Processor
-     * @var Pohoda
+     * Request XML helper.
      */
-    protected $pohoda;
-
-    /**
-     * Response holder
-     * @var Response
-     */
-    protected $response = null;
-
-    /**
-     * Current Object's agenda
-     * @var string
-     */
-    public $agenda = null;
-
-    /**
-     * Request XML helper
-     * @var Pohoda\Agenda
-     */
-    public $requestXml = null;
+    public ?Pohoda\Agenda $requestXml = null;
 
     /**
      * Where to find current record name.
+     *
      * @var string column name or path in array address:company
      */
-    public $nameColumn = null;
+    public ?string $nameColumn = null;
 
     /**
-     * Path to teporary XML file
-     * @var string|null
+     * Path to teporary XML file.
      */
-    public $xmlCache = null;
+    public ?string $xmlCache = null;
 
     /**
-     * mServer client class
+     * My Company identification ID.
+     */
+    protected ?string $ico = null;
+
+    /**
+     * XML Response Processor.
+     */
+    protected Pohoda $pohoda;
+    private $curl;
+    private Response $response;
+
+    /**
+     * mServer client class.
      *
      * @param mixed $init    default record id or initial data. See processInit()
      * @param array $options Connection settings and other options override
@@ -181,97 +150,51 @@ class Client extends \Ease\Sand
         $this->curlInit();
         Pohoda::$encoding = 'UTF-8';
         $this->reset();
+
         if (!empty($init)) {
             $this->processInit($init);
         }
     }
 
     /**
-     * Prepare XML processing engine
+     * Reconnect After unserialization.
      */
-    public function reset()
+    public function __wakeup(): void
     {
-        $this->dataReset();
-        $this->pohoda = new Pohoda($this->ico);
-        $this->pohoda->setApplicationName(Functions::cfg('APP_NAME', 'PHPmPohoda'));
-        $this->xmlCache = sys_get_temp_dir() . '/phpmPohoda_' . Functions::randomString() . '.xml';
-        $this->pohoda->open($this->xmlCache, microtime(), 'generated by PHPmPohoda');
-        if ($this->debug) {
-            $this->addStatusMessage('Initialising new PHPmPohoda XMLCache: ' . $this->xmlCache, 'debug');
-        }
+        $this->curlInit();
     }
 
     /**
-     * @inheritDoc
-     */
-    public function setObjectName($forceName = '')
-    {
-        return parent::setObjectName(($this->getMyKey() ? $this->getMyKey() . '@' : '') . \Ease\Logger\Message::getCallerName($this));
-    }
-
-    /**
-     * Process and use initial value
-     *
-     * @param mixed $init
-     */
-    public function processInit($init)
-    {
-        if (is_integer($init)) {
-            $this->loadFromPohoda($init);
-        } elseif (is_array($init)) {
-            $this->takeData($init);
-        } elseif (preg_match('/\.(json|xml|csv)/', $init)) {
-            $this->takeData($this->getPohodaData((($init[0] != '/') ? $this->evidenceUrlWithSuffix($init) : $init)));
-        } else {
-            $this->loadFromPohoda($init);
-        }
-    }
-
-    /**
-     * Add Info about used user, server and libraries
-     *
-     * @param string $prefix banner prefix text
-     * @param string $suffix banner suffix text
-     */
-    public function logBanner($prefix = null, $suffix = null)
-    {
-        parent::logBanner(
-            $prefix,
-            'mServer ' . str_replace('://', '://' . $this->user . '@', $this->url) . ' PHPmServer v' . self::libVersion() .
-                $suffix
-        );
-    }
-
-    /**
-     * SetUp Object to be ready for work
+     * SetUp Object to be ready for work.
      *
      * @param array $options Object Options ( user,password,authSessionId
-     *                                        company,url,agenda,
-     *                                        debug,
-     *                                        filter,ignore404
-     *                                        timeout,companyUrl,ver,throwException
+     *                       company,url,agenda,
+     *                       debug,
+     *                       filter,ignore404
+     *                       timeout,companyUrl,ver,throwException
      */
-    public function setUp($options = [])
+    public function setUp($options = []): void
     {
         $this->setupProperty($options, 'ico', 'POHODA_ICO');
         $this->setupProperty($options, 'url', 'POHODA_URL');
         $this->setupProperty($options, 'user', 'POHODA_USERNAME');
         $this->setupProperty($options, 'password', 'POHODA_PASSWORD');
-        $this->setupProperty($options, 'timeout', 'POHODA_TIMEOUT');
-        $this->setupProperty($options, 'compress', 'POHODA_COMPRESS');
+        $this->setupIntProperty($options, 'timeout', 'POHODA_TIMEOUT');
+        $this->setupBoolProperty($options, 'compress', 'POHODA_COMPRESS');
+
         if (isset($options['agenda'])) {
             $this->setAgenda($options['agenda']);
         }
 
-        if (array_key_exists('instance', $options)) {
+        if (\array_key_exists('instance', $options)) {
             $this->setInstance($options['instance']);
         }
 
-        if (array_key_exists('application', $options)) {
+        if (\array_key_exists('application', $options)) {
             $this->setApplication($options['application']);
         }
 
-        if (array_key_exists('duplicity', $options)) {
+        if (\array_key_exists('duplicity', $options)) {
             $this->setCheckDuplicity($options['duplicity']);
         }
 
@@ -279,42 +202,94 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Set Authentification
-     *
-     * @return boolean
+     * Prepare XML processing engine.
      */
-    public function setAuth()
+    public function reset(): void
     {
-        $this->defaultHttpHeaders['STW-Authorization'] = 'Basic ' . base64_encode($this->user . ':' . $this->password);
-        return strlen($this->user) && strlen($this->password);
+        $this->dataReset();
+        $this->pohoda = new Pohoda($this->ico);
+        $this->pohoda->setApplicationName(Functions::cfg('APP_NAME', 'PHPmPohoda'));
+        $this->xmlCache = sys_get_temp_dir().'/phpmPohoda_'.Functions::randomString().'.xml';
+        $this->pohoda->open($this->xmlCache, microtime(), 'generated by PHPmPohoda');
+
+        if ($this->debug) {
+            $this->addStatusMessage('Initialising new PHPmPohoda XMLCache: '.$this->xmlCache, 'debug');
+        }
     }
 
     /**
-     * Set Instance http header
-     *
-     * @param string $instance
+     * {@inheritDoc}
      */
-    public function setInstance(string $instance)
+    public function setObjectName($forceName = '')
+    {
+        return parent::setObjectName(($this->getMyKey() ? $this->getMyKey().'@' : '').\Ease\Logger\Message::getCallerName($this));
+    }
+
+    /**
+     * Process and use initial value.
+     *
+     * @param mixed $init
+     */
+    public function processInit($init): void
+    {
+        if (\is_int($init)) {
+            $this->loadFromPohoda($init);
+        } elseif (\is_array($init)) {
+            $this->takeData($init);
+        } elseif (preg_match('/\.(json|xml|csv)/', $init)) {
+            $this->takeData($this->getPohodaData(($init[0] !== '/') ? $this->evidenceUrlWithSuffix($init) : $init));
+        } else {
+            $this->loadFromPohoda($init);
+        }
+    }
+
+    /**
+     * Add Info about used user, server and libraries.
+     *
+     * @param string $prefix banner prefix text
+     * @param string $suffix banner suffix text
+     */
+    public function logBanner($prefix = null, $suffix = null): void
+    {
+        parent::logBanner(
+            $prefix,
+            'mServer '.str_replace('://', '://'.$this->user.'@', $this->url).' PHPmServer v'.self::libVersion().
+                $suffix,
+        );
+    }
+
+    /**
+     * Set Authentification.
+     *
+     * @return bool
+     */
+    public function setAuth()
+    {
+        $this->defaultHttpHeaders['STW-Authorization'] = 'Basic '.base64_encode($this->user.':'.$this->password);
+
+        return \strlen($this->user) && \strlen($this->password);
+    }
+
+    /**
+     * Set Instance http header.
+     */
+    public function setInstance(string $instance): void
     {
         $this->defaultHttpHeaders['STW-Instance'] = $instance;
     }
 
     /**
-     * Set Application http header
-     *
-     * @param string $application
+     * Set Application http header.
      */
-    public function setApplication(string $application)
+    public function setApplication(string $application): void
     {
         $this->defaultHttpHeaders['STW-Application'] = $application;
     }
 
     /**
-     * Set "Check Duplicity" http header enabler
-     *
-     * @param bool $flag
+     * Set "Check Duplicity" http header enabler.
      */
-    public function setCheckDuplicity(bool $flag)
+    public function setCheckDuplicity(bool $flag): void
     {
         if ($flag) {
             $this->defaultHttpHeaders['STW-Check-Duplicity'] = 'true';
@@ -324,225 +299,254 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Inicializace CURL
+     * Inicializace CURL.
      *
-     * @return boolean Online Status
+     * @return bool Online Status
      */
     public function curlInit()
     {
         if ($this->offline === false) {
             $this->curl = \curl_init(); // create curl resource
-            \curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true); // return content as a string from curl_exec
-            \curl_setopt($this->curl, CURLOPT_FOLLOWLOCATION, true); // follow redirects
-            \curl_setopt($this->curl, CURLOPT_HTTPAUTH, true); // HTTP authentication
-            \curl_setopt($this->curl, CURLOPT_SSL_VERIFYPEER, false); // for Self-Signed certificates
-            \curl_setopt($this->curl, CURLOPT_SSL_VERIFYHOST, false);
-            \curl_setopt($this->curl, CURLOPT_VERBOSE, ($this->debug === true)); // For debugging
-            if (!is_null($this->timeout)) {
-                \curl_setopt($this->curl, CURLOPT_TIMEOUT, $this->timeout);
+            \curl_setopt($this->curl, \CURLOPT_RETURNTRANSFER, true); // return content as a string from curl_exec
+            \curl_setopt($this->curl, \CURLOPT_FOLLOWLOCATION, true); // follow redirects
+            \curl_setopt($this->curl, \CURLOPT_HTTPAUTH, true); // HTTP authentication
+            \curl_setopt($this->curl, \CURLOPT_SSL_VERIFYPEER, false); // for Self-Signed certificates
+            \curl_setopt($this->curl, \CURLOPT_SSL_VERIFYHOST, false);
+            \curl_setopt($this->curl, \CURLOPT_VERBOSE, $this->debug === true); // For debugging
+
+            if (null !== $this->timeout) {
+                \curl_setopt($this->curl, \CURLOPT_TIMEOUT, $this->timeout);
             }
+
             if ($this->compress === true) {
-                \curl_setopt($this->curl, CURLOPT_ENCODING, "gzip");
+                \curl_setopt($this->curl, \CURLOPT_ENCODING, 'gzip');
             }
-            \curl_setopt($this->curl, CURLOPT_USERAGENT, 'mServerPHP  v' . self::libVersion() . ' https://github.com/VitexSoftware/PHP-Pohoda-Connector');
+
+            \curl_setopt($this->curl, \CURLOPT_USERAGENT, 'mServerPHP  v'.self::libVersion().' https://github.com/VitexSoftware/PHP-Pohoda-Connector');
         }
+
         return !$this->offline && $this->setAuth();
     }
 
     /**
-     * Prepare data to send
+     * Prepare data to send.
      *
      * @param string $data
      */
-    public function setPostFields($data)
+    public function setPostFields($data): void
     {
         $this->postFields = $data;
     }
 
     /**
-     * Perform HTTP request
+     * Perform HTTP request.
      *
-     * @param string $url    Request URL
-     * @param string $method HTTP Method GET|POST
+     * @param string     $url    Request URL
+     * @param string     $method HTTP Method GET|POST
+     * @param null|mixed $format
      *
      * @return int HTTP Response CODE
      */
     public function doCurlRequest($url, $method, $format = null)
     {
-        \curl_setopt($this->curl, CURLOPT_URL, $url);
-        \curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, strtoupper($method));
-        \curl_setopt($this->curl, CURLOPT_POSTFIELDS, $this->postFields);
+        \curl_setopt($this->curl, \CURLOPT_URL, $url);
+        \curl_setopt($this->curl, \CURLOPT_CUSTOMREQUEST, strtoupper($method));
+        \curl_setopt($this->curl, \CURLOPT_POSTFIELDS, $this->postFields);
+
         if ($this->debug && !empty($this->postFields)) {
-            $tmpfile = sys_get_temp_dir() . '/mPohodaReq' . time() . '.xml';
+            $tmpfile = sys_get_temp_dir().'/mPohodaReq'.time().'.xml';
             file_put_contents($tmpfile, $this->postFields);
-            $this->addStatusMessage('request body saved as: ' . $tmpfile, 'debug');
-            //system('netbeans ' . $tmpfile);
+            $this->addStatusMessage('request body saved as: '.$tmpfile, 'debug');
+            // system('netbeans ' . $tmpfile);
         }
 
         $httpHeaders = $this->defaultHttpHeaders;
-        array_walk($httpHeaders, function (&$value, $header) {
-            $value = $header . ': ' . $value;
+        array_walk($httpHeaders, static function (&$value, $header): void {
+            $value = $header.': '.$value;
         });
-        \curl_setopt($this->curl, CURLOPT_HTTPHEADER, $httpHeaders);
-        $this->lastCurlResponse = \curl_exec($this->curl);
+        \curl_setopt($this->curl, \CURLOPT_HTTPHEADER, $httpHeaders);
+
+        $response = \curl_exec($this->curl);
+        $this->lastCurlResponse = $response ?: '';
         $this->curlInfo = \curl_getinfo($this->curl);
         $this->curlInfo['when'] = microtime();
         $this->lastResponseCode = $this->curlInfo['http_code'];
         $this->lastCurlError = \curl_error($this->curl);
-        if (strlen($this->lastCurlError)) {
+
+        if (\strlen($this->lastCurlError)) {
             $this->addStatusMessage(
                 sprintf(
                     'Curl Error (HTTP %d): %s',
                     $this->lastResponseCode,
-                    $this->lastCurlError
+                    $this->lastCurlError,
                 ),
-                'error'
+                'error',
             );
         }
+
         if ($this->debug) {
-            $tmpName = sys_get_temp_dir() . '/response' . time() . '.xml';
+            $tmpName = sys_get_temp_dir().'/response'.time().'.xml';
             file_put_contents($tmpName, $this->lastCurlResponse);
-            $this->addStatusMessage('response saved as: ' . $tmpName, 'debug');
+            $this->addStatusMessage('response saved as: '.$tmpName, 'debug');
             // xmllint --schema doc/xsd/data.xsd /tmp/1718209563.xml --noout
-            //system('netbeans ' . $tmpName);
+            // system('netbeans ' . $tmpName);
         }
+
         return $this->lastResponseCode;
     }
 
     /**
      * Funkce, která provede I/O operaci a vyhodnotí výsledek.
      *
-     * @param string $urlSuffix část URL za identifikátorem firmy.
+     * @param string $urlSuffix část URL za identifikátorem firmy
      * @param string $method    HTTP/REST metoda
      *
-     * @return boolean request commit status
+     * @return bool request commit status
      */
     public function performRequest($urlSuffix = '', $method = 'POST')
     {
         $this->responseStats = [];
         $this->errors = [];
+
         if (preg_match('/^http/', $urlSuffix)) {
             $url = $urlSuffix;
-        } elseif (strlen($urlSuffix) && ($urlSuffix[0] == '/')) {
-            $url = $this->url . $urlSuffix;
+        } elseif (\strlen($urlSuffix) && ($urlSuffix[0] === '/')) {
+            $url = $this->url.$urlSuffix;
         } else {
             $url = $this->url;
         }
+
         return $this->processResponse($this->doCurlRequest($url, $method));
     }
 
     /**
-     * Response processing handler
+     * Response processing handler.
      *
      * @param int $httpCode
      *
-     * @return boolean
+     * @return bool
      */
     public function processResponse($httpCode)
     {
-
         switch ($httpCode) {
             case 400:
                 $this->addStatusMessage(_('400: Bad request'), 'error');
+
                 // "Požadavek nemůže být vyřízen, poněvadž byl syntakticky nesprávně zapsán"
                 break;
             case 401:
                 $this->addStatusMessage(_('401: Unauthorized'), 'error');
-                //"Používán tam, kde je vyžadována autentifikace, ale nebyla zatím provedena". V tomto případě se jedná o problém, kdy buď v HTTP požadavku chybí autentizační údaje nebo daný uživatel není v programu POHODA vytvořen.
+
+                // "Používán tam, kde je vyžadována autentifikace, ale nebyla zatím provedena". V tomto případě se jedná o problém, kdy buď v HTTP požadavku chybí autentizační údaje nebo daný uživatel není v programu POHODA vytvořen.
                 break;
             case 403:
                 $this->addStatusMessage(_('403: Forbidden'), 'error');
-                //"Požadavek byl legální, ale server odmítl odpovědět". Například se jedná o problém, kdy daný uživatel nemá právo na otevření účetní jednotky v programu POHODA.
+
+                // "Požadavek byl legální, ale server odmítl odpovědět". Například se jedná o problém, kdy daný uživatel nemá právo na otevření účetní jednotky v programu POHODA.
                 break;
             case 404:
                 $this->addStatusMessage(_('404: Not found'), 'error');
-                //„Požadovaný dokument nebyl nalezen“. Jedná se o problém, kdy byla chybně zadaná URL cesta k mServeru. Například se jedná o problém, kdy v URL adrese není uvedena cesta k umístění na serveru "/XML". Příklad správně zadné URL: 192.168.0.1:444/xml
+
+                // „Požadovaný dokument nebyl nalezen“. Jedná se o problém, kdy byla chybně zadaná URL cesta k mServeru. Například se jedná o problém, kdy v URL adrese není uvedena cesta k umístění na serveru "/XML". Příklad správně zadné URL: 192.168.0.1:444/xml
                 break;
             case 405:
                 $this->addStatusMessage(_('405: Method not allowed'), 'error');
-                //„Požadavek byl zavolán na zdroj s metodou, kterou nepodporuje. Například se jedná o službu, na kterou se odesílají data metodou POST a někdo se je místo toho pokusí odeslat metodou GET.“
+
+                // „Požadavek byl zavolán na zdroj s metodou, kterou nepodporuje. Například se jedná o službu, na kterou se odesílají data metodou POST a někdo se je místo toho pokusí odeslat metodou GET.“
                 break;
             case 408:
                 $this->addStatusMessage(_('408 : Request Timeout'), 'error');
-                //„Vypršel čas vyhrazený na zpracování požadavku“
+
+                // „Vypršel čas vyhrazený na zpracování požadavku“
                 break;
             case 500:
                 $this->addStatusMessage(_('500: Internal server error'), 'error');
-                //„Při zpracovávání požadavku došlo k blíže nespecifikované chybě“
+
+                // „Při zpracovávání požadavku došlo k blíže nespecifikované chybě“
                 break;
             case 502:
                 $this->addStatusMessage(_('502: Bad Gateway'), 'error');
-                //„Proxy server nebo brána obdržely od serveru neplatnou odpověď“
+
+                // „Proxy server nebo brána obdržely od serveru neplatnou odpověď“
                 break;
             case 503:
                 $this->addStatusMessage(_('503: Service unavailable'), 'error');
-                //„Služba je dočasně nedostupná“
+
+                // „Služba je dočasně nedostupná“
                 break;
             case 504:
                 $this->addStatusMessage(_('504: Gateway Timeout'), 'error');
-                //„Proxy server nedostal od cílového serveru odpověď v daném čase“
+
+                // „Proxy server nedostal od cílového serveru odpověď v daném čase“
                 break;
             case 505:
                 $this->addStatusMessage(_('505: HTTP Version Not Supported'), 'error');
-                //„Server nepodporuje verzi protokolu HTTP použitou v požadavku“
+
+                // „Server nepodporuje verzi protokolu HTTP použitou v požadavku“
                 break;
+
             default:
                 $this->response = new Response($this);
-//                if ($this->response->isOk() === false) {
+
+                //                if ($this->response->isOk() === false) {
                 if ($this->response->getNote()) {
                     $this->addStatusMessage($this->response->getNote(), 'error');
                 }
+
                 foreach ($this->response->messages as $type => $messages) {
                     foreach ($messages as $message) {
-                        $this->addStatusMessage($message['state'] . ' ' . $message['errno'] . ': ' . $message['note'] . (array_key_exists('XPath', $message) ? ' (' . $message['XPath'] . ')' : ''), $type);
+                        $this->addStatusMessage($message['state'].' '.$message['errno'].': '.$message['note'].(\array_key_exists('XPath', $message) ? ' ('.$message['XPath'].')' : ''), $type);
                     }
                 }
-//                }
+
+                //                }
                 break;
         }
 
-        return is_object($this->response) && $this->response->isOk();
+        return \is_object($this->response) && $this->response->isOk();
     }
 
     /**
-     * Check mServer availbilty
+     * Check mServer availbilty.
      *
-     * @return boolean
+     * @return bool
      */
     public function isOnline()
     {
         $this->responseStats = [];
         $this->errors = [];
-        return ($this->doCurlRequest($this->url . '/status', 'POST') === 200) &&
-                str_contains($this->lastCurlResponse, 'Response from POHODA mServer');
+
+        return ($this->doCurlRequest($this->url.'/status', 'POST') === 200) && str_contains($this->lastCurlResponse, 'Response from POHODA mServer');
     }
 
     /**
-     * Use data in object
+     * Use data in object.
      *
-     * @param array   $data  raw document data
+     * @param array $data raw document data
      */
     public function takeData($data)
     {
         parent::takeData($data);
         $created = $this->create($this->getData());
         $this->setObjectName();
+
         return $created;
     }
 
     /**
-     * Create Agenda document using given data
+     * Create Agenda document using given data.
      *
      * @param array $data
      */
     public function create($data)
     {
         $this->requestXml = $this->pohoda->create($data);
+
         return empty($this->requestXml) ? 0 : 1;
     }
 
     /**
-     * Insert prepared record to Pohoda
+     * Insert prepared record to Pohoda.
      *
      * @param array $data extra data
      *
@@ -553,12 +557,15 @@ class Client extends \Ease\Sand
         if (!empty($data)) {
             $this->takeData($data);
         }
+
         if ($this->requestXml) {
             if (method_exists($this->requestXml, 'addActionType')) {
                 $this->requestXml->addActionType('add'); // "add", "add/update", "update", "delete"
             }
+
             $this->pohoda->addItem(2, $this->requestXml);
         }
+
         return 1;
     }
 
@@ -566,16 +573,19 @@ class Client extends \Ease\Sand
     {
         $this->pohoda->close();
         $this->setPostFields(file_get_contents($this->xmlCache));
+
         if ($this->debug) {
-            $this->addStatusMessage('validate request by: xmllint --schema ' . dirname(dirname(__DIR__)) . '/doc/xsd/data.xsd ' . $this->xmlCache . ' --noout', 'debug');
+            $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 2).'/doc/xsd/data.xsd '.$this->xmlCache.' --noout', 'debug');
         }
+
         return $this->performRequest('/xml');
     }
 
     /**
-     * Insert prepared record to Pohoda
+     * Insert prepared record to Pohoda.
      *
-     * @param array $data extra data
+     * @param array      $data   extra data
+     * @param null|mixed $filter
      *
      * @return int
      */
@@ -584,20 +594,23 @@ class Client extends \Ease\Sand
         if (!empty($data)) {
             $this->takeData($data);
         }
+
         if ($this->requestXml) {
             if (method_exists($this->requestXml, 'addActionType')) {
                 // "add", "add/update", "update", "delete"
                 $this->requestXml->addActionType('update', empty($filter) ? $this->filterToMe() : $filter);
             }
+
             $this->pohoda->addItem(2, $this->requestXml);
         }
 
         $this->setPostFields($this->pohoda->close());
+
         return $this->performRequest('/xml');
     }
 
     /**
-     * Filter to select only "current" record
+     * Filter to select only "current" record.
      *
      * @return array
      */
@@ -606,13 +619,15 @@ class Client extends \Ease\Sand
         if ($this->nameColumn) {
             if (strstr($this->nameColumn, ':')) {
                 $data = $this->getData();
+
                 foreach (explode(':', $this->nameColumn) as $key) {
-                    if (array_key_exists($data, $data)) {
+                    if (\array_key_exists($data, $data)) {
                         $data = $data[$key];
                     } else {
-                        throw new \Exception('Data Path ' . $this->nameColumn . 'does not exist');
+                        throw new \Exception('Data Path '.$this->nameColumn.'does not exist');
                     }
                 }
+
                 $filter = [$key => $data];
             } else {
                 $filter = [$this->nameColumn => $this->getDataValue($this->nameColumn)];
@@ -620,11 +635,12 @@ class Client extends \Ease\Sand
         } else {
             $filter = [$this->getKeyColumn() => $this->getMyKey()];
         }
+
         return $filter;
     }
 
     /**
-     * Obtain given fields from Pohoda
+     * Obtain given fields from Pohoda.
      *
      * @param array $columns    list of columns to obtain
      * @param array $conditions conditions to filter
@@ -634,40 +650,38 @@ class Client extends \Ease\Sand
     public function getColumnsFromPohoda($columns = ['id'], $conditions = [])
     {
         $this->requestXml = $this->pohoda->createListRequest(['type' => ucfirst($this->agenda)]);
-        if (count($conditions)) {
+
+        if (\count($conditions)) {
             $this->requestXml->addFilter($conditions);
         }
-        $this->pohoda->addItem(2, $this->requestXml);
+
+        $this->pohoda->addItem('2', $this->requestXml);
         $xmlTmp = $this->pohoda->close();
         $this->setPostFields($this->xmlCache ? file_get_contents($this->xmlCache) : $xmlTmp);
+
         return $this->performRequest('/xml') ? $this->response->getAgendaData($this->agenda) : null;
     }
 
     /**
-     * Load data from Pohoda
+     * Load data from Pohoda.
+     *
+     * @param null|mixed $phid
      *
      * @return mixed
      */
     public function loadFromPohoda($phid = null)
     {
-        if (is_null($phid) === true) {
+        if ((null === $phid) === true) {
             $condition = [];
         } else {
-            $condition = ['id' => $phid];
+            $condition = \is_array($phid) ? $phid : ['id' => (string) $phid];
         }
-        return $this->takeData($this->getColumnsFromPohoda(["*"], $condition)) ? $this->getMyKey() : null;
+
+        return $this->takeData($this->getColumnsFromPohoda(['*'], $condition)) ? $this->getMyKey() : null;
     }
 
     /**
-     * Reconnect After unserialization
-     */
-    public function __wakeup()
-    {
-        $this->curlInit();
-    }
-
-    /**
-     * Application version or "0.0.0" fallback
+     * Application version or "0.0.0" fallback.
      *
      * @return string
      */
@@ -678,20 +692,22 @@ class Client extends \Ease\Sand
         } else {
             $package = [];
         }
-        return array_key_exists('version', $package) ? $package['version'] : '0.0.0';
+
+        return \array_key_exists('version', $package) ? $package['version'] : '0.0.0';
     }
 
     /**
-     *
+     * @param mixed $request
      */
     public function sendRequest($request)
     {
         $this->setPostFields($request);
         $this->performRequest('/xml');
+
         return $this->lastCurlResponse;
     }
 
-    public function setAgenda($agenda)
+    public function setAgenda($agenda): void
     {
         $this->agenda = $agenda;
     }

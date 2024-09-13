@@ -1,84 +1,75 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Data;
 
 /**
- * Class representing DataPackType
- *
+ * Class representing DataPackType.
  *
  * XSD Type: dataPackType
  */
 class DataPackType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * ID dokladu, podle této hodnoty a hodnoty "id" v "dataPackItem" se kontrolují duplicity importovaných dokladů.
-     *
-     * @var string $id
      */
-    private $id = null;
+    private string $id = null;
 
     /**
      * IČ firmy, pro kterou je XML určeno. Hodnota musí souhlasit s IČ zadané firmy. Má vyšší prioritu než atribut "key".
-     *
-     * @var string $ico
      */
-    private $ico = null;
+    private string $ico = null;
 
     /**
      * Jedinečný identifikátor účetnictví firmy, pro kterou je XML určeno. Pokud není uveden atribut "ico" (nebo je prázdný), hodnota musí souhlasit s "klíčem" zadané firmy.
-     *
-     * @var string $key
      */
-    private $key = null;
+    private string $key = null;
 
     /**
      * Hodnota účetního období vybrané účetní jednotky v programu Pohoda. Pokud nebude atribut použit, bude XML import dat proveden do aktuálně nastavené účetního období přihlášeného uživatele. Pokud bude atribut uveden, bude při importu dat proveden kontrola nastaveného účetního období. Jestliže nebude období shodné, XML komunikace bude ukončena.
-     *
-     * @var string $period
      */
-    private $period = null;
+    private string $period = null;
 
     /**
      * Textový popis, hodnota se zobrazí v poli "Aplikace" v agendě XML Import.
-     *
-     * @var string $application
      */
-    private $application = null;
-
-    /**
-     * @var string $programVersion
-     */
-    private $programVersion = null;
+    private string $application = null;
+    private string $programVersion = null;
 
     /**
      * Textová poznámka, hodnota se zobrazí v záložce "Poznámky" v agendě XML Import.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Transformace vstupu a výstupu (od verze "1.1" elementu "dataPack").
      *  Transformaci pro všechny zpracovávané soubory lze nastavit v INI souboru.
      *  Nejdříve se provede transformace zadané v INI souboru, poté transformace zadaná v XML.
-     *
-     * @var \Pohoda\Data\TransformationType $transformation
      */
-    private $transformation = null;
+    private \Pohoda\Data\TransformationType $transformation = null;
 
     /**
-     * @var \Pohoda\Data\DataPackItemType[] $dataPackItem
+     * @var \Pohoda\Data\DataPackItemType[]
      */
-    private $dataPackItem = [
+    private array $dataPackItem = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -88,19 +79,21 @@ class DataPackType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID dokladu, podle této hodnoty a hodnoty "id" v "dataPackItem" se kontrolují duplicity importovaných dokladů.
      *
@@ -112,21 +105,23 @@ class DataPackType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID dokladu, podle této hodnoty a hodnoty "id" v "dataPackItem" se kontrolují duplicity importovaných dokladů.
      *
      * @param string $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as ico
+     * Gets as ico.
      *
      * IČ firmy, pro kterou je XML určeno. Hodnota musí souhlasit s IČ zadané firmy. Má vyšší prioritu než atribut "key".
      *
@@ -138,21 +133,23 @@ class DataPackType
     }
 
     /**
-     * Sets a new ico
+     * Sets a new ico.
      *
      * IČ firmy, pro kterou je XML určeno. Hodnota musí souhlasit s IČ zadané firmy. Má vyšší prioritu než atribut "key".
      *
      * @param string $ico
+     *
      * @return self
      */
     public function setIco($ico)
     {
         $this->ico = $ico;
+
         return $this;
     }
 
     /**
-     * Gets as key
+     * Gets as key.
      *
      * Jedinečný identifikátor účetnictví firmy, pro kterou je XML určeno. Pokud není uveden atribut "ico" (nebo je prázdný), hodnota musí souhlasit s "klíčem" zadané firmy.
      *
@@ -164,21 +161,23 @@ class DataPackType
     }
 
     /**
-     * Sets a new key
+     * Sets a new key.
      *
      * Jedinečný identifikátor účetnictví firmy, pro kterou je XML určeno. Pokud není uveden atribut "ico" (nebo je prázdný), hodnota musí souhlasit s "klíčem" zadané firmy.
      *
      * @param string $key
+     *
      * @return self
      */
     public function setKey($key)
     {
         $this->key = $key;
+
         return $this;
     }
 
     /**
-     * Gets as period
+     * Gets as period.
      *
      * Hodnota účetního období vybrané účetní jednotky v programu Pohoda. Pokud nebude atribut použit, bude XML import dat proveden do aktuálně nastavené účetního období přihlášeného uživatele. Pokud bude atribut uveden, bude při importu dat proveden kontrola nastaveného účetního období. Jestliže nebude období shodné, XML komunikace bude ukončena.
      *
@@ -190,21 +189,23 @@ class DataPackType
     }
 
     /**
-     * Sets a new period
+     * Sets a new period.
      *
      * Hodnota účetního období vybrané účetní jednotky v programu Pohoda. Pokud nebude atribut použit, bude XML import dat proveden do aktuálně nastavené účetního období přihlášeného uživatele. Pokud bude atribut uveden, bude při importu dat proveden kontrola nastaveného účetního období. Jestliže nebude období shodné, XML komunikace bude ukončena.
      *
      * @param string $period
+     *
      * @return self
      */
     public function setPeriod($period)
     {
         $this->period = $period;
+
         return $this;
     }
 
     /**
-     * Gets as application
+     * Gets as application.
      *
      * Textový popis, hodnota se zobrazí v poli "Aplikace" v agendě XML Import.
      *
@@ -216,21 +217,23 @@ class DataPackType
     }
 
     /**
-     * Sets a new application
+     * Sets a new application.
      *
      * Textový popis, hodnota se zobrazí v poli "Aplikace" v agendě XML Import.
      *
      * @param string $application
+     *
      * @return self
      */
     public function setApplication($application)
     {
         $this->application = $application;
+
         return $this;
     }
 
     /**
-     * Gets as programVersion
+     * Gets as programVersion.
      *
      * @return string
      */
@@ -240,19 +243,21 @@ class DataPackType
     }
 
     /**
-     * Sets a new programVersion
+     * Sets a new programVersion.
      *
      * @param string $programVersion
+     *
      * @return self
      */
     public function setProgramVersion($programVersion)
     {
         $this->programVersion = $programVersion;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Textová poznámka, hodnota se zobrazí v záložce "Poznámky" v agendě XML Import.
      *
@@ -264,21 +269,23 @@ class DataPackType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Textová poznámka, hodnota se zobrazí v záložce "Poznámky" v agendě XML Import.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as transformation
+     * Gets as transformation.
      *
      * Transformace vstupu a výstupu (od verze "1.1" elementu "dataPack").
      *  Transformaci pro všechny zpracovávané soubory lze nastavit v INI souboru.
@@ -292,37 +299,38 @@ class DataPackType
     }
 
     /**
-     * Sets a new transformation
+     * Sets a new transformation.
      *
      * Transformace vstupu a výstupu (od verze "1.1" elementu "dataPack").
      *  Transformaci pro všechny zpracovávané soubory lze nastavit v INI souboru.
      *  Nejdříve se provede transformace zadané v INI souboru, poté transformace zadaná v XML.
      *
-     * @param \Pohoda\Data\TransformationType $transformation
      * @return self
      */
     public function setTransformation(?\Pohoda\Data\TransformationType $transformation = null)
     {
         $this->transformation = $transformation;
+
         return $this;
     }
 
     /**
-     * Adds as dataPackItem
+     * Adds as dataPackItem.
      *
      * @return self
-     * @param \Pohoda\Data\DataPackItemType $dataPackItem
      */
     public function addToDataPackItem(\Pohoda\Data\DataPackItemType $dataPackItem)
     {
         $this->dataPackItem[] = $dataPackItem;
+
         return $this;
     }
 
     /**
-     * isset dataPackItem
+     * isset dataPackItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetDataPackItem($index)
@@ -331,18 +339,17 @@ class DataPackType
     }
 
     /**
-     * unset dataPackItem
+     * unset dataPackItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetDataPackItem($index)
+    public function unsetDataPackItem($index): void
     {
         unset($this->dataPackItem[$index]);
     }
 
     /**
-     * Gets as dataPackItem
+     * Gets as dataPackItem.
      *
      * @return \Pohoda\Data\DataPackItemType[]
      */
@@ -352,14 +359,16 @@ class DataPackType
     }
 
     /**
-     * Sets a new dataPackItem
+     * Sets a new dataPackItem.
      *
      * @param \Pohoda\Data\DataPackItemType[] $dataPackItem
+     *
      * @return self
      */
     public function setDataPackItem(array $dataPackItem)
     {
         $this->dataPackItem = $dataPackItem;
+
         return $this;
     }
 }

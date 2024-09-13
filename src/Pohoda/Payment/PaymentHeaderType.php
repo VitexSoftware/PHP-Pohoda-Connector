@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Payment;
 
 /**
- * Class representing PaymentHeaderType
- *
+ * Class representing PaymentHeaderType.
  *
  * XSD Type: paymentHeaderType
  */
@@ -12,98 +24,72 @@ class PaymentHeaderType
 {
     /**
      * ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Název formy úhrady.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Popis formy úhrady.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Typ formy úhrady. Na základě zvoleného typu se bude provádět i její zaúčtování.
-     *
-     * @var string $paymentType
      */
-    private $paymentType = null;
+    private string $paymentType = null;
 
     /**
      * Typ formy úhrady pro FM.
-     *
-     * @var string $paymentTypeFM
      */
-    private $paymentTypeFM = null;
+    private string $paymentTypeFM = null;
 
     /**
      * Cizí měna.
-     *
-     * @var \Pohoda\Payment\ForeignCurrencyType $foreignCurrency
      */
-    private $foreignCurrency = null;
+    private \Pohoda\Payment\ForeignCurrencyType $foreignCurrency = null;
 
     /**
      * Stravenka.
-     *
-     * @var \Pohoda\Payment\TicketType $ticket
      */
-    private $ticket = null;
+    private \Pohoda\Payment\TicketType $ticket = null;
 
     /**
      * Hotovost.
-     *
-     * @var \Pohoda\Payment\CashDefaultType $cash
      */
-    private $cash = null;
+    private \Pohoda\Payment\CashDefaultType $cash = null;
 
     /**
      * Použít v agendách prodejek. Zadaná forma úhrady je nabízena v agendě Prodejky, Kasa a v modulu POHODA Kasa Offline. .
-     *
-     * @var string $useInSales
      */
-    private $useInSales = null;
+    private string $useInSales = null;
 
     /**
      * Použít v ostatních agendách. Zvolená forma úhrady je nabízena v ostatních agendách.
-     *
-     * @var string $useInOtherAgendas
      */
-    private $useInOtherAgendas = null;
+    private string $useInOtherAgendas = null;
 
     /**
      * Vstupuje do EET.
-     *
-     * @var string $eet
      */
-    private $eet = null;
+    private string $eet = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu.
      *
@@ -115,21 +101,23 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -142,22 +130,22 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název formy úhrady.
      *
@@ -169,21 +157,23 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název formy úhrady.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Popis formy úhrady.
      *
@@ -195,21 +185,23 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Popis formy úhrady.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as paymentType
+     * Gets as paymentType.
      *
      * Typ formy úhrady. Na základě zvoleného typu se bude provádět i její zaúčtování.
      *
@@ -221,21 +213,23 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new paymentType
+     * Sets a new paymentType.
      *
      * Typ formy úhrady. Na základě zvoleného typu se bude provádět i její zaúčtování.
      *
      * @param string $paymentType
+     *
      * @return self
      */
     public function setPaymentType($paymentType)
     {
         $this->paymentType = $paymentType;
+
         return $this;
     }
 
     /**
-     * Gets as paymentTypeFM
+     * Gets as paymentTypeFM.
      *
      * Typ formy úhrady pro FM.
      *
@@ -247,21 +241,23 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new paymentTypeFM
+     * Sets a new paymentTypeFM.
      *
      * Typ formy úhrady pro FM.
      *
      * @param string $paymentTypeFM
+     *
      * @return self
      */
     public function setPaymentTypeFM($paymentTypeFM)
     {
         $this->paymentTypeFM = $paymentTypeFM;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrency
+     * Gets as foreignCurrency.
      *
      * Cizí měna.
      *
@@ -273,21 +269,21 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new foreignCurrency
+     * Sets a new foreignCurrency.
      *
      * Cizí měna.
      *
-     * @param \Pohoda\Payment\ForeignCurrencyType $foreignCurrency
      * @return self
      */
     public function setForeignCurrency(?\Pohoda\Payment\ForeignCurrencyType $foreignCurrency = null)
     {
         $this->foreignCurrency = $foreignCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as ticket
+     * Gets as ticket.
      *
      * Stravenka.
      *
@@ -299,21 +295,21 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new ticket
+     * Sets a new ticket.
      *
      * Stravenka.
      *
-     * @param \Pohoda\Payment\TicketType $ticket
      * @return self
      */
     public function setTicket(?\Pohoda\Payment\TicketType $ticket = null)
     {
         $this->ticket = $ticket;
+
         return $this;
     }
 
     /**
-     * Gets as cash
+     * Gets as cash.
      *
      * Hotovost.
      *
@@ -325,21 +321,21 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new cash
+     * Sets a new cash.
      *
      * Hotovost.
      *
-     * @param \Pohoda\Payment\CashDefaultType $cash
      * @return self
      */
     public function setCash(?\Pohoda\Payment\CashDefaultType $cash = null)
     {
         $this->cash = $cash;
+
         return $this;
     }
 
     /**
-     * Gets as useInSales
+     * Gets as useInSales.
      *
      * Použít v agendách prodejek. Zadaná forma úhrady je nabízena v agendě Prodejky, Kasa a v modulu POHODA Kasa Offline. .
      *
@@ -351,21 +347,23 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new useInSales
+     * Sets a new useInSales.
      *
      * Použít v agendách prodejek. Zadaná forma úhrady je nabízena v agendě Prodejky, Kasa a v modulu POHODA Kasa Offline. .
      *
      * @param string $useInSales
+     *
      * @return self
      */
     public function setUseInSales($useInSales)
     {
         $this->useInSales = $useInSales;
+
         return $this;
     }
 
     /**
-     * Gets as useInOtherAgendas
+     * Gets as useInOtherAgendas.
      *
      * Použít v ostatních agendách. Zvolená forma úhrady je nabízena v ostatních agendách.
      *
@@ -377,21 +375,23 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new useInOtherAgendas
+     * Sets a new useInOtherAgendas.
      *
      * Použít v ostatních agendách. Zvolená forma úhrady je nabízena v ostatních agendách.
      *
      * @param string $useInOtherAgendas
+     *
      * @return self
      */
     public function setUseInOtherAgendas($useInOtherAgendas)
     {
         $this->useInOtherAgendas = $useInOtherAgendas;
+
         return $this;
     }
 
     /**
-     * Gets as eet
+     * Gets as eet.
      *
      * Vstupuje do EET.
      *
@@ -403,21 +403,23 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new eet
+     * Sets a new eet.
      *
      * Vstupuje do EET.
      *
      * @param string $eet
+     *
      * @return self
      */
     public function setEet($eet)
     {
         $this->eet = $eet;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -429,16 +431,18 @@ class PaymentHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing ManualLinkElementType
- *
+ * Class representing ManualLinkElementType.
  *
  * XSD Type: manualLinkElementType
  */
@@ -12,20 +24,16 @@ class ManualLinkElementType
 {
     /**
      * Agenda zdrojového dokladu.
-     *
-     * @var string $sourceAgenda
      */
-    private $sourceAgenda = null;
+    private string $sourceAgenda = null;
 
     /**
      * Doklad.
-     *
-     * @var \Pohoda\Type\SourceDocumentType $sourceDocument
      */
-    private $sourceDocument = null;
+    private \Pohoda\Type\SourceDocumentType $sourceDocument = null;
 
     /**
-     * Gets as sourceAgenda
+     * Gets as sourceAgenda.
      *
      * Agenda zdrojového dokladu.
      *
@@ -37,21 +45,23 @@ class ManualLinkElementType
     }
 
     /**
-     * Sets a new sourceAgenda
+     * Sets a new sourceAgenda.
      *
      * Agenda zdrojového dokladu.
      *
      * @param string $sourceAgenda
+     *
      * @return self
      */
     public function setSourceAgenda($sourceAgenda)
     {
         $this->sourceAgenda = $sourceAgenda;
+
         return $this;
     }
 
     /**
-     * Gets as sourceDocument
+     * Gets as sourceDocument.
      *
      * Doklad.
      *
@@ -63,16 +73,16 @@ class ManualLinkElementType
     }
 
     /**
-     * Sets a new sourceDocument
+     * Sets a new sourceDocument.
      *
      * Doklad.
      *
-     * @param \Pohoda\Type\SourceDocumentType $sourceDocument
      * @return self
      */
     public function setSourceDocument(\Pohoda\Type\SourceDocumentType $sourceDocument)
     {
         $this->sourceDocument = $sourceDocument;
+
         return $this;
     }
 }

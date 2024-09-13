@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ProductRequirement;
 
 /**
- * Class representing ProductRequirementDetailType
- *
+ * Class representing ProductRequirementDetailType.
  *
  * XSD Type: productRequirementDetailType
  */
 class ProductRequirementDetailType
 {
     /**
-     * @var \Pohoda\ProductRequirement\ProductRequirementItemType[] $productRequirementItem
+     * @var \Pohoda\ProductRequirement\ProductRequirementItemType[]
      */
-    private $productRequirementItem = [
+    private array $productRequirementItem = [
     ];
 
     /**
-     * Adds as productRequirementItem
+     * Adds as productRequirementItem.
      *
      * @return self
-     * @param \Pohoda\ProductRequirement\ProductRequirementItemType $productRequirementItem
      */
     public function addToProductRequirementItem(\Pohoda\ProductRequirement\ProductRequirementItemType $productRequirementItem)
     {
         $this->productRequirementItem[] = $productRequirementItem;
+
         return $this;
     }
 
     /**
-     * isset productRequirementItem
+     * isset productRequirementItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetProductRequirementItem($index)
@@ -40,18 +53,17 @@ class ProductRequirementDetailType
     }
 
     /**
-     * unset productRequirementItem
+     * unset productRequirementItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetProductRequirementItem($index)
+    public function unsetProductRequirementItem($index): void
     {
         unset($this->productRequirementItem[$index]);
     }
 
     /**
-     * Gets as productRequirementItem
+     * Gets as productRequirementItem.
      *
      * @return \Pohoda\ProductRequirement\ProductRequirementItemType[]
      */
@@ -61,14 +73,16 @@ class ProductRequirementDetailType
     }
 
     /**
-     * Sets a new productRequirementItem
+     * Sets a new productRequirementItem.
      *
      * @param \Pohoda\ProductRequirement\ProductRequirementItemType[] $productRequirementItem
+     *
      * @return self
      */
     public function setProductRequirementItem(array $productRequirementItem)
     {
         $this->productRequirementItem = $productRequirementItem;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Bank;
 
 /**
- * Class representing TypeCurrencyHomeItemType
- *
+ * Class representing TypeCurrencyHomeItemType.
  *
  * XSD Type: typeCurrencyHomeItem
  */
@@ -12,13 +24,11 @@ class TypeCurrencyHomeItemType
 {
     /**
      * Jednotková cena položky dokladu. Pokud není uvedena, bere se jako NULOVÁ.
-     *
-     * @var float $unitPrice
      */
-    private $unitPrice = null;
+    private float $unitPrice = null;
 
     /**
-     * Gets as unitPrice
+     * Gets as unitPrice.
      *
      * Jednotková cena položky dokladu. Pokud není uvedena, bere se jako NULOVÁ.
      *
@@ -30,16 +40,18 @@ class TypeCurrencyHomeItemType
     }
 
     /**
-     * Sets a new unitPrice
+     * Sets a new unitPrice.
      *
      * Jednotková cena položky dokladu. Pokud není uvedena, bere se jako NULOVÁ.
      *
      * @param float $unitPrice
+     *
      * @return self
      */
     public function setUnitPrice($unitPrice)
     {
         $this->unitPrice = $unitPrice;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IndividualPrice;
 
 /**
- * Class representing PriceGroupsType
- *
+ * Class representing PriceGroupsType.
  *
  * XSD Type: priceGroupsType
  */
@@ -13,31 +25,32 @@ class PriceGroupsType
     /**
      * Individuální cena cenové skupiny.
      *
-     * @var \Pohoda\IndividualPrice\PriceGroupItemType[] $priceGroupItem
+     * @var \Pohoda\IndividualPrice\PriceGroupItemType[]
      */
-    private $priceGroupItem = [
+    private array $priceGroupItem = [
     ];
 
     /**
-     * Adds as priceGroupItem
+     * Adds as priceGroupItem.
      *
      * Individuální cena cenové skupiny.
      *
      * @return self
-     * @param \Pohoda\IndividualPrice\PriceGroupItemType $priceGroupItem
      */
     public function addToPriceGroupItem(\Pohoda\IndividualPrice\PriceGroupItemType $priceGroupItem)
     {
         $this->priceGroupItem[] = $priceGroupItem;
+
         return $this;
     }
 
     /**
-     * isset priceGroupItem
+     * isset priceGroupItem.
      *
      * Individuální cena cenové skupiny.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPriceGroupItem($index)
@@ -46,20 +59,19 @@ class PriceGroupsType
     }
 
     /**
-     * unset priceGroupItem
+     * unset priceGroupItem.
      *
      * Individuální cena cenové skupiny.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPriceGroupItem($index)
+    public function unsetPriceGroupItem($index): void
     {
         unset($this->priceGroupItem[$index]);
     }
 
     /**
-     * Gets as priceGroupItem
+     * Gets as priceGroupItem.
      *
      * Individuální cena cenové skupiny.
      *
@@ -71,16 +83,18 @@ class PriceGroupsType
     }
 
     /**
-     * Sets a new priceGroupItem
+     * Sets a new priceGroupItem.
      *
      * Individuální cena cenové skupiny.
      *
      * @param \Pohoda\IndividualPrice\PriceGroupItemType[] $priceGroupItem
+     *
      * @return self
      */
-    public function setPriceGroupItem(array $priceGroupItem = null)
+    public function setPriceGroupItem(?array $priceGroupItem = null)
     {
         $this->priceGroupItem = $priceGroupItem;
+
         return $this;
     }
 }

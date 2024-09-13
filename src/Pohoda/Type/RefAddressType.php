@@ -1,32 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing RefAddressType
+ * Class representing RefAddressType.
  *
  * Odkaz kontaktní osoby na hlavní adresu.
  * XSD Type: refAddressType
  */
 class RefAddressType
 {
-    /**
-     * @var int $refAD
-     */
-    private $refAD = null;
+    private int $refAD = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
+    private \Pohoda\Type\AddressType $address = null;
 
     /**
-     * @var \Pohoda\Type\ExtIdType $extId
-     */
-    private $extId = null;
-
-    /**
-     * @var \Pohoda\Type\AddressType $address
-     */
-    private $address = null;
-
-    /**
-     * Gets as refAD
+     * Gets as refAD.
      *
      * @return int
      */
@@ -36,19 +38,21 @@ class RefAddressType
     }
 
     /**
-     * Sets a new refAD
+     * Sets a new refAD.
      *
      * @param int $refAD
+     *
      * @return self
      */
     public function setRefAD($refAD)
     {
         $this->refAD = $refAD;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * @return \Pohoda\Type\ExtIdType
      */
@@ -58,19 +62,19 @@ class RefAddressType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as address
+     * Gets as address.
      *
      * @return \Pohoda\Type\AddressType
      */
@@ -80,14 +84,14 @@ class RefAddressType
     }
 
     /**
-     * Sets a new address
+     * Sets a new address.
      *
-     * @param \Pohoda\Type\AddressType $address
      * @return self
      */
     public function setAddress(?\Pohoda\Type\AddressType $address = null)
     {
         $this->address = $address;
+
         return $this;
     }
 }

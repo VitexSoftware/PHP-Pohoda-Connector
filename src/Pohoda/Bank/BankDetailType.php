@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Bank;
 
 /**
- * Class representing BankDetailType
- *
+ * Class representing BankDetailType.
  *
  * XSD Type: bankDetailType
  */
 class BankDetailType
 {
     /**
-     * @var \Pohoda\Bank\BankItemType[] $bankItem
+     * @var \Pohoda\Bank\BankItemType[]
      */
-    private $bankItem = [
+    private array $bankItem = [
     ];
 
     /**
-     * Adds as bankItem
+     * Adds as bankItem.
      *
      * @return self
-     * @param \Pohoda\Bank\BankItemType $bankItem
      */
     public function addToBankItem(\Pohoda\Bank\BankItemType $bankItem)
     {
         $this->bankItem[] = $bankItem;
+
         return $this;
     }
 
     /**
-     * isset bankItem
+     * isset bankItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetBankItem($index)
@@ -40,18 +53,17 @@ class BankDetailType
     }
 
     /**
-     * unset bankItem
+     * unset bankItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetBankItem($index)
+    public function unsetBankItem($index): void
     {
         unset($this->bankItem[$index]);
     }
 
     /**
-     * Gets as bankItem
+     * Gets as bankItem.
      *
      * @return \Pohoda\Bank\BankItemType[]
      */
@@ -61,14 +73,16 @@ class BankDetailType
     }
 
     /**
-     * Sets a new bankItem
+     * Sets a new bankItem.
      *
      * @param \Pohoda\Bank\BankItemType[] $bankItem
+     *
      * @return self
      */
     public function setBankItem(array $bankItem)
     {
         $this->bankItem = $bankItem;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing FilterRegNumberType
- *
+ * Class representing FilterRegNumberType.
  *
  * XSD Type: filterRegNumberType
  */
@@ -12,41 +24,31 @@ class FilterRegNumberType
 {
     /**
      * Filtr podle ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Vybere záznam dle zadaného externího identifikátoru.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Filtr podle evidenčního čísla.
-     *
-     * @var string $regNumber
      */
-    private $regNumber = null;
+    private string $regNumber = null;
 
     /**
      * Filtr podle skladové zásoby.
-     *
-     * @var \Pohoda\Type\StockItemRegNumberType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemRegNumberType $stockItem = null;
 
     /**
      * Vyexportuje záznamy změněné od zadaného data.
-     *
-     * @var \DateTime $lastChanges
      */
-    private $lastChanges = null;
+    private \DateTime $lastChanges = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Filtr podle ID záznamu.
      *
@@ -58,21 +60,23 @@ class FilterRegNumberType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Filtr podle ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Vybere záznam dle zadaného externího identifikátoru.
      *
@@ -84,21 +88,21 @@ class FilterRegNumberType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Vybere záznam dle zadaného externího identifikátoru.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as regNumber
+     * Gets as regNumber.
      *
      * Filtr podle evidenčního čísla.
      *
@@ -110,21 +114,23 @@ class FilterRegNumberType
     }
 
     /**
-     * Sets a new regNumber
+     * Sets a new regNumber.
      *
      * Filtr podle evidenčního čísla.
      *
      * @param string $regNumber
+     *
      * @return self
      */
     public function setRegNumber($regNumber)
     {
         $this->regNumber = $regNumber;
+
         return $this;
     }
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Filtr podle skladové zásoby.
      *
@@ -136,21 +142,21 @@ class FilterRegNumberType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Filtr podle skladové zásoby.
      *
-     * @param \Pohoda\Type\StockItemRegNumberType $stockItem
      * @return self
      */
     public function setStockItem(?\Pohoda\Type\StockItemRegNumberType $stockItem = null)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as lastChanges
+     * Gets as lastChanges.
      *
      * Vyexportuje záznamy změněné od zadaného data.
      *
@@ -162,16 +168,16 @@ class FilterRegNumberType
     }
 
     /**
-     * Sets a new lastChanges
+     * Sets a new lastChanges.
      *
      * Vyexportuje záznamy změněné od zadaného data.
      *
-     * @param \DateTime $lastChanges
      * @return self
      */
     public function setLastChanges(?\DateTime $lastChanges = null)
     {
         $this->lastChanges = $lastChanges;
+
         return $this;
     }
 }

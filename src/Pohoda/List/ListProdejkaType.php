@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListProdejkaType
- *
+ * Class representing ListProdejkaType.
  *
  * XSD Type: listProdejkaType
  */
 class ListProdejkaType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Prodejka\ProdejkaType[] $prodejka
+     * @var \Pohoda\Prodejka\ProdejkaType[]
      */
-    private $prodejka = [
+    private array $prodejka = [
     ];
 
     /**
-     * Adds as prodejka
+     * Adds as prodejka.
      *
      * @return self
-     * @param \Pohoda\Prodejka\ProdejkaType $prodejka
      */
     public function addToProdejka(\Pohoda\Prodejka\ProdejkaType $prodejka)
     {
         $this->prodejka[] = $prodejka;
+
         return $this;
     }
 
     /**
-     * isset prodejka
+     * isset prodejka.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetProdejka($index)
@@ -42,18 +55,17 @@ class ListProdejkaType extends ListVersionType
     }
 
     /**
-     * unset prodejka
+     * unset prodejka.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetProdejka($index)
+    public function unsetProdejka($index): void
     {
         unset($this->prodejka[$index]);
     }
 
     /**
-     * Gets as prodejka
+     * Gets as prodejka.
      *
      * @return \Pohoda\Prodejka\ProdejkaType[]
      */
@@ -63,14 +75,16 @@ class ListProdejkaType extends ListVersionType
     }
 
     /**
-     * Sets a new prodejka
+     * Sets a new prodejka.
      *
      * @param \Pohoda\Prodejka\ProdejkaType[] $prodejka
+     *
      * @return self
      */
-    public function setProdejka(array $prodejka = null)
+    public function setProdejka(?array $prodejka = null)
     {
         $this->prodejka = $prodejka;
+
         return $this;
     }
 }

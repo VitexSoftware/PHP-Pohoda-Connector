@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListAccountingFormOfPaymentRequestType
- *
+ * Class representing ListAccountingFormOfPaymentRequestType.
  *
  * XSD Type: listAccountingFormOfPaymentRequestType
  */
 class ListAccountingFormOfPaymentRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $accountingFormOfPaymentVersion
      */
-    private $accountingFormOfPaymentVersion = null;
+    private string $accountingFormOfPaymentVersion = null;
 
     /**
-     * @var \Pohoda\List\RequestAccountingFormOfPaymentType[] $requestAccountingFormOfPayment
+     * @var \Pohoda\List\RequestAccountingFormOfPaymentType[]
      */
-    private $requestAccountingFormOfPayment = [
+    private array $requestAccountingFormOfPayment = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListAccountingFormOfPaymentRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as accountingFormOfPaymentVersion
+     * Gets as accountingFormOfPaymentVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListAccountingFormOfPaymentRequestType
     }
 
     /**
-     * Sets a new accountingFormOfPaymentVersion
+     * Sets a new accountingFormOfPaymentVersion.
      *
      * Požadovaná verze.
      *
      * @param string $accountingFormOfPaymentVersion
+     *
      * @return self
      */
     public function setAccountingFormOfPaymentVersion($accountingFormOfPaymentVersion)
     {
         $this->accountingFormOfPaymentVersion = $accountingFormOfPaymentVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestAccountingFormOfPayment
+     * Adds as requestAccountingFormOfPayment.
      *
      * @return self
-     * @param \Pohoda\List\RequestAccountingFormOfPaymentType $requestAccountingFormOfPayment
      */
     public function addToRequestAccountingFormOfPayment(\Pohoda\List\RequestAccountingFormOfPaymentType $requestAccountingFormOfPayment)
     {
         $this->requestAccountingFormOfPayment[] = $requestAccountingFormOfPayment;
+
         return $this;
     }
 
     /**
-     * isset requestAccountingFormOfPayment
+     * isset requestAccountingFormOfPayment.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestAccountingFormOfPayment($index)
@@ -100,18 +112,17 @@ class ListAccountingFormOfPaymentRequestType
     }
 
     /**
-     * unset requestAccountingFormOfPayment
+     * unset requestAccountingFormOfPayment.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestAccountingFormOfPayment($index)
+    public function unsetRequestAccountingFormOfPayment($index): void
     {
         unset($this->requestAccountingFormOfPayment[$index]);
     }
 
     /**
-     * Gets as requestAccountingFormOfPayment
+     * Gets as requestAccountingFormOfPayment.
      *
      * @return \Pohoda\List\RequestAccountingFormOfPaymentType[]
      */
@@ -121,14 +132,16 @@ class ListAccountingFormOfPaymentRequestType
     }
 
     /**
-     * Sets a new requestAccountingFormOfPayment
+     * Sets a new requestAccountingFormOfPayment.
      *
      * @param \Pohoda\List\RequestAccountingFormOfPaymentType[] $requestAccountingFormOfPayment
+     *
      * @return self
      */
     public function setRequestAccountingFormOfPayment(array $requestAccountingFormOfPayment)
     {
         $this->requestAccountingFormOfPayment = $requestAccountingFormOfPayment;
+
         return $this;
     }
 }

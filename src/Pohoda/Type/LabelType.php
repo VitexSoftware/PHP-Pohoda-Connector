@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing LabelType
+ * Class representing LabelType.
  *
  * Odkaz na entitu. Vyšší prioritu má element "id".
  * XSD Type: labelType
@@ -11,24 +24,14 @@ namespace Pohoda\Type;
 class LabelType
 {
     /**
-     * Vytvoření nebo smazání štítku na záznamu. Výchozí hodnota = add. Smazání štítku na záznamu je povoleno pouze v agendách: (Zásoby, Adresář)
-     *
-     * @var string $actionType
+     * Vytvoření nebo smazání štítku na záznamu. Výchozí hodnota = add. Smazání štítku na záznamu je povoleno pouze v agendách: (Zásoby, Adresář).
      */
-    private $actionType = null;
+    private string $actionType = null;
+    private int $id = null;
+    private string $ids = null;
 
     /**
-     * @var int $id
-     */
-    private $id = null;
-
-    /**
-     * @var string $ids
-     */
-    private $ids = null;
-
-    /**
-     * Gets as actionType
+     * Gets as actionType.
      *
      * Vytvoření nebo smazání štítku na záznamu. Výchozí hodnota = add. Smazání štítku na záznamu je povoleno pouze v agendách: (Zásoby, Adresář)
      *
@@ -40,21 +43,23 @@ class LabelType
     }
 
     /**
-     * Sets a new actionType
+     * Sets a new actionType.
      *
      * Vytvoření nebo smazání štítku na záznamu. Výchozí hodnota = add. Smazání štítku na záznamu je povoleno pouze v agendách: (Zásoby, Adresář)
      *
      * @param string $actionType
+     *
      * @return self
      */
     public function setActionType($actionType)
     {
         $this->actionType = $actionType;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * @return int
      */
@@ -64,19 +69,21 @@ class LabelType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as ids
+     * Gets as ids.
      *
      * @return string
      */
@@ -86,14 +93,16 @@ class LabelType
     }
 
     /**
-     * Sets a new ids
+     * Sets a new ids.
      *
      * @param string $ids
+     *
      * @return self
      */
     public function setIds($ids)
     {
         $this->ids = $ids;
+
         return $this;
     }
 }

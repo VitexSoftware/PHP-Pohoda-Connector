@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing ActionTypeType
- *
+ * Class representing ActionTypeType.
  *
  * XSD Type: actionTypeType
  */
@@ -12,27 +24,21 @@ class ActionTypeType
 {
     /**
      * Vložení nového záznamu. Výchozí hodnota.
-     *
-     * @var \Pohoda\Filter\RequestStockActionType $add
      */
-    private $add = null;
+    private \Pohoda\Filter\RequestStockActionType $add = null;
 
     /**
      * Aktualizace dokladu.
-     *
-     * @var \Pohoda\Filter\RequestStockActionType $update
      */
-    private $update = null;
+    private \Pohoda\Filter\RequestStockActionType $update = null;
 
     /**
      * odstranění dokladu.
-     *
-     * @var \Pohoda\Filter\RequestStockType $delete
      */
-    private $delete = null;
+    private \Pohoda\Filter\RequestStockType $delete = null;
 
     /**
-     * Gets as add
+     * Gets as add.
      *
      * Vložení nového záznamu. Výchozí hodnota.
      *
@@ -44,21 +50,21 @@ class ActionTypeType
     }
 
     /**
-     * Sets a new add
+     * Sets a new add.
      *
      * Vložení nového záznamu. Výchozí hodnota.
      *
-     * @param \Pohoda\Filter\RequestStockActionType $add
      * @return self
      */
     public function setAdd(?\Pohoda\Filter\RequestStockActionType $add = null)
     {
         $this->add = $add;
+
         return $this;
     }
 
     /**
-     * Gets as update
+     * Gets as update.
      *
      * Aktualizace dokladu.
      *
@@ -70,21 +76,21 @@ class ActionTypeType
     }
 
     /**
-     * Sets a new update
+     * Sets a new update.
      *
      * Aktualizace dokladu.
      *
-     * @param \Pohoda\Filter\RequestStockActionType $update
      * @return self
      */
     public function setUpdate(?\Pohoda\Filter\RequestStockActionType $update = null)
     {
         $this->update = $update;
+
         return $this;
     }
 
     /**
-     * Gets as delete
+     * Gets as delete.
      *
      * odstranění dokladu.
      *
@@ -96,16 +102,16 @@ class ActionTypeType
     }
 
     /**
-     * Sets a new delete
+     * Sets a new delete.
      *
      * odstranění dokladu.
      *
-     * @param \Pohoda\Filter\RequestStockType $delete
      * @return self
      */
     public function setDelete(?\Pohoda\Filter\RequestStockType $delete = null)
     {
         $this->delete = $delete;
+
         return $this;
     }
 }

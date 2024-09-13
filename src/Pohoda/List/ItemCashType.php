@@ -1,27 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ItemCashType
- *
+ * Class representing ItemCashType.
  *
  * XSD Type: itemCashType
  */
 class ItemCashType extends ItemType
 {
-    /**
-     * @var string $codeCurrency
-     */
-    private $codeCurrency = null;
+    private string $codeCurrency = null;
+    private string $name = null;
 
     /**
-     * @var string $name
-     */
-    private $name = null;
-
-    /**
-     * Gets as codeCurrency
+     * Gets as codeCurrency.
      *
      * @return string
      */
@@ -31,19 +36,21 @@ class ItemCashType extends ItemType
     }
 
     /**
-     * Sets a new codeCurrency
+     * Sets a new codeCurrency.
      *
      * @param string $codeCurrency
+     *
      * @return self
      */
     public function setCodeCurrency($codeCurrency)
     {
         $this->codeCurrency = $codeCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * @return string
      */
@@ -53,14 +60,16 @@ class ItemCashType extends ItemType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 }

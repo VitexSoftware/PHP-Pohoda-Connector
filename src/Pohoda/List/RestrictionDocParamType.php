@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing RestrictionDocParamType
- *
+ * Class representing RestrictionDocParamType.
  *
  * XSD Type: restrictionDocParamType
  */
@@ -12,27 +24,21 @@ class RestrictionDocParamType
 {
     /**
      * Exportovat záznamy ze záložky "Doklady".
-     *
-     * @var string $documents
      */
-    private $documents = null;
+    private string $documents = null;
 
     /**
      * Exportovat volitelné parametry.
-     *
-     * @var string $parameters
      */
-    private $parameters = null;
+    private string $parameters = null;
 
     /**
-     * Exportovat záznamy ze záložky "Likvidace"
-     *
-     * @var string $liquidations
+     * Exportovat záznamy ze záložky "Likvidace".
      */
-    private $liquidations = null;
+    private string $liquidations = null;
 
     /**
-     * Gets as documents
+     * Gets as documents.
      *
      * Exportovat záznamy ze záložky "Doklady".
      *
@@ -44,21 +50,23 @@ class RestrictionDocParamType
     }
 
     /**
-     * Sets a new documents
+     * Sets a new documents.
      *
      * Exportovat záznamy ze záložky "Doklady".
      *
      * @param string $documents
+     *
      * @return self
      */
     public function setDocuments($documents)
     {
         $this->documents = $documents;
+
         return $this;
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Exportovat volitelné parametry.
      *
@@ -70,21 +78,23 @@ class RestrictionDocParamType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Exportovat volitelné parametry.
      *
      * @param string $parameters
+     *
      * @return self
      */
     public function setParameters($parameters)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 
     /**
-     * Gets as liquidations
+     * Gets as liquidations.
      *
      * Exportovat záznamy ze záložky "Likvidace"
      *
@@ -96,16 +106,18 @@ class RestrictionDocParamType
     }
 
     /**
-     * Sets a new liquidations
+     * Sets a new liquidations.
      *
      * Exportovat záznamy ze záložky "Likvidace"
      *
      * @param string $liquidations
+     *
      * @return self
      */
     public function setLiquidations($liquidations)
     {
         $this->liquidations = $liquidations;
+
         return $this;
     }
 }

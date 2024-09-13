@@ -1,42 +1,47 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListIndividualPriceRequestType
- *
+ * Class representing ListIndividualPriceRequestType.
  *
  * XSD Type: listIndividualPriceRequestType
  */
 class ListIndividualPriceRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $individualPriceVersion
      */
-    private $individualPriceVersion = null;
+    private string $individualPriceVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
 
     /**
-     * @var \Pohoda\Filter\RequestIndividualPriceType[] $requestIndividualPrice
+     * @var \Pohoda\Filter\RequestIndividualPriceType[]
      */
-    private $requestIndividualPrice = [
+    private array $requestIndividualPrice = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -46,19 +51,21 @@ class ListIndividualPriceRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as individualPriceVersion
+     * Gets as individualPriceVersion.
      *
      * Požadovaná verze.
      *
@@ -70,21 +77,23 @@ class ListIndividualPriceRequestType
     }
 
     /**
-     * Sets a new individualPriceVersion
+     * Sets a new individualPriceVersion.
      *
      * Požadovaná verze.
      *
      * @param string $individualPriceVersion
+     *
      * @return self
      */
     public function setIndividualPriceVersion($individualPriceVersion)
     {
         $this->individualPriceVersion = $individualPriceVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -96,35 +105,38 @@ class ListIndividualPriceRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Adds as requestIndividualPrice
+     * Adds as requestIndividualPrice.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestIndividualPriceType $requestIndividualPrice
      */
     public function addToRequestIndividualPrice(\Pohoda\Filter\RequestIndividualPriceType $requestIndividualPrice)
     {
         $this->requestIndividualPrice[] = $requestIndividualPrice;
+
         return $this;
     }
 
     /**
-     * isset requestIndividualPrice
+     * isset requestIndividualPrice.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestIndividualPrice($index)
@@ -133,18 +145,17 @@ class ListIndividualPriceRequestType
     }
 
     /**
-     * unset requestIndividualPrice
+     * unset requestIndividualPrice.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestIndividualPrice($index)
+    public function unsetRequestIndividualPrice($index): void
     {
         unset($this->requestIndividualPrice[$index]);
     }
 
     /**
-     * Gets as requestIndividualPrice
+     * Gets as requestIndividualPrice.
      *
      * @return \Pohoda\Filter\RequestIndividualPriceType[]
      */
@@ -154,14 +165,16 @@ class ListIndividualPriceRequestType
     }
 
     /**
-     * Sets a new requestIndividualPrice
+     * Sets a new requestIndividualPrice.
      *
      * @param \Pohoda\Filter\RequestIndividualPriceType[] $requestIndividualPrice
+     *
      * @return self
      */
     public function setRequestIndividualPrice(array $requestIndividualPrice)
     {
         $this->requestIndividualPrice = $requestIndividualPrice;
+
         return $this;
     }
 }

@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing LiquidationItemType
+ * Class representing LiquidationItemType.
  *
  * Informace o likvidaci faktury.
  * XSD Type: liquidationItemType
@@ -11,68 +24,48 @@ namespace Pohoda\Type;
 class LiquidationItemType
 {
     /**
-     * ID likvidace
-     *
-     * @var int $id
+     * ID likvidace.
      */
-    private $id = null;
-
-    /**
-     * @var string $extId
-     */
-    private $extId = null;
+    private int $id = null;
+    private string $extId = null;
 
     /**
      * Datum likvidace.
-     *
-     * @var \DateTime $date
      */
-    private $date = null;
+    private \DateTime $date = null;
 
     /**
      * Agenda likvidujícího dokladu. Pokud je likvidace bez vazby, element se neuvádí.
-     *
-     * @var string $sourceAgenda
      */
-    private $sourceAgenda = null;
+    private string $sourceAgenda = null;
 
     /**
      * Likvidující doklad. Pokud je likvidace bez vazby, element se neuvádí.
-     *
-     * @var \Pohoda\Type\SourceDocumentType $sourceDocument
      */
-    private $sourceDocument = null;
+    private \Pohoda\Type\SourceDocumentType $sourceDocument = null;
 
     /**
      * Daňový doklad.
-     *
-     * @var \Pohoda\Type\SourceDocumentType $taxReceiptDocument
      */
-    private $taxReceiptDocument = null;
+    private \Pohoda\Type\SourceDocumentType $taxReceiptDocument = null;
 
     /**
      * Částka.
-     *
-     * @var float $amount
      */
-    private $amount = null;
+    private float $amount = null;
 
     /**
      * Částka v cizí měně.
-     *
-     * @var float $foreignCurrencyAmount
      */
-    private $foreignCurrencyAmount = null;
+    private float $foreignCurrencyAmount = null;
 
     /**
      * Částka zdrojového dokladu v cizí měně.
-     *
-     * @var float $foreignCurrencySource
      */
-    private $foreignCurrencySource = null;
+    private float $foreignCurrencySource = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID likvidace
      *
@@ -84,21 +77,23 @@ class LiquidationItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID likvidace
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * @return string
      */
@@ -108,19 +103,21 @@ class LiquidationItemType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * @param string $extId
+     *
      * @return self
      */
     public function setExtId($extId)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as date
+     * Gets as date.
      *
      * Datum likvidace.
      *
@@ -132,21 +129,21 @@ class LiquidationItemType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
      * Datum likvidace.
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(\DateTime $date)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as sourceAgenda
+     * Gets as sourceAgenda.
      *
      * Agenda likvidujícího dokladu. Pokud je likvidace bez vazby, element se neuvádí.
      *
@@ -158,21 +155,23 @@ class LiquidationItemType
     }
 
     /**
-     * Sets a new sourceAgenda
+     * Sets a new sourceAgenda.
      *
      * Agenda likvidujícího dokladu. Pokud je likvidace bez vazby, element se neuvádí.
      *
      * @param string $sourceAgenda
+     *
      * @return self
      */
     public function setSourceAgenda($sourceAgenda)
     {
         $this->sourceAgenda = $sourceAgenda;
+
         return $this;
     }
 
     /**
-     * Gets as sourceDocument
+     * Gets as sourceDocument.
      *
      * Likvidující doklad. Pokud je likvidace bez vazby, element se neuvádí.
      *
@@ -184,21 +183,21 @@ class LiquidationItemType
     }
 
     /**
-     * Sets a new sourceDocument
+     * Sets a new sourceDocument.
      *
      * Likvidující doklad. Pokud je likvidace bez vazby, element se neuvádí.
      *
-     * @param \Pohoda\Type\SourceDocumentType $sourceDocument
      * @return self
      */
     public function setSourceDocument(?\Pohoda\Type\SourceDocumentType $sourceDocument = null)
     {
         $this->sourceDocument = $sourceDocument;
+
         return $this;
     }
 
     /**
-     * Gets as taxReceiptDocument
+     * Gets as taxReceiptDocument.
      *
      * Daňový doklad.
      *
@@ -210,21 +209,21 @@ class LiquidationItemType
     }
 
     /**
-     * Sets a new taxReceiptDocument
+     * Sets a new taxReceiptDocument.
      *
      * Daňový doklad.
      *
-     * @param \Pohoda\Type\SourceDocumentType $taxReceiptDocument
      * @return self
      */
     public function setTaxReceiptDocument(?\Pohoda\Type\SourceDocumentType $taxReceiptDocument = null)
     {
         $this->taxReceiptDocument = $taxReceiptDocument;
+
         return $this;
     }
 
     /**
-     * Gets as amount
+     * Gets as amount.
      *
      * Částka.
      *
@@ -236,21 +235,23 @@ class LiquidationItemType
     }
 
     /**
-     * Sets a new amount
+     * Sets a new amount.
      *
      * Částka.
      *
      * @param float $amount
+     *
      * @return self
      */
     public function setAmount($amount)
     {
         $this->amount = $amount;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrencyAmount
+     * Gets as foreignCurrencyAmount.
      *
      * Částka v cizí měně.
      *
@@ -262,21 +263,23 @@ class LiquidationItemType
     }
 
     /**
-     * Sets a new foreignCurrencyAmount
+     * Sets a new foreignCurrencyAmount.
      *
      * Částka v cizí měně.
      *
      * @param float $foreignCurrencyAmount
+     *
      * @return self
      */
     public function setForeignCurrencyAmount($foreignCurrencyAmount)
     {
         $this->foreignCurrencyAmount = $foreignCurrencyAmount;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrencySource
+     * Gets as foreignCurrencySource.
      *
      * Částka zdrojového dokladu v cizí měně.
      *
@@ -288,16 +291,18 @@ class LiquidationItemType
     }
 
     /**
-     * Sets a new foreignCurrencySource
+     * Sets a new foreignCurrencySource.
      *
      * Částka zdrojového dokladu v cizí měně.
      *
      * @param float $foreignCurrencySource
+     *
      * @return self
      */
     public function setForeignCurrencySource($foreignCurrencySource)
     {
         $this->foreignCurrencySource = $foreignCurrencySource;
+
         return $this;
     }
 }

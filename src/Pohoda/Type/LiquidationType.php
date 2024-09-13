@@ -1,32 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing LiquidationType
+ * Class representing LiquidationType.
  *
  * Informace o likvidaci faktury
  * XSD Type: liquidationType
  */
 class LiquidationType
 {
-    /**
-     * @var \DateTime $date
-     */
-    private $date = null;
+    private \DateTime $date = null;
+    private float $amountHome = null;
+    private float $amountForeign = null;
 
     /**
-     * @var float $amountHome
-     */
-    private $amountHome = null;
-
-    /**
-     * @var float $amountForeign
-     */
-    private $amountForeign = null;
-
-    /**
-     * Gets as date
+     * Gets as date.
      *
      * @return \DateTime
      */
@@ -36,19 +38,19 @@ class LiquidationType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(?\DateTime $date = null)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as amountHome
+     * Gets as amountHome.
      *
      * @return float
      */
@@ -58,19 +60,21 @@ class LiquidationType
     }
 
     /**
-     * Sets a new amountHome
+     * Sets a new amountHome.
      *
      * @param float $amountHome
+     *
      * @return self
      */
     public function setAmountHome($amountHome)
     {
         $this->amountHome = $amountHome;
+
         return $this;
     }
 
     /**
-     * Gets as amountForeign
+     * Gets as amountForeign.
      *
      * @return float
      */
@@ -80,14 +84,16 @@ class LiquidationType
     }
 
     /**
-     * Sets a new amountForeign
+     * Sets a new amountForeign.
      *
      * @param float $amountForeign
+     *
      * @return self
      */
     public function setAmountForeign($amountForeign)
     {
         $this->amountForeign = $amountForeign;
+
         return $this;
     }
 }

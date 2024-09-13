@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\AddressBook;
 
 /**
- * Class representing AddressbookHeaderType
- *
+ * Class representing AddressbookHeaderType.
  *
  * XSD Type: addressbookHeaderType
  */
@@ -12,400 +24,292 @@ class AddressbookHeaderType
 {
     /**
      * ID adresy. Používá se při requestu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
-     * Základní údaje
-     *
-     * @var \Pohoda\Type\AddressType $identity
+     * Základní údaje.
      */
-    private $identity = null;
+    private \Pohoda\Type\AddressType $identity = null;
 
     /**
      * Název kraje.
-     *
-     * @var string $region
      */
-    private $region = null;
+    private string $region = null;
 
     /**
      * Telefon.
-     *
-     * @var string $phone
      */
-    private $phone = null;
+    private string $phone = null;
 
     /**
      * Mobil.
-     *
-     * @var string $mobil
      */
-    private $mobil = null;
+    private string $mobil = null;
 
     /**
      * Fax.
-     *
-     * @var string $fax
      */
-    private $fax = null;
+    private string $fax = null;
 
     /**
      * Email.
-     *
-     * @var string $email
      */
-    private $email = null;
+    private string $email = null;
 
     /**
      * Adresa www stránek.
-     *
-     * @var string $web
      */
-    private $web = null;
+    private string $web = null;
 
     /**
      * ICQ adresa.
-     *
-     * @var string $iCQ
      */
-    private $iCQ = null;
+    private string $iCQ = null;
 
     /**
      * Skype adresa.
-     *
-     * @var string $skype
      */
-    private $skype = null;
+    private string $skype = null;
 
     /**
      * GPS souřadnice.
-     *
-     * @var string $gPS
      */
-    private $gPS = null;
+    private string $gPS = null;
 
     /**
      * Skupiny.
-     *
-     * @var string $adGroup
      */
-    private $adGroup = null;
+    private string $adGroup = null;
 
     /**
      * Klíče.
-     *
-     * @var string $adKey
      */
-    private $adKey = null;
+    private string $adKey = null;
 
     /**
      * Kredit, tolerovaná výše pohledávek odběratele.
-     *
-     * @var float $credit
      */
-    private $credit = null;
+    private float $credit = null;
 
     /**
      * Cenová hladina odběratele.
-     *
-     * @var string $priceIDS
      */
-    private $priceIDS = null;
+    private string $priceIDS = null;
 
     /**
      * Splatno. Počet dnů splatnosti pohledávek (vydané faktury, vydané zálohové faktury, ostatní pohledávky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
-     *
-     * @var int $maturity
      */
-    private $maturity = null;
+    private int $maturity = null;
 
     /**
      * Splatno. Počet dnů splatnosti závazků (přijaté faktury, přijaté zálohové faktury, ostatní závazky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
-     *
-     * @var int $maturityCommitments
      */
-    private $maturityCommitments = null;
+    private int $maturityCommitments = null;
 
     /**
      * Forma úhrady.
-     *
-     * @var \Pohoda\Type\PaymentType $paymentType
      */
-    private $paymentType = null;
+    private \Pohoda\Type\PaymentType $paymentType = null;
 
     /**
      * Číslo obchodní smlouvy (nesmí být povoleno v Globálním nastavení - Číslování zákazníků). Od verze 1.5.
-     *
-     * @var string $agreement
      */
-    private $agreement = null;
+    private string $agreement = null;
 
     /**
      * Číslo dodavatele/odběratele dle zvolené číselné řady (musí být povoleno v Globálním nastavení - Číslování zákazníků).
-     *
-     * @var \Pohoda\Type\NumberADType $number
      */
-    private $number = null;
+    private \Pohoda\Type\NumberADType $number = null;
 
     /**
      * Ostatní.
-     *
-     * @var string $ost1
      */
-    private $ost1 = null;
+    private string $ost1 = null;
 
     /**
      * Ostatní. Používá se také u kontaktní osoby.
-     *
-     * @var string $ost2
      */
-    private $ost2 = null;
+    private string $ost2 = null;
 
     /**
      * Název funkce. Používá se jen u kontaktní osoby.
-     *
-     * @var string $function
      */
-    private $function = null;
+    private string $function = null;
 
     /**
      * Rodné číslo. Používá se jen u kontaktní osoby.
-     *
-     * @var string $personalIdentificationNumber
      */
-    private $personalIdentificationNumber = null;
+    private string $personalIdentificationNumber = null;
 
     /**
      * Oslovení pro použití v korespondenci. Používá se jen u kontaktní osoby.
-     *
-     * @var string $salutation
      */
-    private $salutation = null;
+    private string $salutation = null;
 
     /**
      * Pohlaví. Používá se jen u kontaktní osoby.
-     *
-     * @var string $sex
      */
-    private $sex = null;
+    private string $sex = null;
 
     /**
      * Datum narození. Používá se jen u kontaktní osoby.
-     *
-     * @var \DateTime $dateOfBirth
      */
-    private $dateOfBirth = null;
+    private \DateTime $dateOfBirth = null;
 
     /**
      * Klíč P1 / Dodavatel.
-     *
-     * @var string $p1
      */
-    private $p1 = null;
+    private string $p1 = null;
 
     /**
      * Klíč P2 / Odběratel.
-     *
-     * @var string $p2
      */
-    private $p2 = null;
+    private string $p2 = null;
 
     /**
      * Klíč P3.
-     *
-     * @var string $p3
      */
-    private $p3 = null;
+    private string $p3 = null;
 
     /**
      * Klíč P4.
-     *
-     * @var string $p4
      */
-    private $p4 = null;
+    private string $p4 = null;
 
     /**
      * Klíč P5.
-     *
-     * @var string $p5
      */
-    private $p5 = null;
+    private string $p5 = null;
 
     /**
      * Klíč P6.
-     *
-     * @var string $p6
      */
-    private $p6 = null;
+    private string $p6 = null;
 
     /**
      * Zpráva.
-     *
-     * @var string $message
      */
-    private $message = null;
+    private string $message = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Interní poznámka.
-     *
-     * @var string $intNote
      */
-    private $intNote = null;
+    private string $intNote = null;
 
     /**
      * Předkontace přijaté faktury.
-     *
-     * @var \Pohoda\Type\AccountingType $accountingReceivedInvoice
      */
-    private $accountingReceivedInvoice = null;
+    private \Pohoda\Type\AccountingType $accountingReceivedInvoice = null;
 
     /**
      * Předkontace vydané faktury.
-     *
-     * @var \Pohoda\Type\AccountingType $accountingIssuedInvoice
      */
-    private $accountingIssuedInvoice = null;
+    private \Pohoda\Type\AccountingType $accountingIssuedInvoice = null;
 
     /**
      * Členění DPH na přijaté faktuře.
-     *
-     * @var \Pohoda\Type\ClassificationVATType $classificationVATReceivedInvoice
      */
-    private $classificationVATReceivedInvoice = null;
+    private \Pohoda\Type\ClassificationVATType $classificationVATReceivedInvoice = null;
 
     /**
      * Členění DPH na vydané faktuře.
-     *
-     * @var \Pohoda\Type\ClassificationVATType $classificationVATIssuedInvoice
      */
-    private $classificationVATIssuedInvoice = null;
+    private \Pohoda\Type\ClassificationVATType $classificationVATIssuedInvoice = null;
 
     /**
      * Členění KV DPH, přijaté faktury (pouze SK verze).
-     *
-     * @var \Pohoda\Type\RefType $classificationKVDPHReceivedInvoice
      */
-    private $classificationKVDPHReceivedInvoice = null;
+    private \Pohoda\Type\RefType $classificationKVDPHReceivedInvoice = null;
 
     /**
      * Členění KV DPH, vydané faktury (pouze SK verze).
-     *
-     * @var \Pohoda\Type\RefType $classificationKVDPHIssuedInvoice
      */
-    private $classificationKVDPHIssuedInvoice = null;
+    private \Pohoda\Type\RefType $classificationKVDPHIssuedInvoice = null;
 
     /**
      * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku (používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení uživatele (pod kterým je spuštěn XML import).
-     *
-     * @var \Pohoda\Type\AccountType $accountForInvoicing
      */
-    private $accountForInvoicing = null;
+    private \Pohoda\Type\AccountType $accountForInvoicing = null;
 
     /**
      * Odpovědná osoba.
-     *
-     * @var \Pohoda\Type\ResponsiblePersonType $responsiblePerson
      */
-    private $responsiblePerson = null;
+    private \Pohoda\Type\ResponsiblePersonType $responsiblePerson = null;
 
     /**
      * Počet dnů tolerované splatnosti faktur.
-     *
-     * @var int $toleranceMaturity
      */
-    private $toleranceMaturity = null;
+    private int $toleranceMaturity = null;
 
     /**
      * ID - odkaz na cizí měnu, IDS - kod měny.
-     *
-     * @var \Pohoda\Type\RefType $foreignCurrency
      */
-    private $foreignCurrency = null;
+    private \Pohoda\Type\RefType $foreignCurrency = null;
 
     /**
      * Středisko.
-     *
-     * @var \Pohoda\Type\RefType $centre
      */
-    private $centre = null;
+    private \Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
-     *
-     * @var \Pohoda\Type\RefType $activity
      */
-    private $activity = null;
+    private \Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
-     *
-     * @var \Pohoda\Type\RefType $contract
      */
-    private $contract = null;
+    private \Pohoda\Type\RefType $contract = null;
 
     /**
      * Obrat. Pouze pro export.
-     *
-     * @var float $turnover
      */
-    private $turnover = null;
+    private float $turnover = null;
 
     /**
      * Obrat 2. Pouze pro export.
-     *
-     * @var float $turnover2
      */
-    private $turnover2 = null;
+    private float $turnover2 = null;
 
     /**
      * Volitelné parametry.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
      * Odkaz kontaktní osoby na hlavní adresu.
-     *
-     * @var \Pohoda\Type\RefAddressType $refAddress
      */
-    private $refAddress = null;
+    private \Pohoda\Type\RefAddressType $refAddress = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
-     * @var \Pohoda\Type\LabelType[] $labels
+     * @var \Pohoda\Type\LabelType[]
      */
-    private $labels = null;
+    private array $labels = null;
 
     /**
      * Dopravce.
-     *
-     * @var \Pohoda\Type\CarrierType $carrier
      */
-    private $carrier = null;
+    private \Pohoda\Type\CarrierType $carrier = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID adresy. Používá se při requestu.
      *
@@ -417,21 +321,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID adresy. Používá se při requestu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as identity
+     * Gets as identity.
      *
      * Základní údaje
      *
@@ -443,21 +349,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new identity
+     * Sets a new identity.
      *
      * Základní údaje
      *
-     * @param \Pohoda\Type\AddressType $identity
      * @return self
      */
     public function setIdentity(?\Pohoda\Type\AddressType $identity = null)
     {
         $this->identity = $identity;
+
         return $this;
     }
 
     /**
-     * Gets as region
+     * Gets as region.
      *
      * Název kraje.
      *
@@ -469,21 +375,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new region
+     * Sets a new region.
      *
      * Název kraje.
      *
      * @param string $region
+     *
      * @return self
      */
     public function setRegion($region)
     {
         $this->region = $region;
+
         return $this;
     }
 
     /**
-     * Gets as phone
+     * Gets as phone.
      *
      * Telefon.
      *
@@ -495,21 +403,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new phone
+     * Sets a new phone.
      *
      * Telefon.
      *
      * @param string $phone
+     *
      * @return self
      */
     public function setPhone($phone)
     {
         $this->phone = $phone;
+
         return $this;
     }
 
     /**
-     * Gets as mobil
+     * Gets as mobil.
      *
      * Mobil.
      *
@@ -521,21 +431,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new mobil
+     * Sets a new mobil.
      *
      * Mobil.
      *
      * @param string $mobil
+     *
      * @return self
      */
     public function setMobil($mobil)
     {
         $this->mobil = $mobil;
+
         return $this;
     }
 
     /**
-     * Gets as fax
+     * Gets as fax.
      *
      * Fax.
      *
@@ -547,21 +459,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new fax
+     * Sets a new fax.
      *
      * Fax.
      *
      * @param string $fax
+     *
      * @return self
      */
     public function setFax($fax)
     {
         $this->fax = $fax;
+
         return $this;
     }
 
     /**
-     * Gets as email
+     * Gets as email.
      *
      * Email.
      *
@@ -573,21 +487,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new email
+     * Sets a new email.
      *
      * Email.
      *
      * @param string $email
+     *
      * @return self
      */
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
     /**
-     * Gets as web
+     * Gets as web.
      *
      * Adresa www stránek.
      *
@@ -599,21 +515,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new web
+     * Sets a new web.
      *
      * Adresa www stránek.
      *
      * @param string $web
+     *
      * @return self
      */
     public function setWeb($web)
     {
         $this->web = $web;
+
         return $this;
     }
 
     /**
-     * Gets as iCQ
+     * Gets as iCQ.
      *
      * ICQ adresa.
      *
@@ -625,21 +543,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new iCQ
+     * Sets a new iCQ.
      *
      * ICQ adresa.
      *
      * @param string $iCQ
+     *
      * @return self
      */
     public function setICQ($iCQ)
     {
         $this->iCQ = $iCQ;
+
         return $this;
     }
 
     /**
-     * Gets as skype
+     * Gets as skype.
      *
      * Skype adresa.
      *
@@ -651,21 +571,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new skype
+     * Sets a new skype.
      *
      * Skype adresa.
      *
      * @param string $skype
+     *
      * @return self
      */
     public function setSkype($skype)
     {
         $this->skype = $skype;
+
         return $this;
     }
 
     /**
-     * Gets as gPS
+     * Gets as gPS.
      *
      * GPS souřadnice.
      *
@@ -677,21 +599,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new gPS
+     * Sets a new gPS.
      *
      * GPS souřadnice.
      *
      * @param string $gPS
+     *
      * @return self
      */
     public function setGPS($gPS)
     {
         $this->gPS = $gPS;
+
         return $this;
     }
 
     /**
-     * Gets as adGroup
+     * Gets as adGroup.
      *
      * Skupiny.
      *
@@ -703,21 +627,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new adGroup
+     * Sets a new adGroup.
      *
      * Skupiny.
      *
      * @param string $adGroup
+     *
      * @return self
      */
     public function setAdGroup($adGroup)
     {
         $this->adGroup = $adGroup;
+
         return $this;
     }
 
     /**
-     * Gets as adKey
+     * Gets as adKey.
      *
      * Klíče.
      *
@@ -729,21 +655,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new adKey
+     * Sets a new adKey.
      *
      * Klíče.
      *
      * @param string $adKey
+     *
      * @return self
      */
     public function setAdKey($adKey)
     {
         $this->adKey = $adKey;
+
         return $this;
     }
 
     /**
-     * Gets as credit
+     * Gets as credit.
      *
      * Kredit, tolerovaná výše pohledávek odběratele.
      *
@@ -755,21 +683,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new credit
+     * Sets a new credit.
      *
      * Kredit, tolerovaná výše pohledávek odběratele.
      *
      * @param float $credit
+     *
      * @return self
      */
     public function setCredit($credit)
     {
         $this->credit = $credit;
+
         return $this;
     }
 
     /**
-     * Gets as priceIDS
+     * Gets as priceIDS.
      *
      * Cenová hladina odběratele.
      *
@@ -781,21 +711,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new priceIDS
+     * Sets a new priceIDS.
      *
      * Cenová hladina odběratele.
      *
      * @param string $priceIDS
+     *
      * @return self
      */
     public function setPriceIDS($priceIDS)
     {
         $this->priceIDS = $priceIDS;
+
         return $this;
     }
 
     /**
-     * Gets as maturity
+     * Gets as maturity.
      *
      * Splatno. Počet dnů splatnosti pohledávek (vydané faktury, vydané zálohové faktury, ostatní pohledávky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
@@ -808,22 +740,24 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new maturity
+     * Sets a new maturity.
      *
      * Splatno. Počet dnů splatnosti pohledávek (vydané faktury, vydané zálohové faktury, ostatní pohledávky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
      *
      * @param int $maturity
+     *
      * @return self
      */
     public function setMaturity($maturity)
     {
         $this->maturity = $maturity;
+
         return $this;
     }
 
     /**
-     * Gets as maturityCommitments
+     * Gets as maturityCommitments.
      *
      * Splatno. Počet dnů splatnosti závazků (přijaté faktury, přijaté zálohové faktury, ostatní závazky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
@@ -836,22 +770,24 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new maturityCommitments
+     * Sets a new maturityCommitments.
      *
      * Splatno. Počet dnů splatnosti závazků (přijaté faktury, přijaté zálohové faktury, ostatní závazky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
      *
      * @param int $maturityCommitments
+     *
      * @return self
      */
     public function setMaturityCommitments($maturityCommitments)
     {
         $this->maturityCommitments = $maturityCommitments;
+
         return $this;
     }
 
     /**
-     * Gets as paymentType
+     * Gets as paymentType.
      *
      * Forma úhrady.
      *
@@ -863,21 +799,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new paymentType
+     * Sets a new paymentType.
      *
      * Forma úhrady.
      *
-     * @param \Pohoda\Type\PaymentType $paymentType
      * @return self
      */
     public function setPaymentType(?\Pohoda\Type\PaymentType $paymentType = null)
     {
         $this->paymentType = $paymentType;
+
         return $this;
     }
 
     /**
-     * Gets as agreement
+     * Gets as agreement.
      *
      * Číslo obchodní smlouvy (nesmí být povoleno v Globálním nastavení - Číslování zákazníků). Od verze 1.5.
      *
@@ -889,21 +825,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new agreement
+     * Sets a new agreement.
      *
      * Číslo obchodní smlouvy (nesmí být povoleno v Globálním nastavení - Číslování zákazníků). Od verze 1.5.
      *
      * @param string $agreement
+     *
      * @return self
      */
     public function setAgreement($agreement)
     {
         $this->agreement = $agreement;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Číslo dodavatele/odběratele dle zvolené číselné řady (musí být povoleno v Globálním nastavení - Číslování zákazníků).
      *
@@ -915,21 +853,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Číslo dodavatele/odběratele dle zvolené číselné řady (musí být povoleno v Globálním nastavení - Číslování zákazníků).
      *
-     * @param \Pohoda\Type\NumberADType $number
      * @return self
      */
     public function setNumber(?\Pohoda\Type\NumberADType $number = null)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as ost1
+     * Gets as ost1.
      *
      * Ostatní.
      *
@@ -941,21 +879,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new ost1
+     * Sets a new ost1.
      *
      * Ostatní.
      *
      * @param string $ost1
+     *
      * @return self
      */
     public function setOst1($ost1)
     {
         $this->ost1 = $ost1;
+
         return $this;
     }
 
     /**
-     * Gets as ost2
+     * Gets as ost2.
      *
      * Ostatní. Používá se také u kontaktní osoby.
      *
@@ -967,21 +907,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new ost2
+     * Sets a new ost2.
      *
      * Ostatní. Používá se také u kontaktní osoby.
      *
      * @param string $ost2
+     *
      * @return self
      */
     public function setOst2($ost2)
     {
         $this->ost2 = $ost2;
+
         return $this;
     }
 
     /**
-     * Gets as function
+     * Gets as function.
      *
      * Název funkce. Používá se jen u kontaktní osoby.
      *
@@ -993,21 +935,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new function
+     * Sets a new function.
      *
      * Název funkce. Používá se jen u kontaktní osoby.
      *
      * @param string $function
+     *
      * @return self
      */
     public function setFunction($function)
     {
         $this->function = $function;
+
         return $this;
     }
 
     /**
-     * Gets as personalIdentificationNumber
+     * Gets as personalIdentificationNumber.
      *
      * Rodné číslo. Používá se jen u kontaktní osoby.
      *
@@ -1019,21 +963,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new personalIdentificationNumber
+     * Sets a new personalIdentificationNumber.
      *
      * Rodné číslo. Používá se jen u kontaktní osoby.
      *
      * @param string $personalIdentificationNumber
+     *
      * @return self
      */
     public function setPersonalIdentificationNumber($personalIdentificationNumber)
     {
         $this->personalIdentificationNumber = $personalIdentificationNumber;
+
         return $this;
     }
 
     /**
-     * Gets as salutation
+     * Gets as salutation.
      *
      * Oslovení pro použití v korespondenci. Používá se jen u kontaktní osoby.
      *
@@ -1045,21 +991,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new salutation
+     * Sets a new salutation.
      *
      * Oslovení pro použití v korespondenci. Používá se jen u kontaktní osoby.
      *
      * @param string $salutation
+     *
      * @return self
      */
     public function setSalutation($salutation)
     {
         $this->salutation = $salutation;
+
         return $this;
     }
 
     /**
-     * Gets as sex
+     * Gets as sex.
      *
      * Pohlaví. Používá se jen u kontaktní osoby.
      *
@@ -1071,21 +1019,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new sex
+     * Sets a new sex.
      *
      * Pohlaví. Používá se jen u kontaktní osoby.
      *
      * @param string $sex
+     *
      * @return self
      */
     public function setSex($sex)
     {
         $this->sex = $sex;
+
         return $this;
     }
 
     /**
-     * Gets as dateOfBirth
+     * Gets as dateOfBirth.
      *
      * Datum narození. Používá se jen u kontaktní osoby.
      *
@@ -1097,21 +1047,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new dateOfBirth
+     * Sets a new dateOfBirth.
      *
      * Datum narození. Používá se jen u kontaktní osoby.
      *
-     * @param \DateTime $dateOfBirth
      * @return self
      */
     public function setDateOfBirth(?\DateTime $dateOfBirth = null)
     {
         $this->dateOfBirth = $dateOfBirth;
+
         return $this;
     }
 
     /**
-     * Gets as p1
+     * Gets as p1.
      *
      * Klíč P1 / Dodavatel.
      *
@@ -1123,21 +1073,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new p1
+     * Sets a new p1.
      *
      * Klíč P1 / Dodavatel.
      *
      * @param string $p1
+     *
      * @return self
      */
     public function setP1($p1)
     {
         $this->p1 = $p1;
+
         return $this;
     }
 
     /**
-     * Gets as p2
+     * Gets as p2.
      *
      * Klíč P2 / Odběratel.
      *
@@ -1149,21 +1101,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new p2
+     * Sets a new p2.
      *
      * Klíč P2 / Odběratel.
      *
      * @param string $p2
+     *
      * @return self
      */
     public function setP2($p2)
     {
         $this->p2 = $p2;
+
         return $this;
     }
 
     /**
-     * Gets as p3
+     * Gets as p3.
      *
      * Klíč P3.
      *
@@ -1175,21 +1129,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new p3
+     * Sets a new p3.
      *
      * Klíč P3.
      *
      * @param string $p3
+     *
      * @return self
      */
     public function setP3($p3)
     {
         $this->p3 = $p3;
+
         return $this;
     }
 
     /**
-     * Gets as p4
+     * Gets as p4.
      *
      * Klíč P4.
      *
@@ -1201,21 +1157,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new p4
+     * Sets a new p4.
      *
      * Klíč P4.
      *
      * @param string $p4
+     *
      * @return self
      */
     public function setP4($p4)
     {
         $this->p4 = $p4;
+
         return $this;
     }
 
     /**
-     * Gets as p5
+     * Gets as p5.
      *
      * Klíč P5.
      *
@@ -1227,21 +1185,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new p5
+     * Sets a new p5.
      *
      * Klíč P5.
      *
      * @param string $p5
+     *
      * @return self
      */
     public function setP5($p5)
     {
         $this->p5 = $p5;
+
         return $this;
     }
 
     /**
-     * Gets as p6
+     * Gets as p6.
      *
      * Klíč P6.
      *
@@ -1253,21 +1213,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new p6
+     * Sets a new p6.
      *
      * Klíč P6.
      *
      * @param string $p6
+     *
      * @return self
      */
     public function setP6($p6)
     {
         $this->p6 = $p6;
+
         return $this;
     }
 
     /**
-     * Gets as message
+     * Gets as message.
      *
      * Zpráva.
      *
@@ -1279,21 +1241,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new message
+     * Sets a new message.
      *
      * Zpráva.
      *
      * @param string $message
+     *
      * @return self
      */
     public function setMessage($message)
     {
         $this->message = $message;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -1305,21 +1269,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as intNote
+     * Gets as intNote.
      *
      * Interní poznámka.
      *
@@ -1331,21 +1297,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new intNote
+     * Sets a new intNote.
      *
      * Interní poznámka.
      *
      * @param string $intNote
+     *
      * @return self
      */
     public function setIntNote($intNote)
     {
         $this->intNote = $intNote;
+
         return $this;
     }
 
     /**
-     * Gets as accountingReceivedInvoice
+     * Gets as accountingReceivedInvoice.
      *
      * Předkontace přijaté faktury.
      *
@@ -1357,21 +1325,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new accountingReceivedInvoice
+     * Sets a new accountingReceivedInvoice.
      *
      * Předkontace přijaté faktury.
      *
-     * @param \Pohoda\Type\AccountingType $accountingReceivedInvoice
      * @return self
      */
     public function setAccountingReceivedInvoice(?\Pohoda\Type\AccountingType $accountingReceivedInvoice = null)
     {
         $this->accountingReceivedInvoice = $accountingReceivedInvoice;
+
         return $this;
     }
 
     /**
-     * Gets as accountingIssuedInvoice
+     * Gets as accountingIssuedInvoice.
      *
      * Předkontace vydané faktury.
      *
@@ -1383,21 +1351,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new accountingIssuedInvoice
+     * Sets a new accountingIssuedInvoice.
      *
      * Předkontace vydané faktury.
      *
-     * @param \Pohoda\Type\AccountingType $accountingIssuedInvoice
      * @return self
      */
     public function setAccountingIssuedInvoice(?\Pohoda\Type\AccountingType $accountingIssuedInvoice = null)
     {
         $this->accountingIssuedInvoice = $accountingIssuedInvoice;
+
         return $this;
     }
 
     /**
-     * Gets as classificationVATReceivedInvoice
+     * Gets as classificationVATReceivedInvoice.
      *
      * Členění DPH na přijaté faktuře.
      *
@@ -1409,21 +1377,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new classificationVATReceivedInvoice
+     * Sets a new classificationVATReceivedInvoice.
      *
      * Členění DPH na přijaté faktuře.
      *
-     * @param \Pohoda\Type\ClassificationVATType $classificationVATReceivedInvoice
      * @return self
      */
     public function setClassificationVATReceivedInvoice(?\Pohoda\Type\ClassificationVATType $classificationVATReceivedInvoice = null)
     {
         $this->classificationVATReceivedInvoice = $classificationVATReceivedInvoice;
+
         return $this;
     }
 
     /**
-     * Gets as classificationVATIssuedInvoice
+     * Gets as classificationVATIssuedInvoice.
      *
      * Členění DPH na vydané faktuře.
      *
@@ -1435,21 +1403,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new classificationVATIssuedInvoice
+     * Sets a new classificationVATIssuedInvoice.
      *
      * Členění DPH na vydané faktuře.
      *
-     * @param \Pohoda\Type\ClassificationVATType $classificationVATIssuedInvoice
      * @return self
      */
     public function setClassificationVATIssuedInvoice(?\Pohoda\Type\ClassificationVATType $classificationVATIssuedInvoice = null)
     {
         $this->classificationVATIssuedInvoice = $classificationVATIssuedInvoice;
+
         return $this;
     }
 
     /**
-     * Gets as classificationKVDPHReceivedInvoice
+     * Gets as classificationKVDPHReceivedInvoice.
      *
      * Členění KV DPH, přijaté faktury (pouze SK verze).
      *
@@ -1461,21 +1429,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new classificationKVDPHReceivedInvoice
+     * Sets a new classificationKVDPHReceivedInvoice.
      *
      * Členění KV DPH, přijaté faktury (pouze SK verze).
      *
-     * @param \Pohoda\Type\RefType $classificationKVDPHReceivedInvoice
      * @return self
      */
     public function setClassificationKVDPHReceivedInvoice(?\Pohoda\Type\RefType $classificationKVDPHReceivedInvoice = null)
     {
         $this->classificationKVDPHReceivedInvoice = $classificationKVDPHReceivedInvoice;
+
         return $this;
     }
 
     /**
-     * Gets as classificationKVDPHIssuedInvoice
+     * Gets as classificationKVDPHIssuedInvoice.
      *
      * Členění KV DPH, vydané faktury (pouze SK verze).
      *
@@ -1487,21 +1455,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new classificationKVDPHIssuedInvoice
+     * Sets a new classificationKVDPHIssuedInvoice.
      *
      * Členění KV DPH, vydané faktury (pouze SK verze).
      *
-     * @param \Pohoda\Type\RefType $classificationKVDPHIssuedInvoice
      * @return self
      */
     public function setClassificationKVDPHIssuedInvoice(?\Pohoda\Type\RefType $classificationKVDPHIssuedInvoice = null)
     {
         $this->classificationKVDPHIssuedInvoice = $classificationKVDPHIssuedInvoice;
+
         return $this;
     }
 
     /**
-     * Gets as accountForInvoicing
+     * Gets as accountForInvoicing.
      *
      * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku (používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení uživatele (pod kterým je spuštěn XML import).
      *
@@ -1513,21 +1481,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new accountForInvoicing
+     * Sets a new accountForInvoicing.
      *
      * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku (používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení uživatele (pod kterým je spuštěn XML import).
      *
-     * @param \Pohoda\Type\AccountType $accountForInvoicing
      * @return self
      */
     public function setAccountForInvoicing(?\Pohoda\Type\AccountType $accountForInvoicing = null)
     {
         $this->accountForInvoicing = $accountForInvoicing;
+
         return $this;
     }
 
     /**
-     * Gets as responsiblePerson
+     * Gets as responsiblePerson.
      *
      * Odpovědná osoba.
      *
@@ -1539,21 +1507,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new responsiblePerson
+     * Sets a new responsiblePerson.
      *
      * Odpovědná osoba.
      *
-     * @param \Pohoda\Type\ResponsiblePersonType $responsiblePerson
      * @return self
      */
     public function setResponsiblePerson(?\Pohoda\Type\ResponsiblePersonType $responsiblePerson = null)
     {
         $this->responsiblePerson = $responsiblePerson;
+
         return $this;
     }
 
     /**
-     * Gets as toleranceMaturity
+     * Gets as toleranceMaturity.
      *
      * Počet dnů tolerované splatnosti faktur.
      *
@@ -1565,21 +1533,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new toleranceMaturity
+     * Sets a new toleranceMaturity.
      *
      * Počet dnů tolerované splatnosti faktur.
      *
      * @param int $toleranceMaturity
+     *
      * @return self
      */
     public function setToleranceMaturity($toleranceMaturity)
     {
         $this->toleranceMaturity = $toleranceMaturity;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrency
+     * Gets as foreignCurrency.
      *
      * ID - odkaz na cizí měnu, IDS - kod měny.
      *
@@ -1591,21 +1561,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new foreignCurrency
+     * Sets a new foreignCurrency.
      *
      * ID - odkaz na cizí měnu, IDS - kod měny.
      *
-     * @param \Pohoda\Type\RefType $foreignCurrency
      * @return self
      */
     public function setForeignCurrency(?\Pohoda\Type\RefType $foreignCurrency = null)
     {
         $this->foreignCurrency = $foreignCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * Středisko.
      *
@@ -1617,21 +1587,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * Středisko.
      *
-     * @param \Pohoda\Type\RefType $centre
      * @return self
      */
     public function setCentre(?\Pohoda\Type\RefType $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 
     /**
-     * Gets as activity
+     * Gets as activity.
      *
      * Činnost.
      *
@@ -1643,21 +1613,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new activity
+     * Sets a new activity.
      *
      * Činnost.
      *
-     * @param \Pohoda\Type\RefType $activity
      * @return self
      */
     public function setActivity(?\Pohoda\Type\RefType $activity = null)
     {
         $this->activity = $activity;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * Zakázka.
      *
@@ -1669,21 +1639,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
      * Zakázka.
      *
-     * @param \Pohoda\Type\RefType $contract
      * @return self
      */
     public function setContract(?\Pohoda\Type\RefType $contract = null)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Gets as turnover
+     * Gets as turnover.
      *
      * Obrat. Pouze pro export.
      *
@@ -1695,21 +1665,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new turnover
+     * Sets a new turnover.
      *
      * Obrat. Pouze pro export.
      *
      * @param float $turnover
+     *
      * @return self
      */
     public function setTurnover($turnover)
     {
         $this->turnover = $turnover;
+
         return $this;
     }
 
     /**
-     * Gets as turnover2
+     * Gets as turnover2.
      *
      * Obrat 2. Pouze pro export.
      *
@@ -1721,39 +1693,42 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new turnover2
+     * Sets a new turnover2.
      *
      * Obrat 2. Pouze pro export.
      *
      * @param float $turnover2
+     *
      * @return self
      */
     public function setTurnover2($turnover2)
     {
         $this->turnover2 = $turnover2;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelné parametry.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelné parametry.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -1762,20 +1737,19 @@ class AddressbookHeaderType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelné parametry.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelné parametry.
      *
@@ -1787,21 +1761,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelné parametry.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 
     /**
-     * Gets as refAddress
+     * Gets as refAddress.
      *
      * Odkaz kontaktní osoby na hlavní adresu.
      *
@@ -1813,21 +1789,21 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new refAddress
+     * Sets a new refAddress.
      *
      * Odkaz kontaktní osoby na hlavní adresu.
      *
-     * @param \Pohoda\Type\RefAddressType $refAddress
      * @return self
      */
     public function setRefAddress(?\Pohoda\Type\RefAddressType $refAddress = null)
     {
         $this->refAddress = $refAddress;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -1839,39 +1815,42 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as label
+     * Adds as label.
      *
      * Štítky záznamu.
      *
      * @return self
-     * @param \Pohoda\Type\LabelType $label
      */
     public function addToLabels(\Pohoda\Type\LabelType $label)
     {
         $this->labels[] = $label;
+
         return $this;
     }
 
     /**
-     * isset labels
+     * isset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLabels($index)
@@ -1880,20 +1859,19 @@ class AddressbookHeaderType
     }
 
     /**
-     * unset labels
+     * unset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLabels($index)
+    public function unsetLabels($index): void
     {
         unset($this->labels[$index]);
     }
 
     /**
-     * Gets as labels
+     * Gets as labels.
      *
      * Štítky záznamu.
      *
@@ -1905,21 +1883,23 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new labels
+     * Sets a new labels.
      *
      * Štítky záznamu.
      *
      * @param \Pohoda\Type\LabelType[] $labels
+     *
      * @return self
      */
-    public function setLabels(array $labels = null)
+    public function setLabels(?array $labels = null)
     {
         $this->labels = $labels;
+
         return $this;
     }
 
     /**
-     * Gets as carrier
+     * Gets as carrier.
      *
      * Dopravce.
      *
@@ -1931,16 +1911,16 @@ class AddressbookHeaderType
     }
 
     /**
-     * Sets a new carrier
+     * Sets a new carrier.
      *
      * Dopravce.
      *
-     * @param \Pohoda\Type\CarrierType $carrier
      * @return self
      */
     public function setCarrier(?\Pohoda\Type\CarrierType $carrier = null)
     {
         $this->carrier = $carrier;
+
         return $this;
     }
 }

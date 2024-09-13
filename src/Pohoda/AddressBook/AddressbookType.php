@@ -1,51 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\AddressBook;
 
 /**
- * Class representing AddressbookType
- *
+ * Class representing AddressbookType.
  *
  * XSD Type: addressbookType
  */
 class AddressbookType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
-     *
-     * @var \Pohoda\AddressBook\ActionTypeType $actionType
      */
-    private $actionType = null;
+    private \Pohoda\AddressBook\ActionTypeType $actionType = null;
+    private \Pohoda\AddressBook\AddressbookHeaderType $addressbookHeader = null;
 
     /**
-     * @var \Pohoda\AddressBook\AddressbookHeaderType $addressbookHeader
+     * @var \Pohoda\AddressBook\AccountItemType[]
      */
-    private $addressbookHeader = null;
-
-    /**
-     * @var \Pohoda\AddressBook\AccountItemType[] $addressbookAccount
-     */
-    private $addressbookAccount = null;
-
-    /**
-     * @var \Pohoda\AddressBook\AddressbookGDPRType $addressbookGDPR
-     */
-    private $addressbookGDPR = null;
+    private array $addressbookAccount = null;
+    private \Pohoda\AddressBook\AddressbookGDPRType $addressbookGDPR = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -55,19 +54,21 @@ class AddressbookType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as actionType
+     * Gets as actionType.
      *
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      *
@@ -79,21 +80,21 @@ class AddressbookType
     }
 
     /**
-     * Sets a new actionType
+     * Sets a new actionType.
      *
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      *
-     * @param \Pohoda\AddressBook\ActionTypeType $actionType
      * @return self
      */
     public function setActionType(?\Pohoda\AddressBook\ActionTypeType $actionType = null)
     {
         $this->actionType = $actionType;
+
         return $this;
     }
 
     /**
-     * Gets as addressbookHeader
+     * Gets as addressbookHeader.
      *
      * @return \Pohoda\AddressBook\AddressbookHeaderType
      */
@@ -103,33 +104,34 @@ class AddressbookType
     }
 
     /**
-     * Sets a new addressbookHeader
+     * Sets a new addressbookHeader.
      *
-     * @param \Pohoda\AddressBook\AddressbookHeaderType $addressbookHeader
      * @return self
      */
     public function setAddressbookHeader(?\Pohoda\AddressBook\AddressbookHeaderType $addressbookHeader = null)
     {
         $this->addressbookHeader = $addressbookHeader;
+
         return $this;
     }
 
     /**
-     * Adds as accountItem
+     * Adds as accountItem.
      *
      * @return self
-     * @param \Pohoda\AddressBook\AccountItemType $accountItem
      */
     public function addToAddressbookAccount(\Pohoda\AddressBook\AccountItemType $accountItem)
     {
         $this->addressbookAccount[] = $accountItem;
+
         return $this;
     }
 
     /**
-     * isset addressbookAccount
+     * isset addressbookAccount.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetAddressbookAccount($index)
@@ -138,18 +140,17 @@ class AddressbookType
     }
 
     /**
-     * unset addressbookAccount
+     * unset addressbookAccount.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetAddressbookAccount($index)
+    public function unsetAddressbookAccount($index): void
     {
         unset($this->addressbookAccount[$index]);
     }
 
     /**
-     * Gets as addressbookAccount
+     * Gets as addressbookAccount.
      *
      * @return \Pohoda\AddressBook\AccountItemType[]
      */
@@ -159,19 +160,21 @@ class AddressbookType
     }
 
     /**
-     * Sets a new addressbookAccount
+     * Sets a new addressbookAccount.
      *
      * @param \Pohoda\AddressBook\AccountItemType[] $addressbookAccount
+     *
      * @return self
      */
-    public function setAddressbookAccount(array $addressbookAccount = null)
+    public function setAddressbookAccount(?array $addressbookAccount = null)
     {
         $this->addressbookAccount = $addressbookAccount;
+
         return $this;
     }
 
     /**
-     * Gets as addressbookGDPR
+     * Gets as addressbookGDPR.
      *
      * @return \Pohoda\AddressBook\AddressbookGDPRType
      */
@@ -181,37 +184,38 @@ class AddressbookType
     }
 
     /**
-     * Sets a new addressbookGDPR
+     * Sets a new addressbookGDPR.
      *
-     * @param \Pohoda\AddressBook\AddressbookGDPRType $addressbookGDPR
      * @return self
      */
     public function setAddressbookGDPR(?\Pohoda\AddressBook\AddressbookGDPRType $addressbookGDPR = null)
     {
         $this->addressbookGDPR = $addressbookGDPR;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -220,20 +224,19 @@ class AddressbookType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -245,16 +248,18 @@ class AddressbookType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
-    public function setPrint(array $print = null)
+    public function setPrint(?array $print = null)
     {
         $this->print = $print;
+
         return $this;
     }
 }

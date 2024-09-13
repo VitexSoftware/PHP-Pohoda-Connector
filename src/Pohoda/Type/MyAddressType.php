@@ -1,27 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing MyAddressType
- *
+ * Class representing MyAddressType.
  *
  * XSD Type: myAddress
  */
 class MyAddressType
 {
-    /**
-     * @var \Pohoda\Type\AddressInternetType $address
-     */
-    private $address = null;
+    private \Pohoda\Type\AddressInternetType $address = null;
+    private \Pohoda\Type\EstablishmentType $establishment = null;
 
     /**
-     * @var \Pohoda\Type\EstablishmentType $establishment
-     */
-    private $establishment = null;
-
-    /**
-     * Gets as address
+     * Gets as address.
      *
      * @return \Pohoda\Type\AddressInternetType
      */
@@ -31,19 +36,19 @@ class MyAddressType
     }
 
     /**
-     * Sets a new address
+     * Sets a new address.
      *
-     * @param \Pohoda\Type\AddressInternetType $address
      * @return self
      */
     public function setAddress(\Pohoda\Type\AddressInternetType $address)
     {
         $this->address = $address;
+
         return $this;
     }
 
     /**
-     * Gets as establishment
+     * Gets as establishment.
      *
      * @return \Pohoda\Type\EstablishmentType
      */
@@ -53,14 +58,14 @@ class MyAddressType
     }
 
     /**
-     * Sets a new establishment
+     * Sets a new establishment.
      *
-     * @param \Pohoda\Type\EstablishmentType $establishment
      * @return self
      */
     public function setEstablishment(?\Pohoda\Type\EstablishmentType $establishment = null)
     {
         $this->establishment = $establishment;
+
         return $this;
     }
 }

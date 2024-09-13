@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing AccountingType
+ * Class representing AccountingType.
  *
  * Odkaz na entitu. Vyšší prioritu má element "id", dále "ids."
  * XSD Type: accountingType
@@ -12,27 +25,21 @@ class AccountingType
 {
     /**
      * ID záznamu předkontace.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Zkratka předkontace.
-     *
-     * @var string $ids
      */
-    private $ids = null;
+    private string $ids = null;
 
     /**
      * Pevné typy předkontací.
-     *
-     * @var string $accountingType
      */
-    private $accountingType = null;
+    private string $accountingType = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu předkontace.
      *
@@ -44,21 +51,23 @@ class AccountingType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu předkontace.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as ids
+     * Gets as ids.
      *
      * Zkratka předkontace.
      *
@@ -70,21 +79,23 @@ class AccountingType
     }
 
     /**
-     * Sets a new ids
+     * Sets a new ids.
      *
      * Zkratka předkontace.
      *
      * @param string $ids
+     *
      * @return self
      */
     public function setIds($ids)
     {
         $this->ids = $ids;
+
         return $this;
     }
 
     /**
-     * Gets as accountingType
+     * Gets as accountingType.
      *
      * Pevné typy předkontací.
      *
@@ -96,16 +107,18 @@ class AccountingType
     }
 
     /**
-     * Sets a new accountingType
+     * Sets a new accountingType.
      *
      * Pevné typy předkontací.
      *
      * @param string $accountingType
+     *
      * @return self
      */
     public function setAccountingType($accountingType)
     {
         $this->accountingType = $accountingType;
+
         return $this;
     }
 }

@@ -1,19 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Invoice;
 
 /**
- * Class representing InvoiceType
- *
+ * Class representing InvoiceType.
  *
  * XSD Type: invoiceType
  */
 class InvoiceType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Pokud nejsou specifikovány položky, vloží se celý doklad.
@@ -23,78 +32,54 @@ class InvoiceType
      *  - Přijaté objednávky (do agendy Vydané faktury)
      *  - Vydané objednávky (do agendy Přijaté zálohové faktury)
      *  - Vydané objednávky (do agendy Přijaté faktury)
-     *  - Výdejky (do agendy Vydané faktury, typ Faktura)
-     *
-     * @var \Pohoda\Type\LinksType $links
+     *  - Výdejky (do agendy Vydané faktury, typ Faktura).
      */
-    private $links = null;
+    private \Pohoda\Type\LinksType $links = null;
 
     /**
      * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
-     *
-     * @var \Pohoda\Type\CancelDocumentType $cancelDocument
      */
-    private $cancelDocument = null;
+    private \Pohoda\Type\CancelDocumentType $cancelDocument = null;
 
     /**
      * Pomocí tohoto bloku bude vytvořen opravný daňový doklad (pouze CZ verze) nebo Dobropis (pouze SK verze). V programu POHODA bude vyhledán doklad, pokud bude nalezen, bude k němu vytvořen opravný daňový doklad, Dobropis.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
-     *
-     * @var \Pohoda\Type\CorrectiveDocumentType $correctiveDocument
      */
-    private $correctiveDocument = null;
-
-    /**
-     * @var \Pohoda\Invoice\InvoiceHeaderType $invoiceHeader
-     */
-    private $invoiceHeader = null;
+    private \Pohoda\Type\CorrectiveDocumentType $correctiveDocument = null;
+    private \Pohoda\Invoice\InvoiceHeaderType $invoiceHeader = null;
 
     /**
      * Údaje o pozastávkách k vydané nebo přijaté faktuře. Pouze pro export.
      *
-     * @var \Pohoda\Invoice\InvoiceRetentionType[] $invoiceRetentions
+     * @var \Pohoda\Invoice\InvoiceRetentionType[]
      */
-    private $invoiceRetentions = null;
-
-    /**
-     * @var \Pohoda\Invoice\InvoiceDetailType $invoiceDetail
-     */
-    private $invoiceDetail = null;
-
-    /**
-     * @var \Pohoda\Invoice\InvoiceSummaryType $invoiceSummary
-     */
-    private $invoiceSummary = null;
+    private array $invoiceRetentions = null;
+    private \Pohoda\Invoice\InvoiceDetailType $invoiceDetail = null;
+    private \Pohoda\Invoice\InvoiceSummaryType $invoiceSummary = null;
 
     /**
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
-     *
-     * @var \Pohoda\Type\LinksType $linkedDocuments
      */
-    private $linkedDocuments = null;
+    private \Pohoda\Type\LinksType $linkedDocuments = null;
 
     /**
      * Vazba na likvidace dokladu (pouze pro export).
      *
-     * @var \Pohoda\Type\LiquidationItemType[] $liquidations
+     * @var \Pohoda\Type\LiquidationItemType[]
      */
-    private $liquidations = null;
-
-    /**
-     * @var \Pohoda\Type\EETType $eET
-     */
-    private $eET = null;
+    private array $liquidations = null;
+    private \Pohoda\Type\EETType $eET = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -104,19 +89,21 @@ class InvoiceType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as links
+     * Gets as links.
      *
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Pokud nejsou specifikovány položky, vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
@@ -135,7 +122,7 @@ class InvoiceType
     }
 
     /**
-     * Sets a new links
+     * Sets a new links.
      *
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Pokud nejsou specifikovány položky, vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
@@ -146,17 +133,17 @@ class InvoiceType
      *  - Vydané objednávky (do agendy Přijaté faktury)
      *  - Výdejky (do agendy Vydané faktury, typ Faktura)
      *
-     * @param \Pohoda\Type\LinksType $links
      * @return self
      */
     public function setLinks(?\Pohoda\Type\LinksType $links = null)
     {
         $this->links = $links;
+
         return $this;
     }
 
     /**
-     * Gets as cancelDocument
+     * Gets as cancelDocument.
      *
      * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
@@ -169,22 +156,22 @@ class InvoiceType
     }
 
     /**
-     * Sets a new cancelDocument
+     * Sets a new cancelDocument.
      *
      * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
      *
-     * @param \Pohoda\Type\CancelDocumentType $cancelDocument
      * @return self
      */
     public function setCancelDocument(?\Pohoda\Type\CancelDocumentType $cancelDocument = null)
     {
         $this->cancelDocument = $cancelDocument;
+
         return $this;
     }
 
     /**
-     * Gets as correctiveDocument
+     * Gets as correctiveDocument.
      *
      * Pomocí tohoto bloku bude vytvořen opravný daňový doklad (pouze CZ verze) nebo Dobropis (pouze SK verze). V programu POHODA bude vyhledán doklad, pokud bude nalezen, bude k němu vytvořen opravný daňový doklad, Dobropis.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
@@ -197,22 +184,22 @@ class InvoiceType
     }
 
     /**
-     * Sets a new correctiveDocument
+     * Sets a new correctiveDocument.
      *
      * Pomocí tohoto bloku bude vytvořen opravný daňový doklad (pouze CZ verze) nebo Dobropis (pouze SK verze). V programu POHODA bude vyhledán doklad, pokud bude nalezen, bude k němu vytvořen opravný daňový doklad, Dobropis.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
      *
-     * @param \Pohoda\Type\CorrectiveDocumentType $correctiveDocument
      * @return self
      */
     public function setCorrectiveDocument(?\Pohoda\Type\CorrectiveDocumentType $correctiveDocument = null)
     {
         $this->correctiveDocument = $correctiveDocument;
+
         return $this;
     }
 
     /**
-     * Gets as invoiceHeader
+     * Gets as invoiceHeader.
      *
      * @return \Pohoda\Invoice\InvoiceHeaderType
      */
@@ -222,37 +209,38 @@ class InvoiceType
     }
 
     /**
-     * Sets a new invoiceHeader
+     * Sets a new invoiceHeader.
      *
-     * @param \Pohoda\Invoice\InvoiceHeaderType $invoiceHeader
      * @return self
      */
     public function setInvoiceHeader(?\Pohoda\Invoice\InvoiceHeaderType $invoiceHeader = null)
     {
         $this->invoiceHeader = $invoiceHeader;
+
         return $this;
     }
 
     /**
-     * Adds as invoiceRetention
+     * Adds as invoiceRetention.
      *
      * Údaje o pozastávkách k vydané nebo přijaté faktuře. Pouze pro export.
      *
      * @return self
-     * @param \Pohoda\Invoice\InvoiceRetentionType $invoiceRetention
      */
     public function addToInvoiceRetentions(\Pohoda\Invoice\InvoiceRetentionType $invoiceRetention)
     {
         $this->invoiceRetentions[] = $invoiceRetention;
+
         return $this;
     }
 
     /**
-     * isset invoiceRetentions
+     * isset invoiceRetentions.
      *
      * Údaje o pozastávkách k vydané nebo přijaté faktuře. Pouze pro export.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetInvoiceRetentions($index)
@@ -261,20 +249,19 @@ class InvoiceType
     }
 
     /**
-     * unset invoiceRetentions
+     * unset invoiceRetentions.
      *
      * Údaje o pozastávkách k vydané nebo přijaté faktuře. Pouze pro export.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetInvoiceRetentions($index)
+    public function unsetInvoiceRetentions($index): void
     {
         unset($this->invoiceRetentions[$index]);
     }
 
     /**
-     * Gets as invoiceRetentions
+     * Gets as invoiceRetentions.
      *
      * Údaje o pozastávkách k vydané nebo přijaté faktuře. Pouze pro export.
      *
@@ -286,21 +273,23 @@ class InvoiceType
     }
 
     /**
-     * Sets a new invoiceRetentions
+     * Sets a new invoiceRetentions.
      *
      * Údaje o pozastávkách k vydané nebo přijaté faktuře. Pouze pro export.
      *
      * @param \Pohoda\Invoice\InvoiceRetentionType[] $invoiceRetentions
+     *
      * @return self
      */
-    public function setInvoiceRetentions(array $invoiceRetentions = null)
+    public function setInvoiceRetentions(?array $invoiceRetentions = null)
     {
         $this->invoiceRetentions = $invoiceRetentions;
+
         return $this;
     }
 
     /**
-     * Gets as invoiceDetail
+     * Gets as invoiceDetail.
      *
      * @return \Pohoda\Invoice\InvoiceDetailType
      */
@@ -310,19 +299,19 @@ class InvoiceType
     }
 
     /**
-     * Sets a new invoiceDetail
+     * Sets a new invoiceDetail.
      *
-     * @param \Pohoda\Invoice\InvoiceDetailType $invoiceDetail
      * @return self
      */
     public function setInvoiceDetail(?\Pohoda\Invoice\InvoiceDetailType $invoiceDetail = null)
     {
         $this->invoiceDetail = $invoiceDetail;
+
         return $this;
     }
 
     /**
-     * Gets as invoiceSummary
+     * Gets as invoiceSummary.
      *
      * @return \Pohoda\Invoice\InvoiceSummaryType
      */
@@ -332,19 +321,19 @@ class InvoiceType
     }
 
     /**
-     * Sets a new invoiceSummary
+     * Sets a new invoiceSummary.
      *
-     * @param \Pohoda\Invoice\InvoiceSummaryType $invoiceSummary
      * @return self
      */
     public function setInvoiceSummary(?\Pohoda\Invoice\InvoiceSummaryType $invoiceSummary = null)
     {
         $this->invoiceSummary = $invoiceSummary;
+
         return $this;
     }
 
     /**
-     * Gets as linkedDocuments
+     * Gets as linkedDocuments.
      *
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      *
@@ -356,39 +345,40 @@ class InvoiceType
     }
 
     /**
-     * Sets a new linkedDocuments
+     * Sets a new linkedDocuments.
      *
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      *
-     * @param \Pohoda\Type\LinksType $linkedDocuments
      * @return self
      */
     public function setLinkedDocuments(?\Pohoda\Type\LinksType $linkedDocuments = null)
     {
         $this->linkedDocuments = $linkedDocuments;
+
         return $this;
     }
 
     /**
-     * Adds as liquidation
+     * Adds as liquidation.
      *
      * Vazba na likvidace dokladu (pouze pro export).
      *
      * @return self
-     * @param \Pohoda\Type\LiquidationItemType $liquidation
      */
     public function addToLiquidations(\Pohoda\Type\LiquidationItemType $liquidation)
     {
         $this->liquidations[] = $liquidation;
+
         return $this;
     }
 
     /**
-     * isset liquidations
+     * isset liquidations.
      *
      * Vazba na likvidace dokladu (pouze pro export).
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLiquidations($index)
@@ -397,20 +387,19 @@ class InvoiceType
     }
 
     /**
-     * unset liquidations
+     * unset liquidations.
      *
      * Vazba na likvidace dokladu (pouze pro export).
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLiquidations($index)
+    public function unsetLiquidations($index): void
     {
         unset($this->liquidations[$index]);
     }
 
     /**
-     * Gets as liquidations
+     * Gets as liquidations.
      *
      * Vazba na likvidace dokladu (pouze pro export).
      *
@@ -422,21 +411,23 @@ class InvoiceType
     }
 
     /**
-     * Sets a new liquidations
+     * Sets a new liquidations.
      *
      * Vazba na likvidace dokladu (pouze pro export).
      *
      * @param \Pohoda\Type\LiquidationItemType[] $liquidations
+     *
      * @return self
      */
-    public function setLiquidations(array $liquidations = null)
+    public function setLiquidations(?array $liquidations = null)
     {
         $this->liquidations = $liquidations;
+
         return $this;
     }
 
     /**
-     * Gets as eET
+     * Gets as eET.
      *
      * @return \Pohoda\Type\EETType
      */
@@ -446,37 +437,38 @@ class InvoiceType
     }
 
     /**
-     * Sets a new eET
+     * Sets a new eET.
      *
-     * @param \Pohoda\Type\EETType $eET
      * @return self
      */
     public function setEET(?\Pohoda\Type\EETType $eET = null)
     {
         $this->eET = $eET;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -485,20 +477,19 @@ class InvoiceType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -510,16 +501,18 @@ class InvoiceType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
-    public function setPrint(array $print = null)
+    public function setPrint(?array $print = null)
     {
         $this->print = $print;
+
         return $this;
     }
 }

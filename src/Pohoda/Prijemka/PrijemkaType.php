@@ -1,61 +1,54 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prijemka;
 
 /**
- * Class representing PrijemkaType
- *
+ * Class representing PrijemkaType.
  *
  * XSD Type: prijemkaType
  */
 class PrijemkaType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
      *  Povolené jsou vazby z agendy:
-     *  - Vydané objednávky
-     *
-     * @var \Pohoda\Type\LinksType $links
+     *  - Vydané objednávky.
      */
-    private $links = null;
-
-    /**
-     * @var \Pohoda\Prijemka\PrijemkaHeaderType $prijemkaHeader
-     */
-    private $prijemkaHeader = null;
-
-    /**
-     * @var \Pohoda\Prijemka\PrijemkaDetailType $prijemkaDetail
-     */
-    private $prijemkaDetail = null;
-
-    /**
-     * @var \Pohoda\Prijemka\PrijemkaSummaryType $prijemkaSummary
-     */
-    private $prijemkaSummary = null;
+    private \Pohoda\Type\LinksType $links = null;
+    private \Pohoda\Prijemka\PrijemkaHeaderType $prijemkaHeader = null;
+    private \Pohoda\Prijemka\PrijemkaDetailType $prijemkaDetail = null;
+    private \Pohoda\Prijemka\PrijemkaSummaryType $prijemkaSummary = null;
 
     /**
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
-     *
-     * @var \Pohoda\Type\LinksType $linkedDocuments
      */
-    private $linkedDocuments = null;
+    private \Pohoda\Type\LinksType $linkedDocuments = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -65,19 +58,21 @@ class PrijemkaType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as links
+     * Gets as links.
      *
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
@@ -92,24 +87,24 @@ class PrijemkaType
     }
 
     /**
-     * Sets a new links
+     * Sets a new links.
      *
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
      *  Povolené jsou vazby z agendy:
      *  - Vydané objednávky
      *
-     * @param \Pohoda\Type\LinksType $links
      * @return self
      */
     public function setLinks(?\Pohoda\Type\LinksType $links = null)
     {
         $this->links = $links;
+
         return $this;
     }
 
     /**
-     * Gets as prijemkaHeader
+     * Gets as prijemkaHeader.
      *
      * @return \Pohoda\Prijemka\PrijemkaHeaderType
      */
@@ -119,19 +114,19 @@ class PrijemkaType
     }
 
     /**
-     * Sets a new prijemkaHeader
+     * Sets a new prijemkaHeader.
      *
-     * @param \Pohoda\Prijemka\PrijemkaHeaderType $prijemkaHeader
      * @return self
      */
     public function setPrijemkaHeader(?\Pohoda\Prijemka\PrijemkaHeaderType $prijemkaHeader = null)
     {
         $this->prijemkaHeader = $prijemkaHeader;
+
         return $this;
     }
 
     /**
-     * Gets as prijemkaDetail
+     * Gets as prijemkaDetail.
      *
      * @return \Pohoda\Prijemka\PrijemkaDetailType
      */
@@ -141,19 +136,19 @@ class PrijemkaType
     }
 
     /**
-     * Sets a new prijemkaDetail
+     * Sets a new prijemkaDetail.
      *
-     * @param \Pohoda\Prijemka\PrijemkaDetailType $prijemkaDetail
      * @return self
      */
     public function setPrijemkaDetail(?\Pohoda\Prijemka\PrijemkaDetailType $prijemkaDetail = null)
     {
         $this->prijemkaDetail = $prijemkaDetail;
+
         return $this;
     }
 
     /**
-     * Gets as prijemkaSummary
+     * Gets as prijemkaSummary.
      *
      * @return \Pohoda\Prijemka\PrijemkaSummaryType
      */
@@ -163,19 +158,19 @@ class PrijemkaType
     }
 
     /**
-     * Sets a new prijemkaSummary
+     * Sets a new prijemkaSummary.
      *
-     * @param \Pohoda\Prijemka\PrijemkaSummaryType $prijemkaSummary
      * @return self
      */
     public function setPrijemkaSummary(?\Pohoda\Prijemka\PrijemkaSummaryType $prijemkaSummary = null)
     {
         $this->prijemkaSummary = $prijemkaSummary;
+
         return $this;
     }
 
     /**
-     * Gets as linkedDocuments
+     * Gets as linkedDocuments.
      *
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      *
@@ -187,39 +182,40 @@ class PrijemkaType
     }
 
     /**
-     * Sets a new linkedDocuments
+     * Sets a new linkedDocuments.
      *
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      *
-     * @param \Pohoda\Type\LinksType $linkedDocuments
      * @return self
      */
     public function setLinkedDocuments(?\Pohoda\Type\LinksType $linkedDocuments = null)
     {
         $this->linkedDocuments = $linkedDocuments;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -228,20 +224,19 @@ class PrijemkaType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -253,16 +248,18 @@ class PrijemkaType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
-    public function setPrint(array $print = null)
+    public function setPrint(?array $print = null)
     {
         $this->print = $print;
+
         return $this;
     }
 }

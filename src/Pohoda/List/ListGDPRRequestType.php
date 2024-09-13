@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListGDPRRequestType
- *
+ * Class representing ListGDPRRequestType.
  *
  * XSD Type: listGDPRRequestType
  */
 class ListGDPRRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $gDPRVersion
      */
-    private $gDPRVersion = null;
+    private string $gDPRVersion = null;
 
     /**
-     * @var \Pohoda\List\RequestGDPRType[] $requestGDPR
+     * @var \Pohoda\List\RequestGDPRType[]
      */
-    private $requestGDPR = [
+    private array $requestGDPR = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListGDPRRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as gDPRVersion
+     * Gets as gDPRVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListGDPRRequestType
     }
 
     /**
-     * Sets a new gDPRVersion
+     * Sets a new gDPRVersion.
      *
      * Požadovaná verze.
      *
      * @param string $gDPRVersion
+     *
      * @return self
      */
     public function setGDPRVersion($gDPRVersion)
     {
         $this->gDPRVersion = $gDPRVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestGDPR
+     * Adds as requestGDPR.
      *
      * @return self
-     * @param \Pohoda\List\RequestGDPRType $requestGDPR
      */
     public function addToRequestGDPR(\Pohoda\List\RequestGDPRType $requestGDPR)
     {
         $this->requestGDPR[] = $requestGDPR;
+
         return $this;
     }
 
     /**
-     * isset requestGDPR
+     * isset requestGDPR.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestGDPR($index)
@@ -100,18 +112,17 @@ class ListGDPRRequestType
     }
 
     /**
-     * unset requestGDPR
+     * unset requestGDPR.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestGDPR($index)
+    public function unsetRequestGDPR($index): void
     {
         unset($this->requestGDPR[$index]);
     }
 
     /**
-     * Gets as requestGDPR
+     * Gets as requestGDPR.
      *
      * @return \Pohoda\List\RequestGDPRType[]
      */
@@ -121,14 +132,16 @@ class ListGDPRRequestType
     }
 
     /**
-     * Sets a new requestGDPR
+     * Sets a new requestGDPR.
      *
      * @param \Pohoda\List\RequestGDPRType[] $requestGDPR
+     *
      * @return self
      */
     public function setRequestGDPR(array $requestGDPR)
     {
         $this->requestGDPR = $requestGDPR;
+
         return $this;
     }
 }

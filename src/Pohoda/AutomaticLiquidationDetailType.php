@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda;
 
 /**
- * Class representing AutomaticLiquidationDetailType
- *
+ * Class representing AutomaticLiquidationDetailType.
  *
  * XSD Type: automaticLiquidationDetailType
  */
@@ -12,20 +24,16 @@ class AutomaticLiquidationDetailType
 {
     /**
      * Informace o bankovním dokladu.
-     *
-     * @var \Pohoda\MovementDetailType $movementDetail
      */
-    private $movementDetail = null;
+    private \Pohoda\MovementDetailType $movementDetail = null;
 
     /**
      * Informace o průběhu likvidace.
-     *
-     * @var \Pohoda\LiquidationDetailType $liquidationDetail
      */
-    private $liquidationDetail = null;
+    private \Pohoda\LiquidationDetailType $liquidationDetail = null;
 
     /**
-     * Gets as movementDetail
+     * Gets as movementDetail.
      *
      * Informace o bankovním dokladu.
      *
@@ -37,21 +45,21 @@ class AutomaticLiquidationDetailType
     }
 
     /**
-     * Sets a new movementDetail
+     * Sets a new movementDetail.
      *
      * Informace o bankovním dokladu.
      *
-     * @param \Pohoda\MovementDetailType $movementDetail
      * @return self
      */
     public function setMovementDetail(\Pohoda\MovementDetailType $movementDetail)
     {
         $this->movementDetail = $movementDetail;
+
         return $this;
     }
 
     /**
-     * Gets as liquidationDetail
+     * Gets as liquidationDetail.
      *
      * Informace o průběhu likvidace.
      *
@@ -63,16 +71,16 @@ class AutomaticLiquidationDetailType
     }
 
     /**
-     * Sets a new liquidationDetail
+     * Sets a new liquidationDetail.
      *
      * Informace o průběhu likvidace.
      *
-     * @param \Pohoda\LiquidationDetailType $liquidationDetail
      * @return self
      */
     public function setLiquidationDetail(\Pohoda\LiquidationDetailType $liquidationDetail)
     {
         $this->liquidationDetail = $liquidationDetail;
+
         return $this;
     }
 }

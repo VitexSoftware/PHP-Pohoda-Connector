@@ -1,44 +1,55 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IntDoc;
 
 /**
- * Class representing IntDocDetailType
- *
+ * Class representing IntDocDetailType.
  *
  * XSD Type: intDocDetailType
  */
 class IntDocDetailType
 {
     /**
-     * @var \Pohoda\IntDoc\IntDocItemType[] $intDocItem
+     * @var \Pohoda\IntDoc\IntDocItemType[]
      */
-    private $intDocItem = [
+    private array $intDocItem = [
     ];
 
     /**
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
-     *
-     * @var \Pohoda\Type\RoundingItemType $roundingItem
      */
-    private $roundingItem = null;
+    private \Pohoda\Type\RoundingItemType $roundingItem = null;
 
     /**
-     * Adds as intDocItem
+     * Adds as intDocItem.
      *
      * @return self
-     * @param \Pohoda\IntDoc\IntDocItemType $intDocItem
      */
     public function addToIntDocItem(\Pohoda\IntDoc\IntDocItemType $intDocItem)
     {
         $this->intDocItem[] = $intDocItem;
+
         return $this;
     }
 
     /**
-     * isset intDocItem
+     * isset intDocItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetIntDocItem($index)
@@ -47,18 +58,17 @@ class IntDocDetailType
     }
 
     /**
-     * unset intDocItem
+     * unset intDocItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetIntDocItem($index)
+    public function unsetIntDocItem($index): void
     {
         unset($this->intDocItem[$index]);
     }
 
     /**
-     * Gets as intDocItem
+     * Gets as intDocItem.
      *
      * @return \Pohoda\IntDoc\IntDocItemType[]
      */
@@ -68,19 +78,21 @@ class IntDocDetailType
     }
 
     /**
-     * Sets a new intDocItem
+     * Sets a new intDocItem.
      *
      * @param \Pohoda\IntDoc\IntDocItemType[] $intDocItem
+     *
      * @return self
      */
     public function setIntDocItem(array $intDocItem)
     {
         $this->intDocItem = $intDocItem;
+
         return $this;
     }
 
     /**
-     * Gets as roundingItem
+     * Gets as roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
@@ -92,16 +104,16 @@ class IntDocDetailType
     }
 
     /**
-     * Sets a new roundingItem
+     * Sets a new roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
-     * @param \Pohoda\Type\RoundingItemType $roundingItem
      * @return self
      */
     public function setRoundingItem(?\Pohoda\Type\RoundingItemType $roundingItem = null)
     {
         $this->roundingItem = $roundingItem;
+
         return $this;
     }
 }

@@ -1,51 +1,48 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Documentresponse;
 
 /**
- * Class representing ListVersionType
- *
+ * Class representing ListVersionType.
  *
  * XSD Type: listVersionType
  */
 class ListVersionType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
-
-    /**
-     * @var \DateTime $dateTimeStamp
-     */
-    private $dateTimeStamp = null;
-
-    /**
-     * @var \DateTime $dateValidFrom
-     */
-    private $dateValidFrom = null;
-
-    /**
-     * @var string $state
-     */
-    private $state = null;
+    private string $version = null;
+    private \DateTime $dateTimeStamp = null;
+    private \DateTime $dateValidFrom = null;
+    private string $state = null;
 
     /**
      * Podrobnosti (error/warning) vzniklé při zpracování.
      *
-     * @var \Pohoda\Documentresponse\DetailType[] $importDetails
+     * @var \Pohoda\Documentresponse\DetailType[]
      */
-    private $importDetails = null;
+    private array $importDetails = null;
 
     /**
      * Pokud je počet exportovaných záznamů vyšší než zadaný limit, provede se rozdělení dat do více souborů. V původním souboru je uveden seznam rozdělených souborů.
      *
-     * @var string[] $parts
+     * @var string[]
      */
-    private $parts = null;
+    private array $parts = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -55,19 +52,21 @@ class ListVersionType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as dateTimeStamp
+     * Gets as dateTimeStamp.
      *
      * @return \DateTime
      */
@@ -77,19 +76,19 @@ class ListVersionType
     }
 
     /**
-     * Sets a new dateTimeStamp
+     * Sets a new dateTimeStamp.
      *
-     * @param \DateTime $dateTimeStamp
      * @return self
      */
     public function setDateTimeStamp(\DateTime $dateTimeStamp)
     {
         $this->dateTimeStamp = $dateTimeStamp;
+
         return $this;
     }
 
     /**
-     * Gets as dateValidFrom
+     * Gets as dateValidFrom.
      *
      * @return \DateTime
      */
@@ -99,19 +98,19 @@ class ListVersionType
     }
 
     /**
-     * Sets a new dateValidFrom
+     * Sets a new dateValidFrom.
      *
-     * @param \DateTime $dateValidFrom
      * @return self
      */
     public function setDateValidFrom(\DateTime $dateValidFrom)
     {
         $this->dateValidFrom = $dateValidFrom;
+
         return $this;
     }
 
     /**
-     * Gets as state
+     * Gets as state.
      *
      * @return string
      */
@@ -121,37 +120,40 @@ class ListVersionType
     }
 
     /**
-     * Sets a new state
+     * Sets a new state.
      *
      * @param string $state
+     *
      * @return self
      */
     public function setState($state)
     {
         $this->state = $state;
+
         return $this;
     }
 
     /**
-     * Adds as detail
+     * Adds as detail.
      *
      * Podrobnosti (error/warning) vzniklé při zpracování.
      *
      * @return self
-     * @param \Pohoda\Documentresponse\DetailType $detail
      */
     public function addToImportDetails(\Pohoda\Documentresponse\DetailType $detail)
     {
         $this->importDetails[] = $detail;
+
         return $this;
     }
 
     /**
-     * isset importDetails
+     * isset importDetails.
      *
      * Podrobnosti (error/warning) vzniklé při zpracování.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetImportDetails($index)
@@ -160,20 +162,19 @@ class ListVersionType
     }
 
     /**
-     * unset importDetails
+     * unset importDetails.
      *
      * Podrobnosti (error/warning) vzniklé při zpracování.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetImportDetails($index)
+    public function unsetImportDetails($index): void
     {
         unset($this->importDetails[$index]);
     }
 
     /**
-     * Gets as importDetails
+     * Gets as importDetails.
      *
      * Podrobnosti (error/warning) vzniklé při zpracování.
      *
@@ -185,39 +186,44 @@ class ListVersionType
     }
 
     /**
-     * Sets a new importDetails
+     * Sets a new importDetails.
      *
      * Podrobnosti (error/warning) vzniklé při zpracování.
      *
      * @param \Pohoda\Documentresponse\DetailType[] $importDetails
+     *
      * @return self
      */
-    public function setImportDetails(array $importDetails = null)
+    public function setImportDetails(?array $importDetails = null)
     {
         $this->importDetails = $importDetails;
+
         return $this;
     }
 
     /**
-     * Adds as part
+     * Adds as part.
      *
      * Pokud je počet exportovaných záznamů vyšší než zadaný limit, provede se rozdělení dat do více souborů. V původním souboru je uveden seznam rozdělených souborů.
      *
-     * @return self
      * @param string $part
+     *
+     * @return self
      */
     public function addToParts($part)
     {
         $this->parts[] = $part;
+
         return $this;
     }
 
     /**
-     * isset parts
+     * isset parts.
      *
      * Pokud je počet exportovaných záznamů vyšší než zadaný limit, provede se rozdělení dat do více souborů. V původním souboru je uveden seznam rozdělených souborů.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParts($index)
@@ -226,20 +232,19 @@ class ListVersionType
     }
 
     /**
-     * unset parts
+     * unset parts.
      *
      * Pokud je počet exportovaných záznamů vyšší než zadaný limit, provede se rozdělení dat do více souborů. V původním souboru je uveden seznam rozdělených souborů.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParts($index)
+    public function unsetParts($index): void
     {
         unset($this->parts[$index]);
     }
 
     /**
-     * Gets as parts
+     * Gets as parts.
      *
      * Pokud je počet exportovaných záznamů vyšší než zadaný limit, provede se rozdělení dat do více souborů. V původním souboru je uveden seznam rozdělených souborů.
      *
@@ -251,16 +256,18 @@ class ListVersionType
     }
 
     /**
-     * Sets a new parts
+     * Sets a new parts.
      *
      * Pokud je počet exportovaných záznamů vyšší než zadaný limit, provede se rozdělení dat do více souborů. V původním souboru je uveden seznam rozdělených souborů.
      *
      * @param string[] $parts
+     *
      * @return self
      */
-    public function setParts(array $parts = null)
+    public function setParts(?array $parts = null)
     {
         $this->parts = $parts;
+
         return $this;
     }
 }

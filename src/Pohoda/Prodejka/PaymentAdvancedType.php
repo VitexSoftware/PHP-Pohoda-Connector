@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prodejka;
 
 /**
- * Class representing PaymentAdvancedType
- *
+ * Class representing PaymentAdvancedType.
  *
  * XSD Type: paymentAdvancedType
  */
@@ -12,48 +24,36 @@ class PaymentAdvancedType
 {
     /**
      * Hodnota stravenky.
-     *
-     * @var float $valueFoodVoucher
      */
-    private $valueFoodVoucher = null;
+    private float $valueFoodVoucher = null;
 
     /**
      * Kurs použitý pro výpočet částek v cízí měně.
-     *
-     * @var float $rate
      */
-    private $rate = null;
+    private float $rate = null;
 
     /**
      * Množství cizí měny pro kursový přepočet.
-     *
-     * @var int $amount
      */
-    private $amount = null;
+    private int $amount = null;
 
     /**
      * Uhrazeno přes platební terminál.
-     *
-     * @var string $paymentTerminal
      */
-    private $paymentTerminal = null;
+    private string $paymentTerminal = null;
 
     /**
      * Variabilní symbol.
-     *
-     * @var string $symVar
      */
-    private $symVar = null;
+    private string $symVar = null;
 
     /**
      * Účet.
-     *
-     * @var \Pohoda\Type\AccountType $account
      */
-    private $account = null;
+    private \Pohoda\Type\AccountType $account = null;
 
     /**
-     * Gets as valueFoodVoucher
+     * Gets as valueFoodVoucher.
      *
      * Hodnota stravenky.
      *
@@ -65,21 +65,23 @@ class PaymentAdvancedType
     }
 
     /**
-     * Sets a new valueFoodVoucher
+     * Sets a new valueFoodVoucher.
      *
      * Hodnota stravenky.
      *
      * @param float $valueFoodVoucher
+     *
      * @return self
      */
     public function setValueFoodVoucher($valueFoodVoucher)
     {
         $this->valueFoodVoucher = $valueFoodVoucher;
+
         return $this;
     }
 
     /**
-     * Gets as rate
+     * Gets as rate.
      *
      * Kurs použitý pro výpočet částek v cízí měně.
      *
@@ -91,21 +93,23 @@ class PaymentAdvancedType
     }
 
     /**
-     * Sets a new rate
+     * Sets a new rate.
      *
      * Kurs použitý pro výpočet částek v cízí měně.
      *
      * @param float $rate
+     *
      * @return self
      */
     public function setRate($rate)
     {
         $this->rate = $rate;
+
         return $this;
     }
 
     /**
-     * Gets as amount
+     * Gets as amount.
      *
      * Množství cizí měny pro kursový přepočet.
      *
@@ -117,21 +121,23 @@ class PaymentAdvancedType
     }
 
     /**
-     * Sets a new amount
+     * Sets a new amount.
      *
      * Množství cizí měny pro kursový přepočet.
      *
      * @param int $amount
+     *
      * @return self
      */
     public function setAmount($amount)
     {
         $this->amount = $amount;
+
         return $this;
     }
 
     /**
-     * Gets as paymentTerminal
+     * Gets as paymentTerminal.
      *
      * Uhrazeno přes platební terminál.
      *
@@ -143,21 +149,23 @@ class PaymentAdvancedType
     }
 
     /**
-     * Sets a new paymentTerminal
+     * Sets a new paymentTerminal.
      *
      * Uhrazeno přes platební terminál.
      *
      * @param string $paymentTerminal
+     *
      * @return self
      */
     public function setPaymentTerminal($paymentTerminal)
     {
         $this->paymentTerminal = $paymentTerminal;
+
         return $this;
     }
 
     /**
-     * Gets as symVar
+     * Gets as symVar.
      *
      * Variabilní symbol.
      *
@@ -169,21 +177,23 @@ class PaymentAdvancedType
     }
 
     /**
-     * Sets a new symVar
+     * Sets a new symVar.
      *
      * Variabilní symbol.
      *
      * @param string $symVar
+     *
      * @return self
      */
     public function setSymVar($symVar)
     {
         $this->symVar = $symVar;
+
         return $this;
     }
 
     /**
-     * Gets as account
+     * Gets as account.
      *
      * Účet.
      *
@@ -195,16 +205,16 @@ class PaymentAdvancedType
     }
 
     /**
-     * Sets a new account
+     * Sets a new account.
      *
      * Účet.
      *
-     * @param \Pohoda\Type\AccountType $account
      * @return self
      */
     public function setAccount(?\Pohoda\Type\AccountType $account = null)
     {
         $this->account = $account;
+
         return $this;
     }
 }

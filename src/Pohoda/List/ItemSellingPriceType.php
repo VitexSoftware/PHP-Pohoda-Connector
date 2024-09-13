@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ItemSellingPriceType
- *
+ * Class representing ItemSellingPriceType.
  *
  * XSD Type: itemSellingPriceType
  */
@@ -12,113 +24,83 @@ class ItemSellingPriceType
 {
     /**
      * ID prodejní ceny, na tuto hodnotu se lze odkazovat v seznamu prodejních cen.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Název prodejní ceny.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Popis prodejní ceny.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Platnost slevy resp. vedlejší ceny může být trvalá nebo časově omezená; v tom případě uveďte data platnosti do polí od a do.
      *  Platnost ceny lze také pozastavit, takže se nenabízí při výdeji.
-     *
-     * @var string $discountValidity
      */
-    private $discountValidity = null;
+    private string $discountValidity = null;
 
     /**
      * Počáteční datum platnosti časově omezené prodejní ceny.
-     *
-     * @var \DateTime $dateFrom
      */
-    private $dateFrom = null;
+    private \DateTime $dateFrom = null;
 
     /**
      * Koncové datum platnosti časově omezené prodejní ceny.
-     *
-     * @var \DateTime $dateTill
      */
-    private $dateTill = null;
+    private \DateTime $dateTill = null;
 
     /**
      * Typ ceny.
-     *
-     * @var string $priceType
      */
-    private $priceType = null;
+    private string $priceType = null;
 
     /**
      * Marže %. Uveďte přirážku k nákupní ceně v procentech v případě, že používáte tento způsob výpočtu.
-     *
-     * @var float $margin
      */
-    private $margin = null;
+    private float $margin = null;
 
     /**
      * Rabat %. Uveďte slevu v procentech v případě, že používáte tento způsob výpočtu.
-     *
-     * @var float $rebate
      */
-    private $rebate = null;
+    private float $rebate = null;
 
     /**
      * Sleva v procentech sloužící pro výpočet slevy ze základní prodejní ceny skladové zásoby.
-     *
-     * @var float $discountPercentage
      */
-    private $discountPercentage = null;
+    private float $discountPercentage = null;
 
     /**
      * Typ výpočtu. Způsob výpočtu ceny (s daní / bez daně) s ohledem na DPH.
-     *
-     * @var string $calculation
      */
-    private $calculation = null;
+    private string $calculation = null;
 
     /**
      * Zaokrouhlení. Počet desetinných míst zaokrouhlení (v Kč) při výpočtu ceny.
-     *
-     * @var string $rounding
      */
-    private $rounding = null;
+    private string $rounding = null;
 
     /**
      * Měna.
-     *
-     * @var \Pohoda\Type\RefType $currency
      */
-    private $currency = null;
+    private \Pohoda\Type\RefType $currency = null;
 
     /**
      * Kurs.
-     *
-     * @var float $rate
      */
-    private $rate = null;
+    private float $rate = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID prodejní ceny, na tuto hodnotu se lze odkazovat v seznamu prodejních cen.
      *
@@ -130,21 +112,23 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID prodejní ceny, na tuto hodnotu se lze odkazovat v seznamu prodejních cen.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -157,22 +141,22 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Název prodejní ceny.
      *
@@ -184,21 +168,23 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Název prodejní ceny.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Popis prodejní ceny.
      *
@@ -210,21 +196,23 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Popis prodejní ceny.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as discountValidity
+     * Gets as discountValidity.
      *
      * Platnost slevy resp. vedlejší ceny může být trvalá nebo časově omezená; v tom případě uveďte data platnosti do polí od a do.
      *  Platnost ceny lze také pozastavit, takže se nenabízí při výdeji.
@@ -237,22 +225,24 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new discountValidity
+     * Sets a new discountValidity.
      *
      * Platnost slevy resp. vedlejší ceny může být trvalá nebo časově omezená; v tom případě uveďte data platnosti do polí od a do.
      *  Platnost ceny lze také pozastavit, takže se nenabízí při výdeji.
      *
      * @param string $discountValidity
+     *
      * @return self
      */
     public function setDiscountValidity($discountValidity)
     {
         $this->discountValidity = $discountValidity;
+
         return $this;
     }
 
     /**
-     * Gets as dateFrom
+     * Gets as dateFrom.
      *
      * Počáteční datum platnosti časově omezené prodejní ceny.
      *
@@ -264,21 +254,21 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new dateFrom
+     * Sets a new dateFrom.
      *
      * Počáteční datum platnosti časově omezené prodejní ceny.
      *
-     * @param \DateTime $dateFrom
      * @return self
      */
     public function setDateFrom(?\DateTime $dateFrom = null)
     {
         $this->dateFrom = $dateFrom;
+
         return $this;
     }
 
     /**
-     * Gets as dateTill
+     * Gets as dateTill.
      *
      * Koncové datum platnosti časově omezené prodejní ceny.
      *
@@ -290,21 +280,21 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new dateTill
+     * Sets a new dateTill.
      *
      * Koncové datum platnosti časově omezené prodejní ceny.
      *
-     * @param \DateTime $dateTill
      * @return self
      */
     public function setDateTill(?\DateTime $dateTill = null)
     {
         $this->dateTill = $dateTill;
+
         return $this;
     }
 
     /**
-     * Gets as priceType
+     * Gets as priceType.
      *
      * Typ ceny.
      *
@@ -316,21 +306,23 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new priceType
+     * Sets a new priceType.
      *
      * Typ ceny.
      *
      * @param string $priceType
+     *
      * @return self
      */
     public function setPriceType($priceType)
     {
         $this->priceType = $priceType;
+
         return $this;
     }
 
     /**
-     * Gets as margin
+     * Gets as margin.
      *
      * Marže %. Uveďte přirážku k nákupní ceně v procentech v případě, že používáte tento způsob výpočtu.
      *
@@ -342,21 +334,23 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new margin
+     * Sets a new margin.
      *
      * Marže %. Uveďte přirážku k nákupní ceně v procentech v případě, že používáte tento způsob výpočtu.
      *
      * @param float $margin
+     *
      * @return self
      */
     public function setMargin($margin)
     {
         $this->margin = $margin;
+
         return $this;
     }
 
     /**
-     * Gets as rebate
+     * Gets as rebate.
      *
      * Rabat %. Uveďte slevu v procentech v případě, že používáte tento způsob výpočtu.
      *
@@ -368,21 +362,23 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new rebate
+     * Sets a new rebate.
      *
      * Rabat %. Uveďte slevu v procentech v případě, že používáte tento způsob výpočtu.
      *
      * @param float $rebate
+     *
      * @return self
      */
     public function setRebate($rebate)
     {
         $this->rebate = $rebate;
+
         return $this;
     }
 
     /**
-     * Gets as discountPercentage
+     * Gets as discountPercentage.
      *
      * Sleva v procentech sloužící pro výpočet slevy ze základní prodejní ceny skladové zásoby.
      *
@@ -394,21 +390,23 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new discountPercentage
+     * Sets a new discountPercentage.
      *
      * Sleva v procentech sloužící pro výpočet slevy ze základní prodejní ceny skladové zásoby.
      *
      * @param float $discountPercentage
+     *
      * @return self
      */
     public function setDiscountPercentage($discountPercentage)
     {
         $this->discountPercentage = $discountPercentage;
+
         return $this;
     }
 
     /**
-     * Gets as calculation
+     * Gets as calculation.
      *
      * Typ výpočtu. Způsob výpočtu ceny (s daní / bez daně) s ohledem na DPH.
      *
@@ -420,21 +418,23 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new calculation
+     * Sets a new calculation.
      *
      * Typ výpočtu. Způsob výpočtu ceny (s daní / bez daně) s ohledem na DPH.
      *
      * @param string $calculation
+     *
      * @return self
      */
     public function setCalculation($calculation)
     {
         $this->calculation = $calculation;
+
         return $this;
     }
 
     /**
-     * Gets as rounding
+     * Gets as rounding.
      *
      * Zaokrouhlení. Počet desetinných míst zaokrouhlení (v Kč) při výpočtu ceny.
      *
@@ -446,21 +446,23 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new rounding
+     * Sets a new rounding.
      *
      * Zaokrouhlení. Počet desetinných míst zaokrouhlení (v Kč) při výpočtu ceny.
      *
      * @param string $rounding
+     *
      * @return self
      */
     public function setRounding($rounding)
     {
         $this->rounding = $rounding;
+
         return $this;
     }
 
     /**
-     * Gets as currency
+     * Gets as currency.
      *
      * Měna.
      *
@@ -472,21 +474,21 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new currency
+     * Sets a new currency.
      *
      * Měna.
      *
-     * @param \Pohoda\Type\RefType $currency
      * @return self
      */
     public function setCurrency(?\Pohoda\Type\RefType $currency = null)
     {
         $this->currency = $currency;
+
         return $this;
     }
 
     /**
-     * Gets as rate
+     * Gets as rate.
      *
      * Kurs.
      *
@@ -498,16 +500,18 @@ class ItemSellingPriceType
     }
 
     /**
-     * Sets a new rate
+     * Sets a new rate.
      *
      * Kurs.
      *
      * @param float $rate
+     *
      * @return self
      */
     public function setRate($rate)
     {
         $this->rate = $rate;
+
         return $this;
     }
 }

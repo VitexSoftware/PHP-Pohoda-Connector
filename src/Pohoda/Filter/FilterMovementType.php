@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing FilterMovementType
- *
+ * Class representing FilterMovementType.
  *
  * XSD Type: filterMovementType
  */
@@ -12,41 +24,31 @@ class FilterMovementType
 {
     /**
      * Filtr podle ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Filtr podle skladové zásoby.
-     *
-     * @var \Pohoda\Type\StockItemMovementType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemMovementType $stockItem = null;
 
     /**
      * Datum od.
-     *
-     * @var \DateTime $dateFrom
      */
-    private $dateFrom = null;
+    private \DateTime $dateFrom = null;
 
     /**
      * Datum do.
-     *
-     * @var \DateTime $dateTill
      */
-    private $dateTill = null;
+    private \DateTime $dateTill = null;
 
     /**
      * Typ agendy.
-     *
-     * @var string $agenda
      */
-    private $agenda = null;
+    private string $agenda = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Filtr podle ID záznamu.
      *
@@ -58,21 +60,23 @@ class FilterMovementType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Filtr podle ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Filtr podle skladové zásoby.
      *
@@ -84,21 +88,21 @@ class FilterMovementType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Filtr podle skladové zásoby.
      *
-     * @param \Pohoda\Type\StockItemMovementType $stockItem
      * @return self
      */
     public function setStockItem(?\Pohoda\Type\StockItemMovementType $stockItem = null)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as dateFrom
+     * Gets as dateFrom.
      *
      * Datum od.
      *
@@ -110,21 +114,21 @@ class FilterMovementType
     }
 
     /**
-     * Sets a new dateFrom
+     * Sets a new dateFrom.
      *
      * Datum od.
      *
-     * @param \DateTime $dateFrom
      * @return self
      */
     public function setDateFrom(?\DateTime $dateFrom = null)
     {
         $this->dateFrom = $dateFrom;
+
         return $this;
     }
 
     /**
-     * Gets as dateTill
+     * Gets as dateTill.
      *
      * Datum do.
      *
@@ -136,21 +140,21 @@ class FilterMovementType
     }
 
     /**
-     * Sets a new dateTill
+     * Sets a new dateTill.
      *
      * Datum do.
      *
-     * @param \DateTime $dateTill
      * @return self
      */
     public function setDateTill(?\DateTime $dateTill = null)
     {
         $this->dateTill = $dateTill;
+
         return $this;
     }
 
     /**
-     * Gets as agenda
+     * Gets as agenda.
      *
      * Typ agendy.
      *
@@ -162,16 +166,18 @@ class FilterMovementType
     }
 
     /**
-     * Sets a new agenda
+     * Sets a new agenda.
      *
      * Typ agendy.
      *
      * @param string $agenda
+     *
      * @return self
      */
     public function setAgenda($agenda)
     {
         $this->agenda = $agenda;
+
         return $this;
     }
 }

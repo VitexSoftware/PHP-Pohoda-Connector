@@ -1,34 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListBankRequestType
- *
+ * Class representing ListBankRequestType.
  *
  * XSD Type: listBankRequestType
  */
 class ListBankRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze banky.
-     *
-     * @var string $bankVersion
      */
-    private $bankVersion = null;
+    private string $bankVersion = null;
+    private \Pohoda\Filter\RequestBankType $requestBank = null;
 
     /**
-     * @var \Pohoda\Filter\RequestBankType $requestBank
-     */
-    private $requestBank = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -38,19 +41,21 @@ class ListBankRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as bankVersion
+     * Gets as bankVersion.
      *
      * Požadovaná verze banky.
      *
@@ -62,21 +67,23 @@ class ListBankRequestType
     }
 
     /**
-     * Sets a new bankVersion
+     * Sets a new bankVersion.
      *
      * Požadovaná verze banky.
      *
      * @param string $bankVersion
+     *
      * @return self
      */
     public function setBankVersion($bankVersion)
     {
         $this->bankVersion = $bankVersion;
+
         return $this;
     }
 
     /**
-     * Gets as requestBank
+     * Gets as requestBank.
      *
      * @return \Pohoda\Filter\RequestBankType
      */
@@ -86,14 +93,14 @@ class ListBankRequestType
     }
 
     /**
-     * Sets a new requestBank
+     * Sets a new requestBank.
      *
-     * @param \Pohoda\Filter\RequestBankType $requestBank
      * @return self
      */
     public function setRequestBank(?\Pohoda\Filter\RequestBankType $requestBank = null)
     {
         $this->requestBank = $requestBank;
+
         return $this;
     }
 }

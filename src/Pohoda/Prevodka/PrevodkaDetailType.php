@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prevodka;
 
 /**
- * Class representing PrevodkaDetailType
- *
+ * Class representing PrevodkaDetailType.
  *
  * XSD Type: prevodkaDetailType
  */
 class PrevodkaDetailType
 {
     /**
-     * @var \Pohoda\Prevodka\PrevodkaItemType[] $prevodkaItem
+     * @var \Pohoda\Prevodka\PrevodkaItemType[]
      */
-    private $prevodkaItem = [
+    private array $prevodkaItem = [
     ];
 
     /**
-     * Adds as prevodkaItem
+     * Adds as prevodkaItem.
      *
      * @return self
-     * @param \Pohoda\Prevodka\PrevodkaItemType $prevodkaItem
      */
     public function addToPrevodkaItem(\Pohoda\Prevodka\PrevodkaItemType $prevodkaItem)
     {
         $this->prevodkaItem[] = $prevodkaItem;
+
         return $this;
     }
 
     /**
-     * isset prevodkaItem
+     * isset prevodkaItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrevodkaItem($index)
@@ -40,18 +53,17 @@ class PrevodkaDetailType
     }
 
     /**
-     * unset prevodkaItem
+     * unset prevodkaItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrevodkaItem($index)
+    public function unsetPrevodkaItem($index): void
     {
         unset($this->prevodkaItem[$index]);
     }
 
     /**
-     * Gets as prevodkaItem
+     * Gets as prevodkaItem.
      *
      * @return \Pohoda\Prevodka\PrevodkaItemType[]
      */
@@ -61,14 +73,16 @@ class PrevodkaDetailType
     }
 
     /**
-     * Sets a new prevodkaItem
+     * Sets a new prevodkaItem.
      *
      * @param \Pohoda\Prevodka\PrevodkaItemType[] $prevodkaItem
+     *
      * @return self
      */
     public function setPrevodkaItem(array $prevodkaItem)
     {
         $this->prevodkaItem = $prevodkaItem;
+
         return $this;
     }
 }

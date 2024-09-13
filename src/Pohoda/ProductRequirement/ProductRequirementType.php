@@ -1,39 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ProductRequirement;
 
 /**
- * Class representing ProductRequirementType
- *
+ * Class representing ProductRequirementType.
  *
  * XSD Type: productRequirementType
  */
 class ProductRequirementType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \Pohoda\ProductRequirement\ProductRequirementHeaderType $productRequirementHeader = null;
 
     /**
-     * @var \Pohoda\ProductRequirement\ProductRequirementHeaderType $productRequirementHeader
+     * @var \Pohoda\ProductRequirement\ProductRequirementItemType[]
      */
-    private $productRequirementHeader = null;
-
-    /**
-     * @var \Pohoda\ProductRequirement\ProductRequirementItemType[] $productRequirementDetail
-     */
-    private $productRequirementDetail = null;
+    private array $productRequirementDetail = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -43,19 +48,21 @@ class ProductRequirementType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as productRequirementHeader
+     * Gets as productRequirementHeader.
      *
      * @return \Pohoda\ProductRequirement\ProductRequirementHeaderType
      */
@@ -65,33 +72,34 @@ class ProductRequirementType
     }
 
     /**
-     * Sets a new productRequirementHeader
+     * Sets a new productRequirementHeader.
      *
-     * @param \Pohoda\ProductRequirement\ProductRequirementHeaderType $productRequirementHeader
      * @return self
      */
     public function setProductRequirementHeader(?\Pohoda\ProductRequirement\ProductRequirementHeaderType $productRequirementHeader = null)
     {
         $this->productRequirementHeader = $productRequirementHeader;
+
         return $this;
     }
 
     /**
-     * Adds as productRequirementItem
+     * Adds as productRequirementItem.
      *
      * @return self
-     * @param \Pohoda\ProductRequirement\ProductRequirementItemType $productRequirementItem
      */
     public function addToProductRequirementDetail(\Pohoda\ProductRequirement\ProductRequirementItemType $productRequirementItem)
     {
         $this->productRequirementDetail[] = $productRequirementItem;
+
         return $this;
     }
 
     /**
-     * isset productRequirementDetail
+     * isset productRequirementDetail.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetProductRequirementDetail($index)
@@ -100,18 +108,17 @@ class ProductRequirementType
     }
 
     /**
-     * unset productRequirementDetail
+     * unset productRequirementDetail.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetProductRequirementDetail($index)
+    public function unsetProductRequirementDetail($index): void
     {
         unset($this->productRequirementDetail[$index]);
     }
 
     /**
-     * Gets as productRequirementDetail
+     * Gets as productRequirementDetail.
      *
      * @return \Pohoda\ProductRequirement\ProductRequirementItemType[]
      */
@@ -121,37 +128,40 @@ class ProductRequirementType
     }
 
     /**
-     * Sets a new productRequirementDetail
+     * Sets a new productRequirementDetail.
      *
      * @param \Pohoda\ProductRequirement\ProductRequirementItemType[] $productRequirementDetail
+     *
      * @return self
      */
-    public function setProductRequirementDetail(array $productRequirementDetail = null)
+    public function setProductRequirementDetail(?array $productRequirementDetail = null)
     {
         $this->productRequirementDetail = $productRequirementDetail;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -160,20 +170,19 @@ class ProductRequirementType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -185,16 +194,18 @@ class ProductRequirementType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
-    public function setPrint(array $print = null)
+    public function setPrint(?array $print = null)
     {
         $this->print = $print;
+
         return $this;
     }
 }

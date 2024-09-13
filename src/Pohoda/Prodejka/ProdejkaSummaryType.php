@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prodejka;
 
 /**
- * Class representing ProdejkaSummaryType
- *
+ * Class representing ProdejkaSummaryType.
  *
  * XSD Type: prodejkaSummaryType
  */
@@ -12,41 +24,31 @@ class ProdejkaSummaryType
 {
     /**
      * Zaokrouhlení celkové částky dokladu.
-     *
-     * @var string $roundingDocument
      */
-    private $roundingDocument = null;
+    private string $roundingDocument = null;
 
     /**
      * Zaokrouhlení DPH.
-     *
-     * @var string $roundingVAT
      */
-    private $roundingVAT = null;
+    private string $roundingVAT = null;
 
     /**
      * Vypočíst DPH ze zaokrouhlení.
-     *
-     * @var bool $calculateVAT
      */
-    private $calculateVAT = null;
+    private bool $calculateVAT = null;
 
     /**
-     * Způsob výpočtu hodnoty DPH z částky včetně daně dle § 37. Pokud není element uveden, použije se způsob výpočtu dle data vystavení dokladu. (pouze CZ verze)
-     *
-     * @var string $typeCalculateVATInclusivePrice
+     * Způsob výpočtu hodnoty DPH z částky včetně daně dle § 37. Pokud není element uveden, použije se způsob výpočtu dle data vystavení dokladu. (pouze CZ verze).
      */
-    private $typeCalculateVATInclusivePrice = null;
+    private string $typeCalculateVATInclusivePrice = null;
 
     /**
      * Kč.
-     *
-     * @var \Pohoda\Type\TypeCurrencyHomeType $homeCurrency
      */
-    private $homeCurrency = null;
+    private \Pohoda\Type\TypeCurrencyHomeType $homeCurrency = null;
 
     /**
-     * Gets as roundingDocument
+     * Gets as roundingDocument.
      *
      * Zaokrouhlení celkové částky dokladu.
      *
@@ -58,21 +60,23 @@ class ProdejkaSummaryType
     }
 
     /**
-     * Sets a new roundingDocument
+     * Sets a new roundingDocument.
      *
      * Zaokrouhlení celkové částky dokladu.
      *
      * @param string $roundingDocument
+     *
      * @return self
      */
     public function setRoundingDocument($roundingDocument)
     {
         $this->roundingDocument = $roundingDocument;
+
         return $this;
     }
 
     /**
-     * Gets as roundingVAT
+     * Gets as roundingVAT.
      *
      * Zaokrouhlení DPH.
      *
@@ -84,21 +88,23 @@ class ProdejkaSummaryType
     }
 
     /**
-     * Sets a new roundingVAT
+     * Sets a new roundingVAT.
      *
      * Zaokrouhlení DPH.
      *
      * @param string $roundingVAT
+     *
      * @return self
      */
     public function setRoundingVAT($roundingVAT)
     {
         $this->roundingVAT = $roundingVAT;
+
         return $this;
     }
 
     /**
-     * Gets as calculateVAT
+     * Gets as calculateVAT.
      *
      * Vypočíst DPH ze zaokrouhlení.
      *
@@ -110,21 +116,23 @@ class ProdejkaSummaryType
     }
 
     /**
-     * Sets a new calculateVAT
+     * Sets a new calculateVAT.
      *
      * Vypočíst DPH ze zaokrouhlení.
      *
      * @param bool $calculateVAT
+     *
      * @return self
      */
     public function setCalculateVAT($calculateVAT)
     {
         $this->calculateVAT = $calculateVAT;
+
         return $this;
     }
 
     /**
-     * Gets as typeCalculateVATInclusivePrice
+     * Gets as typeCalculateVATInclusivePrice.
      *
      * Způsob výpočtu hodnoty DPH z částky včetně daně dle § 37. Pokud není element uveden, použije se způsob výpočtu dle data vystavení dokladu. (pouze CZ verze)
      *
@@ -136,21 +144,23 @@ class ProdejkaSummaryType
     }
 
     /**
-     * Sets a new typeCalculateVATInclusivePrice
+     * Sets a new typeCalculateVATInclusivePrice.
      *
      * Způsob výpočtu hodnoty DPH z částky včetně daně dle § 37. Pokud není element uveden, použije se způsob výpočtu dle data vystavení dokladu. (pouze CZ verze)
      *
      * @param string $typeCalculateVATInclusivePrice
+     *
      * @return self
      */
     public function setTypeCalculateVATInclusivePrice($typeCalculateVATInclusivePrice)
     {
         $this->typeCalculateVATInclusivePrice = $typeCalculateVATInclusivePrice;
+
         return $this;
     }
 
     /**
-     * Gets as homeCurrency
+     * Gets as homeCurrency.
      *
      * Kč.
      *
@@ -162,16 +172,16 @@ class ProdejkaSummaryType
     }
 
     /**
-     * Sets a new homeCurrency
+     * Sets a new homeCurrency.
      *
      * Kč.
      *
-     * @param \Pohoda\Type\TypeCurrencyHomeType $homeCurrency
      * @return self
      */
     public function setHomeCurrency(?\Pohoda\Type\TypeCurrencyHomeType $homeCurrency = null)
     {
         $this->homeCurrency = $homeCurrency;
+
         return $this;
     }
 }

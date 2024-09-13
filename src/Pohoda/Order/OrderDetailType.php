@@ -1,44 +1,55 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Order;
 
 /**
- * Class representing OrderDetailType
- *
+ * Class representing OrderDetailType.
  *
  * XSD Type: orderDetailType
  */
 class OrderDetailType
 {
     /**
-     * @var \Pohoda\Order\OrderItemType[] $orderItem
+     * @var \Pohoda\Order\OrderItemType[]
      */
-    private $orderItem = [
+    private array $orderItem = [
     ];
 
     /**
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
-     *
-     * @var \Pohoda\Type\RoundingItemType $roundingItem
      */
-    private $roundingItem = null;
+    private \Pohoda\Type\RoundingItemType $roundingItem = null;
 
     /**
-     * Adds as orderItem
+     * Adds as orderItem.
      *
      * @return self
-     * @param \Pohoda\Order\OrderItemType $orderItem
      */
     public function addToOrderItem(\Pohoda\Order\OrderItemType $orderItem)
     {
         $this->orderItem[] = $orderItem;
+
         return $this;
     }
 
     /**
-     * isset orderItem
+     * isset orderItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetOrderItem($index)
@@ -47,18 +58,17 @@ class OrderDetailType
     }
 
     /**
-     * unset orderItem
+     * unset orderItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetOrderItem($index)
+    public function unsetOrderItem($index): void
     {
         unset($this->orderItem[$index]);
     }
 
     /**
-     * Gets as orderItem
+     * Gets as orderItem.
      *
      * @return \Pohoda\Order\OrderItemType[]
      */
@@ -68,19 +78,21 @@ class OrderDetailType
     }
 
     /**
-     * Sets a new orderItem
+     * Sets a new orderItem.
      *
      * @param \Pohoda\Order\OrderItemType[] $orderItem
+     *
      * @return self
      */
     public function setOrderItem(array $orderItem)
     {
         $this->orderItem = $orderItem;
+
         return $this;
     }
 
     /**
-     * Gets as roundingItem
+     * Gets as roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
@@ -92,16 +104,16 @@ class OrderDetailType
     }
 
     /**
-     * Sets a new roundingItem
+     * Sets a new roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
-     * @param \Pohoda\Type\RoundingItemType $roundingItem
      * @return self
      */
     public function setRoundingItem(?\Pohoda\Type\RoundingItemType $roundingItem = null)
     {
         $this->roundingItem = $roundingItem;
+
         return $this;
     }
 }

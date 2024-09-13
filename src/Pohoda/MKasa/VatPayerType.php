@@ -1,32 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\MKasa;
 
 /**
- * Class representing VatPayerType
- *
+ * Class representing VatPayerType.
  *
  * XSD Type: vatPayerType
  */
 class VatPayerType
 {
-    /**
-     * @var \Pohoda\MKasa\VatPayerWholePeriodType $vatPayerWholePeriod
-     */
-    private $vatPayerWholePeriod = null;
+    private \Pohoda\MKasa\VatPayerWholePeriodType $vatPayerWholePeriod = null;
+    private \Pohoda\MKasa\NonVatPayerWholePeriodType $nonVatPayerWholePeriod = null;
+    private \Pohoda\MKasa\ChangeOfModeInCalendarYearType $changeOfModeInCalendarYear = null;
 
     /**
-     * @var \Pohoda\MKasa\NonVatPayerWholePeriodType $nonVatPayerWholePeriod
-     */
-    private $nonVatPayerWholePeriod = null;
-
-    /**
-     * @var \Pohoda\MKasa\ChangeOfModeInCalendarYearType $changeOfModeInCalendarYear
-     */
-    private $changeOfModeInCalendarYear = null;
-
-    /**
-     * Gets as vatPayerWholePeriod
+     * Gets as vatPayerWholePeriod.
      *
      * @return \Pohoda\MKasa\VatPayerWholePeriodType
      */
@@ -36,19 +37,19 @@ class VatPayerType
     }
 
     /**
-     * Sets a new vatPayerWholePeriod
+     * Sets a new vatPayerWholePeriod.
      *
-     * @param \Pohoda\MKasa\VatPayerWholePeriodType $vatPayerWholePeriod
      * @return self
      */
     public function setVatPayerWholePeriod(?\Pohoda\MKasa\VatPayerWholePeriodType $vatPayerWholePeriod = null)
     {
         $this->vatPayerWholePeriod = $vatPayerWholePeriod;
+
         return $this;
     }
 
     /**
-     * Gets as nonVatPayerWholePeriod
+     * Gets as nonVatPayerWholePeriod.
      *
      * @return \Pohoda\MKasa\NonVatPayerWholePeriodType
      */
@@ -58,19 +59,19 @@ class VatPayerType
     }
 
     /**
-     * Sets a new nonVatPayerWholePeriod
+     * Sets a new nonVatPayerWholePeriod.
      *
-     * @param \Pohoda\MKasa\NonVatPayerWholePeriodType $nonVatPayerWholePeriod
      * @return self
      */
     public function setNonVatPayerWholePeriod(?\Pohoda\MKasa\NonVatPayerWholePeriodType $nonVatPayerWholePeriod = null)
     {
         $this->nonVatPayerWholePeriod = $nonVatPayerWholePeriod;
+
         return $this;
     }
 
     /**
-     * Gets as changeOfModeInCalendarYear
+     * Gets as changeOfModeInCalendarYear.
      *
      * @return \Pohoda\MKasa\ChangeOfModeInCalendarYearType
      */
@@ -80,14 +81,14 @@ class VatPayerType
     }
 
     /**
-     * Sets a new changeOfModeInCalendarYear
+     * Sets a new changeOfModeInCalendarYear.
      *
-     * @param \Pohoda\MKasa\ChangeOfModeInCalendarYearType $changeOfModeInCalendarYear
      * @return self
      */
     public function setChangeOfModeInCalendarYear(?\Pohoda\MKasa\ChangeOfModeInCalendarYearType $changeOfModeInCalendarYear = null)
     {
         $this->changeOfModeInCalendarYear = $changeOfModeInCalendarYear;
+
         return $this;
     }
 }

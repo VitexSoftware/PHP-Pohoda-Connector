@@ -1,29 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\MKasa;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing MKasaResponseType
- *
+ * Class representing MKasaResponseType.
  *
  * XSD Type: mKasaResponseType
  */
 class MKasaResponseType extends ListVersionType
 {
-    /**
-     * @var \Pohoda\MKasa\ConfigurationType $configuration
-     */
-    private $configuration = null;
+    private \Pohoda\MKasa\ConfigurationType $configuration = null;
+    private \Pohoda\MKasa\ImportResponseType $importResponse = null;
 
     /**
-     * @var \Pohoda\MKasa\ImportResponseType $importResponse
-     */
-    private $importResponse = null;
-
-    /**
-     * Gets as configuration
+     * Gets as configuration.
      *
      * @return \Pohoda\MKasa\ConfigurationType
      */
@@ -33,19 +38,19 @@ class MKasaResponseType extends ListVersionType
     }
 
     /**
-     * Sets a new configuration
+     * Sets a new configuration.
      *
-     * @param \Pohoda\MKasa\ConfigurationType $configuration
      * @return self
      */
     public function setConfiguration(?\Pohoda\MKasa\ConfigurationType $configuration = null)
     {
         $this->configuration = $configuration;
+
         return $this;
     }
 
     /**
-     * Gets as importResponse
+     * Gets as importResponse.
      *
      * @return \Pohoda\MKasa\ImportResponseType
      */
@@ -55,14 +60,14 @@ class MKasaResponseType extends ListVersionType
     }
 
     /**
-     * Sets a new importResponse
+     * Sets a new importResponse.
      *
-     * @param \Pohoda\MKasa\ImportResponseType $importResponse
      * @return self
      */
     public function setImportResponse(?\Pohoda\MKasa\ImportResponseType $importResponse = null)
     {
         $this->importResponse = $importResponse;
+
         return $this;
     }
 }

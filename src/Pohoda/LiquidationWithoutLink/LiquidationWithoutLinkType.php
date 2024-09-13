@@ -1,58 +1,57 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\LiquidationWithoutLink;
 
 /**
- * Class representing LiquidationWithoutLinkType
- *
+ * Class representing LiquidationWithoutLinkType.
  *
  * XSD Type: liquidationWithoutLinkType
  */
 class LiquidationWithoutLinkType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Výběr záznamu.
-     *
-     * @var \Pohoda\LiquidationWithoutLink\RecordliquidationWithoutLinkType $record
      */
-    private $record = null;
+    private \Pohoda\LiquidationWithoutLink\RecordliquidationWithoutLinkType $record = null;
 
     /**
-     * Datum Likvidace. Pokud není hodnota zadaná, použije se aktuální datum
-     *
-     * @var \DateTime $date
+     * Datum Likvidace. Pokud není hodnota zadaná, použije se aktuální datum.
      */
-    private $date = null;
+    private \DateTime $date = null;
 
     /**
-     * Částka likvidace v tuzemské měně
-     *
-     * @var float $amountHome
+     * Částka likvidace v tuzemské měně.
      */
-    private $amountHome = null;
+    private float $amountHome = null;
 
     /**
-     * Částka likvidace v cizí měně
-     *
-     * @var float $amountForeign
+     * Částka likvidace v cizí měně.
      */
-    private $amountForeign = null;
+    private float $amountForeign = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -62,19 +61,21 @@ class LiquidationWithoutLinkType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -87,22 +88,22 @@ class LiquidationWithoutLinkType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as record
+     * Gets as record.
      *
      * Výběr záznamu.
      *
@@ -114,21 +115,21 @@ class LiquidationWithoutLinkType
     }
 
     /**
-     * Sets a new record
+     * Sets a new record.
      *
      * Výběr záznamu.
      *
-     * @param \Pohoda\LiquidationWithoutLink\RecordliquidationWithoutLinkType $record
      * @return self
      */
     public function setRecord(\Pohoda\LiquidationWithoutLink\RecordliquidationWithoutLinkType $record)
     {
         $this->record = $record;
+
         return $this;
     }
 
     /**
-     * Gets as date
+     * Gets as date.
      *
      * Datum Likvidace. Pokud není hodnota zadaná, použije se aktuální datum
      *
@@ -140,21 +141,21 @@ class LiquidationWithoutLinkType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
      * Datum Likvidace. Pokud není hodnota zadaná, použije se aktuální datum
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(?\DateTime $date = null)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as amountHome
+     * Gets as amountHome.
      *
      * Částka likvidace v tuzemské měně
      *
@@ -166,21 +167,23 @@ class LiquidationWithoutLinkType
     }
 
     /**
-     * Sets a new amountHome
+     * Sets a new amountHome.
      *
      * Částka likvidace v tuzemské měně
      *
      * @param float $amountHome
+     *
      * @return self
      */
     public function setAmountHome($amountHome)
     {
         $this->amountHome = $amountHome;
+
         return $this;
     }
 
     /**
-     * Gets as amountForeign
+     * Gets as amountForeign.
      *
      * Částka likvidace v cizí měně
      *
@@ -192,16 +195,18 @@ class LiquidationWithoutLinkType
     }
 
     /**
-     * Sets a new amountForeign
+     * Sets a new amountForeign.
      *
      * Částka likvidace v cizí měně
      *
      * @param float $amountForeign
+     *
      * @return self
      */
     public function setAmountForeign($amountForeign)
     {
         $this->amountForeign = $amountForeign;
+
         return $this;
     }
 }

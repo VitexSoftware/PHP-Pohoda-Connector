@@ -1,36 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IndividualPrice;
 
 /**
- * Class representing IndividualPriceType
- *
+ * Class representing IndividualPriceType.
  *
  * XSD Type: individualPriceType
  */
 class IndividualPriceType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Identifikace partnera.
-     *
-     * @var \Pohoda\IndividualPrice\AddressType $partnerIdentity
      */
-    private $partnerIdentity = null;
+    private \Pohoda\IndividualPrice\AddressType $partnerIdentity = null;
 
     /**
      * Individuální ceny partnera.
-     *
-     * @var \Pohoda\IndividualPrice\SetPricesType $setPrices
      */
-    private $setPrices = null;
+    private \Pohoda\IndividualPrice\SetPricesType $setPrices = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -40,19 +45,21 @@ class IndividualPriceType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as partnerIdentity
+     * Gets as partnerIdentity.
      *
      * Identifikace partnera.
      *
@@ -64,21 +71,21 @@ class IndividualPriceType
     }
 
     /**
-     * Sets a new partnerIdentity
+     * Sets a new partnerIdentity.
      *
      * Identifikace partnera.
      *
-     * @param \Pohoda\IndividualPrice\AddressType $partnerIdentity
      * @return self
      */
     public function setPartnerIdentity(\Pohoda\IndividualPrice\AddressType $partnerIdentity)
     {
         $this->partnerIdentity = $partnerIdentity;
+
         return $this;
     }
 
     /**
-     * Gets as setPrices
+     * Gets as setPrices.
      *
      * Individuální ceny partnera.
      *
@@ -90,16 +97,16 @@ class IndividualPriceType
     }
 
     /**
-     * Sets a new setPrices
+     * Sets a new setPrices.
      *
      * Individuální ceny partnera.
      *
-     * @param \Pohoda\IndividualPrice\SetPricesType $setPrices
      * @return self
      */
     public function setSetPrices(\Pohoda\IndividualPrice\SetPricesType $setPrices)
     {
         $this->setPrices = $setPrices;
+
         return $this;
     }
 }

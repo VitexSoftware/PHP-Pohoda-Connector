@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ActionPrice;
 
 /**
- * Class representing ActionPriceGroupsType
+ * Class representing ActionPriceGroupsType.
  *
  * Skupiny Odběratelů Akční ceny zásob.
  * XSD Type: actionPriceGroupsType
@@ -11,27 +24,28 @@ namespace Pohoda\ActionPrice;
 class ActionPriceGroupsType
 {
     /**
-     * @var \Pohoda\ActionPrice\GroupType[] $group
+     * @var \Pohoda\ActionPrice\GroupType[]
      */
-    private $group = [
+    private array $group = [
     ];
 
     /**
-     * Adds as group
+     * Adds as group.
      *
      * @return self
-     * @param \Pohoda\ActionPrice\GroupType $group
      */
     public function addToGroup(\Pohoda\ActionPrice\GroupType $group)
     {
         $this->group[] = $group;
+
         return $this;
     }
 
     /**
-     * isset group
+     * isset group.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetGroup($index)
@@ -40,18 +54,17 @@ class ActionPriceGroupsType
     }
 
     /**
-     * unset group
+     * unset group.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetGroup($index)
+    public function unsetGroup($index): void
     {
         unset($this->group[$index]);
     }
 
     /**
-     * Gets as group
+     * Gets as group.
      *
      * @return \Pohoda\ActionPrice\GroupType[]
      */
@@ -61,14 +74,16 @@ class ActionPriceGroupsType
     }
 
     /**
-     * Sets a new group
+     * Sets a new group.
      *
      * @param \Pohoda\ActionPrice\GroupType[] $group
+     *
      * @return self
      */
     public function setGroup(array $group)
     {
         $this->group = $group;
+
         return $this;
     }
 }

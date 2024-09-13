@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListRecyclingContribRequestType
- *
+ * Class representing ListRecyclingContribRequestType.
  *
  * XSD Type: listRecyclingContribRequestType
  */
 class ListRecyclingContribRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $recyclingContribVersion
      */
-    private $recyclingContribVersion = null;
+    private string $recyclingContribVersion = null;
 
     /**
-     * @var \Pohoda\Filter\RequestRecyclingContribType[] $requestRecyclingContrib
+     * @var \Pohoda\Filter\RequestRecyclingContribType[]
      */
-    private $requestRecyclingContrib = [
+    private array $requestRecyclingContrib = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListRecyclingContribRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as recyclingContribVersion
+     * Gets as recyclingContribVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListRecyclingContribRequestType
     }
 
     /**
-     * Sets a new recyclingContribVersion
+     * Sets a new recyclingContribVersion.
      *
      * Požadovaná verze.
      *
      * @param string $recyclingContribVersion
+     *
      * @return self
      */
     public function setRecyclingContribVersion($recyclingContribVersion)
     {
         $this->recyclingContribVersion = $recyclingContribVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestRecyclingContrib
+     * Adds as requestRecyclingContrib.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestRecyclingContribType $requestRecyclingContrib
      */
     public function addToRequestRecyclingContrib(\Pohoda\Filter\RequestRecyclingContribType $requestRecyclingContrib)
     {
         $this->requestRecyclingContrib[] = $requestRecyclingContrib;
+
         return $this;
     }
 
     /**
-     * isset requestRecyclingContrib
+     * isset requestRecyclingContrib.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestRecyclingContrib($index)
@@ -100,18 +112,17 @@ class ListRecyclingContribRequestType
     }
 
     /**
-     * unset requestRecyclingContrib
+     * unset requestRecyclingContrib.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestRecyclingContrib($index)
+    public function unsetRequestRecyclingContrib($index): void
     {
         unset($this->requestRecyclingContrib[$index]);
     }
 
     /**
-     * Gets as requestRecyclingContrib
+     * Gets as requestRecyclingContrib.
      *
      * @return \Pohoda\Filter\RequestRecyclingContribType[]
      */
@@ -121,14 +132,16 @@ class ListRecyclingContribRequestType
     }
 
     /**
-     * Sets a new requestRecyclingContrib
+     * Sets a new requestRecyclingContrib.
      *
      * @param \Pohoda\Filter\RequestRecyclingContribType[] $requestRecyclingContrib
+     *
      * @return self
      */
     public function setRequestRecyclingContrib(array $requestRecyclingContrib)
     {
         $this->requestRecyclingContrib = $requestRecyclingContrib;
+
         return $this;
     }
 }

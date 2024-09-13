@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListGroupStocksType
- *
+ * Class representing ListGroupStocksType.
  *
  * XSD Type: listGroupStocksType
  */
 class ListGroupStocksType extends ListVersionType
 {
     /**
-     * @var \Pohoda\GroupStocks\GroupStocksType[] $groupStocks
+     * @var \Pohoda\GroupStocks\GroupStocksType[]
      */
-    private $groupStocks = [
+    private array $groupStocks = [
     ];
 
     /**
-     * Adds as groupStocks
+     * Adds as groupStocks.
      *
      * @return self
-     * @param \Pohoda\GroupStocks\GroupStocksType $groupStocks
      */
     public function addToGroupStocks(\Pohoda\GroupStocks\GroupStocksType $groupStocks)
     {
         $this->groupStocks[] = $groupStocks;
+
         return $this;
     }
 
     /**
-     * isset groupStocks
+     * isset groupStocks.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetGroupStocks($index)
@@ -42,18 +55,17 @@ class ListGroupStocksType extends ListVersionType
     }
 
     /**
-     * unset groupStocks
+     * unset groupStocks.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetGroupStocks($index)
+    public function unsetGroupStocks($index): void
     {
         unset($this->groupStocks[$index]);
     }
 
     /**
-     * Gets as groupStocks
+     * Gets as groupStocks.
      *
      * @return \Pohoda\GroupStocks\GroupStocksType[]
      */
@@ -63,14 +75,16 @@ class ListGroupStocksType extends ListVersionType
     }
 
     /**
-     * Sets a new groupStocks
+     * Sets a new groupStocks.
      *
      * @param \Pohoda\GroupStocks\GroupStocksType[] $groupStocks
+     *
      * @return self
      */
-    public function setGroupStocks(array $groupStocks = null)
+    public function setGroupStocks(?array $groupStocks = null)
     {
         $this->groupStocks = $groupStocks;
+
         return $this;
     }
 }

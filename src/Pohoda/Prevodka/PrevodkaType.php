@@ -1,49 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prevodka;
 
 /**
- * Class representing PrevodkaType
- *
+ * Class representing PrevodkaType.
  *
  * XSD Type: prevodkaType
  */
 class PrevodkaType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
      *  Povolené jsou vazby z agendy:
-     *  - Přijaté objednávky
-     *
-     * @var \Pohoda\Type\LinksType $links
+     *  - Přijaté objednávky.
      */
-    private $links = null;
+    private \Pohoda\Type\LinksType $links = null;
+    private \Pohoda\Prevodka\PrevodkaHeaderType $prevodkaHeader = null;
 
     /**
-     * @var \Pohoda\Prevodka\PrevodkaHeaderType $prevodkaHeader
+     * @var \Pohoda\Prevodka\PrevodkaItemType[]
      */
-    private $prevodkaHeader = null;
-
-    /**
-     * @var \Pohoda\Prevodka\PrevodkaItemType[] $prevodkaDetail
-     */
-    private $prevodkaDetail = null;
+    private array $prevodkaDetail = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -53,19 +56,21 @@ class PrevodkaType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as links
+     * Gets as links.
      *
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
@@ -80,24 +85,24 @@ class PrevodkaType
     }
 
     /**
-     * Sets a new links
+     * Sets a new links.
      *
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů u dokladu.
      *  Povolené jsou vazby z agendy:
      *  - Přijaté objednávky
      *
-     * @param \Pohoda\Type\LinksType $links
      * @return self
      */
     public function setLinks(?\Pohoda\Type\LinksType $links = null)
     {
         $this->links = $links;
+
         return $this;
     }
 
     /**
-     * Gets as prevodkaHeader
+     * Gets as prevodkaHeader.
      *
      * @return \Pohoda\Prevodka\PrevodkaHeaderType
      */
@@ -107,33 +112,34 @@ class PrevodkaType
     }
 
     /**
-     * Sets a new prevodkaHeader
+     * Sets a new prevodkaHeader.
      *
-     * @param \Pohoda\Prevodka\PrevodkaHeaderType $prevodkaHeader
      * @return self
      */
     public function setPrevodkaHeader(?\Pohoda\Prevodka\PrevodkaHeaderType $prevodkaHeader = null)
     {
         $this->prevodkaHeader = $prevodkaHeader;
+
         return $this;
     }
 
     /**
-     * Adds as prevodkaItem
+     * Adds as prevodkaItem.
      *
      * @return self
-     * @param \Pohoda\Prevodka\PrevodkaItemType $prevodkaItem
      */
     public function addToPrevodkaDetail(\Pohoda\Prevodka\PrevodkaItemType $prevodkaItem)
     {
         $this->prevodkaDetail[] = $prevodkaItem;
+
         return $this;
     }
 
     /**
-     * isset prevodkaDetail
+     * isset prevodkaDetail.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrevodkaDetail($index)
@@ -142,18 +148,17 @@ class PrevodkaType
     }
 
     /**
-     * unset prevodkaDetail
+     * unset prevodkaDetail.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrevodkaDetail($index)
+    public function unsetPrevodkaDetail($index): void
     {
         unset($this->prevodkaDetail[$index]);
     }
 
     /**
-     * Gets as prevodkaDetail
+     * Gets as prevodkaDetail.
      *
      * @return \Pohoda\Prevodka\PrevodkaItemType[]
      */
@@ -163,37 +168,40 @@ class PrevodkaType
     }
 
     /**
-     * Sets a new prevodkaDetail
+     * Sets a new prevodkaDetail.
      *
      * @param \Pohoda\Prevodka\PrevodkaItemType[] $prevodkaDetail
+     *
      * @return self
      */
-    public function setPrevodkaDetail(array $prevodkaDetail = null)
+    public function setPrevodkaDetail(?array $prevodkaDetail = null)
     {
         $this->prevodkaDetail = $prevodkaDetail;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -202,20 +210,19 @@ class PrevodkaType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -227,16 +234,18 @@ class PrevodkaType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
-    public function setPrint(array $print = null)
+    public function setPrint(?array $print = null)
     {
         $this->print = $print;
+
         return $this;
     }
 }

@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Accountingunit;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListAccountingUnitType
- *
+ * Class representing ListAccountingUnitType.
  *
  * XSD Type: listAccountingUnitType
  */
 class ListAccountingUnitType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Accountingunit\ItemAccountingUnitType[] $itemAccountingUnit
+     * @var \Pohoda\Accountingunit\ItemAccountingUnitType[]
      */
-    private $itemAccountingUnit = [
+    private array $itemAccountingUnit = [
     ];
 
     /**
-     * Adds as itemAccountingUnit
+     * Adds as itemAccountingUnit.
      *
      * @return self
-     * @param \Pohoda\Accountingunit\ItemAccountingUnitType $itemAccountingUnit
      */
     public function addToItemAccountingUnit(\Pohoda\Accountingunit\ItemAccountingUnitType $itemAccountingUnit)
     {
         $this->itemAccountingUnit[] = $itemAccountingUnit;
+
         return $this;
     }
 
     /**
-     * isset itemAccountingUnit
+     * isset itemAccountingUnit.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetItemAccountingUnit($index)
@@ -42,18 +55,17 @@ class ListAccountingUnitType extends ListVersionType
     }
 
     /**
-     * unset itemAccountingUnit
+     * unset itemAccountingUnit.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetItemAccountingUnit($index)
+    public function unsetItemAccountingUnit($index): void
     {
         unset($this->itemAccountingUnit[$index]);
     }
 
     /**
-     * Gets as itemAccountingUnit
+     * Gets as itemAccountingUnit.
      *
      * @return \Pohoda\Accountingunit\ItemAccountingUnitType[]
      */
@@ -63,14 +75,16 @@ class ListAccountingUnitType extends ListVersionType
     }
 
     /**
-     * Sets a new itemAccountingUnit
+     * Sets a new itemAccountingUnit.
      *
      * @param \Pohoda\Accountingunit\ItemAccountingUnitType[] $itemAccountingUnit
+     *
      * @return self
      */
-    public function setItemAccountingUnit(array $itemAccountingUnit = null)
+    public function setItemAccountingUnit(?array $itemAccountingUnit = null)
     {
         $this->itemAccountingUnit = $itemAccountingUnit;
+
         return $this;
     }
 }

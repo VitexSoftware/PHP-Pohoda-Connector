@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ActionPrice;
 
 /**
- * Class representing ActionPriceItemType
+ * Class representing ActionPriceItemType.
  *
  * Akční ceny zásob. Verze 2.0.
  * XSD Type: actionPriceItemType
@@ -11,27 +24,28 @@ namespace Pohoda\ActionPrice;
 class ActionPriceItemType
 {
     /**
-     * @var \Pohoda\ActionPrice\ActionPriceStockItemType[] $actionPriceStockItem
+     * @var \Pohoda\ActionPrice\ActionPriceStockItemType[]
      */
-    private $actionPriceStockItem = [
+    private array $actionPriceStockItem = [
     ];
 
     /**
-     * Adds as actionPriceStockItem
+     * Adds as actionPriceStockItem.
      *
      * @return self
-     * @param \Pohoda\ActionPrice\ActionPriceStockItemType $actionPriceStockItem
      */
     public function addToActionPriceStockItem(\Pohoda\ActionPrice\ActionPriceStockItemType $actionPriceStockItem)
     {
         $this->actionPriceStockItem[] = $actionPriceStockItem;
+
         return $this;
     }
 
     /**
-     * isset actionPriceStockItem
+     * isset actionPriceStockItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetActionPriceStockItem($index)
@@ -40,18 +54,17 @@ class ActionPriceItemType
     }
 
     /**
-     * unset actionPriceStockItem
+     * unset actionPriceStockItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetActionPriceStockItem($index)
+    public function unsetActionPriceStockItem($index): void
     {
         unset($this->actionPriceStockItem[$index]);
     }
 
     /**
-     * Gets as actionPriceStockItem
+     * Gets as actionPriceStockItem.
      *
      * @return \Pohoda\ActionPrice\ActionPriceStockItemType[]
      */
@@ -61,14 +74,16 @@ class ActionPriceItemType
     }
 
     /**
-     * Sets a new actionPriceStockItem
+     * Sets a new actionPriceStockItem.
      *
      * @param \Pohoda\ActionPrice\ActionPriceStockItemType[] $actionPriceStockItem
+     *
      * @return self
      */
     public function setActionPriceStockItem(array $actionPriceStockItem)
     {
         $this->actionPriceStockItem = $actionPriceStockItem;
+
         return $this;
     }
 }

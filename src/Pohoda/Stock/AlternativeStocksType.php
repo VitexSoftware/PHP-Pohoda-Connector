@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing AlternativeStocksType
+ * Class representing AlternativeStocksType.
  *
  * Seznam ID alternativních zásob.
  * XSD Type: alternativeStocksType
@@ -11,27 +24,28 @@ namespace Pohoda\Stock;
 class AlternativeStocksType
 {
     /**
-     * @var \Pohoda\Type\OrderStockItemType[] $idStocks
+     * @var \Pohoda\Type\OrderStockItemType[]
      */
-    private $idStocks = [
+    private array $idStocks = [
     ];
 
     /**
-     * Adds as idStocks
+     * Adds as idStocks.
      *
      * @return self
-     * @param \Pohoda\Type\OrderStockItemType $idStocks
      */
     public function addToIdStocks(\Pohoda\Type\OrderStockItemType $idStocks)
     {
         $this->idStocks[] = $idStocks;
+
         return $this;
     }
 
     /**
-     * isset idStocks
+     * isset idStocks.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetIdStocks($index)
@@ -40,18 +54,17 @@ class AlternativeStocksType
     }
 
     /**
-     * unset idStocks
+     * unset idStocks.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetIdStocks($index)
+    public function unsetIdStocks($index): void
     {
         unset($this->idStocks[$index]);
     }
 
     /**
-     * Gets as idStocks
+     * Gets as idStocks.
      *
      * @return \Pohoda\Type\OrderStockItemType[]
      */
@@ -61,14 +74,16 @@ class AlternativeStocksType
     }
 
     /**
-     * Sets a new idStocks
+     * Sets a new idStocks.
      *
      * @param \Pohoda\Type\OrderStockItemType[] $idStocks
+     *
      * @return self
      */
-    public function setIdStocks(array $idStocks = null)
+    public function setIdStocks(?array $idStocks = null)
     {
         $this->idStocks = $idStocks;
+
         return $this;
     }
 }

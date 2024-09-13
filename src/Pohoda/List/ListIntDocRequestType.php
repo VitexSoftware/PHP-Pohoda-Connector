@@ -1,50 +1,55 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListIntDocRequestType
- *
+ * Class representing ListIntDocRequestType.
  *
  * XSD Type: listIntDocRequestType
  */
 class ListIntDocRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze dokladu.
-     *
-     * @var string $intDocVersion
      */
-    private $intDocVersion = null;
+    private string $intDocVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
 
     /**
-     * @var \Pohoda\Filter\RequestIntDocType[] $requestIntDoc
+     * @var \Pohoda\Filter\RequestIntDocType[]
      */
-    private $requestIntDoc = [
+    private array $requestIntDoc = [
     ];
 
     /**
      * Omezení exportu dat dokladů.
      *
-     * @var \Pohoda\List\RestrictionDocParamType[] $restrictionData
+     * @var \Pohoda\List\RestrictionDocParamType[]
      */
-    private $restrictionData = [
+    private array $restrictionData = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -54,19 +59,21 @@ class ListIntDocRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as intDocVersion
+     * Gets as intDocVersion.
      *
      * Požadovaná verze dokladu.
      *
@@ -78,21 +85,23 @@ class ListIntDocRequestType
     }
 
     /**
-     * Sets a new intDocVersion
+     * Sets a new intDocVersion.
      *
      * Požadovaná verze dokladu.
      *
      * @param string $intDocVersion
+     *
      * @return self
      */
     public function setIntDocVersion($intDocVersion)
     {
         $this->intDocVersion = $intDocVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -104,35 +113,38 @@ class ListIntDocRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Adds as requestIntDoc
+     * Adds as requestIntDoc.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestIntDocType $requestIntDoc
      */
     public function addToRequestIntDoc(\Pohoda\Filter\RequestIntDocType $requestIntDoc)
     {
         $this->requestIntDoc[] = $requestIntDoc;
+
         return $this;
     }
 
     /**
-     * isset requestIntDoc
+     * isset requestIntDoc.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestIntDoc($index)
@@ -141,18 +153,17 @@ class ListIntDocRequestType
     }
 
     /**
-     * unset requestIntDoc
+     * unset requestIntDoc.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestIntDoc($index)
+    public function unsetRequestIntDoc($index): void
     {
         unset($this->requestIntDoc[$index]);
     }
 
     /**
-     * Gets as requestIntDoc
+     * Gets as requestIntDoc.
      *
      * @return \Pohoda\Filter\RequestIntDocType[]
      */
@@ -162,37 +173,40 @@ class ListIntDocRequestType
     }
 
     /**
-     * Sets a new requestIntDoc
+     * Sets a new requestIntDoc.
      *
      * @param \Pohoda\Filter\RequestIntDocType[] $requestIntDoc
+     *
      * @return self
      */
     public function setRequestIntDoc(array $requestIntDoc)
     {
         $this->requestIntDoc = $requestIntDoc;
+
         return $this;
     }
 
     /**
-     * Adds as restrictionData
+     * Adds as restrictionData.
      *
      * Omezení exportu dat dokladů.
      *
      * @return self
-     * @param \Pohoda\List\RestrictionDocParamType $restrictionData
      */
     public function addToRestrictionData(\Pohoda\List\RestrictionDocParamType $restrictionData)
     {
         $this->restrictionData[] = $restrictionData;
+
         return $this;
     }
 
     /**
-     * isset restrictionData
+     * isset restrictionData.
      *
      * Omezení exportu dat dokladů.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRestrictionData($index)
@@ -201,20 +215,19 @@ class ListIntDocRequestType
     }
 
     /**
-     * unset restrictionData
+     * unset restrictionData.
      *
      * Omezení exportu dat dokladů.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRestrictionData($index)
+    public function unsetRestrictionData($index): void
     {
         unset($this->restrictionData[$index]);
     }
 
     /**
-     * Gets as restrictionData
+     * Gets as restrictionData.
      *
      * Omezení exportu dat dokladů.
      *
@@ -226,16 +239,18 @@ class ListIntDocRequestType
     }
 
     /**
-     * Sets a new restrictionData
+     * Sets a new restrictionData.
      *
      * Omezení exportu dat dokladů.
      *
      * @param \Pohoda\List\RestrictionDocParamType[] $restrictionData
+     *
      * @return self
      */
     public function setRestrictionData(array $restrictionData)
     {
         $this->restrictionData = $restrictionData;
+
         return $this;
     }
 }

@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListServiceType
- *
+ * Class representing ListServiceType.
  *
  * XSD Type: listServiceType
  */
 class ListServiceType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Service\ServiceType[] $service
+     * @var \Pohoda\Service\ServiceType[]
      */
-    private $service = [
+    private array $service = [
     ];
 
     /**
-     * Adds as service
+     * Adds as service.
      *
      * @return self
-     * @param \Pohoda\Service\ServiceType $service
      */
     public function addToService(\Pohoda\Service\ServiceType $service)
     {
         $this->service[] = $service;
+
         return $this;
     }
 
     /**
-     * isset service
+     * isset service.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetService($index)
@@ -42,18 +55,17 @@ class ListServiceType extends ListVersionType
     }
 
     /**
-     * unset service
+     * unset service.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetService($index)
+    public function unsetService($index): void
     {
         unset($this->service[$index]);
     }
 
     /**
-     * Gets as service
+     * Gets as service.
      *
      * @return \Pohoda\Service\ServiceType[]
      */
@@ -63,14 +75,16 @@ class ListServiceType extends ListVersionType
     }
 
     /**
-     * Sets a new service
+     * Sets a new service.
      *
      * @param \Pohoda\Service\ServiceType[] $service
+     *
      * @return self
      */
-    public function setService(array $service = null)
+    public function setService(?array $service = null)
     {
         $this->service = $service;
+
         return $this;
     }
 }

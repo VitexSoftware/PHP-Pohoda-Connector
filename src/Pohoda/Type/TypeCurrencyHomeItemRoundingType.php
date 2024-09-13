@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing TypeCurrencyHomeItemRoundingType
- *
+ * Class representing TypeCurrencyHomeItemRoundingType.
  *
  * XSD Type: typeCurrencyHomeItemRounding
  */
@@ -12,27 +24,21 @@ class TypeCurrencyHomeItemRoundingType
 {
     /**
      * Jednotková cena.
-     *
-     * @var float $unitPrice
      */
-    private $unitPrice = null;
+    private float $unitPrice = null;
 
     /**
      * Cena položky bez DPH.
-     *
-     * @var float $price
      */
-    private $price = null;
+    private float $price = null;
 
     /**
      * DPH.
-     *
-     * @var float $priceVAT
      */
-    private $priceVAT = null;
+    private float $priceVAT = null;
 
     /**
-     * Gets as unitPrice
+     * Gets as unitPrice.
      *
      * Jednotková cena.
      *
@@ -44,21 +50,23 @@ class TypeCurrencyHomeItemRoundingType
     }
 
     /**
-     * Sets a new unitPrice
+     * Sets a new unitPrice.
      *
      * Jednotková cena.
      *
      * @param float $unitPrice
+     *
      * @return self
      */
     public function setUnitPrice($unitPrice)
     {
         $this->unitPrice = $unitPrice;
+
         return $this;
     }
 
     /**
-     * Gets as price
+     * Gets as price.
      *
      * Cena položky bez DPH.
      *
@@ -70,21 +78,23 @@ class TypeCurrencyHomeItemRoundingType
     }
 
     /**
-     * Sets a new price
+     * Sets a new price.
      *
      * Cena položky bez DPH.
      *
      * @param float $price
+     *
      * @return self
      */
     public function setPrice($price)
     {
         $this->price = $price;
+
         return $this;
     }
 
     /**
-     * Gets as priceVAT
+     * Gets as priceVAT.
      *
      * DPH.
      *
@@ -96,16 +106,18 @@ class TypeCurrencyHomeItemRoundingType
     }
 
     /**
-     * Sets a new priceVAT
+     * Sets a new priceVAT.
      *
      * DPH.
      *
      * @param float $priceVAT
+     *
      * @return self
      */
     public function setPriceVAT($priceVAT)
     {
         $this->priceVAT = $priceVAT;
+
         return $this;
     }
 }

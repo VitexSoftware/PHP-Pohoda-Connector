@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing AddressType
+ * Class representing AddressType.
  *
  * Adresa.
  * XSD Type: addressType
@@ -15,96 +28,42 @@ class AddressType
      *  Vyhledání adresy v Adresáři programu POHODA bude dle elementů "ico", "dic", "icdph" (pro POHODA SK), "company" a "name".
      *  K vyhledání se použije první neprázdný element (podle pořadí uvedeného v předchozí větě).
      *  K vytvoření vazby adresy dokladu na Adresář dojde pouze tehdy, pokud bude nalezena pouze 1 adresa.
-     *
-     * @var bool $linkToAddress
      */
-    private $linkToAddress = null;
-
-    /**
-     * @var string $company
-     */
-    private $company = null;
-
-    /**
-     * @var string $division
-     */
-    private $division = null;
-
-    /**
-     * @var string $name
-     */
-    private $name = null;
-
-    /**
-     * @var string $city
-     */
-    private $city = null;
-
-    /**
-     * @var string $street
-     */
-    private $street = null;
-
-    /**
-     * @var string $zip
-     */
-    private $zip = null;
-
-    /**
-     * @var string $ico
-     */
-    private $ico = null;
-
-    /**
-     * @var string $dic
-     */
-    private $dic = null;
+    private bool $linkToAddress = null;
+    private string $company = null;
+    private string $division = null;
+    private string $name = null;
+    private string $city = null;
+    private string $street = null;
+    private string $zip = null;
+    private string $ico = null;
+    private string $dic = null;
 
     /**
      * Typ plátce DPH.
-     *
-     * @var string $vATPayerType
      */
-    private $vATPayerType = null;
-
-    /**
-     * @var string $icDph
-     */
-    private $icDph = null;
-
-    /**
-     * @var \Pohoda\Type\RefType $country
-     */
-    private $country = null;
+    private string $vATPayerType = null;
+    private string $icDph = null;
+    private \Pohoda\Type\RefType $country = null;
 
     /**
      * Podporováno pouze u objednávek a nabídek.
-     *
-     * @var string $phone
      */
-    private $phone = null;
-
-    /**
-     * @var string $mobilPhone
-     */
-    private $mobilPhone = null;
+    private string $phone = null;
+    private string $mobilPhone = null;
 
     /**
      * Podporováno pouze u objednávek a nabídek.
-     *
-     * @var string $fax
      */
-    private $fax = null;
+    private string $fax = null;
 
     /**
      * Podporováno pouze u dokladů (Nabídka, Poptávky, Přijaté objednávky, Vydané Objednávky, Vydané Faktury, Vydané Zálohové Faktury, Ostatní Pohledávky, Výdejky).
-     *
-     * @var string $email
      */
-    private $email = null;
+    private string $email = null;
 
     /**
-     * Gets as linkToAddress
+     * Gets as linkToAddress.
      *
      * Při nastavení atributu na hodnotu "true" bude vytvořena vazba adresy dokladu na Adresář programu POHODA.
      *  Vyhledání adresy v Adresáři programu POHODA bude dle elementů "ico", "dic", "icdph" (pro POHODA SK), "company" a "name".
@@ -119,7 +78,7 @@ class AddressType
     }
 
     /**
-     * Sets a new linkToAddress
+     * Sets a new linkToAddress.
      *
      * Při nastavení atributu na hodnotu "true" bude vytvořena vazba adresy dokladu na Adresář programu POHODA.
      *  Vyhledání adresy v Adresáři programu POHODA bude dle elementů "ico", "dic", "icdph" (pro POHODA SK), "company" a "name".
@@ -127,16 +86,18 @@ class AddressType
      *  K vytvoření vazby adresy dokladu na Adresář dojde pouze tehdy, pokud bude nalezena pouze 1 adresa.
      *
      * @param bool $linkToAddress
+     *
      * @return self
      */
     public function setLinkToAddress($linkToAddress)
     {
         $this->linkToAddress = $linkToAddress;
+
         return $this;
     }
 
     /**
-     * Gets as company
+     * Gets as company.
      *
      * @return string
      */
@@ -146,19 +107,21 @@ class AddressType
     }
 
     /**
-     * Sets a new company
+     * Sets a new company.
      *
      * @param string $company
+     *
      * @return self
      */
     public function setCompany($company)
     {
         $this->company = $company;
+
         return $this;
     }
 
     /**
-     * Gets as division
+     * Gets as division.
      *
      * @return string
      */
@@ -168,19 +131,21 @@ class AddressType
     }
 
     /**
-     * Sets a new division
+     * Sets a new division.
      *
      * @param string $division
+     *
      * @return self
      */
     public function setDivision($division)
     {
         $this->division = $division;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * @return string
      */
@@ -190,19 +155,21 @@ class AddressType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as city
+     * Gets as city.
      *
      * @return string
      */
@@ -212,19 +179,21 @@ class AddressType
     }
 
     /**
-     * Sets a new city
+     * Sets a new city.
      *
      * @param string $city
+     *
      * @return self
      */
     public function setCity($city)
     {
         $this->city = $city;
+
         return $this;
     }
 
     /**
-     * Gets as street
+     * Gets as street.
      *
      * @return string
      */
@@ -234,19 +203,21 @@ class AddressType
     }
 
     /**
-     * Sets a new street
+     * Sets a new street.
      *
      * @param string $street
+     *
      * @return self
      */
     public function setStreet($street)
     {
         $this->street = $street;
+
         return $this;
     }
 
     /**
-     * Gets as zip
+     * Gets as zip.
      *
      * @return string
      */
@@ -256,19 +227,21 @@ class AddressType
     }
 
     /**
-     * Sets a new zip
+     * Sets a new zip.
      *
      * @param string $zip
+     *
      * @return self
      */
     public function setZip($zip)
     {
         $this->zip = $zip;
+
         return $this;
     }
 
     /**
-     * Gets as ico
+     * Gets as ico.
      *
      * @return string
      */
@@ -278,19 +251,21 @@ class AddressType
     }
 
     /**
-     * Sets a new ico
+     * Sets a new ico.
      *
      * @param string $ico
+     *
      * @return self
      */
     public function setIco($ico)
     {
         $this->ico = $ico;
+
         return $this;
     }
 
     /**
-     * Gets as dic
+     * Gets as dic.
      *
      * @return string
      */
@@ -300,19 +275,21 @@ class AddressType
     }
 
     /**
-     * Sets a new dic
+     * Sets a new dic.
      *
      * @param string $dic
+     *
      * @return self
      */
     public function setDic($dic)
     {
         $this->dic = $dic;
+
         return $this;
     }
 
     /**
-     * Gets as vATPayerType
+     * Gets as vATPayerType.
      *
      * Typ plátce DPH.
      *
@@ -324,21 +301,23 @@ class AddressType
     }
 
     /**
-     * Sets a new vATPayerType
+     * Sets a new vATPayerType.
      *
      * Typ plátce DPH.
      *
      * @param string $vATPayerType
+     *
      * @return self
      */
     public function setVATPayerType($vATPayerType)
     {
         $this->vATPayerType = $vATPayerType;
+
         return $this;
     }
 
     /**
-     * Gets as icDph
+     * Gets as icDph.
      *
      * @return string
      */
@@ -348,19 +327,21 @@ class AddressType
     }
 
     /**
-     * Sets a new icDph
+     * Sets a new icDph.
      *
      * @param string $icDph
+     *
      * @return self
      */
     public function setIcDph($icDph)
     {
         $this->icDph = $icDph;
+
         return $this;
     }
 
     /**
-     * Gets as country
+     * Gets as country.
      *
      * @return \Pohoda\Type\RefType
      */
@@ -370,19 +351,19 @@ class AddressType
     }
 
     /**
-     * Sets a new country
+     * Sets a new country.
      *
-     * @param \Pohoda\Type\RefType $country
      * @return self
      */
     public function setCountry(?\Pohoda\Type\RefType $country = null)
     {
         $this->country = $country;
+
         return $this;
     }
 
     /**
-     * Gets as phone
+     * Gets as phone.
      *
      * Podporováno pouze u objednávek a nabídek.
      *
@@ -394,21 +375,23 @@ class AddressType
     }
 
     /**
-     * Sets a new phone
+     * Sets a new phone.
      *
      * Podporováno pouze u objednávek a nabídek.
      *
      * @param string $phone
+     *
      * @return self
      */
     public function setPhone($phone)
     {
         $this->phone = $phone;
+
         return $this;
     }
 
     /**
-     * Gets as mobilPhone
+     * Gets as mobilPhone.
      *
      * @return string
      */
@@ -418,19 +401,21 @@ class AddressType
     }
 
     /**
-     * Sets a new mobilPhone
+     * Sets a new mobilPhone.
      *
      * @param string $mobilPhone
+     *
      * @return self
      */
     public function setMobilPhone($mobilPhone)
     {
         $this->mobilPhone = $mobilPhone;
+
         return $this;
     }
 
     /**
-     * Gets as fax
+     * Gets as fax.
      *
      * Podporováno pouze u objednávek a nabídek.
      *
@@ -442,21 +427,23 @@ class AddressType
     }
 
     /**
-     * Sets a new fax
+     * Sets a new fax.
      *
      * Podporováno pouze u objednávek a nabídek.
      *
      * @param string $fax
+     *
      * @return self
      */
     public function setFax($fax)
     {
         $this->fax = $fax;
+
         return $this;
     }
 
     /**
-     * Gets as email
+     * Gets as email.
      *
      * Podporováno pouze u dokladů (Nabídka, Poptávky, Přijaté objednávky, Vydané Objednávky, Vydané Faktury, Vydané Zálohové Faktury, Ostatní Pohledávky, Výdejky).
      *
@@ -468,16 +455,18 @@ class AddressType
     }
 
     /**
-     * Sets a new email
+     * Sets a new email.
      *
      * Podporováno pouze u dokladů (Nabídka, Poptávky, Přijaté objednávky, Vydané Objednávky, Vydané Faktury, Vydané Zálohové Faktury, Ostatní Pohledávky, Výdejky).
      *
      * @param string $email
+     *
      * @return self
      */
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 }

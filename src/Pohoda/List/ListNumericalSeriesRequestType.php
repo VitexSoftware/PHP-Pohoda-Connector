@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListNumericalSeriesRequestType
- *
+ * Class representing ListNumericalSeriesRequestType.
  *
  * XSD Type: listNumericalSeriesRequestType
  */
 class ListNumericalSeriesRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $numericalSeriesVersion
      */
-    private $numericalSeriesVersion = null;
+    private string $numericalSeriesVersion = null;
 
     /**
-     * @var \Pohoda\Filter\RequestNumericalSeriesType[] $requestNumericalSeries
+     * @var \Pohoda\Filter\RequestNumericalSeriesType[]
      */
-    private $requestNumericalSeries = [
+    private array $requestNumericalSeries = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListNumericalSeriesRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as numericalSeriesVersion
+     * Gets as numericalSeriesVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListNumericalSeriesRequestType
     }
 
     /**
-     * Sets a new numericalSeriesVersion
+     * Sets a new numericalSeriesVersion.
      *
      * Požadovaná verze.
      *
      * @param string $numericalSeriesVersion
+     *
      * @return self
      */
     public function setNumericalSeriesVersion($numericalSeriesVersion)
     {
         $this->numericalSeriesVersion = $numericalSeriesVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestNumericalSeries
+     * Adds as requestNumericalSeries.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestNumericalSeriesType $requestNumericalSeries
      */
     public function addToRequestNumericalSeries(\Pohoda\Filter\RequestNumericalSeriesType $requestNumericalSeries)
     {
         $this->requestNumericalSeries[] = $requestNumericalSeries;
+
         return $this;
     }
 
     /**
-     * isset requestNumericalSeries
+     * isset requestNumericalSeries.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestNumericalSeries($index)
@@ -100,18 +112,17 @@ class ListNumericalSeriesRequestType
     }
 
     /**
-     * unset requestNumericalSeries
+     * unset requestNumericalSeries.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestNumericalSeries($index)
+    public function unsetRequestNumericalSeries($index): void
     {
         unset($this->requestNumericalSeries[$index]);
     }
 
     /**
-     * Gets as requestNumericalSeries
+     * Gets as requestNumericalSeries.
      *
      * @return \Pohoda\Filter\RequestNumericalSeriesType[]
      */
@@ -121,14 +132,16 @@ class ListNumericalSeriesRequestType
     }
 
     /**
-     * Sets a new requestNumericalSeries
+     * Sets a new requestNumericalSeries.
      *
      * @param \Pohoda\Filter\RequestNumericalSeriesType[] $requestNumericalSeries
+     *
      * @return self
      */
     public function setRequestNumericalSeries(array $requestNumericalSeries)
     {
         $this->requestNumericalSeries = $requestNumericalSeries;
+
         return $this;
     }
 }

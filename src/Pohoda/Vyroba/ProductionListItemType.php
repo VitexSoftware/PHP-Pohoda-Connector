@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Vyroba;
 
 /**
- * Class representing ProductionListItemType
- *
+ * Class representing ProductionListItemType.
  *
  * XSD Type: productionListItemType
  */
@@ -12,34 +24,26 @@ class ProductionListItemType
 {
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky výrobku.
-     *
-     * @var \Pohoda\Type\StockItemType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Množství.
-     *
-     * @var float $quantity
      */
-    private $quantity = null;
+    private float $quantity = null;
 
     /**
      * Měrná jednotka.
-     *
-     * @var string $unit
      */
-    private $unit = null;
+    private string $unit = null;
 
     /**
      * Datum expirace.
-     *
-     * @var \DateTime $expirationDate
      */
-    private $expirationDate = null;
+    private \DateTime $expirationDate = null;
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky výrobku.
      *
@@ -51,21 +55,21 @@ class ProductionListItemType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky výrobku.
      *
-     * @param \Pohoda\Type\StockItemType $stockItem
      * @return self
      */
     public function setStockItem(\Pohoda\Type\StockItemType $stockItem)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as quantity
+     * Gets as quantity.
      *
      * Množství.
      *
@@ -77,21 +81,23 @@ class ProductionListItemType
     }
 
     /**
-     * Sets a new quantity
+     * Sets a new quantity.
      *
      * Množství.
      *
      * @param float $quantity
+     *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
     /**
-     * Gets as unit
+     * Gets as unit.
      *
      * Měrná jednotka.
      *
@@ -103,21 +109,23 @@ class ProductionListItemType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * Měrná jednotka.
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as expirationDate
+     * Gets as expirationDate.
      *
      * Datum expirace.
      *
@@ -129,16 +137,16 @@ class ProductionListItemType
     }
 
     /**
-     * Sets a new expirationDate
+     * Sets a new expirationDate.
      *
      * Datum expirace.
      *
-     * @param \DateTime $expirationDate
      * @return self
      */
     public function setExpirationDate(?\DateTime $expirationDate = null)
     {
         $this->expirationDate = $expirationDate;
+
         return $this;
     }
 }

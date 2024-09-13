@@ -1,37 +1,38 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IntParam;
 
 /**
- * Class representing ParameterSettingsType
- *
+ * Class representing ParameterSettingsType.
  *
  * XSD Type: parameterSettingsType
  */
 class ParameterSettingsType
 {
-    /**
-     * @var string $unit
-     */
-    private $unit = null;
+    private string $unit = null;
+    private int $length = null;
 
     /**
-     * @var int $length
+     * @var \Pohoda\IntParam\ParameterListItemType[]
      */
-    private $length = null;
+    private array $parameterList = null;
+    private \Pohoda\Type\RefType $currency = null;
 
     /**
-     * @var \Pohoda\IntParam\ParameterListItemType[] $parameterList
-     */
-    private $parameterList = null;
-
-    /**
-     * @var \Pohoda\Type\RefType $currency
-     */
-    private $currency = null;
-
-    /**
-     * Gets as unit
+     * Gets as unit.
      *
      * @return string
      */
@@ -41,19 +42,21 @@ class ParameterSettingsType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as length
+     * Gets as length.
      *
      * @return int
      */
@@ -63,33 +66,36 @@ class ParameterSettingsType
     }
 
     /**
-     * Sets a new length
+     * Sets a new length.
      *
      * @param int $length
+     *
      * @return self
      */
     public function setLength($length)
     {
         $this->length = $length;
+
         return $this;
     }
 
     /**
-     * Adds as parameterListItem
+     * Adds as parameterListItem.
      *
      * @return self
-     * @param \Pohoda\IntParam\ParameterListItemType $parameterListItem
      */
     public function addToParameterList(\Pohoda\IntParam\ParameterListItemType $parameterListItem)
     {
         $this->parameterList[] = $parameterListItem;
+
         return $this;
     }
 
     /**
-     * isset parameterList
+     * isset parameterList.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameterList($index)
@@ -98,18 +104,17 @@ class ParameterSettingsType
     }
 
     /**
-     * unset parameterList
+     * unset parameterList.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameterList($index)
+    public function unsetParameterList($index): void
     {
         unset($this->parameterList[$index]);
     }
 
     /**
-     * Gets as parameterList
+     * Gets as parameterList.
      *
      * @return \Pohoda\IntParam\ParameterListItemType[]
      */
@@ -119,19 +124,21 @@ class ParameterSettingsType
     }
 
     /**
-     * Sets a new parameterList
+     * Sets a new parameterList.
      *
      * @param \Pohoda\IntParam\ParameterListItemType[] $parameterList
+     *
      * @return self
      */
-    public function setParameterList(array $parameterList = null)
+    public function setParameterList(?array $parameterList = null)
     {
         $this->parameterList = $parameterList;
+
         return $this;
     }
 
     /**
-     * Gets as currency
+     * Gets as currency.
      *
      * @return \Pohoda\Type\RefType
      */
@@ -141,14 +148,14 @@ class ParameterSettingsType
     }
 
     /**
-     * Sets a new currency
+     * Sets a new currency.
      *
-     * @param \Pohoda\Type\RefType $currency
      * @return self
      */
     public function setCurrency(?\Pohoda\Type\RefType $currency = null)
     {
         $this->currency = $currency;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\GroupStocks;
 
 /**
- * Class representing ActionTypeType
- *
+ * Class representing ActionTypeType.
  *
  * XSD Type: actionTypeType
  */
@@ -12,27 +24,21 @@ class ActionTypeType
 {
     /**
      * Vložení nového záznamu. Výchozí hodnota.
-     *
-     * @var \Pohoda\Filter\RequestGroupStocksActionType $add
      */
-    private $add = null;
+    private \Pohoda\Filter\RequestGroupStocksActionType $add = null;
 
     /**
      * Aktualizace záznamu.
-     *
-     * @var \Pohoda\Filter\RequestGroupStocksActionType $update
      */
-    private $update = null;
+    private \Pohoda\Filter\RequestGroupStocksActionType $update = null;
 
     /**
      * Odstranění záznamu.
-     *
-     * @var \Pohoda\Filter\RequestGroupStocksType $delete
      */
-    private $delete = null;
+    private \Pohoda\Filter\RequestGroupStocksType $delete = null;
 
     /**
-     * Gets as add
+     * Gets as add.
      *
      * Vložení nového záznamu. Výchozí hodnota.
      *
@@ -44,21 +50,21 @@ class ActionTypeType
     }
 
     /**
-     * Sets a new add
+     * Sets a new add.
      *
      * Vložení nového záznamu. Výchozí hodnota.
      *
-     * @param \Pohoda\Filter\RequestGroupStocksActionType $add
      * @return self
      */
     public function setAdd(?\Pohoda\Filter\RequestGroupStocksActionType $add = null)
     {
         $this->add = $add;
+
         return $this;
     }
 
     /**
-     * Gets as update
+     * Gets as update.
      *
      * Aktualizace záznamu.
      *
@@ -70,21 +76,21 @@ class ActionTypeType
     }
 
     /**
-     * Sets a new update
+     * Sets a new update.
      *
      * Aktualizace záznamu.
      *
-     * @param \Pohoda\Filter\RequestGroupStocksActionType $update
      * @return self
      */
     public function setUpdate(?\Pohoda\Filter\RequestGroupStocksActionType $update = null)
     {
         $this->update = $update;
+
         return $this;
     }
 
     /**
-     * Gets as delete
+     * Gets as delete.
      *
      * Odstranění záznamu.
      *
@@ -96,16 +102,16 @@ class ActionTypeType
     }
 
     /**
-     * Sets a new delete
+     * Sets a new delete.
      *
      * Odstranění záznamu.
      *
-     * @param \Pohoda\Filter\RequestGroupStocksType $delete
      * @return self
      */
     public function setDelete(?\Pohoda\Filter\RequestGroupStocksType $delete = null)
     {
         $this->delete = $delete;
+
         return $this;
     }
 }

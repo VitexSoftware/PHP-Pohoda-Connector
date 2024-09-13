@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListIntDocType
- *
+ * Class representing ListIntDocType.
  *
  * XSD Type: listIntDocType
  */
 class ListIntDocType extends ListVersionType
 {
     /**
-     * @var \Pohoda\IntDoc\IntDocType[] $intDoc
+     * @var \Pohoda\IntDoc\IntDocType[]
      */
-    private $intDoc = [
+    private array $intDoc = [
     ];
 
     /**
-     * Adds as intDoc
+     * Adds as intDoc.
      *
      * @return self
-     * @param \Pohoda\IntDoc\IntDocType $intDoc
      */
     public function addToIntDoc(\Pohoda\IntDoc\IntDocType $intDoc)
     {
         $this->intDoc[] = $intDoc;
+
         return $this;
     }
 
     /**
-     * isset intDoc
+     * isset intDoc.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetIntDoc($index)
@@ -42,18 +55,17 @@ class ListIntDocType extends ListVersionType
     }
 
     /**
-     * unset intDoc
+     * unset intDoc.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetIntDoc($index)
+    public function unsetIntDoc($index): void
     {
         unset($this->intDoc[$index]);
     }
 
     /**
-     * Gets as intDoc
+     * Gets as intDoc.
      *
      * @return \Pohoda\IntDoc\IntDocType[]
      */
@@ -63,14 +75,16 @@ class ListIntDocType extends ListVersionType
     }
 
     /**
-     * Sets a new intDoc
+     * Sets a new intDoc.
      *
      * @param \Pohoda\IntDoc\IntDocType[] $intDoc
+     *
      * @return self
      */
-    public function setIntDoc(array $intDoc = null)
+    public function setIntDoc(?array $intDoc = null)
     {
         $this->intDoc = $intDoc;
+
         return $this;
     }
 }

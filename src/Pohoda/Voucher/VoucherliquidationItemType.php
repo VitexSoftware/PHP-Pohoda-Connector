@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Voucher;
 
 /**
- * Class representing VoucherliquidationItemType
- *
+ * Class representing VoucherliquidationItemType.
  *
  * XSD Type: voucherliquidationItemType
  */
@@ -12,21 +24,19 @@ class VoucherliquidationItemType
 {
     /**
      * Nastavení likvidace dokladu (pohledávky/závazku).
-     *
-     * @var \Pohoda\Voucher\SettingsLiquidationType $settingsLiquidation
      */
-    private $settingsLiquidation = null;
+    private \Pohoda\Voucher\SettingsLiquidationType $settingsLiquidation = null;
 
     /**
      * Definice položek, které provádějí likvidaci dokladu typu(Pohledávka/Závazek).
      *
-     * @var \Pohoda\Voucher\LiquidationItemType[] $liquidationItem
+     * @var \Pohoda\Voucher\LiquidationItemType[]
      */
-    private $liquidationItem = [
+    private array $liquidationItem = [
     ];
 
     /**
-     * Gets as settingsLiquidation
+     * Gets as settingsLiquidation.
      *
      * Nastavení likvidace dokladu (pohledávky/závazku).
      *
@@ -38,39 +48,40 @@ class VoucherliquidationItemType
     }
 
     /**
-     * Sets a new settingsLiquidation
+     * Sets a new settingsLiquidation.
      *
      * Nastavení likvidace dokladu (pohledávky/závazku).
      *
-     * @param \Pohoda\Voucher\SettingsLiquidationType $settingsLiquidation
      * @return self
      */
     public function setSettingsLiquidation(\Pohoda\Voucher\SettingsLiquidationType $settingsLiquidation)
     {
         $this->settingsLiquidation = $settingsLiquidation;
+
         return $this;
     }
 
     /**
-     * Adds as liquidationItem
+     * Adds as liquidationItem.
      *
      * Definice položek, které provádějí likvidaci dokladu typu(Pohledávka/Závazek).
      *
      * @return self
-     * @param \Pohoda\Voucher\LiquidationItemType $liquidationItem
      */
     public function addToLiquidationItem(\Pohoda\Voucher\LiquidationItemType $liquidationItem)
     {
         $this->liquidationItem[] = $liquidationItem;
+
         return $this;
     }
 
     /**
-     * isset liquidationItem
+     * isset liquidationItem.
      *
      * Definice položek, které provádějí likvidaci dokladu typu(Pohledávka/Závazek).
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLiquidationItem($index)
@@ -79,20 +90,19 @@ class VoucherliquidationItemType
     }
 
     /**
-     * unset liquidationItem
+     * unset liquidationItem.
      *
      * Definice položek, které provádějí likvidaci dokladu typu(Pohledávka/Závazek).
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLiquidationItem($index)
+    public function unsetLiquidationItem($index): void
     {
         unset($this->liquidationItem[$index]);
     }
 
     /**
-     * Gets as liquidationItem
+     * Gets as liquidationItem.
      *
      * Definice položek, které provádějí likvidaci dokladu typu(Pohledávka/Závazek).
      *
@@ -104,16 +114,18 @@ class VoucherliquidationItemType
     }
 
     /**
-     * Sets a new liquidationItem
+     * Sets a new liquidationItem.
      *
      * Definice položek, které provádějí likvidaci dokladu typu(Pohledávka/Závazek).
      *
      * @param \Pohoda\Voucher\LiquidationItemType[] $liquidationItem
+     *
      * @return self
      */
     public function setLiquidationItem(array $liquidationItem)
     {
         $this->liquidationItem = $liquidationItem;
+
         return $this;
     }
 }

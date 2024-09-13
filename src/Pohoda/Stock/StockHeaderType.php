@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing StockHeaderType
- *
+ * Class representing StockHeaderType.
  *
  * XSD Type: stockHeaderType
  */
@@ -12,630 +24,470 @@ class StockHeaderType
 {
     /**
      * ID skladové zásoby (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Typ zásoby. Tento element je vyžadován při vytvoření dokladu. Nelze měnit při aktualizaci dokladu.
-     *
-     * @var string $stockType
      */
-    private $stockType = null;
+    private string $stockType = null;
 
     /**
      * Řetězcový identifikátor skladové položky.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Čárový kód.
-     *
-     * @var string $eAN
      */
-    private $eAN = null;
+    private string $eAN = null;
 
     /**
      * PLU. Kód zásoby pro registrační pokladnu.
-     *
-     * @var int $pLU
      */
-    private $pLU = null;
+    private int $pLU = null;
 
     /**
      * Odbyt. Určuje, zda se má tato zásoba nabízet při vyskladnění z agend Faktury, Prodejky a Výdejky.
-     *
-     * @var string $isSales
      */
-    private $isSales = null;
+    private string $isSales = null;
 
     /**
      * Výrobní čísla. Určuje, zda je toto číslovaná zásoba, u které se mají evidovat výrobní čísla.
-     *
-     * @var string $isSerialNumber
      */
-    private $isSerialNumber = null;
+    private string $isSerialNumber = null;
 
     /**
      * Internet. Určuje, zda je tato zásoba součástí sortimentu nabízeného na internetu.
-     *
-     * @var string $isInternet
      */
-    private $isInternet = null;
+    private string $isInternet = null;
 
     /**
      * Šarže. Určuje, zda je toto číslovaná zásoba, u které se mají evidovat šarže.
-     *
-     * @var string $isBatch
      */
-    private $isBatch = null;
+    private string $isBatch = null;
 
     /**
      * Sazba DPH pro nákup.
-     *
-     * @var \Pohoda\Type\VatRateType $purchasingRateVAT
      */
-    private $purchasingRateVAT = null;
+    private \Pohoda\Type\VatRateType $purchasingRateVAT = null;
 
     /**
      * Sazba DPH pro prodej.
-     *
-     * @var \Pohoda\Type\VatRateType $sellingRateVAT
      */
-    private $sellingRateVAT = null;
+    private \Pohoda\Type\VatRateType $sellingRateVAT = null;
 
     /**
      * Název skladové položky. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Doplňující text či poznámka k názvu skladové zásoby.
-     *
-     * @var string $nameComplement
      */
-    private $nameComplement = null;
+    private string $nameComplement = null;
 
     /**
      * Měrná jednotka.
-     *
-     * @var string $unit
      */
-    private $unit = null;
+    private string $unit = null;
 
     /**
      * Měrná jednotka 2.
-     *
-     * @var string $unit2
      */
-    private $unit2 = null;
+    private string $unit2 = null;
 
     /**
      * Měrná jednotka 3.
-     *
-     * @var string $unit3
      */
-    private $unit3 = null;
+    private string $unit3 = null;
 
     /**
      * Měrná jednotka 2 koeficient.
-     *
-     * @var float $coefficient2
      */
-    private $coefficient2 = null;
+    private float $coefficient2 = null;
 
     /**
      * Měrná jednotka 3 koeficient.
-     *
-     * @var float $coefficient3
      */
-    private $coefficient3 = null;
+    private float $coefficient3 = null;
 
     /**
      * Členění. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var \Pohoda\Type\RefTypeStorageType $storage
      */
-    private $storage = null;
+    private \Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Cenová skupina. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var \Pohoda\Type\RefType $typePrice
      */
-    private $typePrice = null;
+    private \Pohoda\Type\RefType $typePrice = null;
 
     /**
      * Vážená nákupní cena (jen pro export).
-     *
-     * @var float $weightedPurchasePrice
      */
-    private $weightedPurchasePrice = null;
+    private float $weightedPurchasePrice = null;
 
     /**
      * Nákupní cena. Pokud není uvedena, bere se jako NULOVÁ.
-     *
-     * @var \Pohoda\Stock\StockHeaderType\PurchasingPriceAType $purchasingPrice
      */
-    private $purchasingPrice = null;
+    private \Pohoda\Stock\StockHeaderType\PurchasingPriceAType $purchasingPrice = null;
 
     /**
      * Prodejní cena. Pokud není uvedena, bere se jako NULOVÁ.
-     *
-     * @var \Pohoda\Stock\StockHeaderType\SellingPriceAType $sellingPrice
      */
-    private $sellingPrice = null;
+    private \Pohoda\Stock\StockHeaderType\SellingPriceAType $sellingPrice = null;
 
     /**
      * Typ fixace (jen export).
-     *
-     * @var string $fixation
      */
-    private $fixation = null;
+    private string $fixation = null;
 
     /**
      * Limit Min pro automatickou objednávku.
-     *
-     * @var float $limitMin
      */
-    private $limitMin = null;
+    private float $limitMin = null;
 
     /**
      * Limit Max pro automatickou objednávku.
-     *
-     * @var float $limitMax
      */
-    private $limitMax = null;
+    private float $limitMax = null;
 
     /**
      * Hmotnost.
-     *
-     * @var float $mass
      */
-    private $mass = null;
+    private float $mass = null;
 
     /**
      * Objem.
-     *
-     * @var float $volume
      */
-    private $volume = null;
+    private float $volume = null;
 
     /**
      * Stav zásoby (jen pro export).
-     *
-     * @var float $count
      */
-    private $count = null;
+    private float $count = null;
 
     /**
      * Objednávky (jen pro export).
-     *
-     * @var float $countReceivedOrders
      */
-    private $countReceivedOrders = null;
+    private float $countReceivedOrders = null;
 
     /**
      * Rezervace (jen pro export).
-     *
-     * @var float $reservation
      */
-    private $reservation = null;
+    private float $reservation = null;
 
     /**
      * Dodavatel.
-     *
-     * @var \Pohoda\Type\CompanyType $supplier
      */
-    private $supplier = null;
+    private \Pohoda\Type\CompanyType $supplier = null;
 
     /**
      * Název skladové zásoby pro použití ve funkci Automatické objednávky.
-     *
-     * @var string $orderName
      */
-    private $orderName = null;
+    private string $orderName = null;
 
     /**
      * Požadované množství k objednání pro použití ve funkci Automatické objednávky.
-     *
-     * @var float $orderQuantity
      */
-    private $orderQuantity = null;
+    private float $orderQuantity = null;
 
     /**
      * Objednáno (jen pro export).
-     *
-     * @var float $countIssuedOrders
      */
-    private $countIssuedOrders = null;
+    private float $countIssuedOrders = null;
 
     /**
      * Stav zásoby v reklamaci (jen pro export).
-     *
-     * @var float $reclamation
      */
-    private $reclamation = null;
+    private float $reclamation = null;
 
     /**
      * Servis (jen pro export).
-     *
-     * @var float $service
      */
-    private $service = null;
+    private float $service = null;
 
     /**
      * Zkrácený název skladové položky - např. při tisku na registrační pokladně.
-     *
-     * @var string $shortName
      */
-    private $shortName = null;
+    private string $shortName = null;
 
     /**
      * Příznak pro registrační pokladnu.
-     *
-     * @var \Pohoda\Type\RefType $typeRP
      */
-    private $typeRP = null;
+    private \Pohoda\Type\RefType $typeRP = null;
 
     /**
      * Typ záruky.
-     *
-     * @var string $guaranteeType
      */
-    private $guaranteeType = null;
+    private string $guaranteeType = null;
 
     /**
      * Délka záruky.
-     *
-     * @var int $guarantee
      */
-    private $guarantee = null;
+    private int $guarantee = null;
 
     /**
      * Výrobce skladové položky.
-     *
-     * @var string $producer
      */
-    private $producer = null;
+    private string $producer = null;
 
     /**
      * Jednotka měrné ceny.
-     *
-     * @var string $unitOfMeasure
      */
-    private $unitOfMeasure = null;
+    private string $unitOfMeasure = null;
 
     /**
-     * Koeficient pro přepočet jednotky měrné ceny.
-     *
-     * @var float $coefficientOfMeasure
+     * Koeficient pro přepočet jednotky měrné ceny.
      */
-    private $coefficientOfMeasure = null;
+    private float $coefficientOfMeasure = null;
 
     /**
      * Typ položky EET (pouze CZ verze).
-     *
-     * @var string $eETItem
      */
-    private $eETItem = null;
+    private string $eETItem = null;
 
     /**
      * DIČ pověřujícího poplatníka (pouze CZ verze).
-     *
-     * @var string $dicPP
      */
-    private $dicPP = null;
+    private string $dicPP = null;
 
     /**
      * Položky eKasa (pouze SK verze).
-     *
-     * @var \Pohoda\Stock\EKasaItemType $eKasaItem
      */
-    private $eKasaItem = null;
+    private \Pohoda\Stock\EKasaItemType $eKasaItem = null;
 
     /**
      * Výnos. Účet pro účtování výnosů z prodeje zásoby.
-     *
-     * @var string $yield
      */
-    private $yield = null;
+    private string $yield = null;
 
     /**
      * Náklad. Účet pro účtování nákladu z prodeje zásoby.
-     *
-     * @var string $cost
      */
-    private $cost = null;
+    private string $cost = null;
 
     /**
      * Příjem - členění DPH.
-     *
-     * @var \Pohoda\Type\ClassificationVATType $classificationVATReceipt
      */
-    private $classificationVATReceipt = null;
+    private \Pohoda\Type\ClassificationVATType $classificationVATReceipt = null;
 
     /**
      * Příjem - členění KV DPH (pouze SK verze).
-     *
-     * @var \Pohoda\Type\RefType $classificationKVDPHReceipt
      */
-    private $classificationKVDPHReceipt = null;
+    private \Pohoda\Type\RefType $classificationKVDPHReceipt = null;
 
     /**
      * Výdej - členění DPH.
-     *
-     * @var \Pohoda\Type\ClassificationVATType $classificationVATIssue
      */
-    private $classificationVATIssue = null;
+    private \Pohoda\Type\ClassificationVATType $classificationVATIssue = null;
 
     /**
      * Výdej - členění KV DPH (pouze SK verze).
-     *
-     * @var \Pohoda\Type\RefType $classificationKVDPHIssue
      */
-    private $classificationKVDPHIssue = null;
+    private \Pohoda\Type\RefType $classificationKVDPHIssue = null;
 
     /**
      * Účtování metodou A - Druh zásoby.
-     *
-     * @var string $classOfStock
      */
-    private $classOfStock = null;
+    private string $classOfStock = null;
 
     /**
      * Účtování metodou A - analytický účet zásoby.
-     *
-     * @var string $acc
      */
-    private $acc = null;
+    private string $acc = null;
 
     /**
      * Druh služby (OSS).
-     *
-     * @var \Pohoda\Type\MOSStypeType $typeServiceMOSS
      */
-    private $typeServiceMOSS = null;
+    private \Pohoda\Type\MOSStypeType $typeServiceMOSS = null;
 
     /**
      * Kontrola limitu pro režim přenesení daňové povinnosti (pouze CZ verze).
-     *
-     * @var string $controlLimitTaxLiability
      */
-    private $controlLimitTaxLiability = null;
+    private string $controlLimitTaxLiability = null;
 
     /**
      * Příznak přenesení daňové povinnosti (pouze SK verze).
-     *
-     * @var string $pDP
      */
-    private $pDP = null;
+    private string $pDP = null;
 
     /**
      * Výdej - členění DPH související s režimem přenesení daňové povinnosti (pouze SK verze).
-     *
-     * @var \Pohoda\Type\ClassificationVATType $pDPclassificationVATIssue
      */
-    private $pDPclassificationVATIssue = null;
+    private \Pohoda\Type\ClassificationVATType $pDPclassificationVATIssue = null;
 
     /**
      * Výdej - členění KVDPH související s režimem přenesení daňové povinnosti (pouze SK verze).
-     *
-     * @var \Pohoda\Type\RefType $pDPclassificationKVDPHIssue
      */
-    private $pDPclassificationKVDPHIssue = null;
+    private \Pohoda\Type\RefType $pDPclassificationKVDPHIssue = null;
 
     /**
      * Kód zboží související s režimem přenesení daňové povinnosti (pouze SK verze).
-     *
-     * @var string $codePDP
      */
-    private $codePDP = null;
+    private string $codePDP = null;
 
     /**
      * Recyklační příspěvek zásoby.
-     *
-     * @var \Pohoda\Stock\RecyclingContribType $recyclingContrib
      */
-    private $recyclingContrib = null;
+    private \Pohoda\Stock\RecyclingContribType $recyclingContrib = null;
 
     /**
      * Výkaz pro intrastat.
-     *
-     * @var \Pohoda\Stock\InstrastatType $intrastat
      */
-    private $intrastat = null;
+    private \Pohoda\Stock\InstrastatType $intrastat = null;
 
     /**
      * Označení zásoby - Novinka.
-     *
-     * @var string $news
      */
-    private $news = null;
+    private string $news = null;
 
     /**
      * Označení zásoby - Doprodej.
-     *
-     * @var string $clearanceSale
      */
-    private $clearanceSale = null;
+    private string $clearanceSale = null;
 
     /**
      * Označení zásoby - Akce.
-     *
-     * @var string $sale
      */
-    private $sale = null;
+    private string $sale = null;
 
     /**
      * Označení zásoby - Doporučujeme.
-     *
-     * @var string $recommended
      */
-    private $recommended = null;
+    private string $recommended = null;
 
     /**
      * Označení zásoby - Sleva.
-     *
-     * @var string $discount
      */
-    private $discount = null;
+    private string $discount = null;
 
     /**
      * Označení zásoby - Připravujeme.
-     *
-     * @var string $prepare
      */
-    private $prepare = null;
+    private string $prepare = null;
 
     /**
      * Skladová dostupnost zásoby(skladem, do 3 dnů, na objednávku).
-     *
-     * @var string $availability
      */
-    private $availability = null;
+    private string $availability = null;
 
     /**
      * Doprava zásoby(PPL,pošta,osobní odběr,...)Cena za dopravu .
-     *
-     * @var string $handlingInformation
      */
-    private $handlingInformation = null;
+    private string $handlingInformation = null;
 
     /**
      * Cizí název skladové položky.
-     *
-     * @var string $foreignName1
      */
-    private $foreignName1 = null;
+    private string $foreignName1 = null;
 
     /**
      * Doplňující text či poznámka k názvu skladové zásoby.
-     *
-     * @var string $foreignNameComplement1
      */
-    private $foreignNameComplement1 = null;
+    private string $foreignNameComplement1 = null;
 
     /**
      * Cizí název skladové položky.
-     *
-     * @var string $foreignName2
      */
-    private $foreignName2 = null;
+    private string $foreignName2 = null;
 
     /**
      * Doplňující text či poznámka k názvu skladové zásoby.
-     *
-     * @var string $foreignNameComplement2
      */
-    private $foreignNameComplement2 = null;
+    private string $foreignNameComplement2 = null;
 
     /**
      * Stručný popis.
-     *
-     * @var string $description
      */
-    private $description = null;
+    private string $description = null;
 
     /**
      * Podrobný popis.
-     *
-     * @var string $description2
      */
-    private $description2 = null;
+    private string $description2 = null;
 
     /**
      * Obrázky skladové položky.
      *
-     * @var \Pohoda\Stock\PictureType[] $pictures
+     * @var \Pohoda\Stock\PictureType[]
      */
-    private $pictures = null;
+    private array $pictures = null;
 
     /**
      * Kategorie internetového obchodu u zásoby. Pouze pro export.
      *
-     * @var int[] $categories
+     * @var int[]
      */
-    private $categories = null;
+    private array $categories = null;
 
     /**
      * Související soubory.
      *
-     * @var \Pohoda\Stock\RelatedFileType[] $relatedFiles
+     * @var \Pohoda\Stock\RelatedFileType[]
      */
-    private $relatedFiles = null;
+    private array $relatedFiles = null;
 
     /**
      * Související odkazy.
      *
-     * @var \Pohoda\Stock\RelatedLinkType[] $relatedLinks
+     * @var \Pohoda\Stock\RelatedLinkType[]
      */
-    private $relatedLinks = null;
+    private array $relatedLinks = null;
 
     /**
      * Seznam ID souvisejících zásob. Pouze pro export.
      *
-     * @var \Pohoda\Type\OrderStockItemType[] $relatedStocks
+     * @var \Pohoda\Type\OrderStockItemType[]
      */
-    private $relatedStocks = null;
+    private array $relatedStocks = null;
 
     /**
      * Alternativní zásoby. Pouze pro export.
      *
-     * @var \Pohoda\Type\OrderStockItemType[] $alternativeStocks
+     * @var \Pohoda\Type\OrderStockItemType[]
      */
-    private $alternativeStocks = null;
+    private array $alternativeStocks = null;
 
     /**
      * Internetové parametry zásoby. Pouze pro export.
      *
-     * @var \Pohoda\Stock\IntParameterType[] $intParameters
+     * @var \Pohoda\Stock\IntParameterType[]
      */
-    private $intParameters = null;
+    private array $intParameters = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
-     * @var \Pohoda\Type\LabelType[] $labels
+     * @var \Pohoda\Type\LabelType[]
      */
-    private $labels = null;
+    private array $labels = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID skladové zásoby (jen pro export).
      *
@@ -647,21 +499,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID skladové zásoby (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
@@ -674,22 +528,22 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as stockType
+     * Gets as stockType.
      *
      * Typ zásoby. Tento element je vyžadován při vytvoření dokladu. Nelze měnit při aktualizaci dokladu.
      *
@@ -701,21 +555,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new stockType
+     * Sets a new stockType.
      *
      * Typ zásoby. Tento element je vyžadován při vytvoření dokladu. Nelze měnit při aktualizaci dokladu.
      *
      * @param string $stockType
+     *
      * @return self
      */
     public function setStockType($stockType)
     {
         $this->stockType = $stockType;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Řetězcový identifikátor skladové položky.
      *
@@ -727,21 +583,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Řetězcový identifikátor skladové položky.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as eAN
+     * Gets as eAN.
      *
      * Čárový kód.
      *
@@ -753,21 +611,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new eAN
+     * Sets a new eAN.
      *
      * Čárový kód.
      *
      * @param string $eAN
+     *
      * @return self
      */
     public function setEAN($eAN)
     {
         $this->eAN = $eAN;
+
         return $this;
     }
 
     /**
-     * Gets as pLU
+     * Gets as pLU.
      *
      * PLU. Kód zásoby pro registrační pokladnu.
      *
@@ -779,21 +639,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new pLU
+     * Sets a new pLU.
      *
      * PLU. Kód zásoby pro registrační pokladnu.
      *
      * @param int $pLU
+     *
      * @return self
      */
     public function setPLU($pLU)
     {
         $this->pLU = $pLU;
+
         return $this;
     }
 
     /**
-     * Gets as isSales
+     * Gets as isSales.
      *
      * Odbyt. Určuje, zda se má tato zásoba nabízet při vyskladnění z agend Faktury, Prodejky a Výdejky.
      *
@@ -805,21 +667,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new isSales
+     * Sets a new isSales.
      *
      * Odbyt. Určuje, zda se má tato zásoba nabízet při vyskladnění z agend Faktury, Prodejky a Výdejky.
      *
      * @param string $isSales
+     *
      * @return self
      */
     public function setIsSales($isSales)
     {
         $this->isSales = $isSales;
+
         return $this;
     }
 
     /**
-     * Gets as isSerialNumber
+     * Gets as isSerialNumber.
      *
      * Výrobní čísla. Určuje, zda je toto číslovaná zásoba, u které se mají evidovat výrobní čísla.
      *
@@ -831,21 +695,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new isSerialNumber
+     * Sets a new isSerialNumber.
      *
      * Výrobní čísla. Určuje, zda je toto číslovaná zásoba, u které se mají evidovat výrobní čísla.
      *
      * @param string $isSerialNumber
+     *
      * @return self
      */
     public function setIsSerialNumber($isSerialNumber)
     {
         $this->isSerialNumber = $isSerialNumber;
+
         return $this;
     }
 
     /**
-     * Gets as isInternet
+     * Gets as isInternet.
      *
      * Internet. Určuje, zda je tato zásoba součástí sortimentu nabízeného na internetu.
      *
@@ -857,21 +723,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new isInternet
+     * Sets a new isInternet.
      *
      * Internet. Určuje, zda je tato zásoba součástí sortimentu nabízeného na internetu.
      *
      * @param string $isInternet
+     *
      * @return self
      */
     public function setIsInternet($isInternet)
     {
         $this->isInternet = $isInternet;
+
         return $this;
     }
 
     /**
-     * Gets as isBatch
+     * Gets as isBatch.
      *
      * Šarže. Určuje, zda je toto číslovaná zásoba, u které se mají evidovat šarže.
      *
@@ -883,21 +751,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new isBatch
+     * Sets a new isBatch.
      *
      * Šarže. Určuje, zda je toto číslovaná zásoba, u které se mají evidovat šarže.
      *
      * @param string $isBatch
+     *
      * @return self
      */
     public function setIsBatch($isBatch)
     {
         $this->isBatch = $isBatch;
+
         return $this;
     }
 
     /**
-     * Gets as purchasingRateVAT
+     * Gets as purchasingRateVAT.
      *
      * Sazba DPH pro nákup.
      *
@@ -909,21 +779,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new purchasingRateVAT
+     * Sets a new purchasingRateVAT.
      *
      * Sazba DPH pro nákup.
      *
-     * @param \Pohoda\Type\VatRateType $purchasingRateVAT
      * @return self
      */
     public function setPurchasingRateVAT(?\Pohoda\Type\VatRateType $purchasingRateVAT = null)
     {
         $this->purchasingRateVAT = $purchasingRateVAT;
+
         return $this;
     }
 
     /**
-     * Gets as sellingRateVAT
+     * Gets as sellingRateVAT.
      *
      * Sazba DPH pro prodej.
      *
@@ -935,21 +805,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new sellingRateVAT
+     * Sets a new sellingRateVAT.
      *
      * Sazba DPH pro prodej.
      *
-     * @param \Pohoda\Type\VatRateType $sellingRateVAT
      * @return self
      */
     public function setSellingRateVAT(?\Pohoda\Type\VatRateType $sellingRateVAT = null)
     {
         $this->sellingRateVAT = $sellingRateVAT;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název skladové položky. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -961,21 +831,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název skladové položky. Tento element je vyžadován při vytvoření dokladu.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as nameComplement
+     * Gets as nameComplement.
      *
      * Doplňující text či poznámka k názvu skladové zásoby.
      *
@@ -987,21 +859,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new nameComplement
+     * Sets a new nameComplement.
      *
      * Doplňující text či poznámka k názvu skladové zásoby.
      *
      * @param string $nameComplement
+     *
      * @return self
      */
     public function setNameComplement($nameComplement)
     {
         $this->nameComplement = $nameComplement;
+
         return $this;
     }
 
     /**
-     * Gets as unit
+     * Gets as unit.
      *
      * Měrná jednotka.
      *
@@ -1013,21 +887,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * Měrná jednotka.
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as unit2
+     * Gets as unit2.
      *
      * Měrná jednotka 2.
      *
@@ -1039,21 +915,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new unit2
+     * Sets a new unit2.
      *
      * Měrná jednotka 2.
      *
      * @param string $unit2
+     *
      * @return self
      */
     public function setUnit2($unit2)
     {
         $this->unit2 = $unit2;
+
         return $this;
     }
 
     /**
-     * Gets as unit3
+     * Gets as unit3.
      *
      * Měrná jednotka 3.
      *
@@ -1065,21 +943,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new unit3
+     * Sets a new unit3.
      *
      * Měrná jednotka 3.
      *
      * @param string $unit3
+     *
      * @return self
      */
     public function setUnit3($unit3)
     {
         $this->unit3 = $unit3;
+
         return $this;
     }
 
     /**
-     * Gets as coefficient2
+     * Gets as coefficient2.
      *
      * Měrná jednotka 2 koeficient.
      *
@@ -1091,21 +971,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new coefficient2
+     * Sets a new coefficient2.
      *
      * Měrná jednotka 2 koeficient.
      *
      * @param float $coefficient2
+     *
      * @return self
      */
     public function setCoefficient2($coefficient2)
     {
         $this->coefficient2 = $coefficient2;
+
         return $this;
     }
 
     /**
-     * Gets as coefficient3
+     * Gets as coefficient3.
      *
      * Měrná jednotka 3 koeficient.
      *
@@ -1117,21 +999,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new coefficient3
+     * Sets a new coefficient3.
      *
      * Měrná jednotka 3 koeficient.
      *
      * @param float $coefficient3
+     *
      * @return self
      */
     public function setCoefficient3($coefficient3)
     {
         $this->coefficient3 = $coefficient3;
+
         return $this;
     }
 
     /**
-     * Gets as storage
+     * Gets as storage.
      *
      * Členění. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -1143,21 +1027,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new storage
+     * Sets a new storage.
      *
      * Členění. Tento element je vyžadován při vytvoření dokladu.
      *
-     * @param \Pohoda\Type\RefTypeStorageType $storage
      * @return self
      */
     public function setStorage(?\Pohoda\Type\RefTypeStorageType $storage = null)
     {
         $this->storage = $storage;
+
         return $this;
     }
 
     /**
-     * Gets as typePrice
+     * Gets as typePrice.
      *
      * Cenová skupina. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -1169,21 +1053,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new typePrice
+     * Sets a new typePrice.
      *
      * Cenová skupina. Tento element je vyžadován při vytvoření dokladu.
      *
-     * @param \Pohoda\Type\RefType $typePrice
      * @return self
      */
     public function setTypePrice(?\Pohoda\Type\RefType $typePrice = null)
     {
         $this->typePrice = $typePrice;
+
         return $this;
     }
 
     /**
-     * Gets as weightedPurchasePrice
+     * Gets as weightedPurchasePrice.
      *
      * Vážená nákupní cena (jen pro export).
      *
@@ -1195,21 +1079,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new weightedPurchasePrice
+     * Sets a new weightedPurchasePrice.
      *
      * Vážená nákupní cena (jen pro export).
      *
      * @param float $weightedPurchasePrice
+     *
      * @return self
      */
     public function setWeightedPurchasePrice($weightedPurchasePrice)
     {
         $this->weightedPurchasePrice = $weightedPurchasePrice;
+
         return $this;
     }
 
     /**
-     * Gets as purchasingPrice
+     * Gets as purchasingPrice.
      *
      * Nákupní cena. Pokud není uvedena, bere se jako NULOVÁ.
      *
@@ -1221,21 +1107,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new purchasingPrice
+     * Sets a new purchasingPrice.
      *
      * Nákupní cena. Pokud není uvedena, bere se jako NULOVÁ.
      *
-     * @param \Pohoda\Stock\StockHeaderType\PurchasingPriceAType $purchasingPrice
      * @return self
      */
     public function setPurchasingPrice(?\Pohoda\Stock\StockHeaderType\PurchasingPriceAType $purchasingPrice = null)
     {
         $this->purchasingPrice = $purchasingPrice;
+
         return $this;
     }
 
     /**
-     * Gets as sellingPrice
+     * Gets as sellingPrice.
      *
      * Prodejní cena. Pokud není uvedena, bere se jako NULOVÁ.
      *
@@ -1247,21 +1133,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new sellingPrice
+     * Sets a new sellingPrice.
      *
      * Prodejní cena. Pokud není uvedena, bere se jako NULOVÁ.
      *
-     * @param \Pohoda\Stock\StockHeaderType\SellingPriceAType $sellingPrice
      * @return self
      */
     public function setSellingPrice(?\Pohoda\Stock\StockHeaderType\SellingPriceAType $sellingPrice = null)
     {
         $this->sellingPrice = $sellingPrice;
+
         return $this;
     }
 
     /**
-     * Gets as fixation
+     * Gets as fixation.
      *
      * Typ fixace (jen export).
      *
@@ -1273,21 +1159,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new fixation
+     * Sets a new fixation.
      *
      * Typ fixace (jen export).
      *
      * @param string $fixation
+     *
      * @return self
      */
     public function setFixation($fixation)
     {
         $this->fixation = $fixation;
+
         return $this;
     }
 
     /**
-     * Gets as limitMin
+     * Gets as limitMin.
      *
      * Limit Min pro automatickou objednávku.
      *
@@ -1299,21 +1187,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new limitMin
+     * Sets a new limitMin.
      *
      * Limit Min pro automatickou objednávku.
      *
      * @param float $limitMin
+     *
      * @return self
      */
     public function setLimitMin($limitMin)
     {
         $this->limitMin = $limitMin;
+
         return $this;
     }
 
     /**
-     * Gets as limitMax
+     * Gets as limitMax.
      *
      * Limit Max pro automatickou objednávku.
      *
@@ -1325,21 +1215,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new limitMax
+     * Sets a new limitMax.
      *
      * Limit Max pro automatickou objednávku.
      *
      * @param float $limitMax
+     *
      * @return self
      */
     public function setLimitMax($limitMax)
     {
         $this->limitMax = $limitMax;
+
         return $this;
     }
 
     /**
-     * Gets as mass
+     * Gets as mass.
      *
      * Hmotnost.
      *
@@ -1351,21 +1243,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new mass
+     * Sets a new mass.
      *
      * Hmotnost.
      *
      * @param float $mass
+     *
      * @return self
      */
     public function setMass($mass)
     {
         $this->mass = $mass;
+
         return $this;
     }
 
     /**
-     * Gets as volume
+     * Gets as volume.
      *
      * Objem.
      *
@@ -1377,21 +1271,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new volume
+     * Sets a new volume.
      *
      * Objem.
      *
      * @param float $volume
+     *
      * @return self
      */
     public function setVolume($volume)
     {
         $this->volume = $volume;
+
         return $this;
     }
 
     /**
-     * Gets as count
+     * Gets as count.
      *
      * Stav zásoby (jen pro export).
      *
@@ -1403,21 +1299,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new count
+     * Sets a new count.
      *
      * Stav zásoby (jen pro export).
      *
      * @param float $count
+     *
      * @return self
      */
     public function setCount($count)
     {
         $this->count = $count;
+
         return $this;
     }
 
     /**
-     * Gets as countReceivedOrders
+     * Gets as countReceivedOrders.
      *
      * Objednávky (jen pro export).
      *
@@ -1429,21 +1327,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new countReceivedOrders
+     * Sets a new countReceivedOrders.
      *
      * Objednávky (jen pro export).
      *
      * @param float $countReceivedOrders
+     *
      * @return self
      */
     public function setCountReceivedOrders($countReceivedOrders)
     {
         $this->countReceivedOrders = $countReceivedOrders;
+
         return $this;
     }
 
     /**
-     * Gets as reservation
+     * Gets as reservation.
      *
      * Rezervace (jen pro export).
      *
@@ -1455,21 +1355,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new reservation
+     * Sets a new reservation.
      *
      * Rezervace (jen pro export).
      *
      * @param float $reservation
+     *
      * @return self
      */
     public function setReservation($reservation)
     {
         $this->reservation = $reservation;
+
         return $this;
     }
 
     /**
-     * Gets as supplier
+     * Gets as supplier.
      *
      * Dodavatel.
      *
@@ -1481,21 +1383,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new supplier
+     * Sets a new supplier.
      *
      * Dodavatel.
      *
-     * @param \Pohoda\Type\CompanyType $supplier
      * @return self
      */
     public function setSupplier(?\Pohoda\Type\CompanyType $supplier = null)
     {
         $this->supplier = $supplier;
+
         return $this;
     }
 
     /**
-     * Gets as orderName
+     * Gets as orderName.
      *
      * Název skladové zásoby pro použití ve funkci Automatické objednávky.
      *
@@ -1507,21 +1409,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new orderName
+     * Sets a new orderName.
      *
      * Název skladové zásoby pro použití ve funkci Automatické objednávky.
      *
      * @param string $orderName
+     *
      * @return self
      */
     public function setOrderName($orderName)
     {
         $this->orderName = $orderName;
+
         return $this;
     }
 
     /**
-     * Gets as orderQuantity
+     * Gets as orderQuantity.
      *
      * Požadované množství k objednání pro použití ve funkci Automatické objednávky.
      *
@@ -1533,21 +1437,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new orderQuantity
+     * Sets a new orderQuantity.
      *
      * Požadované množství k objednání pro použití ve funkci Automatické objednávky.
      *
      * @param float $orderQuantity
+     *
      * @return self
      */
     public function setOrderQuantity($orderQuantity)
     {
         $this->orderQuantity = $orderQuantity;
+
         return $this;
     }
 
     /**
-     * Gets as countIssuedOrders
+     * Gets as countIssuedOrders.
      *
      * Objednáno (jen pro export).
      *
@@ -1559,21 +1465,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new countIssuedOrders
+     * Sets a new countIssuedOrders.
      *
      * Objednáno (jen pro export).
      *
      * @param float $countIssuedOrders
+     *
      * @return self
      */
     public function setCountIssuedOrders($countIssuedOrders)
     {
         $this->countIssuedOrders = $countIssuedOrders;
+
         return $this;
     }
 
     /**
-     * Gets as reclamation
+     * Gets as reclamation.
      *
      * Stav zásoby v reklamaci (jen pro export).
      *
@@ -1585,21 +1493,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new reclamation
+     * Sets a new reclamation.
      *
      * Stav zásoby v reklamaci (jen pro export).
      *
      * @param float $reclamation
+     *
      * @return self
      */
     public function setReclamation($reclamation)
     {
         $this->reclamation = $reclamation;
+
         return $this;
     }
 
     /**
-     * Gets as service
+     * Gets as service.
      *
      * Servis (jen pro export).
      *
@@ -1611,21 +1521,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new service
+     * Sets a new service.
      *
      * Servis (jen pro export).
      *
      * @param float $service
+     *
      * @return self
      */
     public function setService($service)
     {
         $this->service = $service;
+
         return $this;
     }
 
     /**
-     * Gets as shortName
+     * Gets as shortName.
      *
      * Zkrácený název skladové položky - např. při tisku na registrační pokladně.
      *
@@ -1637,21 +1549,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new shortName
+     * Sets a new shortName.
      *
      * Zkrácený název skladové položky - např. při tisku na registrační pokladně.
      *
      * @param string $shortName
+     *
      * @return self
      */
     public function setShortName($shortName)
     {
         $this->shortName = $shortName;
+
         return $this;
     }
 
     /**
-     * Gets as typeRP
+     * Gets as typeRP.
      *
      * Příznak pro registrační pokladnu.
      *
@@ -1663,21 +1577,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new typeRP
+     * Sets a new typeRP.
      *
      * Příznak pro registrační pokladnu.
      *
-     * @param \Pohoda\Type\RefType $typeRP
      * @return self
      */
     public function setTypeRP(?\Pohoda\Type\RefType $typeRP = null)
     {
         $this->typeRP = $typeRP;
+
         return $this;
     }
 
     /**
-     * Gets as guaranteeType
+     * Gets as guaranteeType.
      *
      * Typ záruky.
      *
@@ -1689,21 +1603,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new guaranteeType
+     * Sets a new guaranteeType.
      *
      * Typ záruky.
      *
      * @param string $guaranteeType
+     *
      * @return self
      */
     public function setGuaranteeType($guaranteeType)
     {
         $this->guaranteeType = $guaranteeType;
+
         return $this;
     }
 
     /**
-     * Gets as guarantee
+     * Gets as guarantee.
      *
      * Délka záruky.
      *
@@ -1715,21 +1631,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new guarantee
+     * Sets a new guarantee.
      *
      * Délka záruky.
      *
      * @param int $guarantee
+     *
      * @return self
      */
     public function setGuarantee($guarantee)
     {
         $this->guarantee = $guarantee;
+
         return $this;
     }
 
     /**
-     * Gets as producer
+     * Gets as producer.
      *
      * Výrobce skladové položky.
      *
@@ -1741,21 +1659,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new producer
+     * Sets a new producer.
      *
      * Výrobce skladové položky.
      *
      * @param string $producer
+     *
      * @return self
      */
     public function setProducer($producer)
     {
         $this->producer = $producer;
+
         return $this;
     }
 
     /**
-     * Gets as unitOfMeasure
+     * Gets as unitOfMeasure.
      *
      * Jednotka měrné ceny.
      *
@@ -1767,23 +1687,25 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new unitOfMeasure
+     * Sets a new unitOfMeasure.
      *
      * Jednotka měrné ceny.
      *
      * @param string $unitOfMeasure
+     *
      * @return self
      */
     public function setUnitOfMeasure($unitOfMeasure)
     {
         $this->unitOfMeasure = $unitOfMeasure;
+
         return $this;
     }
 
     /**
-     * Gets as coefficientOfMeasure
+     * Gets as coefficientOfMeasure.
      *
-     * Koeficient pro přepočet jednotky měrné ceny.
+     * Koeficient pro přepočet jednotky měrné ceny.
      *
      * @return float
      */
@@ -1793,21 +1715,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new coefficientOfMeasure
+     * Sets a new coefficientOfMeasure.
      *
-     * Koeficient pro přepočet jednotky měrné ceny.
+     * Koeficient pro přepočet jednotky měrné ceny.
      *
      * @param float $coefficientOfMeasure
+     *
      * @return self
      */
     public function setCoefficientOfMeasure($coefficientOfMeasure)
     {
         $this->coefficientOfMeasure = $coefficientOfMeasure;
+
         return $this;
     }
 
     /**
-     * Gets as eETItem
+     * Gets as eETItem.
      *
      * Typ položky EET (pouze CZ verze).
      *
@@ -1819,21 +1743,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new eETItem
+     * Sets a new eETItem.
      *
      * Typ položky EET (pouze CZ verze).
      *
      * @param string $eETItem
+     *
      * @return self
      */
     public function setEETItem($eETItem)
     {
         $this->eETItem = $eETItem;
+
         return $this;
     }
 
     /**
-     * Gets as dicPP
+     * Gets as dicPP.
      *
      * DIČ pověřujícího poplatníka (pouze CZ verze).
      *
@@ -1845,21 +1771,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new dicPP
+     * Sets a new dicPP.
      *
      * DIČ pověřujícího poplatníka (pouze CZ verze).
      *
      * @param string $dicPP
+     *
      * @return self
      */
     public function setDicPP($dicPP)
     {
         $this->dicPP = $dicPP;
+
         return $this;
     }
 
     /**
-     * Gets as eKasaItem
+     * Gets as eKasaItem.
      *
      * Položky eKasa (pouze SK verze).
      *
@@ -1871,21 +1799,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new eKasaItem
+     * Sets a new eKasaItem.
      *
      * Položky eKasa (pouze SK verze).
      *
-     * @param \Pohoda\Stock\EKasaItemType $eKasaItem
      * @return self
      */
     public function setEKasaItem(?\Pohoda\Stock\EKasaItemType $eKasaItem = null)
     {
         $this->eKasaItem = $eKasaItem;
+
         return $this;
     }
 
     /**
-     * Gets as yield
+     * Gets as yield.
      *
      * Výnos. Účet pro účtování výnosů z prodeje zásoby.
      *
@@ -1897,21 +1825,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new yield
+     * Sets a new yield.
      *
      * Výnos. Účet pro účtování výnosů z prodeje zásoby.
      *
      * @param string $yield
+     *
      * @return self
      */
     public function setYield($yield)
     {
         $this->yield = $yield;
+
         return $this;
     }
 
     /**
-     * Gets as cost
+     * Gets as cost.
      *
      * Náklad. Účet pro účtování nákladu z prodeje zásoby.
      *
@@ -1923,21 +1853,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new cost
+     * Sets a new cost.
      *
      * Náklad. Účet pro účtování nákladu z prodeje zásoby.
      *
      * @param string $cost
+     *
      * @return self
      */
     public function setCost($cost)
     {
         $this->cost = $cost;
+
         return $this;
     }
 
     /**
-     * Gets as classificationVATReceipt
+     * Gets as classificationVATReceipt.
      *
      * Příjem - členění DPH.
      *
@@ -1949,21 +1881,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new classificationVATReceipt
+     * Sets a new classificationVATReceipt.
      *
      * Příjem - členění DPH.
      *
-     * @param \Pohoda\Type\ClassificationVATType $classificationVATReceipt
      * @return self
      */
     public function setClassificationVATReceipt(?\Pohoda\Type\ClassificationVATType $classificationVATReceipt = null)
     {
         $this->classificationVATReceipt = $classificationVATReceipt;
+
         return $this;
     }
 
     /**
-     * Gets as classificationKVDPHReceipt
+     * Gets as classificationKVDPHReceipt.
      *
      * Příjem - členění KV DPH (pouze SK verze).
      *
@@ -1975,21 +1907,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new classificationKVDPHReceipt
+     * Sets a new classificationKVDPHReceipt.
      *
      * Příjem - členění KV DPH (pouze SK verze).
      *
-     * @param \Pohoda\Type\RefType $classificationKVDPHReceipt
      * @return self
      */
     public function setClassificationKVDPHReceipt(?\Pohoda\Type\RefType $classificationKVDPHReceipt = null)
     {
         $this->classificationKVDPHReceipt = $classificationKVDPHReceipt;
+
         return $this;
     }
 
     /**
-     * Gets as classificationVATIssue
+     * Gets as classificationVATIssue.
      *
      * Výdej - členění DPH.
      *
@@ -2001,21 +1933,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new classificationVATIssue
+     * Sets a new classificationVATIssue.
      *
      * Výdej - členění DPH.
      *
-     * @param \Pohoda\Type\ClassificationVATType $classificationVATIssue
      * @return self
      */
     public function setClassificationVATIssue(?\Pohoda\Type\ClassificationVATType $classificationVATIssue = null)
     {
         $this->classificationVATIssue = $classificationVATIssue;
+
         return $this;
     }
 
     /**
-     * Gets as classificationKVDPHIssue
+     * Gets as classificationKVDPHIssue.
      *
      * Výdej - členění KV DPH (pouze SK verze).
      *
@@ -2027,21 +1959,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new classificationKVDPHIssue
+     * Sets a new classificationKVDPHIssue.
      *
      * Výdej - členění KV DPH (pouze SK verze).
      *
-     * @param \Pohoda\Type\RefType $classificationKVDPHIssue
      * @return self
      */
     public function setClassificationKVDPHIssue(?\Pohoda\Type\RefType $classificationKVDPHIssue = null)
     {
         $this->classificationKVDPHIssue = $classificationKVDPHIssue;
+
         return $this;
     }
 
     /**
-     * Gets as classOfStock
+     * Gets as classOfStock.
      *
      * Účtování metodou A - Druh zásoby.
      *
@@ -2053,21 +1985,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new classOfStock
+     * Sets a new classOfStock.
      *
      * Účtování metodou A - Druh zásoby.
      *
      * @param string $classOfStock
+     *
      * @return self
      */
     public function setClassOfStock($classOfStock)
     {
         $this->classOfStock = $classOfStock;
+
         return $this;
     }
 
     /**
-     * Gets as acc
+     * Gets as acc.
      *
      * Účtování metodou A - analytický účet zásoby.
      *
@@ -2079,21 +2013,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new acc
+     * Sets a new acc.
      *
      * Účtování metodou A - analytický účet zásoby.
      *
      * @param string $acc
+     *
      * @return self
      */
     public function setAcc($acc)
     {
         $this->acc = $acc;
+
         return $this;
     }
 
     /**
-     * Gets as typeServiceMOSS
+     * Gets as typeServiceMOSS.
      *
      * Druh služby (OSS).
      *
@@ -2105,21 +2041,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new typeServiceMOSS
+     * Sets a new typeServiceMOSS.
      *
      * Druh služby (OSS).
      *
-     * @param \Pohoda\Type\MOSStypeType $typeServiceMOSS
      * @return self
      */
     public function setTypeServiceMOSS(?\Pohoda\Type\MOSStypeType $typeServiceMOSS = null)
     {
         $this->typeServiceMOSS = $typeServiceMOSS;
+
         return $this;
     }
 
     /**
-     * Gets as controlLimitTaxLiability
+     * Gets as controlLimitTaxLiability.
      *
      * Kontrola limitu pro režim přenesení daňové povinnosti (pouze CZ verze).
      *
@@ -2131,21 +2067,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new controlLimitTaxLiability
+     * Sets a new controlLimitTaxLiability.
      *
      * Kontrola limitu pro režim přenesení daňové povinnosti (pouze CZ verze).
      *
      * @param string $controlLimitTaxLiability
+     *
      * @return self
      */
     public function setControlLimitTaxLiability($controlLimitTaxLiability)
     {
         $this->controlLimitTaxLiability = $controlLimitTaxLiability;
+
         return $this;
     }
 
     /**
-     * Gets as pDP
+     * Gets as pDP.
      *
      * Příznak přenesení daňové povinnosti (pouze SK verze).
      *
@@ -2157,21 +2095,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new pDP
+     * Sets a new pDP.
      *
      * Příznak přenesení daňové povinnosti (pouze SK verze).
      *
      * @param string $pDP
+     *
      * @return self
      */
     public function setPDP($pDP)
     {
         $this->pDP = $pDP;
+
         return $this;
     }
 
     /**
-     * Gets as pDPclassificationVATIssue
+     * Gets as pDPclassificationVATIssue.
      *
      * Výdej - členění DPH související s režimem přenesení daňové povinnosti (pouze SK verze).
      *
@@ -2183,21 +2123,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new pDPclassificationVATIssue
+     * Sets a new pDPclassificationVATIssue.
      *
      * Výdej - členění DPH související s režimem přenesení daňové povinnosti (pouze SK verze).
      *
-     * @param \Pohoda\Type\ClassificationVATType $pDPclassificationVATIssue
      * @return self
      */
     public function setPDPclassificationVATIssue(?\Pohoda\Type\ClassificationVATType $pDPclassificationVATIssue = null)
     {
         $this->pDPclassificationVATIssue = $pDPclassificationVATIssue;
+
         return $this;
     }
 
     /**
-     * Gets as pDPclassificationKVDPHIssue
+     * Gets as pDPclassificationKVDPHIssue.
      *
      * Výdej - členění KVDPH související s režimem přenesení daňové povinnosti (pouze SK verze).
      *
@@ -2209,21 +2149,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new pDPclassificationKVDPHIssue
+     * Sets a new pDPclassificationKVDPHIssue.
      *
      * Výdej - členění KVDPH související s režimem přenesení daňové povinnosti (pouze SK verze).
      *
-     * @param \Pohoda\Type\RefType $pDPclassificationKVDPHIssue
      * @return self
      */
     public function setPDPclassificationKVDPHIssue(?\Pohoda\Type\RefType $pDPclassificationKVDPHIssue = null)
     {
         $this->pDPclassificationKVDPHIssue = $pDPclassificationKVDPHIssue;
+
         return $this;
     }
 
     /**
-     * Gets as codePDP
+     * Gets as codePDP.
      *
      * Kód zboží související s režimem přenesení daňové povinnosti (pouze SK verze).
      *
@@ -2235,21 +2175,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new codePDP
+     * Sets a new codePDP.
      *
      * Kód zboží související s režimem přenesení daňové povinnosti (pouze SK verze).
      *
      * @param string $codePDP
+     *
      * @return self
      */
     public function setCodePDP($codePDP)
     {
         $this->codePDP = $codePDP;
+
         return $this;
     }
 
     /**
-     * Gets as recyclingContrib
+     * Gets as recyclingContrib.
      *
      * Recyklační příspěvek zásoby.
      *
@@ -2261,21 +2203,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new recyclingContrib
+     * Sets a new recyclingContrib.
      *
      * Recyklační příspěvek zásoby.
      *
-     * @param \Pohoda\Stock\RecyclingContribType $recyclingContrib
      * @return self
      */
     public function setRecyclingContrib(?\Pohoda\Stock\RecyclingContribType $recyclingContrib = null)
     {
         $this->recyclingContrib = $recyclingContrib;
+
         return $this;
     }
 
     /**
-     * Gets as intrastat
+     * Gets as intrastat.
      *
      * Výkaz pro intrastat.
      *
@@ -2287,21 +2229,21 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new intrastat
+     * Sets a new intrastat.
      *
      * Výkaz pro intrastat.
      *
-     * @param \Pohoda\Stock\InstrastatType $intrastat
      * @return self
      */
     public function setIntrastat(?\Pohoda\Stock\InstrastatType $intrastat = null)
     {
         $this->intrastat = $intrastat;
+
         return $this;
     }
 
     /**
-     * Gets as news
+     * Gets as news.
      *
      * Označení zásoby - Novinka.
      *
@@ -2313,21 +2255,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new news
+     * Sets a new news.
      *
      * Označení zásoby - Novinka.
      *
      * @param string $news
+     *
      * @return self
      */
     public function setNews($news)
     {
         $this->news = $news;
+
         return $this;
     }
 
     /**
-     * Gets as clearanceSale
+     * Gets as clearanceSale.
      *
      * Označení zásoby - Doprodej.
      *
@@ -2339,21 +2283,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new clearanceSale
+     * Sets a new clearanceSale.
      *
      * Označení zásoby - Doprodej.
      *
      * @param string $clearanceSale
+     *
      * @return self
      */
     public function setClearanceSale($clearanceSale)
     {
         $this->clearanceSale = $clearanceSale;
+
         return $this;
     }
 
     /**
-     * Gets as sale
+     * Gets as sale.
      *
      * Označení zásoby - Akce.
      *
@@ -2365,21 +2311,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new sale
+     * Sets a new sale.
      *
      * Označení zásoby - Akce.
      *
      * @param string $sale
+     *
      * @return self
      */
     public function setSale($sale)
     {
         $this->sale = $sale;
+
         return $this;
     }
 
     /**
-     * Gets as recommended
+     * Gets as recommended.
      *
      * Označení zásoby - Doporučujeme.
      *
@@ -2391,21 +2339,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new recommended
+     * Sets a new recommended.
      *
      * Označení zásoby - Doporučujeme.
      *
      * @param string $recommended
+     *
      * @return self
      */
     public function setRecommended($recommended)
     {
         $this->recommended = $recommended;
+
         return $this;
     }
 
     /**
-     * Gets as discount
+     * Gets as discount.
      *
      * Označení zásoby - Sleva.
      *
@@ -2417,21 +2367,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new discount
+     * Sets a new discount.
      *
      * Označení zásoby - Sleva.
      *
      * @param string $discount
+     *
      * @return self
      */
     public function setDiscount($discount)
     {
         $this->discount = $discount;
+
         return $this;
     }
 
     /**
-     * Gets as prepare
+     * Gets as prepare.
      *
      * Označení zásoby - Připravujeme.
      *
@@ -2443,21 +2395,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new prepare
+     * Sets a new prepare.
      *
      * Označení zásoby - Připravujeme.
      *
      * @param string $prepare
+     *
      * @return self
      */
     public function setPrepare($prepare)
     {
         $this->prepare = $prepare;
+
         return $this;
     }
 
     /**
-     * Gets as availability
+     * Gets as availability.
      *
      * Skladová dostupnost zásoby(skladem, do 3 dnů, na objednávku).
      *
@@ -2469,21 +2423,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new availability
+     * Sets a new availability.
      *
      * Skladová dostupnost zásoby(skladem, do 3 dnů, na objednávku).
      *
      * @param string $availability
+     *
      * @return self
      */
     public function setAvailability($availability)
     {
         $this->availability = $availability;
+
         return $this;
     }
 
     /**
-     * Gets as handlingInformation
+     * Gets as handlingInformation.
      *
      * Doprava zásoby(PPL,pošta,osobní odběr,...)Cena za dopravu .
      *
@@ -2495,21 +2451,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new handlingInformation
+     * Sets a new handlingInformation.
      *
      * Doprava zásoby(PPL,pošta,osobní odběr,...)Cena za dopravu .
      *
      * @param string $handlingInformation
+     *
      * @return self
      */
     public function setHandlingInformation($handlingInformation)
     {
         $this->handlingInformation = $handlingInformation;
+
         return $this;
     }
 
     /**
-     * Gets as foreignName1
+     * Gets as foreignName1.
      *
      * Cizí název skladové položky.
      *
@@ -2521,21 +2479,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new foreignName1
+     * Sets a new foreignName1.
      *
      * Cizí název skladové položky.
      *
      * @param string $foreignName1
+     *
      * @return self
      */
     public function setForeignName1($foreignName1)
     {
         $this->foreignName1 = $foreignName1;
+
         return $this;
     }
 
     /**
-     * Gets as foreignNameComplement1
+     * Gets as foreignNameComplement1.
      *
      * Doplňující text či poznámka k názvu skladové zásoby.
      *
@@ -2547,21 +2507,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new foreignNameComplement1
+     * Sets a new foreignNameComplement1.
      *
      * Doplňující text či poznámka k názvu skladové zásoby.
      *
      * @param string $foreignNameComplement1
+     *
      * @return self
      */
     public function setForeignNameComplement1($foreignNameComplement1)
     {
         $this->foreignNameComplement1 = $foreignNameComplement1;
+
         return $this;
     }
 
     /**
-     * Gets as foreignName2
+     * Gets as foreignName2.
      *
      * Cizí název skladové položky.
      *
@@ -2573,21 +2535,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new foreignName2
+     * Sets a new foreignName2.
      *
      * Cizí název skladové položky.
      *
      * @param string $foreignName2
+     *
      * @return self
      */
     public function setForeignName2($foreignName2)
     {
         $this->foreignName2 = $foreignName2;
+
         return $this;
     }
 
     /**
-     * Gets as foreignNameComplement2
+     * Gets as foreignNameComplement2.
      *
      * Doplňující text či poznámka k názvu skladové zásoby.
      *
@@ -2599,21 +2563,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new foreignNameComplement2
+     * Sets a new foreignNameComplement2.
      *
      * Doplňující text či poznámka k názvu skladové zásoby.
      *
      * @param string $foreignNameComplement2
+     *
      * @return self
      */
     public function setForeignNameComplement2($foreignNameComplement2)
     {
         $this->foreignNameComplement2 = $foreignNameComplement2;
+
         return $this;
     }
 
     /**
-     * Gets as description
+     * Gets as description.
      *
      * Stručný popis.
      *
@@ -2625,21 +2591,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new description
+     * Sets a new description.
      *
      * Stručný popis.
      *
      * @param string $description
+     *
      * @return self
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
     /**
-     * Gets as description2
+     * Gets as description2.
      *
      * Podrobný popis.
      *
@@ -2651,39 +2619,42 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new description2
+     * Sets a new description2.
      *
      * Podrobný popis.
      *
      * @param string $description2
+     *
      * @return self
      */
     public function setDescription2($description2)
     {
         $this->description2 = $description2;
+
         return $this;
     }
 
     /**
-     * Adds as picture
+     * Adds as picture.
      *
      * Obrázky skladové položky.
      *
      * @return self
-     * @param \Pohoda\Stock\PictureType $picture
      */
     public function addToPictures(\Pohoda\Stock\PictureType $picture)
     {
         $this->pictures[] = $picture;
+
         return $this;
     }
 
     /**
-     * isset pictures
+     * isset pictures.
      *
      * Obrázky skladové položky.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPictures($index)
@@ -2692,20 +2663,19 @@ class StockHeaderType
     }
 
     /**
-     * unset pictures
+     * unset pictures.
      *
      * Obrázky skladové položky.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPictures($index)
+    public function unsetPictures($index): void
     {
         unset($this->pictures[$index]);
     }
 
     /**
-     * Gets as pictures
+     * Gets as pictures.
      *
      * Obrázky skladové položky.
      *
@@ -2717,39 +2687,44 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new pictures
+     * Sets a new pictures.
      *
      * Obrázky skladové položky.
      *
      * @param \Pohoda\Stock\PictureType[] $pictures
+     *
      * @return self
      */
-    public function setPictures(array $pictures = null)
+    public function setPictures(?array $pictures = null)
     {
         $this->pictures = $pictures;
+
         return $this;
     }
 
     /**
-     * Adds as idCategory
+     * Adds as idCategory.
      *
      * Kategorie internetového obchodu u zásoby. Pouze pro export.
      *
-     * @return self
      * @param int $idCategory
+     *
+     * @return self
      */
     public function addToCategories($idCategory)
     {
         $this->categories[] = $idCategory;
+
         return $this;
     }
 
     /**
-     * isset categories
+     * isset categories.
      *
      * Kategorie internetového obchodu u zásoby. Pouze pro export.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetCategories($index)
@@ -2758,20 +2733,19 @@ class StockHeaderType
     }
 
     /**
-     * unset categories
+     * unset categories.
      *
      * Kategorie internetového obchodu u zásoby. Pouze pro export.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetCategories($index)
+    public function unsetCategories($index): void
     {
         unset($this->categories[$index]);
     }
 
     /**
-     * Gets as categories
+     * Gets as categories.
      *
      * Kategorie internetového obchodu u zásoby. Pouze pro export.
      *
@@ -2783,39 +2757,42 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new categories
+     * Sets a new categories.
      *
      * Kategorie internetového obchodu u zásoby. Pouze pro export.
      *
      * @param int[] $categories
+     *
      * @return self
      */
-    public function setCategories(array $categories = null)
+    public function setCategories(?array $categories = null)
     {
         $this->categories = $categories;
+
         return $this;
     }
 
     /**
-     * Adds as relatedFile
+     * Adds as relatedFile.
      *
      * Související soubory.
      *
      * @return self
-     * @param \Pohoda\Stock\RelatedFileType $relatedFile
      */
     public function addToRelatedFiles(\Pohoda\Stock\RelatedFileType $relatedFile)
     {
         $this->relatedFiles[] = $relatedFile;
+
         return $this;
     }
 
     /**
-     * isset relatedFiles
+     * isset relatedFiles.
      *
      * Související soubory.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRelatedFiles($index)
@@ -2824,20 +2801,19 @@ class StockHeaderType
     }
 
     /**
-     * unset relatedFiles
+     * unset relatedFiles.
      *
      * Související soubory.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRelatedFiles($index)
+    public function unsetRelatedFiles($index): void
     {
         unset($this->relatedFiles[$index]);
     }
 
     /**
-     * Gets as relatedFiles
+     * Gets as relatedFiles.
      *
      * Související soubory.
      *
@@ -2849,39 +2825,42 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new relatedFiles
+     * Sets a new relatedFiles.
      *
      * Související soubory.
      *
      * @param \Pohoda\Stock\RelatedFileType[] $relatedFiles
+     *
      * @return self
      */
-    public function setRelatedFiles(array $relatedFiles = null)
+    public function setRelatedFiles(?array $relatedFiles = null)
     {
         $this->relatedFiles = $relatedFiles;
+
         return $this;
     }
 
     /**
-     * Adds as relatedLink
+     * Adds as relatedLink.
      *
      * Související odkazy.
      *
      * @return self
-     * @param \Pohoda\Stock\RelatedLinkType $relatedLink
      */
     public function addToRelatedLinks(\Pohoda\Stock\RelatedLinkType $relatedLink)
     {
         $this->relatedLinks[] = $relatedLink;
+
         return $this;
     }
 
     /**
-     * isset relatedLinks
+     * isset relatedLinks.
      *
      * Související odkazy.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRelatedLinks($index)
@@ -2890,20 +2869,19 @@ class StockHeaderType
     }
 
     /**
-     * unset relatedLinks
+     * unset relatedLinks.
      *
      * Související odkazy.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRelatedLinks($index)
+    public function unsetRelatedLinks($index): void
     {
         unset($this->relatedLinks[$index]);
     }
 
     /**
-     * Gets as relatedLinks
+     * Gets as relatedLinks.
      *
      * Související odkazy.
      *
@@ -2915,39 +2893,42 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new relatedLinks
+     * Sets a new relatedLinks.
      *
      * Související odkazy.
      *
      * @param \Pohoda\Stock\RelatedLinkType[] $relatedLinks
+     *
      * @return self
      */
-    public function setRelatedLinks(array $relatedLinks = null)
+    public function setRelatedLinks(?array $relatedLinks = null)
     {
         $this->relatedLinks = $relatedLinks;
+
         return $this;
     }
 
     /**
-     * Adds as idStocks
+     * Adds as idStocks.
      *
      * Seznam ID souvisejících zásob. Pouze pro export.
      *
      * @return self
-     * @param \Pohoda\Type\OrderStockItemType $idStocks
      */
     public function addToRelatedStocks(\Pohoda\Type\OrderStockItemType $idStocks)
     {
         $this->relatedStocks[] = $idStocks;
+
         return $this;
     }
 
     /**
-     * isset relatedStocks
+     * isset relatedStocks.
      *
      * Seznam ID souvisejících zásob. Pouze pro export.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRelatedStocks($index)
@@ -2956,20 +2937,19 @@ class StockHeaderType
     }
 
     /**
-     * unset relatedStocks
+     * unset relatedStocks.
      *
      * Seznam ID souvisejících zásob. Pouze pro export.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRelatedStocks($index)
+    public function unsetRelatedStocks($index): void
     {
         unset($this->relatedStocks[$index]);
     }
 
     /**
-     * Gets as relatedStocks
+     * Gets as relatedStocks.
      *
      * Seznam ID souvisejících zásob. Pouze pro export.
      *
@@ -2981,39 +2961,42 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new relatedStocks
+     * Sets a new relatedStocks.
      *
      * Seznam ID souvisejících zásob. Pouze pro export.
      *
      * @param \Pohoda\Type\OrderStockItemType[] $relatedStocks
+     *
      * @return self
      */
-    public function setRelatedStocks(array $relatedStocks = null)
+    public function setRelatedStocks(?array $relatedStocks = null)
     {
         $this->relatedStocks = $relatedStocks;
+
         return $this;
     }
 
     /**
-     * Adds as idStocks
+     * Adds as idStocks.
      *
      * Alternativní zásoby. Pouze pro export.
      *
      * @return self
-     * @param \Pohoda\Type\OrderStockItemType $idStocks
      */
     public function addToAlternativeStocks(\Pohoda\Type\OrderStockItemType $idStocks)
     {
         $this->alternativeStocks[] = $idStocks;
+
         return $this;
     }
 
     /**
-     * isset alternativeStocks
+     * isset alternativeStocks.
      *
      * Alternativní zásoby. Pouze pro export.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetAlternativeStocks($index)
@@ -3022,20 +3005,19 @@ class StockHeaderType
     }
 
     /**
-     * unset alternativeStocks
+     * unset alternativeStocks.
      *
      * Alternativní zásoby. Pouze pro export.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetAlternativeStocks($index)
+    public function unsetAlternativeStocks($index): void
     {
         unset($this->alternativeStocks[$index]);
     }
 
     /**
-     * Gets as alternativeStocks
+     * Gets as alternativeStocks.
      *
      * Alternativní zásoby. Pouze pro export.
      *
@@ -3047,39 +3029,42 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new alternativeStocks
+     * Sets a new alternativeStocks.
      *
      * Alternativní zásoby. Pouze pro export.
      *
      * @param \Pohoda\Type\OrderStockItemType[] $alternativeStocks
+     *
      * @return self
      */
-    public function setAlternativeStocks(array $alternativeStocks = null)
+    public function setAlternativeStocks(?array $alternativeStocks = null)
     {
         $this->alternativeStocks = $alternativeStocks;
+
         return $this;
     }
 
     /**
-     * Adds as intParameter
+     * Adds as intParameter.
      *
      * Internetové parametry zásoby. Pouze pro export.
      *
      * @return self
-     * @param \Pohoda\Stock\IntParameterType $intParameter
      */
     public function addToIntParameters(\Pohoda\Stock\IntParameterType $intParameter)
     {
         $this->intParameters[] = $intParameter;
+
         return $this;
     }
 
     /**
-     * isset intParameters
+     * isset intParameters.
      *
      * Internetové parametry zásoby. Pouze pro export.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetIntParameters($index)
@@ -3088,20 +3073,19 @@ class StockHeaderType
     }
 
     /**
-     * unset intParameters
+     * unset intParameters.
      *
      * Internetové parametry zásoby. Pouze pro export.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetIntParameters($index)
+    public function unsetIntParameters($index): void
     {
         unset($this->intParameters[$index]);
     }
 
     /**
-     * Gets as intParameters
+     * Gets as intParameters.
      *
      * Internetové parametry zásoby. Pouze pro export.
      *
@@ -3113,21 +3097,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new intParameters
+     * Sets a new intParameters.
      *
      * Internetové parametry zásoby. Pouze pro export.
      *
      * @param \Pohoda\Stock\IntParameterType[] $intParameters
+     *
      * @return self
      */
-    public function setIntParameters(array $intParameters = null)
+    public function setIntParameters(?array $intParameters = null)
     {
         $this->intParameters = $intParameters;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -3139,21 +3125,23 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -3165,39 +3153,42 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as label
+     * Adds as label.
      *
      * Štítky záznamu.
      *
      * @return self
-     * @param \Pohoda\Type\LabelType $label
      */
     public function addToLabels(\Pohoda\Type\LabelType $label)
     {
         $this->labels[] = $label;
+
         return $this;
     }
 
     /**
-     * isset labels
+     * isset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLabels($index)
@@ -3206,20 +3197,19 @@ class StockHeaderType
     }
 
     /**
-     * unset labels
+     * unset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLabels($index)
+    public function unsetLabels($index): void
     {
         unset($this->labels[$index]);
     }
 
     /**
-     * Gets as labels
+     * Gets as labels.
      *
      * Štítky záznamu.
      *
@@ -3231,39 +3221,42 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new labels
+     * Sets a new labels.
      *
      * Štítky záznamu.
      *
      * @param \Pohoda\Type\LabelType[] $labels
+     *
      * @return self
      */
-    public function setLabels(array $labels = null)
+    public function setLabels(?array $labels = null)
     {
         $this->labels = $labels;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -3272,20 +3265,19 @@ class StockHeaderType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -3297,16 +3289,18 @@ class StockHeaderType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

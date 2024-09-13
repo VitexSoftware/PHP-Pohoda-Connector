@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ActionPrice;
 
 /**
- * Class representing GroupType
- *
+ * Class representing GroupType.
  *
  * XSD Type: groupType
  */
@@ -12,20 +24,16 @@ class GroupType
 {
     /**
      * Název skupiny adres.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Popis skupiny adres.
-     *
-     * @var string $descripton
      */
-    private $descripton = null;
+    private string $descripton = null;
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název skupiny adres.
      *
@@ -37,21 +45,23 @@ class GroupType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název skupiny adres.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as descripton
+     * Gets as descripton.
      *
      * Popis skupiny adres.
      *
@@ -63,16 +73,18 @@ class GroupType
     }
 
     /**
-     * Sets a new descripton
+     * Sets a new descripton.
      *
      * Popis skupiny adres.
      *
      * @param string $descripton
+     *
      * @return self
      */
     public function setDescripton($descripton)
     {
         $this->descripton = $descripton;
+
         return $this;
     }
 }

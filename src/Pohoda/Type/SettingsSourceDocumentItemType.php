@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing SettingsSourceDocumentItemType
- *
+ * Class representing SettingsSourceDocumentItemType.
  *
  * XSD Type: settingsSourceDocumentItemType
  */
@@ -12,55 +24,41 @@ class SettingsSourceDocumentItemType
 {
     /**
      * Nastavení příznaku "Vyřízeno" na výdejce při vazbě: "Výdejka -> Vydaná faktura přes položky dokladu".
-     *
-     * @var string $linkIssueSlipItemToInvoice
      */
-    private $linkIssueSlipItemToInvoice = null;
+    private string $linkIssueSlipItemToInvoice = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na vydané nabídce při vazbě: "Vydaná nabídka -> Přijatá objednávka přes položky dokladu".
-     *
-     * @var string $linkIssueOfferItemToReceivedOrder
      */
-    private $linkIssueOfferItemToReceivedOrder = null;
+    private string $linkIssueOfferItemToReceivedOrder = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na přijaté objednávce při vazbě: "Přijatá objednávka -> Převodka přes položky dokladu". V Globálním nastavení musí být povoleno "Přijatou objednávku přenosem do převodky vyřídit".
-     *
-     * @var string $linkReceivedOrderItemToTransfer
      */
-    private $linkReceivedOrderItemToTransfer = null;
+    private string $linkReceivedOrderItemToTransfer = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na přijaté objednávce při vazbě: "Přijatá objednávka -> Prodejka přes položky dokladu".
-     *
-     * @var string $linkReceivedOrderItemToSaleVoucher
      */
-    private $linkReceivedOrderItemToSaleVoucher = null;
+    private string $linkReceivedOrderItemToSaleVoucher = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na výdejce při vazbě: "Výdejka -> Prodejka přes položky dokladu".
-     *
-     * @var string $linkIssueSlipItemToSaleVoucher
      */
-    private $linkIssueSlipItemToSaleVoucher = null;
+    private string $linkIssueSlipItemToSaleVoucher = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na vydané faktuře při vazbě: "Vydané faktura -> výdejka přes položky dokladu".
-     *
-     * @var string $linkIssuedInvoiceToIssueSlip
      */
-    private $linkIssuedInvoiceToIssueSlip = null;
+    private string $linkIssuedInvoiceToIssueSlip = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na vydané objednávce při vazbě: "Vydaná objednávka -> příjemka přes položky dokladu".
-     *
-     * @var string $linkIssuedOrderToReceiptVoucher
      */
-    private $linkIssuedOrderToReceiptVoucher = null;
+    private string $linkIssuedOrderToReceiptVoucher = null;
 
     /**
-     * Gets as linkIssueSlipItemToInvoice
+     * Gets as linkIssueSlipItemToInvoice.
      *
      * Nastavení příznaku "Vyřízeno" na výdejce při vazbě: "Výdejka -> Vydaná faktura přes položky dokladu".
      *
@@ -72,21 +70,23 @@ class SettingsSourceDocumentItemType
     }
 
     /**
-     * Sets a new linkIssueSlipItemToInvoice
+     * Sets a new linkIssueSlipItemToInvoice.
      *
      * Nastavení příznaku "Vyřízeno" na výdejce při vazbě: "Výdejka -> Vydaná faktura přes položky dokladu".
      *
      * @param string $linkIssueSlipItemToInvoice
+     *
      * @return self
      */
     public function setLinkIssueSlipItemToInvoice($linkIssueSlipItemToInvoice)
     {
         $this->linkIssueSlipItemToInvoice = $linkIssueSlipItemToInvoice;
+
         return $this;
     }
 
     /**
-     * Gets as linkIssueOfferItemToReceivedOrder
+     * Gets as linkIssueOfferItemToReceivedOrder.
      *
      * Nastavení příznaku "Vyřízeno" na vydané nabídce při vazbě: "Vydaná nabídka -> Přijatá objednávka přes položky dokladu".
      *
@@ -98,21 +98,23 @@ class SettingsSourceDocumentItemType
     }
 
     /**
-     * Sets a new linkIssueOfferItemToReceivedOrder
+     * Sets a new linkIssueOfferItemToReceivedOrder.
      *
      * Nastavení příznaku "Vyřízeno" na vydané nabídce při vazbě: "Vydaná nabídka -> Přijatá objednávka přes položky dokladu".
      *
      * @param string $linkIssueOfferItemToReceivedOrder
+     *
      * @return self
      */
     public function setLinkIssueOfferItemToReceivedOrder($linkIssueOfferItemToReceivedOrder)
     {
         $this->linkIssueOfferItemToReceivedOrder = $linkIssueOfferItemToReceivedOrder;
+
         return $this;
     }
 
     /**
-     * Gets as linkReceivedOrderItemToTransfer
+     * Gets as linkReceivedOrderItemToTransfer.
      *
      * Nastavení příznaku "Vyřízeno" na přijaté objednávce při vazbě: "Přijatá objednávka -> Převodka přes položky dokladu". V Globálním nastavení musí být povoleno "Přijatou objednávku přenosem do převodky vyřídit".
      *
@@ -124,21 +126,23 @@ class SettingsSourceDocumentItemType
     }
 
     /**
-     * Sets a new linkReceivedOrderItemToTransfer
+     * Sets a new linkReceivedOrderItemToTransfer.
      *
      * Nastavení příznaku "Vyřízeno" na přijaté objednávce při vazbě: "Přijatá objednávka -> Převodka přes položky dokladu". V Globálním nastavení musí být povoleno "Přijatou objednávku přenosem do převodky vyřídit".
      *
      * @param string $linkReceivedOrderItemToTransfer
+     *
      * @return self
      */
     public function setLinkReceivedOrderItemToTransfer($linkReceivedOrderItemToTransfer)
     {
         $this->linkReceivedOrderItemToTransfer = $linkReceivedOrderItemToTransfer;
+
         return $this;
     }
 
     /**
-     * Gets as linkReceivedOrderItemToSaleVoucher
+     * Gets as linkReceivedOrderItemToSaleVoucher.
      *
      * Nastavení příznaku "Vyřízeno" na přijaté objednávce při vazbě: "Přijatá objednávka -> Prodejka přes položky dokladu".
      *
@@ -150,21 +154,23 @@ class SettingsSourceDocumentItemType
     }
 
     /**
-     * Sets a new linkReceivedOrderItemToSaleVoucher
+     * Sets a new linkReceivedOrderItemToSaleVoucher.
      *
      * Nastavení příznaku "Vyřízeno" na přijaté objednávce při vazbě: "Přijatá objednávka -> Prodejka přes položky dokladu".
      *
      * @param string $linkReceivedOrderItemToSaleVoucher
+     *
      * @return self
      */
     public function setLinkReceivedOrderItemToSaleVoucher($linkReceivedOrderItemToSaleVoucher)
     {
         $this->linkReceivedOrderItemToSaleVoucher = $linkReceivedOrderItemToSaleVoucher;
+
         return $this;
     }
 
     /**
-     * Gets as linkIssueSlipItemToSaleVoucher
+     * Gets as linkIssueSlipItemToSaleVoucher.
      *
      * Nastavení příznaku "Vyřízeno" na výdejce při vazbě: "Výdejka -> Prodejka přes položky dokladu".
      *
@@ -176,21 +182,23 @@ class SettingsSourceDocumentItemType
     }
 
     /**
-     * Sets a new linkIssueSlipItemToSaleVoucher
+     * Sets a new linkIssueSlipItemToSaleVoucher.
      *
      * Nastavení příznaku "Vyřízeno" na výdejce při vazbě: "Výdejka -> Prodejka přes položky dokladu".
      *
      * @param string $linkIssueSlipItemToSaleVoucher
+     *
      * @return self
      */
     public function setLinkIssueSlipItemToSaleVoucher($linkIssueSlipItemToSaleVoucher)
     {
         $this->linkIssueSlipItemToSaleVoucher = $linkIssueSlipItemToSaleVoucher;
+
         return $this;
     }
 
     /**
-     * Gets as linkIssuedInvoiceToIssueSlip
+     * Gets as linkIssuedInvoiceToIssueSlip.
      *
      * Nastavení příznaku "Vyřízeno" na vydané faktuře při vazbě: "Vydané faktura -> výdejka přes položky dokladu".
      *
@@ -202,21 +210,23 @@ class SettingsSourceDocumentItemType
     }
 
     /**
-     * Sets a new linkIssuedInvoiceToIssueSlip
+     * Sets a new linkIssuedInvoiceToIssueSlip.
      *
      * Nastavení příznaku "Vyřízeno" na vydané faktuře při vazbě: "Vydané faktura -> výdejka přes položky dokladu".
      *
      * @param string $linkIssuedInvoiceToIssueSlip
+     *
      * @return self
      */
     public function setLinkIssuedInvoiceToIssueSlip($linkIssuedInvoiceToIssueSlip)
     {
         $this->linkIssuedInvoiceToIssueSlip = $linkIssuedInvoiceToIssueSlip;
+
         return $this;
     }
 
     /**
-     * Gets as linkIssuedOrderToReceiptVoucher
+     * Gets as linkIssuedOrderToReceiptVoucher.
      *
      * Nastavení příznaku "Vyřízeno" na vydané objednávce při vazbě: "Vydaná objednávka -> příjemka přes položky dokladu".
      *
@@ -228,16 +238,18 @@ class SettingsSourceDocumentItemType
     }
 
     /**
-     * Sets a new linkIssuedOrderToReceiptVoucher
+     * Sets a new linkIssuedOrderToReceiptVoucher.
      *
      * Nastavení příznaku "Vyřízeno" na vydané objednávce při vazbě: "Vydaná objednávka -> příjemka přes položky dokladu".
      *
      * @param string $linkIssuedOrderToReceiptVoucher
+     *
      * @return self
      */
     public function setLinkIssuedOrderToReceiptVoucher($linkIssuedOrderToReceiptVoucher)
     {
         $this->linkIssuedOrderToReceiptVoucher = $linkIssuedOrderToReceiptVoucher;
+
         return $this;
     }
 }

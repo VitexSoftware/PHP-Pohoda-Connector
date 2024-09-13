@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListNumericSeriesType
- *
+ * Class representing ListNumericSeriesType.
  *
  * XSD Type: listNumericSeriesType
  */
 class ListNumericSeriesType extends ListVersionType
 {
     /**
-     * @var \Pohoda\List\ItemNumericSeriesType[] $itemNumericSeries
+     * @var \Pohoda\List\ItemNumericSeriesType[]
      */
-    private $itemNumericSeries = [
+    private array $itemNumericSeries = [
     ];
 
     /**
-     * Adds as itemNumericSeries
+     * Adds as itemNumericSeries.
      *
      * @return self
-     * @param \Pohoda\List\ItemNumericSeriesType $itemNumericSeries
      */
     public function addToItemNumericSeries(\Pohoda\List\ItemNumericSeriesType $itemNumericSeries)
     {
         $this->itemNumericSeries[] = $itemNumericSeries;
+
         return $this;
     }
 
     /**
-     * isset itemNumericSeries
+     * isset itemNumericSeries.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetItemNumericSeries($index)
@@ -42,18 +55,17 @@ class ListNumericSeriesType extends ListVersionType
     }
 
     /**
-     * unset itemNumericSeries
+     * unset itemNumericSeries.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetItemNumericSeries($index)
+    public function unsetItemNumericSeries($index): void
     {
         unset($this->itemNumericSeries[$index]);
     }
 
     /**
-     * Gets as itemNumericSeries
+     * Gets as itemNumericSeries.
      *
      * @return \Pohoda\List\ItemNumericSeriesType[]
      */
@@ -63,14 +75,16 @@ class ListNumericSeriesType extends ListVersionType
     }
 
     /**
-     * Sets a new itemNumericSeries
+     * Sets a new itemNumericSeries.
      *
      * @param \Pohoda\List\ItemNumericSeriesType[] $itemNumericSeries
+     *
      * @return self
      */
-    public function setItemNumericSeries(array $itemNumericSeries = null)
+    public function setItemNumericSeries(?array $itemNumericSeries = null)
     {
         $this->itemNumericSeries = $itemNumericSeries;
+
         return $this;
     }
 }

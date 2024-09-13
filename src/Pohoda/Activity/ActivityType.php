@@ -1,27 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Activity;
 
 /**
- * Class representing ActivityType
- *
+ * Class representing ActivityType.
  *
  * XSD Type: activityType
  */
 class ActivityType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \Pohoda\Activity\ActivityHeaderType $activityHeader = null;
 
     /**
-     * @var \Pohoda\Activity\ActivityHeaderType $activityHeader
-     */
-    private $activityHeader = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -31,19 +36,21 @@ class ActivityType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as activityHeader
+     * Gets as activityHeader.
      *
      * @return \Pohoda\Activity\ActivityHeaderType
      */
@@ -53,14 +60,14 @@ class ActivityType
     }
 
     /**
-     * Sets a new activityHeader
+     * Sets a new activityHeader.
      *
-     * @param \Pohoda\Activity\ActivityHeaderType $activityHeader
      * @return self
      */
     public function setActivityHeader(?\Pohoda\Activity\ActivityHeaderType $activityHeader = null)
     {
         $this->activityHeader = $activityHeader;
+
         return $this;
     }
 }

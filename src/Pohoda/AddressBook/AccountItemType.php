@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\AddressBook;
 
 /**
- * Class representing AccountItemType
- *
+ * Class representing AccountItemType.
  *
  * XSD Type: accountItemType
  */
@@ -12,48 +24,36 @@ class AccountItemType
 {
     /**
      * Typ práce s bankovním účtem. Výchozí hodnota je přidání nové bankovního účtu.
-     *
-     * @var \Pohoda\Type\ActionTypeItemType $actionType
      */
-    private $actionType = null;
+    private \Pohoda\Type\ActionTypeItemType $actionType = null;
 
     /**
      * ID položky dokladu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Číslo bankovního účtu. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var string $accountNumber
      */
-    private $accountNumber = null;
+    private string $accountNumber = null;
 
     /**
      * Specificky symbol.
-     *
-     * @var string $symSpec
      */
-    private $symSpec = null;
+    private string $symSpec = null;
 
     /**
      * Kód banky.
-     *
-     * @var string $bankCode
      */
-    private $bankCode = null;
+    private string $bankCode = null;
 
     /**
      * Výchozí účet.
-     *
-     * @var string $defaultAccount
      */
-    private $defaultAccount = null;
+    private string $defaultAccount = null;
 
     /**
-     * Gets as actionType
+     * Gets as actionType.
      *
      * Typ práce s bankovním účtem. Výchozí hodnota je přidání nové bankovního účtu.
      *
@@ -65,21 +65,21 @@ class AccountItemType
     }
 
     /**
-     * Sets a new actionType
+     * Sets a new actionType.
      *
      * Typ práce s bankovním účtem. Výchozí hodnota je přidání nové bankovního účtu.
      *
-     * @param \Pohoda\Type\ActionTypeItemType $actionType
      * @return self
      */
     public function setActionType(?\Pohoda\Type\ActionTypeItemType $actionType = null)
     {
         $this->actionType = $actionType;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID položky dokladu (jen pro export).
      *
@@ -91,21 +91,23 @@ class AccountItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID položky dokladu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as accountNumber
+     * Gets as accountNumber.
      *
      * Číslo bankovního účtu. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -117,21 +119,23 @@ class AccountItemType
     }
 
     /**
-     * Sets a new accountNumber
+     * Sets a new accountNumber.
      *
      * Číslo bankovního účtu. Tento element je vyžadován při vytvoření dokladu.
      *
      * @param string $accountNumber
+     *
      * @return self
      */
     public function setAccountNumber($accountNumber)
     {
         $this->accountNumber = $accountNumber;
+
         return $this;
     }
 
     /**
-     * Gets as symSpec
+     * Gets as symSpec.
      *
      * Specificky symbol.
      *
@@ -143,21 +147,23 @@ class AccountItemType
     }
 
     /**
-     * Sets a new symSpec
+     * Sets a new symSpec.
      *
      * Specificky symbol.
      *
      * @param string $symSpec
+     *
      * @return self
      */
     public function setSymSpec($symSpec)
     {
         $this->symSpec = $symSpec;
+
         return $this;
     }
 
     /**
-     * Gets as bankCode
+     * Gets as bankCode.
      *
      * Kód banky.
      *
@@ -169,21 +175,23 @@ class AccountItemType
     }
 
     /**
-     * Sets a new bankCode
+     * Sets a new bankCode.
      *
      * Kód banky.
      *
      * @param string $bankCode
+     *
      * @return self
      */
     public function setBankCode($bankCode)
     {
         $this->bankCode = $bankCode;
+
         return $this;
     }
 
     /**
-     * Gets as defaultAccount
+     * Gets as defaultAccount.
      *
      * Výchozí účet.
      *
@@ -195,16 +203,18 @@ class AccountItemType
     }
 
     /**
-     * Sets a new defaultAccount
+     * Sets a new defaultAccount.
      *
      * Výchozí účet.
      *
      * @param string $defaultAccount
+     *
      * @return self
      */
     public function setDefaultAccount($defaultAccount)
     {
         $this->defaultAccount = $defaultAccount;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prijemka;
 
 /**
- * Class representing PrijemkaDetailType
- *
+ * Class representing PrijemkaDetailType.
  *
  * XSD Type: prijemkaDetailType
  */
@@ -13,47 +25,48 @@ class PrijemkaDetailType
     /**
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
-     * @var \Pohoda\Prijemka\PrijemkaItemType[] $prijemkaItem
+     * @var \Pohoda\Prijemka\PrijemkaItemType[]
      */
-    private $prijemkaItem = [
+    private array $prijemkaItem = [
     ];
 
     /**
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
-     * @var \Pohoda\Type\RoundingItemType[] $roundingItem
+     * @var \Pohoda\Type\RoundingItemType[]
      */
-    private $roundingItem = [
+    private array $roundingItem = [
     ];
 
     /**
      * Definice položky dokladu typu "Vedlejší náklady".
      *
-     * @var \Pohoda\Prijemka\PrijemkaAccessoryChargesItemType[] $prijemkaAccessoryChargesItem
+     * @var \Pohoda\Prijemka\PrijemkaAccessoryChargesItemType[]
      */
-    private $prijemkaAccessoryChargesItem = [
+    private array $prijemkaAccessoryChargesItem = [
     ];
 
     /**
-     * Adds as prijemkaItem
+     * Adds as prijemkaItem.
      *
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
      * @return self
-     * @param \Pohoda\Prijemka\PrijemkaItemType $prijemkaItem
      */
     public function addToPrijemkaItem(\Pohoda\Prijemka\PrijemkaItemType $prijemkaItem)
     {
         $this->prijemkaItem[] = $prijemkaItem;
+
         return $this;
     }
 
     /**
-     * isset prijemkaItem
+     * isset prijemkaItem.
      *
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrijemkaItem($index)
@@ -62,20 +75,19 @@ class PrijemkaDetailType
     }
 
     /**
-     * unset prijemkaItem
+     * unset prijemkaItem.
      *
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrijemkaItem($index)
+    public function unsetPrijemkaItem($index): void
     {
         unset($this->prijemkaItem[$index]);
     }
 
     /**
-     * Gets as prijemkaItem
+     * Gets as prijemkaItem.
      *
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
@@ -87,39 +99,42 @@ class PrijemkaDetailType
     }
 
     /**
-     * Sets a new prijemkaItem
+     * Sets a new prijemkaItem.
      *
      * Definice "Textové" nebo "Skladové" položky dokladu.
      *
      * @param \Pohoda\Prijemka\PrijemkaItemType[] $prijemkaItem
+     *
      * @return self
      */
     public function setPrijemkaItem(array $prijemkaItem)
     {
         $this->prijemkaItem = $prijemkaItem;
+
         return $this;
     }
 
     /**
-     * Adds as roundingItem
+     * Adds as roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
      * @return self
-     * @param \Pohoda\Type\RoundingItemType $roundingItem
      */
     public function addToRoundingItem(\Pohoda\Type\RoundingItemType $roundingItem)
     {
         $this->roundingItem[] = $roundingItem;
+
         return $this;
     }
 
     /**
-     * isset roundingItem
+     * isset roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRoundingItem($index)
@@ -128,20 +143,19 @@ class PrijemkaDetailType
     }
 
     /**
-     * unset roundingItem
+     * unset roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRoundingItem($index)
+    public function unsetRoundingItem($index): void
     {
         unset($this->roundingItem[$index]);
     }
 
     /**
-     * Gets as roundingItem
+     * Gets as roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
@@ -153,39 +167,42 @@ class PrijemkaDetailType
     }
 
     /**
-     * Sets a new roundingItem
+     * Sets a new roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
      * @param \Pohoda\Type\RoundingItemType[] $roundingItem
+     *
      * @return self
      */
     public function setRoundingItem(array $roundingItem)
     {
         $this->roundingItem = $roundingItem;
+
         return $this;
     }
 
     /**
-     * Adds as prijemkaAccessoryChargesItem
+     * Adds as prijemkaAccessoryChargesItem.
      *
      * Definice položky dokladu typu "Vedlejší náklady".
      *
      * @return self
-     * @param \Pohoda\Prijemka\PrijemkaAccessoryChargesItemType $prijemkaAccessoryChargesItem
      */
     public function addToPrijemkaAccessoryChargesItem(\Pohoda\Prijemka\PrijemkaAccessoryChargesItemType $prijemkaAccessoryChargesItem)
     {
         $this->prijemkaAccessoryChargesItem[] = $prijemkaAccessoryChargesItem;
+
         return $this;
     }
 
     /**
-     * isset prijemkaAccessoryChargesItem
+     * isset prijemkaAccessoryChargesItem.
      *
      * Definice položky dokladu typu "Vedlejší náklady".
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrijemkaAccessoryChargesItem($index)
@@ -194,20 +211,19 @@ class PrijemkaDetailType
     }
 
     /**
-     * unset prijemkaAccessoryChargesItem
+     * unset prijemkaAccessoryChargesItem.
      *
      * Definice položky dokladu typu "Vedlejší náklady".
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrijemkaAccessoryChargesItem($index)
+    public function unsetPrijemkaAccessoryChargesItem($index): void
     {
         unset($this->prijemkaAccessoryChargesItem[$index]);
     }
 
     /**
-     * Gets as prijemkaAccessoryChargesItem
+     * Gets as prijemkaAccessoryChargesItem.
      *
      * Definice položky dokladu typu "Vedlejší náklady".
      *
@@ -219,16 +235,18 @@ class PrijemkaDetailType
     }
 
     /**
-     * Sets a new prijemkaAccessoryChargesItem
+     * Sets a new prijemkaAccessoryChargesItem.
      *
      * Definice položky dokladu typu "Vedlejší náklady".
      *
      * @param \Pohoda\Prijemka\PrijemkaAccessoryChargesItemType[] $prijemkaAccessoryChargesItem
+     *
      * @return self
      */
     public function setPrijemkaAccessoryChargesItem(array $prijemkaAccessoryChargesItem)
     {
         $this->prijemkaAccessoryChargesItem = $prijemkaAccessoryChargesItem;
+
         return $this;
     }
 }

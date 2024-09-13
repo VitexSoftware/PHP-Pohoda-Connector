@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing LinksType
- *
+ * Class representing LinksType.
  *
  * XSD Type: linksType
  */
@@ -13,39 +25,40 @@ class LinksType
     /**
      * Přenos dokladu.
      *
-     * @var \Pohoda\Type\LinkElemetType[] $link
+     * @var \Pohoda\Type\LinkElemetType[]
      */
-    private $link = [
+    private array $link = [
     ];
 
     /**
      * Vazba na doklad.
      *
-     * @var \Pohoda\Type\ManualLinkElementType[] $manualLink
+     * @var \Pohoda\Type\ManualLinkElementType[]
      */
-    private $manualLink = [
+    private array $manualLink = [
     ];
 
     /**
-     * Adds as link
+     * Adds as link.
      *
      * Přenos dokladu.
      *
      * @return self
-     * @param \Pohoda\Type\LinkElemetType $link
      */
     public function addToLink(\Pohoda\Type\LinkElemetType $link)
     {
         $this->link[] = $link;
+
         return $this;
     }
 
     /**
-     * isset link
+     * isset link.
      *
      * Přenos dokladu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLink($index)
@@ -54,20 +67,19 @@ class LinksType
     }
 
     /**
-     * unset link
+     * unset link.
      *
      * Přenos dokladu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLink($index)
+    public function unsetLink($index): void
     {
         unset($this->link[$index]);
     }
 
     /**
-     * Gets as link
+     * Gets as link.
      *
      * Přenos dokladu.
      *
@@ -79,39 +91,42 @@ class LinksType
     }
 
     /**
-     * Sets a new link
+     * Sets a new link.
      *
      * Přenos dokladu.
      *
      * @param \Pohoda\Type\LinkElemetType[] $link
+     *
      * @return self
      */
-    public function setLink(array $link = null)
+    public function setLink(?array $link = null)
     {
         $this->link = $link;
+
         return $this;
     }
 
     /**
-     * Adds as manualLink
+     * Adds as manualLink.
      *
      * Vazba na doklad.
      *
      * @return self
-     * @param \Pohoda\Type\ManualLinkElementType $manualLink
      */
     public function addToManualLink(\Pohoda\Type\ManualLinkElementType $manualLink)
     {
         $this->manualLink[] = $manualLink;
+
         return $this;
     }
 
     /**
-     * isset manualLink
+     * isset manualLink.
      *
      * Vazba na doklad.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetManualLink($index)
@@ -120,20 +135,19 @@ class LinksType
     }
 
     /**
-     * unset manualLink
+     * unset manualLink.
      *
      * Vazba na doklad.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetManualLink($index)
+    public function unsetManualLink($index): void
     {
         unset($this->manualLink[$index]);
     }
 
     /**
-     * Gets as manualLink
+     * Gets as manualLink.
      *
      * Vazba na doklad.
      *
@@ -145,16 +159,18 @@ class LinksType
     }
 
     /**
-     * Sets a new manualLink
+     * Sets a new manualLink.
      *
      * Vazba na doklad.
      *
      * @param \Pohoda\Type\ManualLinkElementType[] $manualLink
+     *
      * @return self
      */
-    public function setManualLink(array $manualLink = null)
+    public function setManualLink(?array $manualLink = null)
     {
         $this->manualLink = $manualLink;
+
         return $this;
     }
 }

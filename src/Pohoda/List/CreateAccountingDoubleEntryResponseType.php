@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\DocumentResponseType;
 
 /**
- * Class representing CreateAccountingDoubleEntryResponseType
- *
+ * Class representing CreateAccountingDoubleEntryResponseType.
  *
  * XSD Type: createAccountingDoubleEntryResponseType
  */
 class CreateAccountingDoubleEntryResponseType extends DocumentResponseType
 {
     /**
-     * @var \Pohoda\List\CreateAccountingResponseType[] $createAccountingResponse
+     * @var \Pohoda\List\CreateAccountingResponseType[]
      */
-    private $createAccountingResponse = [
+    private array $createAccountingResponse = [
     ];
 
     /**
-     * Adds as createAccountingResponse
+     * Adds as createAccountingResponse.
      *
      * @return self
-     * @param \Pohoda\List\CreateAccountingResponseType $createAccountingResponse
      */
     public function addToCreateAccountingResponse(\Pohoda\List\CreateAccountingResponseType $createAccountingResponse)
     {
         $this->createAccountingResponse[] = $createAccountingResponse;
+
         return $this;
     }
 
     /**
-     * isset createAccountingResponse
+     * isset createAccountingResponse.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetCreateAccountingResponse($index)
@@ -42,18 +55,17 @@ class CreateAccountingDoubleEntryResponseType extends DocumentResponseType
     }
 
     /**
-     * unset createAccountingResponse
+     * unset createAccountingResponse.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetCreateAccountingResponse($index)
+    public function unsetCreateAccountingResponse($index): void
     {
         unset($this->createAccountingResponse[$index]);
     }
 
     /**
-     * Gets as createAccountingResponse
+     * Gets as createAccountingResponse.
      *
      * @return \Pohoda\List\CreateAccountingResponseType[]
      */
@@ -63,14 +75,16 @@ class CreateAccountingDoubleEntryResponseType extends DocumentResponseType
     }
 
     /**
-     * Sets a new createAccountingResponse
+     * Sets a new createAccountingResponse.
      *
      * @param \Pohoda\List\CreateAccountingResponseType[] $createAccountingResponse
+     *
      * @return self
      */
-    public function setCreateAccountingResponse(array $createAccountingResponse = null)
+    public function setCreateAccountingResponse(?array $createAccountingResponse = null)
     {
         $this->createAccountingResponse = $createAccountingResponse;
+
         return $this;
     }
 }

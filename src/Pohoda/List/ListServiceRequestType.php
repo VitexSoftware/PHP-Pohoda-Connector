@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListServiceRequestType
- *
+ * Class representing ListServiceRequestType.
  *
  * XSD Type: listServiceRequestType
  */
 class ListServiceRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $serviceVersion
      */
-    private $serviceVersion = null;
+    private string $serviceVersion = null;
 
     /**
-     * @var \Pohoda\Filter\RequestServiceType[] $requestService
+     * @var \Pohoda\Filter\RequestServiceType[]
      */
-    private $requestService = [
+    private array $requestService = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListServiceRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as serviceVersion
+     * Gets as serviceVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListServiceRequestType
     }
 
     /**
-     * Sets a new serviceVersion
+     * Sets a new serviceVersion.
      *
      * Požadovaná verze.
      *
      * @param string $serviceVersion
+     *
      * @return self
      */
     public function setServiceVersion($serviceVersion)
     {
         $this->serviceVersion = $serviceVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestService
+     * Adds as requestService.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestServiceType $requestService
      */
     public function addToRequestService(\Pohoda\Filter\RequestServiceType $requestService)
     {
         $this->requestService[] = $requestService;
+
         return $this;
     }
 
     /**
-     * isset requestService
+     * isset requestService.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestService($index)
@@ -100,18 +112,17 @@ class ListServiceRequestType
     }
 
     /**
-     * unset requestService
+     * unset requestService.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestService($index)
+    public function unsetRequestService($index): void
     {
         unset($this->requestService[$index]);
     }
 
     /**
-     * Gets as requestService
+     * Gets as requestService.
      *
      * @return \Pohoda\Filter\RequestServiceType[]
      */
@@ -121,14 +132,16 @@ class ListServiceRequestType
     }
 
     /**
-     * Sets a new requestService
+     * Sets a new requestService.
      *
      * @param \Pohoda\Filter\RequestServiceType[] $requestService
+     *
      * @return self
      */
     public function setRequestService(array $requestService)
     {
         $this->requestService = $requestService;
+
         return $this;
     }
 }

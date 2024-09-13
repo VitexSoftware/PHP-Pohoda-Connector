@@ -1,42 +1,47 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListVoucherRequestType
- *
+ * Class representing ListVoucherRequestType.
  *
  * XSD Type: listVoucherRequestType
  */
 class ListVoucherRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze dokladu.
-     *
-     * @var string $voucherVersion
      */
-    private $voucherVersion = null;
+    private string $voucherVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
 
     /**
-     * @var \Pohoda\Filter\RequestVoucherType[] $requestVoucher
+     * @var \Pohoda\Filter\RequestVoucherType[]
      */
-    private $requestVoucher = [
+    private array $requestVoucher = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -46,19 +51,21 @@ class ListVoucherRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as voucherVersion
+     * Gets as voucherVersion.
      *
      * Požadovaná verze dokladu.
      *
@@ -70,21 +77,23 @@ class ListVoucherRequestType
     }
 
     /**
-     * Sets a new voucherVersion
+     * Sets a new voucherVersion.
      *
      * Požadovaná verze dokladu.
      *
      * @param string $voucherVersion
+     *
      * @return self
      */
     public function setVoucherVersion($voucherVersion)
     {
         $this->voucherVersion = $voucherVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -96,35 +105,38 @@ class ListVoucherRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Adds as requestVoucher
+     * Adds as requestVoucher.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestVoucherType $requestVoucher
      */
     public function addToRequestVoucher(\Pohoda\Filter\RequestVoucherType $requestVoucher)
     {
         $this->requestVoucher[] = $requestVoucher;
+
         return $this;
     }
 
     /**
-     * isset requestVoucher
+     * isset requestVoucher.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestVoucher($index)
@@ -133,18 +145,17 @@ class ListVoucherRequestType
     }
 
     /**
-     * unset requestVoucher
+     * unset requestVoucher.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestVoucher($index)
+    public function unsetRequestVoucher($index): void
     {
         unset($this->requestVoucher[$index]);
     }
 
     /**
-     * Gets as requestVoucher
+     * Gets as requestVoucher.
      *
      * @return \Pohoda\Filter\RequestVoucherType[]
      */
@@ -154,14 +165,16 @@ class ListVoucherRequestType
     }
 
     /**
-     * Sets a new requestVoucher
+     * Sets a new requestVoucher.
      *
      * @param \Pohoda\Filter\RequestVoucherType[] $requestVoucher
+     *
      * @return self
      */
     public function setRequestVoucher(array $requestVoucher)
     {
         $this->requestVoucher = $requestVoucher;
+
         return $this;
     }
 }

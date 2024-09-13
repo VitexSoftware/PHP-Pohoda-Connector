@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListCentreType
- *
+ * Class representing ListCentreType.
  *
  * XSD Type: listCentreType
  */
 class ListCentreType extends ListVersionType
 {
     /**
-     * @var \Pohoda\List\ItemNameType[] $itemCentre
+     * @var \Pohoda\List\ItemNameType[]
      */
-    private $itemCentre = [
+    private array $itemCentre = [
     ];
 
     /**
-     * Adds as itemCentre
+     * Adds as itemCentre.
      *
      * @return self
-     * @param \Pohoda\List\ItemNameType $itemCentre
      */
     public function addToItemCentre(\Pohoda\List\ItemNameType $itemCentre)
     {
         $this->itemCentre[] = $itemCentre;
+
         return $this;
     }
 
     /**
-     * isset itemCentre
+     * isset itemCentre.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetItemCentre($index)
@@ -42,18 +55,17 @@ class ListCentreType extends ListVersionType
     }
 
     /**
-     * unset itemCentre
+     * unset itemCentre.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetItemCentre($index)
+    public function unsetItemCentre($index): void
     {
         unset($this->itemCentre[$index]);
     }
 
     /**
-     * Gets as itemCentre
+     * Gets as itemCentre.
      *
      * @return \Pohoda\List\ItemNameType[]
      */
@@ -63,14 +75,16 @@ class ListCentreType extends ListVersionType
     }
 
     /**
-     * Sets a new itemCentre
+     * Sets a new itemCentre.
      *
      * @param \Pohoda\List\ItemNameType[] $itemCentre
+     *
      * @return self
      */
-    public function setItemCentre(array $itemCentre = null)
+    public function setItemCentre(?array $itemCentre = null)
     {
         $this->itemCentre = $itemCentre;
+
         return $this;
     }
 }

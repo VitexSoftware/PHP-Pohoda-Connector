@@ -1,42 +1,47 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListBankAccountRequestType
- *
+ * Class representing ListBankAccountRequestType.
  *
  * XSD Type: listBankAccountRequestType
  */
 class ListBankAccountRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $bankAccountVersion
      */
-    private $bankAccountVersion = null;
+    private string $bankAccountVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
 
     /**
-     * @var \Pohoda\Filter\RequestBankAccountType[] $requestBankAccount
+     * @var \Pohoda\Filter\RequestBankAccountType[]
      */
-    private $requestBankAccount = [
+    private array $requestBankAccount = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -46,19 +51,21 @@ class ListBankAccountRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as bankAccountVersion
+     * Gets as bankAccountVersion.
      *
      * Požadovaná verze.
      *
@@ -70,21 +77,23 @@ class ListBankAccountRequestType
     }
 
     /**
-     * Sets a new bankAccountVersion
+     * Sets a new bankAccountVersion.
      *
      * Požadovaná verze.
      *
      * @param string $bankAccountVersion
+     *
      * @return self
      */
     public function setBankAccountVersion($bankAccountVersion)
     {
         $this->bankAccountVersion = $bankAccountVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -96,35 +105,38 @@ class ListBankAccountRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Adds as requestBankAccount
+     * Adds as requestBankAccount.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestBankAccountType $requestBankAccount
      */
     public function addToRequestBankAccount(\Pohoda\Filter\RequestBankAccountType $requestBankAccount)
     {
         $this->requestBankAccount[] = $requestBankAccount;
+
         return $this;
     }
 
     /**
-     * isset requestBankAccount
+     * isset requestBankAccount.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestBankAccount($index)
@@ -133,18 +145,17 @@ class ListBankAccountRequestType
     }
 
     /**
-     * unset requestBankAccount
+     * unset requestBankAccount.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestBankAccount($index)
+    public function unsetRequestBankAccount($index): void
     {
         unset($this->requestBankAccount[$index]);
     }
 
     /**
-     * Gets as requestBankAccount
+     * Gets as requestBankAccount.
      *
      * @return \Pohoda\Filter\RequestBankAccountType[]
      */
@@ -154,14 +165,16 @@ class ListBankAccountRequestType
     }
 
     /**
-     * Sets a new requestBankAccount
+     * Sets a new requestBankAccount.
      *
      * @param \Pohoda\Filter\RequestBankAccountType[] $requestBankAccount
+     *
      * @return self
      */
     public function setRequestBankAccount(array $requestBankAccount)
     {
         $this->requestBankAccount = $requestBankAccount;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing IntParameterType
- *
+ * Class representing IntParameterType.
  *
  * XSD Type: intParameterType
  */
@@ -12,46 +24,36 @@ class IntParameterType
 {
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
-     *
-     * @var \Pohoda\Type\ActionTypeItemType $actionType
      */
-    private $actionType = null;
+    private \Pohoda\Type\ActionTypeItemType $actionType = null;
 
     /**
      * ID internetového parametru.
-     *
-     * @var int $intParameterID
      */
-    private $intParameterID = null;
+    private int $intParameterID = null;
 
     /**
      * Název internetového parametru.
-     *
-     * @var string $intParameterName
      */
-    private $intParameterName = null;
+    private string $intParameterName = null;
 
     /**
      * Pořadí.
-     *
-     * @var int $intParameterOrder
      */
-    private $intParameterOrder = null;
+    private int $intParameterOrder = null;
 
     /**
      * Typ hodnoty internetového parametru.
-     *
-     * @var string $intParameterType
      */
-    private $intParameterType = null;
+    private string $intParameterType = null;
 
     /**
-     * @var \Pohoda\Stock\IntParameterValueType[] $intParameterValues
+     * @var \Pohoda\Stock\IntParameterValueType[]
      */
-    private $intParameterValues = null;
+    private array $intParameterValues = null;
 
     /**
-     * Gets as actionType
+     * Gets as actionType.
      *
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      *
@@ -63,21 +65,21 @@ class IntParameterType
     }
 
     /**
-     * Sets a new actionType
+     * Sets a new actionType.
      *
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      *
-     * @param \Pohoda\Type\ActionTypeItemType $actionType
      * @return self
      */
     public function setActionType(?\Pohoda\Type\ActionTypeItemType $actionType = null)
     {
         $this->actionType = $actionType;
+
         return $this;
     }
 
     /**
-     * Gets as intParameterID
+     * Gets as intParameterID.
      *
      * ID internetového parametru.
      *
@@ -89,21 +91,23 @@ class IntParameterType
     }
 
     /**
-     * Sets a new intParameterID
+     * Sets a new intParameterID.
      *
      * ID internetového parametru.
      *
      * @param int $intParameterID
+     *
      * @return self
      */
     public function setIntParameterID($intParameterID)
     {
         $this->intParameterID = $intParameterID;
+
         return $this;
     }
 
     /**
-     * Gets as intParameterName
+     * Gets as intParameterName.
      *
      * Název internetového parametru.
      *
@@ -115,21 +119,23 @@ class IntParameterType
     }
 
     /**
-     * Sets a new intParameterName
+     * Sets a new intParameterName.
      *
      * Název internetového parametru.
      *
      * @param string $intParameterName
+     *
      * @return self
      */
     public function setIntParameterName($intParameterName)
     {
         $this->intParameterName = $intParameterName;
+
         return $this;
     }
 
     /**
-     * Gets as intParameterOrder
+     * Gets as intParameterOrder.
      *
      * Pořadí.
      *
@@ -141,21 +147,23 @@ class IntParameterType
     }
 
     /**
-     * Sets a new intParameterOrder
+     * Sets a new intParameterOrder.
      *
      * Pořadí.
      *
      * @param int $intParameterOrder
+     *
      * @return self
      */
     public function setIntParameterOrder($intParameterOrder)
     {
         $this->intParameterOrder = $intParameterOrder;
+
         return $this;
     }
 
     /**
-     * Gets as intParameterType
+     * Gets as intParameterType.
      *
      * Typ hodnoty internetového parametru.
      *
@@ -167,35 +175,38 @@ class IntParameterType
     }
 
     /**
-     * Sets a new intParameterType
+     * Sets a new intParameterType.
      *
      * Typ hodnoty internetového parametru.
      *
      * @param string $intParameterType
+     *
      * @return self
      */
     public function setIntParameterType($intParameterType)
     {
         $this->intParameterType = $intParameterType;
+
         return $this;
     }
 
     /**
-     * Adds as intParameterValue
+     * Adds as intParameterValue.
      *
      * @return self
-     * @param \Pohoda\Stock\IntParameterValueType $intParameterValue
      */
     public function addToIntParameterValues(\Pohoda\Stock\IntParameterValueType $intParameterValue)
     {
         $this->intParameterValues[] = $intParameterValue;
+
         return $this;
     }
 
     /**
-     * isset intParameterValues
+     * isset intParameterValues.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetIntParameterValues($index)
@@ -204,18 +215,17 @@ class IntParameterType
     }
 
     /**
-     * unset intParameterValues
+     * unset intParameterValues.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetIntParameterValues($index)
+    public function unsetIntParameterValues($index): void
     {
         unset($this->intParameterValues[$index]);
     }
 
     /**
-     * Gets as intParameterValues
+     * Gets as intParameterValues.
      *
      * @return \Pohoda\Stock\IntParameterValueType[]
      */
@@ -225,14 +235,16 @@ class IntParameterType
     }
 
     /**
-     * Sets a new intParameterValues
+     * Sets a new intParameterValues.
      *
      * @param \Pohoda\Stock\IntParameterValueType[] $intParameterValues
+     *
      * @return self
      */
     public function setIntParameterValues(array $intParameterValues)
     {
         $this->intParameterValues = $intParameterValues;
+
         return $this;
     }
 }

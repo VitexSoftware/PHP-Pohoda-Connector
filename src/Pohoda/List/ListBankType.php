@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListBankType
- *
+ * Class representing ListBankType.
  *
  * XSD Type: listBankType
  */
 class ListBankType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Bank\BankType[] $bank
+     * @var \Pohoda\Bank\BankType[]
      */
-    private $bank = [
+    private array $bank = [
     ];
 
     /**
-     * Adds as bank
+     * Adds as bank.
      *
      * @return self
-     * @param \Pohoda\Bank\BankType $bank
      */
     public function addToBank(\Pohoda\Bank\BankType $bank)
     {
         $this->bank[] = $bank;
+
         return $this;
     }
 
     /**
-     * isset bank
+     * isset bank.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetBank($index)
@@ -42,18 +55,17 @@ class ListBankType extends ListVersionType
     }
 
     /**
-     * unset bank
+     * unset bank.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetBank($index)
+    public function unsetBank($index): void
     {
         unset($this->bank[$index]);
     }
 
     /**
-     * Gets as bank
+     * Gets as bank.
      *
      * @return \Pohoda\Bank\BankType[]
      */
@@ -63,14 +75,16 @@ class ListBankType extends ListVersionType
     }
 
     /**
-     * Sets a new bank
+     * Sets a new bank.
      *
      * @param \Pohoda\Bank\BankType[] $bank
+     *
      * @return self
      */
-    public function setBank(array $bank = null)
+    public function setBank(?array $bank = null)
     {
         $this->bank = $bank;
+
         return $this;
     }
 }

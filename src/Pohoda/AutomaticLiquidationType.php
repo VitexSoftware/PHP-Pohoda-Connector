@@ -1,36 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda;
 
 /**
- * Class representing AutomaticLiquidationType
- *
+ * Class representing AutomaticLiquidationType.
  *
  * XSD Type: automaticLiquidationType
  */
 class AutomaticLiquidationType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Výběr záznamu.
-     *
-     * @var \Pohoda\Filter\RecordAutomaticLiquidationType $record
      */
-    private $record = null;
+    private \Pohoda\Filter\RecordAutomaticLiquidationType $record = null;
 
     /**
      * Pravidlo párování dokladů.
-     *
-     * @var \Pohoda\Type\RefType $ruleOfPairing
      */
-    private $ruleOfPairing = null;
+    private \Pohoda\Type\RefType $ruleOfPairing = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -40,19 +45,21 @@ class AutomaticLiquidationType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as record
+     * Gets as record.
      *
      * Výběr záznamu.
      *
@@ -64,21 +71,21 @@ class AutomaticLiquidationType
     }
 
     /**
-     * Sets a new record
+     * Sets a new record.
      *
      * Výběr záznamu.
      *
-     * @param \Pohoda\Filter\RecordAutomaticLiquidationType $record
      * @return self
      */
     public function setRecord(\Pohoda\Filter\RecordAutomaticLiquidationType $record)
     {
         $this->record = $record;
+
         return $this;
     }
 
     /**
-     * Gets as ruleOfPairing
+     * Gets as ruleOfPairing.
      *
      * Pravidlo párování dokladů.
      *
@@ -90,16 +97,16 @@ class AutomaticLiquidationType
     }
 
     /**
-     * Sets a new ruleOfPairing
+     * Sets a new ruleOfPairing.
      *
      * Pravidlo párování dokladů.
      *
-     * @param \Pohoda\Type\RefType $ruleOfPairing
      * @return self
      */
     public function setRuleOfPairing(\Pohoda\Type\RefType $ruleOfPairing)
     {
         $this->ruleOfPairing = $ruleOfPairing;
+
         return $this;
     }
 }

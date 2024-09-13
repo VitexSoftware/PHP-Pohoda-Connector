@@ -1,63 +1,45 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListUserCodeType
+ * Class representing ListUserCodeType.
  *
  * Definice uživatelského seznamu.
  * XSD Type: listUserCodeType
  */
 class ListUserCodeType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
+    private \DateTime $dateTimeStamp = null;
+    private \DateTime $dateValidFrom = null;
+    private string $state = null;
+    private int $id = null;
+    private string $code = null;
+    private string $name = null;
+    private string $constants = null;
 
     /**
-     * @var \DateTime $dateTimeStamp
+     * @var \Pohoda\List\ItemUserCodeType[]
      */
-    private $dateTimeStamp = null;
-
-    /**
-     * @var \DateTime $dateValidFrom
-     */
-    private $dateValidFrom = null;
-
-    /**
-     * @var string $state
-     */
-    private $state = null;
-
-    /**
-     * @var int $id
-     */
-    private $id = null;
-
-    /**
-     * @var string $code
-     */
-    private $code = null;
-
-    /**
-     * @var string $name
-     */
-    private $name = null;
-
-    /**
-     * @var string $constants
-     */
-    private $constants = null;
-
-    /**
-     * @var \Pohoda\List\ItemUserCodeType[] $itemUserCode
-     */
-    private $itemUserCode = [
+    private array $itemUserCode = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -67,19 +49,21 @@ class ListUserCodeType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as dateTimeStamp
+     * Gets as dateTimeStamp.
      *
      * @return \DateTime
      */
@@ -89,19 +73,19 @@ class ListUserCodeType
     }
 
     /**
-     * Sets a new dateTimeStamp
+     * Sets a new dateTimeStamp.
      *
-     * @param \DateTime $dateTimeStamp
      * @return self
      */
     public function setDateTimeStamp(\DateTime $dateTimeStamp)
     {
         $this->dateTimeStamp = $dateTimeStamp;
+
         return $this;
     }
 
     /**
-     * Gets as dateValidFrom
+     * Gets as dateValidFrom.
      *
      * @return \DateTime
      */
@@ -111,19 +95,19 @@ class ListUserCodeType
     }
 
     /**
-     * Sets a new dateValidFrom
+     * Sets a new dateValidFrom.
      *
-     * @param \DateTime $dateValidFrom
      * @return self
      */
     public function setDateValidFrom(\DateTime $dateValidFrom)
     {
         $this->dateValidFrom = $dateValidFrom;
+
         return $this;
     }
 
     /**
-     * Gets as state
+     * Gets as state.
      *
      * @return string
      */
@@ -133,19 +117,21 @@ class ListUserCodeType
     }
 
     /**
-     * Sets a new state
+     * Sets a new state.
      *
      * @param string $state
+     *
      * @return self
      */
     public function setState($state)
     {
         $this->state = $state;
+
         return $this;
     }
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * @return int
      */
@@ -155,19 +141,21 @@ class ListUserCodeType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * @return string
      */
@@ -177,19 +165,21 @@ class ListUserCodeType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * @return string
      */
@@ -199,19 +189,21 @@ class ListUserCodeType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as constants
+     * Gets as constants.
      *
      * @return string
      */
@@ -221,33 +213,36 @@ class ListUserCodeType
     }
 
     /**
-     * Sets a new constants
+     * Sets a new constants.
      *
      * @param string $constants
+     *
      * @return self
      */
     public function setConstants($constants)
     {
         $this->constants = $constants;
+
         return $this;
     }
 
     /**
-     * Adds as itemUserCode
+     * Adds as itemUserCode.
      *
      * @return self
-     * @param \Pohoda\List\ItemUserCodeType $itemUserCode
      */
     public function addToItemUserCode(\Pohoda\List\ItemUserCodeType $itemUserCode)
     {
         $this->itemUserCode[] = $itemUserCode;
+
         return $this;
     }
 
     /**
-     * isset itemUserCode
+     * isset itemUserCode.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetItemUserCode($index)
@@ -256,18 +251,17 @@ class ListUserCodeType
     }
 
     /**
-     * unset itemUserCode
+     * unset itemUserCode.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetItemUserCode($index)
+    public function unsetItemUserCode($index): void
     {
         unset($this->itemUserCode[$index]);
     }
 
     /**
-     * Gets as itemUserCode
+     * Gets as itemUserCode.
      *
      * @return \Pohoda\List\ItemUserCodeType[]
      */
@@ -277,14 +271,16 @@ class ListUserCodeType
     }
 
     /**
-     * Sets a new itemUserCode
+     * Sets a new itemUserCode.
      *
      * @param \Pohoda\List\ItemUserCodeType[] $itemUserCode
+     *
      * @return self
      */
-    public function setItemUserCode(array $itemUserCode = null)
+    public function setItemUserCode(?array $itemUserCode = null)
     {
         $this->itemUserCode = $itemUserCode;
+
         return $this;
     }
 }

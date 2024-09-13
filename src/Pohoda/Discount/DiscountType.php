@@ -1,28 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Discount;
 
 /**
- * Class representing DiscountType
- *
+ * Class representing DiscountType.
  *
  * XSD Type: discountType
  */
 class DiscountType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
-     * @var \Pohoda\Discount\DiscountStockItemType[] $discountStockItem
+     * @var \Pohoda\Discount\DiscountStockItemType[]
      */
-    private $discountStockItem = [
+    private array $discountStockItem = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -32,33 +41,36 @@ class DiscountType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Adds as discountStockItem
+     * Adds as discountStockItem.
      *
      * @return self
-     * @param \Pohoda\Discount\DiscountStockItemType $discountStockItem
      */
     public function addToDiscountStockItem(\Pohoda\Discount\DiscountStockItemType $discountStockItem)
     {
         $this->discountStockItem[] = $discountStockItem;
+
         return $this;
     }
 
     /**
-     * isset discountStockItem
+     * isset discountStockItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetDiscountStockItem($index)
@@ -67,18 +79,17 @@ class DiscountType
     }
 
     /**
-     * unset discountStockItem
+     * unset discountStockItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetDiscountStockItem($index)
+    public function unsetDiscountStockItem($index): void
     {
         unset($this->discountStockItem[$index]);
     }
 
     /**
-     * Gets as discountStockItem
+     * Gets as discountStockItem.
      *
      * @return \Pohoda\Discount\DiscountStockItemType[]
      */
@@ -88,14 +99,16 @@ class DiscountType
     }
 
     /**
-     * Sets a new discountStockItem
+     * Sets a new discountStockItem.
      *
      * @param \Pohoda\Discount\DiscountStockItemType[] $discountStockItem
+     *
      * @return self
      */
     public function setDiscountStockItem(array $discountStockItem)
     {
         $this->discountStockItem = $discountStockItem;
+
         return $this;
     }
 }

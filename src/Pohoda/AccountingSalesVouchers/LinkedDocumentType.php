@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\AccountingSalesVouchers;
 
 /**
- * Class representing LinkedDocumentType
- *
+ * Class representing LinkedDocumentType.
  *
  * XSD Type: linkedDocumentType
  */
@@ -12,20 +24,16 @@ class LinkedDocumentType
 {
     /**
      * ID prodejky.
-     *
-     * @var string $id
      */
-    private $id = null;
+    private string $id = null;
 
     /**
      * Číslo prodejky.
-     *
-     * @var string $number
      */
-    private $number = null;
+    private string $number = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID prodejky.
      *
@@ -37,21 +45,23 @@ class LinkedDocumentType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID prodejky.
      *
      * @param string $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Číslo prodejky.
      *
@@ -63,16 +73,18 @@ class LinkedDocumentType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Číslo prodejky.
      *
      * @param string $number
+     *
      * @return self
      */
     public function setNumber($number)
     {
         $this->number = $number;
+
         return $this;
     }
 }

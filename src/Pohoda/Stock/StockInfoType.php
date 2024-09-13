@@ -1,29 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing StockInfoType
- *
+ * Class representing StockInfoType.
  *
  * XSD Type: stockInfoType
  */
 class StockInfoType
 {
-    /**
-     * @var int $id
-     */
-    private $id = null;
+    private int $id = null;
 
     /**
      * ID externího systému skladové zásoby.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * @return int
      */
@@ -33,19 +40,21 @@ class StockInfoType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * ID externího systému skladové zásoby.
      *
@@ -57,16 +66,16 @@ class StockInfoType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * ID externího systému skladové zásoby.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 }

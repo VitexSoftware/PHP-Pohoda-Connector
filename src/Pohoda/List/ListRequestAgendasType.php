@@ -1,36 +1,51 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListRequestAgendasType
- *
+ * Class representing ListRequestAgendasType.
  *
  * XSD Type: listRequestAgendasType
  */
 class ListRequestAgendasType extends ListRequestType
 {
     /**
-     * @var string[] $agendas
+     * @var string[]
      */
-    private $agendas = null;
+    private array $agendas = null;
 
     /**
-     * Adds as agenda
+     * Adds as agenda.
+     *
+     * @param string $agenda
      *
      * @return self
-     * @param string $agenda
      */
     public function addToAgendas($agenda)
     {
         $this->agendas[] = $agenda;
+
         return $this;
     }
 
     /**
-     * isset agendas
+     * isset agendas.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetAgendas($index)
@@ -39,18 +54,17 @@ class ListRequestAgendasType extends ListRequestType
     }
 
     /**
-     * unset agendas
+     * unset agendas.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetAgendas($index)
+    public function unsetAgendas($index): void
     {
         unset($this->agendas[$index]);
     }
 
     /**
-     * Gets as agendas
+     * Gets as agendas.
      *
      * @return string[]
      */
@@ -60,14 +74,16 @@ class ListRequestAgendasType extends ListRequestType
     }
 
     /**
-     * Sets a new agendas
+     * Sets a new agendas.
      *
      * @param string $agendas
+     *
      * @return self
      */
-    public function setAgendas(array $agendas = null)
+    public function setAgendas(?array $agendas = null)
     {
         $this->agendas = $agendas;
+
         return $this;
     }
 }

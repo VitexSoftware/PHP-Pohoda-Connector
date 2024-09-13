@@ -1,41 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListBalanceRequestType
- *
+ * Class representing ListBalanceRequestType.
  *
  * XSD Type: listBalanceRequestType
  */
 class ListBalanceRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze dokladu.
-     *
-     * @var string $balanceVersion
      */
-    private $balanceVersion = null;
+    private string $balanceVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
-     *
-     * @var string $extSystem
      */
-    private $extSystem = null;
+    private string $extSystem = null;
+    private \Pohoda\List\RequestBalanceType $requestBalance = null;
 
     /**
-     * @var \Pohoda\List\RequestBalanceType $requestBalance
-     */
-    private $requestBalance = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -45,19 +46,21 @@ class ListBalanceRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as balanceVersion
+     * Gets as balanceVersion.
      *
      * Požadovaná verze dokladu.
      *
@@ -69,21 +72,23 @@ class ListBalanceRequestType
     }
 
     /**
-     * Sets a new balanceVersion
+     * Sets a new balanceVersion.
      *
      * Požadovaná verze dokladu.
      *
      * @param string $balanceVersion
+     *
      * @return self
      */
     public function setBalanceVersion($balanceVersion)
     {
         $this->balanceVersion = $balanceVersion;
+
         return $this;
     }
 
     /**
-     * Gets as extSystem
+     * Gets as extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
@@ -95,21 +100,23 @@ class ListBalanceRequestType
     }
 
     /**
-     * Sets a new extSystem
+     * Sets a new extSystem.
      *
      * Označení externího systému, pro který se vyexportují identifikátory.
      *
      * @param string $extSystem
+     *
      * @return self
      */
     public function setExtSystem($extSystem)
     {
         $this->extSystem = $extSystem;
+
         return $this;
     }
 
     /**
-     * Gets as requestBalance
+     * Gets as requestBalance.
      *
      * @return \Pohoda\List\RequestBalanceType
      */
@@ -119,14 +126,14 @@ class ListBalanceRequestType
     }
 
     /**
-     * Sets a new requestBalance
+     * Sets a new requestBalance.
      *
-     * @param \Pohoda\List\RequestBalanceType $requestBalance
      * @return self
      */
     public function setRequestBalance(\Pohoda\List\RequestBalanceType $requestBalance)
     {
         $this->requestBalance = $requestBalance;
+
         return $this;
     }
 }

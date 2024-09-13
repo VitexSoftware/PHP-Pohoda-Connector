@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\AddressBook;
 
 /**
- * Class representing AddressbookGDPRType
- *
+ * Class representing AddressbookGDPRType.
  *
  * XSD Type: addressbookGDPRType
  */
@@ -12,41 +24,33 @@ class AddressbookGDPRType
 {
     /**
      * Omezení zpracování.
-     *
-     * @var string $restrictProcessing
      */
-    private $restrictProcessing = null;
+    private string $restrictProcessing = null;
 
     /**
      * Datum posledního prodejního dokladu (jen pro export).
-     *
-     * @var \DateTime $dateSale
      */
-    private $dateSale = null;
+    private \DateTime $dateSale = null;
 
     /**
      * Datum posledního předprodejního dokladu (jen pro export).
-     *
-     * @var \DateTime $datePreSale
      */
-    private $datePreSale = null;
+    private \DateTime $datePreSale = null;
 
     /**
      * Datum posledního poprodejního dokladu (jen pro export).
-     *
-     * @var \DateTime $dateAfterSale
      */
-    private $dateAfterSale = null;
+    private \DateTime $dateAfterSale = null;
 
     /**
      * Právní důvody zpracování dat GDPR.
      *
-     * @var \Pohoda\AddressBook\GDPRItemType[] $gDPRItems
+     * @var \Pohoda\AddressBook\GDPRItemType[]
      */
-    private $gDPRItems = null;
+    private array $gDPRItems = null;
 
     /**
-     * Gets as restrictProcessing
+     * Gets as restrictProcessing.
      *
      * Omezení zpracování.
      *
@@ -58,21 +62,23 @@ class AddressbookGDPRType
     }
 
     /**
-     * Sets a new restrictProcessing
+     * Sets a new restrictProcessing.
      *
      * Omezení zpracování.
      *
      * @param string $restrictProcessing
+     *
      * @return self
      */
     public function setRestrictProcessing($restrictProcessing)
     {
         $this->restrictProcessing = $restrictProcessing;
+
         return $this;
     }
 
     /**
-     * Gets as dateSale
+     * Gets as dateSale.
      *
      * Datum posledního prodejního dokladu (jen pro export).
      *
@@ -84,21 +90,21 @@ class AddressbookGDPRType
     }
 
     /**
-     * Sets a new dateSale
+     * Sets a new dateSale.
      *
      * Datum posledního prodejního dokladu (jen pro export).
      *
-     * @param \DateTime $dateSale
      * @return self
      */
     public function setDateSale(?\DateTime $dateSale = null)
     {
         $this->dateSale = $dateSale;
+
         return $this;
     }
 
     /**
-     * Gets as datePreSale
+     * Gets as datePreSale.
      *
      * Datum posledního předprodejního dokladu (jen pro export).
      *
@@ -110,21 +116,21 @@ class AddressbookGDPRType
     }
 
     /**
-     * Sets a new datePreSale
+     * Sets a new datePreSale.
      *
      * Datum posledního předprodejního dokladu (jen pro export).
      *
-     * @param \DateTime $datePreSale
      * @return self
      */
     public function setDatePreSale(?\DateTime $datePreSale = null)
     {
         $this->datePreSale = $datePreSale;
+
         return $this;
     }
 
     /**
-     * Gets as dateAfterSale
+     * Gets as dateAfterSale.
      *
      * Datum posledního poprodejního dokladu (jen pro export).
      *
@@ -136,39 +142,40 @@ class AddressbookGDPRType
     }
 
     /**
-     * Sets a new dateAfterSale
+     * Sets a new dateAfterSale.
      *
      * Datum posledního poprodejního dokladu (jen pro export).
      *
-     * @param \DateTime $dateAfterSale
      * @return self
      */
     public function setDateAfterSale(?\DateTime $dateAfterSale = null)
     {
         $this->dateAfterSale = $dateAfterSale;
+
         return $this;
     }
 
     /**
-     * Adds as gDPRItem
+     * Adds as gDPRItem.
      *
      * Právní důvody zpracování dat GDPR.
      *
      * @return self
-     * @param \Pohoda\AddressBook\GDPRItemType $gDPRItem
      */
     public function addToGDPRItems(\Pohoda\AddressBook\GDPRItemType $gDPRItem)
     {
         $this->gDPRItems[] = $gDPRItem;
+
         return $this;
     }
 
     /**
-     * isset gDPRItems
+     * isset gDPRItems.
      *
      * Právní důvody zpracování dat GDPR.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetGDPRItems($index)
@@ -177,20 +184,19 @@ class AddressbookGDPRType
     }
 
     /**
-     * unset gDPRItems
+     * unset gDPRItems.
      *
      * Právní důvody zpracování dat GDPR.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetGDPRItems($index)
+    public function unsetGDPRItems($index): void
     {
         unset($this->gDPRItems[$index]);
     }
 
     /**
-     * Gets as gDPRItems
+     * Gets as gDPRItems.
      *
      * Právní důvody zpracování dat GDPR.
      *
@@ -202,16 +208,18 @@ class AddressbookGDPRType
     }
 
     /**
-     * Sets a new gDPRItems
+     * Sets a new gDPRItems.
      *
      * Právní důvody zpracování dat GDPR.
      *
      * @param \Pohoda\AddressBook\GDPRItemType[] $gDPRItems
+     *
      * @return self
      */
-    public function setGDPRItems(array $gDPRItems = null)
+    public function setGDPRItems(?array $gDPRItems = null)
     {
         $this->gDPRItems = $gDPRItems;
+
         return $this;
     }
 }

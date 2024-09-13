@@ -1,27 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing CreateAccountingResponseType
- *
+ * Class representing CreateAccountingResponseType.
  *
  * XSD Type: createAccountingResponseType
  */
 class CreateAccountingResponseType extends ItemAccountingTypeDoubleEntryType
 {
-    /**
-     * @var string $state
-     */
-    private $state = null;
+    private string $state = null;
+    private string $note = null;
 
     /**
-     * @var string $note
-     */
-    private $note = null;
-
-    /**
-     * Gets as state
+     * Gets as state.
      *
      * @return string
      */
@@ -31,19 +36,21 @@ class CreateAccountingResponseType extends ItemAccountingTypeDoubleEntryType
     }
 
     /**
-     * Sets a new state
+     * Sets a new state.
      *
      * @param string $state
+     *
      * @return self
      */
     public function setState($state)
     {
         $this->state = $state;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * @return string
      */
@@ -53,14 +60,16 @@ class CreateAccountingResponseType extends ItemAccountingTypeDoubleEntryType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 }

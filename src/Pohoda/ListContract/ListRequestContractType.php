@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ListContract;
 
 /**
- * Class representing ListRequestContractType
- *
+ * Class representing ListRequestContractType.
  *
  * XSD Type: listRequestContractType
  */
 class ListRequestContractType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze contract dokumentu.
-     *
-     * @var string $contractVersion
      */
-    private $contractVersion = null;
+    private string $contractVersion = null;
 
     /**
-     * @var \Pohoda\Filter\RequestContractType[] $requestContract
+     * @var \Pohoda\Filter\RequestContractType[]
      */
-    private $requestContract = [
+    private array $requestContract = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListRequestContractType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as contractVersion
+     * Gets as contractVersion.
      *
      * Požadovaná verze contract dokumentu.
      *
@@ -63,35 +72,38 @@ class ListRequestContractType
     }
 
     /**
-     * Sets a new contractVersion
+     * Sets a new contractVersion.
      *
      * Požadovaná verze contract dokumentu.
      *
      * @param string $contractVersion
+     *
      * @return self
      */
     public function setContractVersion($contractVersion)
     {
         $this->contractVersion = $contractVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestContract
+     * Adds as requestContract.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestContractType $requestContract
      */
     public function addToRequestContract(\Pohoda\Filter\RequestContractType $requestContract)
     {
         $this->requestContract[] = $requestContract;
+
         return $this;
     }
 
     /**
-     * isset requestContract
+     * isset requestContract.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestContract($index)
@@ -100,18 +112,17 @@ class ListRequestContractType
     }
 
     /**
-     * unset requestContract
+     * unset requestContract.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestContract($index)
+    public function unsetRequestContract($index): void
     {
         unset($this->requestContract[$index]);
     }
 
     /**
-     * Gets as requestContract
+     * Gets as requestContract.
      *
      * @return \Pohoda\Filter\RequestContractType[]
      */
@@ -121,14 +132,16 @@ class ListRequestContractType
     }
 
     /**
-     * Sets a new requestContract
+     * Sets a new requestContract.
      *
      * @param \Pohoda\Filter\RequestContractType[] $requestContract
+     *
      * @return self
      */
     public function setRequestContract(array $requestContract)
     {
         $this->requestContract = $requestContract;
+
         return $this;
     }
 }

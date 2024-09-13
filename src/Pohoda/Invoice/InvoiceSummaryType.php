@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Invoice;
 
 /**
- * Class representing InvoiceSummaryType
- *
+ * Class representing InvoiceSummaryType.
  *
  * XSD Type: invoiceSummaryType
  */
@@ -13,48 +25,36 @@ class InvoiceSummaryType
     /**
      * Zaokrouhlení celkové částky dokladu + typ zaokrouhlení.
      *  Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
-     *
-     * @var string $roundingDocument
      */
-    private $roundingDocument = null;
+    private string $roundingDocument = null;
 
     /**
      * Zaokrouhlení DPH. Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
-     *
-     * @var string $roundingVAT
      */
-    private $roundingVAT = null;
+    private string $roundingVAT = null;
 
     /**
      * Vypočíst DPH ze zaokrouhlení.
-     *
-     * @var bool $calculateVAT
      */
-    private $calculateVAT = null;
+    private bool $calculateVAT = null;
 
     /**
-     * Způsob výpočtu hodnoty DPH z částky včetně daně dle § 37. Pokud není element uveden, použije se způsob výpočtu dle data zdanitelného plnění nebo data vystavení dokladu. (pouze CZ verze)
-     *
-     * @var string $typeCalculateVATInclusivePrice
+     * Způsob výpočtu hodnoty DPH z částky včetně daně dle § 37. Pokud není element uveden, použije se způsob výpočtu dle data zdanitelného plnění nebo data vystavení dokladu. (pouze CZ verze).
      */
-    private $typeCalculateVATInclusivePrice = null;
+    private string $typeCalculateVATInclusivePrice = null;
 
     /**
      * Kč. V případě použití cizí měny, je tuzemská částka při importu ignorována.
-     *
-     * @var \Pohoda\Type\TypeCurrencyHomeType $homeCurrency
      */
-    private $homeCurrency = null;
+    private \Pohoda\Type\TypeCurrencyHomeType $homeCurrency = null;
 
     /**
      * Cizí měna.
-     *
-     * @var \Pohoda\Type\TypeCurrencyForeignType $foreignCurrency
      */
-    private $foreignCurrency = null;
+    private \Pohoda\Type\TypeCurrencyForeignType $foreignCurrency = null;
 
     /**
-     * Gets as roundingDocument
+     * Gets as roundingDocument.
      *
      * Zaokrouhlení celkové částky dokladu + typ zaokrouhlení.
      *  Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
@@ -67,22 +67,24 @@ class InvoiceSummaryType
     }
 
     /**
-     * Sets a new roundingDocument
+     * Sets a new roundingDocument.
      *
      * Zaokrouhlení celkové částky dokladu + typ zaokrouhlení.
      *  Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
      *
      * @param string $roundingDocument
+     *
      * @return self
      */
     public function setRoundingDocument($roundingDocument)
     {
         $this->roundingDocument = $roundingDocument;
+
         return $this;
     }
 
     /**
-     * Gets as roundingVAT
+     * Gets as roundingVAT.
      *
      * Zaokrouhlení DPH. Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
      *
@@ -94,21 +96,23 @@ class InvoiceSummaryType
     }
 
     /**
-     * Sets a new roundingVAT
+     * Sets a new roundingVAT.
      *
      * Zaokrouhlení DPH. Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
      *
      * @param string $roundingVAT
+     *
      * @return self
      */
     public function setRoundingVAT($roundingVAT)
     {
         $this->roundingVAT = $roundingVAT;
+
         return $this;
     }
 
     /**
-     * Gets as calculateVAT
+     * Gets as calculateVAT.
      *
      * Vypočíst DPH ze zaokrouhlení.
      *
@@ -120,21 +124,23 @@ class InvoiceSummaryType
     }
 
     /**
-     * Sets a new calculateVAT
+     * Sets a new calculateVAT.
      *
      * Vypočíst DPH ze zaokrouhlení.
      *
      * @param bool $calculateVAT
+     *
      * @return self
      */
     public function setCalculateVAT($calculateVAT)
     {
         $this->calculateVAT = $calculateVAT;
+
         return $this;
     }
 
     /**
-     * Gets as typeCalculateVATInclusivePrice
+     * Gets as typeCalculateVATInclusivePrice.
      *
      * Způsob výpočtu hodnoty DPH z částky včetně daně dle § 37. Pokud není element uveden, použije se způsob výpočtu dle data zdanitelného plnění nebo data vystavení dokladu. (pouze CZ verze)
      *
@@ -146,21 +152,23 @@ class InvoiceSummaryType
     }
 
     /**
-     * Sets a new typeCalculateVATInclusivePrice
+     * Sets a new typeCalculateVATInclusivePrice.
      *
      * Způsob výpočtu hodnoty DPH z částky včetně daně dle § 37. Pokud není element uveden, použije se způsob výpočtu dle data zdanitelného plnění nebo data vystavení dokladu. (pouze CZ verze)
      *
      * @param string $typeCalculateVATInclusivePrice
+     *
      * @return self
      */
     public function setTypeCalculateVATInclusivePrice($typeCalculateVATInclusivePrice)
     {
         $this->typeCalculateVATInclusivePrice = $typeCalculateVATInclusivePrice;
+
         return $this;
     }
 
     /**
-     * Gets as homeCurrency
+     * Gets as homeCurrency.
      *
      * Kč. V případě použití cizí měny, je tuzemská částka při importu ignorována.
      *
@@ -172,21 +180,21 @@ class InvoiceSummaryType
     }
 
     /**
-     * Sets a new homeCurrency
+     * Sets a new homeCurrency.
      *
      * Kč. V případě použití cizí měny, je tuzemská částka při importu ignorována.
      *
-     * @param \Pohoda\Type\TypeCurrencyHomeType $homeCurrency
      * @return self
      */
     public function setHomeCurrency(?\Pohoda\Type\TypeCurrencyHomeType $homeCurrency = null)
     {
         $this->homeCurrency = $homeCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrency
+     * Gets as foreignCurrency.
      *
      * Cizí měna.
      *
@@ -198,16 +206,16 @@ class InvoiceSummaryType
     }
 
     /**
-     * Sets a new foreignCurrency
+     * Sets a new foreignCurrency.
      *
      * Cizí měna.
      *
-     * @param \Pohoda\Type\TypeCurrencyForeignType $foreignCurrency
      * @return self
      */
     public function setForeignCurrency(?\Pohoda\Type\TypeCurrencyForeignType $foreignCurrency = null)
     {
         $this->foreignCurrency = $foreignCurrency;
+
         return $this;
     }
 }

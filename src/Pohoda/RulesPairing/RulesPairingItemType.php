@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\RulesPairing;
 
 /**
- * Class representing RulesPairingItemType
- *
+ * Class representing RulesPairingItemType.
  *
  * XSD Type: rulesPairingItemType
  */
@@ -12,62 +24,50 @@ class RulesPairingItemType
 {
     /**
      * Typ pohybu.
-     *
-     * @var string $movement
      */
-    private $movement = null;
+    private string $movement = null;
 
     /**
      * Typ dokladu.
      *
-     * @var string[] $documents
+     * @var string[]
      */
-    private $documents = null;
+    private array $documents = null;
 
     /**
      * Pravidla párování.
      *
-     * @var string[] $pairings
+     * @var string[]
      */
-    private $pairings = null;
+    private array $pairings = null;
 
     /**
      * Porovnání částky.
-     *
-     * @var string $amountComparison
      */
-    private $amountComparison = null;
+    private string $amountComparison = null;
 
     /**
      * Splněno při.
-     *
-     * @var string $fulfilled
      */
-    private $fulfilled = null;
+    private string $fulfilled = null;
 
     /**
      * Konec skupiny.
-     *
-     * @var string $endGroup
      */
-    private $endGroup = null;
+    private string $endGroup = null;
 
     /**
      * Ukončit.
-     *
-     * @var string $finish
      */
-    private $finish = null;
+    private string $finish = null;
 
     /**
-     * Poznámka
-     *
-     * @var string $note
+     * Poznámka.
      */
-    private $note = null;
+    private string $note = null;
 
     /**
-     * Gets as movement
+     * Gets as movement.
      *
      * Typ pohybu.
      *
@@ -79,39 +79,44 @@ class RulesPairingItemType
     }
 
     /**
-     * Sets a new movement
+     * Sets a new movement.
      *
      * Typ pohybu.
      *
      * @param string $movement
+     *
      * @return self
      */
     public function setMovement($movement)
     {
         $this->movement = $movement;
+
         return $this;
     }
 
     /**
-     * Adds as document
+     * Adds as document.
      *
      * Typ dokladu.
      *
-     * @return self
      * @param string $document
+     *
+     * @return self
      */
     public function addToDocuments($document)
     {
         $this->documents[] = $document;
+
         return $this;
     }
 
     /**
-     * isset documents
+     * isset documents.
      *
      * Typ dokladu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetDocuments($index)
@@ -120,20 +125,19 @@ class RulesPairingItemType
     }
 
     /**
-     * unset documents
+     * unset documents.
      *
      * Typ dokladu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetDocuments($index)
+    public function unsetDocuments($index): void
     {
         unset($this->documents[$index]);
     }
 
     /**
-     * Gets as documents
+     * Gets as documents.
      *
      * Typ dokladu.
      *
@@ -145,39 +149,44 @@ class RulesPairingItemType
     }
 
     /**
-     * Sets a new documents
+     * Sets a new documents.
      *
      * Typ dokladu.
      *
      * @param string $documents
+     *
      * @return self
      */
-    public function setDocuments(array $documents = null)
+    public function setDocuments(?array $documents = null)
     {
         $this->documents = $documents;
+
         return $this;
     }
 
     /**
-     * Adds as pairing
+     * Adds as pairing.
      *
      * Pravidla párování.
      *
-     * @return self
      * @param string $pairing
+     *
+     * @return self
      */
     public function addToPairings($pairing)
     {
         $this->pairings[] = $pairing;
+
         return $this;
     }
 
     /**
-     * isset pairings
+     * isset pairings.
      *
      * Pravidla párování.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPairings($index)
@@ -186,20 +195,19 @@ class RulesPairingItemType
     }
 
     /**
-     * unset pairings
+     * unset pairings.
      *
      * Pravidla párování.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPairings($index)
+    public function unsetPairings($index): void
     {
         unset($this->pairings[$index]);
     }
 
     /**
-     * Gets as pairings
+     * Gets as pairings.
      *
      * Pravidla párování.
      *
@@ -211,21 +219,23 @@ class RulesPairingItemType
     }
 
     /**
-     * Sets a new pairings
+     * Sets a new pairings.
      *
      * Pravidla párování.
      *
      * @param string $pairings
+     *
      * @return self
      */
-    public function setPairings(array $pairings = null)
+    public function setPairings(?array $pairings = null)
     {
         $this->pairings = $pairings;
+
         return $this;
     }
 
     /**
-     * Gets as amountComparison
+     * Gets as amountComparison.
      *
      * Porovnání částky.
      *
@@ -237,21 +247,23 @@ class RulesPairingItemType
     }
 
     /**
-     * Sets a new amountComparison
+     * Sets a new amountComparison.
      *
      * Porovnání částky.
      *
      * @param string $amountComparison
+     *
      * @return self
      */
     public function setAmountComparison($amountComparison)
     {
         $this->amountComparison = $amountComparison;
+
         return $this;
     }
 
     /**
-     * Gets as fulfilled
+     * Gets as fulfilled.
      *
      * Splněno při.
      *
@@ -263,21 +275,23 @@ class RulesPairingItemType
     }
 
     /**
-     * Sets a new fulfilled
+     * Sets a new fulfilled.
      *
      * Splněno při.
      *
      * @param string $fulfilled
+     *
      * @return self
      */
     public function setFulfilled($fulfilled)
     {
         $this->fulfilled = $fulfilled;
+
         return $this;
     }
 
     /**
-     * Gets as endGroup
+     * Gets as endGroup.
      *
      * Konec skupiny.
      *
@@ -289,21 +303,23 @@ class RulesPairingItemType
     }
 
     /**
-     * Sets a new endGroup
+     * Sets a new endGroup.
      *
      * Konec skupiny.
      *
      * @param string $endGroup
+     *
      * @return self
      */
     public function setEndGroup($endGroup)
     {
         $this->endGroup = $endGroup;
+
         return $this;
     }
 
     /**
-     * Gets as finish
+     * Gets as finish.
      *
      * Ukončit.
      *
@@ -315,21 +331,23 @@ class RulesPairingItemType
     }
 
     /**
-     * Sets a new finish
+     * Sets a new finish.
      *
      * Ukončit.
      *
      * @param string $finish
+     *
      * @return self
      */
     public function setFinish($finish)
     {
         $this->finish = $finish;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka
      *
@@ -341,16 +359,18 @@ class RulesPairingItemType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 }

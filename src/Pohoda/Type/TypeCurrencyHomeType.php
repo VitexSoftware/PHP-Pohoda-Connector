@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing TypeCurrencyHomeType
- *
+ * Class representing TypeCurrencyHomeType.
  *
  * XSD Type: typeCurrencyHome
  */
@@ -12,83 +24,61 @@ class TypeCurrencyHomeType
 {
     /**
      * Cena v nulové sazbě DPH.
-     *
-     * @var float $priceNone
      */
-    private $priceNone = null;
+    private float $priceNone = null;
 
     /**
      * Cena bez DPH ve snížené sazbě.
-     *
-     * @var float $priceLow
      */
-    private $priceLow = null;
+    private float $priceLow = null;
 
     /**
      * DPH ve snížené sazbě.
-     *
-     * @var \Pohoda\Type\CurrencyVATType $priceLowVAT
      */
-    private $priceLowVAT = null;
+    private \Pohoda\Type\CurrencyVATType $priceLowVAT = null;
 
     /**
      * Cena včetně DPH ve snížené sazbě.
-     *
-     * @var float $priceLowSum
      */
-    private $priceLowSum = null;
+    private float $priceLowSum = null;
 
     /**
      * Cena bez DPH ve zvýšené sazbě.
-     *
-     * @var float $priceHigh
      */
-    private $priceHigh = null;
+    private float $priceHigh = null;
 
     /**
      * DPH ve zvýšené sazbě.
-     *
-     * @var \Pohoda\Type\CurrencyVATType $priceHighVAT
      */
-    private $priceHighVAT = null;
+    private \Pohoda\Type\CurrencyVATType $priceHighVAT = null;
 
     /**
      * Cena včetně DPH ve zvýšené sazbě.
-     *
-     * @var float $priceHighSum
      */
-    private $priceHighSum = null;
+    private float $priceHighSum = null;
 
     /**
      * Cena bez DPH v 3. sazbě.
-     *
-     * @var float $price3
      */
-    private $price3 = null;
+    private float $price3 = null;
 
     /**
      * DPH v 3. sazbě.
-     *
-     * @var \Pohoda\Type\CurrencyVATType $price3VAT
      */
-    private $price3VAT = null;
+    private \Pohoda\Type\CurrencyVATType $price3VAT = null;
 
     /**
      * Cena včetně DPH v 3. sazbě.
-     *
-     * @var float $price3Sum
      */
-    private $price3Sum = null;
+    private float $price3Sum = null;
 
     /**
      * Zaokrouhlení.
-     *
-     * @var \Pohoda\Type\TypeRoundType $round
      */
-    private $round = null;
+    private \Pohoda\Type\TypeRoundType $round = null;
 
     /**
-     * Gets as priceNone
+     * Gets as priceNone.
      *
      * Cena v nulové sazbě DPH.
      *
@@ -100,21 +90,23 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new priceNone
+     * Sets a new priceNone.
      *
      * Cena v nulové sazbě DPH.
      *
      * @param float $priceNone
+     *
      * @return self
      */
     public function setPriceNone($priceNone)
     {
         $this->priceNone = $priceNone;
+
         return $this;
     }
 
     /**
-     * Gets as priceLow
+     * Gets as priceLow.
      *
      * Cena bez DPH ve snížené sazbě.
      *
@@ -126,21 +118,23 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new priceLow
+     * Sets a new priceLow.
      *
      * Cena bez DPH ve snížené sazbě.
      *
      * @param float $priceLow
+     *
      * @return self
      */
     public function setPriceLow($priceLow)
     {
         $this->priceLow = $priceLow;
+
         return $this;
     }
 
     /**
-     * Gets as priceLowVAT
+     * Gets as priceLowVAT.
      *
      * DPH ve snížené sazbě.
      *
@@ -152,21 +146,21 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new priceLowVAT
+     * Sets a new priceLowVAT.
      *
      * DPH ve snížené sazbě.
      *
-     * @param \Pohoda\Type\CurrencyVATType $priceLowVAT
      * @return self
      */
     public function setPriceLowVAT(?\Pohoda\Type\CurrencyVATType $priceLowVAT = null)
     {
         $this->priceLowVAT = $priceLowVAT;
+
         return $this;
     }
 
     /**
-     * Gets as priceLowSum
+     * Gets as priceLowSum.
      *
      * Cena včetně DPH ve snížené sazbě.
      *
@@ -178,21 +172,23 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new priceLowSum
+     * Sets a new priceLowSum.
      *
      * Cena včetně DPH ve snížené sazbě.
      *
      * @param float $priceLowSum
+     *
      * @return self
      */
     public function setPriceLowSum($priceLowSum)
     {
         $this->priceLowSum = $priceLowSum;
+
         return $this;
     }
 
     /**
-     * Gets as priceHigh
+     * Gets as priceHigh.
      *
      * Cena bez DPH ve zvýšené sazbě.
      *
@@ -204,21 +200,23 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new priceHigh
+     * Sets a new priceHigh.
      *
      * Cena bez DPH ve zvýšené sazbě.
      *
      * @param float $priceHigh
+     *
      * @return self
      */
     public function setPriceHigh($priceHigh)
     {
         $this->priceHigh = $priceHigh;
+
         return $this;
     }
 
     /**
-     * Gets as priceHighVAT
+     * Gets as priceHighVAT.
      *
      * DPH ve zvýšené sazbě.
      *
@@ -230,21 +228,21 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new priceHighVAT
+     * Sets a new priceHighVAT.
      *
      * DPH ve zvýšené sazbě.
      *
-     * @param \Pohoda\Type\CurrencyVATType $priceHighVAT
      * @return self
      */
     public function setPriceHighVAT(?\Pohoda\Type\CurrencyVATType $priceHighVAT = null)
     {
         $this->priceHighVAT = $priceHighVAT;
+
         return $this;
     }
 
     /**
-     * Gets as priceHighSum
+     * Gets as priceHighSum.
      *
      * Cena včetně DPH ve zvýšené sazbě.
      *
@@ -256,21 +254,23 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new priceHighSum
+     * Sets a new priceHighSum.
      *
      * Cena včetně DPH ve zvýšené sazbě.
      *
      * @param float $priceHighSum
+     *
      * @return self
      */
     public function setPriceHighSum($priceHighSum)
     {
         $this->priceHighSum = $priceHighSum;
+
         return $this;
     }
 
     /**
-     * Gets as price3
+     * Gets as price3.
      *
      * Cena bez DPH v 3. sazbě.
      *
@@ -282,21 +282,23 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new price3
+     * Sets a new price3.
      *
      * Cena bez DPH v 3. sazbě.
      *
      * @param float $price3
+     *
      * @return self
      */
     public function setPrice3($price3)
     {
         $this->price3 = $price3;
+
         return $this;
     }
 
     /**
-     * Gets as price3VAT
+     * Gets as price3VAT.
      *
      * DPH v 3. sazbě.
      *
@@ -308,21 +310,21 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new price3VAT
+     * Sets a new price3VAT.
      *
      * DPH v 3. sazbě.
      *
-     * @param \Pohoda\Type\CurrencyVATType $price3VAT
      * @return self
      */
     public function setPrice3VAT(?\Pohoda\Type\CurrencyVATType $price3VAT = null)
     {
         $this->price3VAT = $price3VAT;
+
         return $this;
     }
 
     /**
-     * Gets as price3Sum
+     * Gets as price3Sum.
      *
      * Cena včetně DPH v 3. sazbě.
      *
@@ -334,21 +336,23 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new price3Sum
+     * Sets a new price3Sum.
      *
      * Cena včetně DPH v 3. sazbě.
      *
      * @param float $price3Sum
+     *
      * @return self
      */
     public function setPrice3Sum($price3Sum)
     {
         $this->price3Sum = $price3Sum;
+
         return $this;
     }
 
     /**
-     * Gets as round
+     * Gets as round.
      *
      * Zaokrouhlení.
      *
@@ -360,16 +364,16 @@ class TypeCurrencyHomeType
     }
 
     /**
-     * Sets a new round
+     * Sets a new round.
      *
      * Zaokrouhlení.
      *
-     * @param \Pohoda\Type\TypeRoundType $round
      * @return self
      */
     public function setRound(?\Pohoda\Type\TypeRoundType $round = null)
     {
         $this->round = $round;
+
         return $this;
     }
 }

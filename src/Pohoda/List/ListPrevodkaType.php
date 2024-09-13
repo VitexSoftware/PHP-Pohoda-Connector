@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListPrevodkaType
- *
+ * Class representing ListPrevodkaType.
  *
  * XSD Type: listPrevodkaType
  */
 class ListPrevodkaType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Prevodka\PrevodkaType[] $prevodka
+     * @var \Pohoda\Prevodka\PrevodkaType[]
      */
-    private $prevodka = [
+    private array $prevodka = [
     ];
 
     /**
-     * Adds as prevodka
+     * Adds as prevodka.
      *
      * @return self
-     * @param \Pohoda\Prevodka\PrevodkaType $prevodka
      */
     public function addToPrevodka(\Pohoda\Prevodka\PrevodkaType $prevodka)
     {
         $this->prevodka[] = $prevodka;
+
         return $this;
     }
 
     /**
-     * isset prevodka
+     * isset prevodka.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrevodka($index)
@@ -42,18 +55,17 @@ class ListPrevodkaType extends ListVersionType
     }
 
     /**
-     * unset prevodka
+     * unset prevodka.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrevodka($index)
+    public function unsetPrevodka($index): void
     {
         unset($this->prevodka[$index]);
     }
 
     /**
-     * Gets as prevodka
+     * Gets as prevodka.
      *
      * @return \Pohoda\Prevodka\PrevodkaType[]
      */
@@ -63,14 +75,16 @@ class ListPrevodkaType extends ListVersionType
     }
 
     /**
-     * Sets a new prevodka
+     * Sets a new prevodka.
      *
      * @param \Pohoda\Prevodka\PrevodkaType[] $prevodka
+     *
      * @return self
      */
-    public function setPrevodka(array $prevodka = null)
+    public function setPrevodka(?array $prevodka = null)
     {
         $this->prevodka = $prevodka;
+
         return $this;
     }
 }

@@ -1,41 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Documentresponse;
 
 /**
- * Class representing DocumentResponseType
- *
+ * Class representing DocumentResponseType.
  *
  * XSD Type: documentResponseType
  */
 class DocumentResponseType
 {
-    /**
-     * @var string $state
-     */
-    private $state = null;
-
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $state = null;
+    private string $version = null;
 
     /**
      * Chyby a upozornění vzniklé při načtení dokladu.
      *
-     * @var \Pohoda\Documentresponse\DetailType[] $importDetails
+     * @var \Pohoda\Documentresponse\DetailType[]
      */
-    private $importDetails = null;
+    private array $importDetails = null;
 
     /**
      * Informace o vytvořeném dokladu.
-     *
-     * @var \Pohoda\Documentresponse\ProducedDetailsType $producedDetails
      */
-    private $producedDetails = null;
+    private \Pohoda\Documentresponse\ProducedDetailsType $producedDetails = null;
 
     /**
-     * Gets as state
+     * Gets as state.
      *
      * @return string
      */
@@ -45,19 +48,21 @@ class DocumentResponseType
     }
 
     /**
-     * Sets a new state
+     * Sets a new state.
      *
      * @param string $state
+     *
      * @return self
      */
     public function setState($state)
     {
         $this->state = $state;
+
         return $this;
     }
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -67,37 +72,40 @@ class DocumentResponseType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Adds as detail
+     * Adds as detail.
      *
      * Chyby a upozornění vzniklé při načtení dokladu.
      *
      * @return self
-     * @param \Pohoda\Documentresponse\DetailType $detail
      */
     public function addToImportDetails(\Pohoda\Documentresponse\DetailType $detail)
     {
         $this->importDetails[] = $detail;
+
         return $this;
     }
 
     /**
-     * isset importDetails
+     * isset importDetails.
      *
      * Chyby a upozornění vzniklé při načtení dokladu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetImportDetails($index)
@@ -106,20 +114,19 @@ class DocumentResponseType
     }
 
     /**
-     * unset importDetails
+     * unset importDetails.
      *
      * Chyby a upozornění vzniklé při načtení dokladu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetImportDetails($index)
+    public function unsetImportDetails($index): void
     {
         unset($this->importDetails[$index]);
     }
 
     /**
-     * Gets as importDetails
+     * Gets as importDetails.
      *
      * Chyby a upozornění vzniklé při načtení dokladu.
      *
@@ -131,21 +138,23 @@ class DocumentResponseType
     }
 
     /**
-     * Sets a new importDetails
+     * Sets a new importDetails.
      *
      * Chyby a upozornění vzniklé při načtení dokladu.
      *
      * @param \Pohoda\Documentresponse\DetailType[] $importDetails
+     *
      * @return self
      */
-    public function setImportDetails(array $importDetails = null)
+    public function setImportDetails(?array $importDetails = null)
     {
         $this->importDetails = $importDetails;
+
         return $this;
     }
 
     /**
-     * Gets as producedDetails
+     * Gets as producedDetails.
      *
      * Informace o vytvořeném dokladu.
      *
@@ -157,16 +166,16 @@ class DocumentResponseType
     }
 
     /**
-     * Sets a new producedDetails
+     * Sets a new producedDetails.
      *
      * Informace o vytvořeném dokladu.
      *
-     * @param \Pohoda\Documentresponse\ProducedDetailsType $producedDetails
      * @return self
      */
     public function setProducedDetails(?\Pohoda\Documentresponse\ProducedDetailsType $producedDetails = null)
     {
         $this->producedDetails = $producedDetails;
+
         return $this;
     }
 }

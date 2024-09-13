@@ -1,12 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\AccountingSalesVouchers;
 
 use Pohoda\Documentresponse\DocumentResponseType;
 
 /**
- * Class representing AccountingSalesVouchersResponesType
- *
+ * Class representing AccountingSalesVouchersResponesType.
  *
  * XSD Type: accountingSalesVouchersResponesType
  */
@@ -15,30 +27,31 @@ class AccountingSalesVouchersResponesType extends DocumentResponseType
     /**
      * Vytvořené zaúčtovávací doklady.
      *
-     * @var \Pohoda\AccountingSalesVouchers\AccountingDocumentType[] $producedAccountingDocs
+     * @var \Pohoda\AccountingSalesVouchers\AccountingDocumentType[]
      */
-    private $producedAccountingDocs = null;
+    private array $producedAccountingDocs = null;
 
     /**
-     * Adds as accountingDocument
+     * Adds as accountingDocument.
      *
      * Vytvořené zaúčtovávací doklady.
      *
      * @return self
-     * @param \Pohoda\AccountingSalesVouchers\AccountingDocumentType $accountingDocument
      */
     public function addToProducedAccountingDocs(\Pohoda\AccountingSalesVouchers\AccountingDocumentType $accountingDocument)
     {
         $this->producedAccountingDocs[] = $accountingDocument;
+
         return $this;
     }
 
     /**
-     * isset producedAccountingDocs
+     * isset producedAccountingDocs.
      *
      * Vytvořené zaúčtovávací doklady.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetProducedAccountingDocs($index)
@@ -47,20 +60,19 @@ class AccountingSalesVouchersResponesType extends DocumentResponseType
     }
 
     /**
-     * unset producedAccountingDocs
+     * unset producedAccountingDocs.
      *
      * Vytvořené zaúčtovávací doklady.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetProducedAccountingDocs($index)
+    public function unsetProducedAccountingDocs($index): void
     {
         unset($this->producedAccountingDocs[$index]);
     }
 
     /**
-     * Gets as producedAccountingDocs
+     * Gets as producedAccountingDocs.
      *
      * Vytvořené zaúčtovávací doklady.
      *
@@ -72,16 +84,18 @@ class AccountingSalesVouchersResponesType extends DocumentResponseType
     }
 
     /**
-     * Sets a new producedAccountingDocs
+     * Sets a new producedAccountingDocs.
      *
      * Vytvořené zaúčtovávací doklady.
      *
      * @param \Pohoda\AccountingSalesVouchers\AccountingDocumentType[] $producedAccountingDocs
+     *
      * @return self
      */
-    public function setProducedAccountingDocs(array $producedAccountingDocs = null)
+    public function setProducedAccountingDocs(?array $producedAccountingDocs = null)
     {
         $this->producedAccountingDocs = $producedAccountingDocs;
+
         return $this;
     }
 }

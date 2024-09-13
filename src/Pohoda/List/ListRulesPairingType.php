@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListRulesPairingType
- *
+ * Class representing ListRulesPairingType.
  *
  * XSD Type: listRulesPairingType
  */
 class ListRulesPairingType extends ListVersionType
 {
     /**
-     * @var \Pohoda\RulesPairing\RulesPairingType[] $rulesPairing
+     * @var \Pohoda\RulesPairing\RulesPairingType[]
      */
-    private $rulesPairing = [
+    private array $rulesPairing = [
     ];
 
     /**
-     * Adds as rulesPairing
+     * Adds as rulesPairing.
      *
      * @return self
-     * @param \Pohoda\RulesPairing\RulesPairingType $rulesPairing
      */
     public function addToRulesPairing(\Pohoda\RulesPairing\RulesPairingType $rulesPairing)
     {
         $this->rulesPairing[] = $rulesPairing;
+
         return $this;
     }
 
     /**
-     * isset rulesPairing
+     * isset rulesPairing.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRulesPairing($index)
@@ -42,18 +55,17 @@ class ListRulesPairingType extends ListVersionType
     }
 
     /**
-     * unset rulesPairing
+     * unset rulesPairing.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRulesPairing($index)
+    public function unsetRulesPairing($index): void
     {
         unset($this->rulesPairing[$index]);
     }
 
     /**
-     * Gets as rulesPairing
+     * Gets as rulesPairing.
      *
      * @return \Pohoda\RulesPairing\RulesPairingType[]
      */
@@ -63,14 +75,16 @@ class ListRulesPairingType extends ListVersionType
     }
 
     /**
-     * Sets a new rulesPairing
+     * Sets a new rulesPairing.
      *
      * @param \Pohoda\RulesPairing\RulesPairingType[] $rulesPairing
+     *
      * @return self
      */
-    public function setRulesPairing(array $rulesPairing = null)
+    public function setRulesPairing(?array $rulesPairing = null)
     {
         $this->rulesPairing = $rulesPairing;
+
         return $this;
     }
 }

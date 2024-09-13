@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Invoice;
 
 /**
- * Class representing InvoiceRetentionType
- *
+ * Class representing InvoiceRetentionType.
  *
  * XSD Type: invoiceRetentionType
  */
@@ -12,48 +24,36 @@ class InvoiceRetentionType
 {
     /**
      * Datum pozastávky.
-     *
-     * @var \DateTime $date
      */
-    private $date = null;
+    private \DateTime $date = null;
 
     /**
      * Datum splatnosti pozastávky.
-     *
-     * @var \DateTime $dateDue
      */
-    private $dateDue = null;
+    private \DateTime $dateDue = null;
 
     /**
      * Výše pozastávky v domácí měně.
-     *
-     * @var float $homeCurrency
      */
-    private $homeCurrency = null;
+    private float $homeCurrency = null;
 
     /**
      * Informace o likvidaci pozastávky.
-     *
-     * @var \Pohoda\Type\LiquidationType $liquidation
      */
-    private $liquidation = null;
+    private \Pohoda\Type\LiquidationType $liquidation = null;
 
     /**
      * Text pozastávky.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Předkontace pozastávky.
-     *
-     * @var \Pohoda\Type\RefType $accounting
      */
-    private $accounting = null;
+    private \Pohoda\Type\RefType $accounting = null;
 
     /**
-     * Gets as date
+     * Gets as date.
      *
      * Datum pozastávky.
      *
@@ -65,21 +65,21 @@ class InvoiceRetentionType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
      * Datum pozastávky.
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(\DateTime $date)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as dateDue
+     * Gets as dateDue.
      *
      * Datum splatnosti pozastávky.
      *
@@ -91,21 +91,21 @@ class InvoiceRetentionType
     }
 
     /**
-     * Sets a new dateDue
+     * Sets a new dateDue.
      *
      * Datum splatnosti pozastávky.
      *
-     * @param \DateTime $dateDue
      * @return self
      */
     public function setDateDue(\DateTime $dateDue)
     {
         $this->dateDue = $dateDue;
+
         return $this;
     }
 
     /**
-     * Gets as homeCurrency
+     * Gets as homeCurrency.
      *
      * Výše pozastávky v domácí měně.
      *
@@ -117,21 +117,23 @@ class InvoiceRetentionType
     }
 
     /**
-     * Sets a new homeCurrency
+     * Sets a new homeCurrency.
      *
      * Výše pozastávky v domácí měně.
      *
      * @param float $homeCurrency
+     *
      * @return self
      */
     public function setHomeCurrency($homeCurrency)
     {
         $this->homeCurrency = $homeCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as liquidation
+     * Gets as liquidation.
      *
      * Informace o likvidaci pozastávky.
      *
@@ -143,21 +145,21 @@ class InvoiceRetentionType
     }
 
     /**
-     * Sets a new liquidation
+     * Sets a new liquidation.
      *
      * Informace o likvidaci pozastávky.
      *
-     * @param \Pohoda\Type\LiquidationType $liquidation
      * @return self
      */
     public function setLiquidation(?\Pohoda\Type\LiquidationType $liquidation = null)
     {
         $this->liquidation = $liquidation;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text pozastávky.
      *
@@ -169,21 +171,23 @@ class InvoiceRetentionType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text pozastávky.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as accounting
+     * Gets as accounting.
      *
      * Předkontace pozastávky.
      *
@@ -195,16 +199,16 @@ class InvoiceRetentionType
     }
 
     /**
-     * Sets a new accounting
+     * Sets a new accounting.
      *
      * Předkontace pozastávky.
      *
-     * @param \Pohoda\Type\RefType $accounting
      * @return self
      */
     public function setAccounting(?\Pohoda\Type\RefType $accounting = null)
     {
         $this->accounting = $accounting;
+
         return $this;
     }
 }

@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Service;
 
 /**
- * Class representing ServiceItemsType
- *
+ * Class representing ServiceItemsType.
  *
  * XSD Type: serviceItemsType
  */
 class ServiceItemsType
 {
     /**
-     * @var \Pohoda\Service\ItemType[] $item
+     * @var \Pohoda\Service\ItemType[]
      */
-    private $item = [
+    private array $item = [
     ];
 
     /**
-     * Adds as item
+     * Adds as item.
      *
      * @return self
-     * @param \Pohoda\Service\ItemType $item
      */
     public function addToItem(\Pohoda\Service\ItemType $item)
     {
         $this->item[] = $item;
+
         return $this;
     }
 
     /**
-     * isset item
+     * isset item.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetItem($index)
@@ -40,18 +53,17 @@ class ServiceItemsType
     }
 
     /**
-     * unset item
+     * unset item.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetItem($index)
+    public function unsetItem($index): void
     {
         unset($this->item[$index]);
     }
 
     /**
-     * Gets as item
+     * Gets as item.
      *
      * @return \Pohoda\Service\ItemType[]
      */
@@ -61,14 +73,16 @@ class ServiceItemsType
     }
 
     /**
-     * Sets a new item
+     * Sets a new item.
      *
      * @param \Pohoda\Service\ItemType[] $item
+     *
      * @return self
      */
     public function setItem(array $item)
     {
         $this->item = $item;
+
         return $this;
     }
 }

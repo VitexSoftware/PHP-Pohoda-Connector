@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Category;
 
 /**
- * Class representing ActionTypeType
- *
+ * Class representing ActionTypeType.
  *
  * XSD Type: actionTypeType
  */
@@ -12,20 +24,16 @@ class ActionTypeType
 {
     /**
      * Vložení nového záznamu. Výchozí hodnota.
-     *
-     * @var \Pohoda\Filter\RequestCategoryActionType $add
      */
-    private $add = null;
+    private \Pohoda\Filter\RequestCategoryActionType $add = null;
 
     /**
      * Aktualizace dokladu.
-     *
-     * @var \Pohoda\Filter\RequestCategoryActionType $update
      */
-    private $update = null;
+    private \Pohoda\Filter\RequestCategoryActionType $update = null;
 
     /**
-     * Gets as add
+     * Gets as add.
      *
      * Vložení nového záznamu. Výchozí hodnota.
      *
@@ -37,21 +45,21 @@ class ActionTypeType
     }
 
     /**
-     * Sets a new add
+     * Sets a new add.
      *
      * Vložení nového záznamu. Výchozí hodnota.
      *
-     * @param \Pohoda\Filter\RequestCategoryActionType $add
      * @return self
      */
     public function setAdd(?\Pohoda\Filter\RequestCategoryActionType $add = null)
     {
         $this->add = $add;
+
         return $this;
     }
 
     /**
-     * Gets as update
+     * Gets as update.
      *
      * Aktualizace dokladu.
      *
@@ -63,16 +71,16 @@ class ActionTypeType
     }
 
     /**
-     * Sets a new update
+     * Sets a new update.
      *
      * Aktualizace dokladu.
      *
-     * @param \Pohoda\Filter\RequestCategoryActionType $update
      * @return self
      */
     public function setUpdate(?\Pohoda\Filter\RequestCategoryActionType $update = null)
     {
         $this->update = $update;
+
         return $this;
     }
 }

@@ -1,0 +1,19 @@
+Files: *
+Copyright: <years> <put author's name and email here>
+           <years> <likewise for another author>
+License: Artistic
+
+Files: debian/*
+Copyright: 2023 Vítězslav Dvořák <info@vitexsoftware.cz>
+License: Artistic-1.0
+
+License: Artistic-1.0
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the "Artistic License" which comes with Debian.
+ .
+ THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES
+ OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ .
+ On Debian systems, the complete text of the Artistic License
+ can be found in "/usr/share/common-licenses/Artistic".

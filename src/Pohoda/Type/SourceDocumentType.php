@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing SourceDocumentType
- *
+ * Class representing SourceDocumentType.
  *
  * XSD Type: sourceDocumentType
  */
@@ -12,27 +24,21 @@ class SourceDocumentType
 {
     /**
      * ID zdrojového dokladu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Externí identifikátor dokladu (Pouze pro export).
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Číslo zdrojového dokladu.
-     *
-     * @var string $number
      */
-    private $number = null;
+    private string $number = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID zdrojového dokladu.
      *
@@ -44,21 +50,23 @@ class SourceDocumentType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID zdrojového dokladu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Externí identifikátor dokladu (Pouze pro export).
      *
@@ -70,21 +78,21 @@ class SourceDocumentType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Externí identifikátor dokladu (Pouze pro export).
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Číslo zdrojového dokladu.
      *
@@ -96,16 +104,18 @@ class SourceDocumentType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Číslo zdrojového dokladu.
      *
      * @param string $number
+     *
      * @return self
      */
     public function setNumber($number)
     {
         $this->number = $number;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prijemka;
 
 /**
- * Class representing PrijemkaAccessoryChargesItemType
- *
+ * Class representing PrijemkaAccessoryChargesItemType.
  *
  * XSD Type: prijemkaAccessoryChargesItemType
  */
@@ -12,97 +24,73 @@ class PrijemkaAccessoryChargesItemType
 {
     /**
      * ID položky dokladu (jen pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Množství.
-     *
-     * @var float $quantity
      */
-    private $quantity = null;
+    private float $quantity = null;
 
     /**
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
-     *
-     * @var string $payVAT
      */
-    private $payVAT = null;
+    private string $payVAT = null;
 
     /**
      * Sazba DPH.
-     *
-     * @var \Pohoda\Type\VatRateType $rateVAT
      */
-    private $rateVAT = null;
+    private \Pohoda\Type\VatRateType $rateVAT = null;
 
     /**
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
-     *
-     * @var float $percentVAT
      */
-    private $percentVAT = null;
+    private float $percentVAT = null;
 
     /**
      * Sleva v procentech. Pokud není uvedena, bere se jako NULOVÁ.
-     *
-     * @var float $discountPercentage
      */
-    private $discountPercentage = null;
+    private float $discountPercentage = null;
 
     /**
      * Kč.
-     *
-     * @var \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency
      */
-    private $homeCurrency = null;
+    private \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null;
 
     /**
      * Cizí měna.
-     *
-     * @var \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency
      */
-    private $foreignCurrency = null;
+    private \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Středisko.
-     *
-     * @var \Pohoda\Type\RefType $centre
      */
-    private $centre = null;
+    private \Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
-     *
-     * @var \Pohoda\Type\RefType $activity
      */
-    private $activity = null;
+    private \Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
-     *
-     * @var \Pohoda\Type\RefType $contract
      */
-    private $contract = null;
+    private \Pohoda\Type\RefType $contract = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID položky dokladu (jen pro export).
      *
@@ -114,21 +102,23 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID položky dokladu (jen pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as quantity
+     * Gets as quantity.
      *
      * Množství.
      *
@@ -140,21 +130,23 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new quantity
+     * Sets a new quantity.
      *
      * Množství.
      *
      * @param float $quantity
+     *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
     /**
-     * Gets as payVAT
+     * Gets as payVAT.
      *
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
      *
@@ -166,21 +158,23 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new payVAT
+     * Sets a new payVAT.
      *
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
      *
      * @param string $payVAT
+     *
      * @return self
      */
     public function setPayVAT($payVAT)
     {
         $this->payVAT = $payVAT;
+
         return $this;
     }
 
     /**
-     * Gets as rateVAT
+     * Gets as rateVAT.
      *
      * Sazba DPH.
      *
@@ -192,21 +186,21 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new rateVAT
+     * Sets a new rateVAT.
      *
      * Sazba DPH.
      *
-     * @param \Pohoda\Type\VatRateType $rateVAT
      * @return self
      */
     public function setRateVAT(?\Pohoda\Type\VatRateType $rateVAT = null)
     {
         $this->rateVAT = $rateVAT;
+
         return $this;
     }
 
     /**
-     * Gets as percentVAT
+     * Gets as percentVAT.
      *
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      *
@@ -218,21 +212,23 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new percentVAT
+     * Sets a new percentVAT.
      *
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      *
      * @param float $percentVAT
+     *
      * @return self
      */
     public function setPercentVAT($percentVAT)
     {
         $this->percentVAT = $percentVAT;
+
         return $this;
     }
 
     /**
-     * Gets as discountPercentage
+     * Gets as discountPercentage.
      *
      * Sleva v procentech. Pokud není uvedena, bere se jako NULOVÁ.
      *
@@ -244,21 +240,23 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new discountPercentage
+     * Sets a new discountPercentage.
      *
      * Sleva v procentech. Pokud není uvedena, bere se jako NULOVÁ.
      *
      * @param float $discountPercentage
+     *
      * @return self
      */
     public function setDiscountPercentage($discountPercentage)
     {
         $this->discountPercentage = $discountPercentage;
+
         return $this;
     }
 
     /**
-     * Gets as homeCurrency
+     * Gets as homeCurrency.
      *
      * Kč.
      *
@@ -270,21 +268,21 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new homeCurrency
+     * Sets a new homeCurrency.
      *
      * Kč.
      *
-     * @param \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency
      * @return self
      */
     public function setHomeCurrency(?\Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null)
     {
         $this->homeCurrency = $homeCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrency
+     * Gets as foreignCurrency.
      *
      * Cizí měna.
      *
@@ -296,21 +294,21 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new foreignCurrency
+     * Sets a new foreignCurrency.
      *
      * Cizí měna.
      *
-     * @param \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency
      * @return self
      */
     public function setForeignCurrency(?\Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency = null)
     {
         $this->foreignCurrency = $foreignCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -322,21 +320,23 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * Středisko.
      *
@@ -348,21 +348,21 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * Středisko.
      *
-     * @param \Pohoda\Type\RefType $centre
      * @return self
      */
     public function setCentre(?\Pohoda\Type\RefType $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 
     /**
-     * Gets as activity
+     * Gets as activity.
      *
      * Činnost.
      *
@@ -374,21 +374,21 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new activity
+     * Sets a new activity.
      *
      * Činnost.
      *
-     * @param \Pohoda\Type\RefType $activity
      * @return self
      */
     public function setActivity(?\Pohoda\Type\RefType $activity = null)
     {
         $this->activity = $activity;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * Zakázka.
      *
@@ -400,39 +400,40 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
      * Zakázka.
      *
-     * @param \Pohoda\Type\RefType $contract
      * @return self
      */
     public function setContract(?\Pohoda\Type\RefType $contract = null)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -441,20 +442,19 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -466,16 +466,18 @@ class PrijemkaAccessoryChargesItemType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }

@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListVydejkaType
- *
+ * Class representing ListVydejkaType.
  *
  * XSD Type: listVydejkaType
  */
 class ListVydejkaType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Vydejka\VydejkaType[] $vydejka
+     * @var \Pohoda\Vydejka\VydejkaType[]
      */
-    private $vydejka = [
+    private array $vydejka = [
     ];
 
     /**
-     * Adds as vydejka
+     * Adds as vydejka.
      *
      * @return self
-     * @param \Pohoda\Vydejka\VydejkaType $vydejka
      */
     public function addToVydejka(\Pohoda\Vydejka\VydejkaType $vydejka)
     {
         $this->vydejka[] = $vydejka;
+
         return $this;
     }
 
     /**
-     * isset vydejka
+     * isset vydejka.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetVydejka($index)
@@ -42,18 +55,17 @@ class ListVydejkaType extends ListVersionType
     }
 
     /**
-     * unset vydejka
+     * unset vydejka.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetVydejka($index)
+    public function unsetVydejka($index): void
     {
         unset($this->vydejka[$index]);
     }
 
     /**
-     * Gets as vydejka
+     * Gets as vydejka.
      *
      * @return \Pohoda\Vydejka\VydejkaType[]
      */
@@ -63,14 +75,16 @@ class ListVydejkaType extends ListVersionType
     }
 
     /**
-     * Sets a new vydejka
+     * Sets a new vydejka.
      *
      * @param \Pohoda\Vydejka\VydejkaType[] $vydejka
+     *
      * @return self
      */
-    public function setVydejka(array $vydejka = null)
+    public function setVydejka(?array $vydejka = null)
     {
         $this->vydejka = $vydejka;
+
         return $this;
     }
 }

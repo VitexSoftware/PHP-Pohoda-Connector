@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda;
 
 /**
- * Class representing MovementDetailType
- *
+ * Class representing MovementDetailType.
  *
  * XSD Type: movementDetailType
  */
@@ -12,48 +24,36 @@ class MovementDetailType
 {
     /**
      * ID bankovního dokladu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Evidenční číslo bankovního dokladu.
-     *
-     * @var string $number
      */
-    private $number = null;
+    private string $number = null;
 
     /**
      * Typ bankovního dokladu.
-     *
-     * @var string $bankType
      */
-    private $bankType = null;
+    private string $bankType = null;
 
     /**
      * Datum platby.
-     *
-     * @var \DateTime $datePayment
      */
-    private $datePayment = null;
+    private \DateTime $datePayment = null;
 
     /**
      * Celková částka.
-     *
-     * @var \Pohoda\HomeCurrencyType $homeCurrency
      */
-    private $homeCurrency = null;
+    private \Pohoda\HomeCurrencyType $homeCurrency = null;
 
     /**
      * Celková částka v cizí měně.
-     *
-     * @var \Pohoda\ForeignCurrencyType $foreignCurrency
      */
-    private $foreignCurrency = null;
+    private \Pohoda\ForeignCurrencyType $foreignCurrency = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID bankovního dokladu.
      *
@@ -65,21 +65,23 @@ class MovementDetailType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID bankovního dokladu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Evidenční číslo bankovního dokladu.
      *
@@ -91,21 +93,23 @@ class MovementDetailType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Evidenční číslo bankovního dokladu.
      *
      * @param string $number
+     *
      * @return self
      */
     public function setNumber($number)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as bankType
+     * Gets as bankType.
      *
      * Typ bankovního dokladu.
      *
@@ -117,21 +121,23 @@ class MovementDetailType
     }
 
     /**
-     * Sets a new bankType
+     * Sets a new bankType.
      *
      * Typ bankovního dokladu.
      *
      * @param string $bankType
+     *
      * @return self
      */
     public function setBankType($bankType)
     {
         $this->bankType = $bankType;
+
         return $this;
     }
 
     /**
-     * Gets as datePayment
+     * Gets as datePayment.
      *
      * Datum platby.
      *
@@ -143,21 +149,21 @@ class MovementDetailType
     }
 
     /**
-     * Sets a new datePayment
+     * Sets a new datePayment.
      *
      * Datum platby.
      *
-     * @param \DateTime $datePayment
      * @return self
      */
     public function setDatePayment(?\DateTime $datePayment = null)
     {
         $this->datePayment = $datePayment;
+
         return $this;
     }
 
     /**
-     * Gets as homeCurrency
+     * Gets as homeCurrency.
      *
      * Celková částka.
      *
@@ -169,21 +175,21 @@ class MovementDetailType
     }
 
     /**
-     * Sets a new homeCurrency
+     * Sets a new homeCurrency.
      *
      * Celková částka.
      *
-     * @param \Pohoda\HomeCurrencyType $homeCurrency
      * @return self
      */
     public function setHomeCurrency(\Pohoda\HomeCurrencyType $homeCurrency)
     {
         $this->homeCurrency = $homeCurrency;
+
         return $this;
     }
 
     /**
-     * Gets as foreignCurrency
+     * Gets as foreignCurrency.
      *
      * Celková částka v cizí měně.
      *
@@ -195,16 +201,16 @@ class MovementDetailType
     }
 
     /**
-     * Sets a new foreignCurrency
+     * Sets a new foreignCurrency.
      *
      * Celková částka v cizí měně.
      *
-     * @param \Pohoda\ForeignCurrencyType $foreignCurrency
      * @return self
      */
     public function setForeignCurrency(?\Pohoda\ForeignCurrencyType $foreignCurrency = null)
     {
         $this->foreignCurrency = $foreignCurrency;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Store;
 
 /**
- * Class representing AccStockAType
- *
+ * Class representing AccStockAType.
  *
  * XSD Type: accStockAType
  */
@@ -12,55 +24,41 @@ class AccStockAType
 {
     /**
      * Materiál.
-     *
-     * @var string $material
      */
-    private $material = null;
+    private string $material = null;
 
     /**
      * Zboží.
-     *
-     * @var string $goods
      */
-    private $goods = null;
+    private string $goods = null;
 
     /**
      * Nedokončená výroba.
-     *
-     * @var string $workInProgress
      */
-    private $workInProgress = null;
+    private string $workInProgress = null;
 
     /**
      * Polotovary.
-     *
-     * @var string $semiproducts
      */
-    private $semiproducts = null;
+    private string $semiproducts = null;
 
     /**
      * Výrobky.
-     *
-     * @var string $products
      */
-    private $products = null;
+    private string $products = null;
 
     /**
      * Zvířata.
-     *
-     * @var string $animals
      */
-    private $animals = null;
+    private string $animals = null;
 
     /**
      * Materiál vl. výroby.
-     *
-     * @var string $materialOfOwnProduction
      */
-    private $materialOfOwnProduction = null;
+    private string $materialOfOwnProduction = null;
 
     /**
-     * Gets as material
+     * Gets as material.
      *
      * Materiál.
      *
@@ -72,21 +70,23 @@ class AccStockAType
     }
 
     /**
-     * Sets a new material
+     * Sets a new material.
      *
      * Materiál.
      *
      * @param string $material
+     *
      * @return self
      */
     public function setMaterial($material)
     {
         $this->material = $material;
+
         return $this;
     }
 
     /**
-     * Gets as goods
+     * Gets as goods.
      *
      * Zboží.
      *
@@ -98,21 +98,23 @@ class AccStockAType
     }
 
     /**
-     * Sets a new goods
+     * Sets a new goods.
      *
      * Zboží.
      *
      * @param string $goods
+     *
      * @return self
      */
     public function setGoods($goods)
     {
         $this->goods = $goods;
+
         return $this;
     }
 
     /**
-     * Gets as workInProgress
+     * Gets as workInProgress.
      *
      * Nedokončená výroba.
      *
@@ -124,21 +126,23 @@ class AccStockAType
     }
 
     /**
-     * Sets a new workInProgress
+     * Sets a new workInProgress.
      *
      * Nedokončená výroba.
      *
      * @param string $workInProgress
+     *
      * @return self
      */
     public function setWorkInProgress($workInProgress)
     {
         $this->workInProgress = $workInProgress;
+
         return $this;
     }
 
     /**
-     * Gets as semiproducts
+     * Gets as semiproducts.
      *
      * Polotovary.
      *
@@ -150,21 +154,23 @@ class AccStockAType
     }
 
     /**
-     * Sets a new semiproducts
+     * Sets a new semiproducts.
      *
      * Polotovary.
      *
      * @param string $semiproducts
+     *
      * @return self
      */
     public function setSemiproducts($semiproducts)
     {
         $this->semiproducts = $semiproducts;
+
         return $this;
     }
 
     /**
-     * Gets as products
+     * Gets as products.
      *
      * Výrobky.
      *
@@ -176,21 +182,23 @@ class AccStockAType
     }
 
     /**
-     * Sets a new products
+     * Sets a new products.
      *
      * Výrobky.
      *
      * @param string $products
+     *
      * @return self
      */
     public function setProducts($products)
     {
         $this->products = $products;
+
         return $this;
     }
 
     /**
-     * Gets as animals
+     * Gets as animals.
      *
      * Zvířata.
      *
@@ -202,21 +210,23 @@ class AccStockAType
     }
 
     /**
-     * Sets a new animals
+     * Sets a new animals.
      *
      * Zvířata.
      *
      * @param string $animals
+     *
      * @return self
      */
     public function setAnimals($animals)
     {
         $this->animals = $animals;
+
         return $this;
     }
 
     /**
-     * Gets as materialOfOwnProduction
+     * Gets as materialOfOwnProduction.
      *
      * Materiál vl. výroby.
      *
@@ -228,16 +238,18 @@ class AccStockAType
     }
 
     /**
-     * Sets a new materialOfOwnProduction
+     * Sets a new materialOfOwnProduction.
      *
      * Materiál vl. výroby.
      *
      * @param string $materialOfOwnProduction
+     *
      * @return self
      */
     public function setMaterialOfOwnProduction($materialOfOwnProduction)
     {
         $this->materialOfOwnProduction = $materialOfOwnProduction;
+
         return $this;
     }
 }

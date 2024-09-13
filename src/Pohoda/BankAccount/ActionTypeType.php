@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\BankAccount;
 
 /**
- * Class representing ActionTypeType
- *
+ * Class representing ActionTypeType.
  *
  * XSD Type: actionTypeType
  */
@@ -12,13 +24,11 @@ class ActionTypeType
 {
     /**
      * Vložení nového záznamu. Výchozí hodnota.
-     *
-     * @var \Pohoda\Filter\RequestExtIdActionType $add
      */
-    private $add = null;
+    private \Pohoda\Filter\RequestExtIdActionType $add = null;
 
     /**
-     * Gets as add
+     * Gets as add.
      *
      * Vložení nového záznamu. Výchozí hodnota.
      *
@@ -30,16 +40,16 @@ class ActionTypeType
     }
 
     /**
-     * Sets a new add
+     * Sets a new add.
      *
      * Vložení nového záznamu. Výchozí hodnota.
      *
-     * @param \Pohoda\Filter\RequestExtIdActionType $add
      * @return self
      */
     public function setAdd(?\Pohoda\Filter\RequestExtIdActionType $add = null)
     {
         $this->add = $add;
+
         return $this;
     }
 }

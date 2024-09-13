@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Filter;
 
 /**
- * Class representing FilterStocksType
- *
+ * Class representing FilterStocksType.
  *
  * XSD Type: filterStocksType
  */
@@ -12,76 +24,56 @@ class FilterStocksType
 {
     /**
      * Filtr podle ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Vybere záznam dle zadaného externího identifikátoru.
-     *
-     * @var \Pohoda\Type\ExtIdType $extId
      */
-    private $extId = null;
+    private \Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Filtr podle kódu zásoby.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Filtr podle čísla čárového kódu.
-     *
-     * @var string $eAN
      */
-    private $eAN = null;
+    private string $eAN = null;
 
     /**
      * Filtr podle pole kódu zásoby pro registrační pokladnu.
-     *
-     * @var int $pLU
      */
-    private $pLU = null;
+    private int $pLU = null;
 
     /**
      * Filtr podle názvu skladové položky.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Filtr podle ID, název členění. Je možné také zadat část názvu členění (zleva) - proběhne vyexportování zadané větve a souvisejících podvětví stromu členění.
-     *
-     * @var \Pohoda\Type\RefTypeStorageType $storage
      */
-    private $storage = null;
+    private \Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Filtr podle ID, název skladu.
-     *
-     * @var \Pohoda\Type\RefType $store
      */
-    private $store = null;
+    private \Pohoda\Type\RefType $store = null;
 
     /**
      * Hodnota Internet je na zásobě nastavena.
-     *
-     * @var string $internet
      */
-    private $internet = null;
+    private string $internet = null;
 
     /**
      * Vyexportuje záznamy změněné od zadaného data.Pouze pro export.
-     *
-     * @var \DateTime $lastChanges
      */
-    private $lastChanges = null;
+    private \DateTime $lastChanges = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Filtr podle ID záznamu.
      *
@@ -93,21 +85,23 @@ class FilterStocksType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Filtr podle ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as extId
+     * Gets as extId.
      *
      * Vybere záznam dle zadaného externího identifikátoru.
      *
@@ -119,21 +113,21 @@ class FilterStocksType
     }
 
     /**
-     * Sets a new extId
+     * Sets a new extId.
      *
      * Vybere záznam dle zadaného externího identifikátoru.
      *
-     * @param \Pohoda\Type\ExtIdType $extId
      * @return self
      */
     public function setExtId(?\Pohoda\Type\ExtIdType $extId = null)
     {
         $this->extId = $extId;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Filtr podle kódu zásoby.
      *
@@ -145,21 +139,23 @@ class FilterStocksType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Filtr podle kódu zásoby.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as eAN
+     * Gets as eAN.
      *
      * Filtr podle čísla čárového kódu.
      *
@@ -171,21 +167,23 @@ class FilterStocksType
     }
 
     /**
-     * Sets a new eAN
+     * Sets a new eAN.
      *
      * Filtr podle čísla čárového kódu.
      *
      * @param string $eAN
+     *
      * @return self
      */
     public function setEAN($eAN)
     {
         $this->eAN = $eAN;
+
         return $this;
     }
 
     /**
-     * Gets as pLU
+     * Gets as pLU.
      *
      * Filtr podle pole kódu zásoby pro registrační pokladnu.
      *
@@ -197,21 +195,23 @@ class FilterStocksType
     }
 
     /**
-     * Sets a new pLU
+     * Sets a new pLU.
      *
      * Filtr podle pole kódu zásoby pro registrační pokladnu.
      *
      * @param int $pLU
+     *
      * @return self
      */
     public function setPLU($pLU)
     {
         $this->pLU = $pLU;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Filtr podle názvu skladové položky.
      *
@@ -223,21 +223,23 @@ class FilterStocksType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Filtr podle názvu skladové položky.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as storage
+     * Gets as storage.
      *
      * Filtr podle ID, název členění. Je možné také zadat část názvu členění (zleva) - proběhne vyexportování zadané větve a souvisejících podvětví stromu členění.
      *
@@ -249,21 +251,21 @@ class FilterStocksType
     }
 
     /**
-     * Sets a new storage
+     * Sets a new storage.
      *
      * Filtr podle ID, název členění. Je možné také zadat část názvu členění (zleva) - proběhne vyexportování zadané větve a souvisejících podvětví stromu členění.
      *
-     * @param \Pohoda\Type\RefTypeStorageType $storage
      * @return self
      */
     public function setStorage(?\Pohoda\Type\RefTypeStorageType $storage = null)
     {
         $this->storage = $storage;
+
         return $this;
     }
 
     /**
-     * Gets as store
+     * Gets as store.
      *
      * Filtr podle ID, název skladu.
      *
@@ -275,21 +277,21 @@ class FilterStocksType
     }
 
     /**
-     * Sets a new store
+     * Sets a new store.
      *
      * Filtr podle ID, název skladu.
      *
-     * @param \Pohoda\Type\RefType $store
      * @return self
      */
     public function setStore(?\Pohoda\Type\RefType $store = null)
     {
         $this->store = $store;
+
         return $this;
     }
 
     /**
-     * Gets as internet
+     * Gets as internet.
      *
      * Hodnota Internet je na zásobě nastavena.
      *
@@ -301,21 +303,23 @@ class FilterStocksType
     }
 
     /**
-     * Sets a new internet
+     * Sets a new internet.
      *
      * Hodnota Internet je na zásobě nastavena.
      *
      * @param string $internet
+     *
      * @return self
      */
     public function setInternet($internet)
     {
         $this->internet = $internet;
+
         return $this;
     }
 
     /**
-     * Gets as lastChanges
+     * Gets as lastChanges.
      *
      * Vyexportuje záznamy změněné od zadaného data.Pouze pro export.
      *
@@ -327,16 +331,16 @@ class FilterStocksType
     }
 
     /**
-     * Sets a new lastChanges
+     * Sets a new lastChanges.
      *
      * Vyexportuje záznamy změněné od zadaného data.Pouze pro export.
      *
-     * @param \DateTime $lastChanges
      * @return self
      */
     public function setLastChanges(?\DateTime $lastChanges = null)
     {
         $this->lastChanges = $lastChanges;
+
         return $this;
     }
 }

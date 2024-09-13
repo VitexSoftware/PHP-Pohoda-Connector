@@ -1,42 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Parameter;
 
 /**
- * Class representing CtrlDefType
+ * Class representing CtrlDefType.
  *
  * Definice prvku formuláře.
  * XSD Type: ctrlDefType
  */
 class CtrlDefType
 {
-    /**
-     * @var string $name
-     */
-    private $name = null;
+    private string $name = null;
+    private string $label = null;
+    private \Pohoda\Type\RectangleType $rect = null;
+    private string $type = null;
+    private int $style = null;
 
     /**
-     * @var string $label
-     */
-    private $label = null;
-
-    /**
-     * @var \Pohoda\Type\RectangleType $rect
-     */
-    private $rect = null;
-
-    /**
-     * @var string $type
-     */
-    private $type = null;
-
-    /**
-     * @var int $style
-     */
-    private $style = null;
-
-    /**
-     * Gets as name
+     * Gets as name.
      *
      * @return string
      */
@@ -46,19 +40,21 @@ class CtrlDefType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as label
+     * Gets as label.
      *
      * @return string
      */
@@ -68,19 +64,21 @@ class CtrlDefType
     }
 
     /**
-     * Sets a new label
+     * Sets a new label.
      *
      * @param string $label
+     *
      * @return self
      */
     public function setLabel($label)
     {
         $this->label = $label;
+
         return $this;
     }
 
     /**
-     * Gets as rect
+     * Gets as rect.
      *
      * @return \Pohoda\Type\RectangleType
      */
@@ -90,19 +88,19 @@ class CtrlDefType
     }
 
     /**
-     * Sets a new rect
+     * Sets a new rect.
      *
-     * @param \Pohoda\Type\RectangleType $rect
      * @return self
      */
     public function setRect(\Pohoda\Type\RectangleType $rect)
     {
         $this->rect = $rect;
+
         return $this;
     }
 
     /**
-     * Gets as type
+     * Gets as type.
      *
      * @return string
      */
@@ -112,19 +110,21 @@ class CtrlDefType
     }
 
     /**
-     * Sets a new type
+     * Sets a new type.
      *
      * @param string $type
+     *
      * @return self
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
     /**
-     * Gets as style
+     * Gets as style.
      *
      * @return int
      */
@@ -134,14 +134,16 @@ class CtrlDefType
     }
 
     /**
-     * Sets a new style
+     * Sets a new style.
      *
      * @param int $style
+     *
      * @return self
      */
     public function setStyle($style)
     {
         $this->style = $style;
+
         return $this;
     }
 }

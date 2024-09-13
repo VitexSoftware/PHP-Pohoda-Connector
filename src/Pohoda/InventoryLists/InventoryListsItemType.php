@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\InventoryLists;
 
 /**
- * Class representing InventoryListsItemType
- *
+ * Class representing InventoryListsItemType.
  *
  * XSD Type: inventoryListsItemType
  */
@@ -12,55 +24,41 @@ class InventoryListsItemType
 {
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
-     *
-     * @var \Pohoda\Type\StockItemType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Kód položky.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Název položky.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Text položky.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Množství.
-     *
-     * @var float $quantity
      */
-    private $quantity = null;
+    private float $quantity = null;
 
     /**
      * Měrná jednotka.
-     *
-     * @var string $unit
      */
-    private $unit = null;
+    private string $unit = null;
 
     /**
      * Dodáno. Používá se jen při exportu dokladu.
-     *
-     * @var string $isDelivered
      */
-    private $isDelivered = null;
+    private string $isDelivered = null;
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      *
@@ -72,21 +70,21 @@ class InventoryListsItemType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      *
-     * @param \Pohoda\Type\StockItemType $stockItem
      * @return self
      */
     public function setStockItem(?\Pohoda\Type\StockItemType $stockItem = null)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Kód položky.
      *
@@ -98,21 +96,23 @@ class InventoryListsItemType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Kód položky.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název položky.
      *
@@ -124,21 +124,23 @@ class InventoryListsItemType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název položky.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text položky.
      *
@@ -150,21 +152,23 @@ class InventoryListsItemType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text položky.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as quantity
+     * Gets as quantity.
      *
      * Množství.
      *
@@ -176,21 +180,23 @@ class InventoryListsItemType
     }
 
     /**
-     * Sets a new quantity
+     * Sets a new quantity.
      *
      * Množství.
      *
      * @param float $quantity
+     *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
     /**
-     * Gets as unit
+     * Gets as unit.
      *
      * Měrná jednotka.
      *
@@ -202,21 +208,23 @@ class InventoryListsItemType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * Měrná jednotka.
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as isDelivered
+     * Gets as isDelivered.
      *
      * Dodáno. Používá se jen při exportu dokladu.
      *
@@ -228,16 +236,18 @@ class InventoryListsItemType
     }
 
     /**
-     * Sets a new isDelivered
+     * Sets a new isDelivered.
      *
      * Dodáno. Používá se jen při exportu dokladu.
      *
      * @param string $isDelivered
+     *
      * @return self
      */
     public function setIsDelivered($isDelivered)
     {
         $this->isDelivered = $isDelivered;
+
         return $this;
     }
 }

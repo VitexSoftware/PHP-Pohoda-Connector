@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ListCentre;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListCentreType
- *
+ * Class representing ListCentreType.
  *
  * XSD Type: listCentreType
  */
 class ListCentreType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Centre\CentreType[] $centre
+     * @var \Pohoda\Centre\CentreType[]
      */
-    private $centre = [
+    private array $centre = [
     ];
 
     /**
-     * Adds as centre
+     * Adds as centre.
      *
      * @return self
-     * @param \Pohoda\Centre\CentreType $centre
      */
     public function addToCentre(\Pohoda\Centre\CentreType $centre)
     {
         $this->centre[] = $centre;
+
         return $this;
     }
 
     /**
-     * isset centre
+     * isset centre.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetCentre($index)
@@ -42,18 +55,17 @@ class ListCentreType extends ListVersionType
     }
 
     /**
-     * unset centre
+     * unset centre.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetCentre($index)
+    public function unsetCentre($index): void
     {
         unset($this->centre[$index]);
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * @return \Pohoda\Centre\CentreType[]
      */
@@ -63,14 +75,16 @@ class ListCentreType extends ListVersionType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * @param \Pohoda\Centre\CentreType[] $centre
+     *
      * @return self
      */
-    public function setCentre(array $centre = null)
+    public function setCentre(?array $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 }

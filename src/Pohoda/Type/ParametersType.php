@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing ParametersType
- *
+ * Class representing ParametersType.
  *
  * XSD Type: parametersType
  */
 class ParametersType
 {
     /**
-     * @var \Pohoda\Type\ParameterDocType[] $parameter
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameter = [
+    private array $parameter = [
     ];
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameter(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameter[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameter
+     * isset parameter.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameter($index)
@@ -40,18 +53,17 @@ class ParametersType
     }
 
     /**
-     * unset parameter
+     * unset parameter.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameter($index)
+    public function unsetParameter($index): void
     {
         unset($this->parameter[$index]);
     }
 
     /**
-     * Gets as parameter
+     * Gets as parameter.
      *
      * @return \Pohoda\Type\ParameterDocType[]
      */
@@ -61,14 +73,16 @@ class ParametersType
     }
 
     /**
-     * Sets a new parameter
+     * Sets a new parameter.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameter
+     *
      * @return self
      */
-    public function setParameter(array $parameter = null)
+    public function setParameter(?array $parameter = null)
     {
         $this->parameter = $parameter;
+
         return $this;
     }
 }

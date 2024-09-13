@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListRegistrationNumberType
- *
+ * Class representing ListRegistrationNumberType.
  *
  * XSD Type: listRegistrationNumberType
  */
 class ListRegistrationNumberType extends ListVersionType
 {
     /**
-     * @var \Pohoda\RegistrationNumber\RegistrationNumberType[] $registrationNumber
+     * @var \Pohoda\RegistrationNumber\RegistrationNumberType[]
      */
-    private $registrationNumber = [
+    private array $registrationNumber = [
     ];
 
     /**
-     * Adds as registrationNumber
+     * Adds as registrationNumber.
      *
      * @return self
-     * @param \Pohoda\RegistrationNumber\RegistrationNumberType $registrationNumber
      */
     public function addToRegistrationNumber(\Pohoda\RegistrationNumber\RegistrationNumberType $registrationNumber)
     {
         $this->registrationNumber[] = $registrationNumber;
+
         return $this;
     }
 
     /**
-     * isset registrationNumber
+     * isset registrationNumber.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRegistrationNumber($index)
@@ -42,18 +55,17 @@ class ListRegistrationNumberType extends ListVersionType
     }
 
     /**
-     * unset registrationNumber
+     * unset registrationNumber.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRegistrationNumber($index)
+    public function unsetRegistrationNumber($index): void
     {
         unset($this->registrationNumber[$index]);
     }
 
     /**
-     * Gets as registrationNumber
+     * Gets as registrationNumber.
      *
      * @return \Pohoda\RegistrationNumber\RegistrationNumberType[]
      */
@@ -63,14 +75,16 @@ class ListRegistrationNumberType extends ListVersionType
     }
 
     /**
-     * Sets a new registrationNumber
+     * Sets a new registrationNumber.
      *
      * @param \Pohoda\RegistrationNumber\RegistrationNumberType[] $registrationNumber
+     *
      * @return self
      */
-    public function setRegistrationNumber(array $registrationNumber = null)
+    public function setRegistrationNumber(?array $registrationNumber = null)
     {
         $this->registrationNumber = $registrationNumber;
+
         return $this;
     }
 }

@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IndividualPrice;
 
 /**
- * Class representing PriceGroupItemType
- *
+ * Class representing PriceGroupItemType.
  *
  * XSD Type: priceGroupItemType
  */
@@ -12,34 +24,26 @@ class PriceGroupItemType
 {
     /**
      * ID cenové skupiny.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
-     * Název cenové skupiny
-     *
-     * @var string $name
+     * Název cenové skupiny.
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Popis cenové skupiny.
-     *
-     * @var string $description
      */
-    private $description = null;
+    private string $description = null;
 
     /**
      * Sleva v procentech.
-     *
-     * @var float $discountPercentage
      */
-    private $discountPercentage = null;
+    private float $discountPercentage = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID cenové skupiny.
      *
@@ -51,21 +55,23 @@ class PriceGroupItemType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID cenové skupiny.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název cenové skupiny
      *
@@ -77,21 +83,23 @@ class PriceGroupItemType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název cenové skupiny
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as description
+     * Gets as description.
      *
      * Popis cenové skupiny.
      *
@@ -103,21 +111,23 @@ class PriceGroupItemType
     }
 
     /**
-     * Sets a new description
+     * Sets a new description.
      *
      * Popis cenové skupiny.
      *
      * @param string $description
+     *
      * @return self
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
     /**
-     * Gets as discountPercentage
+     * Gets as discountPercentage.
      *
      * Sleva v procentech.
      *
@@ -129,16 +139,18 @@ class PriceGroupItemType
     }
 
     /**
-     * Sets a new discountPercentage
+     * Sets a new discountPercentage.
      *
      * Sleva v procentech.
      *
      * @param float $discountPercentage
+     *
      * @return self
      */
     public function setDiscountPercentage($discountPercentage)
     {
         $this->discountPercentage = $discountPercentage;
+
         return $this;
     }
 }

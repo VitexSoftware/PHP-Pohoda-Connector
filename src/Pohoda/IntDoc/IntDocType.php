@@ -1,56 +1,47 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IntDoc;
 
 /**
- * Class representing IntDocType
- *
+ * Class representing IntDocType.
  *
  * XSD Type: intDocType
  */
 class IntDocType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
-
-    /**
-     * @var \Pohoda\IntDoc\TaxDocumentType $taxDocument
-     */
-    private $taxDocument = null;
-
-    /**
-     * @var \Pohoda\IntDoc\IntDocHeaderType $intDocHeader
-     */
-    private $intDocHeader = null;
-
-    /**
-     * @var \Pohoda\IntDoc\IntDocDetailType $intDocDetail
-     */
-    private $intDocDetail = null;
-
-    /**
-     * @var \Pohoda\IntDoc\IntDocSummaryType $intDocSummary
-     */
-    private $intDocSummary = null;
+    private string $version = null;
+    private \Pohoda\IntDoc\TaxDocumentType $taxDocument = null;
+    private \Pohoda\IntDoc\IntDocHeaderType $intDocHeader = null;
+    private \Pohoda\IntDoc\IntDocDetailType $intDocDetail = null;
+    private \Pohoda\IntDoc\IntDocSummaryType $intDocSummary = null;
 
     /**
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
-     *
-     * @var \Pohoda\Type\LinksType $linkedDocuments
      */
-    private $linkedDocuments = null;
+    private \Pohoda\Type\LinksType $linkedDocuments = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
-     * @var \Pohoda\Print\PrinterSettingsType[] $print
+     * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private $print = null;
+    private array $print = null;
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -60,19 +51,21 @@ class IntDocType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as taxDocument
+     * Gets as taxDocument.
      *
      * @return \Pohoda\IntDoc\TaxDocumentType
      */
@@ -82,19 +75,19 @@ class IntDocType
     }
 
     /**
-     * Sets a new taxDocument
+     * Sets a new taxDocument.
      *
-     * @param \Pohoda\IntDoc\TaxDocumentType $taxDocument
      * @return self
      */
     public function setTaxDocument(?\Pohoda\IntDoc\TaxDocumentType $taxDocument = null)
     {
         $this->taxDocument = $taxDocument;
+
         return $this;
     }
 
     /**
-     * Gets as intDocHeader
+     * Gets as intDocHeader.
      *
      * @return \Pohoda\IntDoc\IntDocHeaderType
      */
@@ -104,19 +97,19 @@ class IntDocType
     }
 
     /**
-     * Sets a new intDocHeader
+     * Sets a new intDocHeader.
      *
-     * @param \Pohoda\IntDoc\IntDocHeaderType $intDocHeader
      * @return self
      */
     public function setIntDocHeader(?\Pohoda\IntDoc\IntDocHeaderType $intDocHeader = null)
     {
         $this->intDocHeader = $intDocHeader;
+
         return $this;
     }
 
     /**
-     * Gets as intDocDetail
+     * Gets as intDocDetail.
      *
      * @return \Pohoda\IntDoc\IntDocDetailType
      */
@@ -126,19 +119,19 @@ class IntDocType
     }
 
     /**
-     * Sets a new intDocDetail
+     * Sets a new intDocDetail.
      *
-     * @param \Pohoda\IntDoc\IntDocDetailType $intDocDetail
      * @return self
      */
     public function setIntDocDetail(?\Pohoda\IntDoc\IntDocDetailType $intDocDetail = null)
     {
         $this->intDocDetail = $intDocDetail;
+
         return $this;
     }
 
     /**
-     * Gets as intDocSummary
+     * Gets as intDocSummary.
      *
      * @return \Pohoda\IntDoc\IntDocSummaryType
      */
@@ -148,19 +141,19 @@ class IntDocType
     }
 
     /**
-     * Sets a new intDocSummary
+     * Sets a new intDocSummary.
      *
-     * @param \Pohoda\IntDoc\IntDocSummaryType $intDocSummary
      * @return self
      */
     public function setIntDocSummary(?\Pohoda\IntDoc\IntDocSummaryType $intDocSummary = null)
     {
         $this->intDocSummary = $intDocSummary;
+
         return $this;
     }
 
     /**
-     * Gets as linkedDocuments
+     * Gets as linkedDocuments.
      *
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      *
@@ -172,39 +165,40 @@ class IntDocType
     }
 
     /**
-     * Sets a new linkedDocuments
+     * Sets a new linkedDocuments.
      *
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      *
-     * @param \Pohoda\Type\LinksType $linkedDocuments
      * @return self
      */
     public function setLinkedDocuments(?\Pohoda\Type\LinksType $linkedDocuments = null)
     {
         $this->linkedDocuments = $linkedDocuments;
+
         return $this;
     }
 
     /**
-     * Adds as printerSettings
+     * Adds as printerSettings.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @return self
-     * @param \Pohoda\Print\PrinterSettingsType $printerSettings
      */
     public function addToPrint(\Pohoda\Print\PrinterSettingsType $printerSettings)
     {
         $this->print[] = $printerSettings;
+
         return $this;
     }
 
     /**
-     * isset print
+     * isset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrint($index)
@@ -213,20 +207,19 @@ class IntDocType
     }
 
     /**
-     * unset print
+     * unset print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrint($index)
+    public function unsetPrint($index): void
     {
         unset($this->print[$index]);
     }
 
     /**
-     * Gets as print
+     * Gets as print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
@@ -238,16 +231,18 @@ class IntDocType
     }
 
     /**
-     * Sets a new print
+     * Sets a new print.
      *
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @param \Pohoda\Print\PrinterSettingsType[] $print
+     *
      * @return self
      */
-    public function setPrint(array $print = null)
+    public function setPrint(?array $print = null)
     {
         $this->print = $print;
+
         return $this;
     }
 }

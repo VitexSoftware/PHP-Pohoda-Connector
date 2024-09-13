@@ -1,27 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing CurrencyVATType
+ * Class representing CurrencyVATType.
  *
  * Hodnota sazby DPH (jen pro export).
  * XSD Type: currencyVAT
  */
 class CurrencyVATType
 {
-    /**
-     * @var float $__value
-     */
-    private $__value = null;
+    private float $__value = null;
+    private float $rate = null;
 
     /**
-     * @var float $rate
-     */
-    private $rate = null;
-
-    /**
-     * Construct
+     * Construct.
      *
      * @param float $value
      */
@@ -31,31 +37,31 @@ class CurrencyVATType
     }
 
     /**
-     * Gets or sets the inner value
-     *
-     * @param float $value
-     * @return float
-     */
-    public function value()
-    {
-        if ($args = func_get_args()) {
-            $this->__value = $args[0];
-        }
-        return $this->__value;
-    }
-
-    /**
-     * Gets a string value
+     * Gets a string value.
      *
      * @return string
      */
     public function __toString()
     {
-        return strval($this->__value);
+        return (string) $this->__value;
     }
 
     /**
-     * Gets as rate
+     * Gets or sets the inner value.
+     *
+     * @return float
+     */
+    public function value()
+    {
+        if ($args = \func_get_args()) {
+            $this->__value = $args[0];
+        }
+
+        return $this->__value;
+    }
+
+    /**
+     * Gets as rate.
      *
      * @return float
      */
@@ -65,14 +71,16 @@ class CurrencyVATType
     }
 
     /**
-     * Sets a new rate
+     * Sets a new rate.
      *
      * @param float $rate
+     *
      * @return self
      */
     public function setRate($rate)
     {
         $this->rate = $rate;
+
         return $this;
     }
 }

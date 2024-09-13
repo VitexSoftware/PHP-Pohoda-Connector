@@ -1,47 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\MKasa;
 
 /**
- * Class representing ConfigurationType
- *
+ * Class representing ConfigurationType.
  *
  * XSD Type: configurationType
  */
 class ConfigurationType
 {
-    /**
-     * @var string $pohodaSNID
-     */
-    private $pohodaSNID = null;
+    private string $pohodaSNID = null;
+    private int $pohodaPackNum = null;
+    private \Pohoda\MKasa\CompanyInfoType $companyInfo = null;
+    private \Pohoda\MKasa\KasaInfoType $kasaInfo = null;
+    private \Pohoda\MKasa\PohodaRestrictionType $pohodaRestriction = null;
+    private \Pohoda\MKasa\ConfigurationType\GlobalSettingsAType $globalSettings = null;
 
     /**
-     * @var int $pohodaPackNum
-     */
-    private $pohodaPackNum = null;
-
-    /**
-     * @var \Pohoda\MKasa\CompanyInfoType $companyInfo
-     */
-    private $companyInfo = null;
-
-    /**
-     * @var \Pohoda\MKasa\KasaInfoType $kasaInfo
-     */
-    private $kasaInfo = null;
-
-    /**
-     * @var \Pohoda\MKasa\PohodaRestrictionType $pohodaRestriction
-     */
-    private $pohodaRestriction = null;
-
-    /**
-     * @var \Pohoda\MKasa\ConfigurationType\GlobalSettingsAType $globalSettings
-     */
-    private $globalSettings = null;
-
-    /**
-     * Gets as pohodaSNID
+     * Gets as pohodaSNID.
      *
      * @return string
      */
@@ -51,19 +40,21 @@ class ConfigurationType
     }
 
     /**
-     * Sets a new pohodaSNID
+     * Sets a new pohodaSNID.
      *
      * @param string $pohodaSNID
+     *
      * @return self
      */
     public function setPohodaSNID($pohodaSNID)
     {
         $this->pohodaSNID = $pohodaSNID;
+
         return $this;
     }
 
     /**
-     * Gets as pohodaPackNum
+     * Gets as pohodaPackNum.
      *
      * @return int
      */
@@ -73,19 +64,21 @@ class ConfigurationType
     }
 
     /**
-     * Sets a new pohodaPackNum
+     * Sets a new pohodaPackNum.
      *
      * @param int $pohodaPackNum
+     *
      * @return self
      */
     public function setPohodaPackNum($pohodaPackNum)
     {
         $this->pohodaPackNum = $pohodaPackNum;
+
         return $this;
     }
 
     /**
-     * Gets as companyInfo
+     * Gets as companyInfo.
      *
      * @return \Pohoda\MKasa\CompanyInfoType
      */
@@ -95,19 +88,19 @@ class ConfigurationType
     }
 
     /**
-     * Sets a new companyInfo
+     * Sets a new companyInfo.
      *
-     * @param \Pohoda\MKasa\CompanyInfoType $companyInfo
      * @return self
      */
     public function setCompanyInfo(\Pohoda\MKasa\CompanyInfoType $companyInfo)
     {
         $this->companyInfo = $companyInfo;
+
         return $this;
     }
 
     /**
-     * Gets as kasaInfo
+     * Gets as kasaInfo.
      *
      * @return \Pohoda\MKasa\KasaInfoType
      */
@@ -117,19 +110,19 @@ class ConfigurationType
     }
 
     /**
-     * Sets a new kasaInfo
+     * Sets a new kasaInfo.
      *
-     * @param \Pohoda\MKasa\KasaInfoType $kasaInfo
      * @return self
      */
     public function setKasaInfo(\Pohoda\MKasa\KasaInfoType $kasaInfo)
     {
         $this->kasaInfo = $kasaInfo;
+
         return $this;
     }
 
     /**
-     * Gets as pohodaRestriction
+     * Gets as pohodaRestriction.
      *
      * @return \Pohoda\MKasa\PohodaRestrictionType
      */
@@ -139,19 +132,19 @@ class ConfigurationType
     }
 
     /**
-     * Sets a new pohodaRestriction
+     * Sets a new pohodaRestriction.
      *
-     * @param \Pohoda\MKasa\PohodaRestrictionType $pohodaRestriction
      * @return self
      */
     public function setPohodaRestriction(\Pohoda\MKasa\PohodaRestrictionType $pohodaRestriction)
     {
         $this->pohodaRestriction = $pohodaRestriction;
+
         return $this;
     }
 
     /**
-     * Gets as globalSettings
+     * Gets as globalSettings.
      *
      * @return \Pohoda\MKasa\ConfigurationType\GlobalSettingsAType
      */
@@ -161,14 +154,14 @@ class ConfigurationType
     }
 
     /**
-     * Sets a new globalSettings
+     * Sets a new globalSettings.
      *
-     * @param \Pohoda\MKasa\ConfigurationType\GlobalSettingsAType $globalSettings
      * @return self
      */
     public function setGlobalSettings(\Pohoda\MKasa\ConfigurationType\GlobalSettingsAType $globalSettings)
     {
         $this->globalSettings = $globalSettings;
+
         return $this;
     }
 }

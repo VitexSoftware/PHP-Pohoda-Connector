@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Movement;
 
 /**
- * Class representing MovementHeaderType
+ * Class representing MovementHeaderType.
  *
  * Pohyby.
  * XSD Type: movementHeaderType
@@ -12,174 +25,128 @@ class MovementHeaderType
 {
     /**
      * ID záznamu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Označení.
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Agenda.
-     *
-     * @var string $agenda
      */
-    private $agenda = null;
+    private string $agenda = null;
 
     /**
      * Typ zásoby.
-     *
-     * @var string $stockType
      */
-    private $stockType = null;
+    private string $stockType = null;
 
     /**
      * Cenová skupina. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var \Pohoda\Type\RefType $typePrice
      */
-    private $typePrice = null;
+    private \Pohoda\Type\RefType $typePrice = null;
 
     /**
      * Odkaz na skladovou položku.
-     *
-     * @var \Pohoda\Type\StockItemMovementType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemMovementType $stockItem = null;
 
     /**
      * Měrná jednotka.
-     *
-     * @var string $unit
      */
-    private $unit = null;
+    private string $unit = null;
 
     /**
      * Datum pohybu.
-     *
-     * @var \DateTime $date
      */
-    private $date = null;
+    private \DateTime $date = null;
 
     /**
      * Typ pohybu.
-     *
-     * @var string $movementType
      */
-    private $movementType = null;
+    private string $movementType = null;
 
     /**
      * Množství.
-     *
-     * @var float $quantity
      */
-    private $quantity = null;
+    private float $quantity = null;
 
     /**
      * Částka.
-     *
-     * @var float $unitPrice
      */
-    private $unitPrice = null;
+    private float $unitPrice = null;
 
     /**
      * Celkem.
-     *
-     * @var float $price
      */
-    private $price = null;
+    private float $price = null;
 
     /**
      * Vážená nákupní cena.
-     *
-     * @var float $weightedPurchasePrice
      */
-    private $weightedPurchasePrice = null;
+    private float $weightedPurchasePrice = null;
 
     /**
      * Ocenění.
-     *
-     * @var float $valuation
      */
-    private $valuation = null;
+    private float $valuation = null;
 
     /**
      * Zisk/m. j.
-     *
-     * @var float $profitUnit
      */
-    private $profitUnit = null;
+    private float $profitUnit = null;
 
     /**
      * Zisk.
-     *
-     * @var float $profit
      */
-    private $profit = null;
+    private float $profit = null;
 
     /**
      * Stav zásoby.
-     *
-     * @var float $count
      */
-    private $count = null;
+    private float $count = null;
 
     /**
      * Číslo dokladu.
-     *
-     * @var string $number
      */
-    private $number = null;
+    private string $number = null;
 
     /**
      * Adresa a dodací adresa.
-     *
-     * @var \Pohoda\Type\AddressType $address
      */
-    private $address = null;
+    private \Pohoda\Type\AddressType $address = null;
 
     /**
-     * Středisko
-     *
-     * @var \Pohoda\Type\RefType $centre
+     * Středisko.
      */
-    private $centre = null;
+    private \Pohoda\Type\RefType $centre = null;
 
     /**
-     * Činnost
-     *
-     * @var \Pohoda\Type\RefType $activity
+     * Činnost.
      */
-    private $activity = null;
+    private \Pohoda\Type\RefType $activity = null;
 
     /**
-     * Zakázka
-     *
-     * @var \Pohoda\Type\RefType $contract
+     * Zakázka.
      */
-    private $contract = null;
+    private \Pohoda\Type\RefType $contract = null;
 
     /**
      * Evidenční číslo.
-     *
-     * @var string $regNumber
      */
-    private $regNumber = null;
+    private string $regNumber = null;
 
     /**
      * Štítky záznamu.
      *
-     * @var \Pohoda\Type\LabelType[] $labels
+     * @var \Pohoda\Type\LabelType[]
      */
-    private $labels = null;
+    private array $labels = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu.
      *
@@ -191,21 +158,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení.
      *
@@ -217,21 +186,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení.
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Gets as agenda
+     * Gets as agenda.
      *
      * Agenda.
      *
@@ -243,21 +214,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new agenda
+     * Sets a new agenda.
      *
      * Agenda.
      *
      * @param string $agenda
+     *
      * @return self
      */
     public function setAgenda($agenda)
     {
         $this->agenda = $agenda;
+
         return $this;
     }
 
     /**
-     * Gets as stockType
+     * Gets as stockType.
      *
      * Typ zásoby.
      *
@@ -269,21 +242,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new stockType
+     * Sets a new stockType.
      *
      * Typ zásoby.
      *
      * @param string $stockType
+     *
      * @return self
      */
     public function setStockType($stockType)
     {
         $this->stockType = $stockType;
+
         return $this;
     }
 
     /**
-     * Gets as typePrice
+     * Gets as typePrice.
      *
      * Cenová skupina. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -295,21 +270,21 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new typePrice
+     * Sets a new typePrice.
      *
      * Cenová skupina. Tento element je vyžadován při vytvoření dokladu.
      *
-     * @param \Pohoda\Type\RefType $typePrice
      * @return self
      */
     public function setTypePrice(?\Pohoda\Type\RefType $typePrice = null)
     {
         $this->typePrice = $typePrice;
+
         return $this;
     }
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Odkaz na skladovou položku.
      *
@@ -321,21 +296,21 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Odkaz na skladovou položku.
      *
-     * @param \Pohoda\Type\StockItemMovementType $stockItem
      * @return self
      */
     public function setStockItem(\Pohoda\Type\StockItemMovementType $stockItem)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as unit
+     * Gets as unit.
      *
      * Měrná jednotka.
      *
@@ -347,21 +322,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * Měrná jednotka.
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as date
+     * Gets as date.
      *
      * Datum pohybu.
      *
@@ -373,21 +350,21 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new date
+     * Sets a new date.
      *
      * Datum pohybu.
      *
-     * @param \DateTime $date
      * @return self
      */
     public function setDate(?\DateTime $date = null)
     {
         $this->date = $date;
+
         return $this;
     }
 
     /**
-     * Gets as movementType
+     * Gets as movementType.
      *
      * Typ pohybu.
      *
@@ -399,21 +376,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new movementType
+     * Sets a new movementType.
      *
      * Typ pohybu.
      *
      * @param string $movementType
+     *
      * @return self
      */
     public function setMovementType($movementType)
     {
         $this->movementType = $movementType;
+
         return $this;
     }
 
     /**
-     * Gets as quantity
+     * Gets as quantity.
      *
      * Množství.
      *
@@ -425,21 +404,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new quantity
+     * Sets a new quantity.
      *
      * Množství.
      *
      * @param float $quantity
+     *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
     /**
-     * Gets as unitPrice
+     * Gets as unitPrice.
      *
      * Částka.
      *
@@ -451,21 +432,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new unitPrice
+     * Sets a new unitPrice.
      *
      * Částka.
      *
      * @param float $unitPrice
+     *
      * @return self
      */
     public function setUnitPrice($unitPrice)
     {
         $this->unitPrice = $unitPrice;
+
         return $this;
     }
 
     /**
-     * Gets as price
+     * Gets as price.
      *
      * Celkem.
      *
@@ -477,21 +460,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new price
+     * Sets a new price.
      *
      * Celkem.
      *
      * @param float $price
+     *
      * @return self
      */
     public function setPrice($price)
     {
         $this->price = $price;
+
         return $this;
     }
 
     /**
-     * Gets as weightedPurchasePrice
+     * Gets as weightedPurchasePrice.
      *
      * Vážená nákupní cena.
      *
@@ -503,21 +488,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new weightedPurchasePrice
+     * Sets a new weightedPurchasePrice.
      *
      * Vážená nákupní cena.
      *
      * @param float $weightedPurchasePrice
+     *
      * @return self
      */
     public function setWeightedPurchasePrice($weightedPurchasePrice)
     {
         $this->weightedPurchasePrice = $weightedPurchasePrice;
+
         return $this;
     }
 
     /**
-     * Gets as valuation
+     * Gets as valuation.
      *
      * Ocenění.
      *
@@ -529,21 +516,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new valuation
+     * Sets a new valuation.
      *
      * Ocenění.
      *
      * @param float $valuation
+     *
      * @return self
      */
     public function setValuation($valuation)
     {
         $this->valuation = $valuation;
+
         return $this;
     }
 
     /**
-     * Gets as profitUnit
+     * Gets as profitUnit.
      *
      * Zisk/m. j.
      *
@@ -555,21 +544,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new profitUnit
+     * Sets a new profitUnit.
      *
      * Zisk/m. j.
      *
      * @param float $profitUnit
+     *
      * @return self
      */
     public function setProfitUnit($profitUnit)
     {
         $this->profitUnit = $profitUnit;
+
         return $this;
     }
 
     /**
-     * Gets as profit
+     * Gets as profit.
      *
      * Zisk.
      *
@@ -581,21 +572,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new profit
+     * Sets a new profit.
      *
      * Zisk.
      *
      * @param float $profit
+     *
      * @return self
      */
     public function setProfit($profit)
     {
         $this->profit = $profit;
+
         return $this;
     }
 
     /**
-     * Gets as count
+     * Gets as count.
      *
      * Stav zásoby.
      *
@@ -607,21 +600,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new count
+     * Sets a new count.
      *
      * Stav zásoby.
      *
      * @param float $count
+     *
      * @return self
      */
     public function setCount($count)
     {
         $this->count = $count;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Číslo dokladu.
      *
@@ -633,21 +628,23 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Číslo dokladu.
      *
      * @param string $number
+     *
      * @return self
      */
     public function setNumber($number)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as address
+     * Gets as address.
      *
      * Adresa a dodací adresa.
      *
@@ -659,21 +656,21 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new address
+     * Sets a new address.
      *
      * Adresa a dodací adresa.
      *
-     * @param \Pohoda\Type\AddressType $address
      * @return self
      */
     public function setAddress(?\Pohoda\Type\AddressType $address = null)
     {
         $this->address = $address;
+
         return $this;
     }
 
     /**
-     * Gets as centre
+     * Gets as centre.
      *
      * Středisko
      *
@@ -685,21 +682,21 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new centre
+     * Sets a new centre.
      *
      * Středisko
      *
-     * @param \Pohoda\Type\RefType $centre
      * @return self
      */
     public function setCentre(?\Pohoda\Type\RefType $centre = null)
     {
         $this->centre = $centre;
+
         return $this;
     }
 
     /**
-     * Gets as activity
+     * Gets as activity.
      *
      * Činnost
      *
@@ -711,21 +708,21 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new activity
+     * Sets a new activity.
      *
      * Činnost
      *
-     * @param \Pohoda\Type\RefType $activity
      * @return self
      */
     public function setActivity(?\Pohoda\Type\RefType $activity = null)
     {
         $this->activity = $activity;
+
         return $this;
     }
 
     /**
-     * Gets as contract
+     * Gets as contract.
      *
      * Zakázka
      *
@@ -737,21 +734,21 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new contract
+     * Sets a new contract.
      *
      * Zakázka
      *
-     * @param \Pohoda\Type\RefType $contract
      * @return self
      */
     public function setContract(?\Pohoda\Type\RefType $contract = null)
     {
         $this->contract = $contract;
+
         return $this;
     }
 
     /**
-     * Gets as regNumber
+     * Gets as regNumber.
      *
      * Evidenční číslo.
      *
@@ -763,39 +760,42 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new regNumber
+     * Sets a new regNumber.
      *
      * Evidenční číslo.
      *
      * @param string $regNumber
+     *
      * @return self
      */
     public function setRegNumber($regNumber)
     {
         $this->regNumber = $regNumber;
+
         return $this;
     }
 
     /**
-     * Adds as label
+     * Adds as label.
      *
      * Štítky záznamu.
      *
      * @return self
-     * @param \Pohoda\Type\LabelType $label
      */
     public function addToLabels(\Pohoda\Type\LabelType $label)
     {
         $this->labels[] = $label;
+
         return $this;
     }
 
     /**
-     * isset labels
+     * isset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLabels($index)
@@ -804,20 +804,19 @@ class MovementHeaderType
     }
 
     /**
-     * unset labels
+     * unset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLabels($index)
+    public function unsetLabels($index): void
     {
         unset($this->labels[$index]);
     }
 
     /**
-     * Gets as labels
+     * Gets as labels.
      *
      * Štítky záznamu.
      *
@@ -829,16 +828,18 @@ class MovementHeaderType
     }
 
     /**
-     * Sets a new labels
+     * Sets a new labels.
      *
      * Štítky záznamu.
      *
      * @param \Pohoda\Type\LabelType[] $labels
+     *
      * @return self
      */
-    public function setLabels(array $labels = null)
+    public function setLabels(?array $labels = null)
     {
         $this->labels = $labels;
+
         return $this;
     }
 }

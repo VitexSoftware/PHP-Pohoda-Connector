@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListInvoiceType
- *
+ * Class representing ListInvoiceType.
  *
  * XSD Type: listInvoiceType
  */
 class ListInvoiceType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Invoice\InvoiceType[] $invoice
+     * @var \Pohoda\Invoice\InvoiceType[]
      */
-    private $invoice = [
+    private array $invoice = [
     ];
 
     /**
-     * Adds as invoice
+     * Adds as invoice.
      *
      * @return self
-     * @param \Pohoda\Invoice\InvoiceType $invoice
      */
     public function addToInvoice(\Pohoda\Invoice\InvoiceType $invoice)
     {
         $this->invoice[] = $invoice;
+
         return $this;
     }
 
     /**
-     * isset invoice
+     * isset invoice.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetInvoice($index)
@@ -42,18 +55,17 @@ class ListInvoiceType extends ListVersionType
     }
 
     /**
-     * unset invoice
+     * unset invoice.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetInvoice($index)
+    public function unsetInvoice($index): void
     {
         unset($this->invoice[$index]);
     }
 
     /**
-     * Gets as invoice
+     * Gets as invoice.
      *
      * @return \Pohoda\Invoice\InvoiceType[]
      */
@@ -63,14 +75,16 @@ class ListInvoiceType extends ListVersionType
     }
 
     /**
-     * Sets a new invoice
+     * Sets a new invoice.
      *
      * @param \Pohoda\Invoice\InvoiceType[] $invoice
+     *
      * @return self
      */
-    public function setInvoice(array $invoice = null)
+    public function setInvoice(?array $invoice = null)
     {
         $this->invoice = $invoice;
+
         return $this;
     }
 }

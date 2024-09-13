@@ -1,35 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListActionPriceRequestType
- *
+ * Class representing ListActionPriceRequestType.
  *
  * XSD Type: listActionPriceRequestType
  */
 class ListActionPriceRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $actionPricesVersion
      */
-    private $actionPricesVersion = null;
+    private string $actionPricesVersion = null;
 
     /**
-     * @var \Pohoda\Filter\RequestActionPriceType[] $requestActionPrice
+     * @var \Pohoda\Filter\RequestActionPriceType[]
      */
-    private $requestActionPrice = [
+    private array $requestActionPrice = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -39,19 +46,21 @@ class ListActionPriceRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as actionPricesVersion
+     * Gets as actionPricesVersion.
      *
      * Požadovaná verze.
      *
@@ -63,35 +72,38 @@ class ListActionPriceRequestType
     }
 
     /**
-     * Sets a new actionPricesVersion
+     * Sets a new actionPricesVersion.
      *
      * Požadovaná verze.
      *
      * @param string $actionPricesVersion
+     *
      * @return self
      */
     public function setActionPricesVersion($actionPricesVersion)
     {
         $this->actionPricesVersion = $actionPricesVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestActionPrice
+     * Adds as requestActionPrice.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestActionPriceType $requestActionPrice
      */
     public function addToRequestActionPrice(\Pohoda\Filter\RequestActionPriceType $requestActionPrice)
     {
         $this->requestActionPrice[] = $requestActionPrice;
+
         return $this;
     }
 
     /**
-     * isset requestActionPrice
+     * isset requestActionPrice.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestActionPrice($index)
@@ -100,18 +112,17 @@ class ListActionPriceRequestType
     }
 
     /**
-     * unset requestActionPrice
+     * unset requestActionPrice.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestActionPrice($index)
+    public function unsetRequestActionPrice($index): void
     {
         unset($this->requestActionPrice[$index]);
     }
 
     /**
-     * Gets as requestActionPrice
+     * Gets as requestActionPrice.
      *
      * @return \Pohoda\Filter\RequestActionPriceType[]
      */
@@ -121,14 +132,16 @@ class ListActionPriceRequestType
     }
 
     /**
-     * Sets a new requestActionPrice
+     * Sets a new requestActionPrice.
      *
      * @param \Pohoda\Filter\RequestActionPriceType[] $requestActionPrice
+     *
      * @return self
      */
     public function setRequestActionPrice(array $requestActionPrice)
     {
         $this->requestActionPrice = $requestActionPrice;
+
         return $this;
     }
 }

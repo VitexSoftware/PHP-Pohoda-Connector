@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\IndividualPrice;
 
 /**
- * Class representing SetPricesType
- *
+ * Class representing SetPricesType.
  *
  * XSD Type: setPricesType
  */
@@ -13,44 +25,43 @@ class SetPricesType
     /**
      * Individuální ceny zásob.
      *
-     * @var \Pohoda\IndividualPrice\StockItemType[] $stocks
+     * @var \Pohoda\IndividualPrice\StockItemType[]
      */
-    private $stocks = null;
+    private array $stocks = null;
 
     /**
      * Individuální ceny cenových skupin.
      *
-     * @var \Pohoda\IndividualPrice\PriceGroupItemType[] $priceGroups
+     * @var \Pohoda\IndividualPrice\PriceGroupItemType[]
      */
-    private $priceGroups = null;
+    private array $priceGroups = null;
 
     /**
      * Sleva na všechny zásoby.
-     *
-     * @var \Pohoda\IndividualPrice\AllStocksType $allStocks
      */
-    private $allStocks = null;
+    private \Pohoda\IndividualPrice\AllStocksType $allStocks = null;
 
     /**
-     * Adds as stockItem
+     * Adds as stockItem.
      *
      * Individuální ceny zásob.
      *
      * @return self
-     * @param \Pohoda\IndividualPrice\StockItemType $stockItem
      */
     public function addToStocks(\Pohoda\IndividualPrice\StockItemType $stockItem)
     {
         $this->stocks[] = $stockItem;
+
         return $this;
     }
 
     /**
-     * isset stocks
+     * isset stocks.
      *
      * Individuální ceny zásob.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetStocks($index)
@@ -59,20 +70,19 @@ class SetPricesType
     }
 
     /**
-     * unset stocks
+     * unset stocks.
      *
      * Individuální ceny zásob.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetStocks($index)
+    public function unsetStocks($index): void
     {
         unset($this->stocks[$index]);
     }
 
     /**
-     * Gets as stocks
+     * Gets as stocks.
      *
      * Individuální ceny zásob.
      *
@@ -84,39 +94,42 @@ class SetPricesType
     }
 
     /**
-     * Sets a new stocks
+     * Sets a new stocks.
      *
      * Individuální ceny zásob.
      *
      * @param \Pohoda\IndividualPrice\StockItemType[] $stocks
+     *
      * @return self
      */
-    public function setStocks(array $stocks = null)
+    public function setStocks(?array $stocks = null)
     {
         $this->stocks = $stocks;
+
         return $this;
     }
 
     /**
-     * Adds as priceGroupItem
+     * Adds as priceGroupItem.
      *
      * Individuální ceny cenových skupin.
      *
      * @return self
-     * @param \Pohoda\IndividualPrice\PriceGroupItemType $priceGroupItem
      */
     public function addToPriceGroups(\Pohoda\IndividualPrice\PriceGroupItemType $priceGroupItem)
     {
         $this->priceGroups[] = $priceGroupItem;
+
         return $this;
     }
 
     /**
-     * isset priceGroups
+     * isset priceGroups.
      *
      * Individuální ceny cenových skupin.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPriceGroups($index)
@@ -125,20 +138,19 @@ class SetPricesType
     }
 
     /**
-     * unset priceGroups
+     * unset priceGroups.
      *
      * Individuální ceny cenových skupin.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPriceGroups($index)
+    public function unsetPriceGroups($index): void
     {
         unset($this->priceGroups[$index]);
     }
 
     /**
-     * Gets as priceGroups
+     * Gets as priceGroups.
      *
      * Individuální ceny cenových skupin.
      *
@@ -150,21 +162,23 @@ class SetPricesType
     }
 
     /**
-     * Sets a new priceGroups
+     * Sets a new priceGroups.
      *
      * Individuální ceny cenových skupin.
      *
      * @param \Pohoda\IndividualPrice\PriceGroupItemType[] $priceGroups
+     *
      * @return self
      */
-    public function setPriceGroups(array $priceGroups = null)
+    public function setPriceGroups(?array $priceGroups = null)
     {
         $this->priceGroups = $priceGroups;
+
         return $this;
     }
 
     /**
-     * Gets as allStocks
+     * Gets as allStocks.
      *
      * Sleva na všechny zásoby.
      *
@@ -176,16 +190,16 @@ class SetPricesType
     }
 
     /**
-     * Sets a new allStocks
+     * Sets a new allStocks.
      *
      * Sleva na všechny zásoby.
      *
-     * @param \Pohoda\IndividualPrice\AllStocksType $allStocks
      * @return self
      */
     public function setAllStocks(?\Pohoda\IndividualPrice\AllStocksType $allStocks = null)
     {
         $this->allStocks = $allStocks;
+
         return $this;
     }
 }

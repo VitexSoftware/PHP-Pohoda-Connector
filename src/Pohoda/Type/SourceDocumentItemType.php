@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing SourceDocumentItemType
- *
+ * Class representing SourceDocumentItemType.
  *
  * XSD Type: sourceDocumentItemType
  */
@@ -12,20 +24,16 @@ class SourceDocumentItemType
 {
     /**
      * ID položky dokladu.
-     *
-     * @var int $sourceItemId
      */
-    private $sourceItemId = null;
+    private int $sourceItemId = null;
 
     /**
      * Externí identifikátor položky dokladu.
-     *
-     * @var \Pohoda\Type\ExtIdType $sourceItemExtId
      */
-    private $sourceItemExtId = null;
+    private \Pohoda\Type\ExtIdType $sourceItemExtId = null;
 
     /**
-     * Gets as sourceItemId
+     * Gets as sourceItemId.
      *
      * ID položky dokladu.
      *
@@ -37,21 +45,23 @@ class SourceDocumentItemType
     }
 
     /**
-     * Sets a new sourceItemId
+     * Sets a new sourceItemId.
      *
      * ID položky dokladu.
      *
      * @param int $sourceItemId
+     *
      * @return self
      */
     public function setSourceItemId($sourceItemId)
     {
         $this->sourceItemId = $sourceItemId;
+
         return $this;
     }
 
     /**
-     * Gets as sourceItemExtId
+     * Gets as sourceItemExtId.
      *
      * Externí identifikátor položky dokladu.
      *
@@ -63,16 +73,16 @@ class SourceDocumentItemType
     }
 
     /**
-     * Sets a new sourceItemExtId
+     * Sets a new sourceItemExtId.
      *
      * Externí identifikátor položky dokladu.
      *
-     * @param \Pohoda\Type\ExtIdType $sourceItemExtId
      * @return self
      */
     public function setSourceItemExtId(?\Pohoda\Type\ExtIdType $sourceItemExtId = null)
     {
         $this->sourceItemExtId = $sourceItemExtId;
+
         return $this;
     }
 }

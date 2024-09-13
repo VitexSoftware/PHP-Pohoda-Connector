@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Discount;
 
 /**
- * Class representing DiscountStockItemType
- *
+ * Class representing DiscountStockItemType.
  *
  * XSD Type: discountStockItemType
  */
@@ -12,20 +24,18 @@ class DiscountStockItemType
 {
     /**
      * Zásoba, jejíž slevy/vedlejší ceny se mají upravit.
-     *
-     * @var \Pohoda\Type\StockItemType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Slevy/vedeljší ceny, které se mají upravit.
      *
-     * @var \Pohoda\Discount\DiscountsItemType[] $discounts
+     * @var \Pohoda\Discount\DiscountsItemType[]
      */
-    private $discounts = null;
+    private array $discounts = null;
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Zásoba, jejíž slevy/vedlejší ceny se mají upravit.
      *
@@ -37,39 +47,40 @@ class DiscountStockItemType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Zásoba, jejíž slevy/vedlejší ceny se mají upravit.
      *
-     * @param \Pohoda\Type\StockItemType $stockItem
      * @return self
      */
     public function setStockItem(\Pohoda\Type\StockItemType $stockItem)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Adds as discountsItem
+     * Adds as discountsItem.
      *
      * Slevy/vedeljší ceny, které se mají upravit.
      *
      * @return self
-     * @param \Pohoda\Discount\DiscountsItemType $discountsItem
      */
     public function addToDiscounts(\Pohoda\Discount\DiscountsItemType $discountsItem)
     {
         $this->discounts[] = $discountsItem;
+
         return $this;
     }
 
     /**
-     * isset discounts
+     * isset discounts.
      *
      * Slevy/vedeljší ceny, které se mají upravit.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetDiscounts($index)
@@ -78,20 +89,19 @@ class DiscountStockItemType
     }
 
     /**
-     * unset discounts
+     * unset discounts.
      *
      * Slevy/vedeljší ceny, které se mají upravit.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetDiscounts($index)
+    public function unsetDiscounts($index): void
     {
         unset($this->discounts[$index]);
     }
 
     /**
-     * Gets as discounts
+     * Gets as discounts.
      *
      * Slevy/vedeljší ceny, které se mají upravit.
      *
@@ -103,16 +113,18 @@ class DiscountStockItemType
     }
 
     /**
-     * Sets a new discounts
+     * Sets a new discounts.
      *
      * Slevy/vedeljší ceny, které se mají upravit.
      *
      * @param \Pohoda\Discount\DiscountsItemType[] $discounts
+     *
      * @return self
      */
     public function setDiscounts(array $discounts)
     {
         $this->discounts = $discounts;
+
         return $this;
     }
 }

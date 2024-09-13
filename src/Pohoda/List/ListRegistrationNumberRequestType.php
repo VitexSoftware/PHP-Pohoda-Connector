@@ -1,43 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListRegistrationNumberRequestType
- *
+ * Class representing ListRegistrationNumberRequestType.
  *
  * XSD Type: listRegistrationNumberRequestType
  */
 class ListRegistrationNumberRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze.
-     *
-     * @var string $registrationNumberVersion
      */
-    private $registrationNumberVersion = null;
+    private string $registrationNumberVersion = null;
 
     /**
-     * @var \Pohoda\Filter\RequestRegistrationNumberType[] $requestRegistrationNumber
+     * @var \Pohoda\Filter\RequestRegistrationNumberType[]
      */
-    private $requestRegistrationNumber = [
+    private array $requestRegistrationNumber = [
     ];
 
     /**
      * Omezení exportu dat.
      *
-     * @var \Pohoda\List\RestrictionDocParamType[] $restrictionData
+     * @var \Pohoda\List\RestrictionDocParamType[]
      */
-    private $restrictionData = [
+    private array $restrictionData = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -47,19 +54,21 @@ class ListRegistrationNumberRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as registrationNumberVersion
+     * Gets as registrationNumberVersion.
      *
      * Požadovaná verze.
      *
@@ -71,35 +80,38 @@ class ListRegistrationNumberRequestType
     }
 
     /**
-     * Sets a new registrationNumberVersion
+     * Sets a new registrationNumberVersion.
      *
      * Požadovaná verze.
      *
      * @param string $registrationNumberVersion
+     *
      * @return self
      */
     public function setRegistrationNumberVersion($registrationNumberVersion)
     {
         $this->registrationNumberVersion = $registrationNumberVersion;
+
         return $this;
     }
 
     /**
-     * Adds as requestRegistrationNumber
+     * Adds as requestRegistrationNumber.
      *
      * @return self
-     * @param \Pohoda\Filter\RequestRegistrationNumberType $requestRegistrationNumber
      */
     public function addToRequestRegistrationNumber(\Pohoda\Filter\RequestRegistrationNumberType $requestRegistrationNumber)
     {
         $this->requestRegistrationNumber[] = $requestRegistrationNumber;
+
         return $this;
     }
 
     /**
-     * isset requestRegistrationNumber
+     * isset requestRegistrationNumber.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRequestRegistrationNumber($index)
@@ -108,18 +120,17 @@ class ListRegistrationNumberRequestType
     }
 
     /**
-     * unset requestRegistrationNumber
+     * unset requestRegistrationNumber.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRequestRegistrationNumber($index)
+    public function unsetRequestRegistrationNumber($index): void
     {
         unset($this->requestRegistrationNumber[$index]);
     }
 
     /**
-     * Gets as requestRegistrationNumber
+     * Gets as requestRegistrationNumber.
      *
      * @return \Pohoda\Filter\RequestRegistrationNumberType[]
      */
@@ -129,37 +140,40 @@ class ListRegistrationNumberRequestType
     }
 
     /**
-     * Sets a new requestRegistrationNumber
+     * Sets a new requestRegistrationNumber.
      *
      * @param \Pohoda\Filter\RequestRegistrationNumberType[] $requestRegistrationNumber
+     *
      * @return self
      */
     public function setRequestRegistrationNumber(array $requestRegistrationNumber)
     {
         $this->requestRegistrationNumber = $requestRegistrationNumber;
+
         return $this;
     }
 
     /**
-     * Adds as restrictionData
+     * Adds as restrictionData.
      *
      * Omezení exportu dat.
      *
      * @return self
-     * @param \Pohoda\List\RestrictionDocParamType $restrictionData
      */
     public function addToRestrictionData(\Pohoda\List\RestrictionDocParamType $restrictionData)
     {
         $this->restrictionData[] = $restrictionData;
+
         return $this;
     }
 
     /**
-     * isset restrictionData
+     * isset restrictionData.
      *
      * Omezení exportu dat.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetRestrictionData($index)
@@ -168,20 +182,19 @@ class ListRegistrationNumberRequestType
     }
 
     /**
-     * unset restrictionData
+     * unset restrictionData.
      *
      * Omezení exportu dat.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetRestrictionData($index)
+    public function unsetRestrictionData($index): void
     {
         unset($this->restrictionData[$index]);
     }
 
     /**
-     * Gets as restrictionData
+     * Gets as restrictionData.
      *
      * Omezení exportu dat.
      *
@@ -193,16 +206,18 @@ class ListRegistrationNumberRequestType
     }
 
     /**
-     * Sets a new restrictionData
+     * Sets a new restrictionData.
      *
      * Omezení exportu dat.
      *
      * @param \Pohoda\List\RestrictionDocParamType[] $restrictionData
+     *
      * @return self
      */
     public function setRestrictionData(array $restrictionData)
     {
         $this->restrictionData = $restrictionData;
+
         return $this;
     }
 }

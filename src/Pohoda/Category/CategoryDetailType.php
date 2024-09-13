@@ -1,28 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Category;
 
 /**
- * Class representing CategoryDetailType
- *
+ * Class representing CategoryDetailType.
  *
  * XSD Type: categoryDetailType
  */
 class CategoryDetailType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
-     * @var \Pohoda\Category\CategoryType[] $category
+     * @var \Pohoda\Category\CategoryType[]
      */
-    private $category = [
+    private array $category = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -32,33 +41,36 @@ class CategoryDetailType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Adds as category
+     * Adds as category.
      *
      * @return self
-     * @param \Pohoda\Category\CategoryType $category
      */
     public function addToCategory(\Pohoda\Category\CategoryType $category)
     {
         $this->category[] = $category;
+
         return $this;
     }
 
     /**
-     * isset category
+     * isset category.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetCategory($index)
@@ -67,18 +79,17 @@ class CategoryDetailType
     }
 
     /**
-     * unset category
+     * unset category.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetCategory($index)
+    public function unsetCategory($index): void
     {
         unset($this->category[$index]);
     }
 
     /**
-     * Gets as category
+     * Gets as category.
      *
      * @return \Pohoda\Category\CategoryType[]
      */
@@ -88,14 +99,16 @@ class CategoryDetailType
     }
 
     /**
-     * Sets a new category
+     * Sets a new category.
      *
      * @param \Pohoda\Category\CategoryType[] $category
+     *
      * @return self
      */
-    public function setCategory(array $category = null)
+    public function setCategory(?array $category = null)
     {
         $this->category = $category;
+
         return $this;
     }
 }

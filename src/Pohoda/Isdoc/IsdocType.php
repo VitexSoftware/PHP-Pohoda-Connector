@@ -1,37 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Isdoc;
 
 /**
- * Class representing IsdocType
- *
+ * Class representing IsdocType.
  *
  * XSD Type: isdocType
  */
 class IsdocType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Výběr záznamu.
-     *
-     * @var \Pohoda\Filter\RecordIsdocType $record
      */
-    private $record = null;
+    private \Pohoda\Filter\RecordIsdocType $record = null;
 
     /**
      * Parametry pro vytvoření ISDOC dokumentu.
      *
-     * @var \Pohoda\Isdoc\IsdocSettingsType[] $isdocSettings
+     * @var \Pohoda\Isdoc\IsdocSettingsType[]
      */
-    private $isdocSettings = [
+    private array $isdocSettings = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -41,19 +48,21 @@ class IsdocType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as record
+     * Gets as record.
      *
      * Výběr záznamu.
      *
@@ -65,39 +74,40 @@ class IsdocType
     }
 
     /**
-     * Sets a new record
+     * Sets a new record.
      *
      * Výběr záznamu.
      *
-     * @param \Pohoda\Filter\RecordIsdocType $record
      * @return self
      */
     public function setRecord(\Pohoda\Filter\RecordIsdocType $record)
     {
         $this->record = $record;
+
         return $this;
     }
 
     /**
-     * Adds as isdocSettings
+     * Adds as isdocSettings.
      *
      * Parametry pro vytvoření ISDOC dokumentu.
      *
      * @return self
-     * @param \Pohoda\Isdoc\IsdocSettingsType $isdocSettings
      */
     public function addToIsdocSettings(\Pohoda\Isdoc\IsdocSettingsType $isdocSettings)
     {
         $this->isdocSettings[] = $isdocSettings;
+
         return $this;
     }
 
     /**
-     * isset isdocSettings
+     * isset isdocSettings.
      *
      * Parametry pro vytvoření ISDOC dokumentu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetIsdocSettings($index)
@@ -106,20 +116,19 @@ class IsdocType
     }
 
     /**
-     * unset isdocSettings
+     * unset isdocSettings.
      *
      * Parametry pro vytvoření ISDOC dokumentu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetIsdocSettings($index)
+    public function unsetIsdocSettings($index): void
     {
         unset($this->isdocSettings[$index]);
     }
 
     /**
-     * Gets as isdocSettings
+     * Gets as isdocSettings.
      *
      * Parametry pro vytvoření ISDOC dokumentu.
      *
@@ -131,16 +140,18 @@ class IsdocType
     }
 
     /**
-     * Sets a new isdocSettings
+     * Sets a new isdocSettings.
      *
      * Parametry pro vytvoření ISDOC dokumentu.
      *
      * @param \Pohoda\Isdoc\IsdocSettingsType[] $isdocSettings
+     *
      * @return self
      */
     public function setIsdocSettings(array $isdocSettings)
     {
         $this->isdocSettings = $isdocSettings;
+
         return $this;
     }
 }

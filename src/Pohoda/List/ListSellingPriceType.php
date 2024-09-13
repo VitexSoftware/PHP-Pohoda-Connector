@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListSellingPriceType
- *
+ * Class representing ListSellingPriceType.
  *
  * XSD Type: listSellingPriceType
  */
 class ListSellingPriceType extends ListVersionType
 {
     /**
-     * @var \Pohoda\List\ItemSellingPriceType[] $itemSellingPrice
+     * @var \Pohoda\List\ItemSellingPriceType[]
      */
-    private $itemSellingPrice = [
+    private array $itemSellingPrice = [
     ];
 
     /**
-     * Adds as itemSellingPrice
+     * Adds as itemSellingPrice.
      *
      * @return self
-     * @param \Pohoda\List\ItemSellingPriceType $itemSellingPrice
      */
     public function addToItemSellingPrice(\Pohoda\List\ItemSellingPriceType $itemSellingPrice)
     {
         $this->itemSellingPrice[] = $itemSellingPrice;
+
         return $this;
     }
 
     /**
-     * isset itemSellingPrice
+     * isset itemSellingPrice.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetItemSellingPrice($index)
@@ -42,18 +55,17 @@ class ListSellingPriceType extends ListVersionType
     }
 
     /**
-     * unset itemSellingPrice
+     * unset itemSellingPrice.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetItemSellingPrice($index)
+    public function unsetItemSellingPrice($index): void
     {
         unset($this->itemSellingPrice[$index]);
     }
 
     /**
-     * Gets as itemSellingPrice
+     * Gets as itemSellingPrice.
      *
      * @return \Pohoda\List\ItemSellingPriceType[]
      */
@@ -63,14 +75,16 @@ class ListSellingPriceType extends ListVersionType
     }
 
     /**
-     * Sets a new itemSellingPrice
+     * Sets a new itemSellingPrice.
      *
      * @param \Pohoda\List\ItemSellingPriceType[] $itemSellingPrice
+     *
      * @return self
      */
-    public function setItemSellingPrice(array $itemSellingPrice = null)
+    public function setItemSellingPrice(?array $itemSellingPrice = null)
     {
         $this->itemSellingPrice = $itemSellingPrice;
+
         return $this;
     }
 }

@@ -1,37 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Stock;
 
 /**
- * Class representing StockSerialNumberType
- *
+ * Class representing StockSerialNumberType.
  *
  * XSD Type: stockSerialNumberType
  */
 class StockSerialNumberType
 {
     /**
-     * @var \Pohoda\Stock\SerialNumberItemType[] $serialNumberItem
+     * @var \Pohoda\Stock\SerialNumberItemType[]
      */
-    private $serialNumberItem = [
+    private array $serialNumberItem = [
     ];
 
     /**
-     * Adds as serialNumberItem
+     * Adds as serialNumberItem.
      *
      * @return self
-     * @param \Pohoda\Stock\SerialNumberItemType $serialNumberItem
      */
     public function addToSerialNumberItem(\Pohoda\Stock\SerialNumberItemType $serialNumberItem)
     {
         $this->serialNumberItem[] = $serialNumberItem;
+
         return $this;
     }
 
     /**
-     * isset serialNumberItem
+     * isset serialNumberItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetSerialNumberItem($index)
@@ -40,18 +53,17 @@ class StockSerialNumberType
     }
 
     /**
-     * unset serialNumberItem
+     * unset serialNumberItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetSerialNumberItem($index)
+    public function unsetSerialNumberItem($index): void
     {
         unset($this->serialNumberItem[$index]);
     }
 
     /**
-     * Gets as serialNumberItem
+     * Gets as serialNumberItem.
      *
      * @return \Pohoda\Stock\SerialNumberItemType[]
      */
@@ -61,14 +73,16 @@ class StockSerialNumberType
     }
 
     /**
-     * Sets a new serialNumberItem
+     * Sets a new serialNumberItem.
      *
      * @param \Pohoda\Stock\SerialNumberItemType[] $serialNumberItem
+     *
      * @return self
      */
     public function setSerialNumberItem(array $serialNumberItem)
     {
         $this->serialNumberItem = $serialNumberItem;
+
         return $this;
     }
 }

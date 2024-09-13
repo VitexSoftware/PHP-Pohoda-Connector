@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\ListStock;
 
 /**
- * Class representing RestrictionDataType
- *
+ * Class representing RestrictionDataType.
  *
  * XSD Type: restrictionDataType
  */
@@ -12,90 +24,66 @@ class RestrictionDataType
 {
     /**
      * Exportovat záznamy ze záložky Související soubory.
-     *
-     * @var string $relatedFiles
      */
-    private $relatedFiles = null;
+    private string $relatedFiles = null;
 
     /**
      * Exportovat záznamy ze záložky Související odkazy.
-     *
-     * @var string $relatedLinks
      */
-    private $relatedLinks = null;
+    private string $relatedLinks = null;
 
     /**
      * Exportovat záznamy ze záložky Obrázky.
-     *
-     * @var string $pictures
      */
-    private $pictures = null;
+    private string $pictures = null;
 
     /**
-     * Exportovat záznamy ze záložky Kategorie
-     *
-     * @var string $categories
+     * Exportovat záznamy ze záložky Kategorie.
      */
-    private $categories = null;
+    private string $categories = null;
 
     /**
      * Exportovat záznamy ze záložky související zboží.
-     *
-     * @var string $relatedStocks
      */
-    private $relatedStocks = null;
+    private string $relatedStocks = null;
 
     /**
      * Exportovat záznamy ze záložky Alternativní zboží.
-     *
-     * @var string $alternativeStocks
      */
-    private $alternativeStocks = null;
+    private string $alternativeStocks = null;
 
     /**
      * Exportovat záznamy ze záložky Parametry.
-     *
-     * @var string $intParameters
      */
-    private $intParameters = null;
+    private string $intParameters = null;
 
     /**
      * Exportovat položky zásoby.
-     *
-     * @var string $stockItem
      */
-    private $stockItem = null;
+    private string $stockItem = null;
 
     /**
      * Exportovat svázané zásoby.
-     *
-     * @var string $stockAttach
      */
-    private $stockAttach = null;
+    private string $stockAttach = null;
 
     /**
      * Exportovat evidenční čísla.
-     *
-     * @var string $stockSerialNumber
      */
-    private $stockSerialNumber = null;
+    private string $stockSerialNumber = null;
 
     /**
      * Exportovat prodejní ceny.
-     *
-     * @var string $stockPriceItem
      */
-    private $stockPriceItem = null;
+    private string $stockPriceItem = null;
 
     /**
      * Exportovat volitelné parametry.
-     *
-     * @var string $stockParameters
      */
-    private $stockParameters = null;
+    private string $stockParameters = null;
 
     /**
-     * Gets as relatedFiles
+     * Gets as relatedFiles.
      *
      * Exportovat záznamy ze záložky Související soubory.
      *
@@ -107,21 +95,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new relatedFiles
+     * Sets a new relatedFiles.
      *
      * Exportovat záznamy ze záložky Související soubory.
      *
      * @param string $relatedFiles
+     *
      * @return self
      */
     public function setRelatedFiles($relatedFiles)
     {
         $this->relatedFiles = $relatedFiles;
+
         return $this;
     }
 
     /**
-     * Gets as relatedLinks
+     * Gets as relatedLinks.
      *
      * Exportovat záznamy ze záložky Související odkazy.
      *
@@ -133,21 +123,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new relatedLinks
+     * Sets a new relatedLinks.
      *
      * Exportovat záznamy ze záložky Související odkazy.
      *
      * @param string $relatedLinks
+     *
      * @return self
      */
     public function setRelatedLinks($relatedLinks)
     {
         $this->relatedLinks = $relatedLinks;
+
         return $this;
     }
 
     /**
-     * Gets as pictures
+     * Gets as pictures.
      *
      * Exportovat záznamy ze záložky Obrázky.
      *
@@ -159,21 +151,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new pictures
+     * Sets a new pictures.
      *
      * Exportovat záznamy ze záložky Obrázky.
      *
      * @param string $pictures
+     *
      * @return self
      */
     public function setPictures($pictures)
     {
         $this->pictures = $pictures;
+
         return $this;
     }
 
     /**
-     * Gets as categories
+     * Gets as categories.
      *
      * Exportovat záznamy ze záložky Kategorie
      *
@@ -185,21 +179,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new categories
+     * Sets a new categories.
      *
      * Exportovat záznamy ze záložky Kategorie
      *
      * @param string $categories
+     *
      * @return self
      */
     public function setCategories($categories)
     {
         $this->categories = $categories;
+
         return $this;
     }
 
     /**
-     * Gets as relatedStocks
+     * Gets as relatedStocks.
      *
      * Exportovat záznamy ze záložky související zboží.
      *
@@ -211,21 +207,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new relatedStocks
+     * Sets a new relatedStocks.
      *
      * Exportovat záznamy ze záložky související zboží.
      *
      * @param string $relatedStocks
+     *
      * @return self
      */
     public function setRelatedStocks($relatedStocks)
     {
         $this->relatedStocks = $relatedStocks;
+
         return $this;
     }
 
     /**
-     * Gets as alternativeStocks
+     * Gets as alternativeStocks.
      *
      * Exportovat záznamy ze záložky Alternativní zboží.
      *
@@ -237,21 +235,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new alternativeStocks
+     * Sets a new alternativeStocks.
      *
      * Exportovat záznamy ze záložky Alternativní zboží.
      *
      * @param string $alternativeStocks
+     *
      * @return self
      */
     public function setAlternativeStocks($alternativeStocks)
     {
         $this->alternativeStocks = $alternativeStocks;
+
         return $this;
     }
 
     /**
-     * Gets as intParameters
+     * Gets as intParameters.
      *
      * Exportovat záznamy ze záložky Parametry.
      *
@@ -263,21 +263,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new intParameters
+     * Sets a new intParameters.
      *
      * Exportovat záznamy ze záložky Parametry.
      *
      * @param string $intParameters
+     *
      * @return self
      */
     public function setIntParameters($intParameters)
     {
         $this->intParameters = $intParameters;
+
         return $this;
     }
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Exportovat položky zásoby.
      *
@@ -289,21 +291,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Exportovat položky zásoby.
      *
      * @param string $stockItem
+     *
      * @return self
      */
     public function setStockItem($stockItem)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 
     /**
-     * Gets as stockAttach
+     * Gets as stockAttach.
      *
      * Exportovat svázané zásoby.
      *
@@ -315,21 +319,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new stockAttach
+     * Sets a new stockAttach.
      *
      * Exportovat svázané zásoby.
      *
      * @param string $stockAttach
+     *
      * @return self
      */
     public function setStockAttach($stockAttach)
     {
         $this->stockAttach = $stockAttach;
+
         return $this;
     }
 
     /**
-     * Gets as stockSerialNumber
+     * Gets as stockSerialNumber.
      *
      * Exportovat evidenční čísla.
      *
@@ -341,21 +347,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new stockSerialNumber
+     * Sets a new stockSerialNumber.
      *
      * Exportovat evidenční čísla.
      *
      * @param string $stockSerialNumber
+     *
      * @return self
      */
     public function setStockSerialNumber($stockSerialNumber)
     {
         $this->stockSerialNumber = $stockSerialNumber;
+
         return $this;
     }
 
     /**
-     * Gets as stockPriceItem
+     * Gets as stockPriceItem.
      *
      * Exportovat prodejní ceny.
      *
@@ -367,21 +375,23 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new stockPriceItem
+     * Sets a new stockPriceItem.
      *
      * Exportovat prodejní ceny.
      *
      * @param string $stockPriceItem
+     *
      * @return self
      */
     public function setStockPriceItem($stockPriceItem)
     {
         $this->stockPriceItem = $stockPriceItem;
+
         return $this;
     }
 
     /**
-     * Gets as stockParameters
+     * Gets as stockParameters.
      *
      * Exportovat volitelné parametry.
      *
@@ -393,16 +403,18 @@ class RestrictionDataType
     }
 
     /**
-     * Sets a new stockParameters
+     * Sets a new stockParameters.
      *
      * Exportovat volitelné parametry.
      *
      * @param string $stockParameters
+     *
      * @return self
      */
     public function setStockParameters($stockParameters)
     {
         $this->stockParameters = $stockParameters;
+
         return $this;
     }
 }

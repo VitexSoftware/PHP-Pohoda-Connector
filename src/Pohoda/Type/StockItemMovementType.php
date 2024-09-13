@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Type;
 
 /**
- * Class representing StockItemMovementType
+ * Class representing StockItemMovementType.
  *
  * Údaje skladové zásoby pohybů.
  * XSD Type: stockItemMovementType
@@ -12,20 +25,16 @@ class StockItemMovementType
 {
     /**
      * Filtr podle ID, název členění. Je možné také zadat část názvu členění (zleva) - proběhne vyexportování zadané větve a souvisejících podvětví stromu členění.
-     *
-     * @var \Pohoda\Type\RefTypeStorageType $storage
      */
-    private $storage = null;
+    private \Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Filtr podle skladové zásoby.
-     *
-     * @var \Pohoda\Type\StockItemMovementType\StockItemAType $stockItem
      */
-    private $stockItem = null;
+    private \Pohoda\Type\StockItemMovementType\StockItemAType $stockItem = null;
 
     /**
-     * Gets as storage
+     * Gets as storage.
      *
      * Filtr podle ID, název členění. Je možné také zadat část názvu členění (zleva) - proběhne vyexportování zadané větve a souvisejících podvětví stromu členění.
      *
@@ -37,21 +46,21 @@ class StockItemMovementType
     }
 
     /**
-     * Sets a new storage
+     * Sets a new storage.
      *
      * Filtr podle ID, název členění. Je možné také zadat část názvu členění (zleva) - proběhne vyexportování zadané větve a souvisejících podvětví stromu členění.
      *
-     * @param \Pohoda\Type\RefTypeStorageType $storage
      * @return self
      */
     public function setStorage(?\Pohoda\Type\RefTypeStorageType $storage = null)
     {
         $this->storage = $storage;
+
         return $this;
     }
 
     /**
-     * Gets as stockItem
+     * Gets as stockItem.
      *
      * Filtr podle skladové zásoby.
      *
@@ -63,16 +72,16 @@ class StockItemMovementType
     }
 
     /**
-     * Sets a new stockItem
+     * Sets a new stockItem.
      *
      * Filtr podle skladové zásoby.
      *
-     * @param \Pohoda\Type\StockItemMovementType\StockItemAType $stockItem
      * @return self
      */
     public function setStockItem(?\Pohoda\Type\StockItemMovementType\StockItemAType $stockItem = null)
     {
         $this->stockItem = $stockItem;
+
         return $this;
     }
 }

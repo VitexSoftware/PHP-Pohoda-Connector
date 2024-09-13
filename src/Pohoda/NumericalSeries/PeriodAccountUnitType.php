@@ -1,9 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\NumericalSeries;
 
 /**
- * Class representing PeriodAccountUnitType
+ * Class representing PeriodAccountUnitType.
  *
  * Období platnosti účetní jednotky (pouze pro export).
  * XSD Type: periodAccountUnitType
@@ -12,20 +25,16 @@ class PeriodAccountUnitType
 {
     /**
      * Datum od.
-     *
-     * @var \DateTime $dateFrom
      */
-    private $dateFrom = null;
+    private \DateTime $dateFrom = null;
 
     /**
      * Datum do.
-     *
-     * @var \DateTime $dateTill
      */
-    private $dateTill = null;
+    private \DateTime $dateTill = null;
 
     /**
-     * Gets as dateFrom
+     * Gets as dateFrom.
      *
      * Datum od.
      *
@@ -37,21 +46,21 @@ class PeriodAccountUnitType
     }
 
     /**
-     * Sets a new dateFrom
+     * Sets a new dateFrom.
      *
      * Datum od.
      *
-     * @param \DateTime $dateFrom
      * @return self
      */
     public function setDateFrom(\DateTime $dateFrom)
     {
         $this->dateFrom = $dateFrom;
+
         return $this;
     }
 
     /**
-     * Gets as dateTill
+     * Gets as dateTill.
      *
      * Datum do.
      *
@@ -63,16 +72,16 @@ class PeriodAccountUnitType
     }
 
     /**
-     * Sets a new dateTill
+     * Sets a new dateTill.
      *
      * Datum do.
      *
-     * @param \DateTime $dateTill
      * @return self
      */
     public function setDateTill(\DateTime $dateTill)
     {
         $this->dateTill = $dateTill;
+
         return $this;
     }
 }

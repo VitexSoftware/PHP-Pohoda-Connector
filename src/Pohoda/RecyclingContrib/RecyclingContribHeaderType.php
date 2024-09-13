@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\RecyclingContrib;
 
 /**
- * Class representing RecyclingContribHeaderType
- *
+ * Class representing RecyclingContribHeaderType.
  *
  * XSD Type: recyclingContribHeaderType
  */
@@ -12,55 +24,41 @@ class RecyclingContribHeaderType
 {
     /**
      * ID záznamu (pouze pro export).
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Zkratka recyklačního příspěvku.
-     *
-     * @var string $code
      */
-    private $code = null;
+    private string $code = null;
 
     /**
      * Název recyklačního příspěvku.
-     *
-     * @var string $name
      */
-    private $name = null;
+    private string $name = null;
 
     /**
      * Text recyklačního příspěvku, který se bude tisknout na daňových dokladech.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Částka recyklačního příspěvku.
-     *
-     * @var float $amount
      */
-    private $amount = null;
+    private float $amount = null;
 
     /**
      * M. j. recyklačního příspěvku.
-     *
-     * @var string $unit
      */
-    private $unit = null;
+    private string $unit = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * ID záznamu (pouze pro export).
      *
@@ -72,21 +70,23 @@ class RecyclingContribHeaderType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * ID záznamu (pouze pro export).
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as code
+     * Gets as code.
      *
      * Zkratka recyklačního příspěvku.
      *
@@ -98,21 +98,23 @@ class RecyclingContribHeaderType
     }
 
     /**
-     * Sets a new code
+     * Sets a new code.
      *
      * Zkratka recyklačního příspěvku.
      *
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * Gets as name
+     * Gets as name.
      *
      * Název recyklačního příspěvku.
      *
@@ -124,21 +126,23 @@ class RecyclingContribHeaderType
     }
 
     /**
-     * Sets a new name
+     * Sets a new name.
      *
      * Název recyklačního příspěvku.
      *
      * @param string $name
+     *
      * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text recyklačního příspěvku, který se bude tisknout na daňových dokladech.
      *
@@ -150,21 +154,23 @@ class RecyclingContribHeaderType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text recyklačního příspěvku, který se bude tisknout na daňových dokladech.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as amount
+     * Gets as amount.
      *
      * Částka recyklačního příspěvku.
      *
@@ -176,21 +182,23 @@ class RecyclingContribHeaderType
     }
 
     /**
-     * Sets a new amount
+     * Sets a new amount.
      *
      * Částka recyklačního příspěvku.
      *
      * @param float $amount
+     *
      * @return self
      */
     public function setAmount($amount)
     {
         $this->amount = $amount;
+
         return $this;
     }
 
     /**
-     * Gets as unit
+     * Gets as unit.
      *
      * M. j. recyklačního příspěvku.
      *
@@ -202,21 +210,23 @@ class RecyclingContribHeaderType
     }
 
     /**
-     * Sets a new unit
+     * Sets a new unit.
      *
      * M. j. recyklačního příspěvku.
      *
      * @param string $unit
+     *
      * @return self
      */
     public function setUnit($unit)
     {
         $this->unit = $unit;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -228,16 +238,18 @@ class RecyclingContribHeaderType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 }

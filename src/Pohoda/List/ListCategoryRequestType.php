@@ -1,34 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing ListCategoryRequestType
- *
+ * Class representing ListCategoryRequestType.
  *
  * XSD Type: listCategoryRequestType
  */
 class ListCategoryRequestType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
      * Požadovaná verze pro export.
-     *
-     * @var string $categoryVersion
      */
-    private $categoryVersion = null;
+    private string $categoryVersion = null;
+    private \Pohoda\List\RequestCategoryType $requestCategory = null;
 
     /**
-     * @var \Pohoda\List\RequestCategoryType $requestCategory
-     */
-    private $requestCategory = null;
-
-    /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -38,19 +41,21 @@ class ListCategoryRequestType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Gets as categoryVersion
+     * Gets as categoryVersion.
      *
      * Požadovaná verze pro export.
      *
@@ -62,21 +67,23 @@ class ListCategoryRequestType
     }
 
     /**
-     * Sets a new categoryVersion
+     * Sets a new categoryVersion.
      *
      * Požadovaná verze pro export.
      *
      * @param string $categoryVersion
+     *
      * @return self
      */
     public function setCategoryVersion($categoryVersion)
     {
         $this->categoryVersion = $categoryVersion;
+
         return $this;
     }
 
     /**
-     * Gets as requestCategory
+     * Gets as requestCategory.
      *
      * @return \Pohoda\List\RequestCategoryType
      */
@@ -86,14 +93,14 @@ class ListCategoryRequestType
     }
 
     /**
-     * Sets a new requestCategory
+     * Sets a new requestCategory.
      *
-     * @param \Pohoda\List\RequestCategoryType $requestCategory
      * @return self
      */
     public function setRequestCategory(?\Pohoda\List\RequestCategoryType $requestCategory = null)
     {
         $this->requestCategory = $requestCategory;
+
         return $this;
     }
 }

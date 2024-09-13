@@ -1,40 +1,54 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List\ListRequestStoresType;
 
 /**
- * Class representing StoresAType
+ * Class representing StoresAType.
  */
 class StoresAType
 {
     /**
      * Výčet skladů, pro které se vyexportují data. Pokud není uveden, vyexportují se všechny data.
      *
-     * @var \Pohoda\Type\RefType[] $store
+     * @var \Pohoda\Type\RefType[]
      */
-    private $store = [
+    private array $store = [
     ];
 
     /**
-     * Adds as store
+     * Adds as store.
      *
      * Výčet skladů, pro které se vyexportují data. Pokud není uveden, vyexportují se všechny data.
      *
      * @return self
-     * @param \Pohoda\Type\RefType $store
      */
     public function addToStore(\Pohoda\Type\RefType $store)
     {
         $this->store[] = $store;
+
         return $this;
     }
 
     /**
-     * isset store
+     * isset store.
      *
      * Výčet skladů, pro které se vyexportují data. Pokud není uveden, vyexportují se všechny data.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetStore($index)
@@ -43,20 +57,19 @@ class StoresAType
     }
 
     /**
-     * unset store
+     * unset store.
      *
      * Výčet skladů, pro které se vyexportují data. Pokud není uveden, vyexportují se všechny data.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetStore($index)
+    public function unsetStore($index): void
     {
         unset($this->store[$index]);
     }
 
     /**
-     * Gets as store
+     * Gets as store.
      *
      * Výčet skladů, pro které se vyexportují data. Pokud není uveden, vyexportují se všechny data.
      *
@@ -68,16 +81,18 @@ class StoresAType
     }
 
     /**
-     * Sets a new store
+     * Sets a new store.
      *
      * Výčet skladů, pro které se vyexportují data. Pokud není uveden, vyexportují se všechny data.
      *
      * @param \Pohoda\Type\RefType[] $store
+     *
      * @return self
      */
     public function setStore(array $store)
     {
         $this->store = $store;
+
         return $this;
     }
 }

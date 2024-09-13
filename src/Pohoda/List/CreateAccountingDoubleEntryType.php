@@ -1,28 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 /**
- * Class representing CreateAccountingDoubleEntryType
- *
+ * Class representing CreateAccountingDoubleEntryType.
  *
  * XSD Type: createAccountingDoubleEntryType
  */
 class CreateAccountingDoubleEntryType
 {
-    /**
-     * @var string $version
-     */
-    private $version = null;
+    private string $version = null;
 
     /**
-     * @var \Pohoda\List\CreateAccountingType[] $createAccounting
+     * @var \Pohoda\List\CreateAccountingType[]
      */
-    private $createAccounting = [
+    private array $createAccounting = [
     ];
 
     /**
-     * Gets as version
+     * Gets as version.
      *
      * @return string
      */
@@ -32,33 +41,36 @@ class CreateAccountingDoubleEntryType
     }
 
     /**
-     * Sets a new version
+     * Sets a new version.
      *
      * @param string $version
+     *
      * @return self
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Adds as createAccounting
+     * Adds as createAccounting.
      *
      * @return self
-     * @param \Pohoda\List\CreateAccountingType $createAccounting
      */
     public function addToCreateAccounting(\Pohoda\List\CreateAccountingType $createAccounting)
     {
         $this->createAccounting[] = $createAccounting;
+
         return $this;
     }
 
     /**
-     * isset createAccounting
+     * isset createAccounting.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetCreateAccounting($index)
@@ -67,18 +79,17 @@ class CreateAccountingDoubleEntryType
     }
 
     /**
-     * unset createAccounting
+     * unset createAccounting.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetCreateAccounting($index)
+    public function unsetCreateAccounting($index): void
     {
         unset($this->createAccounting[$index]);
     }
 
     /**
-     * Gets as createAccounting
+     * Gets as createAccounting.
      *
      * @return \Pohoda\List\CreateAccountingType[]
      */
@@ -88,14 +99,16 @@ class CreateAccountingDoubleEntryType
     }
 
     /**
-     * Sets a new createAccounting
+     * Sets a new createAccounting.
      *
      * @param \Pohoda\List\CreateAccountingType[] $createAccounting
+     *
      * @return self
      */
     public function setCreateAccounting(array $createAccounting)
     {
         $this->createAccounting = $createAccounting;
+
         return $this;
     }
 }

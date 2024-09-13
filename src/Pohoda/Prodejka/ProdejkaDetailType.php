@@ -1,44 +1,55 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Prodejka;
 
 /**
- * Class representing ProdejkaDetailType
- *
+ * Class representing ProdejkaDetailType.
  *
  * XSD Type: prodejkaDetailType
  */
 class ProdejkaDetailType
 {
     /**
-     * @var \Pohoda\Prodejka\ProdejkaItemType[] $prodejkaItem
+     * @var \Pohoda\Prodejka\ProdejkaItemType[]
      */
-    private $prodejkaItem = [
+    private array $prodejkaItem = [
     ];
 
     /**
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
-     *
-     * @var \Pohoda\Type\RoundingItemType $roundingItem
      */
-    private $roundingItem = null;
+    private \Pohoda\Type\RoundingItemType $roundingItem = null;
 
     /**
-     * Adds as prodejkaItem
+     * Adds as prodejkaItem.
      *
      * @return self
-     * @param \Pohoda\Prodejka\ProdejkaItemType $prodejkaItem
      */
     public function addToProdejkaItem(\Pohoda\Prodejka\ProdejkaItemType $prodejkaItem)
     {
         $this->prodejkaItem[] = $prodejkaItem;
+
         return $this;
     }
 
     /**
-     * isset prodejkaItem
+     * isset prodejkaItem.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetProdejkaItem($index)
@@ -47,18 +58,17 @@ class ProdejkaDetailType
     }
 
     /**
-     * unset prodejkaItem
+     * unset prodejkaItem.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetProdejkaItem($index)
+    public function unsetProdejkaItem($index): void
     {
         unset($this->prodejkaItem[$index]);
     }
 
     /**
-     * Gets as prodejkaItem
+     * Gets as prodejkaItem.
      *
      * @return \Pohoda\Prodejka\ProdejkaItemType[]
      */
@@ -68,19 +78,21 @@ class ProdejkaDetailType
     }
 
     /**
-     * Sets a new prodejkaItem
+     * Sets a new prodejkaItem.
      *
      * @param \Pohoda\Prodejka\ProdejkaItemType[] $prodejkaItem
+     *
      * @return self
      */
     public function setProdejkaItem(array $prodejkaItem)
     {
         $this->prodejkaItem = $prodejkaItem;
+
         return $this;
     }
 
     /**
-     * Gets as roundingItem
+     * Gets as roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
@@ -92,16 +104,16 @@ class ProdejkaDetailType
     }
 
     /**
-     * Sets a new roundingItem
+     * Sets a new roundingItem.
      *
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      *
-     * @param \Pohoda\Type\RoundingItemType $roundingItem
      * @return self
      */
     public function setRoundingItem(?\Pohoda\Type\RoundingItemType $roundingItem = null)
     {
         $this->roundingItem = $roundingItem;
+
         return $this;
     }
 }

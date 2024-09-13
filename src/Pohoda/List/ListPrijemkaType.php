@@ -1,39 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\List;
 
 use Pohoda\Documentresponse\ListVersionType;
 
 /**
- * Class representing ListPrijemkaType
- *
+ * Class representing ListPrijemkaType.
  *
  * XSD Type: listPrijemkaType
  */
 class ListPrijemkaType extends ListVersionType
 {
     /**
-     * @var \Pohoda\Prijemka\PrijemkaType[] $prijemka
+     * @var \Pohoda\Prijemka\PrijemkaType[]
      */
-    private $prijemka = [
+    private array $prijemka = [
     ];
 
     /**
-     * Adds as prijemka
+     * Adds as prijemka.
      *
      * @return self
-     * @param \Pohoda\Prijemka\PrijemkaType $prijemka
      */
     public function addToPrijemka(\Pohoda\Prijemka\PrijemkaType $prijemka)
     {
         $this->prijemka[] = $prijemka;
+
         return $this;
     }
 
     /**
-     * isset prijemka
+     * isset prijemka.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetPrijemka($index)
@@ -42,18 +55,17 @@ class ListPrijemkaType extends ListVersionType
     }
 
     /**
-     * unset prijemka
+     * unset prijemka.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetPrijemka($index)
+    public function unsetPrijemka($index): void
     {
         unset($this->prijemka[$index]);
     }
 
     /**
-     * Gets as prijemka
+     * Gets as prijemka.
      *
      * @return \Pohoda\Prijemka\PrijemkaType[]
      */
@@ -63,14 +75,16 @@ class ListPrijemkaType extends ListVersionType
     }
 
     /**
-     * Sets a new prijemka
+     * Sets a new prijemka.
      *
      * @param \Pohoda\Prijemka\PrijemkaType[] $prijemka
+     *
      * @return self
      */
-    public function setPrijemka(array $prijemka = null)
+    public function setPrijemka(?array $prijemka = null)
     {
         $this->prijemka = $prijemka;
+
         return $this;
     }
 }

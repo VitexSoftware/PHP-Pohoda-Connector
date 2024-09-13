@@ -1,10 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the PHP-Pohoda-Connector package
+ *
+ * https://github.com/VitexSoftware/PHP-Pohoda-Connector
+ *
+ * (c) VitexSoftware. <https://vitexsoftware.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pohoda\Contract;
 
 /**
- * Class representing ContractDescType
- *
+ * Class representing ContractDescType.
  *
  * XSD Type: contractDescType
  */
@@ -12,132 +24,100 @@ class ContractDescType
 {
     /**
      * Používá se pouze při exportu.
-     *
-     * @var int $id
      */
-    private $id = null;
+    private int $id = null;
 
     /**
      * Evidenční číslo zakázky.
-     *
-     * @var \Pohoda\Type\NumberTypeContractType $number
      */
-    private $number = null;
+    private \Pohoda\Type\NumberTypeContractType $number = null;
 
     /**
      * Datum plánovaného zahájení.
-     *
-     * @var \DateTime $datePlanStart
      */
-    private $datePlanStart = null;
+    private \DateTime $datePlanStart = null;
 
     /**
      * Datum plánovaného předání.
-     *
-     * @var \DateTime $datePlanDelivery
      */
-    private $datePlanDelivery = null;
+    private \DateTime $datePlanDelivery = null;
 
     /**
      * Datum zahájení.
-     *
-     * @var \DateTime $dateStart
      */
-    private $dateStart = null;
+    private \DateTime $dateStart = null;
 
     /**
      * Datum předání.
-     *
-     * @var \DateTime $dateDelivery
      */
-    private $dateDelivery = null;
+    private \DateTime $dateDelivery = null;
 
     /**
      * Záruka.
-     *
-     * @var \DateTime $dateWarranty
      */
-    private $dateWarranty = null;
+    private \DateTime $dateWarranty = null;
 
     /**
      * Text popisu zakázky. Tento element je vyžadován při vytvoření dokladu.
-     *
-     * @var string $text
      */
-    private $text = null;
+    private string $text = null;
 
     /**
      * Zákazníkova adresa.
-     *
-     * @var \Pohoda\Type\AddressType $partnerIdentity
      */
-    private $partnerIdentity = null;
+    private \Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Odpovědná osoba.
-     *
-     * @var \Pohoda\Type\RefTypeLongType $responsiblePerson
      */
-    private $responsiblePerson = null;
+    private \Pohoda\Type\RefTypeLongType $responsiblePerson = null;
 
     /**
      * Stav zakázky (podporován do verze 13100).
-     *
-     * @var string $contractState
      */
-    private $contractState = null;
+    private string $contractState = null;
 
     /**
      * Stav zakázky (nová definice od verze 13100). Pokud budou při importu současně použity elementy „contractState“ i „status“, pak má větší prioritu element „status“.
-     *
-     * @var \Pohoda\Contract\StatusType $status
      */
-    private $status = null;
+    private \Pohoda\Contract\StatusType $status = null;
 
     /**
      * Ostatní.
-     *
-     * @var string $ost1
      */
-    private $ost1 = null;
+    private string $ost1 = null;
 
     /**
      * Pozn.
-     *
-     * @var string $ost2
      */
-    private $ost2 = null;
+    private string $ost2 = null;
 
     /**
      * Poznámka.
-     *
-     * @var string $note
      */
-    private $note = null;
+    private string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
-     *
-     * @var string $markRecord
      */
-    private $markRecord = null;
+    private string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
-     * @var \Pohoda\Type\LabelType[] $labels
+     * @var \Pohoda\Type\LabelType[]
      */
-    private $labels = null;
+    private array $labels = null;
 
     /**
      * Volitelný parametr.
      *
-     * @var \Pohoda\Type\ParameterDocType[] $parameters
+     * @var \Pohoda\Type\ParameterDocType[]
      */
-    private $parameters = null;
+    private array $parameters = null;
 
     /**
-     * Gets as id
+     * Gets as id.
      *
      * Používá se pouze při exportu.
      *
@@ -149,21 +129,23 @@ class ContractDescType
     }
 
     /**
-     * Sets a new id
+     * Sets a new id.
      *
      * Používá se pouze při exportu.
      *
      * @param int $id
+     *
      * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
     /**
-     * Gets as number
+     * Gets as number.
      *
      * Evidenční číslo zakázky.
      *
@@ -175,21 +157,21 @@ class ContractDescType
     }
 
     /**
-     * Sets a new number
+     * Sets a new number.
      *
      * Evidenční číslo zakázky.
      *
-     * @param \Pohoda\Type\NumberTypeContractType $number
      * @return self
      */
     public function setNumber(?\Pohoda\Type\NumberTypeContractType $number = null)
     {
         $this->number = $number;
+
         return $this;
     }
 
     /**
-     * Gets as datePlanStart
+     * Gets as datePlanStart.
      *
      * Datum plánovaného zahájení.
      *
@@ -201,21 +183,21 @@ class ContractDescType
     }
 
     /**
-     * Sets a new datePlanStart
+     * Sets a new datePlanStart.
      *
      * Datum plánovaného zahájení.
      *
-     * @param \DateTime $datePlanStart
      * @return self
      */
     public function setDatePlanStart(?\DateTime $datePlanStart = null)
     {
         $this->datePlanStart = $datePlanStart;
+
         return $this;
     }
 
     /**
-     * Gets as datePlanDelivery
+     * Gets as datePlanDelivery.
      *
      * Datum plánovaného předání.
      *
@@ -227,21 +209,21 @@ class ContractDescType
     }
 
     /**
-     * Sets a new datePlanDelivery
+     * Sets a new datePlanDelivery.
      *
      * Datum plánovaného předání.
      *
-     * @param \DateTime $datePlanDelivery
      * @return self
      */
     public function setDatePlanDelivery(?\DateTime $datePlanDelivery = null)
     {
         $this->datePlanDelivery = $datePlanDelivery;
+
         return $this;
     }
 
     /**
-     * Gets as dateStart
+     * Gets as dateStart.
      *
      * Datum zahájení.
      *
@@ -253,21 +235,21 @@ class ContractDescType
     }
 
     /**
-     * Sets a new dateStart
+     * Sets a new dateStart.
      *
      * Datum zahájení.
      *
-     * @param \DateTime $dateStart
      * @return self
      */
     public function setDateStart(?\DateTime $dateStart = null)
     {
         $this->dateStart = $dateStart;
+
         return $this;
     }
 
     /**
-     * Gets as dateDelivery
+     * Gets as dateDelivery.
      *
      * Datum předání.
      *
@@ -279,21 +261,21 @@ class ContractDescType
     }
 
     /**
-     * Sets a new dateDelivery
+     * Sets a new dateDelivery.
      *
      * Datum předání.
      *
-     * @param \DateTime $dateDelivery
      * @return self
      */
     public function setDateDelivery(?\DateTime $dateDelivery = null)
     {
         $this->dateDelivery = $dateDelivery;
+
         return $this;
     }
 
     /**
-     * Gets as dateWarranty
+     * Gets as dateWarranty.
      *
      * Záruka.
      *
@@ -305,21 +287,21 @@ class ContractDescType
     }
 
     /**
-     * Sets a new dateWarranty
+     * Sets a new dateWarranty.
      *
      * Záruka.
      *
-     * @param \DateTime $dateWarranty
      * @return self
      */
     public function setDateWarranty(?\DateTime $dateWarranty = null)
     {
         $this->dateWarranty = $dateWarranty;
+
         return $this;
     }
 
     /**
-     * Gets as text
+     * Gets as text.
      *
      * Text popisu zakázky. Tento element je vyžadován při vytvoření dokladu.
      *
@@ -331,21 +313,23 @@ class ContractDescType
     }
 
     /**
-     * Sets a new text
+     * Sets a new text.
      *
      * Text popisu zakázky. Tento element je vyžadován při vytvoření dokladu.
      *
      * @param string $text
+     *
      * @return self
      */
     public function setText($text)
     {
         $this->text = $text;
+
         return $this;
     }
 
     /**
-     * Gets as partnerIdentity
+     * Gets as partnerIdentity.
      *
      * Zákazníkova adresa.
      *
@@ -357,21 +341,21 @@ class ContractDescType
     }
 
     /**
-     * Sets a new partnerIdentity
+     * Sets a new partnerIdentity.
      *
      * Zákazníkova adresa.
      *
-     * @param \Pohoda\Type\AddressType $partnerIdentity
      * @return self
      */
     public function setPartnerIdentity(?\Pohoda\Type\AddressType $partnerIdentity = null)
     {
         $this->partnerIdentity = $partnerIdentity;
+
         return $this;
     }
 
     /**
-     * Gets as responsiblePerson
+     * Gets as responsiblePerson.
      *
      * Odpovědná osoba.
      *
@@ -383,21 +367,21 @@ class ContractDescType
     }
 
     /**
-     * Sets a new responsiblePerson
+     * Sets a new responsiblePerson.
      *
      * Odpovědná osoba.
      *
-     * @param \Pohoda\Type\RefTypeLongType $responsiblePerson
      * @return self
      */
     public function setResponsiblePerson(?\Pohoda\Type\RefTypeLongType $responsiblePerson = null)
     {
         $this->responsiblePerson = $responsiblePerson;
+
         return $this;
     }
 
     /**
-     * Gets as contractState
+     * Gets as contractState.
      *
      * Stav zakázky (podporován do verze 13100).
      *
@@ -409,21 +393,23 @@ class ContractDescType
     }
 
     /**
-     * Sets a new contractState
+     * Sets a new contractState.
      *
      * Stav zakázky (podporován do verze 13100).
      *
      * @param string $contractState
+     *
      * @return self
      */
     public function setContractState($contractState)
     {
         $this->contractState = $contractState;
+
         return $this;
     }
 
     /**
-     * Gets as status
+     * Gets as status.
      *
      * Stav zakázky (nová definice od verze 13100). Pokud budou při importu současně použity elementy „contractState“ i „status“, pak má větší prioritu element „status“.
      *
@@ -435,21 +421,21 @@ class ContractDescType
     }
 
     /**
-     * Sets a new status
+     * Sets a new status.
      *
      * Stav zakázky (nová definice od verze 13100). Pokud budou při importu současně použity elementy „contractState“ i „status“, pak má větší prioritu element „status“.
      *
-     * @param \Pohoda\Contract\StatusType $status
      * @return self
      */
     public function setStatus(?\Pohoda\Contract\StatusType $status = null)
     {
         $this->status = $status;
+
         return $this;
     }
 
     /**
-     * Gets as ost1
+     * Gets as ost1.
      *
      * Ostatní.
      *
@@ -461,21 +447,23 @@ class ContractDescType
     }
 
     /**
-     * Sets a new ost1
+     * Sets a new ost1.
      *
      * Ostatní.
      *
      * @param string $ost1
+     *
      * @return self
      */
     public function setOst1($ost1)
     {
         $this->ost1 = $ost1;
+
         return $this;
     }
 
     /**
-     * Gets as ost2
+     * Gets as ost2.
      *
      * Pozn.
      *
@@ -487,21 +475,23 @@ class ContractDescType
     }
 
     /**
-     * Sets a new ost2
+     * Sets a new ost2.
      *
      * Pozn.
      *
      * @param string $ost2
+     *
      * @return self
      */
     public function setOst2($ost2)
     {
         $this->ost2 = $ost2;
+
         return $this;
     }
 
     /**
-     * Gets as note
+     * Gets as note.
      *
      * Poznámka.
      *
@@ -513,21 +503,23 @@ class ContractDescType
     }
 
     /**
-     * Sets a new note
+     * Sets a new note.
      *
      * Poznámka.
      *
      * @param string $note
+     *
      * @return self
      */
     public function setNote($note)
     {
         $this->note = $note;
+
         return $this;
     }
 
     /**
-     * Gets as markRecord
+     * Gets as markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
@@ -539,39 +531,42 @@ class ContractDescType
     }
 
     /**
-     * Sets a new markRecord
+     * Sets a new markRecord.
      *
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      *
      * @param string $markRecord
+     *
      * @return self
      */
     public function setMarkRecord($markRecord)
     {
         $this->markRecord = $markRecord;
+
         return $this;
     }
 
     /**
-     * Adds as label
+     * Adds as label.
      *
      * Štítky záznamu.
      *
      * @return self
-     * @param \Pohoda\Type\LabelType $label
      */
     public function addToLabels(\Pohoda\Type\LabelType $label)
     {
         $this->labels[] = $label;
+
         return $this;
     }
 
     /**
-     * isset labels
+     * isset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetLabels($index)
@@ -580,20 +575,19 @@ class ContractDescType
     }
 
     /**
-     * unset labels
+     * unset labels.
      *
      * Štítky záznamu.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetLabels($index)
+    public function unsetLabels($index): void
     {
         unset($this->labels[$index]);
     }
 
     /**
-     * Gets as labels
+     * Gets as labels.
      *
      * Štítky záznamu.
      *
@@ -605,39 +599,42 @@ class ContractDescType
     }
 
     /**
-     * Sets a new labels
+     * Sets a new labels.
      *
      * Štítky záznamu.
      *
      * @param \Pohoda\Type\LabelType[] $labels
+     *
      * @return self
      */
-    public function setLabels(array $labels = null)
+    public function setLabels(?array $labels = null)
     {
         $this->labels = $labels;
+
         return $this;
     }
 
     /**
-     * Adds as parameter
+     * Adds as parameter.
      *
      * Volitelný parametr.
      *
      * @return self
-     * @param \Pohoda\Type\ParameterDocType $parameter
      */
     public function addToParameters(\Pohoda\Type\ParameterDocType $parameter)
     {
         $this->parameters[] = $parameter;
+
         return $this;
     }
 
     /**
-     * isset parameters
+     * isset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
+     *
      * @return bool
      */
     public function issetParameters($index)
@@ -646,20 +643,19 @@ class ContractDescType
     }
 
     /**
-     * unset parameters
+     * unset parameters.
      *
      * Volitelný parametr.
      *
      * @param int|string $index
-     * @return void
      */
-    public function unsetParameters($index)
+    public function unsetParameters($index): void
     {
         unset($this->parameters[$index]);
     }
 
     /**
-     * Gets as parameters
+     * Gets as parameters.
      *
      * Volitelný parametr.
      *
@@ -671,16 +667,18 @@ class ContractDescType
     }
 
     /**
-     * Sets a new parameters
+     * Sets a new parameters.
      *
      * Volitelný parametr.
      *
      * @param \Pohoda\Type\ParameterDocType[] $parameters
+     *
      * @return self
      */
-    public function setParameters(array $parameters = null)
+    public function setParameters(?array $parameters = null)
     {
         $this->parameters = $parameters;
+
         return $this;
     }
 }
