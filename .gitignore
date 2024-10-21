@@ -10,3 +10,9 @@
 /debian/debhelper-build-stamp
 /debian/files
 /.build/
+/docs/
+/.phpdoc/
+/metadata/
+/debian/php-vitexsoftware-pohoda-connector-doc/
+/debian/php-vitexsoftware-pohoda-connector-doc.substvars
+/debian/php-vitexsoftware-pohoda-connector.debhelper.log
