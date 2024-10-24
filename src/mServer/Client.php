@@ -507,7 +507,7 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Check mServer availbilty.
+     * Check mServer availability.
      *
      * @return bool
      */

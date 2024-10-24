@@ -92,6 +92,7 @@ class Response extends \Ease\Sand
                     $this->processResponseData($responsePackSubitem);
 
                     break;
+                case 'lst:listBank':
                 case 'bnk:bankResponse':
                 case 'adb:addressbookResponse':
                     $this->processResponseData($responsePackSubitem);
@@ -146,16 +147,26 @@ class Response extends \Ease\Sand
 
                     break;
                 case 'rdc:producedDetails':
-                    $this->processProducedDetails($value);
+                    $this->parsed = $this->processProducedDetails($value);
 
                     break;
                 case 'rdc:importDetails':
-                    $this->processImportDetails($value);
+                    $this->parsed = $this->processImportDetails($value);
 
+                    break;
+                case 'lst:bank':
+                    $this->parsed = $this->processBank($value);
+
+                    break;
+                case '@version':
+                case '@dateTimeStamp':
+                case '@dateValidFrom':
+                case '@state':
                     break;
 
                 default:
-                    //                    $this->addStatusMessage(_('Unknown response section') . ': ' . $responseData['name'], 'debug');
+                    $this->addStatusMessage(_('Unknown response section').': '.$key, 'debug');
+
                     break;
             }
         }
@@ -414,21 +425,43 @@ class Response extends \Ease\Sand
 
     /**
      * Strip adb: prefix form key names.
-     *
-     * @param array $entryData
-     *
-     * @return array
      */
-    public static function adbToArray($entryData)
+    public static function adbToArray(array $entryData): array
+    {
+        return self::stripArrayNames('adb', $entryData);
+    }
+
+    /**
+     * Strip prefix form key names.
+     */
+    public static function stripArrayNames(string $prefix, array $entryData): array
     {
         $entry = [];
 
         foreach ($entryData as $entryKey => $entryValue) {
-            if (preg_match('/^adb:/', $entryKey)) {
-                $entry[str_replace('adb:', '', $entryKey)] = \array_key_exists('$', $entryValue) ? $entryValue['$'] : self::adbToArray($entryValue);
+            if (preg_match('/^'.$prefix.':/', (string) $entryKey)) {
+                $entry[str_replace($prefix.':', '', $entryKey)] = \array_key_exists('$', $entryValue) ? $entryValue['$'] : self::stripArrayNames($prefix, $entryValue);
+            } else {
+                if (\is_array($entryValue) && key($entryValue) === '$') {
+                    $entry[$entryKey] = $entryValue['$'];
+                } else {
+                    $entry[$entryKey] = $entryValue;
+                }
             }
         }
 
         return $entry;
+    }
+
+    public function processBank(array $bank): array
+    {
+        $bankItems = [];
+
+        foreach ($bank as $bankEntry) {
+            $bankData = self::stripArrayNames('bnk', $bankEntry);
+            $bankItems[$bankData['bankHeader']['id']] = $bankData;
+        }
+
+        return $bankItems;
     }
 }
