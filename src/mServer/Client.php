@@ -563,7 +563,7 @@ class Client extends \Ease\Sand
                 $this->requestXml->addActionType('add'); // "add", "add/update", "update", "delete"
             }
 
-            $this->pohoda->addItem(2, $this->requestXml);
+            $this->pohoda->addItem('2', $this->requestXml);
         }
 
         return 1;

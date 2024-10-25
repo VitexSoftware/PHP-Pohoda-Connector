@@ -102,7 +102,11 @@ class Response extends \Ease\Sand
                     $this->state = $responsePackSubitem;
 
                     break;
-                case '':
+                case '@note':
+                    $note = $responsePackSubitem; //TODO
+                    break;
+                case '@id':
+                case '@version':
                     break;
 
                 default:
@@ -147,11 +151,11 @@ class Response extends \Ease\Sand
 
                     break;
                 case 'rdc:producedDetails':
-                    $this->parsed = $this->processProducedDetails($value);
+                    /* $this->parsed = */ $this->processProducedDetails($value);
 
                     break;
                 case 'rdc:importDetails':
-                    $this->parsed = $this->processImportDetails($value);
+                    /* $this->parsed = */ $this->processImportDetails($value);
 
                     break;
                 case 'lst:bank':
