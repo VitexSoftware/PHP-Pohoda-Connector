@@ -124,6 +124,7 @@ class Client extends \Ease\Sand
      * Path to teporary XML file.
      */
     public ?string $xmlCache = null;
+    public Response $response;
 
     /**
      * My Company identification ID.
@@ -135,7 +136,6 @@ class Client extends \Ease\Sand
      */
     protected Pohoda $pohoda;
     private $curl;
-    private Response $response;
 
     /**
      * mServer client class.

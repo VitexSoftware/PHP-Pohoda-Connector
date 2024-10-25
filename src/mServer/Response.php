@@ -245,7 +245,7 @@ class Response extends \Ease\Sand
      *
      * @return array item or array of items
      */
-    public function getAgendaData($agenda)
+    public function getAgendaData($agenda): array
     {
         if (\array_key_exists(0, $this->parsed)) {
             $data = [];
@@ -440,12 +440,22 @@ class Response extends \Ease\Sand
 
         foreach ($entryData as $entryKey => $entryValue) {
             if (preg_match('/^'.$prefix.':/', (string) $entryKey)) {
-                $entry[str_replace($prefix.':', '', $entryKey)] = \array_key_exists('$', $entryValue) ? $entryValue['$'] : self::stripArrayNames($prefix, $entryValue);
+                if (\is_array($entryValue)) {
+                    $value = \array_key_exists('$', $entryValue) ? $entryValue['$'] : self::stripArrayNames($prefix, $entryValue);
+                } else {
+                    $value = $entryValue;
+                }
+
+                $entry[str_replace($prefix.':', '', $entryKey)] = $value;
             } else {
                 if (\is_array($entryValue) && key($entryValue) === '$') {
                     $entry[$entryKey] = $entryValue['$'];
                 } else {
-                    $entry[$entryKey] = $entryValue;
+                    if (\is_array($entryValue)) {
+                        $entry[$entryKey] = self::stripArrayNames($prefix, $entryValue);
+                    } else {
+                        $entry[$entryKey] = $entryValue;
+                    }
                 }
             }
         }
@@ -462,6 +472,6 @@ class Response extends \Ease\Sand
             $bankItems[$bankData['bankHeader']['id']] = $bankData;
         }
 
-        return $bankItems;
+        return self::stripArrayNames('typ', $bankItems);
     }
 }
