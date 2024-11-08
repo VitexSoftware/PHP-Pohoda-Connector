@@ -17,3 +17,4 @@
 /debian/php-vitexsoftware-pohoda-connector-doc.substvars
 /debian/php-vitexsoftware-pohoda-connector.debhelper.log
 /.phpunit.result.cache
+/debian/php-vitexsoftware-pohoda-connector-doc.debhelper.log
