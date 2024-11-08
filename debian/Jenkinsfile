@@ -77,7 +77,7 @@ distributions.each {
                     artifacts.each { deb_file ->
                         println "Copying artifact: " + deb_file
                         archiveArtifacts artifacts: 'dist/debian/' + deb_file
-                        sh 'cp $WORKSPACE/dist/debian/*.deb $WORKSPACE'
+                        sh 'cp $WORKSPACE/dist/debian/' + deb_file + ' $WORKSPACE'
                     }
                 }
             }
