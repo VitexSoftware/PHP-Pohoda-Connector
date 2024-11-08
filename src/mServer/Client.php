@@ -124,6 +124,7 @@ class Client extends \Ease\Sand
      * Path to teporary XML file.
      */
     public ?string $xmlCache = null;
+    public Response $response;
 
     /**
      * My Company identification ID.
@@ -135,7 +136,6 @@ class Client extends \Ease\Sand
      */
     protected Pohoda $pohoda;
     private $curl;
-    private Response $response;
 
     /**
      * mServer client class.
@@ -507,7 +507,7 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Check mServer availbilty.
+     * Check mServer availability.
      *
      * @return bool
      */
@@ -563,7 +563,7 @@ class Client extends \Ease\Sand
                 $this->requestXml->addActionType('add'); // "add", "add/update", "update", "delete"
             }
 
-            $this->pohoda->addItem(2, $this->requestXml);
+            $this->pohoda->addItem('2', $this->requestXml);
         }
 
         return 1;

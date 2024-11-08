@@ -1,0 +1,13 @@
+docs/classes/*	usr/share/doc/php-vitexsoftware-pohoda-connector/html/classes
+docs/css/*		usr/share/doc/php-vitexsoftware-pohoda-connector/html/css
+docs/files/*		usr/share/doc/php-vitexsoftware-pohoda-connector/html/files
+docs/graphs/*		usr/share/doc/php-vitexsoftware-pohoda-connector/html/graphs
+docs/index.html	usr/share/doc/php-vitexsoftware-pohoda-connector/html/
+docs/indices/*	usr/share/doc/php-vitexsoftware-pohoda-connector/html/indices
+docs/js/*		usr/share/doc/php-vitexsoftware-pohoda-connector/html/js
+docs/namespaces/*	usr/share/doc/php-vitexsoftware-pohoda-connector/html/namespaces
+docs/packages/*	usr/share/doc/php-vitexsoftware-pohoda-connector/html/packages
+docs/reports/*	usr/share/doc/php-vitexsoftware-pohoda-connector/html/reports
+
+debian/php-vitexsoftware-pohoda-connector-doc.conf	usr/share/doc/php-vitexsoftware-pohoda-connector-doc/apache
+README.md		usr/share/doc/php-vitexsoftware-pohoda-connector
