@@ -475,10 +475,15 @@ class Response extends \Ease\Sand
         foreach ($bank as $bankEntry) {
             if (\is_array($bankEntry)) {
                 $striped = self::stripArrayNames('bnk', $bankEntry);
-                $bankItems[$striped['bankHeader']['id']] = $striped;
-            } 
+                if (array_key_exists('bankHeader', $striped)) {
+                    $bankItems[$striped['bankHeader']['id']] = $striped;
+                } elseif (array_key_exists('bankItem', $striped)) {
+                    $bankItems[$striped['bankItem']['id']] = $striped;
+                } elseif(array_key_exists('id', $striped)) {
+                    $bankItems[$striped['id']] = $striped;
+                }
+            }
         }
-
         return self::stripArrayNames('typ', $bankItems);
     }
 }
