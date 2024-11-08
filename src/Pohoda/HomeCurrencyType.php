@@ -25,7 +25,7 @@ class HomeCurrencyType
     /**
      * Cena v cizí měně.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * Gets as price.

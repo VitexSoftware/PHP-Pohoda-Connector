@@ -16,7 +16,7 @@ declare(strict_types=1);
 namespace tests;
 
 require_once __DIR__.'/../vendor/autoload.php';
-\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__.'/.env');
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], \dirname(__DIR__).'/.env');
 
 if (\Ease\Shared::cfg('EASE_LOGGER', false) === false) {
     \define('EASE_LOGGER', 'console');

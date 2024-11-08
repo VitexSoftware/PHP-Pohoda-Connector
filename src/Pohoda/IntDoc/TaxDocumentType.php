@@ -25,7 +25,7 @@ class TaxDocumentType
     /**
      * Vazba likvidace na daňový doklad.
      */
-    private \Pohoda\Type\SourceDocumentItemType $sourceLiquidation = null;
+    private ?\Pohoda\Type\SourceDocumentItemType $sourceLiquidation = null;
 
     /**
      * Gets as sourceLiquidation.

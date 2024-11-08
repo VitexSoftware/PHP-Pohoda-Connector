@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListMovementRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $movementVersion = null;
+    private ?string $movementVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestMovementType[]

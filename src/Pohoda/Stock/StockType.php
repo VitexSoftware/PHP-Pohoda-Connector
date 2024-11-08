@@ -22,48 +22,48 @@ namespace Pohoda\Stock;
  */
 class StockType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      */
-    private \Pohoda\Stock\ActionTypeType $actionType = null;
-    private \Pohoda\Stock\StockHeaderType $stockHeader = null;
+    private ?\Pohoda\Stock\ActionTypeType $actionType = null;
+    private ?\Pohoda\Stock\StockHeaderType $stockHeader = null;
 
     /**
      * Položky zásob u typů karta, služba, textová nebo výrobek (jen pro export).
      *
      * @var \Pohoda\Stock\StockItemType[]
      */
-    private array $stockDetail = null;
+    private ?array $stockDetail = null;
 
     /**
      * Svázané zásoby. Jako svázanou zásobu nelze vložit skladovou zásobu typu Komplet a Souprava (jen pro export).
      *
      * @var \Pohoda\Stock\AttachItemType[]
      */
-    private array $stockAttach = null;
+    private ?array $stockAttach = null;
 
     /**
      * Výrobní čísla nebo šarže zásoby (jen pro export).
      *
      * @var \Pohoda\Stock\SerialNumberItemType[]
      */
-    private array $stockSerialNumber = null;
+    private ?array $stockSerialNumber = null;
 
     /**
      * Slevy.
      *
      * @var \Pohoda\Type\StockPriceType[]
      */
-    private array $stockPriceItem = null;
+    private ?array $stockPriceItem = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

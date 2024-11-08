@@ -25,69 +25,69 @@ class AttachItemType
     /**
      * ID položky zásoby (od verze 2.1).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Informace o použité skladové zásobě (od verze 2.1).
      */
-    private \Pohoda\Stock\StockInfoType $stockInfo = null;
+    private ?\Pohoda\Stock\StockInfoType $stockInfo = null;
 
     /**
      * Členění.
      */
-    private \Pohoda\Type\RefTypeStorageType $storage = null;
+    private ?\Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Řetězcový identifikátor skladové položky.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Název skladové položky (jen pro export).
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Stav zásoby (jen pro export).
      */
-    private float $count = null;
+    private ?float $count = null;
 
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Měrná jednotka (jen pro export).
      */
-    private string $unit = null;
+    private ?string $unit = null;
 
     /**
      * Pořadí položek (jen pro export).
      */
-    private int $stockOrder = null;
+    private ?int $stockOrder = null;
 
     /**
      * Naskladnit. Svázaná zásoba vloží do dokladu i při naskladnění skladové karty.
      */
-    private string $warehouse = null;
+    private ?string $warehouse = null;
 
     /**
      * Nevyskladňovat. Svázaná zásoba se nevloží do dokladu při vyskladnění skladové karty.
      */
-    private string $notExpedite = null;
+    private ?string $notExpedite = null;
 
     /**
      * Úprava. Pokud volba Úprava nebude na záložce Svázané zatržena, budou se ceny automaticky aktualizovat dle provedených změn na skladové kartě.
      */
-    private string $edit = null;
+    private ?string $edit = null;
 
     /**
      * Úprava cen svázané zásoby u jednotlivých cenových hladin.
      *
      * @var \Pohoda\Type\StockPriceType[]
      */
-    private array $stockPriceItem = null;
+    private ?array $stockPriceItem = null;
 
     /**
      * Gets as id.

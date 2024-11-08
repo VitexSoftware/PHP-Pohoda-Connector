@@ -25,19 +25,19 @@ class LiquidationDetailType
     /**
      * Celkový výsledek likvidace.
      */
-    private string $state = null;
+    private ?string $state = null;
 
     /**
      * Popis likvidace.
      */
-    private string $detail = null;
+    private ?string $detail = null;
 
     /**
      * Likvidované doklady.
      *
      * @var \Pohoda\DocumentType[]
      */
-    private array $documents = null;
+    private ?array $documents = null;
 
     /**
      * Gets as state.

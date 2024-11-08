@@ -25,22 +25,22 @@ class ProductionListItemType
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky výrobku.
      */
-    private \Pohoda\Type\StockItemType $stockItem = null;
+    private ?\Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Měrná jednotka.
      */
-    private string $unit = null;
+    private ?string $unit = null;
 
     /**
      * Datum expirace.
      */
-    private \DateTime $expirationDate = null;
+    private ?\DateTime $expirationDate = null;
 
     /**
      * Gets as stockItem.

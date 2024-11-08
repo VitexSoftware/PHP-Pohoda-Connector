@@ -26,33 +26,33 @@ class ItemStorageType
     /**
      * ID záznamu, pokud zadaný uzel v seznamu členění neexistuje obsahuje hodnotu "0".(Pouze pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Název skladu do kterého členění patří.U první úroveně členění se jedná o název skladu, u dalších větvení se jedná o název členění.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * ID skladu do kterého členění patří. Pokud je uveden atribut "idStore", znamená to, že se jedná o první úroveň členění, tedy o sklad. V ostastních případech se jedná o větvení členění.
      */
-    private int $idStore = null;
+    private ?int $idStore = null;
 
     /**
      * Název členění.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Nabízet dynamickými záložkami.
      */
-    private string $offerTo = null;
-    private \Pohoda\Storage\SubStoragesType $subStorages = null;
+    private ?string $offerTo = null;
+    private ?\Pohoda\Storage\SubStoragesType $subStorages = null;
 
     /**
      * Gets as id.

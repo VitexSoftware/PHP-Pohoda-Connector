@@ -22,7 +22,7 @@ namespace Pohoda\MKasa;
  */
 class NonVatPayerWholePeriodType
 {
-    private string $identifiedPerson = null;
+    private ?string $identifiedPerson = null;
 
     /**
      * Gets as identifiedPerson.

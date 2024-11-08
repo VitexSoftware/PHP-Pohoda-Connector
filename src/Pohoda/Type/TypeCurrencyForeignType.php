@@ -25,27 +25,27 @@ class TypeCurrencyForeignType
     /**
      * ID - odkaz na cizí měnu, IDS - kód měny.
      */
-    private \Pohoda\Type\RefType $currency = null;
+    private ?\Pohoda\Type\RefType $currency = null;
 
     /**
      * Kurs použitý pro výpočet částek v cizí měně.
      */
-    private float $rate = null;
+    private ?float $rate = null;
 
     /**
      * Množství cizí měny pro kursový přepočet.
      */
-    private int $amount = null;
+    private ?int $amount = null;
 
     /**
      * Cena v cizí měně.
      */
-    private float $priceSum = null;
+    private ?float $priceSum = null;
 
     /**
      * Zaokrouhlení (Pouze pro export).
      */
-    private \Pohoda\Type\TypeRoundType $round = null;
+    private ?\Pohoda\Type\TypeRoundType $round = null;
 
     /**
      * Gets as currency.

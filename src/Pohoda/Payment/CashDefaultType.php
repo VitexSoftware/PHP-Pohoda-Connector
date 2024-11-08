@@ -25,7 +25,7 @@ class CashDefaultType
     /**
      * Úhrada je automaticky nabízena při vytváření nových dokladů v agendě Prodejky. Volba se nabízí pouze u Formy úhrady Hotovost.
      */
-    private string $default = null;
+    private ?string $default = null;
 
     /**
      * Gets as default.

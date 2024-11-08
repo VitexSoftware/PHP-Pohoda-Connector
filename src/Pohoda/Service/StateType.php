@@ -25,37 +25,37 @@ class StateType
     /**
      * ID položky stavu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Datum.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Stav servisu.
      */
-    private \Pohoda\Type\RefType $status = null;
+    private ?\Pohoda\Type\RefType $status = null;
 
     /**
      * Odpovědná osoba.
      */
-    private \Pohoda\Type\RefTypeLongType $responsiblePerson = null;
+    private ?\Pohoda\Type\RefTypeLongType $responsiblePerson = null;
 
     /**
      * Firma.
      */
-    private \Pohoda\Service\ServiceAddressType $companyService = null;
+    private ?\Pohoda\Service\ServiceAddressType $companyService = null;
 
     /**
      * Způsob předání opraveného servisovaného předmětu.
      */
-    private \Pohoda\Type\RefType $forwarding = null;
+    private ?\Pohoda\Type\RefType $forwarding = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as id.

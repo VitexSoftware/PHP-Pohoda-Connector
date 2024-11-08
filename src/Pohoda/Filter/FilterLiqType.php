@@ -25,43 +25,43 @@ class FilterLiqType
     /**
      * Filtr podle ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Bankovní účet.
      */
-    private \Pohoda\Type\RefType $bankAccount = null;
+    private ?\Pohoda\Type\RefType $bankAccount = null;
 
     /**
      * Datum od.
      */
-    private \DateTime $dateFrom = null;
+    private ?\DateTime $dateFrom = null;
 
     /**
      * Datum do.
      */
-    private \DateTime $dateTill = null;
+    private ?\DateTime $dateTill = null;
 
     /**
      * @var \Pohoda\Type\NumberType[]
      */
-    private array $selectedNumbers = null;
+    private ?array $selectedNumbers = null;
 
     /**
      * @var string[]
      */
-    private array $selectedCompanys = null;
+    private ?array $selectedCompanys = null;
 
     /**
      * @var string[]
      */
-    private array $selectedIco = null;
+    private ?array $selectedIco = null;
 
     /**
      * Gets as id.

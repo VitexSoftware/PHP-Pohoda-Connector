@@ -29,7 +29,7 @@ class AutomaticLiquidationResponseType extends DocumentResponseType
      *
      * @var \Pohoda\AutomaticLiquidationDetailType[]
      */
-    private array $automaticLiquidationDetails = null;
+    private ?array $automaticLiquidationDetails = null;
 
     /**
      * Adds as automaticLiquidationDetail.

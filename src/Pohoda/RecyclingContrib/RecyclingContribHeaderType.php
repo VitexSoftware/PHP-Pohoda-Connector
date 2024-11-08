@@ -25,37 +25,37 @@ class RecyclingContribHeaderType
     /**
      * ID záznamu (pouze pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Zkratka recyklačního příspěvku.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Název recyklačního příspěvku.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Text recyklačního příspěvku, který se bude tisknout na daňových dokladech.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Částka recyklačního příspěvku.
      */
-    private float $amount = null;
+    private ?float $amount = null;
 
     /**
      * M. j. recyklačního příspěvku.
      */
-    private string $unit = null;
+    private ?string $unit = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as id.

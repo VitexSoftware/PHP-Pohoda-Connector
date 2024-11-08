@@ -25,7 +25,7 @@ class InternetParamsType
     /**
      * Verze 2.0, hodnoty ID parametrů internetových obchodů jsou oddělené čárkou.
      */
-    private string $idInternetParams = null;
+    private ?string $idInternetParams = null;
 
     /**
      * Verze 2.1 a vyšší, hodnoty parametrů internetových obchodů.

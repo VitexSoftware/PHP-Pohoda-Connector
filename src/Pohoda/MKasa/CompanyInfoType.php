@@ -22,15 +22,15 @@ namespace Pohoda\MKasa;
  */
 class CompanyInfoType
 {
-    private string $key = null;
-    private \Pohoda\Type\AddressInternetType $address = null;
-    private \Pohoda\Type\EstablishmentType $establishment = null;
-    private string $unitType = null;
-    private string $suffix = null;
-    private string $stateType = null;
-    private string $register = null;
-    private \Pohoda\MKasa\VatPayerType $vatPayer = null;
-    private string $changeForFoodVouchers = null;
+    private ?string $key = null;
+    private ?\Pohoda\Type\AddressInternetType $address = null;
+    private ?\Pohoda\Type\EstablishmentType $establishment = null;
+    private ?string $unitType = null;
+    private ?string $suffix = null;
+    private ?string $stateType = null;
+    private ?string $register = null;
+    private ?\Pohoda\MKasa\VatPayerType $vatPayer = null;
+    private ?string $changeForFoodVouchers = null;
 
     /**
      * Gets as key.

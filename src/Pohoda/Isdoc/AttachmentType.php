@@ -25,12 +25,12 @@ class AttachmentType
     /**
      * Je-li součástí přílohy vizuální podoba exportovaného dokumentu, nastavte tuto hodnotu.
      */
-    private string $preview = null;
+    private ?string $preview = null;
 
     /**
      * Název a umístění souboru přílohy ISDOC dokumentu (př. "C:\dokumenty\zarucniList_0114.doc").
      */
-    private string $fileName = null;
+    private ?string $fileName = null;
 
     /**
      * Gets as preview.

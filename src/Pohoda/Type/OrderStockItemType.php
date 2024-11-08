@@ -25,17 +25,17 @@ class OrderStockItemType
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      */
-    private \Pohoda\Type\ActionTypeStockItemType $actionType = null;
+    private ?\Pohoda\Type\ActionTypeStockItemType $actionType = null;
 
     /**
      * Pořadí položek.
      */
-    private int $stockOrder = null;
+    private ?int $stockOrder = null;
 
     /**
      * Odkaz na skladovou položku.
      */
-    private \Pohoda\Type\StockRefType $stockItem = null;
+    private ?\Pohoda\Type\StockRefType $stockItem = null;
 
     /**
      * Gets as actionType.

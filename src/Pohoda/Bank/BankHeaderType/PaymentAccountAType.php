@@ -20,8 +20,8 @@ namespace Pohoda\Bank\BankHeaderType;
  */
 class PaymentAccountAType
 {
-    private string $accountNo = null;
-    private string $bankCode = null;
+    private ?string $accountNo = null;
+    private ?string $bankCode = null;
 
     /**
      * Gets as accountNo.

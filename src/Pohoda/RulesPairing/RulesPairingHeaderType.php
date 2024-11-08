@@ -25,27 +25,27 @@ class RulesPairingHeaderType
     /**
      * ID záznamu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Název pravidla párování dokladů.
      */
-    private string $ids = null;
+    private ?string $ids = null;
 
     /**
      * Nabízet při automatické likvidaci.
      */
-    private string $automaticLiquidation = null;
+    private ?string $automaticLiquidation = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Gets as id.

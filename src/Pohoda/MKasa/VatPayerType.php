@@ -22,9 +22,9 @@ namespace Pohoda\MKasa;
  */
 class VatPayerType
 {
-    private \Pohoda\MKasa\VatPayerWholePeriodType $vatPayerWholePeriod = null;
-    private \Pohoda\MKasa\NonVatPayerWholePeriodType $nonVatPayerWholePeriod = null;
-    private \Pohoda\MKasa\ChangeOfModeInCalendarYearType $changeOfModeInCalendarYear = null;
+    private ?\Pohoda\MKasa\VatPayerWholePeriodType $vatPayerWholePeriod = null;
+    private ?\Pohoda\MKasa\NonVatPayerWholePeriodType $nonVatPayerWholePeriod = null;
+    private ?\Pohoda\MKasa\ChangeOfModeInCalendarYearType $changeOfModeInCalendarYear = null;
 
     /**
      * Gets as vatPayerWholePeriod.

@@ -25,204 +25,204 @@ class OrderHeaderType
     /**
      * ID záznamu. Používá se při requestu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Typ objednávky. Tento element je vyžadován při vytvoření dokladu.
      */
-    private string $orderType = null;
+    private ?string $orderType = null;
 
     /**
      * Storno dokladu (pouze pro export).
      */
-    private string $storno = null;
+    private ?string $storno = null;
 
     /**
      * Evidenční číslo dokladu.
      */
-    private \Pohoda\Type\NumberType $number = null;
+    private ?\Pohoda\Type\NumberType $number = null;
 
     /**
      * Číslo objednávky na jejímž základě byla faktura vystavena. Jen přijaté objednávky.
      */
-    private string $numberOrder = null;
+    private ?string $numberOrder = null;
 
     /**
      * Datum vystavení / Datum zápisu. Tento element je vyžadován při vytvoření dokladu.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Datum dodání. Jen vydané objednávky.
      */
-    private \DateTime $dateDelivery = null;
+    private ?\DateTime $dateDelivery = null;
 
     /**
      * Vyřídit od. Jen přijaté objednávky.
      */
-    private \DateTime $dateFrom = null;
+    private ?\DateTime $dateFrom = null;
 
     /**
      * Vyřídit do. Jen přijaté objednávky.
      */
-    private \DateTime $dateTo = null;
+    private ?\DateTime $dateTo = null;
 
     /**
      * Text dokladu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Zákazníkova adresa. Tento element je vyžadován při vytvoření dokladu.
      */
-    private \Pohoda\Type\AddressType $partnerIdentity = null;
+    private ?\Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Osobní adresa.
      */
-    private \Pohoda\Type\MyAddressType $myIdentity = null;
+    private ?\Pohoda\Type\MyAddressType $myIdentity = null;
 
     /**
      * Forma úhrady. Implicitně je nastaveno 'příkazem'.
      */
-    private \Pohoda\Type\PaymentType $paymentType = null;
+    private ?\Pohoda\Type\PaymentType $paymentType = null;
 
     /**
      * Cenová hladinu odběratele. Jen přijaté objednávky.
      */
-    private \Pohoda\Type\RefType $priceLevel = null;
+    private ?\Pohoda\Type\RefType $priceLevel = null;
 
     /**
      * Vyřízeno.
      */
-    private string $isExecuted = null;
+    private ?string $isExecuted = null;
 
     /**
      * Dodáno. Používá se jen při exportu dokladu.
      */
-    private string $isDelivered = null;
+    private ?string $isDelivered = null;
 
     /**
      * Rezervováno, pouze přijaté objednávky. Při importu dokladu je možné zásoby zarezervovat na skladě.
      */
-    private string $isReserved = null;
+    private ?string $isReserved = null;
 
     /**
      * Odkaz na typ internetového obchodu. Používá se jen při exportu dokladu. Jen přijaté objednávky.
      */
-    private \Pohoda\Type\RefType $iShop = null;
+    private ?\Pohoda\Type\RefType $iShop = null;
 
     /**
      * Odkaz na internetový obchod. Používá se jen při exportu dokladu. Jen přijaté objednávky.
      */
-    private string $iShopName = null;
+    private ?string $iShopName = null;
 
     /**
      * Datum stornování dokladu. Používá se jen při exportu dokladu.
      */
-    private \DateTime $dateCancellation = null;
+    private ?\DateTime $dateCancellation = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Registrace DPH v EU.
      */
-    private \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null;
+    private ?\Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null;
 
     /**
      * Speciální režim registrace DPH v EU, režim One Stop Shop (OSS).
      */
-    private \Pohoda\Type\MOSStypeType $mOSS = null;
+    private ?\Pohoda\Type\MOSStypeType $mOSS = null;
 
     /**
      * Důkazní prostředky (OSS).
      *
      * @var string[]
      */
-    private array $evidentiaryResourcesMOSS = null;
+    private ?array $evidentiaryResourcesMOSS = null;
 
     /**
      * Účetní období (OSS).
      */
-    private string $accountingPeriodMOSS = null;
+    private ?string $accountingPeriodMOSS = null;
 
     /**
      * Trvalý doklad. Příznak pro označení trvalé objednávky v programu POHODA. U takto označených dokladů se nebude sledovat přenesené množství a bude možné ji neustále přenášet do dokladů (nepoužívat v programu POHODA od verze 12 000, říjen 2018).
      */
-    private string $permamentDocument = null;
+    private ?string $permamentDocument = null;
 
     /**
      * Trvalý doklad. Příznak pro označení trvalé objednávky v programu POHODA. U takto označených dokladů se nebude sledovat přenesené množství a bude možné ji neustále přenášet do dokladů.
      */
-    private string $permanentDocument = null;
+    private ?string $permanentDocument = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Dopravce (pouze přijaté objednávky).
      */
-    private \Pohoda\Type\CarrierType $carrier = null;
+    private ?\Pohoda\Type\CarrierType $carrier = null;
 
     /**
      * Interní poznámka.
      */
-    private string $intNote = null;
+    private ?string $intNote = null;
 
     /**
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
      */
-    private string $histRate = null;
+    private ?string $histRate = null;
 
     /**
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      */
-    private string $lock1 = null;
+    private ?string $lock1 = null;
 
     /**
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      */
-    private string $lock2 = null;
+    private ?string $lock2 = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

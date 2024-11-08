@@ -22,12 +22,12 @@ namespace Pohoda\IndividualPrice;
  */
 class AllStocksType
 {
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Sleva v procentech.
      */
-    private float $discountPercentage = null;
+    private ?float $discountPercentage = null;
 
     /**
      * Gets as description.

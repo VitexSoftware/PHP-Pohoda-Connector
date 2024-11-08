@@ -26,64 +26,64 @@ class RegistrationNumberHeaderType
     /**
      * ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Identifikátor externího systému.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Evidenční číslo.
      */
-    private string $regNumber = null;
+    private ?string $regNumber = null;
 
     /**
      * Odkaz na skladovou položku.
      */
-    private \Pohoda\Type\StockItemRegNumberType $stockItem = null;
+    private ?\Pohoda\Type\StockItemRegNumberType $stockItem = null;
 
     /**
      * Typ evidenčního čísla (výrobní číslo/šarže).
      */
-    private string $regNumberType = null;
+    private ?string $regNumberType = null;
 
     /**
      * Datum expirace (pouze pro šarže).
      */
-    private \DateTime $expirationDate = null;
+    private ?\DateTime $expirationDate = null;
 
     /**
      * Stav zásoby.
      */
-    private float $count = null;
+    private ?float $count = null;
 
     /**
      * Stav zásoby v reklamaci.
      */
-    private float $reclamation = null;
+    private ?float $reclamation = null;
 
     /**
      * Servis.
      */
-    private float $service = null;
+    private ?float $service = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Volitelné parametry.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

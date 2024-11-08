@@ -22,7 +22,7 @@ namespace Pohoda\MKasa;
  */
 class VatPayerWholePeriodType
 {
-    private string $taxPeriod = null;
+    private ?string $taxPeriod = null;
 
     /**
      * Gets as taxPeriod.

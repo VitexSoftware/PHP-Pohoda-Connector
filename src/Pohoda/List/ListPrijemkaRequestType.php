@@ -22,17 +22,17 @@ namespace Pohoda\List;
  */
 class ListPrijemkaRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze výdejky.
      */
-    private string $prijemkaVersion = null;
+    private ?string $prijemkaVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
      */
-    private string $extSystem = null;
+    private ?string $extSystem = null;
 
     /**
      * @var \Pohoda\Filter\RequestPrijemkaType[]

@@ -23,9 +23,9 @@ namespace Pohoda\Type;
  */
 class RefType
 {
-    private int $id = null;
-    private string $ids = null;
-    private string $valueType = null;
+    private ?int $id = null;
+    private ?string $ids = null;
+    private ?string $valueType = null;
 
     /**
      * Gets as id.

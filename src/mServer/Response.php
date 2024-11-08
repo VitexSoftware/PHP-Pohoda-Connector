@@ -474,9 +474,9 @@ class Response extends \Ease\Sand
 
         foreach ($bank as $bankEntry) {
             if (\is_array($bankEntry)) {
-                $bankItems[$bankData['bankHeader']['id']] = self::stripArrayNames('bnk', $bankEntry);
+                $bankItems[$bankEntry['bankHeader']['id']] = self::stripArrayNames('bnk', $bankEntry);
             } else {
-                $bankItems[$bankData['bankHeader']['id']] = $bankEntry;
+                $bankItems[$bankEntry['bankHeader']['id']] = $bankEntry;
             }
         }
 

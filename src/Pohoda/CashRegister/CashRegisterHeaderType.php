@@ -25,53 +25,53 @@ class CashRegisterHeaderType
     /**
      * ID záznamu (pouze pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Zkratka pokladny.
      */
-    private string $ids = null;
+    private ?string $ids = null;
 
     /**
      * Název pokladny.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Analytický účet.
      */
-    private \Pohoda\Type\RefType $account = null;
+    private ?\Pohoda\Type\RefType $account = null;
 
     /**
      * Pokladní.
      */
-    private \Pohoda\Type\RefType $cashier = null;
+    private ?\Pohoda\Type\RefType $cashier = null;
 
     /**
      * Valutová hotovostní pokladna. Pokud je uveden tento element, bude vytvořena valutová pokladna.V ostatních případech tuzemská pokladna.
      */
-    private \Pohoda\CashRegister\CurrencyCashRegisterType $currencyCashRegister = null;
+    private ?\Pohoda\CashRegister\CurrencyCashRegisterType $currencyCashRegister = null;
 
     /**
      * Datum zrušení pokladny.
      */
-    private \DateTime $cancelled = null;
+    private ?\DateTime $cancelled = null;
 
     /**
      * Doklad FM (Pouze Pohoda SK).
      */
-    private string $fM = null;
+    private ?string $fM = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as id.

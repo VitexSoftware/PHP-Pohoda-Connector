@@ -22,8 +22,8 @@ namespace Pohoda\AccountingFormOfPayment;
  */
 class AccountingFormOfPaymentTypeRootType
 {
-    private string $version = null;
-    private \Pohoda\AccountingFormOfPayment\AccountingFormOfPaymentHeaderType $accountingFormOfPaymentHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\AccountingFormOfPayment\AccountingFormOfPaymentHeaderType $accountingFormOfPaymentHeader = null;
 
     /**
      * Gets as version.

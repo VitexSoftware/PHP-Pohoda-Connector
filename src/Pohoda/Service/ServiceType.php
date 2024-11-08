@@ -22,20 +22,20 @@ namespace Pohoda\Service;
  */
 class ServiceType
 {
-    private string $version = null;
-    private \Pohoda\Service\ServiceHeaderType $serviceHeader = null;
-    private \Pohoda\Service\ServiceSubjectType $serviceSubject = null;
+    private ?string $version = null;
+    private ?\Pohoda\Service\ServiceHeaderType $serviceHeader = null;
+    private ?\Pohoda\Service\ServiceSubjectType $serviceSubject = null;
 
     /**
      * @var \Pohoda\Service\StateType[]
      */
-    private array $serviceStates = null;
+    private ?array $serviceStates = null;
 
     /**
      * @var \Pohoda\Service\ItemType[]
      */
-    private array $serviceItems = null;
-    private \Pohoda\Service\ServiceSummaryType $serviceSummary = null;
+    private ?array $serviceItems = null;
+    private ?\Pohoda\Service\ServiceSummaryType $serviceSummary = null;
 
     /**
      * Gets as version.

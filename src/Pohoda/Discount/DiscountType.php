@@ -22,7 +22,7 @@ namespace Pohoda\Discount;
  */
 class DiscountType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * @var \Pohoda\Discount\DiscountStockItemType[]

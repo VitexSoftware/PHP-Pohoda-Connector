@@ -25,17 +25,17 @@ class SourceDocumentType
     /**
      * ID zdrojového dokladu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Externí identifikátor dokladu (Pouze pro export).
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Číslo zdrojového dokladu.
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Gets as id.

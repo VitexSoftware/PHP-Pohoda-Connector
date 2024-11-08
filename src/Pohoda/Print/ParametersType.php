@@ -25,37 +25,37 @@ class ParametersType
     /**
      * Počet kopií.
      */
-    private float $copy = null;
+    private ?float $copy = null;
 
     /**
      * Datum tisku.
      */
-    private \DateTime $datePrint = null;
-    private \Pohoda\Print\CheckboxType $checkbox1 = null;
-    private \Pohoda\Print\CheckboxType $checkbox2 = null;
-    private \Pohoda\Print\CheckboxType $checkbox3 = null;
-    private \Pohoda\Print\CheckboxType $checkbox4 = null;
-    private \Pohoda\Print\CheckboxType $checkbox5 = null;
-    private \Pohoda\Print\CheckboxType $checkbox6 = null;
-    private \Pohoda\Print\CheckboxType $checkbox7 = null;
-    private \Pohoda\Print\RadioButtonType $radioButton1 = null;
-    private \Pohoda\Print\NumberType $spin1 = null;
-    private \Pohoda\Print\NumberType $currency1 = null;
-    private \Pohoda\Print\NumberType $month1 = null;
-    private \Pohoda\Print\NumberType $month2 = null;
-    private \Pohoda\Print\NumberType $year1 = null;
-    private \Pohoda\Print\DateType $date1 = null;
-    private \Pohoda\Print\DateType $date2 = null;
-    private \Pohoda\Print\DateType $date3 = null;
-    private \Pohoda\Print\DateType $date4 = null;
-    private \Pohoda\Print\TextType $text1 = null;
-    private \Pohoda\Print\TextType $text2 = null;
-    private \Pohoda\Print\TextType $text3 = null;
-    private \Pohoda\Print\ComboboxType $combobox1 = null;
-    private \Pohoda\Print\ComboboxType $combobox2 = null;
-    private \Pohoda\Print\ComboboxType $combobox3 = null;
-    private \Pohoda\Print\ComboboxType $comboboxEx1 = null;
-    private \Pohoda\Print\ComboboxType $comboboxEx2 = null;
+    private ?\DateTime $datePrint = null;
+    private ?\Pohoda\Print\CheckboxType $checkbox1 = null;
+    private ?\Pohoda\Print\CheckboxType $checkbox2 = null;
+    private ?\Pohoda\Print\CheckboxType $checkbox3 = null;
+    private ?\Pohoda\Print\CheckboxType $checkbox4 = null;
+    private ?\Pohoda\Print\CheckboxType $checkbox5 = null;
+    private ?\Pohoda\Print\CheckboxType $checkbox6 = null;
+    private ?\Pohoda\Print\CheckboxType $checkbox7 = null;
+    private ?\Pohoda\Print\RadioButtonType $radioButton1 = null;
+    private ?\Pohoda\Print\NumberType $spin1 = null;
+    private ?\Pohoda\Print\NumberType $currency1 = null;
+    private ?\Pohoda\Print\NumberType $month1 = null;
+    private ?\Pohoda\Print\NumberType $month2 = null;
+    private ?\Pohoda\Print\NumberType $year1 = null;
+    private ?\Pohoda\Print\DateType $date1 = null;
+    private ?\Pohoda\Print\DateType $date2 = null;
+    private ?\Pohoda\Print\DateType $date3 = null;
+    private ?\Pohoda\Print\DateType $date4 = null;
+    private ?\Pohoda\Print\TextType $text1 = null;
+    private ?\Pohoda\Print\TextType $text2 = null;
+    private ?\Pohoda\Print\TextType $text3 = null;
+    private ?\Pohoda\Print\ComboboxType $combobox1 = null;
+    private ?\Pohoda\Print\ComboboxType $combobox2 = null;
+    private ?\Pohoda\Print\ComboboxType $combobox3 = null;
+    private ?\Pohoda\Print\ComboboxType $comboboxEx1 = null;
+    private ?\Pohoda\Print\ComboboxType $comboboxEx2 = null;
 
     /**
      * Gets as copy.

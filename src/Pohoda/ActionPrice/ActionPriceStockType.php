@@ -25,17 +25,17 @@ class ActionPriceStockType
     /**
      * Akční cena skladové zásoby.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * Sleva v procentech.
      */
-    private float $discountPercentage = null;
+    private ?float $discountPercentage = null;
 
     /**
      * Fixace Akční ceny skladové zásoby.
      */
-    private string $fixedPrice = null;
+    private ?string $fixedPrice = null;
 
     /**
      * Gets as price.

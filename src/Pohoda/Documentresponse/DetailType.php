@@ -25,32 +25,32 @@ class DetailType
     /**
      * Typ problému při zpracování (ok, warning nebo error).
      */
-    private string $state = null;
+    private ?string $state = null;
 
     /**
      * Unikátní číslo chyby.
      */
-    private int $errno = null;
+    private ?int $errno = null;
 
     /**
      * Komentář.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * XPath - cesta.
      */
-    private string $xPath = null;
+    private ?string $xPath = null;
 
     /**
      * Požadovaná hodnota.
      */
-    private string $valueRequested = null;
+    private ?string $valueRequested = null;
 
     /**
      * Vytvořená hodnota.
      */
-    private string $valueProduced = null;
+    private ?string $valueProduced = null;
 
     /**
      * Gets as state.

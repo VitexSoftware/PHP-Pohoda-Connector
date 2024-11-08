@@ -25,32 +25,32 @@ class TypeCurrencyForeignItem2Type
     /**
      * Jednotková cena. Pokud není uvedena, bere se jako NULOVÁ.
      */
-    private float $unitPrice = null;
+    private ?float $unitPrice = null;
 
     /**
      * Cena položky bez DPH.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * DPH.
      */
-    private float $priceVAT = null;
+    private ?float $priceVAT = null;
 
     /**
      * Celková cena (pouze pro export).
      */
-    private float $priceSum = null;
+    private ?float $priceSum = null;
 
     /**
      * Kurz cizí měny použitý pro výpočet kurzového rozdílu. Není-li uvedeno, použije se kurz konečné faktury.
      */
-    private float $rateExcRateDiff = null;
+    private ?float $rateExcRateDiff = null;
 
     /**
      * Množství cizí měny pro vypočtení kursového rozdílu. Není-li uvedeno, použije se množství cizí měny konečné faktury.
      */
-    private int $amountExcRateDiff = null;
+    private ?int $amountExcRateDiff = null;
 
     /**
      * Gets as unitPrice.

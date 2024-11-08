@@ -22,7 +22,7 @@ namespace Pohoda\Documentresponse;
  */
 class ItemDetailsType
 {
-    private string $type = null;
+    private ?string $type = null;
 
     /**
      * @var \Pohoda\Documentresponse\ItemType[]

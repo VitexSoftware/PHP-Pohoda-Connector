@@ -22,7 +22,7 @@ namespace Pohoda\Archive;
  */
 class ArchiveType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * @var \Pohoda\Archive\VariableType[]

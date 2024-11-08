@@ -22,8 +22,8 @@ namespace Pohoda\List;
  */
 class ItemUserCodeType extends ItemType
 {
-    private string $name = null;
-    private int $constant = null;
+    private ?string $name = null;
+    private ?int $constant = null;
 
     /**
      * Gets as name.

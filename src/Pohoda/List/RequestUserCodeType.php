@@ -22,7 +22,7 @@ namespace Pohoda\List;
  */
 class RequestUserCodeType
 {
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Gets as code.

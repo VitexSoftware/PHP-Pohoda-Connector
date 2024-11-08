@@ -25,22 +25,22 @@ class RequestCategoryActionType
     /**
      * Pokud je hodnota nastavená na 'true', pak se v případě nalezení stejného záznamu v programu POHODA, provede jeho aktualizace. Pokud je hodnota nastavena na 'false', tak se v případě výskytu stejného záznamu nic neprovede.
      */
-    private string $update = null;
+    private ?string $update = null;
 
     /**
      * Pokud je hodnota nastavená na 'true', pak se v případě nenalezení stejného záznamu v programu POHODA, provede jeho import. Pokud je hodnota nastavena na 'false', tak se v případě nenalezení stejného záznamu nic neprovede.
      */
-    private string $add = null;
+    private ?string $add = null;
 
     /**
      * Seznam polí, podle kterých se budou filtrovat doklady.
      */
-    private \Pohoda\Filter\FilterIDType $filter = null;
+    private ?\Pohoda\Filter\FilterIDType $filter = null;
 
     /**
      * Identifikátor uživatelského filtru v požadované agendě, který má být použit pro filtraci záznamů.
      */
-    private string $userFilterName = null;
+    private ?string $userFilterName = null;
 
     /**
      * Gets as update.

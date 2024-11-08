@@ -25,22 +25,22 @@ class SettingsLiquidationType
     /**
      * Agenda likvidovaného dokladu.
      */
-    private string $sourceAgenda = null;
+    private ?string $sourceAgenda = null;
 
     /**
      * Likvidovaný doklad.
      */
-    private \Pohoda\Type\SourceDocumentType $sourceDocument = null;
+    private ?\Pohoda\Type\SourceDocumentType $sourceDocument = null;
 
     /**
      * Částka k likvidaci.
      */
-    private float $liquidationPrice = null;
+    private ?float $liquidationPrice = null;
 
     /**
      * Likvidace.
      */
-    private \Pohoda\Voucher\LiquidationType $liquidation = null;
+    private ?\Pohoda\Voucher\LiquidationType $liquidation = null;
 
     /**
      * Gets as sourceAgenda.

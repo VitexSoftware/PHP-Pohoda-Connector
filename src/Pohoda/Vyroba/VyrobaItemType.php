@@ -25,29 +25,29 @@ class VyrobaItemType
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky.
      */
-    private \Pohoda\Type\StockItemType $stockItem = null;
+    private ?\Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Datum expirace.
      */
-    private \DateTime $expirationDate = null;
+    private ?\DateTime $expirationDate = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Položky výrobku (Výrobní list). Není-li element uveden, použije se definice výrobku v agendě Zásoby. Export elementu je podmíněn atributem "lst:productionList". Pouze POHODA E1.
      *
      * @var \Pohoda\Vyroba\ProductionListItemType[]
      */
-    private array $productionList = null;
+    private ?array $productionList = null;
 
     /**
      * Gets as quantity.

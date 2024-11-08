@@ -22,12 +22,12 @@ namespace Pohoda\ListActivity;
  */
 class ListRequestActivityType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze activity dokumentu.
      */
-    private string $activityVersion = null;
+    private ?string $activityVersion = null;
 
     /**
      * @var \Pohoda\ListActivity\RequestActivityType[]

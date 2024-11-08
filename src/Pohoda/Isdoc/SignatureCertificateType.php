@@ -25,7 +25,7 @@ class SignatureCertificateType
     /**
      * Sériové číslo podpisového certifikátu, který má být použit pro podepsání ISDOC dokumentu.
      */
-    private string $serialNumber = null;
+    private ?string $serialNumber = null;
 
     /**
      * Gets as serialNumber.

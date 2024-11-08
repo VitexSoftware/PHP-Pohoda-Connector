@@ -25,33 +25,33 @@ class ProducedDetailsType
     /**
      * ID vytvořeného dokladu.
      */
-    private string $id = null;
+    private ?string $id = null;
 
     /**
      * Vytvořené číslo dokladu.
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Kód vytvořeného dokladu.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Typ provedené operace.
      */
-    private string $actionType = null;
+    private ?string $actionType = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Výsledek importu položek.
      */
-    private \Pohoda\Documentresponse\ItemDetailsType $itemDetails = null;
+    private ?\Pohoda\Documentresponse\ItemDetailsType $itemDetails = null;
 
     /**
      * Gets as id.

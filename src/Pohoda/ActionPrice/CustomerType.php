@@ -25,13 +25,13 @@ class CustomerType
     /**
      * Odkaz na ID adresy. Vyšší prioritu má element "id".
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na externí ID adresy. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Gets as id.

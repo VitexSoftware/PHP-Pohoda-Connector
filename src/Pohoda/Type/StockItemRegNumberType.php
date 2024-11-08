@@ -26,12 +26,12 @@ class StockItemRegNumberType
     /**
      * Filtr podle ID, název členění. Je možné také zadat část názvu členění (zleva) - proběhne vyexportování zadané větve a souvisejících podvětví stromu členění.
      */
-    private \Pohoda\Type\RefTypeStorageType $storage = null;
+    private ?\Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Filtr podle skladové zásoby.
      */
-    private \Pohoda\Type\StockItemRegNumberType\StockItemAType $stockItem = null;
+    private ?\Pohoda\Type\StockItemRegNumberType\StockItemAType $stockItem = null;
 
     /**
      * Gets as storage.

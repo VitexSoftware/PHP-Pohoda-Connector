@@ -22,8 +22,8 @@ namespace Pohoda\Activity;
  */
 class ActivityType
 {
-    private string $version = null;
-    private \Pohoda\Activity\ActivityHeaderType $activityHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\Activity\ActivityHeaderType $activityHeader = null;
 
     /**
      * Gets as version.

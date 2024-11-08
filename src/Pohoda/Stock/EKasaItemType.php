@@ -26,7 +26,7 @@ class EKasaItemType
     /**
      * eKasa typ vrátenia.
      */
-    private string $refundType = null;
+    private ?string $refundType = null;
 
     /**
      * Gets as refundType.

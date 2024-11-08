@@ -22,17 +22,17 @@ namespace Pohoda\List;
  */
 class ListBankAccountRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $bankAccountVersion = null;
+    private ?string $bankAccountVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
      */
-    private string $extSystem = null;
+    private ?string $extSystem = null;
 
     /**
      * @var \Pohoda\Filter\RequestBankAccountType[]

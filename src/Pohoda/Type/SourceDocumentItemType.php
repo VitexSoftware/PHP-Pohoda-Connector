@@ -25,12 +25,12 @@ class SourceDocumentItemType
     /**
      * ID položky dokladu.
      */
-    private int $sourceItemId = null;
+    private ?int $sourceItemId = null;
 
     /**
      * Externí identifikátor položky dokladu.
      */
-    private \Pohoda\Type\ExtIdType $sourceItemExtId = null;
+    private ?\Pohoda\Type\ExtIdType $sourceItemExtId = null;
 
     /**
      * Gets as sourceItemId.

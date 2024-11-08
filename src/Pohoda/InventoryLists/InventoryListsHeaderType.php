@@ -25,53 +25,53 @@ class InventoryListsHeaderType
     /**
      * ID záznamu (pouze pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená
      *  v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
      */
-    private \Pohoda\Type\NumberType $number = null;
+    private ?\Pohoda\Type\NumberType $number = null;
 
     /**
      * Datum vystavení inventurního seznamu. Pokud není hodnota zadaná, použije se aktuální datum nebo datum posledního záznamu, dle volby v uživatelském nastavení.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Text inventurního seznamu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Sklad. Pokud hodnota není zadaná, vyberou se všechny sklady.
      */
-    private \Pohoda\Type\RefType $store = null;
+    private ?\Pohoda\Type\RefType $store = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Gets as id.

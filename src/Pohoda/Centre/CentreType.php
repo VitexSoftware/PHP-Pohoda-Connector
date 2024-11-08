@@ -22,8 +22,8 @@ namespace Pohoda\Centre;
  */
 class CentreType
 {
-    private string $version = null;
-    private \Pohoda\Centre\CentreHeaderType $centreHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\Centre\CentreHeaderType $centreHeader = null;
 
     /**
      * Gets as version.

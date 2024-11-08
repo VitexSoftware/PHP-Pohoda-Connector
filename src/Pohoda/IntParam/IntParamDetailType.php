@@ -22,7 +22,7 @@ namespace Pohoda\IntParam;
  */
 class IntParamDetailType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * @var \Pohoda\IntParam\IntParamType[]

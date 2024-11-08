@@ -22,20 +22,20 @@ namespace Pohoda\Vyroba;
  */
 class VyrobaType
 {
-    private string $version = null;
-    private \Pohoda\Vyroba\VyrobaHeaderType $vyrobaHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\Vyroba\VyrobaHeaderType $vyrobaHeader = null;
 
     /**
      * @var \Pohoda\Vyroba\VyrobaItemType[]
      */
-    private array $vyrobaDetail = null;
+    private ?array $vyrobaDetail = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

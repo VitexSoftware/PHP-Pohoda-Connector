@@ -25,12 +25,12 @@ class RequestStockType
     /**
      * Seznam polí podle kterých se bude filtrovat.
      */
-    private \Pohoda\Filter\FilterStocksType $filter = null;
+    private ?\Pohoda\Filter\FilterStocksType $filter = null;
 
     /**
      * Identifikátor uživatelského filtru v požadované agendě, který má být použit pro filtraci záznamů.
      */
-    private string $userFilterName = null;
+    private ?string $userFilterName = null;
 
     /**
      * Gets as filter.

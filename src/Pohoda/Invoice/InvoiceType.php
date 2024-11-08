@@ -22,7 +22,7 @@ namespace Pohoda\Invoice;
  */
 class InvoiceType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Pokud nejsou specifikovány položky, vloží se celý doklad.
@@ -34,49 +34,49 @@ class InvoiceType
      *  - Vydané objednávky (do agendy Přijaté faktury)
      *  - Výdejky (do agendy Vydané faktury, typ Faktura).
      */
-    private \Pohoda\Type\LinksType $links = null;
+    private ?\Pohoda\Type\LinksType $links = null;
 
     /**
      * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
      */
-    private \Pohoda\Type\CancelDocumentType $cancelDocument = null;
+    private ?\Pohoda\Type\CancelDocumentType $cancelDocument = null;
 
     /**
      * Pomocí tohoto bloku bude vytvořen opravný daňový doklad (pouze CZ verze) nebo Dobropis (pouze SK verze). V programu POHODA bude vyhledán doklad, pokud bude nalezen, bude k němu vytvořen opravný daňový doklad, Dobropis.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v invoiceHeader (ostatní elementy budou ignorovány).
      */
-    private \Pohoda\Type\CorrectiveDocumentType $correctiveDocument = null;
-    private \Pohoda\Invoice\InvoiceHeaderType $invoiceHeader = null;
+    private ?\Pohoda\Type\CorrectiveDocumentType $correctiveDocument = null;
+    private ?\Pohoda\Invoice\InvoiceHeaderType $invoiceHeader = null;
 
     /**
      * Údaje o pozastávkách k vydané nebo přijaté faktuře. Pouze pro export.
      *
      * @var \Pohoda\Invoice\InvoiceRetentionType[]
      */
-    private array $invoiceRetentions = null;
-    private \Pohoda\Invoice\InvoiceDetailType $invoiceDetail = null;
-    private \Pohoda\Invoice\InvoiceSummaryType $invoiceSummary = null;
+    private ?array $invoiceRetentions = null;
+    private ?\Pohoda\Invoice\InvoiceDetailType $invoiceDetail = null;
+    private ?\Pohoda\Invoice\InvoiceSummaryType $invoiceSummary = null;
 
     /**
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      */
-    private \Pohoda\Type\LinksType $linkedDocuments = null;
+    private ?\Pohoda\Type\LinksType $linkedDocuments = null;
 
     /**
      * Vazba na likvidace dokladu (pouze pro export).
      *
      * @var \Pohoda\Type\LiquidationItemType[]
      */
-    private array $liquidations = null;
-    private \Pohoda\Type\EETType $eET = null;
+    private ?array $liquidations = null;
+    private ?\Pohoda\Type\EETType $eET = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

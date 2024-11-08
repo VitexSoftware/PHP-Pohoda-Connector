@@ -24,7 +24,7 @@ use Pohoda\Documentresponse\ListVersionType;
  */
 class ListGlobalSettingsType extends ListVersionType
 {
-    private \Pohoda\Archive\Archive $archive = null;
+    private ?\Pohoda\Archive\Archive $archive = null;
 
     /**
      * Gets as archive.

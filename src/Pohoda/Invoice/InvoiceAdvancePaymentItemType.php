@@ -25,105 +25,105 @@ class InvoiceAdvancePaymentItemType
     /**
      * ID položky dokladu (jen pro export).
      */
-    private int $id = null;
-    private string $extId = null;
+    private ?int $id = null;
+    private ?string $extId = null;
 
     /**
      * Pokud není tato hodnota uvedena, nastaví se ruční odpočet zálohy.
      */
-    private \Pohoda\Type\SourceDocumentType $sourceDocument = null;
+    private ?\Pohoda\Type\SourceDocumentType $sourceDocument = null;
 
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
      */
-    private string $payVAT = null;
+    private ?string $payVAT = null;
 
     /**
      * Sazba DPH.
      */
-    private \Pohoda\Type\VatRateType $rateVAT = null;
+    private ?\Pohoda\Type\VatRateType $rateVAT = null;
 
     /**
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      */
-    private float $percentVAT = null;
+    private ?float $percentVAT = null;
 
     /**
      * Sleva v procentech. Pokud není uvedena, bere se jako hodnota slevy z priceLevel dokumentu. Pokud není definován ani priceLevel bere se jako NULOVÁ.
      */
-    private float $discountPercentage = null;
+    private ?float $discountPercentage = null;
 
     /**
      * Kč.
      */
-    private \Pohoda\Type\TypeCurrencyHomeItem2Type $homeCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyHomeItem2Type $homeCurrency = null;
 
     /**
      * Cizí měna.
      */
-    private \Pohoda\Type\TypeCurrencyForeignItem2Type $foreignCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyForeignItem2Type $foreignCurrency = null;
 
     /**
      * Druh služby (OSS).
      */
-    private \Pohoda\Type\MOSStypeType $typeServiceMOSS = null;
+    private ?\Pohoda\Type\MOSStypeType $typeServiceMOSS = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Párový symbol. Používá se jen v účetnictví (dříve PU).
      */
-    private string $symPar = null;
+    private ?string $symPar = null;
 
     /**
      * Předkontace.
      */
-    private \Pohoda\Type\RefType $accounting = null;
+    private ?\Pohoda\Type\RefType $accounting = null;
 
     /**
      * Členění DPH.
      */
-    private \Pohoda\Type\ClassificationVATType $classificationVAT = null;
+    private ?\Pohoda\Type\ClassificationVATType $classificationVAT = null;
 
     /**
      * Členění KV DPH (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $classificationKVDPH = null;
+    private ?\Pohoda\Type\RefType $classificationKVDPH = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Poukaz EET (pouze CZ verze).
      */
-    private string $voucherEET = null;
+    private ?string $voucherEET = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

@@ -22,15 +22,15 @@ namespace Pohoda\Documentresponse;
  */
 class ItemType
 {
-    private string $actionType = null;
-    private string $extId = null;
+    private ?string $actionType = null;
+    private ?string $extId = null;
 
     /**
      * Vytvořené položky.
      *
      * @var string[]
      */
-    private array $producedItem = null;
+    private ?array $producedItem = null;
 
     /**
      * Gets as actionType.

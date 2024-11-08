@@ -26,124 +26,124 @@ class MovementHeaderType
     /**
      * ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Označení.
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Agenda.
      */
-    private string $agenda = null;
+    private ?string $agenda = null;
 
     /**
      * Typ zásoby.
      */
-    private string $stockType = null;
+    private ?string $stockType = null;
 
     /**
      * Cenová skupina. Tento element je vyžadován při vytvoření dokladu.
      */
-    private \Pohoda\Type\RefType $typePrice = null;
+    private ?\Pohoda\Type\RefType $typePrice = null;
 
     /**
      * Odkaz na skladovou položku.
      */
-    private \Pohoda\Type\StockItemMovementType $stockItem = null;
+    private ?\Pohoda\Type\StockItemMovementType $stockItem = null;
 
     /**
      * Měrná jednotka.
      */
-    private string $unit = null;
+    private ?string $unit = null;
 
     /**
      * Datum pohybu.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Typ pohybu.
      */
-    private string $movementType = null;
+    private ?string $movementType = null;
 
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Částka.
      */
-    private float $unitPrice = null;
+    private ?float $unitPrice = null;
 
     /**
      * Celkem.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * Vážená nákupní cena.
      */
-    private float $weightedPurchasePrice = null;
+    private ?float $weightedPurchasePrice = null;
 
     /**
      * Ocenění.
      */
-    private float $valuation = null;
+    private ?float $valuation = null;
 
     /**
      * Zisk/m. j.
      */
-    private float $profitUnit = null;
+    private ?float $profitUnit = null;
 
     /**
      * Zisk.
      */
-    private float $profit = null;
+    private ?float $profit = null;
 
     /**
      * Stav zásoby.
      */
-    private float $count = null;
+    private ?float $count = null;
 
     /**
      * Číslo dokladu.
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Adresa a dodací adresa.
      */
-    private \Pohoda\Type\AddressType $address = null;
+    private ?\Pohoda\Type\AddressType $address = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Evidenční číslo.
      */
-    private string $regNumber = null;
+    private ?string $regNumber = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Gets as id.

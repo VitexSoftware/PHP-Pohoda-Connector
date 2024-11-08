@@ -22,7 +22,7 @@ namespace Pohoda\Voucher;
  */
 class LiquidationType
 {
-    private string $extId = null;
+    private ?string $extId = null;
 
     /**
      * Gets as extId.

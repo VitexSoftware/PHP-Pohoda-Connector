@@ -22,9 +22,9 @@ namespace Pohoda\Archive;
  */
 class VariableType
 {
-    private string $name = null;
-    private string $note = null;
-    private string $value = null;
+    private ?string $name = null;
+    private ?string $note = null;
+    private ?string $value = null;
 
     /**
      * Gets as name.

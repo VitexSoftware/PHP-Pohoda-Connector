@@ -22,15 +22,15 @@ namespace Pohoda\MKasa;
  */
 class ImportRequestType
 {
-    private int $mKasaPackNum = null;
-    private string $name = null;
-    private string $deviceGuid = null;
+    private ?int $mKasaPackNum = null;
+    private ?string $name = null;
+    private ?string $deviceGuid = null;
 
     /**
      * Má se aktualizovat Guid zařížení, na kterém se používá mKasa.
      *  Pokud se Guid liší a element je false, vrací se chyba.
      */
-    private string $overwriteDeviceGuid = null;
+    private ?string $overwriteDeviceGuid = null;
 
     /**
      * Gets as mKasaPackNum.

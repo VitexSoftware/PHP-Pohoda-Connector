@@ -26,41 +26,41 @@ class ParameterType
     /**
      * Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml.
      */
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Agenda, ve které bude možné volitelné parametry používat a dále s nimi pracovat.
      */
-    private string $idsAgenda = null;
+    private ?string $idsAgenda = null;
 
     /**
      * Krátký název uživatelské agendy.
      */
-    private string $idsUserAgenda = null;
+    private ?string $idsUserAgenda = null;
 
     /**
      * ID uživatelské agendy (jen pro export).
      */
-    private int $id = null;
-    private \Pohoda\Parameter\UserAgendaDefType $userAgendaDef = null;
+    private ?int $id = null;
+    private ?\Pohoda\Parameter\UserAgendaDefType $userAgendaDef = null;
 
     /**
      * @var \Pohoda\Parameter\ParameterDefType[]
      */
-    private array $formParameter = null;
+    private ?array $formParameter = null;
 
     /**
      * @var \Pohoda\Parameter\ParameterDefType[]
      */
-    private array $itemParameter = null;
+    private ?array $itemParameter = null;
 
     /**
      * @var \Pohoda\Parameter\FormItemListType[]
      */
     private array $userForm = [
     ];
-    private string $userCode = null;
-    private \Pohoda\Parameter\UserCodePartType $userCodePart = null;
+    private ?string $userCode = null;
+    private ?\Pohoda\Parameter\UserCodePartType $userCodePart = null;
 
     /**
      * Gets as version.

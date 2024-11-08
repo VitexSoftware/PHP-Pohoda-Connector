@@ -20,12 +20,12 @@ namespace Pohoda\Stock\StockHeaderType;
  */
 class SellingPriceAType
 {
-    private float $__value = null;
+    private ?float $__value = null;
 
     /**
      * Příznak určuje zda se jedná o prodejní cenu s/bez DPH. Pokud není uveden atribut payVAT, jedná se o „Prodejní cena bez DPH“.
      */
-    private bool $payVAT = null;
+    private ?bool $payVAT = null;
 
     /**
      * Construct.

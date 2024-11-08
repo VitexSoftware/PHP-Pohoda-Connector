@@ -22,7 +22,7 @@ namespace Pohoda\Vydejka;
  */
 class VydejkaType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
@@ -31,22 +31,22 @@ class VydejkaType
      *  - Přijaté objednávky
      *  - Vydané faktury.
      */
-    private \Pohoda\Type\LinksType $links = null;
-    private \Pohoda\Vydejka\VydejkaHeaderType $vydejkaHeader = null;
-    private \Pohoda\Vydejka\VydejkaDetailType $vydejkaDetail = null;
-    private \Pohoda\Vydejka\VydejkaSummaryType $vydejkaSummary = null;
+    private ?\Pohoda\Type\LinksType $links = null;
+    private ?\Pohoda\Vydejka\VydejkaHeaderType $vydejkaHeader = null;
+    private ?\Pohoda\Vydejka\VydejkaDetailType $vydejkaDetail = null;
+    private ?\Pohoda\Vydejka\VydejkaSummaryType $vydejkaSummary = null;
 
     /**
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      */
-    private \Pohoda\Type\LinksType $linkedDocuments = null;
+    private ?\Pohoda\Type\LinksType $linkedDocuments = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

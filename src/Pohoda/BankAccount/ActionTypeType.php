@@ -25,7 +25,7 @@ class ActionTypeType
     /**
      * Vložení nového záznamu. Výchozí hodnota.
      */
-    private \Pohoda\Filter\RequestExtIdActionType $add = null;
+    private ?\Pohoda\Filter\RequestExtIdActionType $add = null;
 
     /**
      * Gets as add.

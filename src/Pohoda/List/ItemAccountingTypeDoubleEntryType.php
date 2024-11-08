@@ -22,7 +22,7 @@ namespace Pohoda\List;
  */
 class ItemAccountingTypeDoubleEntryType extends CreateAccountingType
 {
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Gets as id.

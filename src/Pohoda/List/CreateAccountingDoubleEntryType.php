@@ -22,7 +22,7 @@ namespace Pohoda\List;
  */
 class CreateAccountingDoubleEntryType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * @var \Pohoda\List\CreateAccountingType[]

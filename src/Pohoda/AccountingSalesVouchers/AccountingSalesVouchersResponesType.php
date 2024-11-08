@@ -29,7 +29,7 @@ class AccountingSalesVouchersResponesType extends DocumentResponseType
      *
      * @var \Pohoda\AccountingSalesVouchers\AccountingDocumentType[]
      */
-    private array $producedAccountingDocs = null;
+    private ?array $producedAccountingDocs = null;
 
     /**
      * Adds as accountingDocument.

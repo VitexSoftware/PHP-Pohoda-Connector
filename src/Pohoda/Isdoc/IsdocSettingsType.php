@@ -25,34 +25,34 @@ class IsdocSettingsType
     /**
      * Název a umístění ISDOC souboru (např. "C:\isdoc\faktura_c_FV160006.isdoc").
      */
-    private string $fileName = null;
+    private ?string $fileName = null;
 
     /**
      * Verze ISDOC dokumentu.
      */
-    private string $versionIsdocDocument = null;
+    private ?string $versionIsdocDocument = null;
 
     /**
      * Podpisový certifikát pro podepsání ISDOC dokumentu.
      */
-    private \Pohoda\Isdoc\SignatureCertificateType $signatureCertificate = null;
+    private ?\Pohoda\Isdoc\SignatureCertificateType $signatureCertificate = null;
 
     /**
      * Hash algoritmu pro způsob výpočtu hashe XML dokumentu a případných souborů označených jako přílohy pro vytvořený ISDOC dokument.
      */
-    private \Pohoda\Isdoc\SecureHashAlgorithmType $secureHashAlgorithm = null;
+    private ?\Pohoda\Isdoc\SecureHashAlgorithmType $secureHashAlgorithm = null;
 
     /**
      * Identifikace zboží dle kupujícího načíst z pole.
      */
-    private string $identificationOfStockitem = null;
+    private ?string $identificationOfStockitem = null;
 
     /**
      * Přílohy ISDOC dokumentu.
      *
      * @var \Pohoda\Isdoc\AttachmentType[]
      */
-    private array $attachments = null;
+    private ?array $attachments = null;
 
     /**
      * Gets as fileName.

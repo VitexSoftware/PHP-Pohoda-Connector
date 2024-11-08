@@ -22,7 +22,7 @@ namespace Pohoda\Service;
  */
 class ServiceSubjectType
 {
-    private \Pohoda\Service\SubjectType $subject = null;
+    private ?\Pohoda\Service\SubjectType $subject = null;
 
     /**
      * Gets as subject.

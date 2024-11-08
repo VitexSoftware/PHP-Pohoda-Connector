@@ -25,12 +25,12 @@ class ManualLinkElementType
     /**
      * Agenda zdrojového dokladu.
      */
-    private string $sourceAgenda = null;
+    private ?string $sourceAgenda = null;
 
     /**
      * Doklad.
      */
-    private \Pohoda\Type\SourceDocumentType $sourceDocument = null;
+    private ?\Pohoda\Type\SourceDocumentType $sourceDocument = null;
 
     /**
      * Gets as sourceAgenda.

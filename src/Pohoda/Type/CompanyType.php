@@ -25,7 +25,7 @@ class CompanyType
     /**
      * Odkaz na adresu. Vyšší prioritu má element "id".
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Gets as id.

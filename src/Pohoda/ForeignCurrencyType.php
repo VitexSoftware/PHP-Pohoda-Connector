@@ -25,12 +25,12 @@ class ForeignCurrencyType
     /**
      * Cizí měna.
      */
-    private \Pohoda\Type\RefType $currency = null;
+    private ?\Pohoda\Type\RefType $currency = null;
 
     /**
      * Cena v cizí měně.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * Gets as currency.

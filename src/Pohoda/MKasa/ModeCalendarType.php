@@ -22,18 +22,18 @@ namespace Pohoda\MKasa;
  */
 class ModeCalendarType
 {
-    private string $january = null;
-    private string $february = null;
-    private string $march = null;
-    private string $april = null;
-    private string $may = null;
-    private string $june = null;
-    private string $july = null;
-    private string $august = null;
-    private string $september = null;
-    private string $october = null;
-    private string $november = null;
-    private string $december = null;
+    private ?string $january = null;
+    private ?string $february = null;
+    private ?string $march = null;
+    private ?string $april = null;
+    private ?string $may = null;
+    private ?string $june = null;
+    private ?string $july = null;
+    private ?string $august = null;
+    private ?string $september = null;
+    private ?string $october = null;
+    private ?string $november = null;
+    private ?string $december = null;
 
     /**
      * Gets as january.

@@ -25,12 +25,12 @@ class FilterExtIdType
     /**
      * Filtr podle ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Vybere záznam dle zadaného externího identifikátoru.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Gets as id.

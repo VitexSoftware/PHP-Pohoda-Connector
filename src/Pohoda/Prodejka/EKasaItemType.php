@@ -26,12 +26,12 @@ class EKasaItemType
     /**
      * Unikátny identifikátor pôvodného dokladu - eKasa (používa sa pri vrátení tovaru).
      */
-    private string $refId = null;
+    private ?string $refId = null;
 
     /**
      * eKasa typ vrátenia.
      */
-    private string $refundType = null;
+    private ?string $refundType = null;
 
     /**
      * Gets as refId.

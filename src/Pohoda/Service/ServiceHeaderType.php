@@ -25,176 +25,176 @@ class ServiceHeaderType
     /**
      * ID záznamu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Typ servisního záznamu.
      */
-    private string $serviceType = null;
+    private ?string $serviceType = null;
 
     /**
      * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
      */
-    private \Pohoda\Type\NumberType $number = null;
+    private ?\Pohoda\Type\NumberType $number = null;
 
     /**
      * Datum přijetí do servisu. Pokud není hodnota zadaná, použije se aktuální datum nebo datum posledního záznamu, dle volby v uživatelském nastavení.
      */
-    private \DateTime $received = null;
+    private ?\DateTime $received = null;
 
     /**
      * Vyřídit do.
      */
-    private \DateTime $settleUntil = null;
+    private ?\DateTime $settleUntil = null;
 
     /**
      * Ukončeno.
      */
-    private \DateTime $finished = null;
+    private ?\DateTime $finished = null;
 
     /**
      * Vyřízeno (jen pro export).
      */
-    private \DateTime $executed = null;
+    private ?\DateTime $executed = null;
 
     /**
      * Odhadovaná cena servisních prací.
      */
-    private float $expectedPrice = null;
+    private ?float $expectedPrice = null;
 
     /**
      * Odhadovaná cena servisních prací v cizí měně.
      */
-    private float $expectedPriceFC = null;
+    private ?float $expectedPriceFC = null;
 
     /**
      * Částka zálohy přijaté od zákazníka na provedení servisních prací.
      */
-    private float $advancePrice = null;
+    private ?float $advancePrice = null;
 
     /**
      * Částka zálohy přijaté od zákazníka na provedení servisních prací v cizí měně.
      */
-    private float $advancePriceFC = null;
+    private ?float $advancePriceFC = null;
 
     /**
      * Stav servisu. Jen pro export. Vyplňuje se automaticky, dle záložky Stav servisu.
      */
-    private \Pohoda\Type\RefType $status = null;
+    private ?\Pohoda\Type\RefType $status = null;
 
     /**
      * Odpovědná osoba.
      */
-    private \Pohoda\Type\RefTypeLongType $responsiblePerson = null;
+    private ?\Pohoda\Type\RefTypeLongType $responsiblePerson = null;
 
     /**
      * Text dokladu servisu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Zákazníkova adresa.
      */
-    private \Pohoda\Type\AddressType $partnerIdentity = null;
+    private ?\Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Jméno a příjmení kontaktní osoby.
      */
-    private string $contactName = null;
+    private ?string $contactName = null;
 
     /**
      * Doplňující údaje ke kontaktní osobě např. titul.
      */
-    private string $contactDetail = null;
+    private ?string $contactDetail = null;
 
     /**
      * Cenová hladina odběratele.
      */
-    private \Pohoda\Type\RefType $priceLevel = null;
+    private ?\Pohoda\Type\RefType $priceLevel = null;
 
     /**
      * Vyřízeno.
      */
-    private string $isExecuted = null;
+    private ?string $isExecuted = null;
 
     /**
      * Číslo nebo jiná identifikace daňového dokladu, kterým bylo zboží původně vyskladněno.
      */
-    private string $numberDocument = null;
+    private ?string $numberDocument = null;
 
     /**
      * Datum vystavení daňového dokladu, kterým bylo zboží původně vyskladněno.
      */
-    private \DateTime $dateDocument = null;
+    private ?\DateTime $dateDocument = null;
 
     /**
      * Způsob přijetí servisovaného předmětu.
      */
-    private \Pohoda\Type\RefSrvDeliveryType $receiving = null;
+    private ?\Pohoda\Type\RefSrvDeliveryType $receiving = null;
 
     /**
      * Způsob předání opraveného servisovaného předmětu.
      */
-    private \Pohoda\Type\RefSrvDeliveryType $forwarding = null;
+    private ?\Pohoda\Type\RefSrvDeliveryType $forwarding = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Interní poznámka, libovolný text, který nevstupuje do tiskových sestav.
      */
-    private string $intNote = null;
+    private ?string $intNote = null;
 
     /**
      * Popis závady.
      */
-    private string $recognizedDefect = null;
+    private ?string $recognizedDefect = null;
 
     /**
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      */
-    private string $lock1 = null;
+    private ?string $lock1 = null;
 
     /**
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      */
-    private string $lock2 = null;
+    private ?string $lock2 = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

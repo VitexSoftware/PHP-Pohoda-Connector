@@ -26,52 +26,52 @@ class ParameterDocType
     /**
      * Název db.pole.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Data typu Text.
      */
-    private string $textValue = null;
+    private ?string $textValue = null;
 
     /**
      * Data typu Text (dlouhý).
      */
-    private string $memoValue = null;
+    private ?string $memoValue = null;
 
     /**
      * Data typu Měna.
      */
-    private float $currencyValue = null;
+    private ?float $currencyValue = null;
 
     /**
      * Data typu Ano/Ne.
      */
-    private string $booleanValue = null;
+    private ?string $booleanValue = null;
 
     /**
      * Data typu Číslo.
      */
-    private float $numberValue = null;
+    private ?float $numberValue = null;
 
     /**
      * Data typu Datum.
      */
-    private \DateTime $datetimeValue = null;
+    private ?\DateTime $datetimeValue = null;
 
     /**
      * Data typu Seznam.
      */
-    private \Pohoda\Type\RefType $listValueRef = null;
+    private ?\Pohoda\Type\RefType $listValueRef = null;
 
     /**
      * Data typu Číslo(celé).
      */
-    private int $integerValue = null;
+    private ?int $integerValue = null;
 
     /**
      * Seznam na který je parametr napojen.
      */
-    private \Pohoda\Type\RefType $list = null;
+    private ?\Pohoda\Type\RefType $list = null;
 
     /**
      * Gets as name.

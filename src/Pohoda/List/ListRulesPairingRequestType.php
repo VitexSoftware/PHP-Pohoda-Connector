@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListRulesPairingRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $rulesPairingVersion = null;
+    private ?string $rulesPairingVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestRulesPairingType[]

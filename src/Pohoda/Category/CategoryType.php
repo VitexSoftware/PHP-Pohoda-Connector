@@ -26,50 +26,50 @@ class CategoryType
     /**
      * ID nadřazené kategorie (jen pro import). Pokud hodnota není uvedena, jedná se o nejvyšší kategorii. Nelze použít u subCategories.
      */
-    private int $parentId = null;
+    private ?int $parentId = null;
 
     /**
      * ID záznamu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Jedinečný název Kategorie internetového obchodu (např. GUID).
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Textový popis kategorie.
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Prostřednictvím pole Pořadí můžete určovat pořadí kategorií v jednotlivých větvích stromu. Kategorie s nejmenší hodnotou je na prvním místě.
      *  Každá zadaná kategorie má svoje ID.
      */
-    private int $sequence = null;
+    private ?int $sequence = null;
 
     /**
      * Zobrazení. Určuje, zda je kategorie přenášena na internetový obchod.
      */
-    private string $displayed = null;
+    private ?string $displayed = null;
 
     /**
      * Název obrázku. Soubor se musí nacházet v adresáři Dokumenty\firma\Obrázky\. Název obrázku se uvádí bez cesty.
      */
-    private string $picture = null;
-    private string $note = null;
+    private ?string $picture = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * @var \Pohoda\Category\CategoryType[]
      */
-    private array $subCategories = null;
-    private \Pohoda\Category\InternetParamsType $internetParams = null;
+    private ?array $subCategories = null;
+    private ?\Pohoda\Category\InternetParamsType $internetParams = null;
 
     /**
      * Gets as parentId.

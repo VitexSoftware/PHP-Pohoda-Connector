@@ -22,8 +22,8 @@ namespace Pohoda\Type;
  */
 class RefSrvDeliveryType
 {
-    private int $id = null;
-    private string $ids = null;
+    private ?int $id = null;
+    private ?string $ids = null;
 
     /**
      * Gets as id.

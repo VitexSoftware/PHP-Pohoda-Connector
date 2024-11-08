@@ -25,7 +25,7 @@ class ListRequestType
     /**
      * Verze exportovaného XML. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml.
      */
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Gets as version.

@@ -25,84 +25,84 @@ class AccountingItemType
     /**
      * Používá se pouze při exportu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Zdroj dokladu.
      */
-    private string $source = null;
+    private ?string $source = null;
 
     /**
      * Evidenční číslo záznamu .
      */
-    private \Pohoda\Type\NumberType $number = null;
+    private ?\Pohoda\Type\NumberType $number = null;
 
     /**
      * Párový symbol. Používá se jen v účetnictví (dříve PU).
      */
-    private string $symPar = null;
+    private ?string $symPar = null;
 
     /**
      * Text zdrojového dokladu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Kč.
      */
-    private \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null;
 
     /**
      * Cizí měna.
      */
-    private \Pohoda\Type\TypeCurrencyForeignType $foreignCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyForeignType $foreignCurrency = null;
 
     /**
      * Zaúčtování.
      */
-    private \Pohoda\Accountancy\AccountingType $accounting = null;
+    private ?\Pohoda\Accountancy\AccountingType $accounting = null;
 
     /**
      * Zákazníkova adresa.
      */
-    private \Pohoda\Type\AddressType $address = null;
+    private ?\Pohoda\Type\AddressType $address = null;
 
     /**
      * Datum vystavení.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Datum zdanitelného plnění / Datum odpočtu.
      */
-    private \DateTime $dateTax = null;
+    private ?\DateTime $dateTax = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

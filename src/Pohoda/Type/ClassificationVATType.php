@@ -26,17 +26,17 @@ class ClassificationVATType
     /**
      * ID záznamu členění.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Zkratka členění DPH.
      */
-    private string $ids = null;
+    private ?string $ids = null;
 
     /**
      * Typ členění.
      */
-    private string $classificationVATType = null;
+    private ?string $classificationVATType = null;
 
     /**
      * Gets as id.

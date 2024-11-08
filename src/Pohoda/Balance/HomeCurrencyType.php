@@ -25,17 +25,17 @@ class HomeCurrencyType
     /**
      * Částka MD.
      */
-    private float $amountMD = null;
+    private ?float $amountMD = null;
 
     /**
      * Částka D.
      */
-    private float $amountD = null;
+    private ?float $amountD = null;
 
     /**
      * Částka zůstatku.
      */
-    private mixed $amountRemain = null;
+    private ?mixed $amountRemain = null;
 
     /**
      * Gets as amountMD.

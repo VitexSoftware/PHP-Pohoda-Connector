@@ -22,12 +22,12 @@ namespace Pohoda\ListContract;
  */
 class ListRequestContractType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze contract dokumentu.
      */
-    private string $contractVersion = null;
+    private ?string $contractVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestContractType[]

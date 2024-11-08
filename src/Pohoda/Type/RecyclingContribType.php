@@ -25,27 +25,27 @@ class RecyclingContribType
     /**
      * Typ recyklačního příspěvku.
      */
-    private \Pohoda\Type\RefType $recyclingContribType = null;
+    private ?\Pohoda\Type\RefType $recyclingContribType = null;
 
     /**
      * Text recyklačního příspěvku.
      */
-    private string $recyclingContribText = null;
+    private ?string $recyclingContribText = null;
 
     /**
      * Částka recyklačního příspěvku.
      */
-    private float $recyclingContribAmount = null;
+    private ?float $recyclingContribAmount = null;
 
     /**
      * M. j. recyklačního příspěvku.
      */
-    private string $recyclingContribUnit = null;
+    private ?string $recyclingContribUnit = null;
 
     /**
      * Koeficient pro přepočet měrné jednotky recyklačního příspěvku.
      */
-    private float $coefficientOfRecyclingContrib = null;
+    private ?float $coefficientOfRecyclingContrib = null;
 
     /**
      * Gets as recyclingContribType.

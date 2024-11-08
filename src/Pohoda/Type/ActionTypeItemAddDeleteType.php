@@ -25,12 +25,12 @@ class ActionTypeItemAddDeleteType
     /**
      * Vložení nového záznamu. Výchozí hodnota.
      */
-    private string $add = null;
+    private ?string $add = null;
 
     /**
      * Odstranění záznamu.
      */
-    private \Pohoda\Filter\RequestItemType $delete = null;
+    private ?\Pohoda\Filter\RequestItemType $delete = null;
 
     /**
      * Gets as add.

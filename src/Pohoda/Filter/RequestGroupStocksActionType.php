@@ -25,12 +25,12 @@ class RequestGroupStocksActionType extends RequestGroupStocksType
     /**
      * Pokud je hodnota nastavená na 'true', pak se v případě nalezení stejného záznamu v programu POHODA, provede jeho aktualizace. Pokud je hodnota nastavena na 'false', tak se v případě výskytu stejného záznamu nic neprovede.
      */
-    private string $update = null;
+    private ?string $update = null;
 
     /**
      * Pokud je hodnota nastavená na 'true', pak se v případě nenalezení stejného záznamu v programu POHODA, provede jeho import. Pokud je hodnota nastavena na 'false', tak se v případě nenalezení stejného záznamu nic neprovede.
      */
-    private string $add = null;
+    private ?string $add = null;
 
     /**
      * Gets as update.

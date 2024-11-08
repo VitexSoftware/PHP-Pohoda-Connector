@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListGlobalSettingsRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $globalSettingsVersion = null;
+    private ?string $globalSettingsVersion = null;
 
     /**
      * @var \Pohoda\List\RequestrequestGlobalSettingsType[]

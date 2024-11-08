@@ -25,12 +25,12 @@ class NumberType
     /**
      * Přepínač.
      */
-    private int $value = null;
+    private ?int $value = null;
 
     /**
      * Pouze export.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Gets as value.

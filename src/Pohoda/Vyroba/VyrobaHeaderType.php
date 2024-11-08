@@ -25,116 +25,116 @@ class VyrobaHeaderType
     /**
      * ID záznamu. Používá se při requestu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Evidenční číslo dokladu.
      */
-    private \Pohoda\Type\NumberType $number = null;
+    private ?\Pohoda\Type\NumberType $number = null;
 
     /**
      * Datum vyskladnění (výdeje položek výrobku). Pokud hodnota není uvedena, použije se aktuální datum.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Čas vyskladnění (výdeje položek výrobku). Pokud hodnota není uvedena, použije se aktuální čas.
      */
-    private \DateTime $time = null;
+    private ?\DateTime $time = null;
 
     /**
      * Datum výroby (příjmu výrobku). Pokud hodnota není uvedena, použije se datum vyskladnění.
      */
-    private \DateTime $dateOfReceipt = null;
+    private ?\DateTime $dateOfReceipt = null;
 
     /**
      * Čas výroby (příjmu výrobku). Pokud hodnota není uvedena, použije se čas vyskladnění.
      */
-    private \DateTime $timeOfReceipt = null;
+    private ?\DateTime $timeOfReceipt = null;
 
     /**
      * Párovací symbol pro párování dokladu v saldu.
      */
-    private string $symPar = null;
+    private ?string $symPar = null;
 
     /**
      * Účet pro naskladnění výrobku na jiný výnosový účet.
      */
-    private string $acc = null;
+    private ?string $acc = null;
 
     /**
      * Text dokladu. Tento element je vyžadován při vytvoření dokladu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Zákazníkova adresa.
      */
-    private \Pohoda\Type\AddressType $partnerIdentity = null;
+    private ?\Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Zdrojové středisko.
      */
-    private \Pohoda\Type\RefType $centreSource = null;
+    private ?\Pohoda\Type\RefType $centreSource = null;
 
     /**
      * Cílové středisko.
      */
-    private \Pohoda\Type\RefType $centreDestination = null;
+    private ?\Pohoda\Type\RefType $centreDestination = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Interní poznámka.
      */
-    private string $intNote = null;
+    private ?string $intNote = null;
 
     /**
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      */
-    private string $lock1 = null;
+    private ?string $lock1 = null;
 
     /**
      * Zámek II (pouze verze E1). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      */
-    private string $lock2 = null;
+    private ?string $lock2 = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Podmíněná kontrola dokladu.
      */
-    private \Pohoda\Type\TypeValidateType $validate = null;
+    private ?\Pohoda\Type\TypeValidateType $validate = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

@@ -22,12 +22,12 @@ namespace Pohoda\SendEET;
  */
 class SendEETType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Výběr záznamu.
      */
-    private \Pohoda\SendEET\RecordSendEETType $record = null;
+    private ?\Pohoda\SendEET\RecordSendEETType $record = null;
 
     /**
      * Gets as version.

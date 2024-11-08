@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListRegistrationNumberRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $registrationNumberVersion = null;
+    private ?string $registrationNumberVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestRegistrationNumberType[]

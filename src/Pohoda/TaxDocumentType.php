@@ -22,7 +22,7 @@ namespace Pohoda;
  */
 class TaxDocumentType
 {
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Gets as number.

@@ -27,12 +27,12 @@ class StatusType extends RefTypeLongType
     /**
      * Uzamknout a dále nepoužívat (pouze export).
      */
-    private string $unused = null;
+    private ?string $unused = null;
 
     /**
      * Vyřízeno (pouze export).
      */
-    private string $executed = null;
+    private ?string $executed = null;
 
     /**
      * Gets as unused.

@@ -25,22 +25,22 @@ class TypeCurrencyHomeItem2Type
     /**
      * Jednotková cena. Pokud není uvedena, bere se jako NULOVÁ.
      */
-    private float $unitPrice = null;
+    private ?float $unitPrice = null;
 
     /**
      * Cena položky bez DPH.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * DPH.
      */
-    private float $priceVAT = null;
+    private ?float $priceVAT = null;
 
     /**
      * Celková cena (pouze pro export).
      */
-    private float $priceSum = null;
+    private ?float $priceSum = null;
 
     /**
      * Gets as unitPrice.

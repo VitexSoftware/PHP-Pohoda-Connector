@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListPaymentRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $paymentVersion = null;
+    private ?string $paymentVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestPaymentType[]
