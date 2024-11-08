@@ -434,6 +434,9 @@ class Client extends \Ease\Sand
     public function processResponse(int $httpCode)
     {
         switch ($httpCode) {
+            case 0:
+                $this->lastResponseMessage = '0: '.$this->lastCurlError;
+                break;
             case 400:
                 $this->lastResponseMessage = '400: Bad request';
 
@@ -491,7 +494,7 @@ class Client extends \Ease\Sand
                 break;
 
             default:
-                $this->lastResponseMessage = $httpCode . ' ok';
+                $this->lastResponseMessage = $httpCode . ': ok';
                 $this->response = new Response($this);
 
                 //                if ($this->response->isOk() === false) {
