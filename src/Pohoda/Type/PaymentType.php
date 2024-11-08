@@ -23,9 +23,9 @@ namespace Pohoda\Type;
  */
 class PaymentType
 {
-    private int $id = null;
-    private string $ids = null;
-    private string $paymentType = null;
+    private ?int $id = null;
+    private ?string $ids = null;
+    private ?string $paymentType = null;
 
     /**
      * Gets as id.

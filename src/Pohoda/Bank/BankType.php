@@ -22,14 +22,14 @@ namespace Pohoda\Bank;
  */
 class BankType
 {
-    private string $version = null;
-    private \Pohoda\Bank\BankHeaderType $bankHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\Bank\BankHeaderType $bankHeader = null;
 
     /**
      * @var \Pohoda\Bank\BankItemType[]
      */
-    private array $bankDetail = null;
-    private \Pohoda\Bank\BankSummaryType $bankSummary = null;
+    private ?array $bankDetail = null;
+    private ?\Pohoda\Bank\BankSummaryType $bankSummary = null;
 
     /**
      * Gets as version.

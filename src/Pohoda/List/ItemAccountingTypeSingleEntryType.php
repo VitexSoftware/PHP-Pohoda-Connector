@@ -22,9 +22,9 @@ namespace Pohoda\List;
  */
 class ItemAccountingTypeSingleEntryType extends ItemType
 {
-    private string $accounting = null;
-    private string $agenda = null;
-    private string $accountingType = null;
+    private ?string $accounting = null;
+    private ?string $agenda = null;
+    private ?string $accountingType = null;
 
     /**
      * Gets as accounting.

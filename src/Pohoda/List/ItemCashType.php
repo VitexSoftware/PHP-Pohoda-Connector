@@ -22,8 +22,8 @@ namespace Pohoda\List;
  */
 class ItemCashType extends ItemType
 {
-    private string $codeCurrency = null;
-    private string $name = null;
+    private ?string $codeCurrency = null;
+    private ?string $name = null;
 
     /**
      * Gets as codeCurrency.

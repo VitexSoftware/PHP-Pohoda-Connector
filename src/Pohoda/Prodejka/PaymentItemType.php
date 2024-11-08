@@ -25,37 +25,37 @@ class PaymentItemType
     /**
      * Forma úhrady.
      */
-    private \Pohoda\Type\PaymentType $paymentType = null;
+    private ?\Pohoda\Type\PaymentType $paymentType = null;
 
     /**
      * Text (pouze pro export).
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Přijato.
      */
-    private float $received = null;
+    private ?float $received = null;
 
     /**
      * Přijato (pouze pro export).
      */
-    private float $receivedHomeCurrency = null;
+    private ?float $receivedHomeCurrency = null;
 
     /**
      * Typ platby.
      */
-    private \Pohoda\Prodejka\PaymentAdvancedType $paymentAdvanced = null;
+    private ?\Pohoda\Prodejka\PaymentAdvancedType $paymentAdvanced = null;
 
     /**
      * Vráceno (pouze pro export).
      */
-    private float $returned = null;
+    private ?float $returned = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as paymentType.

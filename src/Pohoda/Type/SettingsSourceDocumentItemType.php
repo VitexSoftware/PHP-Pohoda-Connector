@@ -25,37 +25,37 @@ class SettingsSourceDocumentItemType
     /**
      * Nastavení příznaku "Vyřízeno" na výdejce při vazbě: "Výdejka -> Vydaná faktura přes položky dokladu".
      */
-    private string $linkIssueSlipItemToInvoice = null;
+    private ?string $linkIssueSlipItemToInvoice = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na vydané nabídce při vazbě: "Vydaná nabídka -> Přijatá objednávka přes položky dokladu".
      */
-    private string $linkIssueOfferItemToReceivedOrder = null;
+    private ?string $linkIssueOfferItemToReceivedOrder = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na přijaté objednávce při vazbě: "Přijatá objednávka -> Převodka přes položky dokladu". V Globálním nastavení musí být povoleno "Přijatou objednávku přenosem do převodky vyřídit".
      */
-    private string $linkReceivedOrderItemToTransfer = null;
+    private ?string $linkReceivedOrderItemToTransfer = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na přijaté objednávce při vazbě: "Přijatá objednávka -> Prodejka přes položky dokladu".
      */
-    private string $linkReceivedOrderItemToSaleVoucher = null;
+    private ?string $linkReceivedOrderItemToSaleVoucher = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na výdejce při vazbě: "Výdejka -> Prodejka přes položky dokladu".
      */
-    private string $linkIssueSlipItemToSaleVoucher = null;
+    private ?string $linkIssueSlipItemToSaleVoucher = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na vydané faktuře při vazbě: "Vydané faktura -> výdejka přes položky dokladu".
      */
-    private string $linkIssuedInvoiceToIssueSlip = null;
+    private ?string $linkIssuedInvoiceToIssueSlip = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na vydané objednávce při vazbě: "Vydaná objednávka -> příjemka přes položky dokladu".
      */
-    private string $linkIssuedOrderToReceiptVoucher = null;
+    private ?string $linkIssuedOrderToReceiptVoucher = null;
 
     /**
      * Gets as linkIssueSlipItemToInvoice.

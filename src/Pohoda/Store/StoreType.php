@@ -22,79 +22,79 @@ namespace Pohoda\Store;
  */
 class StoreType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * ID záznamu (pouze pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Název skladu.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Popis nebo plný název nebo adresa skladu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Povolit stav zásob do minusu.
      */
-    private string $allowNegInvBalance = null;
+    private ?string $allowNegInvBalance = null;
 
     /**
      * Skladník.
      */
-    private \Pohoda\Type\RefType $storekeeper = null;
+    private ?\Pohoda\Type\RefType $storekeeper = null;
 
     /**
      * PLU.
      */
-    private \Pohoda\Store\PLUtypeType $pLU = null;
+    private ?\Pohoda\Store\PLUtypeType $pLU = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Zdrojový sklad.
      */
-    private bool $sourceStore = null;
+    private ?bool $sourceStore = null;
 
     /**
      * Cílový sklad.
      */
-    private bool $destinationStore = null;
+    private ?bool $destinationStore = null;
 
     /**
      * Založit skladovou zásobu.
      */
-    private bool $createInventoryCard = null;
+    private ?bool $createInventoryCard = null;
 
     /**
      * Jednotka PZD. Nastavení vlastníka skladu v režimu „Pobočkové zpracování dat“.
      */
-    private \Pohoda\Type\RefType $unitPZD = null;
+    private ?\Pohoda\Type\RefType $unitPZD = null;
 
     /**
      * Sklady A.
      */
-    private \Pohoda\Store\AccStockAType $accStockA = null;
+    private ?\Pohoda\Store\AccStockAType $accStockA = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as version.

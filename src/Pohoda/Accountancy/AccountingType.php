@@ -26,12 +26,12 @@ class AccountingType
     /**
      * MD.
      */
-    private string $credit = null;
+    private ?string $credit = null;
 
     /**
      * DAL.
      */
-    private string $debit = null;
+    private ?string $debit = null;
 
     /**
      * Gets as credit.

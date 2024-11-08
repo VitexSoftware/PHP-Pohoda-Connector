@@ -41,7 +41,7 @@ class VoucherDetailType
     /**
      * Položka dokladu - výpočet DPH ze zaokrouhlení (pouze pro export).
      */
-    private \Pohoda\Type\RoundingItemType $roundingItem = null;
+    private ?\Pohoda\Type\RoundingItemType $roundingItem = null;
 
     /**
      * Adds as voucherItem.

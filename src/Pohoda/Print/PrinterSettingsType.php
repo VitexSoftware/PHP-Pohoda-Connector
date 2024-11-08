@@ -25,18 +25,18 @@ class PrinterSettingsType
     /**
      * Výběr sestavy.
      */
-    private \Pohoda\Print\ReportType $report = null;
+    private ?\Pohoda\Print\ReportType $report = null;
 
     /**
      * Název tiskárny. Hodnotu lze zkopírovat z dialogu tisk. Pokud hodnota není uvedena, použije se výchozí tiskárna. Při současném použití elementu "printer" a "PDF" má přednost element "printer".
      */
-    private string $printer = null;
+    private ?string $printer = null;
 
     /**
      * Uložení tiskové sestavy do PDF souboru.
      */
-    private \Pohoda\Print\PDFType $pdf = null;
-    private \Pohoda\Print\ParametersType $parameters = null;
+    private ?\Pohoda\Print\PDFType $pdf = null;
+    private ?\Pohoda\Print\ParametersType $parameters = null;
 
     /**
      * Gets as report.

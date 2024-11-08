@@ -22,17 +22,17 @@ namespace Pohoda\Filter;
  */
 class RecordLockType
 {
-    private string $agenda = null;
+    private ?string $agenda = null;
 
     /**
      * Seznam polí podle kterých se bude filtrovat.
      */
-    private \Pohoda\Filter\FilterDocsType $filter = null;
+    private ?\Pohoda\Filter\FilterDocsType $filter = null;
 
     /**
      * Identifikátor uživatelského filtru v požadované agendě, který má být použit pro vyfiltrování záznamů.
      */
-    private string $userFilterName = null;
+    private ?string $userFilterName = null;
 
     /**
      * Gets as agenda.

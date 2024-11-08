@@ -25,27 +25,27 @@ class ProductRequirementItemType
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Přeneseno (Vyrobeno). Pouze pro export.
      */
-    private float $produced = null;
+    private ?float $produced = null;
 
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      */
-    private \Pohoda\Type\StockItemType $stockItem = null;
+    private ?\Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Datum expirace.
      */
-    private \DateTime $expirationDate = null;
+    private ?\DateTime $expirationDate = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as quantity.

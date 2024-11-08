@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListInventoryListsRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $inventoryListsVersion = null;
+    private ?string $inventoryListsVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestInventoryListsType[]

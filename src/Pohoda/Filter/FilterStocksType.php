@@ -25,52 +25,52 @@ class FilterStocksType
     /**
      * Filtr podle ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Vybere záznam dle zadaného externího identifikátoru.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Filtr podle kódu zásoby.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Filtr podle čísla čárového kódu.
      */
-    private string $eAN = null;
+    private ?string $eAN = null;
 
     /**
      * Filtr podle pole kódu zásoby pro registrační pokladnu.
      */
-    private int $pLU = null;
+    private ?int $pLU = null;
 
     /**
      * Filtr podle názvu skladové položky.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Filtr podle ID, název členění. Je možné také zadat část názvu členění (zleva) - proběhne vyexportování zadané větve a souvisejících podvětví stromu členění.
      */
-    private \Pohoda\Type\RefTypeStorageType $storage = null;
+    private ?\Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Filtr podle ID, název skladu.
      */
-    private \Pohoda\Type\RefType $store = null;
+    private ?\Pohoda\Type\RefType $store = null;
 
     /**
      * Hodnota Internet je na zásobě nastavena.
      */
-    private string $internet = null;
+    private ?string $internet = null;
 
     /**
      * Vyexportuje záznamy změněné od zadaného data.Pouze pro export.
      */
-    private \DateTime $lastChanges = null;
+    private ?\DateTime $lastChanges = null;
 
     /**
      * Gets as id.

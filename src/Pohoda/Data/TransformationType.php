@@ -27,14 +27,14 @@ class TransformationType
      *  Název je zadán včetně cesty, buď absolutně (např: "C:\Program Files\Stormware\Pohoda\Info\XSL\export.xsl")
      *  nebo relativně - vztaženo k adresáři Pohody (např: "Info/XSL/export.xsl").".
      */
-    private string $input = null;
+    private ?string $input = null;
 
     /**
      * Cesta k výstupní transformaci. Výsledkem bude nový soubor s koncovkou "_trn_o2.xml".
      *  Název je zadán včetně cesty, buď absolutně (např: "C:\Program Files\Stormware\Pohoda\Info\XSL\export.xsl")
      *  nebo relativně - vztaženo k adresáři Pohody (např: "Info/XSL/export.xsl").".
      */
-    private string $output = null;
+    private ?string $output = null;
 
     /**
      * Gets as input.

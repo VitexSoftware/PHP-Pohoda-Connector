@@ -25,17 +25,17 @@ class StockPriceType
     /**
      * Odkaz na ID v SKzCn.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Název ceny. IDS v SKzCn.
      */
-    private string $ids = null;
+    private ?string $ids = null;
 
     /**
      * Cena zásoby.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * Gets as id.

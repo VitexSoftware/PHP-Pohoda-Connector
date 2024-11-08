@@ -22,18 +22,18 @@ namespace Pohoda\List;
  */
 class ListEnquiryRequestType
 {
-    private string $version = null;
-    private string $enquiryType = null;
+    private ?string $version = null;
+    private ?string $enquiryType = null;
 
     /**
      * Požadovaná verze dokladu.
      */
-    private string $enquiryVersion = null;
+    private ?string $enquiryVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
      */
-    private string $extSystem = null;
+    private ?string $extSystem = null;
 
     /**
      * @var \Pohoda\Filter\RequestEnquiryType[]

@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListActionPriceRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $actionPricesVersion = null;
+    private ?string $actionPricesVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestActionPriceType[]

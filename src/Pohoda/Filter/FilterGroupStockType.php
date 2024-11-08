@@ -25,17 +25,17 @@ class FilterGroupStockType
     /**
      * Filtr podle ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Filtr dle kódu skupiny zásoby.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Filtr dle pole "Název" skupiny zásoby.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Gets as id.

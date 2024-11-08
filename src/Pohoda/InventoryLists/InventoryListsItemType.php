@@ -25,37 +25,37 @@ class InventoryListsItemType
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      */
-    private \Pohoda\Type\StockItemType $stockItem = null;
+    private ?\Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Kód položky.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Název položky.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Text položky.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Měrná jednotka.
      */
-    private string $unit = null;
+    private ?string $unit = null;
 
     /**
      * Dodáno. Používá se jen při exportu dokladu.
      */
-    private string $isDelivered = null;
+    private ?string $isDelivered = null;
 
     /**
      * Gets as stockItem.

@@ -22,8 +22,8 @@ namespace Pohoda\NumericalSeries;
  */
 class NumericalSeriesType
 {
-    private string $version = null;
-    private \Pohoda\NumericalSeries\NumericalSeriesHeaderType $numericalSeriesHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\NumericalSeries\NumericalSeriesHeaderType $numericalSeriesHeader = null;
 
     /**
      * Gets as version.

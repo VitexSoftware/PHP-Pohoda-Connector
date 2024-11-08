@@ -25,32 +25,32 @@ class RequestBalanceType
     /**
      * Datum ke kterému je saldo sestaveno. Pokud není zadáno je použit aktuální datum.
      */
-    private \DateTime $dateTo = null;
+    private ?\DateTime $dateTo = null;
 
     /**
      * Hodnota, ke které je saldo vyrovnáno.
      */
-    private float $adjustTo = null;
+    private ?float $adjustTo = null;
 
     /**
      * Sestavit salda s kumulováním po dokladech.
      */
-    private string $groupByDoc = null;
+    private ?string $groupByDoc = null;
 
     /**
      * Odstranit záznamy vyrovnaného salda.
      */
-    private string $removeBalancedRec = null;
+    private ?string $removeBalancedRec = null;
 
     /**
      * Způsob párování.
      */
-    private string $pairing = null;
+    private ?string $pairing = null;
 
     /**
      * Identifikátor uživatelského filtru v požadované agendě, který má být použit pro filtraci záznamů.
      */
-    private string $userFilterName = null;
+    private ?string $userFilterName = null;
 
     /**
      * Gets as dateTo.

@@ -25,47 +25,47 @@ class DocumentType
     /**
      * Výsledek likvidace.
      */
-    private string $state = null;
+    private ?string $state = null;
 
     /**
      * Popis likvidace. Případně další infomrace k likvidaci (Vytvožení daňového dokladu, vznik přeplatku, atp.).
      */
-    private string $detail = null;
+    private ?string $detail = null;
 
     /**
      * ID likvidovaného dokladu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Číslo likvidovaného dokladu.
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Agenda likvidovaného dokladu.
      */
-    private string $agenda = null;
+    private ?string $agenda = null;
 
     /**
      * Likvidovaná částka.
      */
-    private \Pohoda\HomeCurrencyType $homeCurrency = null;
+    private ?\Pohoda\HomeCurrencyType $homeCurrency = null;
 
     /**
      * Likvidovaná částka.
      */
-    private \Pohoda\ForeignCurrencyType $foreignCurrency = null;
+    private ?\Pohoda\ForeignCurrencyType $foreignCurrency = null;
 
     /**
      * Textový popis pravidla, které bylo použito k dohledání likvidovaného dokladu.
      */
-    private string $rule = null;
+    private ?string $rule = null;
 
     /**
      * Daňový doklad. Element je uveden, jan pokud byl vytvořen daňový doklad.
      */
-    private \Pohoda\TaxDocumentType $taxDocumentNumber = null;
+    private ?\Pohoda\TaxDocumentType $taxDocumentNumber = null;
 
     /**
      * Gets as state.

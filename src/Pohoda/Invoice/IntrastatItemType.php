@@ -25,92 +25,92 @@ class IntrastatItemType
     /**
      * Datum pro Intrastat.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Kód zboží.
      */
-    private string $goodsCode = null;
+    private ?string $goodsCode = null;
 
     /**
      * Popis zboží (pouze SK).
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Stát určení (pouze Vydané faktury).
      */
-    private string $countryOfDestination = null;
+    private ?string $countryOfDestination = null;
 
     /**
      * Stát odeslání (pouze Přijaté faktury).
      */
-    private string $countryOfDispatch = null;
+    private ?string $countryOfDispatch = null;
 
     /**
      * Stát původu.
      */
-    private string $countryOfOrigin = null;
+    private ?string $countryOfOrigin = null;
 
     /**
      * Region určení (pouze SK).
      */
-    private string $region = null;
+    private ?string $region = null;
 
     /**
      * Fakturovaná hodnota.
      */
-    private float $invoicedAmount = null;
+    private ?float $invoicedAmount = null;
 
     /**
      * Dopravné.
      */
-    private float $transportExpenses = null;
+    private ?float $transportExpenses = null;
 
     /**
      * Vlastní hmotnost.
      */
-    private float $ownWeight = null;
+    private ?float $ownWeight = null;
 
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Doplňková měrná jednotka.
      */
-    private string $addUnit = null;
+    private ?string $addUnit = null;
 
     /**
      * Typ transakce.
      */
-    private string $transaction = null;
+    private ?string $transaction = null;
 
     /**
      * Dodací podmínky.
      */
-    private string $termsOfDelivery = null;
+    private ?string $termsOfDelivery = null;
 
     /**
      * Druh dopravy.
      */
-    private string $modeOfTransport = null;
+    private ?string $modeOfTransport = null;
 
     /**
      * Statistický znak.
      */
-    private string $statisticalCode = null;
+    private ?string $statisticalCode = null;
 
     /**
      * Zvláštní pohyb.
      */
-    private string $specialTransaction = null;
+    private ?string $specialTransaction = null;
 
     /**
      * DIČ partnera pro CZ verzi. IČ DPH partnera pro SK verzi. Pouze Vydané faktury.
      */
-    private string $vATIdOfPartner = null;
+    private ?string $vATIdOfPartner = null;
 
     /**
      * Gets as date.

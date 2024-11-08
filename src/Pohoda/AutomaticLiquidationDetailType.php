@@ -25,12 +25,12 @@ class AutomaticLiquidationDetailType
     /**
      * Informace o bankovním dokladu.
      */
-    private \Pohoda\MovementDetailType $movementDetail = null;
+    private ?\Pohoda\MovementDetailType $movementDetail = null;
 
     /**
      * Informace o průběhu likvidace.
      */
-    private \Pohoda\LiquidationDetailType $liquidationDetail = null;
+    private ?\Pohoda\LiquidationDetailType $liquidationDetail = null;
 
     /**
      * Gets as movementDetail.

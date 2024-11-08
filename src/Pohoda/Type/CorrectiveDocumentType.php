@@ -25,12 +25,12 @@ class CorrectiveDocumentType
     /**
      * Přenesení položek ze zdrojového dokladu.
      */
-    private bool $itemTransfer = null;
+    private ?bool $itemTransfer = null;
 
     /**
      * Doklad, pro který se vytváří opravný daňový doklad (pouze CZ verze), nebo Dobropis (pouze SK verze).
      */
-    private \Pohoda\Type\SourceDocumentType $sourceDocument = null;
+    private ?\Pohoda\Type\SourceDocumentType $sourceDocument = null;
 
     /**
      * Gets as itemTransfer.

@@ -25,67 +25,67 @@ class LiquidationItemType
     /**
      * Text položky. Pokud nebude uveden, bude nastaven text z Globálního nastavení programu POHODA.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Množství na položce.Pro likvidaci dokladu vždy nastaveno "1".
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Jednotková cena s/bez DPH. Pri likvidaci dokladu vždy nastaveno "false" (bez DPH).
      */
-    private string $payVAT = null;
+    private ?string $payVAT = null;
 
     /**
      * Sazba DPH.
      */
-    private \Pohoda\Type\VatRateType $rateVAT = null;
+    private ?\Pohoda\Type\VatRateType $rateVAT = null;
 
     /**
      * Kč.
      */
-    private \Pohoda\Type\TypeCurrencyHomeItem2Type $homeCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyHomeItem2Type $homeCurrency = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Pár. symbol.
      */
-    private string $symPar = null;
+    private ?string $symPar = null;
 
     /**
      * Předkontace.
      */
-    private \Pohoda\Type\RefType $accounting = null;
+    private ?\Pohoda\Type\RefType $accounting = null;
 
     /**
      * Členění DPH.
      */
-    private \Pohoda\Type\ClassificationVATType $classificationVAT = null;
+    private ?\Pohoda\Type\ClassificationVATType $classificationVAT = null;
 
     /**
      * Členění KV DPH (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $classificationKVDPH = null;
+    private ?\Pohoda\Type\RefType $classificationKVDPH = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Gets as text.

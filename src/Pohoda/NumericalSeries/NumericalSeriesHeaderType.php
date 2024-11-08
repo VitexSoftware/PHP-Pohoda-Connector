@@ -25,90 +25,90 @@ class NumericalSeriesHeaderType
     /**
      * ID záznamu (pouze pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Prefix číselné řady.
      */
-    private string $prefix = null;
+    private ?string $prefix = null;
 
     /**
      * Číslo.
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Nejvyšší číslo v dané číselné řadě (pouze pro export).
      */
-    private string $topNumber = null;
+    private ?string $topNumber = null;
 
     /**
      * Název (popis).
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Agenda.
      */
-    private string $agenda = null;
+    private ?string $agenda = null;
 
     /**
      * Typ dokladu. Tento element je vyžadován při vytvoření číselné řady pro agendu, které má více typů dokladů.
      */
-    private string $typeOfDocument = null;
+    private ?string $typeOfDocument = null;
 
     /**
      * Pokladna. Tento element je vyžadován při vytvoření číselné řady pro agendu "Pokladna".
      */
-    private \Pohoda\Type\RefType $cashAccount = null;
+    private ?\Pohoda\Type\RefType $cashAccount = null;
 
     /**
      * Kasa. Tento element je vyžadován při vytvoření číselné řady pro agendu "Prodejky".
      */
-    private \Pohoda\Type\RefType $cashbox = null;
+    private ?\Pohoda\Type\RefType $cashbox = null;
 
     /**
      * Období plastnosti číselné řady.
      */
-    private string $period = null;
+    private ?string $period = null;
 
     /**
      * Období plastnosti účetní jednotky.
      */
-    private \Pohoda\NumericalSeries\PeriodAccountUnitType $periodAccountUnit = null;
+    private ?\Pohoda\NumericalSeries\PeriodAccountUnitType $periodAccountUnit = null;
 
     /**
      * Jednotka PZD. Nastavení vlastníka číselné řady v režimu „Pobočkové zpracování dat“.
      */
-    private \Pohoda\Type\RefType $unitPZD = null;
+    private ?\Pohoda\Type\RefType $unitPZD = null;
 
     /**
      * Rok běžného nebo přechodné období. V případě, že ještě nedošlo k přepnutí přechodného období, řada do následujícího období se nenaimportuje.
      */
-    private int $year = null;
+    private ?int $year = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

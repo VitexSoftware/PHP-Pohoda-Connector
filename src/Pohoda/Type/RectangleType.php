@@ -22,10 +22,10 @@ namespace Pohoda\Type;
  */
 class RectangleType
 {
-    private int $left = null;
-    private int $top = null;
-    private int $right = null;
-    private int $bottom = null;
+    private ?int $left = null;
+    private ?int $top = null;
+    private ?int $right = null;
+    private ?int $bottom = null;
 
     /**
      * Gets as left.

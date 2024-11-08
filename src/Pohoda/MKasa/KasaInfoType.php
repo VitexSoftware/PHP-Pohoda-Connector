@@ -22,18 +22,18 @@ namespace Pohoda\MKasa;
  */
 class KasaInfoType
 {
-    private int $id = null;
-    private string $name = null;
-    private string $description = null;
-    private string $deviceGuid = null;
-    private \Pohoda\MKasa\KasaEstablishmentType $establishment = null;
-    private \Pohoda\Type\RefType $centre = null;
-    private \Pohoda\Type\RefType $defaultStore = null;
-    private \Pohoda\Type\RefType $defaultSellingPrice = null;
-    private \Pohoda\Type\RefType $defaultPaymentType = null;
-    private string $text = null;
-    private string $footer = null;
-    private string $payVat = null;
+    private ?int $id = null;
+    private ?string $name = null;
+    private ?string $description = null;
+    private ?string $deviceGuid = null;
+    private ?\Pohoda\MKasa\KasaEstablishmentType $establishment = null;
+    private ?\Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $defaultStore = null;
+    private ?\Pohoda\Type\RefType $defaultSellingPrice = null;
+    private ?\Pohoda\Type\RefType $defaultPaymentType = null;
+    private ?string $text = null;
+    private ?string $footer = null;
+    private ?string $payVat = null;
 
     /**
      * Gets as id.

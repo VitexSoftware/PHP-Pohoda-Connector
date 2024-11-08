@@ -26,27 +26,27 @@ class EKasaType
     /**
      * Unikátny identifikátor dokladu.
      */
-    private string $eKasaID = null;
+    private ?string $eKasaID = null;
 
     /**
      * OKP (Overovací kód podnikateľa).
      */
-    private string $eKasaOKP = null;
+    private ?string $eKasaOKP = null;
 
     /**
      * Poradové číslo paragónu.
      */
-    private int $eKasaParNumber = null;
+    private ?int $eKasaParNumber = null;
 
     /**
      * Dátum a čas vytvorenia paragónu.
      */
-    private \DateTime $eKasaDateOfPar = null;
+    private ?\DateTime $eKasaDateOfPar = null;
 
     /**
      * Tlač na FM.
      */
-    private string $printFM = null;
+    private ?string $printFM = null;
 
     /**
      * Gets as eKasaID.

@@ -25,17 +25,17 @@ class TypeCurrencyHomeItemRoundingType
     /**
      * Jednotková cena.
      */
-    private float $unitPrice = null;
+    private ?float $unitPrice = null;
 
     /**
      * Cena položky bez DPH.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * DPH.
      */
-    private float $priceVAT = null;
+    private ?float $priceVAT = null;
 
     /**
      * Gets as unitPrice.

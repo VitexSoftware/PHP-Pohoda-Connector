@@ -22,14 +22,14 @@ namespace Pohoda\List;
  */
 class ListStoreRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze skladů.
      */
-    private string $storeVersion = null;
-    private \Pohoda\Filter\RequestStoreType $requestStore = null;
-    private \Pohoda\List\RestrictionDataStoreType $restrictionData = null;
+    private ?string $storeVersion = null;
+    private ?\Pohoda\Filter\RequestStoreType $requestStore = null;
+    private ?\Pohoda\List\RestrictionDataStoreType $restrictionData = null;
 
     /**
      * Gets as version.

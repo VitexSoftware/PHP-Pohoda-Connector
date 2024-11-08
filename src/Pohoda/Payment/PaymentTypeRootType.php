@@ -22,8 +22,8 @@ namespace Pohoda\Payment;
  */
 class PaymentTypeRootType
 {
-    private string $version = null;
-    private \Pohoda\Payment\PaymentHeaderType $paymentHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\Payment\PaymentHeaderType $paymentHeader = null;
 
     /**
      * Gets as version.

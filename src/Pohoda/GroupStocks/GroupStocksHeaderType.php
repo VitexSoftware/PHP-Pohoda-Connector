@@ -26,38 +26,38 @@ class GroupStocksHeaderType
     /**
      * ID záznamu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Jedinečný "Kód" skupiny zásob.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Název Skupiny zásob.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Textový popis skupiny zásob.
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Zobrazení. Určuje, zda je skupina zásob přenášena na internetový obchod.
      */
-    private string $internet = null;
+    private ?string $internet = null;
 
     /**
      * Název obrázku. Soubor se musí nacházet v adresáři Dokumenty\firma\Obrázky\. Název obrázku se uvádí bez cesty.
      */
-    private string $picture = null;
-    private string $note = null;
+    private ?string $picture = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Gets as id.

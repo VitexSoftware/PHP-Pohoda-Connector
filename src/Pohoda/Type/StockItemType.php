@@ -26,18 +26,18 @@ class StockItemType
     /**
      * Sklad.
      */
-    private \Pohoda\Type\RefType $store = null;
+    private ?\Pohoda\Type\RefType $store = null;
 
     /**
      * Odkaz na skladovou položku.
      */
-    private \Pohoda\Type\StockRefType $stockItem = null;
+    private ?\Pohoda\Type\StockRefType $stockItem = null;
 
     /**
      * Výrobní číslo.
      */
-    private string $serialNumber = null;
-    private \Pohoda\Type\ExtIdType $serialNumberExtId = null;
+    private ?string $serialNumber = null;
+    private ?\Pohoda\Type\ExtIdType $serialNumberExtId = null;
 
     /**
      * Gets as store.

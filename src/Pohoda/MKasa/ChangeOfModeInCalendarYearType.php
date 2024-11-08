@@ -22,9 +22,9 @@ namespace Pohoda\MKasa;
  */
 class ChangeOfModeInCalendarYearType
 {
-    private string $identifiedPerson = null;
-    private string $taxPeriod = null;
-    private \Pohoda\MKasa\ModeCalendarType $modeCalendar = null;
+    private ?string $identifiedPerson = null;
+    private ?string $taxPeriod = null;
+    private ?\Pohoda\MKasa\ModeCalendarType $modeCalendar = null;
 
     /**
      * Gets as identifiedPerson.

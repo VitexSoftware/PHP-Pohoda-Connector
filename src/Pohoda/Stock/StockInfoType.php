@@ -22,12 +22,12 @@ namespace Pohoda\Stock;
  */
 class StockInfoType
 {
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * ID externího systému skladové zásoby.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Gets as id.

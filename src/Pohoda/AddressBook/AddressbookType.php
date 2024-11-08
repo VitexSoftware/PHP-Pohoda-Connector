@@ -22,26 +22,26 @@ namespace Pohoda\AddressBook;
  */
 class AddressbookType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      */
-    private \Pohoda\AddressBook\ActionTypeType $actionType = null;
-    private \Pohoda\AddressBook\AddressbookHeaderType $addressbookHeader = null;
+    private ?\Pohoda\AddressBook\ActionTypeType $actionType = null;
+    private ?\Pohoda\AddressBook\AddressbookHeaderType $addressbookHeader = null;
 
     /**
      * @var \Pohoda\AddressBook\AccountItemType[]
      */
-    private array $addressbookAccount = null;
-    private \Pohoda\AddressBook\AddressbookGDPRType $addressbookGDPR = null;
+    private ?array $addressbookAccount = null;
+    private ?\Pohoda\AddressBook\AddressbookGDPRType $addressbookGDPR = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListEstablishmentRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $establishmentVersion = null;
+    private ?string $establishmentVersion = null;
 
     /**
      * @var \Pohoda\List\RequestEstablishmentType[]

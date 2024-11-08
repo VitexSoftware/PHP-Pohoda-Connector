@@ -25,10 +25,10 @@ class ResponsiblePersonType
     /**
      * ID odpovědné osoby (jen pro export).
      */
-    private int $id = null;
-    private string $surname = null;
-    private string $name = null;
-    private string $degree = null;
+    private ?int $id = null;
+    private ?string $surname = null;
+    private ?string $name = null;
+    private ?string $degree = null;
 
     /**
      * Gets as id.

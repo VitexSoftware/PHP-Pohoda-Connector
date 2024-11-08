@@ -25,8 +25,8 @@ class PDFType
     /**
      * Název a umístění PDF souboru (př. "C:\PDF\faktura_c_FV160006.pdf").
      */
-    private string $fileName = null;
-    private \Pohoda\Print\IsdocType $isdoc = null;
+    private ?string $fileName = null;
+    private ?\Pohoda\Print\IsdocType $isdoc = null;
 
     /**
      * Gets as fileName.

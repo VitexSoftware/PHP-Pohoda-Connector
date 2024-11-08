@@ -22,24 +22,24 @@ namespace Pohoda\Voucher;
  */
 class VoucherType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Pomocí tohoto bloku bude vytvořen storno doklad. V programu POHODA bude vyhledán doklad, který má být stornován, pokud bude nalezen, bude k němu vytvořen stornující doklad.
      *  Vložený doklad lze upravit pomocí jednotlivých elementů v voucherHeader (ostatní elementy budou ignorovány).
      */
-    private \Pohoda\Type\CancelDocumentType $cancelDocument = null;
-    private \Pohoda\Voucher\VoucherHeaderType $voucherHeader = null;
-    private \Pohoda\Voucher\VoucherDetailType $voucherDetail = null;
-    private \Pohoda\Voucher\VoucherSummaryType $voucherSummary = null;
-    private \Pohoda\Type\EETType $eET = null;
+    private ?\Pohoda\Type\CancelDocumentType $cancelDocument = null;
+    private ?\Pohoda\Voucher\VoucherHeaderType $voucherHeader = null;
+    private ?\Pohoda\Voucher\VoucherDetailType $voucherDetail = null;
+    private ?\Pohoda\Voucher\VoucherSummaryType $voucherSummary = null;
+    private ?\Pohoda\Type\EETType $eET = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

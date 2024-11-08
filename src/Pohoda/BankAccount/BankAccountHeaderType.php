@@ -25,78 +25,78 @@ class BankAccountHeaderType
     /**
      * ID záznamu (pouze pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Zkratka bankovního účtu.
      */
-    private string $ids = null;
+    private ?string $ids = null;
 
     /**
      * Číslo účtu.
      */
-    private string $numberAccount = null;
+    private ?string $numberAccount = null;
 
     /**
      * Kód banky.
      */
-    private string $codeBank = null;
+    private ?string $codeBank = null;
 
     /**
      * Název banky.
      */
-    private string $nameBank = null;
+    private ?string $nameBank = null;
 
     /**
      * Specifický symbol.
      */
-    private string $symSpec = null;
+    private ?string $symSpec = null;
 
     /**
      * IBAN.
      */
-    private string $iBAN = null;
+    private ?string $iBAN = null;
 
     /**
      * SWIFT.
      */
-    private string $sWIFT = null;
+    private ?string $sWIFT = null;
 
     /**
      * Analytický účet.
      */
-    private \Pohoda\Type\RefType $analyticAccount = null;
+    private ?\Pohoda\Type\RefType $analyticAccount = null;
 
     /**
      * Devizový bankovní účet. Pokud je uveden tento element, bude vytvořen cizoměnový bankovní účet. V ostatních případech tuzemský bankovní účet.
      */
-    private \Pohoda\BankAccount\CurrencyBankAccountType $currencyBankAccount = null;
+    private ?\Pohoda\BankAccount\CurrencyBankAccountType $currencyBankAccount = null;
 
     /**
      * Datum zrušení bankovního účtu.
      */
-    private \DateTime $cancelled = null;
+    private ?\DateTime $cancelled = null;
 
     /**
      * Služba Homebanking.
      */
-    private string $homebanking = null;
+    private ?string $homebanking = null;
 
     /**
      * Platební terminál.
      */
-    private string $payTerminal = null;
+    private ?string $payTerminal = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as id.

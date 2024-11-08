@@ -25,32 +25,32 @@ class AccountItemType
     /**
      * Typ práce s bankovním účtem. Výchozí hodnota je přidání nové bankovního účtu.
      */
-    private \Pohoda\Type\ActionTypeItemType $actionType = null;
+    private ?\Pohoda\Type\ActionTypeItemType $actionType = null;
 
     /**
      * ID položky dokladu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Číslo bankovního účtu. Tento element je vyžadován při vytvoření dokladu.
      */
-    private string $accountNumber = null;
+    private ?string $accountNumber = null;
 
     /**
      * Specificky symbol.
      */
-    private string $symSpec = null;
+    private ?string $symSpec = null;
 
     /**
      * Kód banky.
      */
-    private string $bankCode = null;
+    private ?string $bankCode = null;
 
     /**
      * Výchozí účet.
      */
-    private string $defaultAccount = null;
+    private ?string $defaultAccount = null;
 
     /**
      * Gets as actionType.

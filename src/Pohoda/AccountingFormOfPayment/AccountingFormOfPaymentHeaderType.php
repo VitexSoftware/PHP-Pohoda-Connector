@@ -25,53 +25,53 @@ class AccountingFormOfPaymentHeaderType
     /**
      * ID záznamu(pouze pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Forma úhrady.
      */
-    private \Pohoda\Type\PaymentType $paymentType = null;
+    private ?\Pohoda\Type\PaymentType $paymentType = null;
 
     /**
      * Zaúčtování.
      */
-    private string $accountingDestination = null;
+    private ?string $accountingDestination = null;
 
     /**
      * Bankovní účet nebo pokladna.
      */
-    private \Pohoda\Type\AccountType $account = null;
+    private ?\Pohoda\Type\AccountType $account = null;
 
     /**
      * Nastavení účtování formy úhrady: "na střediska / samostatně".
      */
-    private string $setTheAccountIndependently = null;
+    private ?string $setTheAccountIndependently = null;
 
     /**
      * Účet MD(pouze pro účetnictví typu "PU").
      */
-    private string $debit = null;
+    private ?string $debit = null;
 
     /**
      * Účet DAL(pouze pro účetnictví typu "PU").
      */
-    private string $credit = null;
+    private ?string $credit = null;
 
     /**
      * Předkontace(pouze pro účetnictví typu "DE").
      */
-    private \Pohoda\Type\RefType $accounting = null;
+    private ?\Pohoda\Type\RefType $accounting = null;
 
     /**
      * Gets as id.

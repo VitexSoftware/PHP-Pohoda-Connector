@@ -103,7 +103,8 @@ class Response extends \Ease\Sand
 
                     break;
                 case '@note':
-                    $note = $responsePackSubitem; //TODO
+                    $note = $responsePackSubitem; // TODO
+
                     break;
                 case '@id':
                 case '@version':
@@ -472,8 +473,11 @@ class Response extends \Ease\Sand
         $bankItems = [];
 
         foreach ($bank as $bankEntry) {
-            $bankData = self::stripArrayNames('bnk', $bankEntry);
-            $bankItems[$bankData['bankHeader']['id']] = $bankData;
+            if (\is_array($bankEntry)) {
+                $bankItems[$bankEntry['bankHeader']['id']] = self::stripArrayNames('bnk', $bankEntry);
+            } else {
+                $bankItems[$bankEntry['bankHeader']['id']] = $bankEntry;
+            }
         }
 
         return self::stripArrayNames('typ', $bankItems);

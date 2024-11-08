@@ -22,17 +22,17 @@ namespace Pohoda\List;
  */
 class ListSupplierRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze dodavatele.
      */
-    private string $supplierVersion = null;
+    private ?string $supplierVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
      */
-    private string $extSystem = null;
+    private ?string $extSystem = null;
 
     /**
      * @var \Pohoda\Filter\RequestStockType[]

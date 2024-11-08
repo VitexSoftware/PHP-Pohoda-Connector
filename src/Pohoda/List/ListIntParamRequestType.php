@@ -22,8 +22,8 @@ namespace Pohoda\List;
  */
 class ListIntParamRequestType
 {
-    private string $version = null;
-    private \Pohoda\List\RequestIntParamType $requestIntParam = null;
+    private ?string $version = null;
+    private ?\Pohoda\List\RequestIntParamType $requestIntParam = null;
 
     /**
      * Gets as version.

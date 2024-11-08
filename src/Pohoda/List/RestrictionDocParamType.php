@@ -25,17 +25,17 @@ class RestrictionDocParamType
     /**
      * Exportovat záznamy ze záložky "Doklady".
      */
-    private string $documents = null;
+    private ?string $documents = null;
 
     /**
      * Exportovat volitelné parametry.
      */
-    private string $parameters = null;
+    private ?string $parameters = null;
 
     /**
      * Exportovat záznamy ze záložky "Likvidace".
      */
-    private string $liquidations = null;
+    private ?string $liquidations = null;
 
     /**
      * Gets as documents.

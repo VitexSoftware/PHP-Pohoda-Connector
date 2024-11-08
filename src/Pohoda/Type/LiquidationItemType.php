@@ -26,43 +26,43 @@ class LiquidationItemType
     /**
      * ID likvidace.
      */
-    private int $id = null;
-    private string $extId = null;
+    private ?int $id = null;
+    private ?string $extId = null;
 
     /**
      * Datum likvidace.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Agenda likvidujícího dokladu. Pokud je likvidace bez vazby, element se neuvádí.
      */
-    private string $sourceAgenda = null;
+    private ?string $sourceAgenda = null;
 
     /**
      * Likvidující doklad. Pokud je likvidace bez vazby, element se neuvádí.
      */
-    private \Pohoda\Type\SourceDocumentType $sourceDocument = null;
+    private ?\Pohoda\Type\SourceDocumentType $sourceDocument = null;
 
     /**
      * Daňový doklad.
      */
-    private \Pohoda\Type\SourceDocumentType $taxReceiptDocument = null;
+    private ?\Pohoda\Type\SourceDocumentType $taxReceiptDocument = null;
 
     /**
      * Částka.
      */
-    private float $amount = null;
+    private ?float $amount = null;
 
     /**
      * Částka v cizí měně.
      */
-    private float $foreignCurrencyAmount = null;
+    private ?float $foreignCurrencyAmount = null;
 
     /**
      * Částka zdrojového dokladu v cizí měně.
      */
-    private float $foreignCurrencySource = null;
+    private ?float $foreignCurrencySource = null;
 
     /**
      * Gets as id.

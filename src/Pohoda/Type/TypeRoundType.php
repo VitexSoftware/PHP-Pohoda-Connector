@@ -25,10 +25,10 @@ class TypeRoundType
     /**
      * Celková suma zaokrouhlení.
      */
-    private float $priceRound = null;
-    private float $rateVATround = null;
-    private float $priceRoundSum = null;
-    private float $priceRoundSumVAT = null;
+    private ?float $priceRound = null;
+    private ?float $rateVATround = null;
+    private ?float $priceRoundSum = null;
+    private ?float $priceRoundSumVAT = null;
 
     /**
      * Gets as priceRound.

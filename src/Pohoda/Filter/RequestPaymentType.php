@@ -25,12 +25,12 @@ class RequestPaymentType
     /**
      * Seznam polí, podle kterých se budou filtrovat doklady.
      */
-    private \Pohoda\Filter\FilterIDType $filter = null;
+    private ?\Pohoda\Filter\FilterIDType $filter = null;
 
     /**
      * Identifikátor uživatelského filtru v požadované agendě, který má být použit pro filtraci záznamů.
      */
-    private string $userFilterName = null;
+    private ?string $userFilterName = null;
 
     /**
      * Gets as filter.

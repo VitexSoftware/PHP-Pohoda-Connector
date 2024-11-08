@@ -25,57 +25,57 @@ class FilterAdbsType
     /**
      * Vybere záznam dle zadaného ID.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Vybere záznam dle zadaného externího identifikátoru.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Kontrola duplicity v poli Firma.
      */
-    private string $company = null;
+    private ?string $company = null;
 
     /**
      * Kontrola duplicity v poli Jméno.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Kontrola duplicity v poli Obec.
      */
-    private string $city = null;
+    private ?string $city = null;
 
     /**
      * Kontrola duplicity v poli Ulice.
      */
-    private string $street = null;
+    private ?string $street = null;
 
     /**
      * Kontrola duplicity v poli PSČ.
      */
-    private string $zip = null;
+    private ?string $zip = null;
 
     /**
      * Kontrola duplicity v poli IČ.
      */
-    private string $ico = null;
+    private ?string $ico = null;
 
     /**
      * Kontrola duplicity v poli DIČ.
      */
-    private string $dic = null;
+    private ?string $dic = null;
 
     /**
      * Kontrola duplicity v poli Číslo.
      */
-    private \Pohoda\Type\NumberADType $number = null;
+    private ?\Pohoda\Type\NumberADType $number = null;
 
     /**
      * Vyexportuje záznamy změněné od zadaného data.Pouze pro export.
      */
-    private \DateTime $lastChanges = null;
+    private ?\DateTime $lastChanges = null;
 
     /**
      * Gets as id.

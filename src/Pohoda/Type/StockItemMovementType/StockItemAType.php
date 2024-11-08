@@ -20,11 +20,11 @@ namespace Pohoda\Type\StockItemMovementType;
  */
 class StockItemAType
 {
-    private int $id = null;
-    private string $eAN = null;
-    private string $ids = null;
-    private string $name = null;
-    private string $nameComplement = null;
+    private ?int $id = null;
+    private ?string $eAN = null;
+    private ?string $ids = null;
+    private ?string $name = null;
+    private ?string $nameComplement = null;
 
     /**
      * Gets as id.

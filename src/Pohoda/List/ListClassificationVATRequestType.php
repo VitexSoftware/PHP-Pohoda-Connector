@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListClassificationVATRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $classificationVATVersion = null;
+    private ?string $classificationVATVersion = null;
 
     /**
      * @var \Pohoda\List\RequestClassificationVATType[]

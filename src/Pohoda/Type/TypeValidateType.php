@@ -27,7 +27,7 @@ class TypeValidateType
      *  'false' - neprovádí se kontrola. V případě, že požadované množství není na skladě, doklad se vytvoří s nulovým množstvím (do response se zapíše warning).
      *  Pokud uživatel nemá právo na vložení položky do dokladu, vytvoří se z ní textová položka bez vazby na sklad.
      */
-    private string $inStock = null;
+    private ?string $inStock = null;
 
     /**
      * Gets as inStock.

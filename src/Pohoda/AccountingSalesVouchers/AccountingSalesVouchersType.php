@@ -22,17 +22,17 @@ namespace Pohoda\AccountingSalesVouchers;
  */
 class AccountingSalesVouchersType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Výběr záznamu.
      */
-    private \Pohoda\Filter\RequestProdejkaType $recordFilter = null;
+    private ?\Pohoda\Filter\RequestProdejkaType $recordFilter = null;
 
     /**
      * Středisko které se nastaví do hlavičky zaúčtovávacích dokladů.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Gets as version.

@@ -22,17 +22,17 @@ namespace Pohoda\Lock;
  */
 class LockType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Výběr záznamu.
      */
-    private \Pohoda\Filter\RecordLockType $record = null;
+    private ?\Pohoda\Filter\RecordLockType $record = null;
 
     /**
      * Parametry zámku.
      */
-    private \Pohoda\Lock\LockSettingsType $lockSettings = null;
+    private ?\Pohoda\Lock\LockSettingsType $lockSettings = null;
 
     /**
      * Gets as version.

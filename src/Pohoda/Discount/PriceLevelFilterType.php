@@ -22,7 +22,7 @@ namespace Pohoda\Discount;
  */
 class PriceLevelFilterType
 {
-    private \Pohoda\Type\RefType $priceLevel = null;
+    private ?\Pohoda\Type\RefType $priceLevel = null;
 
     /**
      * Gets as priceLevel.

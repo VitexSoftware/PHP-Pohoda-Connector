@@ -23,7 +23,7 @@ namespace Pohoda\Parameter;
  */
 class FormItemListType
 {
-    private string $formAgenda = null;
+    private ?string $formAgenda = null;
 
     /**
      * @var \Pohoda\Parameter\CtrlDefType[]

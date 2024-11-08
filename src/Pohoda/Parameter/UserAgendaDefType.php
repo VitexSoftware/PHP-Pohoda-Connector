@@ -26,45 +26,45 @@ class UserAgendaDefType
     /**
      * Krátký název uživatelské agendy.
      */
-    private string $idsUserAgenda = null;
+    private ?string $idsUserAgenda = null;
 
     /**
      * Plný název nebo popis uživatelské agendy. Tento údaj se poté zobrazuje v seznamu uživatelských agend.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Název tabulky, k názvu je automaticky doplněno VTb a pod tímto označením bude agenda evidována v databázi účetní jednotky.
      */
-    private string $tabMain = null;
+    private ?string $tabMain = null;
 
     /**
      * Název položkové tabulky.
      */
-    private string $tabItem = null;
+    private ?string $tabItem = null;
 
     /**
      * Evidenční číslo.
      */
-    private \Pohoda\Type\NumberType $number = null;
+    private ?\Pohoda\Type\NumberType $number = null;
 
     /**
      * Uživatelská agenda obsahuje položkové doklady.
      */
-    private string $items = null;
+    private ?string $items = null;
 
     /**
      * Uživatelská agenda obsahuje šablony.
      */
-    private string $templates = null;
+    private ?string $templates = null;
 
     /**
      * Uživatelská agenda obsahuje evidenci dokumentů.
      */
-    private string $documents = null;
-    private string $list = null;
-    private string $listIDS = null;
-    private string $listSText = null;
+    private ?string $documents = null;
+    private ?string $list = null;
+    private ?string $listIDS = null;
+    private ?string $listSText = null;
 
     /**
      * Gets as idsUserAgenda.

@@ -25,7 +25,7 @@ class RequestItemType
     /**
      * Seznam polí podle kterých se bude filtrovat.
      */
-    private \Pohoda\Filter\FilterExtIdType $filter = null;
+    private ?\Pohoda\Filter\FilterExtIdType $filter = null;
 
     /**
      * Gets as filter.

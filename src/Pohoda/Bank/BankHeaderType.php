@@ -25,170 +25,170 @@ class BankHeaderType
     /**
      * ID záznamu (pouze pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Typ bankovního dokladu. Tento element je vyžadován při vytvoření dokladu.
      */
-    private string $bankType = null;
+    private ?string $bankType = null;
 
     /**
      * Bankovní účet. Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení
      *  uživatele (pod kterým je spuštěn XML import).
      */
-    private \Pohoda\Type\RefType $account = null;
+    private ?\Pohoda\Type\RefType $account = null;
 
     /**
      * Evidenční číslo dokladu (pouze pro export).
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Číslo bankovního výpisu.
      */
-    private \Pohoda\Bank\StatementNumberType $statementNumber = null;
+    private ?\Pohoda\Bank\StatementNumberType $statementNumber = null;
 
     /**
      * Variabilní symbol.
      */
-    private string $symVar = null;
+    private ?string $symVar = null;
 
     /**
      * Datum bankovního výpisu.
      */
-    private \DateTime $dateStatement = null;
+    private ?\DateTime $dateStatement = null;
 
     /**
      * Datum platby.
      */
-    private \DateTime $datePayment = null;
+    private ?\DateTime $datePayment = null;
 
     /**
      * Předkontace. Pokud není uvedena, POHODA použije předkontaci uvedenou v uživatelském nastavení
      *  uživatele (pod kterým je spuštěn XML import).
      */
-    private \Pohoda\Type\AccountingType $accounting = null;
+    private ?\Pohoda\Type\AccountingType $accounting = null;
 
     /**
      * Členění DPH, přednastavená hodnota je "inland".
      */
-    private \Pohoda\Type\ClassificationVATType $classificationVAT = null;
+    private ?\Pohoda\Type\ClassificationVATType $classificationVAT = null;
 
     /**
      * Členění KV DPH (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $classificationKVDPH = null;
+    private ?\Pohoda\Type\RefType $classificationKVDPH = null;
 
     /**
      * Text dokladu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Adresa zákazníka.
      */
-    private \Pohoda\Type\AddressType $partnerIdentity = null;
+    private ?\Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Osobní adresa.
      */
-    private \Pohoda\Type\MyAddressType $myIdentity = null;
+    private ?\Pohoda\Type\MyAddressType $myIdentity = null;
 
     /**
      * Číslo bankovního Protiúčtu.
      */
-    private \Pohoda\Bank\BankHeaderType\PaymentAccountAType $paymentAccount = null;
+    private ?\Pohoda\Bank\BankHeaderType\PaymentAccountAType $paymentAccount = null;
 
     /**
      * Konstantní symbol.
      */
-    private string $symConst = null;
+    private ?string $symConst = null;
 
     /**
      * Specifický symbol. Používá se jen u závazků.
      */
-    private string $symSpec = null;
+    private ?string $symSpec = null;
 
     /**
      * Párovací symbol (pouze JU nebo DE).
      */
-    private string $symPar = null;
+    private ?string $symPar = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Speciální režim registrace DPH v EU, režim One Stop Shop (OSS).
      */
-    private \Pohoda\Type\MOSStypeType $mOSS = null;
+    private ?\Pohoda\Type\MOSStypeType $mOSS = null;
 
     /**
      * Důkazní prostředky (OSS).
      *
      * @var string[]
      */
-    private array $evidentiaryResourcesMOSS = null;
+    private ?array $evidentiaryResourcesMOSS = null;
 
     /**
      * Účetní období (OSS).
      */
-    private string $accountingPeriodMOSS = null;
+    private ?string $accountingPeriodMOSS = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Interní poznámka.
      */
-    private string $intNote = null;
+    private ?string $intNote = null;
 
     /**
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
      */
-    private string $histRate = null;
+    private ?string $histRate = null;
 
     /**
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      */
-    private string $lock1 = null;
+    private ?string $lock1 = null;
 
     /**
      * Zámek (v E1 verzi označení Zámek II). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      */
-    private string $lock2 = null;
+    private ?string $lock2 = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

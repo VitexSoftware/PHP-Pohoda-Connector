@@ -22,7 +22,7 @@ namespace Pohoda\List;
  */
 class ItemNameType extends ItemType
 {
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Gets as name.

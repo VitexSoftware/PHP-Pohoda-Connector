@@ -25,184 +25,184 @@ class VoucherHeaderType
     /**
      * ID záznamu. Používá se při requestu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Typ pokladního dokladu. Tento element je vyžadován při vytvoření dokladu.
      */
-    private string $voucherType = null;
+    private ?string $voucherType = null;
 
     /**
      * Příznak „Storno/Stornujícího“ dokladu (pouze pro export).
      */
-    private string $storno = null;
+    private ?string $storno = null;
 
     /**
      * Pokladna. Tento element je vyžadován při vytvoření dokladu.
      */
-    private \Pohoda\Type\RefType $cashAccount = null;
+    private ?\Pohoda\Type\RefType $cashAccount = null;
 
     /**
      * Evidenční číslo dokladu.
      */
-    private \Pohoda\Type\NumberType $number = null;
+    private ?\Pohoda\Type\NumberType $number = null;
 
     /**
      * Číslo uvedené na přijatém výdajovém dokladu (číslo paragonu).
      */
-    private string $originalDocument = null;
+    private ?string $originalDocument = null;
 
     /**
      * Datum vystavení pokladního dokladu. Tento element je vyžadován při vytvoření dokladu.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Datum platby.
      */
-    private \DateTime $datePayment = null;
+    private ?\DateTime $datePayment = null;
 
     /**
      * Datum zdanitelného plnění.
      */
-    private \DateTime $dateTax = null;
+    private ?\DateTime $dateTax = null;
 
     /**
      * Datum KH DPH. Pokud není datum KH DPH uveden, nebude na dokladu nastaven. Pouze pro doklady typu výdej (pouze CZ verze).
      */
-    private \DateTime $dateKHDPH = null;
+    private ?\DateTime $dateKHDPH = null;
 
     /**
      * Předkontace. Pokud není uveden typ předkontace, je nastaveno 'Nevím'.
      */
-    private \Pohoda\Type\AccountingType $accounting = null;
+    private ?\Pohoda\Type\AccountingType $accounting = null;
 
     /**
      * Členění DPH, přednastavená hodnota je "inland".
      */
-    private \Pohoda\Type\ClassificationVATType $classificationVAT = null;
+    private ?\Pohoda\Type\ClassificationVATType $classificationVAT = null;
 
     /**
      * Členění KV DPH (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $classificationKVDPH = null;
+    private ?\Pohoda\Type\RefType $classificationKVDPH = null;
 
     /**
      * Text dokladu. Tento element je vyžadován při vytvoření dokladu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Zákazníkova adresa.
      */
-    private \Pohoda\Type\AddressType $partnerIdentity = null;
+    private ?\Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Osobní adresa.
      */
-    private \Pohoda\Type\MyAddressType $myIdentity = null;
+    private ?\Pohoda\Type\MyAddressType $myIdentity = null;
 
     /**
      * Pár. symbol.
      */
-    private string $symPar = null;
+    private ?string $symPar = null;
 
     /**
      * Cenová hladina odběratele.
      */
-    private \Pohoda\Type\RefType $priceLevel = null;
+    private ?\Pohoda\Type\RefType $priceLevel = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Registrace DPH v EU.
      */
-    private \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null;
+    private ?\Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null;
 
     /**
      * Speciální režim registrace DPH v EU, režim One Stop Shop (OSS).
      */
-    private \Pohoda\Type\MOSStypeType $mOSS = null;
+    private ?\Pohoda\Type\MOSStypeType $mOSS = null;
 
     /**
      * Důkazní prostředky (OSS).
      *
      * @var string[]
      */
-    private array $evidentiaryResourcesMOSS = null;
+    private ?array $evidentiaryResourcesMOSS = null;
 
     /**
      * Účetní období (OSS).
      */
-    private string $accountingPeriodMOSS = null;
+    private ?string $accountingPeriodMOSS = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Interní poznámka.
      */
-    private string $intNote = null;
+    private ?string $intNote = null;
 
     /**
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
      */
-    private string $histRate = null;
+    private ?string $histRate = null;
 
     /**
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      */
-    private string $lock1 = null;
+    private ?string $lock1 = null;
 
     /**
      * Zámek (v E1 verzi označení Zámek II). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      */
-    private string $lock2 = null;
+    private ?string $lock2 = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Podmíněná kontrola dokladu.
      */
-    private \Pohoda\Type\TypeValidateType $validate = null;
+    private ?\Pohoda\Type\TypeValidateType $validate = null;
 
     /**
      * Gets as id.

@@ -25,37 +25,37 @@ class AccStockAType
     /**
      * Materiál.
      */
-    private string $material = null;
+    private ?string $material = null;
 
     /**
      * Zboží.
      */
-    private string $goods = null;
+    private ?string $goods = null;
 
     /**
      * Nedokončená výroba.
      */
-    private string $workInProgress = null;
+    private ?string $workInProgress = null;
 
     /**
      * Polotovary.
      */
-    private string $semiproducts = null;
+    private ?string $semiproducts = null;
 
     /**
      * Výrobky.
      */
-    private string $products = null;
+    private ?string $products = null;
 
     /**
      * Zvířata.
      */
-    private string $animals = null;
+    private ?string $animals = null;
 
     /**
      * Materiál vl. výroby.
      */
-    private string $materialOfOwnProduction = null;
+    private ?string $materialOfOwnProduction = null;
 
     /**
      * Gets as material.

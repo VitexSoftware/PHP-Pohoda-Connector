@@ -25,87 +25,87 @@ class ItemType
     /**
      * ID položky dokladu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Text položky.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Měrná jednotka.
      */
-    private string $unit = null;
+    private ?string $unit = null;
 
     /**
      * Koeficient.
      */
-    private float $coefficient = null;
+    private ?float $coefficient = null;
 
     /**
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA.
      */
-    private string $payVAT = null;
+    private ?string $payVAT = null;
 
     /**
      * Sazba DPH.
      */
-    private \Pohoda\Type\VatRateType $rateVAT = null;
+    private ?\Pohoda\Type\VatRateType $rateVAT = null;
 
     /**
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      */
-    private float $percentVAT = null;
+    private ?float $percentVAT = null;
 
     /**
      * Sleva v procentech. Pokud není uvedena, bere se jako hodnota slevy z priceLevel dokumentu. Pokud není definován ani priceLevel bere se jako NULOVÁ.
      */
-    private float $discountPercentage = null;
+    private ?float $discountPercentage = null;
 
     /**
      * Kč.
      */
-    private \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyHomeItemType $homeCurrency = null;
 
     /**
      * Cizí měna.
      */
-    private \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrency = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Kód.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Údaje potřebné k nalezení skladové zásoby vložené do položky. Pokud zde tento element není, jedná se o textovou položku.
      */
-    private \Pohoda\Type\StockItemType $stockItem = null;
+    private ?\Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Gets as id.

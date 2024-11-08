@@ -25,12 +25,12 @@ class GroupType
     /**
      * Název skupiny adres.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Popis skupiny adres.
      */
-    private string $descripton = null;
+    private ?string $descripton = null;
 
     /**
      * Gets as name.

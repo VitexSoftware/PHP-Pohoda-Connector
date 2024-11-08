@@ -26,88 +26,88 @@ class ClassificationVATHeaderType
     /**
      * ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Zkratka.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Název.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Typ členění DPH.
      */
-    private \Pohoda\Type\RefType $vATType = null;
+    private ?\Pohoda\Type\RefType $vATType = null;
 
     /**
      * Text na dokladu.
      */
-    private string $textOnDocument = null;
+    private ?string $textOnDocument = null;
 
     /**
      * Text pro vyměření DPH.
      */
-    private string $textForVATAssessment = null;
+    private ?string $textForVATAssessment = null;
 
     /**
      * Nabízet.
      */
-    private bool $offer = null;
+    private ?bool $offer = null;
 
     /**
      * Platnost od.
      */
-    private \DateTime $validFrom = null;
+    private ?\DateTime $validFrom = null;
 
     /**
      * Platnost do.
      */
-    private \DateTime $validTill = null;
+    private ?\DateTime $validTill = null;
 
     /**
      * Řádek v Přiznání DPH.
      */
-    private string $lineInVATReturn = null;
+    private ?string $lineInVATReturn = null;
 
     /**
      * Sekce v Kontrolním hlášení (pouze CZ verze).
      */
-    private string $sectionInVATLedgerStatement = null;
+    private ?string $sectionInVATLedgerStatement = null;
 
     /**
      * Kód režimu plnění (pouze CZ verze).
      */
-    private string $codeOfSupplyMode = null;
+    private ?string $codeOfSupplyMode = null;
 
     /**
      * Kód pro souhrnné hlášení.
      */
-    private string $codeForSummaryReport = null;
+    private ?string $codeForSummaryReport = null;
 
     /**
      * Kód předmětu plnění (pouze CZ verze).
      */
-    private string $codeOfObjectOfFulfilment = null;
+    private ?string $codeOfObjectOfFulfilment = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Gets as id.

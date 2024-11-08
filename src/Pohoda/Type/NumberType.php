@@ -25,17 +25,17 @@ class NumberType
     /**
      * Odkaz na číselnou řadu. Vyšší prioritu má element "id".
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Prefix číselné řady.
      */
-    private string $ids = null;
+    private ?string $ids = null;
 
     /**
      * Číslo dokladu, bez vazby na číselnou řadu.
      */
-    private \Pohoda\Type\NumberType\NumberRequestedAType $numberRequested = null;
+    private ?\Pohoda\Type\NumberType\NumberRequestedAType $numberRequested = null;
 
     /**
      * Gets as id.

@@ -25,12 +25,12 @@ class CurrencyCashRegisterType
     /**
      * Měna pokladny.
      */
-    private \Pohoda\Type\RefType $currency = null;
+    private ?\Pohoda\Type\RefType $currency = null;
 
     /**
      * Kurs použitý pro valutovou pokladnu (denní/pevný).
      */
-    private string $rate = null;
+    private ?string $rate = null;
 
     /**
      * Gets as currency.

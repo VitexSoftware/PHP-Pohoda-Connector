@@ -25,96 +25,96 @@ class ContractDescType
     /**
      * Používá se pouze při exportu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Evidenční číslo zakázky.
      */
-    private \Pohoda\Type\NumberTypeContractType $number = null;
+    private ?\Pohoda\Type\NumberTypeContractType $number = null;
 
     /**
      * Datum plánovaného zahájení.
      */
-    private \DateTime $datePlanStart = null;
+    private ?\DateTime $datePlanStart = null;
 
     /**
      * Datum plánovaného předání.
      */
-    private \DateTime $datePlanDelivery = null;
+    private ?\DateTime $datePlanDelivery = null;
 
     /**
      * Datum zahájení.
      */
-    private \DateTime $dateStart = null;
+    private ?\DateTime $dateStart = null;
 
     /**
      * Datum předání.
      */
-    private \DateTime $dateDelivery = null;
+    private ?\DateTime $dateDelivery = null;
 
     /**
      * Záruka.
      */
-    private \DateTime $dateWarranty = null;
+    private ?\DateTime $dateWarranty = null;
 
     /**
      * Text popisu zakázky. Tento element je vyžadován při vytvoření dokladu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Zákazníkova adresa.
      */
-    private \Pohoda\Type\AddressType $partnerIdentity = null;
+    private ?\Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Odpovědná osoba.
      */
-    private \Pohoda\Type\RefTypeLongType $responsiblePerson = null;
+    private ?\Pohoda\Type\RefTypeLongType $responsiblePerson = null;
 
     /**
      * Stav zakázky (podporován do verze 13100).
      */
-    private string $contractState = null;
+    private ?string $contractState = null;
 
     /**
      * Stav zakázky (nová definice od verze 13100). Pokud budou při importu současně použity elementy „contractState“ i „status“, pak má větší prioritu element „status“.
      */
-    private \Pohoda\Contract\StatusType $status = null;
+    private ?\Pohoda\Contract\StatusType $status = null;
 
     /**
      * Ostatní.
      */
-    private string $ost1 = null;
+    private ?string $ost1 = null;
 
     /**
      * Pozn.
      */
-    private string $ost2 = null;
+    private ?string $ost2 = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

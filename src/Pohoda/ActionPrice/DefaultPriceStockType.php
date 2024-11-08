@@ -25,17 +25,17 @@ class DefaultPriceStockType
     /**
      * Výchozí cena skladové zásoby.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * Cena je uvedena: bez DPH, včetně DPH.
      */
-    private string $payVAT = null;
+    private ?string $payVAT = null;
 
     /**
      * Cizí měna.
      */
-    private \Pohoda\ActionPrice\TypeAcpCurrencyForeignType $foreignCurrency = null;
+    private ?\Pohoda\ActionPrice\TypeAcpCurrencyForeignType $foreignCurrency = null;
 
     /**
      * Gets as price.

@@ -25,12 +25,12 @@ class ComboboxType
     /**
      * Hodnota z rozbalovacího seznamu.
      */
-    private string $value = null;
+    private ?string $value = null;
 
     /**
      * Pouze export.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Gets as value.

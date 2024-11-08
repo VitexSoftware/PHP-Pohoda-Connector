@@ -25,68 +25,68 @@ class PaymentHeaderType
     /**
      * ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Název formy úhrady.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Popis formy úhrady.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Typ formy úhrady. Na základě zvoleného typu se bude provádět i její zaúčtování.
      */
-    private string $paymentType = null;
+    private ?string $paymentType = null;
 
     /**
      * Typ formy úhrady pro FM.
      */
-    private string $paymentTypeFM = null;
+    private ?string $paymentTypeFM = null;
 
     /**
      * Cizí měna.
      */
-    private \Pohoda\Payment\ForeignCurrencyType $foreignCurrency = null;
+    private ?\Pohoda\Payment\ForeignCurrencyType $foreignCurrency = null;
 
     /**
      * Stravenka.
      */
-    private \Pohoda\Payment\TicketType $ticket = null;
+    private ?\Pohoda\Payment\TicketType $ticket = null;
 
     /**
      * Hotovost.
      */
-    private \Pohoda\Payment\CashDefaultType $cash = null;
+    private ?\Pohoda\Payment\CashDefaultType $cash = null;
 
     /**
      * Použít v agendách prodejek. Zadaná forma úhrady je nabízena v agendě Prodejky, Kasa a v modulu POHODA Kasa Offline. .
      */
-    private string $useInSales = null;
+    private ?string $useInSales = null;
 
     /**
      * Použít v ostatních agendách. Zvolená forma úhrady je nabízena v ostatních agendách.
      */
-    private string $useInOtherAgendas = null;
+    private ?string $useInOtherAgendas = null;
 
     /**
      * Vstupuje do EET.
      */
-    private string $eet = null;
+    private ?string $eet = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as id.

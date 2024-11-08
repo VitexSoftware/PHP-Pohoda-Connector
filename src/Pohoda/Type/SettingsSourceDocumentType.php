@@ -25,7 +25,7 @@ class SettingsSourceDocumentType
     /**
      * Nastavení parametrů na zdrojové dokladu Objednávka při vazbě: Objednávka -> Zálohová faktura.
      */
-    private string $linkOrderToAdvanceInvoice = null;
+    private ?string $linkOrderToAdvanceInvoice = null;
 
     /**
      * Gets as linkOrderToAdvanceInvoice.

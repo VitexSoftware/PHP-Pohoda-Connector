@@ -60,6 +60,11 @@ class Client extends \Ease\Sand
     public ?int $lastResponseCode = null;
 
     /**
+     * Meaning of HTTP Response code of last request.
+     */
+    public ?string $lastResponseMessage = null;
+
+    /**
      * Informace o poslední HTTP chybě.
      */
     public ?string $lastCurlError = null;
@@ -124,7 +129,7 @@ class Client extends \Ease\Sand
      * Path to teporary XML file.
      */
     public ?string $xmlCache = null;
-    public Response $response;
+    public ?Response $response = null;
 
     /**
      * My Company identification ID.
@@ -426,66 +431,67 @@ class Client extends \Ease\Sand
      *
      * @return bool
      */
-    public function processResponse($httpCode)
+    public function processResponse(int $httpCode)
     {
         switch ($httpCode) {
             case 400:
-                $this->addStatusMessage(_('400: Bad request'), 'error');
+                $this->lastResponseMessage = '400: Bad request';
 
                 // "Požadavek nemůže být vyřízen, poněvadž byl syntakticky nesprávně zapsán"
                 break;
             case 401:
-                $this->addStatusMessage(_('401: Unauthorized'), 'error');
+                $this->lastResponseMessage = '401: Unauthorized';
 
                 // "Používán tam, kde je vyžadována autentifikace, ale nebyla zatím provedena". V tomto případě se jedná o problém, kdy buď v HTTP požadavku chybí autentizační údaje nebo daný uživatel není v programu POHODA vytvořen.
                 break;
             case 403:
-                $this->addStatusMessage(_('403: Forbidden'), 'error');
+                $this->lastResponseMessage = '403: Forbidden';
 
                 // "Požadavek byl legální, ale server odmítl odpovědět". Například se jedná o problém, kdy daný uživatel nemá právo na otevření účetní jednotky v programu POHODA.
                 break;
             case 404:
-                $this->addStatusMessage(_('404: Not found'), 'error');
+                $this->lastResponseMessage = '404: Not found';
 
                 // „Požadovaný dokument nebyl nalezen“. Jedná se o problém, kdy byla chybně zadaná URL cesta k mServeru. Například se jedná o problém, kdy v URL adrese není uvedena cesta k umístění na serveru "/XML". Příklad správně zadné URL: 192.168.0.1:444/xml
                 break;
             case 405:
-                $this->addStatusMessage(_('405: Method not allowed'), 'error');
+                $this->lastResponseMessage = '405: Method not allowed';
 
                 // „Požadavek byl zavolán na zdroj s metodou, kterou nepodporuje. Například se jedná o službu, na kterou se odesílají data metodou POST a někdo se je místo toho pokusí odeslat metodou GET.“
                 break;
             case 408:
-                $this->addStatusMessage(_('408 : Request Timeout'), 'error');
+                $this->lastResponseMessage = '408: Request Timeout';
 
                 // „Vypršel čas vyhrazený na zpracování požadavku“
                 break;
             case 500:
-                $this->addStatusMessage(_('500: Internal server error'), 'error');
+                $this->lastResponseMessage = '500: Internal server error';
 
                 // „Při zpracovávání požadavku došlo k blíže nespecifikované chybě“
                 break;
             case 502:
-                $this->addStatusMessage(_('502: Bad Gateway'), 'error');
+                $this->lastResponseMessage = '502: Bad Gateway';
 
                 // „Proxy server nebo brána obdržely od serveru neplatnou odpověď“
                 break;
             case 503:
-                $this->addStatusMessage(_('503: Service unavailable'), 'error');
+                $this->lastResponseMessage = '503: Service unavailable';
 
                 // „Služba je dočasně nedostupná“
                 break;
             case 504:
-                $this->addStatusMessage(_('504: Gateway Timeout'), 'error');
+                $this->lastResponseMessage = '504: Gateway Timeout';
 
                 // „Proxy server nedostal od cílového serveru odpověď v daném čase“
                 break;
             case 505:
-                $this->addStatusMessage(_('505: HTTP Version Not Supported'), 'error');
+                $this->lastResponseMessage = '505: HTTP Version Not Supported';
 
                 // „Server nepodporuje verzi protokolu HTTP použitou v požadavku“
                 break;
 
             default:
+                $this->lastResponseMessage = $httpCode . ' ok';
                 $this->response = new Response($this);
 
                 //                if ($this->response->isOk() === false) {

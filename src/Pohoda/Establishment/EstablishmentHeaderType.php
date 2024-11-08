@@ -26,68 +26,68 @@ class EstablishmentHeaderType
     /**
      * ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Zkratka.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Název.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Ulice.
      */
-    private string $street = null;
+    private ?string $street = null;
 
     /**
      * PSČ.
      */
-    private string $zip = null;
+    private ?string $zip = null;
 
     /**
      * Obec.
      */
-    private string $city = null;
+    private ?string $city = null;
 
     /**
      * Telefon.
      */
-    private string $phone = null;
+    private ?string $phone = null;
 
     /**
      * Mobil.
      */
-    private string $mobil = null;
+    private ?string $mobil = null;
 
     /**
      * Fax.
      */
-    private string $fax = null;
+    private ?string $fax = null;
 
     /**
      * Email.
      */
-    private string $email = null;
+    private ?string $email = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Gets as id.

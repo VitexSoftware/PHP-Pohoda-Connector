@@ -22,20 +22,20 @@ namespace Pohoda\ProductRequirement;
  */
 class ProductRequirementType
 {
-    private string $version = null;
-    private \Pohoda\ProductRequirement\ProductRequirementHeaderType $productRequirementHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\ProductRequirement\ProductRequirementHeaderType $productRequirementHeader = null;
 
     /**
      * @var \Pohoda\ProductRequirement\ProductRequirementItemType[]
      */
-    private array $productRequirementDetail = null;
+    private ?array $productRequirementDetail = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

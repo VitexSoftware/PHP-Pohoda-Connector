@@ -25,13 +25,13 @@ class NumberTypeContractType
     /**
      * Odkaz na číselnou řadu. Vyšší prioritu má element "id".
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Prefix číselné řady.
      */
-    private string $ids = null;
-    private \Pohoda\Type\NumberTypeContractType\NumberRequestedAType $numberRequested = null;
+    private ?string $ids = null;
+    private ?\Pohoda\Type\NumberTypeContractType\NumberRequestedAType $numberRequested = null;
 
     /**
      * Gets as id.

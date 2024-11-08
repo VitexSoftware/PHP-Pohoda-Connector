@@ -25,7 +25,7 @@ class RestrictionDataStoreType
     /**
      * Exportovat volitelné parametry.
      */
-    private string $parameters = null;
+    private ?string $parameters = null;
 
     /**
      * Gets as parameters.

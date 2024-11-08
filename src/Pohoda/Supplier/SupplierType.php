@@ -22,13 +22,13 @@ namespace Pohoda\Supplier;
  */
 class SupplierType
 {
-    private string $version = null;
-    private \Pohoda\Type\StockItemType $stockItem = null;
+    private ?string $version = null;
+    private ?\Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * @var \Pohoda\Supplier\SupplierItemType[]
      */
-    private array $suppliers = null;
+    private ?array $suppliers = null;
 
     /**
      * Gets as version.

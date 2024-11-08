@@ -22,8 +22,8 @@ namespace Pohoda\Type;
  */
 class MyAddressType
 {
-    private \Pohoda\Type\AddressInternetType $address = null;
-    private \Pohoda\Type\EstablishmentType $establishment = null;
+    private ?\Pohoda\Type\AddressInternetType $address = null;
+    private ?\Pohoda\Type\EstablishmentType $establishment = null;
 
     /**
      * Gets as address.

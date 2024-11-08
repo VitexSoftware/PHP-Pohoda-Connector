@@ -25,17 +25,17 @@ class LinkedDocumentType
     /**
      * Typ/Agenda zdrojového dokladu.
      */
-    private string $sourceAgenda = null;
+    private ?string $sourceAgenda = null;
 
     /**
      * Doklad.
      */
-    private \Pohoda\Type\SourceDocumentType $sourceDocument = null;
+    private ?\Pohoda\Type\SourceDocumentType $sourceDocument = null;
 
     /**
      * Položka dokladu.
      */
-    private \Pohoda\Type\SourceDocumentItemType $sourceDocumentItem = null;
+    private ?\Pohoda\Type\SourceDocumentItemType $sourceDocumentItem = null;
 
     /**
      * Gets as sourceAgenda.

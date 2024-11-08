@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListParameterRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze dokladu.
      */
-    private string $parameterVersion = null;
+    private ?string $parameterVersion = null;
 
     /**
      * Atributy určují výběr agend pro export parametrů. Pokud není zadán žádný, vyexportují se parametry všech agend.

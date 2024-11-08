@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListAccountingFormOfPaymentRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $accountingFormOfPaymentVersion = null;
+    private ?string $accountingFormOfPaymentVersion = null;
 
     /**
      * @var \Pohoda\List\RequestAccountingFormOfPaymentType[]

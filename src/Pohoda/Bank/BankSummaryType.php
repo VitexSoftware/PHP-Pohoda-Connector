@@ -25,27 +25,27 @@ class BankSummaryType
     /**
      * Zaokrouhlení celkové částky dokladu.
      */
-    private string $roundingDocument = null;
+    private ?string $roundingDocument = null;
 
     /**
      * Zaokrouhlení DPH.
      */
-    private string $roundingVAT = null;
+    private ?string $roundingVAT = null;
 
     /**
      * Způsob výpočtu hodnoty DPH z částky včetně daně dle § 37 (pouze CZ verze pro JU nebo DE).
      */
-    private string $typeCalculateVATInclusivePrice = null;
+    private ?string $typeCalculateVATInclusivePrice = null;
 
     /**
      * Kč.
      */
-    private \Pohoda\Type\TypeCurrencyHomeType $homeCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyHomeType $homeCurrency = null;
 
     /**
      * Cizí měna.
      */
-    private \Pohoda\Type\TypeCurrencyForeignType $foreignCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyForeignType $foreignCurrency = null;
 
     /**
      * Gets as roundingDocument.

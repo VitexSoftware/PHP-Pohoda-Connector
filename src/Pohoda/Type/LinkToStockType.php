@@ -22,8 +22,8 @@ namespace Pohoda\Type;
  */
 class LinkToStockType
 {
-    private int $id = null;
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?int $id = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Gets as id.

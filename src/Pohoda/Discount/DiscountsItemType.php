@@ -25,27 +25,27 @@ class DiscountsItemType
     /**
      * Sleva/vedeljší cena, která se bude upravovat.
      */
-    private \Pohoda\Discount\PriceLevelFilterType $filter = null;
+    private ?\Pohoda\Discount\PriceLevelFilterType $filter = null;
 
     /**
      * Úprava a zafixování ceny.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * Úprava a zafixování marže.
      */
-    private float $markup = null;
+    private ?float $markup = null;
 
     /**
      * Úprava a zafixování rabatu.
      */
-    private float $rebate = null;
+    private ?float $rebate = null;
 
     /**
      * Úprava a zafixování slevy.
      */
-    private float $discountPercent = null;
+    private ?float $discountPercent = null;
 
     /**
      * Gets as filter.

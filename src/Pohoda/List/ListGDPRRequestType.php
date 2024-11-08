@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListGDPRRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $gDPRVersion = null;
+    private ?string $gDPRVersion = null;
 
     /**
      * @var \Pohoda\List\RequestGDPRType[]

@@ -25,17 +25,17 @@ class ActionTypeType
     /**
      * Vložení nového záznamu. Výchozí hodnota.
      */
-    private \Pohoda\Filter\RequestStockActionType $add = null;
+    private ?\Pohoda\Filter\RequestStockActionType $add = null;
 
     /**
      * Aktualizace dokladu.
      */
-    private \Pohoda\Filter\RequestStockActionType $update = null;
+    private ?\Pohoda\Filter\RequestStockActionType $update = null;
 
     /**
      * odstranění dokladu.
      */
-    private \Pohoda\Filter\RequestStockType $delete = null;
+    private ?\Pohoda\Filter\RequestStockType $delete = null;
 
     /**
      * Gets as add.

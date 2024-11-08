@@ -25,32 +25,32 @@ class IntParameterType
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      */
-    private \Pohoda\Type\ActionTypeItemType $actionType = null;
+    private ?\Pohoda\Type\ActionTypeItemType $actionType = null;
 
     /**
      * ID internetového parametru.
      */
-    private int $intParameterID = null;
+    private ?int $intParameterID = null;
 
     /**
      * Název internetového parametru.
      */
-    private string $intParameterName = null;
+    private ?string $intParameterName = null;
 
     /**
      * Pořadí.
      */
-    private int $intParameterOrder = null;
+    private ?int $intParameterOrder = null;
 
     /**
      * Typ hodnoty internetového parametru.
      */
-    private string $intParameterType = null;
+    private ?string $intParameterType = null;
 
     /**
      * @var \Pohoda\Stock\IntParameterValueType[]
      */
-    private array $intParameterValues = null;
+    private ?array $intParameterValues = null;
 
     /**
      * Gets as actionType.

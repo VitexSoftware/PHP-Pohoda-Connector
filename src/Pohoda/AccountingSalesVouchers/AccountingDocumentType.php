@@ -25,24 +25,24 @@ class AccountingDocumentType
     /**
      * Agenda dokladu.
      */
-    private string $agenda = null;
+    private ?string $agenda = null;
 
     /**
      * ID dokladu.
      */
-    private string $id = null;
+    private ?string $id = null;
 
     /**
      * Číslo dokladu.
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Agenda.
      *
      * @var \Pohoda\AccountingSalesVouchers\LinkedDocumentType[]
      */
-    private array $linkedDocuments = null;
+    private ?array $linkedDocuments = null;
 
     /**
      * Gets as agenda.

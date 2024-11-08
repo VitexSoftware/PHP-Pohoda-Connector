@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListNumericalSeriesRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $numericalSeriesVersion = null;
+    private ?string $numericalSeriesVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestNumericalSeriesType[]

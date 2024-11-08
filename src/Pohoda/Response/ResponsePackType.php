@@ -22,22 +22,22 @@ namespace Pohoda\Response;
  */
 class ResponsePackType
 {
-    private string $version = null;
-    private string $id = null;
-    private string $state = null;
-    private string $note = null;
-    private string $programVersion = null;
+    private ?string $version = null;
+    private ?string $id = null;
+    private ?string $state = null;
+    private ?string $note = null;
+    private ?string $programVersion = null;
 
     /**
      * IČ firmy, která XML zpracovala.
      */
-    private string $ico = null;
+    private ?string $ico = null;
 
     /**
      * Jedinečný identifikátor účetnictví firmy, která XML zpracovala.
      */
-    private string $key = null;
-    private \DateTime $dateTimeStamp = null;
+    private ?string $key = null;
+    private ?\DateTime $dateTimeStamp = null;
 
     /**
      * @var \Pohoda\Response\ResponsePackItemType[]

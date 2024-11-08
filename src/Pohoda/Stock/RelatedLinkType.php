@@ -22,17 +22,17 @@ namespace Pohoda\Stock;
  */
 class RelatedLinkType
 {
-    private string $addressURL = null;
+    private ?string $addressURL = null;
 
     /**
      * Popis souvisejícího odkazu. Povinné pole v programu POHODA. Pokud není zadáno nebo není unikátní, bude programem Pohoda automaticky vygenerován text: Odkaz_(1) .. n.
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Pořadí (jen pro export).
      */
-    private int $order = null;
+    private ?int $order = null;
 
     /**
      * Gets as addressURL.

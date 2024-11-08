@@ -22,7 +22,7 @@ namespace Pohoda\Accountancy;
  */
 class AccountancyType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Účetní doklad.

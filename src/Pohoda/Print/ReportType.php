@@ -25,17 +25,17 @@ class ReportType
     /**
      * Identifikátor sestavy. Hodnotu naleznete ve vlastnostech sestavy.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Název sestavy. Pouze export.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Popis sestavy. Pouze export.
      */
-    private string $detail = null;
+    private ?string $detail = null;
 
     /**
      * Gets as id.

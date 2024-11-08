@@ -25,62 +25,62 @@ class RestrictionDataType
     /**
      * Exportovat záznamy ze záložky Související soubory.
      */
-    private string $relatedFiles = null;
+    private ?string $relatedFiles = null;
 
     /**
      * Exportovat záznamy ze záložky Související odkazy.
      */
-    private string $relatedLinks = null;
+    private ?string $relatedLinks = null;
 
     /**
      * Exportovat záznamy ze záložky Obrázky.
      */
-    private string $pictures = null;
+    private ?string $pictures = null;
 
     /**
      * Exportovat záznamy ze záložky Kategorie.
      */
-    private string $categories = null;
+    private ?string $categories = null;
 
     /**
      * Exportovat záznamy ze záložky související zboží.
      */
-    private string $relatedStocks = null;
+    private ?string $relatedStocks = null;
 
     /**
      * Exportovat záznamy ze záložky Alternativní zboží.
      */
-    private string $alternativeStocks = null;
+    private ?string $alternativeStocks = null;
 
     /**
      * Exportovat záznamy ze záložky Parametry.
      */
-    private string $intParameters = null;
+    private ?string $intParameters = null;
 
     /**
      * Exportovat položky zásoby.
      */
-    private string $stockItem = null;
+    private ?string $stockItem = null;
 
     /**
      * Exportovat svázané zásoby.
      */
-    private string $stockAttach = null;
+    private ?string $stockAttach = null;
 
     /**
      * Exportovat evidenční čísla.
      */
-    private string $stockSerialNumber = null;
+    private ?string $stockSerialNumber = null;
 
     /**
      * Exportovat prodejní ceny.
      */
-    private string $stockPriceItem = null;
+    private ?string $stockPriceItem = null;
 
     /**
      * Exportovat volitelné parametry.
      */
-    private string $stockParameters = null;
+    private ?string $stockParameters = null;
 
     /**
      * Gets as relatedFiles.

@@ -25,52 +25,52 @@ class ItemAccountingUnitType
     /**
      * ID záznamu. Používá se při requestu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Účetní rok.
      */
-    private int $year = null;
+    private ?int $year = null;
 
     /**
      * Typ účetního období.
      */
-    private string $yearType = null;
+    private ?string $yearType = null;
 
     /**
      * Počátek účetního období.
      */
-    private \DateTime $dateFrom = null;
+    private ?\DateTime $dateFrom = null;
 
     /**
      * Konec účetního období.
      */
-    private \DateTime $dateTo = null;
+    private ?\DateTime $dateTo = null;
 
     /**
      * Typ účetní jednotky.
      */
-    private string $unitType = null;
+    private ?string $unitType = null;
 
     /**
      * Stav - fyzická nebo právnická osoba.
      */
-    private string $stateType = null;
+    private ?string $stateType = null;
 
     /**
      * Adresa účetní jednotky.
      */
-    private \Pohoda\Type\MyAddressType $accountingUnitIdentity = null;
+    private ?\Pohoda\Type\MyAddressType $accountingUnitIdentity = null;
 
     /**
      * Adresa účetní jednotky.
      */
-    private string $dataFile = null;
+    private ?string $dataFile = null;
 
     /**
      * Jedinečný identifikátor účetnictví firmy.
      */
-    private string $key = null;
+    private ?string $key = null;
 
     /**
      * Gets as id.

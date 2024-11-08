@@ -25,27 +25,27 @@ class VariantsItemType
     /**
      * Typ práce s položkou. Výchozí hodnota je přidání nové položky.
      */
-    private \Pohoda\Type\ActionTypeItemAddDeleteType $actionType = null;
+    private ?\Pohoda\Type\ActionTypeItemAddDeleteType $actionType = null;
 
     /**
      * Odkaz na skladovou položku.
      */
-    private \Pohoda\Type\StockItemType $stockItem = null;
+    private ?\Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Pořadí skladových položek (Pouze pro export).
      */
-    private int $order = null;
+    private ?int $order = null;
 
     /**
      * Název skladové položky.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Množství skladové položky.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Gets as actionType.
