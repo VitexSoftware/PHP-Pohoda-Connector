@@ -473,7 +473,7 @@ class Response extends \Ease\Sand
         $bankItems = [];
 
         foreach ($bank as $bankEntry) {
-            if(is_array($bankEntry)){
+            if (\is_array($bankEntry)) {
                 $bankItems[$bankData['bankHeader']['id']] = self::stripArrayNames('bnk', $bankEntry);
             } else {
                 $bankItems[$bankData['bankHeader']['id']] = $bankEntry;
