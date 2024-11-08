@@ -49,7 +49,7 @@ distributions.each {
                     sh 'sudo apt-get update --allow-releaseinfo-change'
                     sh 'sudo chown jenkins:jenkins ..'
                     sh 'debuild-pbuilder  -i -us -uc -b'
-                    sh 'mkdir -p $WORKSPACE/dist/debian/ ; rm -rf $WORKSPACE/dist/debian/* ; for deb in $(cat debian/files | awk \'{print $1}\'); do mv "../$deb" $WORKSPACE/dist/debian/; done'
+                    sh 'mkdir -p $WORKSPACE/dist/debian/ ; for deb in $(cat debian/files | awk \'{print $1}\'); do mv "../$deb" $WORKSPACE/dist/debian/; done'
                     artifacts = sh (
                         script: "cat debian/files | awk '{print \$1}'",
                         returnStdout: true
@@ -77,9 +77,8 @@ distributions.each {
                     artifacts.each { deb_file ->
                         println "Copying artifact: " + deb_file
                         archiveArtifacts artifacts: 'dist/debian/' + deb_file
-                        sh 'cp $WORKSPACE/dist/debian/*.deb $WORKSPACE'
+                        sh 'cp $WORKSPACE/dist/debian/' + deb_file + ' $WORKSPACE'
                     }
-                    sh 'cp $WORKSPACE/dist/debian/' + deb_file + ' $WORKSPACE'
                 }
             }
         }
