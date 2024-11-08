@@ -70,7 +70,7 @@ parallel distributions.collectEntries { distribution ->
                         artifacts.each { deb_file ->
                             println 'Copying artifact: ' + deb_file
                             archiveArtifacts artifacts: 'dist/debian/' + deb_file
-                            sh 'mv $WORKSPACE/dist/debian/' + deb_file + '$WORKSPACE'
+                            sh 'mv $WORKSPACE/dist/debian/' + deb_file + ' $WORKSPACE'
                         }
                     }
                 }
