@@ -148,7 +148,7 @@ class Response extends \Ease\Sand
         foreach ($responseData as $key => $value) {
             switch ($key) {
                 case 'lAdb:addressbook':
-                    $this->parsed = $this->processListAddressBook($value);
+                    $this->parsed = $this->processListAddressBook(array_key_exists(0, $value) ? $value : [$value]);
 
                     break;
                 case 'rdc:producedDetails':
@@ -160,7 +160,7 @@ class Response extends \Ease\Sand
 
                     break;
                 case 'lst:bank':
-                    $this->parsed = $this->processBank($value);
+                    $this->parsed = $this->processBank(array_key_exists(0, $value) ? $value : [$value]);
 
                     break;
                 case '@version':
