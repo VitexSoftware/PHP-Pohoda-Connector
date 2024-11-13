@@ -64,6 +64,7 @@ class Bank extends Client
         \Ease\Functions::divDataArray($data, $summaryData, 'foreignCurrency');
         $taken = parent::takeData($data);
         $this->addSummary($summaryData);
+
         return $taken;
     }
 
