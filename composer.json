@@ -943,8 +943,8 @@
         "ext-iconv": "*",
         "goetas-webservices/xsd2php-runtime": "0.2.17",
         "lightools/xml": "3.0.0",
-        "riesenia/pohoda": ">=1.5 || dev-master",
-        "vitexsoftware/ease-core": "dev-main",
+        "riesenia/pohoda": "1.21.0",
+        "vitexsoftware/ease-core": "1.44.2",
         "jms/serializer": "^3.28"
     },
     "require-dev": {
