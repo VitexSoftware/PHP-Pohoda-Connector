@@ -42,6 +42,7 @@ class Bank extends Client
      *
      * @param array $data
      */
+    #[\Override]
     public function create($data): void
     {
         $this->requestXml = $this->pohoda->createBank($data);
@@ -62,13 +63,14 @@ class Bank extends Client
         \Ease\Functions::divDataArray($data, $summaryData, 'homeCurrency');
         \Ease\Functions::divDataArray($data, $summaryData, 'foreignCurrency');
         $taken = parent::takeData($data);
-
-        return $taken + $this->addSummary($summaryData);
+        $this->addSummary($summaryData);
+        return $taken;
     }
 
     /**
      * {@inheritDoc}
      */
+    #[\Override]
     public function setObjectName($forceName = '')
     {
         return parent::setObjectName($forceName ?: $this->getDataValue('account').'@'.$this->getObjectName());

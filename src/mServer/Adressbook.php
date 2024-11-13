@@ -30,23 +30,19 @@ class Adressbook extends Client
     /**
      * Request XML helper.
      */
-    public \Riesenia\Pohoda\Addressbook $requestXml = null;
+    public ?\Riesenia\Pohoda\Addressbook $requestXml = null;
 
     /**
      * AddressBook records name column.
      */
-    public string $nameColumn = 'address:company';
-
-    /**
-     * AddressBook records name column.
-     */
-    public string $nameColumn = 'address:company';
+    public ?string $nameColumn = 'address:company';
 
     /**
      * Create Agenda document using given data.
      *
      * @param array $data
      */
+    #[\Override]
     public function create($data): void
     {
         $this->requestXml = $this->pohoda->createAddressbook($data);
