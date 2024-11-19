@@ -144,7 +144,7 @@ class Client extends \Ease\Sand
      */
     protected Pohoda $pohoda;
     /**
-     * @var bool|\CurlHandle|resource $curl
+     * @var resource $curl
      */
     private $curl;
 

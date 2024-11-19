@@ -55,7 +55,7 @@ class Bank extends Client
      *
      * @return int
      */
-    public function takeData($data)
+    public function takeData($data): int
     {
         $summaryData = [];
         \Ease\Functions::divDataArray($data, $summaryData, 'roundingDocument');
