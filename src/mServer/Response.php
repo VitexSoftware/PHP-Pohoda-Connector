@@ -148,7 +148,7 @@ class Response extends \Ease\Sand
         foreach ($responseData as $key => $value) {
             switch ($key) {
                 case 'lAdb:addressbook':
-                    $this->parsed = $this->processListAddressBook(array_key_exists(0, $value) ? $value : [$value]);
+                    $this->parsed = $this->processListAddressBook(\array_key_exists(0, $value) ? $value : [$value]);
 
                     break;
                 case 'rdc:producedDetails':
@@ -160,7 +160,7 @@ class Response extends \Ease\Sand
 
                     break;
                 case 'lst:bank':
-                    $this->parsed = $this->processBank(array_key_exists(0, $value) ? $value : [$value]);
+                    $this->parsed = $this->processBank(\array_key_exists(0, $value) ? $value : [$value]);
 
                     break;
                 case '@version':
@@ -475,15 +475,17 @@ class Response extends \Ease\Sand
         foreach ($bank as $bankEntry) {
             if (\is_array($bankEntry)) {
                 $striped = self::stripArrayNames('bnk', $bankEntry);
-                if (array_key_exists('bankHeader', $striped)) {
+
+                if (\array_key_exists('bankHeader', $striped)) {
                     $bankItems[$striped['bankHeader']['id']] = $striped;
-                } elseif (array_key_exists('bankItem', $striped)) {
+                } elseif (\array_key_exists('bankItem', $striped)) {
                     $bankItems[$striped['bankItem']['id']] = $striped;
-                } elseif(array_key_exists('id', $striped)) {
+                } elseif (\array_key_exists('id', $striped)) {
                     $bankItems[$striped['id']] = $striped;
                 }
             }
         }
+
         return self::stripArrayNames('typ', $bankItems);
     }
 }

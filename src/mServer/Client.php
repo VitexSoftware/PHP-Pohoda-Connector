@@ -548,9 +548,9 @@ class Client extends \Ease\Sand
      *
      * @param array $data
      */
-    public function create($data)
+    public function create(string $data)
     {
-        $this->requestXml = $this->pohoda->create($data);
+        $this->requestXml = $this->pohoda->create($this->agenda, $data);
 
         return empty($this->requestXml) ? 0 : 1;
     }

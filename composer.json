@@ -941,17 +941,17 @@
     "require": {
         "ext-curl": "*",
         "ext-iconv": "*",
-        "goetas-webservices/xsd2php-runtime": "^0.2.16",
-        "lightools/xml": "v2.0.0",
-        "riesenia/pohoda": ">=1.5 || dev-master",
-        "vitexsoftware/ease-core": "dev-main",
+        "goetas-webservices/xsd2php-runtime": "0.2.17",
+        "lightools/xml": "^3.0",
+        "riesenia/pohoda": "^1.21",
+        "vitexsoftware/ease-core": "^1.44",
         "jms/serializer": "^3.28"
     },
     "require-dev": {
         "goetas-webservices/xsd2php": "^0.4.11",
         "phpunit/phpunit": "*",
         "phpstan/phpstan": "*",
-        "friendsofphp/php-cs-fixer": "^3.61",
+        "friendsofphp/php-cs-fixer": "3.64.0",
         "ergebnis/composer-normalize": "^2.43",
         "ergebnis/php-cs-fixer-config": "^6.34"
     },

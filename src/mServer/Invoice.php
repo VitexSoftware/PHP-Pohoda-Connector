@@ -30,7 +30,7 @@ class Invoice extends Client
     /**
      * Request XML helper.
      */
-    public \Riesenia\Pohoda\Invoice $requestXml = null;
+    public ?\Riesenia\Pohoda\Invoice $requestXml = null;
 
     /*
       public function getElementMap($extra = []) {
@@ -76,6 +76,7 @@ class Invoice extends Client
      *
      * @param array $data
      */
+    #[\Override]
     public function create($data): void
     {
         if (\array_key_exists('invoiceSummary', $data)) {
