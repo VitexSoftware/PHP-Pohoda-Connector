@@ -87,4 +87,4 @@ $addressBookRecord = [
 ];
 
 $addresser = new Adressbook($addressBookRecord, \Ease\Shared::instanced()->loadConfig(__DIR__.'/.env'));
-$addresser->updateInPohoda(null, ['extId' => ['exSystemName' => \Ease\Functions::cfg('APP_NAME'), 'ids' => (string) $extID]]);
+$addresser->updateInPohoda(null, ['extId' => ['exSystemName' => \Ease\Shared::cfg('APP_NAME'), 'ids' => (string) $extID]]);
