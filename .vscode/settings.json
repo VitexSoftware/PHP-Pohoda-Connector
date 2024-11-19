@@ -22,5 +22,6 @@
         "activityBar.activeBackground": "#AB0552",
         "activityBar.border": "#AB0552",
         "statusBar.border": "#AB0552"
-    }
+    },
+    "php.version": "8.4"
 }

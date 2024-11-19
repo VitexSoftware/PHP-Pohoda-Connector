@@ -77,16 +77,18 @@ class Client extends \Ease\Sand
 
     /**
      * Array of errors.
+     * @var mixed[]
      */
     public array $errors = [];
 
     /**
      * Response stats live here.
+     * @var mixed[]
      */
     public array $responseStats = [];
 
     /**
-     * @var array of Http headers attached with every request
+     * @var array<string,string> of Http headers attached with every request
      */
     public array $defaultHttpHeaders = [
         'STW-Application' => 'PHPmServer',
@@ -141,15 +143,18 @@ class Client extends \Ease\Sand
      * XML Response Processor.
      */
     protected Pohoda $pohoda;
+    /**
+     * @var bool|\CurlHandle|resource $curl
+     */
     private $curl;
 
     /**
      * mServer client class.
      *
-     * @param mixed $init    default record id or initial data. See processInit()
-     * @param array $options Connection settings and other options override
+     * @param mixed                $init    default record id or initial data. See processInit()
+     * @param array<string,string> $options Connection settings and other options override
      */
-    public function __construct($init = null, $options = [])
+    public function __construct($init = null, array $options = [])
     {
         parent::setObjectName();
         $this->setUp($options);
@@ -173,13 +178,13 @@ class Client extends \Ease\Sand
     /**
      * SetUp Object to be ready for work.
      *
-     * @param array $options Object Options ( user,password,authSessionId
+     * @param array<string,string> $options Object Options ( user,password,authSessionId
      *                       company,url,agenda,
      *                       debug,
      *                       filter,ignore404
      *                       timeout,companyUrl,ver,throwException
      */
-    public function setUp($options = []): void
+    public function setUp(array $options = []): void
     {
         $this->setupProperty($options, 'ico', 'POHODA_ICO');
         $this->setupProperty($options, 'url', 'POHODA_URL');
@@ -201,7 +206,7 @@ class Client extends \Ease\Sand
         }
 
         if (\array_key_exists('duplicity', $options)) {
-            $this->setCheckDuplicity($options['duplicity']);
+            $this->setCheckDuplicity((bool)$options['duplicity']);
         }
 
         $this->setupProperty($options, 'debug', 'POHODA_DEBUG');
@@ -534,7 +539,7 @@ class Client extends \Ease\Sand
      *
      * @param array $data raw document data
      */
-    public function takeData($data)
+    public function takeData(array $data): int
     {
         parent::takeData($data);
         $created = $this->create($this->getData());
@@ -546,9 +551,9 @@ class Client extends \Ease\Sand
     /**
      * Create Agenda document using given data.
      *
-     * @param array $data
+     * @param array<string,array> $data
      */
-    public function create(string $data)
+    public function create(array $data): int
     {
         $this->requestXml = $this->pohoda->create($this->agenda, $data);
 
@@ -558,7 +563,7 @@ class Client extends \Ease\Sand
     /**
      * Insert prepared record to Pohoda.
      *
-     * @param array $data extra data
+     * @param array<string,string> $data extra data
      *
      * @return int
      */
@@ -594,7 +599,7 @@ class Client extends \Ease\Sand
     /**
      * Insert prepared record to Pohoda.
      *
-     * @param array      $data   extra data
+     * @param array<string,string>      $data   extra data
      * @param null|mixed $filter
      *
      * @return int
@@ -622,7 +627,7 @@ class Client extends \Ease\Sand
     /**
      * Filter to select only "current" record.
      *
-     * @return array
+     * @return array<string,string>
      */
     public function filterToMe()
     {
@@ -652,12 +657,12 @@ class Client extends \Ease\Sand
     /**
      * Obtain given fields from Pohoda.
      *
-     * @param array $columns    list of columns to obtain
-     * @param array $conditions conditions to filter
+     * @param array $columns<string>           list of columns to obtain
+     * @param array $conditions<string,string> conditions to filter
      *
      * @return array
      */
-    public function getColumnsFromPohoda($columns = ['id'], $conditions = [])
+    public function getColumnsFromPohoda($columns = ['id'], $conditions = []): ?array
     {
         $this->requestXml = $this->pohoda->createListRequest(['type' => ucfirst($this->agenda)]);
 
@@ -669,7 +674,13 @@ class Client extends \Ease\Sand
         $xmlTmp = $this->pohoda->close();
         $this->setPostFields($this->xmlCache ? file_get_contents($this->xmlCache) : $xmlTmp);
 
-        return $this->performRequest('/xml') ? $this->response->getAgendaData($this->agenda) : null;
+        $response = $this->performRequest('/xml') ? $this->response->getAgendaData($this->agenda) : null;
+        if ($response && !empty($columns)) {
+            return array_map(function ($item) use ($columns) {
+            return array_intersect_key($item, array_flip($columns));
+            }, $response);
+        }
+        return $response;
     }
 
     /**
@@ -707,9 +718,9 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * @param mixed $request
+     * @param string $request
      */
-    public function sendRequest($request)
+    public function sendRequest(string $request): string
     {
         $this->setPostFields($request);
         $this->performRequest('/xml');
@@ -717,7 +728,7 @@ class Client extends \Ease\Sand
         return $this->lastCurlResponse;
     }
 
-    public function setAgenda($agenda): void
+    public function setAgenda(string $agenda): void
     {
         $this->agenda = $agenda;
     }

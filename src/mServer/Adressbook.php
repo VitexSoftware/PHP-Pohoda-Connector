@@ -40,7 +40,7 @@ class Adressbook extends Client
     /**
      * Create Agenda document using given data.
      *
-     * @param array $data
+     * @param array<string,string> $data
      */
     #[\Override]
     public function create($data): void

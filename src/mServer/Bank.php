@@ -51,7 +51,7 @@ class Bank extends Client
     /**
      * Take data into XML.
      *
-     * @param array $data
+     * @param array<string,string> $data
      *
      * @return int
      */

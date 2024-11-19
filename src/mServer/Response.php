@@ -29,6 +29,10 @@ class Response extends \Ease\Sand
      * State when file was imported with warning.
      */
     public const STATE_WARNING = 'warning';
+    /**
+     * State when file was imported with error.
+     * @var array<string,array<array>>
+     */
     public array $messages = ['error' => [], 'warning' => []];
     public array $producedDetails;
     protected \SimpleXMLElement $xml;
@@ -36,6 +40,7 @@ class Response extends \Ease\Sand
 
     /**
      * Parsed Result.
+     * @var array[]
      */
     private array $parsed = [];
     private Client $caller;
