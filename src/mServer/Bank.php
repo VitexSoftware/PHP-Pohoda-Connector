@@ -43,9 +43,10 @@ class Bank extends Client
      * @param array $data
      */
     #[\Override]
-    public function create($data): void
+    public function create(array $data): int
     {
         $this->requestXml = $this->pohoda->createBank($data);
+        return 1;
     }
 
     /**
