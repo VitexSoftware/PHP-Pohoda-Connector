@@ -15,6 +15,7 @@ declare(strict_types=1);
 
 namespace mServer;
 
+//TODO: PHP8+ use CurlHandle;
 use Ease\Shared;
 use Ease\Functions;
 use Riesenia\Pohoda;
@@ -144,7 +145,7 @@ class Client extends \Ease\Sand
      */
     protected Pohoda $pohoda;
     /**
-     * @var resource $curl
+     * @var \CurlHandle|resource $curl
      */
     private $curl;
 
@@ -247,8 +248,6 @@ class Client extends \Ease\Sand
             $this->loadFromPohoda($init);
         } elseif (\is_array($init)) {
             $this->takeData($init);
-        } elseif (preg_match('/\.(json|xml|csv)/', $init)) {
-            $this->takeData($this->getPohodaData(($init[0] !== '/') ? $this->evidenceUrlWithSuffix($init) : $init));
         } else {
             $this->loadFromPohoda($init);
         }
@@ -602,9 +601,9 @@ class Client extends \Ease\Sand
      * @param array<string,string>      $data   extra data
      * @param null|mixed $filter
      *
-     * @return int
+     * @return bool
      */
-    public function updateInPohoda($data = [], $filter = null)
+    public function updateInPohoda($data = [], $filter = null): bool
     {
         if (!empty($data)) {
             $this->takeData($data);
