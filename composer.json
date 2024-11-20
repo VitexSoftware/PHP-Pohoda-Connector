@@ -942,7 +942,7 @@
         "ext-curl": "*",
         "ext-iconv": "*",
         "goetas-webservices/xsd2php-runtime": "0.2.17",
-        "lightools/xml": "^3.0",
+        "lightools/xml": "^2.0|^3.0",
         "riesenia/pohoda": "^1.21",
         "vitexsoftware/ease-core": "^1.44",
         "jms/serializer": "^3.28"
