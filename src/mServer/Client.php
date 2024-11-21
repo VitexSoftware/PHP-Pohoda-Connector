@@ -145,9 +145,9 @@ class Client extends \Ease\Sand
      */
     protected Pohoda $pohoda;
     /**
-     * @var \CurlHandle|resource $curl
+     * @var \CurlHandle $curl
      */
-    private $curl;
+    private /*PHP8+ \CurlHandle*/ $curl;
 
     /**
      * mServer client class.
@@ -517,7 +517,7 @@ class Client extends \Ease\Sand
                 break;
         }
 
-        return \is_object($this->response) && $this->response->isOk();
+        return \is_object($this->response) && ($this->response->isOk() || $this->response->isWarning());
     }
 
     /**
@@ -661,7 +661,7 @@ class Client extends \Ease\Sand
      *
      * @return array
      */
-    public function getColumnsFromPohoda($columns = ['id'], $conditions = []): ?array
+    public function getColumnsFromPohoda(array $columns = ['id'], $conditions = []): ?array
     {
         $this->requestXml = $this->pohoda->createListRequest(['type' => ucfirst($this->agenda)]);
 

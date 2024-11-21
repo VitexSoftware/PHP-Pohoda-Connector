@@ -320,15 +320,18 @@ class Response extends \Ease\Sand
     }
 
     /**
-     * @param array $options
+     * Convert XML to Array.
      *
-     * @return array
+     * @param \SimpleXMLElement $xml
+     * @param array<string,string> $options
+     *
+     * @return array<mixed>
      *
      * @author Tamlyn Rhodes
      *
      * @see http://outlandish.com/blog/xml-to-json/
      */
-    public static function xmlToArray(\SimpleXMLElement $xml, $options = [])
+    public static function xmlToArray(\SimpleXMLElement $xml, array $options = [])
     {
         $defaults = [
             'namespaceSeparator' => ':',
@@ -421,7 +424,7 @@ class Response extends \Ease\Sand
         ];
     }
 
-    public function processListAddressBook($listAddressBook)
+    public function processListAddressBook($listAddressBook): array
     {
         $addressBook = [];
 
