@@ -25,7 +25,7 @@ class Adressbook extends Client
     /**
      * Current Object's agenda.
      */
-    public string $agenda = 'addressBook';
+    public ?string $agenda = 'addressBook';
 
     /**
      * Request XML helper.
@@ -40,11 +40,12 @@ class Adressbook extends Client
     /**
      * Create Agenda document using given data.
      *
-     * @param array<string,string> $data
+     * @param array<string,string|array> $data
      */
     #[\Override]
-    public function create($data): void
+    public function create(array $data): int
     {
         $this->requestXml = $this->pohoda->createAddressbook($data);
+        return 1;
     }
 }
