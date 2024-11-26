@@ -25,17 +25,17 @@ class PLUtypeType
     /**
      * Použít PLU rozsah.
      */
-    private bool $usePLU = null;
+    private ?bool $usePLU = null;
 
     /**
      * Dolní limit PLU.
      */
-    private int $lowerLimit = null;
+    private ?int $lowerLimit = null;
 
     /**
      * Horní limit PLU.
      */
-    private int $upperLimit = null;
+    private ?int $upperLimit = null;
 
     /**
      * Gets as usePLU.

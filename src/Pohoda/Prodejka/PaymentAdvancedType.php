@@ -25,32 +25,32 @@ class PaymentAdvancedType
     /**
      * Hodnota stravenky.
      */
-    private float $valueFoodVoucher = null;
+    private ?float $valueFoodVoucher = null;
 
     /**
      * Kurs použitý pro výpočet částek v cízí měně.
      */
-    private float $rate = null;
+    private ?float $rate = null;
 
     /**
      * Množství cizí měny pro kursový přepočet.
      */
-    private int $amount = null;
+    private ?int $amount = null;
 
     /**
      * Uhrazeno přes platební terminál.
      */
-    private string $paymentTerminal = null;
+    private ?string $paymentTerminal = null;
 
     /**
      * Variabilní symbol.
      */
-    private string $symVar = null;
+    private ?string $symVar = null;
 
     /**
      * Účet.
      */
-    private \Pohoda\Type\AccountType $account = null;
+    private ?\Pohoda\Type\AccountType $account = null;
 
     /**
      * Gets as valueFoodVoucher.

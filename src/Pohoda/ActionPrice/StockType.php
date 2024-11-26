@@ -22,13 +22,13 @@ namespace Pohoda\ActionPrice;
  */
 class StockType
 {
-    private int $id = null;
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?int $id = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Kód zásoby.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Gets as id.

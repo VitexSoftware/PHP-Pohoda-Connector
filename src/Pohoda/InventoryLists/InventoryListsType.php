@@ -22,13 +22,13 @@ namespace Pohoda\InventoryLists;
  */
 class InventoryListsType
 {
-    private string $version = null;
-    private \Pohoda\InventoryLists\InventoryListsHeaderType $inventoryListsHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\InventoryLists\InventoryListsHeaderType $inventoryListsHeader = null;
 
     /**
      * @var \Pohoda\InventoryLists\InventoryListsItemType[]
      */
-    private array $inventoryListsDetail = null;
+    private ?array $inventoryListsDetail = null;
 
     /**
      * Gets as version.

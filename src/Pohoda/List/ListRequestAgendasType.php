@@ -25,7 +25,7 @@ class ListRequestAgendasType extends ListRequestType
     /**
      * @var string[]
      */
-    private array $agendas = null;
+    private ?array $agendas = null;
 
     /**
      * Adds as agenda.

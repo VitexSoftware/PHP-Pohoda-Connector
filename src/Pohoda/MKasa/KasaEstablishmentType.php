@@ -22,14 +22,14 @@ namespace Pohoda\MKasa;
  */
 class KasaEstablishmentType
 {
-    private string $company = null;
-    private string $city = null;
-    private string $street = null;
-    private string $zip = null;
-    private string $phone = null;
-    private string $mobilPhone = null;
-    private string $fax = null;
-    private string $email = null;
+    private ?string $company = null;
+    private ?string $city = null;
+    private ?string $street = null;
+    private ?string $zip = null;
+    private ?string $phone = null;
+    private ?string $mobilPhone = null;
+    private ?string $fax = null;
+    private ?string $email = null;
 
     /**
      * Gets as company.

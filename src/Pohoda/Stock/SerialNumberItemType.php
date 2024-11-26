@@ -25,27 +25,27 @@ class SerialNumberItemType
     /**
      * ID výrobní číslo nebo šarže.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Výrobní číslo nebo šarže. Tento element je vyžadován při vytvoření dokladu.
      */
-    private string $serialNumber = null;
+    private ?string $serialNumber = null;
 
     /**
      * Stav zásoby.
      */
-    private float $count = null;
+    private ?float $count = null;
 
     /**
      * Datum expirace skladové zásoby uvedené šarže.
      */
-    private \DateTime $expiration = null;
+    private ?\DateTime $expiration = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as id.

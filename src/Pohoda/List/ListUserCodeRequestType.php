@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListUserCodeRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze dokladu.
      */
-    private string $listVersion = null;
+    private ?string $listVersion = null;
 
     /**
      * Atributy určují výběr uživatelských seznamů pro export. Pokud není zadán žádný, vyexportují se všechny uživatelské seznamy.

@@ -25,29 +25,29 @@ class AddressbookGDPRType
     /**
      * Omezení zpracování.
      */
-    private string $restrictProcessing = null;
+    private ?string $restrictProcessing = null;
 
     /**
      * Datum posledního prodejního dokladu (jen pro export).
      */
-    private \DateTime $dateSale = null;
+    private ?\DateTime $dateSale = null;
 
     /**
      * Datum posledního předprodejního dokladu (jen pro export).
      */
-    private \DateTime $datePreSale = null;
+    private ?\DateTime $datePreSale = null;
 
     /**
      * Datum posledního poprodejního dokladu (jen pro export).
      */
-    private \DateTime $dateAfterSale = null;
+    private ?\DateTime $dateAfterSale = null;
 
     /**
      * Právní důvody zpracování dat GDPR.
      *
      * @var \Pohoda\AddressBook\GDPRItemType[]
      */
-    private array $gDPRItems = null;
+    private ?array $gDPRItems = null;
 
     /**
      * Gets as restrictProcessing.

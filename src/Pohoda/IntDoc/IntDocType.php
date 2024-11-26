@@ -22,23 +22,23 @@ namespace Pohoda\IntDoc;
  */
 class IntDocType
 {
-    private string $version = null;
-    private \Pohoda\IntDoc\TaxDocumentType $taxDocument = null;
-    private \Pohoda\IntDoc\IntDocHeaderType $intDocHeader = null;
-    private \Pohoda\IntDoc\IntDocDetailType $intDocDetail = null;
-    private \Pohoda\IntDoc\IntDocSummaryType $intDocSummary = null;
+    private ?string $version = null;
+    private ?\Pohoda\IntDoc\TaxDocumentType $taxDocument = null;
+    private ?\Pohoda\IntDoc\IntDocHeaderType $intDocHeader = null;
+    private ?\Pohoda\IntDoc\IntDocDetailType $intDocDetail = null;
+    private ?\Pohoda\IntDoc\IntDocSummaryType $intDocSummary = null;
 
     /**
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      */
-    private \Pohoda\Type\LinksType $linkedDocuments = null;
+    private ?\Pohoda\Type\LinksType $linkedDocuments = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

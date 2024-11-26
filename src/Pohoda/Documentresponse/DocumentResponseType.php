@@ -22,20 +22,20 @@ namespace Pohoda\Documentresponse;
  */
 class DocumentResponseType
 {
-    private string $state = null;
-    private string $version = null;
+    private ?string $state = null;
+    private ?string $version = null;
 
     /**
      * Chyby a upozornění vzniklé při načtení dokladu.
      *
      * @var \Pohoda\Documentresponse\DetailType[]
      */
-    private array $importDetails = null;
+    private ?array $importDetails = null;
 
     /**
      * Informace o vytvořeném dokladu.
      */
-    private \Pohoda\Documentresponse\ProducedDetailsType $producedDetails = null;
+    private ?\Pohoda\Documentresponse\ProducedDetailsType $producedDetails = null;
 
     /**
      * Gets as state.

@@ -22,13 +22,13 @@ namespace Pohoda\List;
  */
 class ListCategoryRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze pro export.
      */
-    private string $categoryVersion = null;
-    private \Pohoda\List\RequestCategoryType $requestCategory = null;
+    private ?string $categoryVersion = null;
+    private ?\Pohoda\List\RequestCategoryType $requestCategory = null;
 
     /**
      * Gets as version.

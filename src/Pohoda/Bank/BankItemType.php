@@ -25,124 +25,124 @@ class BankItemType
     /**
      * Text položky.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Množství. (pouze pro JU nebo DE).
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Měrná jednotka (pouze pro JU nebo DE).
      */
-    private string $unit = null;
+    private ?string $unit = null;
 
     /**
      * Koeficient (pouze pro JU nebo DE).
      */
-    private float $coefficient = null;
+    private ?float $coefficient = null;
 
     /**
      * Ceny jsou uvedeny: bez DPH, včetně DPH. Výchozí hodnota se týká pouze textové položky. Pro skladové položky bude brána výchozí hodnota dle nastavení v programu POHODA (pouze pro JU nebo DE).
      */
-    private string $payVAT = null;
+    private ?string $payVAT = null;
 
     /**
      * Sazba DPH (pouze pro JU nebo DE).
      */
-    private \Pohoda\Type\VatRateType $rateVAT = null;
+    private ?\Pohoda\Type\VatRateType $rateVAT = null;
 
     /**
      * Historická sazba v procentech. Povoluje se v Globálním nastavení (pouze pro JU nebo DE).
      */
-    private float $percentVAT = null;
+    private ?float $percentVAT = null;
 
     /**
      * Sleva v procentech. Pokud není uvedena, bere se jako hodnota slevy z priceLevel dokumentu. Pokud není definován ani priceLevel bere se jako NULOVÁ (pouze pro JU nebo DE).
      */
-    private float $discountPercentage = null;
+    private ?float $discountPercentage = null;
 
     /**
      * Částka v Kč.
      */
-    private \Pohoda\Bank\TypeCurrencyHomeItemType $homeCurrency = null;
+    private ?\Pohoda\Bank\TypeCurrencyHomeItemType $homeCurrency = null;
 
     /**
      * Částka v cizí měně.
      */
-    private \Pohoda\Bank\TypeCurrencyForeignItemType $foreignCurrency = null;
+    private ?\Pohoda\Bank\TypeCurrencyForeignItemType $foreignCurrency = null;
 
     /**
      * Částka v Kč (pouze pro JU a DE).
      */
-    private \Pohoda\Type\TypeCurrencyHomeItemType $homeCurrencyJU = null;
+    private ?\Pohoda\Type\TypeCurrencyHomeItemType $homeCurrencyJU = null;
 
     /**
      * Částka v Kč (pouze pro JU a DE).
      */
-    private \Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrencyJU = null;
+    private ?\Pohoda\Type\TypeCurrencyForeignItemType $foreignCurrencyJU = null;
 
     /**
      * Druh služby (OSS).
      */
-    private \Pohoda\Type\MOSStypeType $typeServiceMOSS = null;
+    private ?\Pohoda\Type\MOSStypeType $typeServiceMOSS = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Párovací symbol.
      */
-    private string $symPar = null;
+    private ?string $symPar = null;
 
     /**
      * Předkontace.
      */
-    private \Pohoda\Type\RefType $accounting = null;
+    private ?\Pohoda\Type\RefType $accounting = null;
 
     /**
      * Členění DPH.
      */
-    private \Pohoda\Type\ClassificationVATType $classificationVAT = null;
+    private ?\Pohoda\Type\ClassificationVATType $classificationVAT = null;
 
     /**
      * Členění KV DPH (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $classificationKVDPH = null;
+    private ?\Pohoda\Type\RefType $classificationKVDPH = null;
 
     /**
      * Příznak Přenesení daňové povinnosti (pouze pro JU nebo DE).
      */
-    private bool $pDP = null;
+    private ?bool $pDP = null;
 
     /**
      * Kód zboží (pouze pro JU v SK verzi).
      */
-    private string $codePDP = null;
+    private ?string $codePDP = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as text.

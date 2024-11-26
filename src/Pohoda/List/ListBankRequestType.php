@@ -22,13 +22,13 @@ namespace Pohoda\List;
  */
 class ListBankRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze banky.
      */
-    private string $bankVersion = null;
-    private \Pohoda\Filter\RequestBankType $requestBank = null;
+    private ?string $bankVersion = null;
+    private ?\Pohoda\Filter\RequestBankType $requestBank = null;
 
     /**
      * Gets as version.

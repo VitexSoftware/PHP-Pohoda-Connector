@@ -25,12 +25,12 @@ class AddressType
     /**
      * Odkaz na ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Externí ID záznamu. Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Gets as id.

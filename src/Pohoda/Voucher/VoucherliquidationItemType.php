@@ -25,7 +25,7 @@ class VoucherliquidationItemType
     /**
      * Nastavení likvidace dokladu (pohledávky/závazku).
      */
-    private \Pohoda\Voucher\SettingsLiquidationType $settingsLiquidation = null;
+    private ?\Pohoda\Voucher\SettingsLiquidationType $settingsLiquidation = null;
 
     /**
      * Definice položek, které provádějí likvidaci dokladu typu(Pohledávka/Závazek).

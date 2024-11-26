@@ -25,12 +25,12 @@ class CurrencyBankAccountType
     /**
      * Měna bankovního účtu..
      */
-    private \Pohoda\Type\RefType $currency = null;
+    private ?\Pohoda\Type\RefType $currency = null;
 
     /**
      * Kurs použitý pro devizový účet (denní/pevný).
      */
-    private string $rate = null;
+    private ?string $rate = null;
 
     /**
      * Gets as currency.

@@ -22,45 +22,45 @@ namespace Pohoda\Data;
  */
 class DataPackType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * ID dokladu, podle této hodnoty a hodnoty "id" v "dataPackItem" se kontrolují duplicity importovaných dokladů.
      */
-    private string $id = null;
+    private ?string $id = null;
 
     /**
      * IČ firmy, pro kterou je XML určeno. Hodnota musí souhlasit s IČ zadané firmy. Má vyšší prioritu než atribut "key".
      */
-    private string $ico = null;
+    private ?string $ico = null;
 
     /**
      * Jedinečný identifikátor účetnictví firmy, pro kterou je XML určeno. Pokud není uveden atribut "ico" (nebo je prázdný), hodnota musí souhlasit s "klíčem" zadané firmy.
      */
-    private string $key = null;
+    private ?string $key = null;
 
     /**
      * Hodnota účetního období vybrané účetní jednotky v programu Pohoda. Pokud nebude atribut použit, bude XML import dat proveden do aktuálně nastavené účetního období přihlášeného uživatele. Pokud bude atribut uveden, bude při importu dat proveden kontrola nastaveného účetního období. Jestliže nebude období shodné, XML komunikace bude ukončena.
      */
-    private string $period = null;
+    private ?string $period = null;
 
     /**
      * Textový popis, hodnota se zobrazí v poli "Aplikace" v agendě XML Import.
      */
-    private string $application = null;
-    private string $programVersion = null;
+    private ?string $application = null;
+    private ?string $programVersion = null;
 
     /**
      * Textová poznámka, hodnota se zobrazí v záložce "Poznámky" v agendě XML Import.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Transformace vstupu a výstupu (od verze "1.1" elementu "dataPack").
      *  Transformaci pro všechny zpracovávané soubory lze nastavit v INI souboru.
      *  Nejdříve se provede transformace zadané v INI souboru, poté transformace zadaná v XML.
      */
-    private \Pohoda\Data\TransformationType $transformation = null;
+    private ?\Pohoda\Data\TransformationType $transformation = null;
 
     /**
      * @var \Pohoda\Data\DataPackItemType[]

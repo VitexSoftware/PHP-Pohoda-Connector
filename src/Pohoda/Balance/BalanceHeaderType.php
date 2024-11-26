@@ -25,7 +25,7 @@ class BalanceHeaderType
     /**
      * Datum ke kterému je saldo sestaveno.
      */
-    private \DateTime $dateTo = null;
+    private ?\DateTime $dateTo = null;
 
     /**
      * Gets as dateTo.

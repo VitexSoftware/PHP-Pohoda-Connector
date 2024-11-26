@@ -25,466 +25,466 @@ class StockHeaderType
     /**
      * ID skladové zásoby (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Typ zásoby. Tento element je vyžadován při vytvoření dokladu. Nelze měnit při aktualizaci dokladu.
      */
-    private string $stockType = null;
+    private ?string $stockType = null;
 
     /**
      * Řetězcový identifikátor skladové položky.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Čárový kód.
      */
-    private string $eAN = null;
+    private ?string $eAN = null;
 
     /**
      * PLU. Kód zásoby pro registrační pokladnu.
      */
-    private int $pLU = null;
+    private ?int $pLU = null;
 
     /**
      * Odbyt. Určuje, zda se má tato zásoba nabízet při vyskladnění z agend Faktury, Prodejky a Výdejky.
      */
-    private string $isSales = null;
+    private ?string $isSales = null;
 
     /**
      * Výrobní čísla. Určuje, zda je toto číslovaná zásoba, u které se mají evidovat výrobní čísla.
      */
-    private string $isSerialNumber = null;
+    private ?string $isSerialNumber = null;
 
     /**
      * Internet. Určuje, zda je tato zásoba součástí sortimentu nabízeného na internetu.
      */
-    private string $isInternet = null;
+    private ?string $isInternet = null;
 
     /**
      * Šarže. Určuje, zda je toto číslovaná zásoba, u které se mají evidovat šarže.
      */
-    private string $isBatch = null;
+    private ?string $isBatch = null;
 
     /**
      * Sazba DPH pro nákup.
      */
-    private \Pohoda\Type\VatRateType $purchasingRateVAT = null;
+    private ?\Pohoda\Type\VatRateType $purchasingRateVAT = null;
 
     /**
      * Sazba DPH pro prodej.
      */
-    private \Pohoda\Type\VatRateType $sellingRateVAT = null;
+    private ?\Pohoda\Type\VatRateType $sellingRateVAT = null;
 
     /**
      * Název skladové položky. Tento element je vyžadován při vytvoření dokladu.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Doplňující text či poznámka k názvu skladové zásoby.
      */
-    private string $nameComplement = null;
+    private ?string $nameComplement = null;
 
     /**
      * Měrná jednotka.
      */
-    private string $unit = null;
+    private ?string $unit = null;
 
     /**
      * Měrná jednotka 2.
      */
-    private string $unit2 = null;
+    private ?string $unit2 = null;
 
     /**
      * Měrná jednotka 3.
      */
-    private string $unit3 = null;
+    private ?string $unit3 = null;
 
     /**
      * Měrná jednotka 2 koeficient.
      */
-    private float $coefficient2 = null;
+    private ?float $coefficient2 = null;
 
     /**
      * Měrná jednotka 3 koeficient.
      */
-    private float $coefficient3 = null;
+    private ?float $coefficient3 = null;
 
     /**
      * Členění. Tento element je vyžadován při vytvoření dokladu.
      */
-    private \Pohoda\Type\RefTypeStorageType $storage = null;
+    private ?\Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Cenová skupina. Tento element je vyžadován při vytvoření dokladu.
      */
-    private \Pohoda\Type\RefType $typePrice = null;
+    private ?\Pohoda\Type\RefType $typePrice = null;
 
     /**
      * Vážená nákupní cena (jen pro export).
      */
-    private float $weightedPurchasePrice = null;
+    private ?float $weightedPurchasePrice = null;
 
     /**
      * Nákupní cena. Pokud není uvedena, bere se jako NULOVÁ.
      */
-    private \Pohoda\Stock\StockHeaderType\PurchasingPriceAType $purchasingPrice = null;
+    private ?\Pohoda\Stock\StockHeaderType\PurchasingPriceAType $purchasingPrice = null;
 
     /**
      * Prodejní cena. Pokud není uvedena, bere se jako NULOVÁ.
      */
-    private \Pohoda\Stock\StockHeaderType\SellingPriceAType $sellingPrice = null;
+    private ?\Pohoda\Stock\StockHeaderType\SellingPriceAType $sellingPrice = null;
 
     /**
      * Typ fixace (jen export).
      */
-    private string $fixation = null;
+    private ?string $fixation = null;
 
     /**
      * Limit Min pro automatickou objednávku.
      */
-    private float $limitMin = null;
+    private ?float $limitMin = null;
 
     /**
      * Limit Max pro automatickou objednávku.
      */
-    private float $limitMax = null;
+    private ?float $limitMax = null;
 
     /**
      * Hmotnost.
      */
-    private float $mass = null;
+    private ?float $mass = null;
 
     /**
      * Objem.
      */
-    private float $volume = null;
+    private ?float $volume = null;
 
     /**
      * Stav zásoby (jen pro export).
      */
-    private float $count = null;
+    private ?float $count = null;
 
     /**
      * Objednávky (jen pro export).
      */
-    private float $countReceivedOrders = null;
+    private ?float $countReceivedOrders = null;
 
     /**
      * Rezervace (jen pro export).
      */
-    private float $reservation = null;
+    private ?float $reservation = null;
 
     /**
      * Dodavatel.
      */
-    private \Pohoda\Type\CompanyType $supplier = null;
+    private ?\Pohoda\Type\CompanyType $supplier = null;
 
     /**
      * Název skladové zásoby pro použití ve funkci Automatické objednávky.
      */
-    private string $orderName = null;
+    private ?string $orderName = null;
 
     /**
      * Požadované množství k objednání pro použití ve funkci Automatické objednávky.
      */
-    private float $orderQuantity = null;
+    private ?float $orderQuantity = null;
 
     /**
      * Objednáno (jen pro export).
      */
-    private float $countIssuedOrders = null;
+    private ?float $countIssuedOrders = null;
 
     /**
      * Stav zásoby v reklamaci (jen pro export).
      */
-    private float $reclamation = null;
+    private ?float $reclamation = null;
 
     /**
      * Servis (jen pro export).
      */
-    private float $service = null;
+    private ?float $service = null;
 
     /**
      * Zkrácený název skladové položky - např. při tisku na registrační pokladně.
      */
-    private string $shortName = null;
+    private ?string $shortName = null;
 
     /**
      * Příznak pro registrační pokladnu.
      */
-    private \Pohoda\Type\RefType $typeRP = null;
+    private ?\Pohoda\Type\RefType $typeRP = null;
 
     /**
      * Typ záruky.
      */
-    private string $guaranteeType = null;
+    private ?string $guaranteeType = null;
 
     /**
      * Délka záruky.
      */
-    private int $guarantee = null;
+    private ?int $guarantee = null;
 
     /**
      * Výrobce skladové položky.
      */
-    private string $producer = null;
+    private ?string $producer = null;
 
     /**
      * Jednotka měrné ceny.
      */
-    private string $unitOfMeasure = null;
+    private ?string $unitOfMeasure = null;
 
     /**
      * Koeficient pro přepočet jednotky měrné ceny.
      */
-    private float $coefficientOfMeasure = null;
+    private ?float $coefficientOfMeasure = null;
 
     /**
      * Typ položky EET (pouze CZ verze).
      */
-    private string $eETItem = null;
+    private ?string $eETItem = null;
 
     /**
      * DIČ pověřujícího poplatníka (pouze CZ verze).
      */
-    private string $dicPP = null;
+    private ?string $dicPP = null;
 
     /**
      * Položky eKasa (pouze SK verze).
      */
-    private \Pohoda\Stock\EKasaItemType $eKasaItem = null;
+    private ?\Pohoda\Stock\EKasaItemType $eKasaItem = null;
 
     /**
      * Výnos. Účet pro účtování výnosů z prodeje zásoby.
      */
-    private string $yield = null;
+    private ?string $yield = null;
 
     /**
      * Náklad. Účet pro účtování nákladu z prodeje zásoby.
      */
-    private string $cost = null;
+    private ?string $cost = null;
 
     /**
      * Příjem - členění DPH.
      */
-    private \Pohoda\Type\ClassificationVATType $classificationVATReceipt = null;
+    private ?\Pohoda\Type\ClassificationVATType $classificationVATReceipt = null;
 
     /**
      * Příjem - členění KV DPH (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $classificationKVDPHReceipt = null;
+    private ?\Pohoda\Type\RefType $classificationKVDPHReceipt = null;
 
     /**
      * Výdej - členění DPH.
      */
-    private \Pohoda\Type\ClassificationVATType $classificationVATIssue = null;
+    private ?\Pohoda\Type\ClassificationVATType $classificationVATIssue = null;
 
     /**
      * Výdej - členění KV DPH (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $classificationKVDPHIssue = null;
+    private ?\Pohoda\Type\RefType $classificationKVDPHIssue = null;
 
     /**
      * Účtování metodou A - Druh zásoby.
      */
-    private string $classOfStock = null;
+    private ?string $classOfStock = null;
 
     /**
      * Účtování metodou A - analytický účet zásoby.
      */
-    private string $acc = null;
+    private ?string $acc = null;
 
     /**
      * Druh služby (OSS).
      */
-    private \Pohoda\Type\MOSStypeType $typeServiceMOSS = null;
+    private ?\Pohoda\Type\MOSStypeType $typeServiceMOSS = null;
 
     /**
      * Kontrola limitu pro režim přenesení daňové povinnosti (pouze CZ verze).
      */
-    private string $controlLimitTaxLiability = null;
+    private ?string $controlLimitTaxLiability = null;
 
     /**
      * Příznak přenesení daňové povinnosti (pouze SK verze).
      */
-    private string $pDP = null;
+    private ?string $pDP = null;
 
     /**
      * Výdej - členění DPH související s režimem přenesení daňové povinnosti (pouze SK verze).
      */
-    private \Pohoda\Type\ClassificationVATType $pDPclassificationVATIssue = null;
+    private ?\Pohoda\Type\ClassificationVATType $pDPclassificationVATIssue = null;
 
     /**
      * Výdej - členění KVDPH související s režimem přenesení daňové povinnosti (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $pDPclassificationKVDPHIssue = null;
+    private ?\Pohoda\Type\RefType $pDPclassificationKVDPHIssue = null;
 
     /**
      * Kód zboží související s režimem přenesení daňové povinnosti (pouze SK verze).
      */
-    private string $codePDP = null;
+    private ?string $codePDP = null;
 
     /**
      * Recyklační příspěvek zásoby.
      */
-    private \Pohoda\Stock\RecyclingContribType $recyclingContrib = null;
+    private ?\Pohoda\Stock\RecyclingContribType $recyclingContrib = null;
 
     /**
      * Výkaz pro intrastat.
      */
-    private \Pohoda\Stock\InstrastatType $intrastat = null;
+    private ?\Pohoda\Stock\InstrastatType $intrastat = null;
 
     /**
      * Označení zásoby - Novinka.
      */
-    private string $news = null;
+    private ?string $news = null;
 
     /**
      * Označení zásoby - Doprodej.
      */
-    private string $clearanceSale = null;
+    private ?string $clearanceSale = null;
 
     /**
      * Označení zásoby - Akce.
      */
-    private string $sale = null;
+    private ?string $sale = null;
 
     /**
      * Označení zásoby - Doporučujeme.
      */
-    private string $recommended = null;
+    private ?string $recommended = null;
 
     /**
      * Označení zásoby - Sleva.
      */
-    private string $discount = null;
+    private ?string $discount = null;
 
     /**
      * Označení zásoby - Připravujeme.
      */
-    private string $prepare = null;
+    private ?string $prepare = null;
 
     /**
      * Skladová dostupnost zásoby(skladem, do 3 dnů, na objednávku).
      */
-    private string $availability = null;
+    private ?string $availability = null;
 
     /**
      * Doprava zásoby(PPL,pošta,osobní odběr,...)Cena za dopravu .
      */
-    private string $handlingInformation = null;
+    private ?string $handlingInformation = null;
 
     /**
      * Cizí název skladové položky.
      */
-    private string $foreignName1 = null;
+    private ?string $foreignName1 = null;
 
     /**
      * Doplňující text či poznámka k názvu skladové zásoby.
      */
-    private string $foreignNameComplement1 = null;
+    private ?string $foreignNameComplement1 = null;
 
     /**
      * Cizí název skladové položky.
      */
-    private string $foreignName2 = null;
+    private ?string $foreignName2 = null;
 
     /**
      * Doplňující text či poznámka k názvu skladové zásoby.
      */
-    private string $foreignNameComplement2 = null;
+    private ?string $foreignNameComplement2 = null;
 
     /**
      * Stručný popis.
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Podrobný popis.
      */
-    private string $description2 = null;
+    private ?string $description2 = null;
 
     /**
      * Obrázky skladové položky.
      *
      * @var \Pohoda\Stock\PictureType[]
      */
-    private array $pictures = null;
+    private ?array $pictures = null;
 
     /**
      * Kategorie internetového obchodu u zásoby. Pouze pro export.
      *
      * @var int[]
      */
-    private array $categories = null;
+    private ?array $categories = null;
 
     /**
      * Související soubory.
      *
      * @var \Pohoda\Stock\RelatedFileType[]
      */
-    private array $relatedFiles = null;
+    private ?array $relatedFiles = null;
 
     /**
      * Související odkazy.
      *
      * @var \Pohoda\Stock\RelatedLinkType[]
      */
-    private array $relatedLinks = null;
+    private ?array $relatedLinks = null;
 
     /**
      * Seznam ID souvisejících zásob. Pouze pro export.
      *
      * @var \Pohoda\Type\OrderStockItemType[]
      */
-    private array $relatedStocks = null;
+    private ?array $relatedStocks = null;
 
     /**
      * Alternativní zásoby. Pouze pro export.
      *
      * @var \Pohoda\Type\OrderStockItemType[]
      */
-    private array $alternativeStocks = null;
+    private ?array $alternativeStocks = null;
 
     /**
      * Internetové parametry zásoby. Pouze pro export.
      *
      * @var \Pohoda\Stock\IntParameterType[]
      */
-    private array $intParameters = null;
+    private ?array $intParameters = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

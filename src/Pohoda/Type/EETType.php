@@ -26,7 +26,7 @@ class EETType
     /**
      * Stav záznamu v agendě EET.
      */
-    private string $stateEET = null;
+    private ?string $stateEET = null;
 
     /**
      * Podrobné informace o odeslání informací pro EET.
@@ -39,7 +39,7 @@ class EETType
     /**
      * Profil EET, pod kterým bude tržba evidována na serveru EET.
      */
-    private \Pohoda\Type\RefType $profile = null;
+    private ?\Pohoda\Type\RefType $profile = null;
 
     /**
      * Gets as stateEET.

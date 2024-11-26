@@ -26,17 +26,17 @@ class AccountingType
     /**
      * ID záznamu předkontace.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Zkratka předkontace.
      */
-    private string $ids = null;
+    private ?string $ids = null;
 
     /**
      * Pevné typy předkontací.
      */
-    private string $accountingType = null;
+    private ?string $accountingType = null;
 
     /**
      * Gets as id.

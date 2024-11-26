@@ -25,27 +25,27 @@ class FilterMovementType
     /**
      * Filtr podle ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Filtr podle skladové zásoby.
      */
-    private \Pohoda\Type\StockItemMovementType $stockItem = null;
+    private ?\Pohoda\Type\StockItemMovementType $stockItem = null;
 
     /**
      * Datum od.
      */
-    private \DateTime $dateFrom = null;
+    private ?\DateTime $dateFrom = null;
 
     /**
      * Datum do.
      */
-    private \DateTime $dateTill = null;
+    private ?\DateTime $dateTill = null;
 
     /**
      * Typ agendy.
      */
-    private string $agenda = null;
+    private ?string $agenda = null;
 
     /**
      * Gets as id.

@@ -22,7 +22,7 @@ namespace Pohoda\Storage;
  */
 class StorageType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * @var \Pohoda\Storage\ItemStorageType[]

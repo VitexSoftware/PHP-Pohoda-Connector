@@ -25,42 +25,42 @@ class ActionPriceHeaderType
     /**
      * ID záznamu (pouze pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Název akční ceny.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Popis akční ceny.
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Platnost akční ceny.
      */
-    private \Pohoda\ActionPrice\ValidityActionType $validityAction = null;
+    private ?\Pohoda\ActionPrice\ValidityActionType $validityAction = null;
 
     /**
      * Sleva v procentech. Pokud není definována, bere se jako NULOVÁ.
      */
-    private float $discountPercentage = null;
+    private ?float $discountPercentage = null;
 
     /**
      * Odvozovat z vedlejší ceny (jen E1).
      */
-    private string $deriveFromAccesoryPrice = null;
+    private ?string $deriveFromAccesoryPrice = null;
 
     /**
      * Zaokrouhlení výsledné akční ceny. Pokud není uvedeno zaokrouhlení, bude pro každou zásobu použito stejné zaokrouhlení, jako u ceny, z níž je akční cena vypočítána.
      */
-    private string $rounding = null;
+    private ?string $rounding = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as id.

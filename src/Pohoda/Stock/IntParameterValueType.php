@@ -25,17 +25,17 @@ class IntParameterValueType
     /**
      * ID, používá se jen u typu seznam.
      */
-    private int $parameterValueID = null;
+    private ?int $parameterValueID = null;
 
     /**
      * Hodnota parametru, závisí na typu. Pokud je zadáno u parametru typu seznam a zároveň není zadáno ID, musí být tato hodnota v databázi unikátní.
      */
-    private string $parameterValue = null;
+    private ?string $parameterValue = null;
 
     /**
      * Pořadí, používá se jen u typu seznam.
      */
-    private int $parameterOrder = null;
+    private ?int $parameterOrder = null;
 
     /**
      * Gets as parameterValueID.

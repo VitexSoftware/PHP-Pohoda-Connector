@@ -23,11 +23,11 @@ namespace Pohoda\Type;
  */
 class AccountType
 {
-    private int $id = null;
-    private string $ids = null;
-    private string $accountNo = null;
-    private string $bankCode = null;
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?int $id = null;
+    private ?string $ids = null;
+    private ?string $accountNo = null;
+    private ?string $bankCode = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Gets as id.

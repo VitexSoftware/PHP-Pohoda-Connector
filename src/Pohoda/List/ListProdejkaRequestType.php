@@ -22,17 +22,17 @@ namespace Pohoda\List;
  */
 class ListProdejkaRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze dokladu.
      */
-    private string $prodejkaVersion = null;
+    private ?string $prodejkaVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
      */
-    private string $extSystem = null;
+    private ?string $extSystem = null;
 
     /**
      * @var \Pohoda\Filter\RequestProdejkaType[]

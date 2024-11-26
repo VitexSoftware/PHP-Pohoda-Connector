@@ -30,7 +30,7 @@ class Invoice extends Client
     /**
      * Request XML helper.
      */
-    public \Riesenia\Pohoda\Invoice $requestXml = null;
+    public ?\Riesenia\Pohoda\Invoice $requestXml = null;
 
     /*
       public function getElementMap($extra = []) {
@@ -74,9 +74,10 @@ class Invoice extends Client
     /**
      * Create Agenda document using given data.
      *
-     * @param array $data
+     * @param array<string,string> $data
      */
-    public function create($data): void
+    #[\Override]
+    public function create(array $data): int
     {
         if (\array_key_exists('invoiceSummary', $data)) {
             $summary = $data['invoiceSummary'];
@@ -86,6 +87,7 @@ class Invoice extends Client
         } else {
             $this->requestXml = $this->pohoda->createInvoice($data);
         }
+        return 1;
     }
 
     /**

@@ -25,7 +25,7 @@ class CancelDocumentType
     /**
      * Stornovaný doklad.
      */
-    private \Pohoda\Type\SourceDocumentType $sourceDocument = null;
+    private ?\Pohoda\Type\SourceDocumentType $sourceDocument = null;
 
     /**
      * Gets as sourceDocument.

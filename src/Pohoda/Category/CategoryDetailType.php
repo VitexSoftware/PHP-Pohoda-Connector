@@ -22,7 +22,7 @@ namespace Pohoda\Category;
  */
 class CategoryDetailType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * @var \Pohoda\Category\CategoryType[]

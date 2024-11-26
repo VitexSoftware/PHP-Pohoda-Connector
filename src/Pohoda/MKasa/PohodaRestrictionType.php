@@ -22,25 +22,25 @@ namespace Pohoda\MKasa;
  */
 class PohodaRestrictionType
 {
-    private string $lockPin = null;
-    private string $administration = null;
-    private string $administrationPass = null;
-    private bool $createCustomer = null;
-    private string $changePrize = null;
-    private string $textItems = null;
-    private string $depositsWithdrawals = null;
-    private string $delayedDocument = null;
-    private string $agendaHistory = null;
-    private string $createSKPV = null;
-    private string $changeEet = null;
-    private string $deleteRecords = null;
-    private string $exportXml = null;
-    private string $createBackup = null;
-    private string $restoreBackup = null;
-    private string $createCashRegisterDoc = null;
-    private string $refund = null;
-    private bool $accountDayByDay = null;
-    private bool $canDoDiffExport = null;
+    private ?string $lockPin = null;
+    private ?string $administration = null;
+    private ?string $administrationPass = null;
+    private ?bool $createCustomer = null;
+    private ?string $changePrize = null;
+    private ?string $textItems = null;
+    private ?string $depositsWithdrawals = null;
+    private ?string $delayedDocument = null;
+    private ?string $agendaHistory = null;
+    private ?string $createSKPV = null;
+    private ?string $changeEet = null;
+    private ?string $deleteRecords = null;
+    private ?string $exportXml = null;
+    private ?string $createBackup = null;
+    private ?string $restoreBackup = null;
+    private ?string $createCashRegisterDoc = null;
+    private ?string $refund = null;
+    private ?bool $accountDayByDay = null;
+    private ?bool $canDoDiffExport = null;
 
     /**
      * Gets as lockPin.

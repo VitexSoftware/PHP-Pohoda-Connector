@@ -25,32 +25,32 @@ class MovementDetailType
     /**
      * ID bankovního dokladu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Evidenční číslo bankovního dokladu.
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Typ bankovního dokladu.
      */
-    private string $bankType = null;
+    private ?string $bankType = null;
 
     /**
      * Datum platby.
      */
-    private \DateTime $datePayment = null;
+    private ?\DateTime $datePayment = null;
 
     /**
      * Celková částka.
      */
-    private \Pohoda\HomeCurrencyType $homeCurrency = null;
+    private ?\Pohoda\HomeCurrencyType $homeCurrency = null;
 
     /**
      * Celková částka v cizí měně.
      */
-    private \Pohoda\ForeignCurrencyType $foreignCurrency = null;
+    private ?\Pohoda\ForeignCurrencyType $foreignCurrency = null;
 
     /**
      * Gets as id.

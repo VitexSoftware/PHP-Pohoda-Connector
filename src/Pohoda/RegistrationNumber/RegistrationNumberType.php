@@ -22,8 +22,8 @@ namespace Pohoda\RegistrationNumber;
  */
 class RegistrationNumberType
 {
-    private string $version = null;
-    private \Pohoda\RegistrationNumber\RegistrationNumberHeaderType $registrationNumberHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\RegistrationNumber\RegistrationNumberHeaderType $registrationNumberHeader = null;
 
     /**
      * Gets as version.

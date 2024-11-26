@@ -22,18 +22,18 @@ namespace Pohoda\List;
  */
 class ListBalanceRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze dokladu.
      */
-    private string $balanceVersion = null;
+    private ?string $balanceVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
      */
-    private string $extSystem = null;
-    private \Pohoda\List\RequestBalanceType $requestBalance = null;
+    private ?string $extSystem = null;
+    private ?\Pohoda\List\RequestBalanceType $requestBalance = null;
 
     /**
      * Gets as version.

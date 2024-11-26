@@ -22,17 +22,17 @@ namespace Pohoda\Filter;
  */
 class FilterDocsDeleteType
 {
-    private string $agenda = null;
+    private ?string $agenda = null;
 
     /**
      * Filtr podle ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Evidenční číslo dokladu.
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Gets as agenda.

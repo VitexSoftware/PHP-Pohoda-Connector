@@ -22,7 +22,7 @@ namespace Pohoda\Prijemka;
  */
 class PrijemkaType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
@@ -30,22 +30,22 @@ class PrijemkaType
      *  Povolené jsou vazby z agendy:
      *  - Vydané objednávky.
      */
-    private \Pohoda\Type\LinksType $links = null;
-    private \Pohoda\Prijemka\PrijemkaHeaderType $prijemkaHeader = null;
-    private \Pohoda\Prijemka\PrijemkaDetailType $prijemkaDetail = null;
-    private \Pohoda\Prijemka\PrijemkaSummaryType $prijemkaSummary = null;
+    private ?\Pohoda\Type\LinksType $links = null;
+    private ?\Pohoda\Prijemka\PrijemkaHeaderType $prijemkaHeader = null;
+    private ?\Pohoda\Prijemka\PrijemkaDetailType $prijemkaDetail = null;
+    private ?\Pohoda\Prijemka\PrijemkaSummaryType $prijemkaSummary = null;
 
     /**
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      */
-    private \Pohoda\Type\LinksType $linkedDocuments = null;
+    private ?\Pohoda\Type\LinksType $linkedDocuments = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

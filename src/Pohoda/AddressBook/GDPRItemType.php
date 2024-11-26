@@ -25,42 +25,42 @@ class GDPRItemType
     /**
      * Typ práce se záznamem GDPR. Výchozí hodnota je přidání nového záznamu.
      */
-    private \Pohoda\Type\ActionTypeItemType $actionType = null;
+    private ?\Pohoda\Type\ActionTypeItemType $actionType = null;
 
     /**
      * ID položky GDPR (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Typ důvodu zpracování dat GDPR.
      */
-    private \Pohoda\Type\RefTypeLongType $name = null;
+    private ?\Pohoda\Type\RefTypeLongType $name = null;
 
     /**
      * Důvod zpracování (jen pro export).
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Datum od. Pokud není uvedeno, bude nastaveno na aktuální datum.
      */
-    private \DateTime $dateFrom = null;
+    private ?\DateTime $dateFrom = null;
 
     /**
      * Datum do.
      */
-    private \DateTime $dateTill = null;
+    private ?\DateTime $dateTill = null;
 
     /**
      * Datum a čas odvolání GDPR.
      */
-    private \DateTime $revokeGDPR = null;
+    private ?\DateTime $revokeGDPR = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as actionType.

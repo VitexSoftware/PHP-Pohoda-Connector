@@ -26,12 +26,12 @@ class PriceType
     /**
      * Částka v příslušné sazbě.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * Částka DPH.
      */
-    private float $priceVAT = null;
+    private ?float $priceVAT = null;
 
     /**
      * Gets as price.

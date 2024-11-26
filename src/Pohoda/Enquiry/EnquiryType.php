@@ -22,17 +22,17 @@ namespace Pohoda\Enquiry;
  */
 class EnquiryType
 {
-    private string $version = null;
-    private \Pohoda\Enquiry\EnquiryHeaderType $enquiryHeader = null;
-    private \Pohoda\Enquiry\EnquiryDetailType $enquiryDetail = null;
-    private \Pohoda\Enquiry\EnquirySummaryType $enquirySummary = null;
+    private ?string $version = null;
+    private ?\Pohoda\Enquiry\EnquiryHeaderType $enquiryHeader = null;
+    private ?\Pohoda\Enquiry\EnquiryDetailType $enquiryDetail = null;
+    private ?\Pohoda\Enquiry\EnquirySummaryType $enquirySummary = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

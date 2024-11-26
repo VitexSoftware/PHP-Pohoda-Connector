@@ -25,13 +25,13 @@ class NumberADType
     /**
      * Odkaz na číselnou řadu. Vyšší prioritu má element "id".
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Prefix číselné řady.
      */
-    private string $ids = null;
-    private \Pohoda\Type\NumberADType\NumberRequestedAType $numberRequested = null;
+    private ?string $ids = null;
+    private ?\Pohoda\Type\NumberADType\NumberRequestedAType $numberRequested = null;
 
     /**
      * Gets as id.

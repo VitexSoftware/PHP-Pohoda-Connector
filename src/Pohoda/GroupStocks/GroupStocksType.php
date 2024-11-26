@@ -22,18 +22,18 @@ namespace Pohoda\GroupStocks;
  */
 class GroupStocksType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Typ práce se záznamem. Výchozí hodnota je přidání nového záznamu.
      */
-    private \Pohoda\GroupStocks\ActionTypeType $actionType = null;
-    private \Pohoda\GroupStocks\GroupStocksHeaderType $groupStocksHeader = null;
+    private ?\Pohoda\GroupStocks\ActionTypeType $actionType = null;
+    private ?\Pohoda\GroupStocks\GroupStocksHeaderType $groupStocksHeader = null;
 
     /**
      * @var \Pohoda\GroupStocks\VariantsItemType[]
      */
-    private array $groupStocksDetail = null;
+    private ?array $groupStocksDetail = null;
 
     /**
      * Gets as version.

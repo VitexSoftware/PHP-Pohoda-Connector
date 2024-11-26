@@ -22,18 +22,18 @@ namespace Pohoda\List;
  */
 class ListOrderRequestType
 {
-    private string $version = null;
-    private string $orderType = null;
+    private ?string $version = null;
+    private ?string $orderType = null;
 
     /**
      * Požadovaná verze dokladu.
      */
-    private string $orderVersion = null;
+    private ?string $orderVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
      */
-    private string $extSystem = null;
+    private ?string $extSystem = null;
 
     /**
      * @var \Pohoda\Filter\RequestOrderType[]

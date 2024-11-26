@@ -22,8 +22,8 @@ namespace Pohoda\List;
  */
 class RequestParameterType
 {
-    private string $idsAgenda = null;
-    private string $idsUserAgenda = null;
+    private ?string $idsAgenda = null;
+    private ?string $idsUserAgenda = null;
 
     /**
      * Gets as idsAgenda.

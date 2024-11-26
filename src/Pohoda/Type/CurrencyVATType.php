@@ -23,8 +23,8 @@ namespace Pohoda\Type;
  */
 class CurrencyVATType
 {
-    private float $__value = null;
-    private float $rate = null;
+    private ?float $__value = null;
+    private ?float $rate = null;
 
     /**
      * Construct.

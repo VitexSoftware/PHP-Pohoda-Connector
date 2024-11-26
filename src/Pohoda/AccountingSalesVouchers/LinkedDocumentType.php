@@ -25,12 +25,12 @@ class LinkedDocumentType
     /**
      * ID prodejky.
      */
-    private string $id = null;
+    private ?string $id = null;
 
     /**
      * Číslo prodejky.
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Gets as id.

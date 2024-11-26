@@ -25,54 +25,54 @@ class StockItemType
     /**
      * ID položky zásoby (od verze 2.1).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Informace o použité skladové zásobě (od verze 2.1).
      */
-    private \Pohoda\Stock\StockInfoType $stockInfo = null;
+    private ?\Pohoda\Stock\StockInfoType $stockInfo = null;
 
     /**
      * Členění.
      */
-    private \Pohoda\Type\RefTypeStorageType $storage = null;
+    private ?\Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Řetězcový identifikátor skladové položky.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Název skladové položky (jen pro export).
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Stav zásoby (jen pro export).
      */
-    private float $count = null;
+    private ?float $count = null;
 
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Měrná jednotka (jen pro export).
      */
-    private string $unit = null;
+    private ?string $unit = null;
 
     /**
      * Pořadí položek (jen pro export).
      */
-    private int $stockOrder = null;
+    private ?int $stockOrder = null;
 
     /**
      * Úprava cen položky zásob u jednotlivých cenových hladin. Jen u typu Komplet.
      *
      * @var \Pohoda\Type\StockPriceType[]
      */
-    private array $stockPriceItem = null;
+    private ?array $stockPriceItem = null;
 
     /**
      * Gets as id.

@@ -15,4 +15,4 @@ declare(strict_types=1);
 
 require_once file_exists('../vendor/autoload.php') ? '../vendor/autoload.php' : 'vendor/autoload.php';
 
-\Ease\Shared::instanced()->loadConfig(__DIR__.'/.env', true);
+\Ease\Shared::instanced()->loadConfig(file_exists(__DIR__.'/.env') ? __DIR__.'/.env' : \dirname(__DIR__).'/.env', true);

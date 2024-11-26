@@ -25,7 +25,7 @@ class DeleteOrderType
     /**
      * Filtr pro výběr dokladu ke smazání.
      */
-    private \Pohoda\Filter\FilterDocsDeleteType $filter = null;
+    private ?\Pohoda\Filter\FilterDocsDeleteType $filter = null;
 
     /**
      * Gets as filter.

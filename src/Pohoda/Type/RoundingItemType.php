@@ -25,33 +25,33 @@ class RoundingItemType
     /**
      * ID položky dokladu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Text položky - „Zaokrouhlení“.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Množství.
      */
-    private float $quantity = null;
+    private ?float $quantity = null;
 
     /**
      * Ceny jsou uvedeny:bez DPH/včetně DPH.Fixní hodnota „false“.
      */
-    private string $payVAT = null;
+    private ?string $payVAT = null;
 
     /**
      * Sazba DPH.
      */
-    private \Pohoda\Type\VatRateType $rateVAT = null;
+    private ?\Pohoda\Type\VatRateType $rateVAT = null;
 
     /**
      * Historická sazba v procentech. Povoluje se v Globálním nastavení.
      */
-    private float $percentVAT = null;
-    private \Pohoda\Type\TypeCurrencyHomeItemRoundingType $homeCurrency = null;
+    private ?float $percentVAT = null;
+    private ?\Pohoda\Type\TypeCurrencyHomeItemRoundingType $homeCurrency = null;
 
     /**
      * Gets as id.

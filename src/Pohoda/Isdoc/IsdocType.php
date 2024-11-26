@@ -22,12 +22,12 @@ namespace Pohoda\Isdoc;
  */
 class IsdocType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Výběr záznamu.
      */
-    private \Pohoda\Filter\RecordIsdocType $record = null;
+    private ?\Pohoda\Filter\RecordIsdocType $record = null;
 
     /**
      * Parametry pro vytvoření ISDOC dokumentu.

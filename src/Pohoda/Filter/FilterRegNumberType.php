@@ -25,27 +25,27 @@ class FilterRegNumberType
     /**
      * Filtr podle ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Vybere záznam dle zadaného externího identifikátoru.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Filtr podle evidenčního čísla.
      */
-    private string $regNumber = null;
+    private ?string $regNumber = null;
 
     /**
      * Filtr podle skladové zásoby.
      */
-    private \Pohoda\Type\StockItemRegNumberType $stockItem = null;
+    private ?\Pohoda\Type\StockItemRegNumberType $stockItem = null;
 
     /**
      * Vyexportuje záznamy změněné od zadaného data.
      */
-    private \DateTime $lastChanges = null;
+    private ?\DateTime $lastChanges = null;
 
     /**
      * Gets as id.

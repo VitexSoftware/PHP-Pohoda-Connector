@@ -22,17 +22,17 @@ namespace Pohoda\Stock;
  */
 class RelatedFileType
 {
-    private string $filepath = null;
+    private ?string $filepath = null;
 
     /**
      * Popis souvisejícího souboru. Povinné pole v programu POHODA. Pokud není zadáno nebo není unikátní, bude programem Pohoda automaticky vygenerován text: Soubor_(1) .. n.
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Pořadí (jen pro export).
      */
-    private int $order = null;
+    private ?int $order = null;
 
     /**
      * Gets as filepath.

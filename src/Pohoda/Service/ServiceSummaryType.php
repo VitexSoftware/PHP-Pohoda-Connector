@@ -25,32 +25,32 @@ class ServiceSummaryType
     /**
      * Zaokrouhlení celkové částky dokladu + typ zaokrouhlení. Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
      */
-    private string $roundingDocument = null;
+    private ?string $roundingDocument = null;
 
     /**
      * Zaokrouhlení DPH. Pokud není uvedeno zaokrouhlení, nastaví se hodnoty z Globálního nastavení.
      */
-    private string $roundingVAT = null;
+    private ?string $roundingVAT = null;
 
     /**
      * Vypočíst DPH ze zaokrouhlení.
      */
-    private bool $calculateVAT = null;
+    private ?bool $calculateVAT = null;
 
     /**
      * Způsob výpočtu hodnoty DPH z částky včetně daně dle § 37. Pokud není element uveden, použije se způsob výpočtu dle data zdanitelného plnění nebo data vystavení dokladu. (pouze CZ verze).
      */
-    private string $typeCalculateVATInclusivePrice = null;
+    private ?string $typeCalculateVATInclusivePrice = null;
 
     /**
      * Kč.
      */
-    private \Pohoda\Type\TypeCurrencyHomeType $homeCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyHomeType $homeCurrency = null;
 
     /**
      * Cizí měna.
      */
-    private \Pohoda\Type\TypeCurrencyForeignType $foreignCurrency = null;
+    private ?\Pohoda\Type\TypeCurrencyForeignType $foreignCurrency = null;
 
     /**
      * Gets as roundingDocument.

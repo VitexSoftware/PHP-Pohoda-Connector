@@ -22,33 +22,33 @@ namespace Pohoda\LiquidationWithoutLink;
  */
 class LiquidationWithoutLinkType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Výběr záznamu.
      */
-    private \Pohoda\LiquidationWithoutLink\RecordliquidationWithoutLinkType $record = null;
+    private ?\Pohoda\LiquidationWithoutLink\RecordliquidationWithoutLinkType $record = null;
 
     /**
      * Datum Likvidace. Pokud není hodnota zadaná, použije se aktuální datum.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Částka likvidace v tuzemské měně.
      */
-    private float $amountHome = null;
+    private ?float $amountHome = null;
 
     /**
      * Částka likvidace v cizí měně.
      */
-    private float $amountForeign = null;
+    private ?float $amountForeign = null;
 
     /**
      * Gets as version.

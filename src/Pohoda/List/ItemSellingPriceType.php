@@ -25,79 +25,79 @@ class ItemSellingPriceType
     /**
      * ID prodejní ceny, na tuto hodnotu se lze odkazovat v seznamu prodejních cen.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Název prodejní ceny.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Popis prodejní ceny.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Platnost slevy resp. vedlejší ceny může být trvalá nebo časově omezená; v tom případě uveďte data platnosti do polí od a do.
      *  Platnost ceny lze také pozastavit, takže se nenabízí při výdeji.
      */
-    private string $discountValidity = null;
+    private ?string $discountValidity = null;
 
     /**
      * Počáteční datum platnosti časově omezené prodejní ceny.
      */
-    private \DateTime $dateFrom = null;
+    private ?\DateTime $dateFrom = null;
 
     /**
      * Koncové datum platnosti časově omezené prodejní ceny.
      */
-    private \DateTime $dateTill = null;
+    private ?\DateTime $dateTill = null;
 
     /**
      * Typ ceny.
      */
-    private string $priceType = null;
+    private ?string $priceType = null;
 
     /**
      * Marže %. Uveďte přirážku k nákupní ceně v procentech v případě, že používáte tento způsob výpočtu.
      */
-    private float $margin = null;
+    private ?float $margin = null;
 
     /**
      * Rabat %. Uveďte slevu v procentech v případě, že používáte tento způsob výpočtu.
      */
-    private float $rebate = null;
+    private ?float $rebate = null;
 
     /**
      * Sleva v procentech sloužící pro výpočet slevy ze základní prodejní ceny skladové zásoby.
      */
-    private float $discountPercentage = null;
+    private ?float $discountPercentage = null;
 
     /**
      * Typ výpočtu. Způsob výpočtu ceny (s daní / bez daně) s ohledem na DPH.
      */
-    private string $calculation = null;
+    private ?string $calculation = null;
 
     /**
      * Zaokrouhlení. Počet desetinných míst zaokrouhlení (v Kč) při výpočtu ceny.
      */
-    private string $rounding = null;
+    private ?string $rounding = null;
 
     /**
      * Měna.
      */
-    private \Pohoda\Type\RefType $currency = null;
+    private ?\Pohoda\Type\RefType $currency = null;
 
     /**
      * Kurs.
      */
-    private float $rate = null;
+    private ?float $rate = null;
 
     /**
      * Gets as id.

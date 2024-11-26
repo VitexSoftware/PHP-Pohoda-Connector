@@ -22,24 +22,24 @@ namespace Pohoda\Documentresponse;
  */
 class ListVersionType
 {
-    private string $version = null;
-    private \DateTime $dateTimeStamp = null;
-    private \DateTime $dateValidFrom = null;
-    private string $state = null;
+    private ?string $version = null;
+    private ?\DateTime $dateTimeStamp = null;
+    private ?\DateTime $dateValidFrom = null;
+    private ?string $state = null;
 
     /**
      * Podrobnosti (error/warning) vzniklé při zpracování.
      *
      * @var \Pohoda\Documentresponse\DetailType[]
      */
-    private array $importDetails = null;
+    private ?array $importDetails = null;
 
     /**
      * Pokud je počet exportovaných záznamů vyšší než zadaný limit, provede se rozdělení dat do více souborů. V původním souboru je uveden seznam rozdělených souborů.
      *
      * @var string[]
      */
-    private array $parts = null;
+    private ?array $parts = null;
 
     /**
      * Gets as version.

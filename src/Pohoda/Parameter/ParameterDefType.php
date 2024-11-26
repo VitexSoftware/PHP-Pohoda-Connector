@@ -26,45 +26,45 @@ class ParameterDefType
     /**
      * ID položky dokladu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Název pole, který se bude zobrazovat ve formuláři zvolené agendy.
      */
-    private string $label = null;
+    private ?string $label = null;
 
     /**
      * Název databázového pole, které bude zapsáno přímo do databáze. Program automaticky doplní před zadaný název zkratku VPr a v případě datového pole typu Seznam RefVpr.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Požadovaný datový typ jako je Text, Měna, Číslo, Ano/Ne, Datum a Seznam.
      */
-    private string $type = null;
+    private ?string $type = null;
 
     /**
      * Požadovaná délka textového pole. Maximální délka textového pole je 250 znaků.
      */
-    private int $length = null;
+    private ?int $length = null;
 
     /**
      * Definice počítaného sloupce.
      */
-    private string $definition = null;
-    private \Pohoda\Type\RefType $list = null;
-    private string $write = null;
+    private ?string $definition = null;
+    private ?\Pohoda\Type\RefType $list = null;
+    private ?string $write = null;
 
     /**
      * Řádek v tabulce položek dokladu.
      */
-    private int $row = null;
-    private string $use0 = null;
-    private string $use1 = null;
-    private string $use2 = null;
-    private string $use3 = null;
-    private string $use4 = null;
-    private string $use5 = null;
+    private ?int $row = null;
+    private ?string $use0 = null;
+    private ?string $use1 = null;
+    private ?string $use2 = null;
+    private ?string $use3 = null;
+    private ?string $use4 = null;
+    private ?string $use5 = null;
 
     /**
      * Gets as id.

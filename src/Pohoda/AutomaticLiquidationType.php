@@ -22,17 +22,17 @@ namespace Pohoda;
  */
 class AutomaticLiquidationType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Výběr záznamu.
      */
-    private \Pohoda\Filter\RecordAutomaticLiquidationType $record = null;
+    private ?\Pohoda\Filter\RecordAutomaticLiquidationType $record = null;
 
     /**
      * Pravidlo párování dokladů.
      */
-    private \Pohoda\Type\RefType $ruleOfPairing = null;
+    private ?\Pohoda\Type\RefType $ruleOfPairing = null;
 
     /**
      * Gets as version.

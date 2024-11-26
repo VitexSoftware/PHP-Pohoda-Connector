@@ -25,27 +25,27 @@ class ActionPriceStockItemType
     /**
      * Skladová zásoba.
      */
-    private \Pohoda\ActionPrice\StockType $stock = null;
+    private ?\Pohoda\ActionPrice\StockType $stock = null;
 
     /**
      * Název.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Členění.
      */
-    private \Pohoda\Type\RefTypeStorageType $storage = null;
+    private ?\Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Původní cena skladové zásoby.
      */
-    private \Pohoda\ActionPrice\DefaultPriceStockType $defaultPriceStock = null;
+    private ?\Pohoda\ActionPrice\DefaultPriceStockType $defaultPriceStock = null;
 
     /**
      * Akční cena skladové zásoby.
      */
-    private \Pohoda\ActionPrice\ActionPriceStockType $actionPriceStock = null;
+    private ?\Pohoda\ActionPrice\ActionPriceStockType $actionPriceStock = null;
 
     /**
      * Gets as stock.

@@ -22,7 +22,7 @@ namespace Pohoda\Storage;
  */
 class SubStoragesType
 {
-    private \Pohoda\Storage\ItemStorageType $itemStorage = null;
+    private ?\Pohoda\Storage\ItemStorageType $itemStorage = null;
 
     /**
      * Gets as itemStorage.

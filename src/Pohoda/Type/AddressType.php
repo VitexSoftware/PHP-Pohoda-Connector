@@ -29,38 +29,38 @@ class AddressType
      *  K vyhledání se použije první neprázdný element (podle pořadí uvedeného v předchozí větě).
      *  K vytvoření vazby adresy dokladu na Adresář dojde pouze tehdy, pokud bude nalezena pouze 1 adresa.
      */
-    private bool $linkToAddress = null;
-    private string $company = null;
-    private string $division = null;
-    private string $name = null;
-    private string $city = null;
-    private string $street = null;
-    private string $zip = null;
-    private string $ico = null;
-    private string $dic = null;
+    private ?bool $linkToAddress = null;
+    private ?string $company = null;
+    private ?string $division = null;
+    private ?string $name = null;
+    private ?string $city = null;
+    private ?string $street = null;
+    private ?string $zip = null;
+    private ?string $ico = null;
+    private ?string $dic = null;
 
     /**
      * Typ plátce DPH.
      */
-    private string $vATPayerType = null;
-    private string $icDph = null;
-    private \Pohoda\Type\RefType $country = null;
+    private ?string $vATPayerType = null;
+    private ?string $icDph = null;
+    private ?\Pohoda\Type\RefType $country = null;
 
     /**
      * Podporováno pouze u objednávek a nabídek.
      */
-    private string $phone = null;
-    private string $mobilPhone = null;
+    private ?string $phone = null;
+    private ?string $mobilPhone = null;
 
     /**
      * Podporováno pouze u objednávek a nabídek.
      */
-    private string $fax = null;
+    private ?string $fax = null;
 
     /**
      * Podporováno pouze u dokladů (Nabídka, Poptávky, Přijaté objednávky, Vydané Objednávky, Vydané Faktury, Vydané Zálohové Faktury, Ostatní Pohledávky, Výdejky).
      */
-    private string $email = null;
+    private ?string $email = null;
 
     /**
      * Gets as linkToAddress.

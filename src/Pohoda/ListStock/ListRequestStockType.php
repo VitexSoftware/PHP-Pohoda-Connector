@@ -22,12 +22,12 @@ namespace Pohoda\ListStock;
  */
 class ListRequestStockType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze dokladu.
      */
-    private string $stockVersion = null;
+    private ?string $stockVersion = null;
 
     /**
      * Atributy určují filtr pro export zásob. Pokud není zadán žádný filtr, vyexportují se všechny zásoby.

@@ -25,14 +25,14 @@ class DiscountStockItemType
     /**
      * Zásoba, jejíž slevy/vedlejší ceny se mají upravit.
      */
-    private \Pohoda\Type\StockItemType $stockItem = null;
+    private ?\Pohoda\Type\StockItemType $stockItem = null;
 
     /**
      * Slevy/vedeljší ceny, které se mají upravit.
      *
      * @var \Pohoda\Discount\DiscountsItemType[]
      */
-    private array $discounts = null;
+    private ?array $discounts = null;
 
     /**
      * Gets as stockItem.

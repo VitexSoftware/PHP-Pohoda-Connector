@@ -26,35 +26,35 @@ class ShipToAddressType
     /**
      * Typ práce s dodací adresou. Výchozí hodnota je přidání nového dodací adresy.
      */
-    private \Pohoda\Type\ActionTypeItemType $actionType = null;
+    private ?\Pohoda\Type\ActionTypeItemType $actionType = null;
 
     /**
      * ID dodací adresy.
      */
-    private int $id = null;
-    private string $extId = null;
-    private string $company = null;
-    private string $division = null;
-    private string $name = null;
-    private string $city = null;
-    private string $street = null;
-    private string $zip = null;
-    private \Pohoda\Type\RefType $country = null;
+    private ?int $id = null;
+    private ?string $extId = null;
+    private ?string $company = null;
+    private ?string $division = null;
+    private ?string $name = null;
+    private ?string $city = null;
+    private ?string $street = null;
+    private ?string $zip = null;
+    private ?\Pohoda\Type\RefType $country = null;
 
     /**
      * Pouze pro agendy vydané nabídky, přijaté poptávky, přijaté objednávky, vydané faktury, vydané zálohové faktury, ostatní pohledávky, interní doklady, prodejky a výdejky.
      */
-    private string $phone = null;
+    private ?string $phone = null;
 
     /**
      * Pouze pro agendy vydané nabídky, přijaté poptávky, přijaté objednávky, vydané faktury, vydané zálohové faktury, ostatní pohledávky, interní doklady, prodejky a výdejky.
      */
-    private string $email = null;
+    private ?string $email = null;
 
     /**
      * Výchozí dodací adresa.
      */
-    private string $defaultShipAddress = null;
+    private ?string $defaultShipAddress = null;
 
     /**
      * Gets as actionType.

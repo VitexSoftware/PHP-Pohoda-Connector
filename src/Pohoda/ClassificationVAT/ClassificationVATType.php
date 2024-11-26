@@ -22,8 +22,8 @@ namespace Pohoda\ClassificationVAT;
  */
 class ClassificationVATType
 {
-    private string $version = null;
-    private \Pohoda\ClassificationVAT\ClassificationVATHeaderType $classificationVATHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\ClassificationVAT\ClassificationVATHeaderType $classificationVATHeader = null;
 
     /**
      * Gets as version.

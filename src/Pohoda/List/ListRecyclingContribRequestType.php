@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListRecyclingContribRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $recyclingContribVersion = null;
+    private ?string $recyclingContribVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestRecyclingContribType[]

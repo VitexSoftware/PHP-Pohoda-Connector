@@ -25,22 +25,22 @@ class PriceGroupItemType
     /**
      * ID cenové skupiny.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Název cenové skupiny.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Popis cenové skupiny.
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Sleva v procentech.
      */
-    private float $discountPercentage = null;
+    private ?float $discountPercentage = null;
 
     /**
      * Gets as id.

@@ -25,148 +25,148 @@ class DetailEETType
     /**
      * Číslo dokladu.
      */
-    private string $numberOfDocument = null;
+    private ?string $numberOfDocument = null;
 
     /**
      * Datum tržby (včetně časového posunu).
      */
-    private \DateTime $dateOfSale = null;
+    private ?\DateTime $dateOfSale = null;
 
     /**
      * Částka v Kč.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * PKP.
      */
-    private string $pKP = null;
+    private ?string $pKP = null;
 
     /**
      * BKP.
      */
-    private string $bKP = null;
+    private ?string $bKP = null;
 
     /**
      * FIK. Nemusí být uvedeno při použití režimu 'simplified'.
      */
-    private string $fIK = null;
+    private ?string $fIK = null;
 
     /**
      * Provozovna.
      */
-    private string $establishment = null;
+    private ?string $establishment = null;
 
     /**
      * Pokladní zařízení.
      */
-    private string $cashDevice = null;
+    private ?string $cashDevice = null;
 
     /**
      * Režim.
      */
-    private string $mode = null;
+    private ?string $mode = null;
 
     /**
      * Datum odeslání. Nemusí být uvedeno při použití režimu 'simplified'.
      */
-    private \DateTime $dateOfSend = null;
+    private ?\DateTime $dateOfSend = null;
 
     /**
      * Datum přijetí. Nemusí být uvedeno při použití režimu 'simplified'.
      */
-    private \DateTime $dateOfAcceptance = null;
+    private ?\DateTime $dateOfAcceptance = null;
 
     /**
      * Testovací režim.
      */
-    private string $testMode = null;
+    private ?string $testMode = null;
 
     /**
      * DIČ poplatníka.
      */
-    private string $vATIdOfPayer = null;
+    private ?string $vATIdOfPayer = null;
 
     /**
      * DIČ pověřujícího poplatníka.
      */
-    private string $vATIdOfAuthPayer = null;
+    private ?string $vATIdOfAuthPayer = null;
 
     /**
      * Celková částka plnění osvobozených od DPH, ostatních plnění.
      */
-    private float $priceExempt = null;
+    private ?float $priceExempt = null;
 
     /**
      * Celkový základ daně se základní sazbou DPH.
      */
-    private float $priceBasic = null;
+    private ?float $priceBasic = null;
 
     /**
      * Celková DPH se základní sazbou.
      */
-    private float $vATBasic = null;
+    private ?float $vATBasic = null;
 
     /**
      * Celkový základ daně s první sníženou sazbou DPH.
      */
-    private float $priceReduced = null;
+    private ?float $priceReduced = null;
 
     /**
      * Celková DPH s první sníženou sazbou.
      */
-    private float $vATReduced = null;
+    private ?float $vATReduced = null;
 
     /**
      * Celkový základ daně s druhou sníženou sazbou DPH.
      */
-    private float $priceSecondReduced = null;
+    private ?float $priceSecondReduced = null;
 
     /**
      * Celková DPH s druhou sníženou sazbou.
      */
-    private float $vATSecondReduced = null;
+    private ?float $vATSecondReduced = null;
 
     /**
      * Celková částka v režimu DPH pro cestovní službu.
      */
-    private float $travelService = null;
+    private ?float $travelService = null;
 
     /**
      * Celková částka v režimu DPH pro prodej použitého zboží se základní sazbou.
      */
-    private float $usedGoodsBasic = null;
+    private ?float $usedGoodsBasic = null;
 
     /**
      * Celková částka v režimu DPH pro prodej použitého zboží s první sníženou sazbou.
      */
-    private float $usedGoodsFirstReduced = null;
+    private ?float $usedGoodsFirstReduced = null;
 
     /**
      * Celková částka v režimu DPH pro prodej použitého zboží s druhou sníženou sazbou.
      */
-    private float $usedGoodsSecondReduced = null;
+    private ?float $usedGoodsSecondReduced = null;
 
     /**
      * Celková částka plateb určená k následnému čerpání nebo zúčtování.
      */
-    private float $forApply = null;
+    private ?float $forApply = null;
 
     /**
      * Celková částka plateb, které jsou následným čerpáním nebo zúčtováním platby.
      */
-    private float $apply = null;
+    private ?float $apply = null;
 
     /**
      * První zaslání údajů o tržbě.
      */
-    private bool $firstSending = null;
+    private ?bool $firstSending = null;
 
     /**
      * UUID datové zprávy evidované tržby, je generováno pokladním zařízením poplatníka.
      */
-    private string $uUID = null;
-    private int $protocolVersion = null;
+    private ?string $uUID = null;
+    private ?int $protocolVersion = null;
 
     /**
      * Gets as numberOfDocument.

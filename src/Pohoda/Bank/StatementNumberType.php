@@ -26,12 +26,12 @@ class StatementNumberType
     /**
      * Číslo bankovního výpisu.
      */
-    private string $statementNumber = null;
+    private ?string $statementNumber = null;
 
     /**
      * Číslo bankovního pohybu v rámci výpisu.
      */
-    private string $numberMovement = null;
+    private ?string $numberMovement = null;
 
     /**
      * Gets as statementNumber.

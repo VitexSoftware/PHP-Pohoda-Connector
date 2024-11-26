@@ -25,7 +25,7 @@ class RestrictionDataVyrobaType
     /**
      * Položky výrobku (pouze E1).
      */
-    private string $productionList = null;
+    private ?string $productionList = null;
 
     /**
      * Gets as productionList.

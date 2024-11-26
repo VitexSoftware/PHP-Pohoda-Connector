@@ -25,7 +25,7 @@ class ListRequestStoresType extends ListRequestType
     /**
      * @var \Pohoda\Type\RefType[]
      */
-    private array $stores = null;
+    private ?array $stores = null;
 
     /**
      * Adds as store.

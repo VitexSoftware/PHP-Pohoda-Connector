@@ -25,46 +25,46 @@ class RulesPairingItemType
     /**
      * Typ pohybu.
      */
-    private string $movement = null;
+    private ?string $movement = null;
 
     /**
      * Typ dokladu.
      *
      * @var string[]
      */
-    private array $documents = null;
+    private ?array $documents = null;
 
     /**
      * Pravidla párování.
      *
      * @var string[]
      */
-    private array $pairings = null;
+    private ?array $pairings = null;
 
     /**
      * Porovnání částky.
      */
-    private string $amountComparison = null;
+    private ?string $amountComparison = null;
 
     /**
      * Splněno při.
      */
-    private string $fulfilled = null;
+    private ?string $fulfilled = null;
 
     /**
      * Konec skupiny.
      */
-    private string $endGroup = null;
+    private ?string $endGroup = null;
 
     /**
      * Ukončit.
      */
-    private string $finish = null;
+    private ?string $finish = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Gets as movement.

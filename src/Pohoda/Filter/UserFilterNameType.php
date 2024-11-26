@@ -25,7 +25,7 @@ class UserFilterNameType
     /**
      * Identifikátor uživatelského filtru v požadované agendě, který má být použit pro filtraci záznamů.
      */
-    private string $userFilterName = null;
+    private ?string $userFilterName = null;
 
     /**
      * Gets as userFilterName.

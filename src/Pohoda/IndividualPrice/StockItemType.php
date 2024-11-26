@@ -25,47 +25,47 @@ class StockItemType
     /**
      * ID skladové zásoby.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Kód skladové zásoby.
      */
-    private string $ids = null;
+    private ?string $ids = null;
 
     /**
      * Název skladové zásoby.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Členění skladu.
      */
-    private \Pohoda\Type\RefTypeStorageType $storage = null;
+    private ?\Pohoda\Type\RefTypeStorageType $storage = null;
 
     /**
      * Cena skladové zásoby.
      */
-    private float $price = null;
+    private ?float $price = null;
 
     /**
      * Sleva v procentech.
      */
-    private float $discountPercentage = null;
+    private ?float $discountPercentage = null;
 
     /**
      * Individuální cena skladové zásoby.
      */
-    private float $individualPrice = null;
+    private ?float $individualPrice = null;
 
     /**
      * ID - odkaz na cizí měnu, IDS - kod měny.
      */
-    private \Pohoda\Type\RefType $currency = null;
+    private ?\Pohoda\Type\RefType $currency = null;
 
     /**
      * Cena je uvedena: bez DPH, včetně DPH.
      */
-    private string $payVAT = null;
+    private ?string $payVAT = null;
 
     /**
      * Gets as id.

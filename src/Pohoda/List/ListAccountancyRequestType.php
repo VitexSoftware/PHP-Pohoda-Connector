@@ -22,13 +22,13 @@ namespace Pohoda\List;
  */
 class ListAccountancyRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze výdejky.
      */
-    private string $accountancyVersion = null;
-    private \Pohoda\Filter\RequestAccountancyType $requestAccountancy = null;
+    private ?string $accountancyVersion = null;
+    private ?\Pohoda\Filter\RequestAccountancyType $requestAccountancy = null;
 
     /**
      * Gets as version.

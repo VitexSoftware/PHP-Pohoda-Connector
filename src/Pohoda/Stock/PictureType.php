@@ -22,32 +22,32 @@ namespace Pohoda\Stock;
  */
 class PictureType
 {
-    private bool $default = null;
+    private ?bool $default = null;
 
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      */
-    private \Pohoda\Type\ActionTypeItemType $actionType = null;
+    private ?\Pohoda\Type\ActionTypeItemType $actionType = null;
 
     /**
      * ID obrázku (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Název obrázku. Soubor se musí nacházet v adresáři Dokumenty\firma\Obrázky\. Název obrázku se uvádí bez cesty.
      */
-    private string $filepath = null;
+    private ?string $filepath = null;
 
     /**
      * Popis obrázku. Povinné pole v programu POHODA. Pokud není zadáno nebo není unikátní, bude programem Pohoda automaticky vygenerován text: Obrázek_(1) .. n.
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Pořadí (jen pro export).
      */
-    private int $order = null;
+    private ?int $order = null;
 
     /**
      * Gets as default.

@@ -22,32 +22,32 @@ namespace Pohoda\ActionPrice;
  */
 class ActionPriceType
 {
-    private string $version = null;
-    private \Pohoda\ActionPrice\ActionPriceHeaderType $actionPriceHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\ActionPrice\ActionPriceHeaderType $actionPriceHeader = null;
 
     /**
      * Verze 2.0.
      *
      * @var \Pohoda\ActionPrice\ActionPriceStockItemType[]
      */
-    private array $actionPriceItem = null;
+    private ?array $actionPriceItem = null;
 
     /**
      * Verze 2.1 a vyšší.
      *
      * @var \Pohoda\ActionPrice\ActionPriceStockItemType[]
      */
-    private array $actionPriceStocks = null;
+    private ?array $actionPriceStocks = null;
 
     /**
      * @var \Pohoda\ActionPrice\CustomerType[]
      */
-    private array $actionPriceCustomers = null;
+    private ?array $actionPriceCustomers = null;
 
     /**
      * @var \Pohoda\ActionPrice\GroupType[]
      */
-    private array $actionPriceGroups = null;
+    private ?array $actionPriceGroups = null;
 
     /**
      * Gets as version.

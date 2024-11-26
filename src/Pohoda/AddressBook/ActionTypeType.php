@@ -25,17 +25,17 @@ class ActionTypeType
     /**
      * Vložení nového záznamu. Výchozí hodnota.
      */
-    private \Pohoda\Filter\RequestAddressBookActionType $add = null;
+    private ?\Pohoda\Filter\RequestAddressBookActionType $add = null;
 
     /**
      * Aktualizace dokladu.
      */
-    private \Pohoda\Filter\RequestAddressBookActionType $update = null;
+    private ?\Pohoda\Filter\RequestAddressBookActionType $update = null;
 
     /**
      * Odstranění dokladu.
      */
-    private \Pohoda\Filter\RequestAddressBookType $delete = null;
+    private ?\Pohoda\Filter\RequestAddressBookType $delete = null;
 
     /**
      * Gets as add.

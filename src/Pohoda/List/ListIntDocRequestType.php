@@ -22,17 +22,17 @@ namespace Pohoda\List;
  */
 class ListIntDocRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze dokladu.
      */
-    private string $intDocVersion = null;
+    private ?string $intDocVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
      */
-    private string $extSystem = null;
+    private ?string $extSystem = null;
 
     /**
      * @var \Pohoda\Filter\RequestIntDocType[]

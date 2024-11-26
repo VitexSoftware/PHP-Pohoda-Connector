@@ -25,317 +25,317 @@ class InvoiceHeaderType
     /**
      * ID záznamu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Typ faktury.
      */
-    private string $invoiceType = null;
+    private ?string $invoiceType = null;
 
     /**
      * Příznak „Storno/Stornujícího“ dokladu (pouze pro export).
      */
-    private string $storno = null;
+    private ?string $storno = null;
 
     /**
      * Typ ostatní pohledávky, závazku. Používá se jen v Daňové evidenci.
      */
-    private string $sphereType = null;
+    private ?string $sphereType = null;
 
     /**
      * Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená
      *  v uživatelském nastavení nebo se nastaví první číselná řada pro daný doklad.
      */
-    private \Pohoda\Type\NumberType $number = null;
+    private ?\Pohoda\Type\NumberType $number = null;
 
     /**
      * Variabilní symbol. Pokud není hodnota zadána, použije se z čísla dokladu vypuštěním nečíselných znaků.
      */
-    private string $symVar = null;
+    private ?string $symVar = null;
 
     /**
      * Číslo dokladu, používá se jako variabilní symbol při vystavení příkazu k úhradě a při likvidaci.
      */
-    private string $originalDocument = null;
+    private ?string $originalDocument = null;
 
     /**
      * Původní číslo dokladu, pro doklady typu Dobropis, Vrubopis (pouze SK verze).
      */
-    private string $originalDocumentNumber = null;
+    private ?string $originalDocumentNumber = null;
 
     /**
      * Párový symbol. Používá se jen v účetnictví (dříve PU).
      */
-    private string $symPar = null;
+    private ?string $symPar = null;
 
     /**
      * Datum vystavení faktury. Pokud není hodnota zadaná, použije se aktuální datum nebo datum posledního záznamu, dle volby v uživatelském nastavení.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Datum zdanitelného plnění / Datum odpočtu. Pokud není hodnota zadaná, použije se hodnota z elementu "date".
      */
-    private \DateTime $dateTax = null;
+    private ?\DateTime $dateTax = null;
 
     /**
      * Datum účetního případu. Pokud není hodnota zadaná, použije se hodnota z elementu "date".
      */
-    private \DateTime $dateAccounting = null;
+    private ?\DateTime $dateAccounting = null;
 
     /**
      * Datum KH DPH. Pokud není datum KH DPH uveden, nebude na dokladu nastaven. Pouze pro doklady typu Přijatá faktura, Ostatní závazek, Vydaná Faktura - opravný daňový doklad (pouze CZ verze).
      */
-    private \DateTime $dateKHDPH = null;
+    private ?\DateTime $dateKHDPH = null;
 
     /**
      * Datum splatnosti. Pokud hodnota není zadaná, vyplní v závislosti na datu vystavení
      *  faktury dle nastavení v poli "Splatnost pohledávek" agendy "Globální nastavení".
      */
-    private \DateTime $dateDue = null;
+    private ?\DateTime $dateDue = null;
 
     /**
      * Datum uplatnění DPH.Datum pro zařazení dobropisu, resp. opravného daňového dokladu do přiznání k dani z přidané hodnoty a uplatnění odpočtu DPH.
      */
-    private \DateTime $dateApplicationVAT = null;
+    private ?\DateTime $dateApplicationVAT = null;
 
     /**
      * Datum dodání tovaru (pouze SK verze, Ostatní závazky, Přijaté faktury).
      */
-    private \DateTime $dateDelivery = null;
+    private ?\DateTime $dateDelivery = null;
 
     /**
      * Předkontace. Pokud není uveden typ předkontace, je nastavena předkontace dle uživatelského nastavení programu Pohoda.
      */
-    private \Pohoda\Type\AccountingType $accounting = null;
+    private ?\Pohoda\Type\AccountingType $accounting = null;
 
     /**
      * Členění DPH, přednastavená hodnota je "inland". Nepoužívá se u typů "Proforma" a "Zálohová" faktura.
      */
-    private \Pohoda\Type\ClassificationVATType $classificationVAT = null;
+    private ?\Pohoda\Type\ClassificationVATType $classificationVAT = null;
 
     /**
      * Členění KV DPH (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $classificationKVDPH = null;
+    private ?\Pohoda\Type\RefType $classificationKVDPH = null;
 
     /**
      * Evidenční číslo KH DPH. Pokud je na dokladu uvedeno, použije se pro kontrolní hlášení. Jen Ostatní pohledávky, Vydané Faktury (podmíněno v Globálním nastavení). Pouze CZ verze.
      */
-    private string $numberKHDPH = null;
+    private ?string $numberKHDPH = null;
 
     /**
      * Pořadové číslo KV DPH. Jen Ostatní pohledávky, Vydané Faktury (podmíněno v Globálním nastavení). Pouze SK verze.
      */
-    private string $numberKVDPH = null;
+    private ?string $numberKVDPH = null;
 
     /**
      * Text dokladu. Tento element je vyžadován při vytvoření dokladu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Zákazníkova adresa.
      */
-    private \Pohoda\Type\AddressType $partnerIdentity = null;
+    private ?\Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Osobní adresa.
      */
-    private \Pohoda\Type\MyAddressType $myIdentity = null;
+    private ?\Pohoda\Type\MyAddressType $myIdentity = null;
 
     /**
      * Objednávka.
      */
-    private \Pohoda\Type\RefType $order = null;
+    private ?\Pohoda\Type\RefType $order = null;
 
     /**
      * Číslo objednávky na jejímž základě byla faktura vystavena.
      */
-    private string $numberOrder = null;
+    private ?string $numberOrder = null;
 
     /**
      * Datum objednávky.
      */
-    private \DateTime $dateOrder = null;
+    private ?\DateTime $dateOrder = null;
 
     /**
      * Cenová hladina odběratele. Používá se jen u typů vydaná faktura,
      *  vydaný vrubopis, vydaná zálohová faktura, vydaná proforma faktura.
      */
-    private \Pohoda\Type\RefType $priceLevel = null;
+    private ?\Pohoda\Type\RefType $priceLevel = null;
 
     /**
      * Forma úhrady. Implicitně je nastaveno příkazem.
      */
-    private \Pohoda\Type\PaymentType $paymentType = null;
+    private ?\Pohoda\Type\PaymentType $paymentType = null;
 
     /**
      * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku.
      *  (Používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení
      *  uživatele (pod kterým je spuštěn XML import).
      */
-    private \Pohoda\Type\AccountType $account = null;
+    private ?\Pohoda\Type\AccountType $account = null;
 
     /**
      * Konstantní symbol.
      */
-    private string $symConst = null;
+    private ?string $symConst = null;
 
     /**
      * Specifický symbol. Používá se jen u závazků.
      */
-    private string $symSpec = null;
+    private ?string $symSpec = null;
 
     /**
      * Číslo bankovního účtu, na který dlužnou částku proplatíme. Číslo bude uvedeno na příkazu k úhradě.
      *  (Používá se jen závazků, dobropisu - vydané faktury).
      */
-    private \Pohoda\Invoice\InvoiceHeaderType\PaymentAccountAType $paymentAccount = null;
+    private ?\Pohoda\Invoice\InvoiceHeaderType\PaymentAccountAType $paymentAccount = null;
 
     /**
      * Zpráva pro příjemce (Přijaté faktury, Přijaté zálohové faktury a Ostatní závazky).
      */
-    private string $messageForRecipient = null;
+    private ?string $messageForRecipient = null;
 
     /**
      * Datum vystavení příkazu k úhradě (pouze pro export Přijatých faktur, Přijatých zálohových faktur a Ostatních závazků).
      */
-    private \DateTime $dateOfPaymentOrder = null;
+    private ?\DateTime $dateOfPaymentOrder = null;
 
     /**
      * Příznak dokladu "Placeno přes terminál".Pouze pro doklad, který má nastaven typ úhrady "Platební kartou".
      */
-    private string $paymentTerminal = null;
+    private ?string $paymentTerminal = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Registrace DPH v EU.
      */
-    private \Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null;
+    private ?\Pohoda\Type\RefTypeRegVATinEUType $regVATinEU = null;
 
     /**
      * Speciální režim registrace DPH v EU, režim One Stop Shop (OSS).
      */
-    private \Pohoda\Type\MOSStypeType $mOSS = null;
+    private ?\Pohoda\Type\MOSStypeType $mOSS = null;
 
     /**
      * Důkazní prostředky (OSS).
      *
      * @var string[]
      */
-    private array $evidentiaryResourcesMOSS = null;
+    private ?array $evidentiaryResourcesMOSS = null;
 
     /**
      * Účetní období (OSS).
      */
-    private string $accountingPeriodMOSS = null;
+    private ?string $accountingPeriodMOSS = null;
 
     /**
      * Datum uskutečnění zdanitelného plnění OSS (pouze pro opravné daňové doklady, dobropisy nebo vrubopisy).
      */
-    private \DateTime $dateTaxOriginalDocumentMOSS = null;
+    private ?\DateTime $dateTaxOriginalDocumentMOSS = null;
 
     /**
      * Vykázat doklad jako opravu OSS (pouze pro opravné daňové doklady, dobropisy nebo vrubopisy).
      */
-    private string $correctionMOSS = null;
+    private ?string $correctionMOSS = null;
 
     /**
      * Dopravce (pouze vydané faktury a vydané zálohové faktury).
      */
-    private \Pohoda\Type\CarrierType $carrier = null;
+    private ?\Pohoda\Type\CarrierType $carrier = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Interní poznámka, libovolný text, který nevstupuje do tiskových sestav.
      */
-    private string $intNote = null;
+    private ?string $intNote = null;
 
     /**
      * Stav likvidace faktury. Pouze pro export, při importu je ignorováno.
      */
-    private \Pohoda\Type\LiquidationType $liquidation = null;
+    private ?\Pohoda\Type\LiquidationType $liquidation = null;
 
     /**
      * Hodnota pole Uplatněno. Pouze vydané a přijaté zálohové faktury. Jen pro export.
      */
-    private float $applied = null;
+    private ?float $applied = null;
 
     /**
      * Doklad má položky obsahující historickou sazbu DPH. Jen pro export.
      */
-    private string $histRate = null;
+    private ?string $histRate = null;
 
     /**
      * Zámek I (pouze verze E1). Doklady uzamčené prvním stupněm mohou editovat pouze uživatelé, kteří mají v agendě Přístupová práva nastaveno právo Editace záznamů uzamčených I. stupněm. Pouze pro export.
      */
-    private string $lock1 = null;
+    private ?string $lock1 = null;
 
     /**
      * Zámek (v E1 verzi označení Zámek II). Uzamčení dokladů pro uživatele s vyšším oprávněním. Takto uzamčené doklady nelze editovat. Pouze pro export.
      */
-    private string $lock2 = null;
+    private ?string $lock2 = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Výkaz pro intrastat.
      */
-    private \Pohoda\Invoice\IntrastatType $intrastat = null;
+    private ?\Pohoda\Invoice\IntrastatType $intrastat = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Podmíněná kontrola dokladu.
      */
-    private \Pohoda\Type\TypeValidateType $validate = null;
+    private ?\Pohoda\Type\TypeValidateType $validate = null;
 
     /**
      * Odložený výdej. Hodnota 'true' nastaví vkládání skladových zásob ve formě textových položek (s vazbou na agendu Zásoby).
      *  Takto vložená položka nevytváří ve faktuře skladový pohyb. Ve stavovém řádku vydané faktury je označena jako Textová položka (s vazbou na agendu Zásoby). Používá se jen v agendě Vydané faktury.
      * .
      */
-    private string $postponedIssue = null;
+    private ?string $postponedIssue = null;
 
     /**
      * Gets as id.

@@ -25,17 +25,17 @@ class ExtIdType
     /**
      * ID záznamu v externím systému, jedinečný textový identifikátor.
      */
-    private string $ids = null;
+    private ?string $ids = null;
 
     /**
      * Jedinečný název externího systému (např. GUID).
      */
-    private string $exSystemName = null;
+    private ?string $exSystemName = null;
 
     /**
      * Textový popis externího systému.
      */
-    private string $exSystemText = null;
+    private ?string $exSystemText = null;
 
     /**
      * Gets as ids.

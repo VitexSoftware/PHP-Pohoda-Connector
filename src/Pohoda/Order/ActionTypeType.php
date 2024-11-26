@@ -25,12 +25,12 @@ class ActionTypeType
     /**
      * Vložení nového záznamu. Výchozí hodnota.
      */
-    private string $add = null;
+    private ?string $add = null;
 
     /**
      * odstranění dokladu.
      */
-    private \Pohoda\Filter\DeleteOrderType $delete = null;
+    private ?\Pohoda\Filter\DeleteOrderType $delete = null;
 
     /**
      * Gets as add.

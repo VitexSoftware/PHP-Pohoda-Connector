@@ -30,17 +30,17 @@ class StockRefType
      * Změní nastavení vkládání svázaných zásob ze skladu k položce na doklad. Výchozí hodnota(pokud není atribut uveden) je dle nastavení
      *  programu POHODA. Při nastavení atributu: True – vkládá , False – nevkládá svázané zásoby.
      */
-    private bool $insertAttachStock = null;
+    private ?bool $insertAttachStock = null;
 
     /**
      * Umožní ignorovat uživatelský filtr na sklady, které je možné v GUI Pohody nastavit v agendě SKLAD/SKLADY. Při nastavení atributu: True – použít nastavený filtr na sklad z programu POHODA, False – ignorovat nastavený filtr na sklad z programu POHODA.
      */
-    private bool $applyUserSettingsFilterOnTheStore = null;
-    private int $id = null;
-    private string $ids = null;
-    private \Pohoda\Type\ExtIdType $extId = null;
-    private string $eAN = null;
-    private int $pLU = null;
+    private ?bool $applyUserSettingsFilterOnTheStore = null;
+    private ?int $id = null;
+    private ?string $ids = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
+    private ?string $eAN = null;
+    private ?int $pLU = null;
 
     /**
      * Gets as insertAttachStock.

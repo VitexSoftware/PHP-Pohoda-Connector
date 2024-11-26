@@ -26,42 +26,42 @@ class GDPRHeaderType
     /**
      * ID záznamu (jen pro export).
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Typ zpracování dat GDPR.
      */
-    private string $gDPRType = null;
+    private ?string $gDPRType = null;
 
     /**
      * Název.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Popis.
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Hodnota délky platnosti souhlasu.
      */
-    private int $valueOfValidity = null;
+    private ?int $valueOfValidity = null;
 
     /**
      * Typ rozsahu platnosti souhlasu.
      */
-    private string $typeOfValidity = null;
+    private ?string $typeOfValidity = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Gets as id.

@@ -22,15 +22,15 @@ namespace Pohoda\Contract;
  */
 class ContractType
 {
-    private string $version = null;
-    private \Pohoda\Contract\ContractDescType $contractDesc = null;
+    private ?string $version = null;
+    private ?\Pohoda\Contract\ContractDescType $contractDesc = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

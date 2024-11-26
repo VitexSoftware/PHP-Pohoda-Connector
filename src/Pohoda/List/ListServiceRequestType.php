@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListServiceRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $serviceVersion = null;
+    private ?string $serviceVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestServiceType[]

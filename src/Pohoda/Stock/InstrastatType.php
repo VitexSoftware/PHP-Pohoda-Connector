@@ -25,32 +25,32 @@ class InstrastatType
     /**
      * Kód zboží.
      */
-    private string $goodsCode = null;
+    private ?string $goodsCode = null;
 
     /**
      * Popis zboží (pouze SK verze).
      */
-    private string $description = null;
+    private ?string $description = null;
 
     /**
      * Statistický znak (pouze CZ verze).
      */
-    private string $statistic = null;
+    private ?string $statistic = null;
 
     /**
      * Kód doplňkové měrné jednotky.
      */
-    private string $unit = null;
+    private ?string $unit = null;
 
     /**
      * Koeficient pro přepočet měrné jednotky.
      */
-    private float $coefficient = null;
+    private ?float $coefficient = null;
 
     /**
      * Stát původu.
      */
-    private string $country = null;
+    private ?string $country = null;
 
     /**
      * Gets as goodsCode.

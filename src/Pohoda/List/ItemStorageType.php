@@ -26,42 +26,42 @@ class ItemStorageType
     /**
      * ID záznamu, pokud zadaný uzel v seznamu členění neexistuje obsahuje hodnotu "0".
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Nabízet dynamickými záložkami.
      */
-    private string $offerTo = null;
+    private ?string $offerTo = null;
 
     /**
      * Název skladu (první úroveň), název větve (další úrovně).
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * "//lst:listStorage/lst:itemStorage" (první "itemStorage") je název skladu, následují názvy větví.
      */
-    private int $idStore = null;
+    private ?int $idStore = null;
 
     /**
      * Příznak "Povolit stav zásob do mínusu" skladu, do kterého členění patří. Uveden pouze u první úrovně členění, tedy skladu.
      */
-    private string $allowNegInvBalance = null;
+    private ?string $allowNegInvBalance = null;
 
     /**
      * Název členění.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * @var \Pohoda\List\ItemStorageType[]
      */
-    private array $subStorages = null;
+    private ?array $subStorages = null;
 
     /**
      * Gets as id.

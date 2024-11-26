@@ -25,12 +25,12 @@ class SettingsSourceDocumentOrderItemType
     /**
      * Nastavení příznaku "Vyřízeno" na přijaté objednávce při vazbě: "Objednávka -> Faktura přes položky dokladu".
      */
-    private string $linkOrderItemToInvoice = null;
+    private ?string $linkOrderItemToInvoice = null;
 
     /**
      * Nastavení příznaku "Vyřízeno" na přijaté objednávce při vazbě: "Objednávka -> Výdejka přes položky dokladu".
      */
-    private string $linkOrderItemToIssueSlip = null;
+    private ?string $linkOrderItemToIssueSlip = null;
 
     /**
      * Gets as linkOrderItemToInvoice.

@@ -25,32 +25,32 @@ class ForeignCurrencyType
     /**
      * ID - odkaz na cizí měnu, IDS - kód měny.
      */
-    private \Pohoda\Type\RefType $currency = null;
+    private ?\Pohoda\Type\RefType $currency = null;
 
     /**
      * Částka MD (cizí měna).
      */
-    private float $amountMD = null;
+    private ?float $amountMD = null;
 
     /**
      * Částka D (cizí měna).
      */
-    private float $amountD = null;
+    private ?float $amountD = null;
 
     /**
      * Částka zůstatku (cizí měna).
      */
-    private mixed $amountRemain = null;
+    private ?mixed $amountRemain = null;
 
     /**
      * Kurz použitý pro výpočet částek v cízí měně.
      */
-    private float $rate = null;
+    private ?float $rate = null;
 
     /**
      * Množství cizí měny pro kurzový přepočet.
      */
-    private int $amount = null;
+    private ?int $amount = null;
 
     /**
      * Gets as currency.

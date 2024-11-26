@@ -22,7 +22,7 @@ namespace Pohoda\Order;
  */
 class OrderType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
@@ -30,27 +30,27 @@ class OrderType
      *  Povolené jsou vazby z agendy:
      *  - Vydané nabídky (do agendy Přijaté objednávky).
      */
-    private \Pohoda\Type\LinksType $links = null;
+    private ?\Pohoda\Type\LinksType $links = null;
 
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      */
-    private \Pohoda\Order\ActionTypeType $actionType = null;
-    private \Pohoda\Order\OrderHeaderType $orderHeader = null;
-    private \Pohoda\Order\OrderDetailType $orderDetail = null;
-    private \Pohoda\Order\OrderSummaryType $orderSummary = null;
+    private ?\Pohoda\Order\ActionTypeType $actionType = null;
+    private ?\Pohoda\Order\OrderHeaderType $orderHeader = null;
+    private ?\Pohoda\Order\OrderDetailType $orderDetail = null;
+    private ?\Pohoda\Order\OrderSummaryType $orderSummary = null;
 
     /**
      * Vazby na doklad. Informace o vazbách dokladu na jiné doklady (pouze pro export).
      */
-    private \Pohoda\Type\LinksType $linkedDocuments = null;
+    private ?\Pohoda\Type\LinksType $linkedDocuments = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

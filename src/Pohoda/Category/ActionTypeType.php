@@ -25,12 +25,12 @@ class ActionTypeType
     /**
      * Vložení nového záznamu. Výchozí hodnota.
      */
-    private \Pohoda\Filter\RequestCategoryActionType $add = null;
+    private ?\Pohoda\Filter\RequestCategoryActionType $add = null;
 
     /**
      * Aktualizace dokladu.
      */
-    private \Pohoda\Filter\RequestCategoryActionType $update = null;
+    private ?\Pohoda\Filter\RequestCategoryActionType $update = null;
 
     /**
      * Gets as add.

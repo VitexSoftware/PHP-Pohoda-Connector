@@ -22,7 +22,7 @@ namespace Pohoda\Prevodka;
  */
 class PrevodkaType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Pomocí tohoto bloku lze vytvořit nový doklad z jiného dokladu. Vloží se celý doklad.
@@ -30,20 +30,20 @@ class PrevodkaType
      *  Povolené jsou vazby z agendy:
      *  - Přijaté objednávky.
      */
-    private \Pohoda\Type\LinksType $links = null;
-    private \Pohoda\Prevodka\PrevodkaHeaderType $prevodkaHeader = null;
+    private ?\Pohoda\Type\LinksType $links = null;
+    private ?\Pohoda\Prevodka\PrevodkaHeaderType $prevodkaHeader = null;
 
     /**
      * @var \Pohoda\Prevodka\PrevodkaItemType[]
      */
-    private array $prevodkaDetail = null;
+    private ?array $prevodkaDetail = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

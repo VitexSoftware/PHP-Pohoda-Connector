@@ -22,12 +22,12 @@ namespace Pohoda\List;
  */
 class ListProductRequirementRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze.
      */
-    private string $productRequirementVersion = null;
+    private ?string $productRequirementVersion = null;
 
     /**
      * @var \Pohoda\Filter\RequestProductRequirementType[]

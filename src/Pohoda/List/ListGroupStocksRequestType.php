@@ -22,13 +22,13 @@ namespace Pohoda\List;
  */
 class ListGroupStocksRequestType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze skladů.
      */
-    private string $groupStocksVersion = null;
-    private \Pohoda\Filter\RequestGroupStocksType $requestGroupStocks = null;
+    private ?string $groupStocksVersion = null;
+    private ?\Pohoda\Filter\RequestGroupStocksType $requestGroupStocks = null;
 
     /**
      * Gets as version.

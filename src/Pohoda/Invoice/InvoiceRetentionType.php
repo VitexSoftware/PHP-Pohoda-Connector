@@ -25,32 +25,32 @@ class InvoiceRetentionType
     /**
      * Datum pozastávky.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Datum splatnosti pozastávky.
      */
-    private \DateTime $dateDue = null;
+    private ?\DateTime $dateDue = null;
 
     /**
      * Výše pozastávky v domácí měně.
      */
-    private float $homeCurrency = null;
+    private ?float $homeCurrency = null;
 
     /**
      * Informace o likvidaci pozastávky.
      */
-    private \Pohoda\Type\LiquidationType $liquidation = null;
+    private ?\Pohoda\Type\LiquidationType $liquidation = null;
 
     /**
      * Text pozastávky.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Předkontace pozastávky.
      */
-    private \Pohoda\Type\RefType $accounting = null;
+    private ?\Pohoda\Type\RefType $accounting = null;
 
     /**
      * Gets as date.

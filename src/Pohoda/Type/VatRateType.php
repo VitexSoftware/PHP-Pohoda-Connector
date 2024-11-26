@@ -22,12 +22,12 @@ namespace Pohoda\Type;
  */
 class VatRateType
 {
-    private string $__value = null;
+    private ?string $__value = null;
 
     /**
      * Hodnota sazby DPH (pouze export).
      */
-    private float $value = null;
+    private ?float $value = null;
 
     /**
      * Construct.

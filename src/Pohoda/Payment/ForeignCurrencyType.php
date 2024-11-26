@@ -25,27 +25,27 @@ class ForeignCurrencyType
     /**
      * ID - odkaz na cizí měnu, IDS - kod měny.
      */
-    private \Pohoda\Type\RefType $currency = null;
+    private ?\Pohoda\Type\RefType $currency = null;
 
     /**
      * Kurz pro přepočet cizí měny na české koruny.
      */
-    private float $rate = null;
+    private ?float $rate = null;
 
     /**
      * Množství cizí měny pro kursový přepočet.
      */
-    private int $amount = null;
+    private ?int $amount = null;
 
     /**
      * Nastavit kurz automaticky. Kurz je automaticky načten při prvním otevření účetní jednotky toho dne z agendy Kurzový lístek.
      */
-    private string $rateAutomaticaly = null;
+    private ?string $rateAutomaticaly = null;
 
     /**
      * Použít včerejší kurz. Při načtení kurzu použit vždy kurz zveřejněný ČNB předchozí den. Jen CZ verze.
      */
-    private string $useYesterdayRate = null;
+    private ?string $useYesterdayRate = null;
 
     /**
      * Gets as currency.

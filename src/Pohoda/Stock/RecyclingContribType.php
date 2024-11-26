@@ -25,12 +25,12 @@ class RecyclingContribType
     /**
      * Recyklační příspěvek.
      */
-    private \Pohoda\Type\RefType $recyclingContribType = null;
+    private ?\Pohoda\Type\RefType $recyclingContribType = null;
 
     /**
      * Koeficient pro přepočet měrné jednotky.
      */
-    private float $coefficientOfRecyclingContrib = null;
+    private ?float $coefficientOfRecyclingContrib = null;
 
     /**
      * Gets as recyclingContribType.

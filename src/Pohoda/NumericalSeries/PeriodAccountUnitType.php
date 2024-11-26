@@ -26,12 +26,12 @@ class PeriodAccountUnitType
     /**
      * Datum od.
      */
-    private \DateTime $dateFrom = null;
+    private ?\DateTime $dateFrom = null;
 
     /**
      * Datum do.
      */
-    private \DateTime $dateTill = null;
+    private ?\DateTime $dateTill = null;
 
     /**
      * Gets as dateFrom.

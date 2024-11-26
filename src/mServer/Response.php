@@ -29,6 +29,10 @@ class Response extends \Ease\Sand
      * State when file was imported with warning.
      */
     public const STATE_WARNING = 'warning';
+    /**
+     * State when file was imported with error.
+     * @var array<string,array<array>>
+     */
     public array $messages = ['error' => [], 'warning' => []];
     public array $producedDetails;
     protected \SimpleXMLElement $xml;
@@ -36,6 +40,7 @@ class Response extends \Ease\Sand
 
     /**
      * Parsed Result.
+     * @var array[]
      */
     private array $parsed = [];
     private Client $caller;
@@ -148,7 +153,7 @@ class Response extends \Ease\Sand
         foreach ($responseData as $key => $value) {
             switch ($key) {
                 case 'lAdb:addressbook':
-                    $this->parsed = $this->processListAddressBook($value);
+                    $this->parsed = $this->processListAddressBook(\array_key_exists(0, $value) ? $value : [$value]);
 
                     break;
                 case 'rdc:producedDetails':
@@ -160,7 +165,7 @@ class Response extends \Ease\Sand
 
                     break;
                 case 'lst:bank':
-                    $this->parsed = $this->processBank($value);
+                    $this->parsed = $this->processBank(\array_key_exists(0, $value) ? $value : [$value]);
 
                     break;
                 case '@version':
@@ -315,15 +320,18 @@ class Response extends \Ease\Sand
     }
 
     /**
-     * @param array $options
+     * Convert XML to Array.
      *
-     * @return array
+     * @param \SimpleXMLElement $xml
+     * @param array<string,string> $options
+     *
+     * @return array<mixed>
      *
      * @author Tamlyn Rhodes
      *
      * @see http://outlandish.com/blog/xml-to-json/
      */
-    public static function xmlToArray(\SimpleXMLElement $xml, $options = [])
+    public static function xmlToArray(\SimpleXMLElement $xml, array $options = [])
     {
         $defaults = [
             'namespaceSeparator' => ':',
@@ -416,7 +424,7 @@ class Response extends \Ease\Sand
         ];
     }
 
-    public function processListAddressBook($listAddressBook)
+    public function processListAddressBook($listAddressBook): array
     {
         $addressBook = [];
 
@@ -474,9 +482,15 @@ class Response extends \Ease\Sand
 
         foreach ($bank as $bankEntry) {
             if (\is_array($bankEntry)) {
-                $bankItems[$bankData['bankHeader']['id']] = self::stripArrayNames('bnk', $bankEntry);
-            } else {
-                $bankItems[$bankData['bankHeader']['id']] = $bankEntry;
+                $striped = self::stripArrayNames('bnk', $bankEntry);
+
+                if (\array_key_exists('bankHeader', $striped)) {
+                    $bankItems[$striped['bankHeader']['id']] = $striped;
+                } elseif (\array_key_exists('bankItem', $striped)) {
+                    $bankItems[$striped['bankItem']['id']] = $striped;
+                } elseif (\array_key_exists('id', $striped)) {
+                    $bankItems[$striped['id']] = $striped;
+                }
             }
         }
 

@@ -20,13 +20,13 @@ namespace Pohoda\Type\NumberType;
  */
 class NumberRequestedAType
 {
-    private string $__value = null;
+    private ?string $__value = null;
 
     /**
      * Pokud je hodnota 'true', nedovolí se vytvořit doklad, pokud zadané číslo již existuje.
      *  Pokud je hodnota 'false', doklad se vytvoří s upraveným číslem (do response se zapíše warning).
      */
-    private string $checkDuplicity = null;
+    private ?string $checkDuplicity = null;
 
     /**
      * Construct.

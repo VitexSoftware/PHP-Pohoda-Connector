@@ -25,7 +25,7 @@ class TicketType
     /**
      * Hodnota stravenky.
      */
-    private float $value = null;
+    private ?float $value = null;
 
     /**
      * Gets as value.

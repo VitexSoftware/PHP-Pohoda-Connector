@@ -22,17 +22,17 @@ namespace Pohoda\Offer;
  */
 class OfferType
 {
-    private string $version = null;
-    private \Pohoda\Offer\OfferHeaderType $offerHeader = null;
-    private \Pohoda\Offer\OfferDetailType $offerDetail = null;
-    private \Pohoda\Offer\OfferSummaryType $offerSummary = null;
+    private ?string $version = null;
+    private ?\Pohoda\Offer\OfferHeaderType $offerHeader = null;
+    private ?\Pohoda\Offer\OfferDetailType $offerDetail = null;
+    private ?\Pohoda\Offer\OfferSummaryType $offerSummary = null;
 
     /**
      * Po vytvoření záznamu se provede jeho tisk.
      *
      * @var \Pohoda\Print\PrinterSettingsType[]
      */
-    private array $print = null;
+    private ?array $print = null;
 
     /**
      * Gets as version.

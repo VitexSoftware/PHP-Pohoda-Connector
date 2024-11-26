@@ -22,17 +22,17 @@ namespace Pohoda\IndividualPrice;
  */
 class IndividualPriceType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Identifikace partnera.
      */
-    private \Pohoda\IndividualPrice\AddressType $partnerIdentity = null;
+    private ?\Pohoda\IndividualPrice\AddressType $partnerIdentity = null;
 
     /**
      * Individuální ceny partnera.
      */
-    private \Pohoda\IndividualPrice\SetPricesType $setPrices = null;
+    private ?\Pohoda\IndividualPrice\SetPricesType $setPrices = null;
 
     /**
      * Gets as version.

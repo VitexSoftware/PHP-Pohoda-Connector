@@ -24,5 +24,8 @@ require_once '../vendor/autoload.php';
 \Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD', 'POHODA_ICO'], $argv[1] ?? '../.env');
 
 $prober = new  \mServer\Bank();
+
+// "symPar" does not exist. Defined options are: "EAN", "code", "company", "dateFrom", "dateTill", "dic", "ico", "id", "internet", "lastChanges", "name", "storage", "store"
+
 $move = $prober->loadFromPohoda(['symPar'=>'6701267669']);
 print_r($move);

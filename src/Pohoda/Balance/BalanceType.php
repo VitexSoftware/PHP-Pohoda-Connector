@@ -22,8 +22,8 @@ namespace Pohoda\Balance;
  */
 class BalanceType
 {
-    private string $version = null;
-    private \Pohoda\Balance\BalanceHeaderType $balanceHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\Balance\BalanceHeaderType $balanceHeader = null;
 
     /**
      * @var \Pohoda\Balance\BalanceItemType[]

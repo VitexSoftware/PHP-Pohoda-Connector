@@ -22,12 +22,12 @@ namespace Pohoda\ListCentre;
  */
 class ListRequestCentreType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Požadovaná verze centre dokumentu.
      */
-    private string $centreVersion = null;
+    private ?string $centreVersion = null;
 
     /**
      * @var \Pohoda\ListCentre\RequestCentreType[]

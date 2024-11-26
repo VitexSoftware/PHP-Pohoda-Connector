@@ -25,52 +25,52 @@ class IntrastatType
     /**
      * Stát určení (pouze Vydané faktury).
      */
-    private string $countryOfDestination = null;
+    private ?string $countryOfDestination = null;
 
     /**
      * Stát odeslání (pouze Přijaté faktury).
      */
-    private string $countryOfDispatch = null;
+    private ?string $countryOfDispatch = null;
 
     /**
      * Stát původu.
      */
-    private string $countryOfOrigin = null;
+    private ?string $countryOfOrigin = null;
 
     /**
      * Region určení (pouze SK).
      */
-    private string $region = null;
+    private ?string $region = null;
 
     /**
      * Typ transakce.
      */
-    private string $transaction = null;
+    private ?string $transaction = null;
 
     /**
      * Zvláštní pohyb.
      */
-    private string $specialTransaction = null;
+    private ?string $specialTransaction = null;
 
     /**
      * Skupinové dodací podmínky.
      */
-    private string $termsOfDelivery = null;
+    private ?string $termsOfDelivery = null;
 
     /**
      * Druh dopravy.
      */
-    private string $modeOfTransport = null;
+    private ?string $modeOfTransport = null;
 
     /**
      * Rozpočítat náklady na dopravu (dle částky).
      */
-    private float $shippingCosts = null;
+    private ?float $shippingCosts = null;
 
     /**
      * DIČ partnera pro CZ verzi. IČ DPH partnera pro SK verzi. Pouze Vydané faktury.
      */
-    private string $vATIdOfPartner = null;
+    private ?string $vATIdOfPartner = null;
 
     /**
      * Gets as countryOfDestination.

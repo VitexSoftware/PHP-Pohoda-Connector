@@ -25,27 +25,27 @@ class LinkItemType
     /**
      * Agenda zdrojového dokladu.
      */
-    private string $sourceAgenda = null;
+    private ?string $sourceAgenda = null;
 
     /**
      * ID položky dokladu.
      */
-    private int $sourceItemId = null;
+    private ?int $sourceItemId = null;
 
     /**
      * Externí identifikátor položky dokladu.
      */
-    private \Pohoda\Type\ExtIdType $sourceItemExtId = null;
+    private ?\Pohoda\Type\ExtIdType $sourceItemExtId = null;
 
     /**
      * Nastavení příznaků na zdrojovém dokladu po vytvoření vazby přes položky dokladu.
      */
-    private \Pohoda\Type\SettingsSourceDocumentOrderItemType $settingsSourceDocumentOrderItem = null;
+    private ?\Pohoda\Type\SettingsSourceDocumentOrderItemType $settingsSourceDocumentOrderItem = null;
 
     /**
      * Nastavení příznaků na zdrojovém dokladu po vytvoření vazby přes položky dokladu.
      */
-    private \Pohoda\Type\SettingsSourceDocumentItemType $settingsSourceDocumentItem = null;
+    private ?\Pohoda\Type\SettingsSourceDocumentItemType $settingsSourceDocumentItem = null;
 
     /**
      * Gets as sourceAgenda.

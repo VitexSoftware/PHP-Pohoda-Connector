@@ -22,13 +22,13 @@ namespace Pohoda\BankAccount;
  */
 class BankAccountType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      */
-    private \Pohoda\BankAccount\ActionTypeType $actionType = null;
-    private \Pohoda\BankAccount\BankAccountHeaderType $bankAccountHeader = null;
+    private ?\Pohoda\BankAccount\ActionTypeType $actionType = null;
+    private ?\Pohoda\BankAccount\BankAccountHeaderType $bankAccountHeader = null;
 
     /**
      * Gets as version.

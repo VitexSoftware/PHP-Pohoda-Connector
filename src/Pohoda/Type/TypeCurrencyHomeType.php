@@ -25,57 +25,57 @@ class TypeCurrencyHomeType
     /**
      * Cena v nulové sazbě DPH.
      */
-    private float $priceNone = null;
+    private ?float $priceNone = null;
 
     /**
      * Cena bez DPH ve snížené sazbě.
      */
-    private float $priceLow = null;
+    private ?float $priceLow = null;
 
     /**
      * DPH ve snížené sazbě.
      */
-    private \Pohoda\Type\CurrencyVATType $priceLowVAT = null;
+    private ?\Pohoda\Type\CurrencyVATType $priceLowVAT = null;
 
     /**
      * Cena včetně DPH ve snížené sazbě.
      */
-    private float $priceLowSum = null;
+    private ?float $priceLowSum = null;
 
     /**
      * Cena bez DPH ve zvýšené sazbě.
      */
-    private float $priceHigh = null;
+    private ?float $priceHigh = null;
 
     /**
      * DPH ve zvýšené sazbě.
      */
-    private \Pohoda\Type\CurrencyVATType $priceHighVAT = null;
+    private ?\Pohoda\Type\CurrencyVATType $priceHighVAT = null;
 
     /**
      * Cena včetně DPH ve zvýšené sazbě.
      */
-    private float $priceHighSum = null;
+    private ?float $priceHighSum = null;
 
     /**
      * Cena bez DPH v 3. sazbě.
      */
-    private float $price3 = null;
+    private ?float $price3 = null;
 
     /**
      * DPH v 3. sazbě.
      */
-    private \Pohoda\Type\CurrencyVATType $price3VAT = null;
+    private ?\Pohoda\Type\CurrencyVATType $price3VAT = null;
 
     /**
      * Cena včetně DPH v 3. sazbě.
      */
-    private float $price3Sum = null;
+    private ?float $price3Sum = null;
 
     /**
      * Zaokrouhlení.
      */
-    private \Pohoda\Type\TypeRoundType $round = null;
+    private ?\Pohoda\Type\TypeRoundType $round = null;
 
     /**
      * Gets as priceNone.

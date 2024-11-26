@@ -25,7 +25,7 @@ class TypeCurrencyHomeItemType
     /**
      * Jednotková cena položky dokladu. Pokud není uvedena, bere se jako NULOVÁ.
      */
-    private float $unitPrice = null;
+    private ?float $unitPrice = null;
 
     /**
      * Gets as unitPrice.

@@ -25,17 +25,17 @@ class FilterNumeciralSeriesType
     /**
      * Filtr podle ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Typ období účetní jednotky (běžné/přechodné).
      */
-    private string $period = null;
+    private ?string $period = null;
 
     /**
      * Typ agendy.
      */
-    private string $agenda = null;
+    private ?string $agenda = null;
 
     /**
      * Gets as id.

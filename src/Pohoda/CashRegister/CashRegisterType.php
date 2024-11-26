@@ -22,13 +22,13 @@ namespace Pohoda\CashRegister;
  */
 class CashRegisterType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.
      */
-    private \Pohoda\CashRegister\ActionTypeType $actionType = null;
-    private \Pohoda\CashRegister\CashRegisterHeaderType $cashRegisterHeader = null;
+    private ?\Pohoda\CashRegister\ActionTypeType $actionType = null;
+    private ?\Pohoda\CashRegister\CashRegisterHeaderType $cashRegisterHeader = null;
 
     /**
      * Gets as version.

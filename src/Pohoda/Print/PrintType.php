@@ -22,12 +22,12 @@ namespace Pohoda\Print;
  */
 class PrintType
 {
-    private string $version = null;
+    private ?string $version = null;
 
     /**
      * Výběr záznamu.
      */
-    private \Pohoda\Filter\RecordPrintType $record = null;
+    private ?\Pohoda\Filter\RecordPrintType $record = null;
 
     /**
      * Parametry tisku.

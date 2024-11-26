@@ -25,43 +25,43 @@ class FilterDocsType
     /**
      * Filtr podle ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Datum od.
      */
-    private \DateTime $dateFrom = null;
+    private ?\DateTime $dateFrom = null;
 
     /**
      * Datum do.
      */
-    private \DateTime $dateTill = null;
+    private ?\DateTime $dateTill = null;
 
     /**
      * @var \Pohoda\Type\NumberType[]
      */
-    private array $selectedNumbers = null;
+    private ?array $selectedNumbers = null;
 
     /**
      * @var string[]
      */
-    private array $selectedCompanys = null;
+    private ?array $selectedCompanys = null;
 
     /**
      * @var string[]
      */
-    private array $selectedIco = null;
+    private ?array $selectedIco = null;
 
     /**
      * Vyexportuje záznamy změněné od zadaného data.
      */
-    private \DateTime $lastChanges = null;
+    private ?\DateTime $lastChanges = null;
 
     /**
      * Gets as id.

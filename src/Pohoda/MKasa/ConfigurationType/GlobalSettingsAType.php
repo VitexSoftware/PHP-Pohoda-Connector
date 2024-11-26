@@ -20,7 +20,7 @@ namespace Pohoda\MKasa\ConfigurationType;
  */
 class GlobalSettingsAType
 {
-    private \Pohoda\Archive\Archive $archive = null;
+    private ?\Pohoda\Archive\Archive $archive = null;
 
     /**
      * Gets as archive.

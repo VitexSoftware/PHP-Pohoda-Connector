@@ -25,12 +25,12 @@ class IsdocType
     /**
      * Při exportu sestavy do PDF vytvořit a vložit ISDOC jako přílohu.
      */
-    private string $includeToPdf = null;
+    private ?string $includeToPdf = null;
 
     /**
      * Umístění grafické poznámky ISDOC. Pouze CZ verze.
      */
-    private string $graphicNote = null;
+    private ?string $graphicNote = null;
 
     /**
      * Gets as includeToPdf.

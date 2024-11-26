@@ -26,38 +26,38 @@ class ActivityHeaderType
     /**
      * ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
      *  vazbu mezi agendou a externí databází.
      */
-    private \Pohoda\Type\ExtIdType $extId = null;
+    private ?\Pohoda\Type\ExtIdType $extId = null;
 
     /**
      * Zkratka.
      */
-    private string $code = null;
+    private ?string $code = null;
 
     /**
      * Název.
      */
-    private string $name = null;
+    private ?string $name = null;
 
     /**
      * Provozovna.
      */
-    private \Pohoda\Type\RefType $establishment = null;
+    private ?\Pohoda\Type\RefType $establishment = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Gets as id.

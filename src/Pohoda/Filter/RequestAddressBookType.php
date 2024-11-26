@@ -25,12 +25,12 @@ class RequestAddressBookType
     /**
      * Seznam polí podle kterých se budou filtrovat adresy.
      */
-    private \Pohoda\Filter\FilterAdbsType $filter = null;
+    private ?\Pohoda\Filter\FilterAdbsType $filter = null;
 
     /**
      * Identifikátor uživatelského filtru v požadované agendě, který má být použit pro filtraci záznamů.
      */
-    private string $userFilterName = null;
+    private ?string $userFilterName = null;
 
     /**
      * Gets as filter.

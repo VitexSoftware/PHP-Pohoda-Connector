@@ -27,19 +27,19 @@ class SetPricesType
      *
      * @var \Pohoda\IndividualPrice\StockItemType[]
      */
-    private array $stocks = null;
+    private ?array $stocks = null;
 
     /**
      * Individuální ceny cenových skupin.
      *
      * @var \Pohoda\IndividualPrice\PriceGroupItemType[]
      */
-    private array $priceGroups = null;
+    private ?array $priceGroups = null;
 
     /**
      * Sleva na všechny zásoby.
      */
-    private \Pohoda\IndividualPrice\AllStocksType $allStocks = null;
+    private ?\Pohoda\IndividualPrice\AllStocksType $allStocks = null;
 
     /**
      * Adds as stockItem.

@@ -22,7 +22,7 @@ namespace Pohoda\Type;
  */
 class MOSStypeType
 {
-    private string $ids = null;
+    private ?string $ids = null;
 
     /**
      * Gets as ids.

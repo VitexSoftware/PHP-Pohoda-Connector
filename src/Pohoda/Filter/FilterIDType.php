@@ -25,7 +25,7 @@ class FilterIDType
     /**
      * Filtr podle ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Gets as id.

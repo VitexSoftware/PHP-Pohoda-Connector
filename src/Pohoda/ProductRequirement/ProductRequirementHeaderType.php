@@ -25,96 +25,96 @@ class ProductRequirementHeaderType
     /**
      * ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Číslo dokladu.
      */
-    private \Pohoda\Type\NumberType $number = null;
+    private ?\Pohoda\Type\NumberType $number = null;
 
     /**
      * Datum výrobního požadavku. Pokud hodnota není uvedena použije se aktuální datum.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Vyřídit do.
      */
-    private \DateTime $dateTill = null;
+    private ?\DateTime $dateTill = null;
 
     /**
      * Text dokladu.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Zákazníkova adresa.
      */
-    private \Pohoda\Type\AddressType $partnerIdentity = null;
+    private ?\Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Zdrojové středisko.
      */
-    private \Pohoda\Type\RefType $centreSource = null;
+    private ?\Pohoda\Type\RefType $centreSource = null;
 
     /**
      * Cílové středisko.
      */
-    private \Pohoda\Type\RefType $centreDestination = null;
+    private ?\Pohoda\Type\RefType $centreDestination = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Vyřízeno.
      */
-    private string $isExecuted = null;
+    private ?string $isExecuted = null;
 
     /**
      * Přeneseno (Vyrobeno). Pouze pro export.
      */
-    private string $isProduced = null;
+    private ?string $isProduced = null;
 
     /**
      * Rezervováno.
      */
-    private string $isReserved = null;
+    private ?string $isReserved = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Interní poznámka.
      */
-    private string $intNote = null;
+    private ?string $intNote = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Volitelný parametr.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Gets as id.

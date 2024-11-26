@@ -22,8 +22,8 @@ namespace Pohoda\Gdpr;
  */
 class GDPRType
 {
-    private string $version = null;
-    private \Pohoda\Gdpr\GDPRHeaderType $gDPRHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\Gdpr\GDPRHeaderType $gDPRHeader = null;
 
     /**
      * Gets as version.

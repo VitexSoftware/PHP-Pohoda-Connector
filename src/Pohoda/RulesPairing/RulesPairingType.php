@@ -22,13 +22,13 @@ namespace Pohoda\RulesPairing;
  */
 class RulesPairingType
 {
-    private string $version = null;
-    private \Pohoda\RulesPairing\RulesPairingHeaderType $rulesPairingHeader = null;
+    private ?string $version = null;
+    private ?\Pohoda\RulesPairing\RulesPairingHeaderType $rulesPairingHeader = null;
 
     /**
      * @var \Pohoda\RulesPairing\RulesPairingItemType[]
      */
-    private array $rulesPairingDetail = null;
+    private ?array $rulesPairingDetail = null;
 
     /**
      * Gets as version.

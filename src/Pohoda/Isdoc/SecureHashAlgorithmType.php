@@ -25,7 +25,7 @@ class SecureHashAlgorithmType
     /**
      * Způsob výpočtu hashe XML dokumentu a případných souborů označených jako přílohy.
      */
-    private string $hashAlgorithm = null;
+    private ?string $hashAlgorithm = null;
 
     /**
      * Gets as hashAlgorithm.

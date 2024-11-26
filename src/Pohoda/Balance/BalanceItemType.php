@@ -25,77 +25,77 @@ class BalanceItemType
     /**
      * ID záznamu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Číslo dokladu.
      */
-    private string $number = null;
+    private ?string $number = null;
 
     /**
      * Adresa partnera k položce.
      */
-    private \Pohoda\Type\AddressType $partnerIdentity = null;
+    private ?\Pohoda\Type\AddressType $partnerIdentity = null;
 
     /**
      * Zdrojová agenda dokladu položky salda.
      */
-    private string $sourceAgenda = null;
+    private ?string $sourceAgenda = null;
 
     /**
      * Číslo účtu dokladu položky salda.
      */
-    private string $accountNo = null;
+    private ?string $accountNo = null;
 
     /**
      * Párovací symbol.
      */
-    private string $pairSymbol = null;
+    private ?string $pairSymbol = null;
 
     /**
      * Datum vystavení dokladu položky salda.
      */
-    private \DateTime $date = null;
+    private ?\DateTime $date = null;
 
     /**
      * Datum splatnosti dokladu položky salda.
      */
-    private \DateTime $dueDate = null;
+    private ?\DateTime $dueDate = null;
 
     /**
      * Počet dnů do splatnosti dokladu položky salda.
      */
-    private int $dueDays = null;
+    private ?int $dueDays = null;
 
     /**
      * Text dokladu položky salda.
      */
-    private string $text = null;
+    private ?string $text = null;
 
     /**
      * Částka MD (do verze 2.0).
      */
-    private float $amountMD = null;
+    private ?float $amountMD = null;
 
     /**
      * Částka D (do verze 2.0).
      */
-    private float $amountD = null;
+    private ?float $amountD = null;
 
     /**
      * Částka zůstatku (do verze 2.0).
      */
-    private mixed $amountRemain = null;
+    private ?mixed $amountRemain = null;
 
     /**
      * Částky v CZK (od verze 2.0).
      */
-    private \Pohoda\Balance\HomeCurrencyType $homeCurrency = null;
+    private ?\Pohoda\Balance\HomeCurrencyType $homeCurrency = null;
 
     /**
      * Částky v cizí měně (od verze 2.0).
      */
-    private \Pohoda\Balance\ForeignCurrencyType $foreignCurrency = null;
+    private ?\Pohoda\Balance\ForeignCurrencyType $foreignCurrency = null;
 
     /**
      * Gets as id.

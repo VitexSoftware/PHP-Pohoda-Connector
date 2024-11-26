@@ -22,27 +22,27 @@ namespace Pohoda\MKasa;
  */
 class ExportRequestType
 {
-    private string $name = null;
-    private string $deviceGuid = null;
+    private ?string $name = null;
+    private ?string $deviceGuid = null;
 
     /**
      * Má se aktualizovat Guid zařížení, na kterém se používá mKasa.
      *  Guid se aktualizuje jen pokud je agenda Kasa.
      *  Pokud se Guid liší a element je false nebo agenda není Kasa, vrací se chyba.
      */
-    private string $overwriteDeviceGuid = null;
-    private string $agenda = null;
+    private ?string $overwriteDeviceGuid = null;
+    private ?string $agenda = null;
 
     /**
      * Nejvyšší ID, které mKasa obdržela za danou agendu. Nenulová hodnota má význam jen u agend AD, SKz, SkzVC.
      *  Používá se pro stránkovaní. Poslední stránka neobsahuje žádné záznamy z požadované agendy.
      */
-    private int $myLastId = null;
+    private ?int $myLastId = null;
 
     /**
      * Exportovat jen změněné záznamy, má význam jen u agend SKz, SkzVC.
      */
-    private string $diffExport = null;
+    private ?string $diffExport = null;
 
     /**
      * Gets as name.

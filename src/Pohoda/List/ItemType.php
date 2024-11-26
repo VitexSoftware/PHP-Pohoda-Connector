@@ -22,8 +22,8 @@ namespace Pohoda\List;
  */
 class ItemType
 {
-    private int $id = null;
-    private string $code = null;
+    private ?int $id = null;
+    private ?string $code = null;
 
     /**
      * Gets as id.

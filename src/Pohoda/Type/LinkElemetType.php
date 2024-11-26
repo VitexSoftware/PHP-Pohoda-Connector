@@ -25,17 +25,17 @@ class LinkElemetType
     /**
      * Agenda zdrojového dokladu.
      */
-    private string $sourceAgenda = null;
+    private ?string $sourceAgenda = null;
 
     /**
      * Doklad.
      */
-    private \Pohoda\Type\SourceDocumentType $sourceDocument = null;
+    private ?\Pohoda\Type\SourceDocumentType $sourceDocument = null;
 
     /**
      * Nastavení parametrů na zdrojovém dokladu po vytvoření vazby na doklad.
      */
-    private \Pohoda\Type\SettingsSourceDocumentType $settingsSourceDocument = null;
+    private ?\Pohoda\Type\SettingsSourceDocumentType $settingsSourceDocument = null;
 
     /**
      * Gets as sourceAgenda.

@@ -22,18 +22,18 @@ namespace Pohoda\List;
  */
 class ListInvoiceRequestType
 {
-    private string $version = null;
-    private string $invoiceType = null;
+    private ?string $version = null;
+    private ?string $invoiceType = null;
 
     /**
      * Požadovaná verze dokladu.
      */
-    private string $invoiceVersion = null;
+    private ?string $invoiceVersion = null;
 
     /**
      * Označení externího systému, pro který se vyexportují identifikátory.
      */
-    private string $extSystem = null;
+    private ?string $extSystem = null;
 
     /**
      * @var \Pohoda\Filter\RequestInvoiceType[]

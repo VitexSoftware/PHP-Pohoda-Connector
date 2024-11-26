@@ -25,288 +25,288 @@ class AddressbookHeaderType
     /**
      * ID adresy. Používá se při requestu.
      */
-    private int $id = null;
+    private ?int $id = null;
 
     /**
      * Základní údaje.
      */
-    private \Pohoda\Type\AddressType $identity = null;
+    private ?\Pohoda\Type\AddressType $identity = null;
 
     /**
      * Název kraje.
      */
-    private string $region = null;
+    private ?string $region = null;
 
     /**
      * Telefon.
      */
-    private string $phone = null;
+    private ?string $phone = null;
 
     /**
      * Mobil.
      */
-    private string $mobil = null;
+    private ?string $mobil = null;
 
     /**
      * Fax.
      */
-    private string $fax = null;
+    private ?string $fax = null;
 
     /**
      * Email.
      */
-    private string $email = null;
+    private ?string $email = null;
 
     /**
      * Adresa www stránek.
      */
-    private string $web = null;
+    private ?string $web = null;
 
     /**
      * ICQ adresa.
      */
-    private string $iCQ = null;
+    private ?string $iCQ = null;
 
     /**
      * Skype adresa.
      */
-    private string $skype = null;
+    private ?string $skype = null;
 
     /**
      * GPS souřadnice.
      */
-    private string $gPS = null;
+    private ?string $gPS = null;
 
     /**
      * Skupiny.
      */
-    private string $adGroup = null;
+    private ?string $adGroup = null;
 
     /**
      * Klíče.
      */
-    private string $adKey = null;
+    private ?string $adKey = null;
 
     /**
      * Kredit, tolerovaná výše pohledávek odběratele.
      */
-    private float $credit = null;
+    private ?float $credit = null;
 
     /**
      * Cenová hladina odběratele.
      */
-    private string $priceIDS = null;
+    private ?string $priceIDS = null;
 
     /**
      * Splatno. Počet dnů splatnosti pohledávek (vydané faktury, vydané zálohové faktury, ostatní pohledávky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
      */
-    private int $maturity = null;
+    private ?int $maturity = null;
 
     /**
      * Splatno. Počet dnů splatnosti závazků (přijaté faktury, přijaté zálohové faktury, ostatní závazky).
      *  Při vložení adresy do faktury se nastaví datum splatnosti přičtením zde uvedeného počtu dnů k datu vystavení faktury.
      */
-    private int $maturityCommitments = null;
+    private ?int $maturityCommitments = null;
 
     /**
      * Forma úhrady.
      */
-    private \Pohoda\Type\PaymentType $paymentType = null;
+    private ?\Pohoda\Type\PaymentType $paymentType = null;
 
     /**
      * Číslo obchodní smlouvy (nesmí být povoleno v Globálním nastavení - Číslování zákazníků). Od verze 1.5.
      */
-    private string $agreement = null;
+    private ?string $agreement = null;
 
     /**
      * Číslo dodavatele/odběratele dle zvolené číselné řady (musí být povoleno v Globálním nastavení - Číslování zákazníků).
      */
-    private \Pohoda\Type\NumberADType $number = null;
+    private ?\Pohoda\Type\NumberADType $number = null;
 
     /**
      * Ostatní.
      */
-    private string $ost1 = null;
+    private ?string $ost1 = null;
 
     /**
      * Ostatní. Používá se také u kontaktní osoby.
      */
-    private string $ost2 = null;
+    private ?string $ost2 = null;
 
     /**
      * Název funkce. Používá se jen u kontaktní osoby.
      */
-    private string $function = null;
+    private ?string $function = null;
 
     /**
      * Rodné číslo. Používá se jen u kontaktní osoby.
      */
-    private string $personalIdentificationNumber = null;
+    private ?string $personalIdentificationNumber = null;
 
     /**
      * Oslovení pro použití v korespondenci. Používá se jen u kontaktní osoby.
      */
-    private string $salutation = null;
+    private ?string $salutation = null;
 
     /**
      * Pohlaví. Používá se jen u kontaktní osoby.
      */
-    private string $sex = null;
+    private ?string $sex = null;
 
     /**
      * Datum narození. Používá se jen u kontaktní osoby.
      */
-    private \DateTime $dateOfBirth = null;
+    private ?\DateTime $dateOfBirth = null;
 
     /**
      * Klíč P1 / Dodavatel.
      */
-    private string $p1 = null;
+    private ?string $p1 = null;
 
     /**
      * Klíč P2 / Odběratel.
      */
-    private string $p2 = null;
+    private ?string $p2 = null;
 
     /**
      * Klíč P3.
      */
-    private string $p3 = null;
+    private ?string $p3 = null;
 
     /**
      * Klíč P4.
      */
-    private string $p4 = null;
+    private ?string $p4 = null;
 
     /**
      * Klíč P5.
      */
-    private string $p5 = null;
+    private ?string $p5 = null;
 
     /**
      * Klíč P6.
      */
-    private string $p6 = null;
+    private ?string $p6 = null;
 
     /**
      * Zpráva.
      */
-    private string $message = null;
+    private ?string $message = null;
 
     /**
      * Poznámka.
      */
-    private string $note = null;
+    private ?string $note = null;
 
     /**
      * Interní poznámka.
      */
-    private string $intNote = null;
+    private ?string $intNote = null;
 
     /**
      * Předkontace přijaté faktury.
      */
-    private \Pohoda\Type\AccountingType $accountingReceivedInvoice = null;
+    private ?\Pohoda\Type\AccountingType $accountingReceivedInvoice = null;
 
     /**
      * Předkontace vydané faktury.
      */
-    private \Pohoda\Type\AccountingType $accountingIssuedInvoice = null;
+    private ?\Pohoda\Type\AccountingType $accountingIssuedInvoice = null;
 
     /**
      * Členění DPH na přijaté faktuře.
      */
-    private \Pohoda\Type\ClassificationVATType $classificationVATReceivedInvoice = null;
+    private ?\Pohoda\Type\ClassificationVATType $classificationVATReceivedInvoice = null;
 
     /**
      * Členění DPH na vydané faktuře.
      */
-    private \Pohoda\Type\ClassificationVATType $classificationVATIssuedInvoice = null;
+    private ?\Pohoda\Type\ClassificationVATType $classificationVATIssuedInvoice = null;
 
     /**
      * Členění KV DPH, přijaté faktury (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $classificationKVDPHReceivedInvoice = null;
+    private ?\Pohoda\Type\RefType $classificationKVDPHReceivedInvoice = null;
 
     /**
      * Členění KV DPH, vydané faktury (pouze SK verze).
      */
-    private \Pohoda\Type\RefType $classificationKVDPHIssuedInvoice = null;
+    private ?\Pohoda\Type\RefType $classificationKVDPHIssuedInvoice = null;
 
     /**
      * Bankovní účet nebo hotovostní pokladna, na kterou chcete nechat proplatit tuto pohledávku (používá se jen u pohledávek.) Pokud není účet uveden, POHODA použije účet uvedený v uživatelském nastavení uživatele (pod kterým je spuštěn XML import).
      */
-    private \Pohoda\Type\AccountType $accountForInvoicing = null;
+    private ?\Pohoda\Type\AccountType $accountForInvoicing = null;
 
     /**
      * Odpovědná osoba.
      */
-    private \Pohoda\Type\ResponsiblePersonType $responsiblePerson = null;
+    private ?\Pohoda\Type\ResponsiblePersonType $responsiblePerson = null;
 
     /**
      * Počet dnů tolerované splatnosti faktur.
      */
-    private int $toleranceMaturity = null;
+    private ?int $toleranceMaturity = null;
 
     /**
      * ID - odkaz na cizí měnu, IDS - kod měny.
      */
-    private \Pohoda\Type\RefType $foreignCurrency = null;
+    private ?\Pohoda\Type\RefType $foreignCurrency = null;
 
     /**
      * Středisko.
      */
-    private \Pohoda\Type\RefType $centre = null;
+    private ?\Pohoda\Type\RefType $centre = null;
 
     /**
      * Činnost.
      */
-    private \Pohoda\Type\RefType $activity = null;
+    private ?\Pohoda\Type\RefType $activity = null;
 
     /**
      * Zakázka.
      */
-    private \Pohoda\Type\RefType $contract = null;
+    private ?\Pohoda\Type\RefType $contract = null;
 
     /**
      * Obrat. Pouze pro export.
      */
-    private float $turnover = null;
+    private ?float $turnover = null;
 
     /**
      * Obrat 2. Pouze pro export.
      */
-    private float $turnover2 = null;
+    private ?float $turnover2 = null;
 
     /**
      * Volitelné parametry.
      *
      * @var \Pohoda\Type\ParameterDocType[]
      */
-    private array $parameters = null;
+    private ?array $parameters = null;
 
     /**
      * Odkaz kontaktní osoby na hlavní adresu.
      */
-    private \Pohoda\Type\RefAddressType $refAddress = null;
+    private ?\Pohoda\Type\RefAddressType $refAddress = null;
 
     /**
      * Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".
      */
-    private string $markRecord = null;
+    private ?string $markRecord = null;
 
     /**
      * Štítky záznamu.
      *
      * @var \Pohoda\Type\LabelType[]
      */
-    private array $labels = null;
+    private ?array $labels = null;
 
     /**
      * Dopravce.
      */
-    private \Pohoda\Type\CarrierType $carrier = null;
+    private ?\Pohoda\Type\CarrierType $carrier = null;
 
     /**
      * Gets as id.
