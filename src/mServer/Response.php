@@ -100,6 +100,7 @@ class Response extends \Ease\Sand
                 case 'lst:listBank':
                 case 'bnk:bankResponse':
                 case 'adb:addressbookResponse':
+                case 'lqd:automaticLiquidationResponse':    
                     $this->processResponseData($responsePackSubitem);
 
                     break;
@@ -162,7 +163,9 @@ class Response extends \Ease\Sand
                     break;
                 case 'rdc:importDetails':
                     /* $this->parsed = */ $this->processImportDetails($value);
-
+                    break;
+                case 'lqd:automaticLiquidationDetails':
+                    $this->parsed = $this->processLiquidationDetails($value);
                     break;
                 case 'lst:bank':
                     $this->parsed = $this->processBank(\array_key_exists(0, $value) ? $value : [$value]);
@@ -495,5 +498,10 @@ class Response extends \Ease\Sand
         }
 
         return self::stripArrayNames('typ', $bankItems);
+    }
+
+    public function processLiquidationDetails(array $liquidationDetails )
+    {
+        return array_key_exists('lqd:automaticLiquidationDetail', $liquidationDetails) ? self::stripArrayNames('lqd', $liquidationDetails['lqd:automaticLiquidationDetail']) : [];
     }
 }
