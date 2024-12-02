@@ -13,15 +13,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace mServer;
-
-/**
- *  There is missing 'd' in Adressbook.
- *
- * @deprecated since version 0.5.0 - Please use Addressbook instead
- *
- * @author Vitex <info@vitexsoftware.cz>
- */
-class Adressbook extends Addressbook
-{
-}
+require_once '../vendor/autoload.php';
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], \dirname(__DIR__).'/.env');
+$invoicer = new \mServer\Invoice();
+print_r($invoicer->getColumnsFromPohoda(['id', 'number', 'symVar']));

@@ -29,9 +29,11 @@ class Response extends \Ease\Sand
      * State when file was imported with warning.
      */
     public const STATE_WARNING = 'warning';
+
     /**
      * State when file was imported with error.
-     * @var array<string,array<array>>
+     *
+     * @var array<string, array<array>>
      */
     public array $messages = ['error' => [], 'warning' => []];
     public array $producedDetails;
@@ -40,6 +42,7 @@ class Response extends \Ease\Sand
 
     /**
      * Parsed Result.
+     *
      * @var array[]
      */
     private array $parsed = [];
@@ -94,13 +97,11 @@ class Response extends \Ease\Sand
         foreach ($responsePackItem as $name => $responsePackSubitem) {
             switch ($name) {
                 case 'lAdb:listAddressBook':
-                    $this->processResponseData($responsePackSubitem);
-
-                    break;
                 case 'lst:listBank':
                 case 'bnk:bankResponse':
+                case 'inv:invoiceResponse':
                 case 'adb:addressbookResponse':
-                case 'lqd:automaticLiquidationResponse':    
+                case 'lqd:automaticLiquidationResponse':
                     $this->processResponseData($responsePackSubitem);
 
                     break;
@@ -163,9 +164,11 @@ class Response extends \Ease\Sand
                     break;
                 case 'rdc:importDetails':
                     /* $this->parsed = */ $this->processImportDetails($value);
+
                     break;
                 case 'lqd:automaticLiquidationDetails':
                     $this->parsed = $this->processLiquidationDetails($value);
+
                     break;
                 case 'lst:bank':
                     $this->parsed = $this->processBank(\array_key_exists(0, $value) ? $value : [$value]);
@@ -325,8 +328,7 @@ class Response extends \Ease\Sand
     /**
      * Convert XML to Array.
      *
-     * @param \SimpleXMLElement $xml
-     * @param array<string,string> $options
+     * @param array<string, string> $options
      *
      * @return array<mixed>
      *
@@ -432,8 +434,14 @@ class Response extends \Ease\Sand
         $addressBook = [];
 
         foreach ($listAddressBook as $apos => $addressEntry) {
-            $addressData = self::adbToArray($addressEntry);
-            $addressBook[$addressData['addressbookHeader']['id']] = $addressData;
+            $addressDataRaw = self::adbToArray($addressEntry);
+            $addressData = $addressDataRaw['addressbookHeader'];
+
+            if (\array_key_exists('addressbookAccount', $addressDataRaw)) {
+                \Ease\Functions::divDataArray($addressDataRaw['addressbookAccount'], $addressData, 'accountItem');
+            }
+
+            $addressBook[$addressData['id']] = self::stripArrayNames('typ', $addressData);
         }
 
         return $addressBook;
@@ -488,9 +496,9 @@ class Response extends \Ease\Sand
                 $striped = self::stripArrayNames('bnk', $bankEntry);
 
                 if (\array_key_exists('bankHeader', $striped)) {
-                    $bankItems[$striped['bankHeader']['id']] = $striped;
+                    $bankItems[$striped['bankHeader']['id']] = $striped['bankHeader'];
                 } elseif (\array_key_exists('bankItem', $striped)) {
-                    $bankItems[$striped['bankItem']['id']] = $striped;
+                    $bankItems[$striped['bankItem']['id']] = $striped['bankItem'];
                 } elseif (\array_key_exists('id', $striped)) {
                     $bankItems[$striped['id']] = $striped;
                 }
@@ -500,8 +508,8 @@ class Response extends \Ease\Sand
         return self::stripArrayNames('typ', $bankItems);
     }
 
-    public function processLiquidationDetails(array $liquidationDetails )
+    public function processLiquidationDetails(array $liquidationDetails)
     {
-        return array_key_exists('lqd:automaticLiquidationDetail', $liquidationDetails) ? self::stripArrayNames('lqd', $liquidationDetails['lqd:automaticLiquidationDetail']) : [];
+        return \array_key_exists('lqd:automaticLiquidationDetail', $liquidationDetails) ? self::stripArrayNames('lqd', $liquidationDetails['lqd:automaticLiquidationDetail']) : [];
     }
 }

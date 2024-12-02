@@ -28,11 +28,6 @@ class Bank extends Client
     public ?string $agenda = 'bank';
 
     /**
-     * Request XML helper.
-     */
-    public ?\Riesenia\Pohoda\Agenda $requestXml = null;
-
-    /**
      * AddressBook records name column.
      */
     public ?string $nameColumn = 'address:company';
@@ -40,21 +35,20 @@ class Bank extends Client
     /**
      * Create Agenda document using given data.
      *
-     * @param array $data
+     * @param array<string, array<string, string>|string> $data
      */
     #[\Override]
     public function create(array $data): int
     {
         $this->requestXml = $this->pohoda->createBank($data);
+
         return 1;
     }
 
     /**
      * Take data into XML.
      *
-     * @param array<string,string> $data
-     *
-     * @return int
+     * @param array<string, array<string, string>|string> $data
      */
     public function takeData($data): int
     {
@@ -81,10 +75,11 @@ class Bank extends Client
     /**
      * Add Summary part of bnk:bank item.
      *
-     * @param array $data
+     * @param array<string, string> $data
      */
-    public function addSummary($data): void
+    public function addSummary(array $data): void
     {
+        // @phpstan-ignore method.notFound
         $this->requestXml->addSummary($data);
     }
 }

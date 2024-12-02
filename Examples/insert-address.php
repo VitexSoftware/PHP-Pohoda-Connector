@@ -17,6 +17,8 @@ namespace mServer;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], \dirname(__DIR__).'/.env');
+
 $addressBookRecord = [
     'GPS' => '', // GPS souřadnice.
     'ICQ' => '', // ICQ adresa.
@@ -84,5 +86,9 @@ $addressBookRecord = [
     'web' => 'https://www.vitexsoftware.cz', // Adresa www stránek.
 ];
 
-$addresser = new Adressbook($addressBookRecord, \Ease\Shared::instanced()->loadConfig(__DIR__.'/.env'));
+$addresser = new Adressbook($addressBookRecord);
 $addresser->addToPohoda();
+
+if ($addresser->commit()) {
+    print_r($addresser->response->producedDetails);
+}

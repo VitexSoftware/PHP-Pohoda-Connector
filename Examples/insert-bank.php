@@ -17,7 +17,7 @@ namespace mServer;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__.'/.env');
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], \dirname(__DIR__).'/.env');
 
 $bankRecord = [
     //    "MOSS" => ['ids' => '213'],
@@ -62,6 +62,7 @@ $bankRecord = [
 
 $banker = new Bank($bankRecord);
 $banker->addToPohoda();
-$result = $banker->commit();
 
-print_r($result);
+if ($banker->commit()) {
+    print_r($banker->response->producedDetails);
+}

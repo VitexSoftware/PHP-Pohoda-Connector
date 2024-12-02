@@ -16,7 +16,7 @@ declare(strict_types=1);
 namespace mServer;
 
 /**
- * Address Adresa.
+ * UserList handler.
  *
  * @author vitex
  */
@@ -40,21 +40,20 @@ class UserList extends Client
     /**
      * Create Agenda document using given data.
      *
-     * @param array<string,array> $data
+     * @param array<string, array> $data
      */
     #[\Override]
     public function create(array $data): int
     {
         $this->requestXml = $this->pohoda->createBank($data);
+
         return 1;
     }
 
     /**
      * Take data into XML.
      *
-     * @param array<string,string> $data
-     *
-     * @return int
+     * @param array<string, string> $data
      */
     public function takeData($data): int
     {

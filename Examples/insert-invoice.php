@@ -82,7 +82,9 @@ $invoiceRecord = [
     // "symVar",
 ];
 
-$invoicer = new Invoice($invoiceRecord, \Ease\Shared::instanced()->loadConfig(__DIR__.'/.env'));
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], \dirname(__DIR__).'/.env');
+
+$invoicer = new Invoice($invoiceRecord);
 
 $itemRecord = [
     'text' => 'Židle Z220',
@@ -104,4 +106,6 @@ $invoicer->addItem($itemRecord);
 
 $invoicer->addToPohoda();
 
-$invoicer->getIDS();
+if ($invoicer->commit()) {
+    print_r($invoicer->response->producedDetails);
+}

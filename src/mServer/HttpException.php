@@ -16,12 +16,10 @@ declare(strict_types=1);
 namespace mServer;
 
 /**
- *  There is missing 'd' in Adressbook.
- *
- * @deprecated since version 0.5.0 - Please use Addressbook instead
+ * Description of HttpException.
  *
  * @author Vitex <info@vitexsoftware.cz>
  */
-class Adressbook extends Addressbook
+class HttpException extends \Ease\Exception
 {
 }

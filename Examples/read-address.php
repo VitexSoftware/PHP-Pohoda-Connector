@@ -14,8 +14,8 @@ declare(strict_types=1);
  */
 
 require_once '../vendor/autoload.php';
-\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], __DIR__.'/.env');
-$addresser = new \mServer\Adressbook();
+\Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], \dirname(__DIR__).'/.env');
+$addresser = new \mServer\Addressbook();
 print_r($addresser->getColumnsFromPohoda(['id', 'jmeno', 'email', 'web']));
 // print_r($addresser->getColumnsFromPohoda(['id', 'jmeno', 'email', 'web'], ['city' => 'Prague']));
 

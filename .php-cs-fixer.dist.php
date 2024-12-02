@@ -98,7 +98,8 @@ $config->getFinder()
         __DIR__.'/.php-cs-fixer.dist.php',
     ])
     ->in('src')
-    ->in('tests');
+    ->in('tests')
+    ->in('Examples');
 
 $config->setCacheFile(__DIR__.'/.build/php-cs-fixer/.php-cs-fixer.cache');
 

@@ -15,9 +15,9 @@ declare(strict_types=1);
 
 namespace mServer;
 
-//TODO: PHP8+ use CurlHandle;
-use Ease\Shared;
+// TODO: PHP8+ use CurlHandle;
 use Ease\Functions;
+use Ease\Shared;
 use Riesenia\Pohoda;
 
 /**
@@ -78,18 +78,20 @@ class Client extends \Ease\Sand
 
     /**
      * Array of errors.
+     *
      * @var mixed[]
      */
     public array $errors = [];
 
     /**
      * Response stats live here.
+     *
      * @var mixed[]
      */
     public array $responseStats = [];
 
     /**
-     * @var array<string,string> of Http headers attached with every request
+     * @var array<string, string> of Http headers attached with every request
      */
     public array $defaultHttpHeaders = [
         'STW-Application' => 'PHPmServer',
@@ -144,16 +146,15 @@ class Client extends \Ease\Sand
      * XML Response Processor.
      */
     protected Pohoda $pohoda;
-    /**
-     * @var \CurlHandle $curl
-     */
-    private /*PHP8+ \CurlHandle*/ $curl;
+
+    /* PHP8+ \CurlHandle */
+    private \CurlHandle $curl;
 
     /**
      * mServer client class.
      *
-     * @param mixed                $init    default record id or initial data. See processInit()
-     * @param array<string,string> $options Connection settings and other options override
+     * @param mixed                 $init    default record id or initial data. See processInit()
+     * @param array<string, string> $options Connection settings and other options override
      */
     public function __construct($init = null, array $options = [])
     {
@@ -179,11 +180,11 @@ class Client extends \Ease\Sand
     /**
      * SetUp Object to be ready for work.
      *
-     * @param array<string,string> $options Object Options ( user,password,authSessionId
-     *                       company,url,agenda,
-     *                       debug,
-     *                       filter,ignore404
-     *                       timeout,companyUrl,ver,throwException
+     * @param array<string, string> $options Object Options ( user,password,authSessionId
+     *                                       company,url,agenda,
+     *                                       debug,
+     *                                       filter,ignore404
+     *                                       timeout,companyUrl,ver,throwException
      */
     public function setUp(array $options = []): void
     {
@@ -207,7 +208,7 @@ class Client extends \Ease\Sand
         }
 
         if (\array_key_exists('duplicity', $options)) {
-            $this->setCheckDuplicity((bool)$options['duplicity']);
+            $this->setCheckDuplicity((bool) $options['duplicity']);
         }
 
         $this->setupProperty($options, 'debug', 'POHODA_DEBUG');
@@ -319,9 +320,9 @@ class Client extends \Ease\Sand
             $this->curl = \curl_init(); // create curl resource
             \curl_setopt($this->curl, \CURLOPT_RETURNTRANSFER, true); // return content as a string from curl_exec
             \curl_setopt($this->curl, \CURLOPT_FOLLOWLOCATION, true); // follow redirects
-            \curl_setopt($this->curl, \CURLOPT_HTTPAUTH, true); // HTTP authentication
+            \curl_setopt($this->curl, \CURLOPT_HTTPAUTH, \CURLAUTH_ANY); // HTTP authentication
             \curl_setopt($this->curl, \CURLOPT_SSL_VERIFYPEER, false); // for Self-Signed certificates
-            \curl_setopt($this->curl, \CURLOPT_SSL_VERIFYHOST, false);
+            \curl_setopt($this->curl, \CURLOPT_SSL_VERIFYHOST, 0);
             \curl_setopt($this->curl, \CURLOPT_VERBOSE, $this->debug === true); // For debugging
 
             if (null !== $this->timeout) {
@@ -359,6 +360,7 @@ class Client extends \Ease\Sand
      */
     public function doCurlRequest($url, $method, $format = null)
     {
+        $httpHeaders = [];
         \curl_setopt($this->curl, \CURLOPT_URL, $url);
         \curl_setopt($this->curl, \CURLOPT_CUSTOMREQUEST, strtoupper($method));
         \curl_setopt($this->curl, \CURLOPT_POSTFIELDS, $this->postFields);
@@ -370,10 +372,10 @@ class Client extends \Ease\Sand
             // system('netbeans ' . $tmpfile);
         }
 
-        $httpHeaders = $this->defaultHttpHeaders;
-        array_walk($httpHeaders, static function (&$value, $header): void {
-            $value = $header.': '.$value;
-        });
+        foreach ($this->defaultHttpHeaders as $header => $value) {
+            $httpHeaders[] = $header.': '.$value;
+        }
+
         \curl_setopt($this->curl, \CURLOPT_HTTPHEADER, $httpHeaders);
 
         $response = \curl_exec($this->curl);
@@ -384,14 +386,7 @@ class Client extends \Ease\Sand
         $this->lastCurlError = \curl_error($this->curl);
 
         if (\strlen($this->lastCurlError)) {
-            $this->addStatusMessage(
-                sprintf(
-                    'Curl Error (HTTP %d): %s',
-                    $this->lastResponseCode,
-                    $this->lastCurlError,
-                ),
-                'error',
-            );
+            throw new HttpException(sprintf('Curl Error (HTTP %d): %s', $this->lastResponseCode, $this->lastCurlError), $this->lastResponseCode);
         }
 
         if ($this->debug) {
@@ -406,9 +401,9 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Funkce, která provede I/O operaci a vyhodnotí výsledek.
+     * A function that performs an I/O operation and evaluates the result.
      *
-     * @param string $urlSuffix část URL za identifikátorem firmy
+     * @param string $urlSuffix part of the URL after the company identifier
      * @param string $method    HTTP/REST metoda
      *
      * @return bool request commit status
@@ -432,8 +427,6 @@ class Client extends \Ease\Sand
     /**
      * Response processing handler.
      *
-     * @param int $httpCode
-     *
      * @return bool
      */
     public function processResponse(int $httpCode)
@@ -441,6 +434,7 @@ class Client extends \Ease\Sand
         switch ($httpCode) {
             case 0:
                 $this->lastResponseMessage = '0: '.$this->lastCurlError;
+
                 break;
             case 400:
                 $this->lastResponseMessage = '400: Bad request';
@@ -499,7 +493,7 @@ class Client extends \Ease\Sand
                 break;
 
             default:
-                $this->lastResponseMessage = $httpCode . ': ok';
+                $this->lastResponseMessage = $httpCode.': ok';
                 $this->response = new Response($this);
 
                 //                if ($this->response->isOk() === false) {
@@ -536,7 +530,7 @@ class Client extends \Ease\Sand
     /**
      * Use data in object.
      *
-     * @param array $data raw document data
+     * @param array<string, string> $data raw document data
      */
     public function takeData(array $data): int
     {
@@ -550,7 +544,7 @@ class Client extends \Ease\Sand
     /**
      * Create Agenda document using given data.
      *
-     * @param array<string,array> $data
+     * @param array<string, string> $data
      */
     public function create(array $data): int
     {
@@ -562,7 +556,7 @@ class Client extends \Ease\Sand
     /**
      * Insert prepared record to Pohoda.
      *
-     * @param array<string,string> $data extra data
+     * @param array<string, string> $data extra data
      *
      * @return int
      */
@@ -583,7 +577,7 @@ class Client extends \Ease\Sand
         return 1;
     }
 
-    public function commit()
+    public function commit(): bool
     {
         $this->pohoda->close();
         $this->setPostFields(file_get_contents($this->xmlCache));
@@ -598,10 +592,8 @@ class Client extends \Ease\Sand
     /**
      * Insert prepared record to Pohoda.
      *
-     * @param array<string,string>      $data   extra data
-     * @param null|mixed $filter
-     *
-     * @return bool
+     * @param array<string, string> $data   extra data
+     * @param null|mixed            $filter
      */
     public function updateInPohoda($data = [], $filter = null): bool
     {
@@ -615,7 +607,7 @@ class Client extends \Ease\Sand
                 $this->requestXml->addActionType('update', empty($filter) ? $this->filterToMe() : $filter);
             }
 
-            $this->pohoda->addItem(2, $this->requestXml);
+            $this->pohoda->addItem('2', $this->requestXml);
         }
 
         $this->setPostFields($this->pohoda->close());
@@ -626,7 +618,7 @@ class Client extends \Ease\Sand
     /**
      * Filter to select only "current" record.
      *
-     * @return array<string,string>
+     * @return array<string, string>
      */
     public function filterToMe()
     {
@@ -658,8 +650,6 @@ class Client extends \Ease\Sand
      *
      * @param array $columns<string>           list of columns to obtain
      * @param array $conditions<string,string> conditions to filter
-     *
-     * @return array
      */
     public function getColumnsFromPohoda(array $columns = ['id'], $conditions = []): ?array
     {
@@ -674,11 +664,13 @@ class Client extends \Ease\Sand
         $this->setPostFields($this->xmlCache ? file_get_contents($this->xmlCache) : $xmlTmp);
 
         $response = $this->performRequest('/xml') ? $this->response->getAgendaData($this->agenda) : null;
+
         if ($response && !empty($columns)) {
-            return array_map(function ($item) use ($columns) {
-            return array_intersect_key($item, array_flip($columns));
+            return array_map(static function ($item) use ($columns) {
+                return array_intersect_key($item, array_flip($columns));
             }, $response);
         }
+
         return $response;
     }
 
@@ -707,18 +699,11 @@ class Client extends \Ease\Sand
      */
     public static function libVersion()
     {
-        if (method_exists('Composer\InstalledVersions', 'getRootPackage')) {
-            $package = \Composer\InstalledVersions::getRootPackage();
-        } else {
-            $package = [];
-        }
+        $package = \Composer\InstalledVersions::getRootPackage();
 
-        return \array_key_exists('version', $package) ? $package['version'] : '0.0.0';
+        return $package['version'];
     }
 
-    /**
-     * @param string $request
-     */
     public function sendRequest(string $request): string
     {
         $this->setPostFields($request);

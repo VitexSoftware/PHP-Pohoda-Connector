@@ -1,8 +1,14 @@
-php-vitexsoftware-pohoda-connector (0.4.2) UNRELEASED; urgency=medium
+php-vitexsoftware-pohoda-connector (0.5.0) UNRELEASED; urgency=medium
+
+  * Bank added
+
+ -- vitex <info@vitexsoftware.cz>  Mon, 02 Dec 2024 13:31:13 +0100
+
+php-vitexsoftware-pohoda-connector (0.4.2) unstable; urgency=medium
 
   * Better Bank parser
 
- -- vitex <info@vitexsoftware.cz>  Sat, 09 Nov 2024 00:27:54 +0100
+ -- vitex <info@vitexsoftware.cz>  Mon, 02 Dec 2024 13:31:10 +0100
 
 php-vitexsoftware-pohoda-connector (0.4.1) unstable; urgency=low
 
