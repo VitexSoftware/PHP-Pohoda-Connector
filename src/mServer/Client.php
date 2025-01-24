@@ -271,10 +271,8 @@ class Client extends \Ease\Sand
 
     /**
      * Set Authentication.
-     *
-     * @return bool
      */
-    public function setAuth()
+    public function setAuth(): bool
     {
         $this->defaultHttpHeaders['STW-Authorization'] = 'Basic '.base64_encode($this->user.':'.$this->password);
 

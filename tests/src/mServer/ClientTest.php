@@ -43,14 +43,15 @@ class ClientTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @covers \mServer\Client::processInit
-     *
-     * @todo   Implement testprocessInit().
      */
     public function testprocessInit(): void
     {
-        $this->assertEquals('', $this->object->processInit());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        if ($this->object->agenda) {
+            $this->object->processInit(0);
+            $this->assertNull($this->object->data);
+        } else {
+            $this->markTestSkipped('No Agenda set');
+        }
     }
 
     /**
@@ -59,6 +60,8 @@ class ClientTest extends \PHPUnit\Framework\TestCase
     public function testlogBanner(): void
     {
         $this->object->logBanner();
+        $lastMessage = end($this->object->getStatusMessages());
+        $this->assertStringContainsString('PHPmServer', $lastMessage->body);
     }
 
     /**
@@ -92,26 +95,20 @@ class ClientTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @covers \mServer\Client::setApplication
-     *
-     * @todo   Implement testsetApplication().
      */
     public function testsetApplication(): void
     {
-        $this->assertEquals('', $this->object->setApplication());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $this->object->setApplication('test');
+        $this->assertEquals('test', $this->object->defaultHttpHeaders['STW-Application']);
     }
 
     /**
      * @covers \mServer\Client::setCheckDuplicity
-     *
-     * @todo   Implement testsetCheckDuplicity().
      */
     public function testsetCheckDuplicity(): void
     {
-        $this->assertEquals('', $this->object->setCheckDuplicity());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $this->object->setCheckDuplicity(true);
+        $this->assertEquals('true', $this->object->defaultHttpHeaders['STW-Check-Duplicity']);
     }
 
     /**

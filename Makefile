@@ -23,12 +23,12 @@ vendor: composer.json composer.lock ## Installs composer dependencies
 cs: ## Update Coding Standards
 	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --diff --verbose
 
-# Use phpcs to reformat code to PSR12
-codingstandards:
+.PHONY: codingstandards
+codingstandards: ## Use phpcs to reformat code to PSR12
 	phpcbf --colors --standard=PSR12 --extensions=php --ignore=vendor/ src/ 
 
-
-xsd2php:
+.PHONY: xsd2php
+xsd2php: ## Generate PHP Classes form XSD files
 	rm -rf src/Pohoda src/metadata
 	composer install
 	vendor/bin/xsd2php -v convert xsd2php.yml doc/xsd/*.xsd
