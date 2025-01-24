@@ -39,7 +39,7 @@ class Client extends \Ease\Sand
      *
      * @var int seconds
      */
-    public ?int $timeout = null;
+    public ?int $timeout = 30;
 
     /**
      * Body data  for next curl POST operation.
