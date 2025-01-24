@@ -9,12 +9,12 @@
 	dh $@
 
 
-override_dh_prep:
-	rm -f composer.lock
-	composer install --no-dev
-	phpdoc -d src
-	mkdir -p docs ; rm -fr docs/* ; mv .phpdoc/build/* docs
-	dh_prep
+#override_dh_prep:
+#	rm -f composer.lock
+#	composer install --no-dev
+#	phpdoc -d src
+#	mkdir -p docs ; rm -fr docs/* ; mv .phpdoc/build/* docs
+#	dh_prep
 
 #override_dh_auto_install:
 #	dh_auto_install -- prefix=/usr

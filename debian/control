@@ -20,17 +20,17 @@ Description: client library for Sormware's Pohoda mServer
     This package provides a simple way to communicate with Pohoda mServer
     using PHP.
 
-Package: php-vitexsoftware-pohoda-connector-doc
-Depends: ${misc:Depends}
-Architecture: all
-Suggests: www-browser
-Section: doc
-Priority: optional
-Multi-Arch: foreign
-Description: Documentation for php-vitexsoftware-pohoda-connector
-    PHP library for communication with Pohoda mServer.
-    .
-    This package provides a simple way to communicate with Pohoda mServer
-    using PHP.
-    .
-    This package contains the documentation.
+#Package: php-vitexsoftware-pohoda-connector-doc
+#Depends: ${misc:Depends}
+#Architecture: all
+#Suggests: www-browser
+#Section: doc
+#Priority: optional
+#Multi-Arch: foreign
+#Description: Documentation for php-vitexsoftware-pohoda-connector
+#    PHP library for communication with Pohoda mServer.
+#    .
+#    This package provides a simple way to communicate with Pohoda mServer
+#    using PHP.
+#    .
+#    This package contains the documentation.
