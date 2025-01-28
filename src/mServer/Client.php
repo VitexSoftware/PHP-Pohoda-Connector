@@ -91,6 +91,13 @@ class Client extends \Ease\Sand
     public array $responseStats = [];
 
     /**
+     * Messages from last operation
+     * @var array<string,array<string>>
+     */
+    public $messages = [];
+
+
+    /**
      * @var array<string, string> of Http headers attached with every request
      */
     public array $defaultHttpHeaders = [
@@ -429,6 +436,7 @@ class Client extends \Ease\Sand
      */
     public function processResponse(int $httpCode)
     {
+        $this->messages = [];
         switch ($httpCode) {
             case 0:
                 $this->lastResponseMessage = '0: '.$this->lastCurlError;
@@ -496,12 +504,15 @@ class Client extends \Ease\Sand
 
                 //                if ($this->response->isOk() === false) {
                 if ($this->response->getNote()) {
+                    $this->messages['error'][] = $this->response->getNote();
                     $this->addStatusMessage($this->response->getNote(), 'error');
                 }
 
                 foreach ($this->response->messages as $type => $messages) {
                     foreach ($messages as $message) {
-                        $this->addStatusMessage($message['state'].' '.$message['errno'].': '.$message['note'].(\array_key_exists('XPath', $message) ? ' ('.$message['XPath'].')' : ''), $type);
+                        $toLog = $message['state'].' '.$message['errno'].': '.$message['note'].(\array_key_exists('XPath', $message) ? ' ('.$message['XPath'].')' : '');
+                        $this->messages[$type][] = $toLog;
+                        $this->addStatusMessage($toLog, $type);
                     }
                 }
 

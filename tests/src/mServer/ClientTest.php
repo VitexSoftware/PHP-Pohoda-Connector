@@ -83,14 +83,11 @@ class ClientTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @covers \mServer\Client::setInstance
-     *
-     * @todo   Implement testsetInstance().
      */
     public function testsetInstance(): void
     {
-        $this->assertEquals('', $this->object->setInstance());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $this->object->setInstance('test');
+        $this->assertArrayHasKey('STW-Instance', $this->object->defaultHttpHeaders);
     }
 
     /**
