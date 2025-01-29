@@ -1,227 +1,227 @@
 <?xml version="1.0" encoding="Windows-1250"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
-			xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
-			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
-			xmlns:bka="http://www.stormware.cz/schema/version_2/bankAccount.xsd"
-			xmlns="http://www.stormware.cz/schema/version_2/bankAccount.xsd"
-			targetNamespace="http://www.stormware.cz/schema/version_2/bankAccount.xsd"
-			elementFormDefault="qualified"
+            xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+            xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+            xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+            xmlns:bka="http://www.stormware.cz/schema/version_2/bankAccount.xsd"
+            xmlns="http://www.stormware.cz/schema/version_2/bankAccount.xsd"
+            targetNamespace="http://www.stormware.cz/schema/version_2/bankAccount.xsd"
+            elementFormDefault="qualified"
 >
 
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
 
-	<!-- **************************************************************************
-		root element must be <bankAccount>
-	 ************************************************************************** -->
+    <!-- **************************************************************************
+           root element must be <bankAccount>
+    ************************************************************************** -->
 
-	<!-- REQUEST -->
+    <!-- REQUEST -->
 
-	<xsd:element name="bankAccount" type="bka:bankAccountType"/>
+    <xsd:element name="bankAccount" type="bka:bankAccountType"/>
 
-	<!-- **************************************************************************
-		 Bankovní účet
-	 ************************************************************************** -->
+    <!-- **************************************************************************
+            Bankovní účet
+    ************************************************************************** -->
 
-	<xsd:complexType name="bankAccountType">
-		<xsd:sequence>
-			<xsd:element name="actionType" type="bka:actionTypeType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="bankAccountHeader" type="bka:bankAccountHeaderType" minOccurs="0"/>
-		</xsd:sequence>
-		<xsd:attribute name="version" type="bka:bkaVersionType" use="required"/>
-	</xsd:complexType>
+    <xsd:complexType name="bankAccountType">
+        <xsd:sequence>
+            <xsd:element name="actionType" type="bka:actionTypeType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Typ práce s dokladem. Výchozí hodnota je přidání nového dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="bankAccountHeader" type="bka:bankAccountHeaderType" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="version" type="bka:bkaVersionType" use="required"/>
+    </xsd:complexType>
 
-	<xsd:simpleType name="bkaVersionType">
-		<xsd:annotation>
-			<xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="2.0"/>
-		</xsd:restriction>
-	</xsd:simpleType>
+    <xsd:simpleType name="bkaVersionType">
+        <xsd:annotation>
+            <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-	<xsd:complexType name="actionTypeType">
-		<xsd:choice>
-			<xsd:element name="add" type="ftr:requestExtIdActionType">
-				<xsd:annotation>
-					<xsd:documentation>Vložení nového záznamu. Výchozí hodnota.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<!--<xsd:element name="update" type="ftr:requestExtIdActionType">
-				<xsd:annotation>
-					<xsd:documentation>Aktualizace záznamu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="delete" type="ftr:requestExtIdType">
-				<xsd:annotation>
-					<xsd:documentation>Odstranění záznamu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>-->
-		</xsd:choice>
-	</xsd:complexType>
+    <xsd:complexType name="actionTypeType">
+        <xsd:choice>
+            <xsd:element name="add" type="ftr:requestExtIdActionType">
+                <xsd:annotation>
+                    <xsd:documentation>Vložení nového záznamu. Výchozí hodnota.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <!--<xsd:element name="update" type="ftr:requestExtIdActionType">
+                    <xsd:annotation>
+                            <xsd:documentation>Aktualizace záznamu.</xsd:documentation>
+                    </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="delete" type="ftr:requestExtIdType">
+                    <xsd:annotation>
+                            <xsd:documentation>Odstranění záznamu.</xsd:documentation>
+                    </xsd:annotation>
+            </xsd:element>-->
+        </xsd:choice>
+    </xsd:complexType>
 
-	<xsd:complexType name="bankAccountHeaderType">
-		<xsd:all>
-			<xsd:element name="id" type="typ:idType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>ID záznamu (pouze pro export).</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
+    <xsd:complexType name="bankAccountHeaderType">
+        <xsd:all>
+            <xsd:element name="id" type="typ:idType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>ID záznamu (pouze pro export).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
       
-			<xsd:element name="extId" type="typ:extIdType" minOccurs="0" >
-				<xsd:annotation>
-					<xsd:documentation>
-						Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
-						vazbu mezi agendou a externí databází.
-					</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
+            <xsd:element name="extId" type="typ:extIdType" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
+                        vazbu mezi agendou a externí databází.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
       
-			<xsd:element name="ids" minOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation>Zkratka bankovního účtu.</xsd:documentation>
-				</xsd:annotation>
-        <xsd:simpleType>
-          <xsd:restriction base="typ:nonEmptyString">
-            <xsd:maxLength value="4"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-			</xsd:element>
+            <xsd:element name="ids" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Zkratka bankovního účtu.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="typ:nonEmptyString">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
       
-			<xsd:element name="numberAccount" minOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation>Číslo účtu.</xsd:documentation>
-				</xsd:annotation>
-				<xsd:simpleType>
-					<xsd:restriction base="typ:nonEmptyString">
-						<xsd:maxLength value="34"/>
-					</xsd:restriction>
-				</xsd:simpleType>
-			</xsd:element>
+            <xsd:element name="numberAccount" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Číslo účtu.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="typ:nonEmptyString">
+                        <xsd:maxLength value="34"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
       
-      <xsd:element name="codeBank" minOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation>Kód banky</xsd:documentation>
-        </xsd:annotation>
-        <xsd:simpleType>
-          <xsd:restriction base="typ:nonEmptyString">
-            <xsd:maxLength value="11"/>
-          </xsd:restriction>
-        </xsd:simpleType>
-      </xsd:element>
+            <xsd:element name="codeBank" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Kód banky</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="typ:nonEmptyString">
+                        <xsd:maxLength value="11"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
 
-      <xsd:element name="nameBank" type="typ:string100" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Název banky.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
+            <xsd:element name="nameBank" type="typ:string100" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Název banky.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
       
-      <xsd:element name="symSpec" type="typ:string16" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Specifický symbol.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
+            <xsd:element name="symSpec" type="typ:string16" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Specifický symbol.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
 
-      <xsd:element name="IBAN" type="typ:string34" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>IBAN.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
+            <xsd:element name="IBAN" type="typ:string34" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>IBAN.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
 
-      <xsd:element name="SWIFT" type="typ:string30" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>SWIFT.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
+            <xsd:element name="SWIFT" type="typ:string30" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>SWIFT.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
       
-			<xsd:element name="analyticAccount" type="typ:refType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Analytický účet.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
+            <xsd:element name="analyticAccount" type="typ:refType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Analytický účet.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
 
-      <xsd:element name="currencyBankAccount" type="bka:currencyBankAccountType" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Devizový bankovní účet. Pokud je uveden tento element, bude vytvořen cizoměnový bankovní účet. V ostatních případech tuzemský bankovní účet.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
+            <xsd:element name="currencyBankAccount" type="bka:currencyBankAccountType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Devizový bankovní účet. Pokud je uveden tento element, bude vytvořen cizoměnový bankovní účet. V ostatních případech tuzemský bankovní účet.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
 
-      <xsd:element name="cancelled" type="xsd:date" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Datum zrušení bankovního účtu.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
+            <xsd:element name="cancelled" type="xsd:date" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Datum zrušení bankovního účtu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
 
-      <xsd:element name="homebanking" type="typ:string20" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Služba Homebanking.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
+            <xsd:element name="homebanking" type="typ:string20" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Služba Homebanking.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
 
-      <xsd:element name="payTerminal" type="typ:string40" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Platební terminál.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
+            <xsd:element name="payTerminal" type="typ:string40" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Platební terminál.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
       
-			<xsd:element name="note" type="xsd:string" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Poznámka</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:all>
-	</xsd:complexType>
+            <xsd:element name="note" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Poznámka</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
   
 
 
-	<!--Devizový bankovní účet-->
-	<xsd:complexType name="currencyBankAccountType">
-		<xsd:all>
-			<xsd:element name="currency" type="typ:refType" minOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation>Měna bankovního účtu..</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="rate" type="bka:rateType" minOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation>Kurs použitý pro devizový účet (denní/pevný).</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:all>
-	</xsd:complexType>
+    <!--Devizový bankovní účet-->
+    <xsd:complexType name="currencyBankAccountType">
+        <xsd:all>
+            <xsd:element name="currency" type="typ:refType" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Měna bankovního účtu..</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="rate" type="bka:rateType" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Kurs použitý pro devizový účet (denní/pevný).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
 
-	<!--Kurs devizového bankovního účtu-->
-	<xsd:simpleType name="rateType">
-		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="daily">
-				<xsd:annotation>
-					<xsd:documentation>Denní kurs.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:enumeration>
-			<xsd:enumeration value="fixed">
-				<xsd:annotation>
-					<xsd:documentation>Pevný kurs.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:enumeration>
-		</xsd:restriction>
-	</xsd:simpleType>
+    <!--Kurs devizového bankovního účtu-->
+    <xsd:simpleType name="rateType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="daily">
+                <xsd:annotation>
+                    <xsd:documentation>Denní kurs.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="fixed">
+                <xsd:annotation>
+                    <xsd:documentation>Pevný kurs.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
 
 
 
-	<!-- RESPONSE -->
+    <!-- RESPONSE -->
 
-	<xsd:element name="bankAccountResponse" type="bka:bankAccountResponseType"/>
+    <xsd:element name="bankAccountResponse" type="bka:bankAccountResponseType"/>
 
-	<xsd:complexType name="bankAccountResponseType">
-		<xsd:complexContent>
-			<xsd:extension  base="rdc:documentResponseType"/>
-		</xsd:complexContent>
-	</xsd:complexType>
+    <xsd:complexType name="bankAccountResponseType">
+        <xsd:complexContent>
+            <xsd:extension  base="rdc:documentResponseType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
 
 </xsd:schema>

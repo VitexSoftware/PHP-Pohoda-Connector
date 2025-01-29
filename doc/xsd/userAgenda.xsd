@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+            xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+            xmlns:prn="http://www.stormware.cz/schema/version_2/print.xsd"
+            xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+            xmlns:uag="http://www.stormware.cz/schema/version_2/userAgenda.xsd"
+            xmlns="http://www.stormware.cz/schema/version_2/userAgenda.xsd"
+            targetNamespace="http://www.stormware.cz/schema/version_2/userAgenda.xsd"
+            elementFormDefault="qualified" >
+
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/print.xsd" schemaLocation="print.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+
+    <!-- ************************************************************************** Uživatelská agenda ************************************************************************** -->
+    <!-- REQUEST -->
+    <xsd:element name="userAgenda" type="userAgendaType"/>
+    <xsd:complexType name="userAgendaType">
+        <xsd:sequence>
+            <xsd:element name="actionType" type="uag:actionTypeType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Typ práce se záznamem. Výchozí hodnota je přidání nového záznamu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="userAgendaHeader" type="uag:userAgendaHeaderType" minOccurs="0"/>
+            <xsd:element name="userAgendaDetail" type="uag:userAgendaDetailType" minOccurs="0"/>
+            <xsd:element name="attachments" type="typ:attachmentsType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Záznamy ze záložky "Dokumenty".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="print" type="prn:agendaPrintType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Po vytvoření záznamu se provede jeho tisk.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="version" type="uag:userAgendaVersionType" use="required"/>
+        <xsd:attribute name="userAgendaId" type="typ:idType"/>
+        <xsd:attribute name="userAgendaIds" type="typ:string10"/>
+    </xsd:complexType>
+    <xsd:simpleType name="userAgendaVersionType">
+        <xsd:annotation>
+            <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="userAgendaHeaderType">
+        <xsd:all>
+            <xsd:element name="id" type="typ:idType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>ID záznamu (jen pro export).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="number" type="typ:numberType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Evidenční číslo dokladu. Pokud není hodnota uvedena, použije se číselná řada přednastavená
+                        v nastavení uživatelské agendy nebo se nastaví první číselná řada pro daný doklad.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="note" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Poznámka</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="markRecord" type="typ:boolean" minOccurs="0" default="true">
+                <xsd:annotation>
+                    <xsd:documentation>Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="parameters" type="typ:parametersType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Volitelné parametry.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="userAgendaDetailType">
+        <xsd:sequence>
+            <xsd:element name="userAgendaItem" type="uag:userAgendaItemType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="userAgendaItemType">
+        <xsd:all>
+            <xsd:element name="id" type="typ:idType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>ID záznamu (jen pro export).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="parameters" type="typ:parametersUsrAgType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Volitelné parametry.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="actionTypeType">
+        <xsd:choice>
+            <xsd:element name="add" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Vložení nového záznamu. Výchozí hodnota.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <!--<xsd:element name="update" type="ftr:requestUserAgendaType">
+                    <xsd:annotation>
+                            <xsd:documentation>Aktualizace dokladu.</xsd:documentation>
+                    </xsd:annotation>
+            </xsd:element>-->
+            <xsd:element name="delete" type="ftr:requestUserAgendaType">
+                <xsd:annotation>
+                    <xsd:documentation>Odstranění záznamu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:choice>
+    </xsd:complexType>
+
+	
+    <!-- RESPONSE -->
+
+    <xsd:element name="userAgendaResponse" type="uag:userAgendaResponseType">
+        <xsd:annotation>
+            <xsd:documentation>Odpověď na import uživatelské agendy. Obsahuje podrobnosti zpracování a id importovaného záznamu.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+
+    <xsd:complexType name="userAgendaResponseType">
+        <xsd:complexContent>
+            <xsd:extension  base="rdc:documentResponseType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+</xsd:schema>

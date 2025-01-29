@@ -1,162 +1,167 @@
 <?xml version="1.0" encoding="Windows-1250"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
-			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
-			xmlns:act="http://www.stormware.cz/schema/version_2/accountancy.xsd"
-			xmlns="http://www.stormware.cz/schema/version_2/accountancy.xsd"
-			targetNamespace="http://www.stormware.cz/schema/version_2/accountancy.xsd"
-			elementFormDefault="qualified"
+            xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+            xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+            xmlns:act="http://www.stormware.cz/schema/version_2/accountancy.xsd"
+            xmlns="http://www.stormware.cz/schema/version_2/accountancy.xsd"
+            targetNamespace="http://www.stormware.cz/schema/version_2/accountancy.xsd"
+            elementFormDefault="qualified"
 >
 
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" 	schemaLocation="documentresponse.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" 	schemaLocation="documentresponse.xsd"/>
 
-<!-- **************************************************************************
-		root element must be <accountancy>
-	 ************************************************************************** -->
+    <!-- **************************************************************************
+           root element must be <accountancy>
+    ************************************************************************** -->
 
-<!-- REQUEST -->
+    <!-- REQUEST -->
 	 
-<xsd:element name="accountancy" type="act:accountancyType"/>
+    <xsd:element name="accountancy" type="act:accountancyType"/>
 
-<!-- **************************************************************************
-		accountancy - údaje z účetnictví(PU - účetní deník)
-	 ************************************************************************** -->
+    <!-- **************************************************************************
+           accountancy - údaje z účetnictví(PU - účetní deník)
+    ************************************************************************** -->
 
-<xsd:complexType name="accountancyType">
-	<xsd:sequence>
-    <xsd:element name="accountingItem" type="act:accountingItemType" minOccurs="1" maxOccurs="unbounded">
-      <xsd:annotation>
-        <xsd:documentation>Účetní doklad.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>  
-	</xsd:sequence>
-	<xsd:attribute name="version" type="act:actVersionType" use="required"/>
-</xsd:complexType>
+    <xsd:complexType name="accountancyType">
+        <xsd:sequence>
+            <xsd:element name="accountingItem" type="act:accountingItemType" minOccurs="1" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>Účetní doklad.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="attachments" type="typ:attachmentsType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Záznamy ze záložky "Dokumenty", která je společná pro celou agendu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="version" type="act:actVersionType" use="required"/>
+    </xsd:complexType>
 
-<xsd:simpleType name="actVersionType">
-	<xsd:annotation>
-		<xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
-	</xsd:annotation>
-	<xsd:restriction base="xsd:string">
-		<xsd:enumeration value="2.0"/>
-	</xsd:restriction>
-</xsd:simpleType>
-
-<xsd:complexType name="accountingItemType">
-	<xsd:all>
-		<xsd:element name="id" type="typ:idType" minOccurs="0">
-			<xsd:annotation>
-				<xsd:documentation>Používá se pouze při exportu.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-    <xsd:element name="source" type="xsd:string" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Zdroj dokladu.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-		<xsd:element name="number" type="typ:numberType" minOccurs="0">
-			<xsd:annotation>
-				<xsd:documentation>Evidenční číslo záznamu .</xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-    <xsd:element name="symPar" type="typ:symVarType" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Párový symbol. Používá se jen v účetnictví (dříve PU).</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="text" type="xsd:string" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Text zdrojového dokladu.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="homeCurrency" type="typ:typeCurrencyHomeItem" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Kč.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="foreignCurrency" type="typ:typeCurrencyForeign" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Cizí měna.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="accounting" type="act:accountingType" minOccurs="0">
-    <xsd:annotation>
-      <xsd:documentation>Zaúčtování.</xsd:documentation>
-    </xsd:annotation>
-  </xsd:element>
-    <xsd:element name="address" type="typ:address" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Zákazníkova adresa.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="date" type="xsd:date" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Datum vystavení.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="dateTax" type="xsd:date" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Datum zdanitelného plnění / Datum odpočtu.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="centre" type="typ:refType" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Středisko.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="activity" type="typ:refType" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Činnost.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="contract" type="typ:refType" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Zakázka.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-    <xsd:element name="note" type="xsd:string" minOccurs="0">
-      <xsd:annotation>
-        <xsd:documentation>Poznámka.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:element>
-		<xsd:element name="parameters" type="typ:parametersType" minOccurs="0">
-			<xsd:annotation>
-				<xsd:documentation>Volitelný parametr.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-	</xsd:all>
-</xsd:complexType>
-
-
-  <xsd:complexType name="accountingType">
-    <xsd:annotation>
-      <xsd:documentation>Zaúčtování dokladu</xsd:documentation>
-    </xsd:annotation>
-    <xsd:all>
-      <xsd:element name="credit" type="typ:numberAccountType">
+    <xsd:simpleType name="actVersionType">
         <xsd:annotation>
-          <xsd:documentation>MD.</xsd:documentation>
+            <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
         </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="debit" type="typ:numberAccountType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="accountingItemType">
+        <xsd:all>
+            <xsd:element name="id" type="typ:idType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Používá se pouze při exportu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="source" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Zdroj dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="number" type="typ:numberType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Evidenční číslo záznamu .</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="symPar" type="typ:symVarType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Párový symbol. Používá se jen v účetnictví (dříve PU).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="text" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Text zdrojového dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="homeCurrency" type="typ:typeCurrencyHomeItem" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Kč.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="foreignCurrency" type="typ:typeCurrencyForeign" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Cizí měna.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="accounting" type="act:accountingType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Zaúčtování.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="address" type="typ:address" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Zákazníkova adresa.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="date" type="xsd:date" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Datum vystavení.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="dateTax" type="xsd:date" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Datum zdanitelného plnění / Datum odpočtu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="centre" type="typ:refType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Středisko.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="activity" type="typ:refType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Činnost.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="contract" type="typ:refType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Zakázka.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="note" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Poznámka.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="parameters" type="typ:parametersType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Volitelný parametr.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="accountingType">
         <xsd:annotation>
-          <xsd:documentation>DAL.</xsd:documentation>
+            <xsd:documentation>Zaúčtování dokladu</xsd:documentation>
         </xsd:annotation>
-      </xsd:element>
-    </xsd:all>
-  </xsd:complexType>
+        <xsd:all>
+            <xsd:element name="credit" type="typ:numberAccountType">
+                <xsd:annotation>
+                    <xsd:documentation>MD.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="debit" type="typ:numberAccountType">
+                <xsd:annotation>
+                    <xsd:documentation>DAL.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
   
 
 
-<!-- RESPONSE -->
+    <!-- RESPONSE -->
 
-<xsd:element name="accountancyResponse" type="act:accountancyResponseType"/>
+    <xsd:element name="accountancyResponse" type="act:accountancyResponseType"/>
 
-<xsd:complexType name="accountancyResponseType">
-	<xsd:complexContent>
-		<xsd:extension  base="rdc:documentResponseType"/>
-	</xsd:complexContent>
-</xsd:complexType>
+    <xsd:complexType name="accountancyResponseType">
+        <xsd:complexContent>
+            <xsd:extension  base="rdc:documentResponseType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
 
 </xsd:schema>

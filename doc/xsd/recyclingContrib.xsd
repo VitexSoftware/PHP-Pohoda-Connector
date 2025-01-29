@@ -8,69 +8,69 @@
     targetNamespace="http://www.stormware.cz/schema/version_2/recyclingContrib.xsd"
     elementFormDefault="qualified"
 >
-  <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
-  <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
   
-  <!-- ************************************************************************** 
+    <!-- ************************************************************************** 
     Recyklaèní pøíspìvky 
     ************************************************************************** -->
   
-  <xsd:element name="recyclingContrib" type="rec:recyclingContribType"/>
+    <xsd:element name="recyclingContrib" type="rec:recyclingContribType"/>
   
-  <xsd:complexType name="recyclingContribType">
-    <xsd:sequence>
-      <xsd:element name="recyclingContribHeader" type="rec:recyclingContribHeaderType" minOccurs="0"/>      
-    </xsd:sequence>
-    <xsd:attribute name="version" type="rec:recVersionType" use="required"/>
-  </xsd:complexType>
+    <xsd:complexType name="recyclingContribType">
+        <xsd:sequence>
+            <xsd:element name="recyclingContribHeader" type="rec:recyclingContribHeaderType" minOccurs="0"/>      
+        </xsd:sequence>
+        <xsd:attribute name="version" type="rec:recVersionType" use="required"/>
+    </xsd:complexType>
   
-  <xsd:simpleType name="recVersionType">
-    <xsd:annotation>
-      <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="2.0"/>      
-    </xsd:restriction>
-  </xsd:simpleType>
+    <xsd:simpleType name="recVersionType">
+        <xsd:annotation>
+            <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2.0"/>      
+        </xsd:restriction>
+    </xsd:simpleType>
   
-  <xsd:complexType name="recyclingContribHeaderType">
-    <xsd:all>
-      <xsd:element name="id" type="typ:idType" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>ID záznamu (pouze pro export).</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="code" type="typ:string10">
-        <xsd:annotation>
-          <xsd:documentation>Zkratka recyklaèního pøíspìvku.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="name" type="typ:string32">
-        <xsd:annotation>
-          <xsd:documentation>Název recyklaèního pøíspìvku.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="text" type="typ:string64">
-        <xsd:annotation>
-          <xsd:documentation>Text recyklaèního pøíspìvku, který se bude tisknout na daòových dokladech.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>      
-      <xsd:element name="amount" type="typ:currencyType">
-        <xsd:annotation>
-          <xsd:documentation>Èástka recyklaèního pøíspìvku.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="unit" type="typ:unitType">
-        <xsd:annotation>
-          <xsd:documentation>M. j. recyklaèního pøíspìvku.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="note" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Poznámka.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-    </xsd:all>
-  </xsd:complexType>
+    <xsd:complexType name="recyclingContribHeaderType">
+        <xsd:all>
+            <xsd:element name="id" type="typ:idType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>ID záznamu (pouze pro export).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="code" type="typ:string10">
+                <xsd:annotation>
+                    <xsd:documentation>Zkratka recyklaèního pøíspìvku.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="name" type="typ:string32">
+                <xsd:annotation>
+                    <xsd:documentation>Název recyklaèního pøíspìvku.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="text" type="typ:string64">
+                <xsd:annotation>
+                    <xsd:documentation>Text recyklaèního pøíspìvku, který se bude tisknout na daòových dokladech.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>      
+            <xsd:element name="amount" type="typ:currencyType">
+                <xsd:annotation>
+                    <xsd:documentation>Èástka recyklaèního pøíspìvku.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="unit" type="typ:unitType">
+                <xsd:annotation>
+                    <xsd:documentation>M. j. recyklaèního pøíspìvku.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="note" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Poznámka.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
   
 </xsd:schema>

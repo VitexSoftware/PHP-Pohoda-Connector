@@ -1,144 +1,144 @@
 <?xml version="1.0" encoding="Windows-1250"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-      xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
-      xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
-			xmlns:vat="http://www.stormware.cz/schema/version_2/classificationVAT.xsd"
-			xmlns="http://www.stormware.cz/schema/version_2/classificationVAT.xsd"
-			targetNamespace="http://www.stormware.cz/schema/version_2/classificationVAT.xsd"
-			elementFormDefault="qualified">
+            xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+            xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+            xmlns:vat="http://www.stormware.cz/schema/version_2/classificationVAT.xsd"
+            xmlns="http://www.stormware.cz/schema/version_2/classificationVAT.xsd"
+            targetNamespace="http://www.stormware.cz/schema/version_2/classificationVAT.xsd"
+            elementFormDefault="qualified">
 
-  <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
-  <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd"	schemaLocation="documentresponse.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd"	schemaLocation="documentresponse.xsd"/>
 
-  <!-- **************************************************************************
-		Agenda členění DPH (jen pro export)
-	 ************************************************************************** -->
+    <!-- **************************************************************************
+           Agenda členění DPH (jen pro export)
+    ************************************************************************** -->
 
-  <!-- REQUEST -->
-  <xsd:element name="classificationVAT" type="vat:classificationVATType"/>
+    <!-- REQUEST -->
+    <xsd:element name="classificationVAT" type="vat:classificationVATType"/>
 
-  <xsd:complexType name="classificationVATType">
-    <xsd:sequence minOccurs="0">
-      <xsd:element name="classificationVATHeader" type="vat:classificationVATHeaderType"/>
-    </xsd:sequence>
-    <xsd:attribute name="version" type="vat:classificationVATVersionType" use="required"/>
-  </xsd:complexType>
+    <xsd:complexType name="classificationVATType">
+        <xsd:sequence minOccurs="0">
+            <xsd:element name="classificationVATHeader" type="vat:classificationVATHeaderType"/>
+        </xsd:sequence>
+        <xsd:attribute name="version" type="vat:classificationVATVersionType" use="required"/>
+    </xsd:complexType>
 
-  <xsd:complexType name="classificationVATHeaderType">
-    <xsd:annotation>
-      <xsd:documentation>Členění DPH</xsd:documentation>
-    </xsd:annotation>
-    <xsd:all>
-      <xsd:element name="id" type="typ:idType" minOccurs="0">
+    <xsd:complexType name="classificationVATHeaderType">
         <xsd:annotation>
-          <xsd:documentation>ID záznamu.</xsd:documentation>
+            <xsd:documentation>Členění DPH</xsd:documentation>
         </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="extId" type="typ:extIdType" minOccurs="0" >
-        <xsd:annotation>
-          <xsd:documentation>
-            Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
-            vazbu mezi agendou a externí databází.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="code" type="typ:string15">
-        <xsd:annotation>
-          <xsd:documentation>Zkratka.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="name" type="typ:string100">
-        <xsd:annotation>
-          <xsd:documentation>Název.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="VATType" type="typ:refType">
-        <xsd:annotation>
-          <xsd:documentation>Typ členění DPH.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="textOnDocument" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Text na dokladu.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="textForVATAssessment" type="typ:string240" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Text pro vyměření DPH.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="offer" type="xsd:boolean">
-        <xsd:annotation>
-          <xsd:documentation>Nabízet.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="validFrom" type="xsd:date" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Platnost od.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="validTill" type="xsd:date" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Platnost do.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="lineInVATReturn" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Řádek v Přiznání DPH.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="sectionInVATLedgerStatement" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Sekce v Kontrolním hlášení (pouze CZ verze).</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="codeOfSupplyMode" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Kód režimu plnění (pouze CZ verze).</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="codeForSummaryReport" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Kód pro souhrnné hlášení.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="codeOfObjectOfFulfilment" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Kód předmětu plnění (pouze CZ verze).</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="note" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Poznámka.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="markRecord" type="typ:boolean" minOccurs="0" default="true">
-        <xsd:annotation>
-          <xsd:documentation>Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-    </xsd:all>
-  </xsd:complexType>
+        <xsd:all>
+            <xsd:element name="id" type="typ:idType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>ID záznamu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="extId" type="typ:extIdType" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
+                        vazbu mezi agendou a externí databází.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="code" type="typ:string15">
+                <xsd:annotation>
+                    <xsd:documentation>Zkratka.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="name" type="typ:string100">
+                <xsd:annotation>
+                    <xsd:documentation>Název.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="VATType" type="typ:refType">
+                <xsd:annotation>
+                    <xsd:documentation>Typ členění DPH.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="textOnDocument" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Text na dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="textForVATAssessment" type="typ:string240" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Text pro vyměření DPH.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="offer" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>Nabízet.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="validFrom" type="xsd:date" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Platnost od.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="validTill" type="xsd:date" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Platnost do.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="lineInVATReturn" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Řádek v Přiznání DPH.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sectionInVATLedgerStatement" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Sekce v Kontrolním hlášení (pouze CZ verze).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="codeOfSupplyMode" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Kód režimu plnění (pouze CZ verze).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="codeForSummaryReport" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Kód pro souhrnné hlášení.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="codeOfObjectOfFulfilment" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Kód předmětu plnění (pouze CZ verze).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="note" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Poznámka.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="markRecord" type="typ:boolean" minOccurs="0" default="true">
+                <xsd:annotation>
+                    <xsd:documentation>Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
 
-  <!-- **************************************************************************-->
+    <!-- **************************************************************************-->
 
-  <xsd:simpleType name="classificationVATVersionType">
-    <xsd:annotation>
-      <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="2.0"/>
-    </xsd:restriction>
-  </xsd:simpleType>
+    <xsd:simpleType name="classificationVATVersionType">
+        <xsd:annotation>
+            <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-  <!-- RESPONSE -->
+    <!-- RESPONSE -->
 
-  <xsd:element name="classificationVATResponse" type="vat:classificationVATResponseType"/>
+    <xsd:element name="classificationVATResponse" type="vat:classificationVATResponseType"/>
 
-  <xsd:complexType name="classificationVATResponseType">
-    <xsd:complexContent>
-      <xsd:extension  base="rdc:documentResponseType"/>
-    </xsd:complexContent>
-  </xsd:complexType>
+    <xsd:complexType name="classificationVATResponseType">
+        <xsd:complexContent>
+            <xsd:extension  base="rdc:documentResponseType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
 
 </xsd:schema>

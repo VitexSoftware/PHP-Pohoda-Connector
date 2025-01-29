@@ -1,234 +1,234 @@
 <?xml version="1.0" encoding="Windows-1250"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
-xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
-xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
-xmlns:bnk="http://www.stormware.cz/schema/version_2/bank.xsd"
-xmlns:lqd="http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd"
-xmlns="http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd"
-targetNamespace="http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd"
-elementFormDefault="qualified" >
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/bank.xsd" schemaLocation="bank.xsd"/>
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+            xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+            xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+            xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+            xmlns:bnk="http://www.stormware.cz/schema/version_2/bank.xsd"
+            xmlns:lqd="http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd"
+            xmlns="http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd"
+            targetNamespace="http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd"
+            elementFormDefault="qualified" >
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/bank.xsd" schemaLocation="bank.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
 
-	<!-- REQUEST -->
-	<xsd:element name="automaticLiquidation" type="lqd:automaticLiquidationType">
-		<xsd:annotation>
-			<xsd:documentation>Automatická likvidace.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="automaticLiquidationType">
-		<xsd:sequence>
-			<xsd:element name="record" type="ftr:recordAutomaticLiquidationType" minOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation>Výběr záznamu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="ruleOfPairing" type="typ:refType" minOccurs="1">
-				<xsd:annotation>
-					<xsd:documentation>Pravidlo párování dokladů.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-		<xsd:attribute name="version" type="lqd:automaticLiquidationVerType" use="required"/>
-	</xsd:complexType>
+    <!-- REQUEST -->
+    <xsd:element name="automaticLiquidation" type="lqd:automaticLiquidationType">
+        <xsd:annotation>
+            <xsd:documentation>Automatická likvidace.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="automaticLiquidationType">
+        <xsd:sequence>
+            <xsd:element name="record" type="ftr:recordAutomaticLiquidationType" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Výběr záznamu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ruleOfPairing" type="typ:refType" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Pravidlo párování dokladů.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="version" type="lqd:automaticLiquidationVerType" use="required"/>
+    </xsd:complexType>
 
-	<xsd:simpleType name="automaticLiquidationVerType">
-		<xsd:annotation>
-			<xsd:documentation>Dostupné verze. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="2.0"/>
-		</xsd:restriction>
-	</xsd:simpleType>
+    <xsd:simpleType name="automaticLiquidationVerType">
+        <xsd:annotation>
+            <xsd:documentation>Dostupné verze. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 	
-	<!-- RESPONSE -->
+    <!-- RESPONSE -->
 
-	<xsd:element name="automaticLiquidationResponse" type="lqd:automaticLiquidationResponseType"/>
+    <xsd:element name="automaticLiquidationResponse" type="lqd:automaticLiquidationResponseType"/>
 
-	<xsd:complexType name="automaticLiquidationResponseType">
-		<xsd:complexContent>
-			<xsd:extension  base="rdc:documentResponseType">
-				<xsd:sequence>
-					<xsd:element name="automaticLiquidationDetails" type="lqd:automaticLiquidationDetailsType" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>Vytvořené likvidace bankovních dokladů.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
+    <xsd:complexType name="automaticLiquidationResponseType">
+        <xsd:complexContent>
+            <xsd:extension  base="rdc:documentResponseType">
+                <xsd:sequence>
+                    <xsd:element name="automaticLiquidationDetails" type="lqd:automaticLiquidationDetailsType" minOccurs="0">
+                        <xsd:annotation>
+                            <xsd:documentation>Vytvořené likvidace bankovních dokladů.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
 
-	<xsd:complexType name="automaticLiquidationDetailsType">
-		<xsd:sequence>
-			<xsd:element name="automaticLiquidationDetail" type="lqd:automaticLiquidationDetailType" minOccurs="0" maxOccurs="unbounded">
-				<xsd:annotation>
-					<xsd:documentation>Likvidace bankovního dokladu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="automaticLiquidationDetailsType">
+        <xsd:sequence>
+            <xsd:element name="automaticLiquidationDetail" type="lqd:automaticLiquidationDetailType" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>Likvidace bankovního dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-	<xsd:complexType name="automaticLiquidationDetailType">
-		<xsd:sequence>
-			<xsd:element name="movementDetail" type="lqd:movementDetailType">
-				<xsd:annotation>
-					<xsd:documentation>Informace o bankovním dokladu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="liquidationDetail" type="lqd:liquidationDetailType">
-				<xsd:annotation>
-					<xsd:documentation>Informace o průběhu likvidace.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="automaticLiquidationDetailType">
+        <xsd:sequence>
+            <xsd:element name="movementDetail" type="lqd:movementDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>Informace o bankovním dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="liquidationDetail" type="lqd:liquidationDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>Informace o průběhu likvidace.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-	<xsd:complexType name="movementDetailType">
-		<xsd:sequence>
-			<xsd:element name="id" type="typ:idType">
-				<xsd:annotation>
-					<xsd:documentation>ID bankovního dokladu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="number" type="xsd:string">
-				<xsd:annotation>
-					<xsd:documentation>Evidenční číslo bankovního dokladu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="bankType" type="bnk:bankTypeType">
-				<xsd:annotation>
-					<xsd:documentation>Typ bankovního dokladu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="datePayment" type="xsd:date" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Datum platby.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="homeCurrency" type="lqd:homeCurrencyType">
-				<xsd:annotation>
-					<xsd:documentation>Celková částka.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="foreignCurrency" type="lqd:foreignCurrencyType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Celková částka v cizí měně.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="movementDetailType">
+        <xsd:sequence>
+            <xsd:element name="id" type="typ:idType">
+                <xsd:annotation>
+                    <xsd:documentation>ID bankovního dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="number" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Evidenční číslo bankovního dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="bankType" type="bnk:bankTypeType">
+                <xsd:annotation>
+                    <xsd:documentation>Typ bankovního dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="datePayment" type="xsd:date" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Datum platby.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="homeCurrency" type="lqd:homeCurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>Celková částka.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="foreignCurrency" type="lqd:foreignCurrencyType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Celková částka v cizí měně.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-	<xsd:complexType name="liquidationDetailType">
-		<xsd:sequence>
-			<xsd:element name="state" type="typ:stavType">
-				<xsd:annotation>
-					<xsd:documentation>Celkový výsledek likvidace.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="detail" type="xsd:string" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Popis likvidace.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="documents" type="lqd:documentsType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Likvidované doklady.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="liquidationDetailType">
+        <xsd:sequence>
+            <xsd:element name="state" type="typ:stavType">
+                <xsd:annotation>
+                    <xsd:documentation>Celkový výsledek likvidace.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="detail" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Popis likvidace.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="documents" type="lqd:documentsType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Likvidované doklady.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-	<xsd:complexType name="documentsType">
-		<xsd:sequence>
-			<xsd:element name="document" type="lqd:documentType" minOccurs="0" maxOccurs="unbounded"/>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="documentsType">
+        <xsd:sequence>
+            <xsd:element name="document" type="lqd:documentType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
 
-	<xsd:complexType name="documentType">
-		<xsd:sequence>
-			<xsd:element name="state" type="typ:stavType">
-				<xsd:annotation>
-					<xsd:documentation>Výsledek likvidace.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="detail" type="xsd:string" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Popis likvidace. Případně další infomrace k likvidaci (Vytvožení daňového dokladu, vznik přeplatku, atp.).</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="id" type="typ:idType">
-				<xsd:annotation>
-					<xsd:documentation>ID likvidovaného dokladu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="number" type="xsd:string">
-				<xsd:annotation>
-					<xsd:documentation>Číslo likvidovaného dokladu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="agenda" type="typ:agendaType">
-				<xsd:annotation>
-					<xsd:documentation>Agenda likvidovaného dokladu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="homeCurrency" type="lqd:homeCurrencyType">
-				<xsd:annotation>
-					<xsd:documentation>Likvidovaná částka.</xsd:documentation>
-				</xsd:annotation>	
-			</xsd:element>
-			<xsd:element name="foreignCurrency" type="lqd:foreignCurrencyType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Likvidovaná částka.</xsd:documentation>
-				</xsd:annotation>	
-			</xsd:element>
-			<xsd:element name="rule" type="xsd:string" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Textový popis pravidla, které bylo použito k dohledání likvidovaného dokladu.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="taxDocumentNumber" type="lqd:taxDocumentType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Daňový doklad. Element je uveden, jan pokud byl vytvořen daňový doklad.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="documentType">
+        <xsd:sequence>
+            <xsd:element name="state" type="typ:stavType">
+                <xsd:annotation>
+                    <xsd:documentation>Výsledek likvidace.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="detail" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Popis likvidace. Případně další infomrace k likvidaci (Vytvožení daňového dokladu, vznik přeplatku, atp.).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="id" type="typ:idType">
+                <xsd:annotation>
+                    <xsd:documentation>ID likvidovaného dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="number" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Číslo likvidovaného dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="agenda" type="typ:agendaType">
+                <xsd:annotation>
+                    <xsd:documentation>Agenda likvidovaného dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="homeCurrency" type="lqd:homeCurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>Likvidovaná částka.</xsd:documentation>
+                </xsd:annotation>	
+            </xsd:element>
+            <xsd:element name="foreignCurrency" type="lqd:foreignCurrencyType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Likvidovaná částka.</xsd:documentation>
+                </xsd:annotation>	
+            </xsd:element>
+            <xsd:element name="rule" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Textový popis pravidla, které bylo použito k dohledání likvidovaného dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="taxDocumentNumber" type="lqd:taxDocumentType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Daňový doklad. Element je uveden, jan pokud byl vytvořen daňový doklad.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 	
-	<xsd:complexType name="taxDocumentType">
-		<xsd:sequence>
-			<xsd:element name="number" type="xsd:string"/>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="taxDocumentType">
+        <xsd:sequence>
+            <xsd:element name="number" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
 
 	
-	<xsd:complexType name="foreignCurrencyType">
-		<xsd:sequence>
-			<xsd:element name="currency" type="typ:refType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Cizí měna.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="price" type="typ:currencyType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Cena v cizí měně.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="foreignCurrencyType">
+        <xsd:sequence>
+            <xsd:element name="currency" type="typ:refType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Cizí měna.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="price" type="typ:currencyType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Cena v cizí měně.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
-	<xsd:complexType name="homeCurrencyType">
-		<xsd:sequence>
-			<xsd:element name="price" type="typ:currencyType" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Cena v cizí měně.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="homeCurrencyType">
+        <xsd:sequence>
+            <xsd:element name="price" type="typ:currencyType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Cena v cizí měně.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
 </xsd:schema>
 

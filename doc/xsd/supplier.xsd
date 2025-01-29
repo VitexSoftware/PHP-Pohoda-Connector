@@ -1,88 +1,88 @@
 <?xml version="1.0" encoding="windows-1250"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
-			xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
-			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
-			xmlns:sup="http://www.stormware.cz/schema/version_2/supplier.xsd"
-			xmlns="http://www.stormware.cz/schema/version_2/supplier.xsd"
-			targetNamespace="http://www.stormware.cz/schema/version_2/supplier.xsd"
-			elementFormDefault="qualified">
+            xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+            xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+            xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+            xmlns:sup="http://www.stormware.cz/schema/version_2/supplier.xsd"
+            xmlns="http://www.stormware.cz/schema/version_2/supplier.xsd"
+            targetNamespace="http://www.stormware.cz/schema/version_2/supplier.xsd"
+            elementFormDefault="qualified">
 
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" 		schemaLocation="type.xsd"/>
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" 	schemaLocation="documentresponse.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" 		schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" 	schemaLocation="documentresponse.xsd"/>
 
-  <!-- **************************************************************************
-    Dodavatelé zásoby
-  ************************************************************************** -->
+    <!-- **************************************************************************
+      Dodavatelé zásoby
+    ************************************************************************** -->
 
-  <xsd:element name="supplier" type="supplierType"/>
+    <xsd:element name="supplier" type="supplierType"/>
 
-	<xsd:complexType name="supplierType">
-		<xsd:all>
-			<xsd:element name="stockItem" type="typ:stockItemType"></xsd:element>
-			<xsd:element name="suppliers" type="suppliersType"></xsd:element>
-		</xsd:all>
-		<xsd:attribute name="version" type="supVersionType"></xsd:attribute>
-	</xsd:complexType>
+    <xsd:complexType name="supplierType">
+        <xsd:all>
+            <xsd:element name="stockItem" type="typ:stockItemType"></xsd:element>
+            <xsd:element name="suppliers" type="suppliersType"></xsd:element>
+        </xsd:all>
+        <xsd:attribute name="version" type="supVersionType"></xsd:attribute>
+    </xsd:complexType>
 
-	<xsd:simpleType name="supVersionType">
-		<xsd:annotation>
-			<xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="2.0"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-
-	<xsd:complexType name="suppliersType">
-		<xsd:sequence>
-			<xsd:element name="supplierItem" type="supplierItemType" maxOccurs="unbounded"></xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-	
-	<xsd:complexType name="supplierItemType">
-		<xsd:all>
-			<xsd:element name="actionType" type="typ:actionTypeItem" minOccurs="0"></xsd:element>
-			<xsd:element name="id" type="typ:idType" minOccurs="0"></xsd:element>
-			<xsd:element name="refAd" type="typ:refTypeSupplierAddress" minOccurs="0"></xsd:element>
-			<xsd:element name="orderCode" type="typ:string64" minOccurs="0"></xsd:element>
-			<xsd:element name="orderName" type="typ:string90" minOccurs="0"></xsd:element>
-			<xsd:element name="purchasingPrice" type="typ:currencyType" minOccurs="0"></xsd:element>
-			<xsd:element name="currency" type="typ:refType" minOccurs="0"></xsd:element>
-			<xsd:element name="rate" type="xsd:float" minOccurs="0"></xsd:element>
-			<xsd:element name="payVAT" type="typ:boolean" minOccurs="0" default="false"></xsd:element>
-			<xsd:element name="ean" type="typ:string20" minOccurs="0"></xsd:element>
-			<xsd:element name="printEAN" type="typ:boolean" minOccurs="0" default="false"></xsd:element>
-			<xsd:element name="unitEAN" type="typ:unitType" minOccurs="0"></xsd:element>
-			<xsd:element name="unitCoefEAN" type="xsd:float" minOccurs="0"></xsd:element>
-			<xsd:element name="deliveryTime" type="xsd:long" minOccurs="0"></xsd:element>
-			<xsd:element name="deliveryPeriod" type="typ:refType" minOccurs="0"></xsd:element>
-			<xsd:element name="minQuantity" type="xsd:float" minOccurs="0"></xsd:element>
-			<xsd:element name="unit" type="typ:unitType" minOccurs="0"></xsd:element>
-			<xsd:element name="note" type="xsd:string" minOccurs="0"></xsd:element>
-      <xsd:element name="parameters" type="typ:parametersType" minOccurs="0">
+    <xsd:simpleType name="supVersionType">
         <xsd:annotation>
-          <xsd:documentation>Volitelný parametr.</xsd:documentation>
+            <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
         </xsd:annotation>
-      </xsd:element>
-		</xsd:all>
-		<xsd:attribute name="default" type="xsd:boolean" use="required"/>
-	</xsd:complexType>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-  <!-- RESPONSE -->
+    <xsd:complexType name="suppliersType">
+        <xsd:sequence>
+            <xsd:element name="supplierItem" type="supplierItemType" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+	
+    <xsd:complexType name="supplierItemType">
+        <xsd:all>
+            <xsd:element name="actionType" type="typ:actionTypeItem" minOccurs="0"></xsd:element>
+            <xsd:element name="id" type="typ:idType" minOccurs="0"></xsd:element>
+            <xsd:element name="refAd" type="typ:refTypeSupplierAddress" minOccurs="0"></xsd:element>
+            <xsd:element name="orderCode" type="typ:string64" minOccurs="0"></xsd:element>
+            <xsd:element name="orderName" type="typ:string90" minOccurs="0"></xsd:element>
+            <xsd:element name="purchasingPrice" type="typ:currencyType" minOccurs="0"></xsd:element>
+            <xsd:element name="currency" type="typ:refType" minOccurs="0"></xsd:element>
+            <xsd:element name="rate" type="xsd:float" minOccurs="0"></xsd:element>
+            <xsd:element name="payVAT" type="typ:boolean" minOccurs="0" default="false"></xsd:element>
+            <xsd:element name="ean" type="typ:string20" minOccurs="0"></xsd:element>
+            <xsd:element name="printEAN" type="typ:boolean" minOccurs="0" default="false"></xsd:element>
+            <xsd:element name="unitEAN" type="typ:unitType" minOccurs="0"></xsd:element>
+            <xsd:element name="unitCoefEAN" type="xsd:float" minOccurs="0"></xsd:element>
+            <xsd:element name="deliveryTime" type="xsd:long" minOccurs="0"></xsd:element>
+            <xsd:element name="deliveryPeriod" type="typ:refType" minOccurs="0"></xsd:element>
+            <xsd:element name="minQuantity" type="xsd:float" minOccurs="0"></xsd:element>
+            <xsd:element name="unit" type="typ:unitType" minOccurs="0"></xsd:element>
+            <xsd:element name="note" type="xsd:string" minOccurs="0"></xsd:element>
+            <xsd:element name="parameters" type="typ:parametersType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Volitelný parametr.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+        <xsd:attribute name="default" type="xsd:boolean" use="required"/>
+    </xsd:complexType>
 
-  <xsd:element name="supplierResponse" type="sup:supplierResponseType">
-    <xsd:annotation>
-      <xsd:documentation>Odpověď na import.</xsd:documentation>
-    </xsd:annotation>
-  </xsd:element>
+    <!-- RESPONSE -->
+
+    <xsd:element name="supplierResponse" type="sup:supplierResponseType">
+        <xsd:annotation>
+            <xsd:documentation>Odpověď na import.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
   
-  <xsd:complexType name="supplierResponseType">
-    <xsd:complexContent>
-      <xsd:extension  base="rdc:documentResponseType"/>
-    </xsd:complexContent>
-  </xsd:complexType>
+    <xsd:complexType name="supplierResponseType">
+        <xsd:complexContent>
+            <xsd:extension  base="rdc:documentResponseType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
 
 
 </xsd:schema>

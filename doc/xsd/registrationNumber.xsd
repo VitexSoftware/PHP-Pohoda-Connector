@@ -1,125 +1,130 @@
 <?xml version="1.0" encoding="Windows-1250"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-      xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
-			xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
-      xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
-			xmlns:rgn="http://www.stormware.cz/schema/version_2/registrationNumber.xsd"
-			xmlns="http://www.stormware.cz/schema/version_2/registrationNumber.xsd"
-			targetNamespace="http://www.stormware.cz/schema/version_2/registrationNumber.xsd"
-			elementFormDefault="qualified">
+            xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+            xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+            xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+            xmlns:rgn="http://www.stormware.cz/schema/version_2/registrationNumber.xsd"
+            xmlns="http://www.stormware.cz/schema/version_2/registrationNumber.xsd"
+            targetNamespace="http://www.stormware.cz/schema/version_2/registrationNumber.xsd"
+            elementFormDefault="qualified">
 
-  <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
-  <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd"	schemaLocation="documentresponse.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd"	schemaLocation="documentresponse.xsd"/>
 
-  <!-- **************************************************************************
-		Agenda Evidenční čísla 
-	 ************************************************************************** -->
+    <!-- **************************************************************************
+           Agenda Evidenční čísla 
+    ************************************************************************** -->
 
-  <!-- REQUEST -->
-  <xsd:element name="registrationNumber" type="rgn:registrationNumberType"/>
+    <!-- REQUEST -->
+    <xsd:element name="registrationNumber" type="rgn:registrationNumberType"/>
 
-  <xsd:complexType name="registrationNumberType">
-    <xsd:sequence minOccurs="0" maxOccurs="1">
-      <xsd:element name="registrationNumberHeader" type="rgn:registrationNumberHeaderType"/>
-    </xsd:sequence>
-    <xsd:attribute name="version" type="rgn:registrationNumberVersionType" use="required"/>
-  </xsd:complexType>
+    <xsd:complexType name="registrationNumberType">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+            <xsd:element name="registrationNumberHeader" type="rgn:registrationNumberHeaderType"/>
+            <xsd:element name="attachments" type="typ:attachmentsType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Záznamy ze záložky "Dokumenty".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="version" type="rgn:registrationNumberVersionType" use="required"/>
+    </xsd:complexType>
 
-  <xsd:complexType name="registrationNumberHeaderType">
-    <xsd:annotation>
-      <xsd:documentation>Evidenční čísla</xsd:documentation>
-    </xsd:annotation>
-    <xsd:all>
-      <xsd:element name="id" type="typ:idType" minOccurs="0">
+    <xsd:complexType name="registrationNumberHeaderType">
         <xsd:annotation>
-          <xsd:documentation>ID záznamu.</xsd:documentation>
+            <xsd:documentation>Evidenční čísla</xsd:documentation>
         </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="extId" type="typ:extIdType" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Identifikátor externího systému.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="regNumber" type="typ:string48">
-        <xsd:annotation>
-          <xsd:documentation>Evidenční číslo.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="stockItem" type="typ:stockItemRegNumberType">
-        <xsd:annotation>
-          <xsd:documentation>Odkaz na skladovou položku.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="regNumberType" type="rgn:regNumberTypeType">
-        <xsd:annotation>
-          <xsd:documentation>Typ evidenčního čísla (výrobní číslo/šarže).</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="expirationDate" type="typ:dateOrNull" minOccurs="0">
-			  <xsd:annotation>
-				  <xsd:documentation>Datum expirace (pouze pro šarže).</xsd:documentation>
-			  </xsd:annotation>
-		  </xsd:element>
-      <xsd:element name="count" type="xsd:float" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Stav zásoby.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="reclamation" type="xsd:float" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Stav zásoby v reklamaci.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="service" type="xsd:float" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Servis.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="note" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Poznámka.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="markRecord" type="typ:boolean" minOccurs="0" default="true">
-        <xsd:annotation>
-          <xsd:documentation>Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-	  <xsd:element name="parameters" type="typ:parametersType" minOccurs="0">
-		<xsd:annotation>
-			<xsd:documentation>Volitelné parametry.</xsd:documentation>
-		</xsd:annotation>
-	  </xsd:element>
-    </xsd:all>
-  </xsd:complexType>
+        <xsd:all>
+            <xsd:element name="id" type="typ:idType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>ID záznamu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="extId" type="typ:extIdType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Identifikátor externího systému.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="regNumber" type="typ:string48">
+                <xsd:annotation>
+                    <xsd:documentation>Evidenční číslo.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="stockItem" type="typ:stockItemRegNumberType">
+                <xsd:annotation>
+                    <xsd:documentation>Odkaz na skladovou položku.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="regNumberType" type="rgn:regNumberTypeType">
+                <xsd:annotation>
+                    <xsd:documentation>Typ evidenčního čísla (výrobní číslo/šarže).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="expirationDate" type="typ:dateOrNull" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Datum expirace (pouze pro šarže).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="count" type="xsd:float" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Stav zásoby.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="reclamation" type="xsd:float" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Stav zásoby v reklamaci.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="service" type="xsd:float" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Servis.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="note" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Poznámka.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="markRecord" type="typ:boolean" minOccurs="0" default="true">
+                <xsd:annotation>
+                    <xsd:documentation>Označení záznamu v programu POHODA, sloupec "X". Výchozí hodnota je "označený záznam".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="parameters" type="typ:parametersType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Volitelné parametry.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
 
-  <!-- **************************************************************************-->
+    <!-- **************************************************************************-->
   
-  <xsd:simpleType name="registrationNumberVersionType">
-    <xsd:annotation>
-      <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="2.0"/>
-    </xsd:restriction>
-  </xsd:simpleType>
+    <xsd:simpleType name="registrationNumberVersionType">
+        <xsd:annotation>
+            <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-  <xsd:simpleType name="regNumberTypeType">
-    <xsd:annotation>
-      <xsd:documentation>Typ evidenčního čísla.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="serialNumber">
+    <xsd:simpleType name="regNumberTypeType">
         <xsd:annotation>
-          <xsd:documentation>Výrobní číslo.</xsd:documentation>
+            <xsd:documentation>Typ evidenčního čísla.</xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="batch">
-        <xsd:annotation>
-          <xsd:documentation>Šarže.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="serialNumber">
+                <xsd:annotation>
+                    <xsd:documentation>Výrobní číslo.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="batch">
+                <xsd:annotation>
+                    <xsd:documentation>Šarže.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
 </xsd:schema>

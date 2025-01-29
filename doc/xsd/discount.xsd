@@ -1,105 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="windows-1250"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
-			xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
-			xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
-			xmlns:dis="http://www.stormware.cz/schema/version_2/discount.xsd"
-			xmlns="http://www.stormware.cz/schema/version_2/discount.xsd"
-			targetNamespace="http://www.stormware.cz/schema/version_2/discount.xsd"
-			elementFormDefault="qualified">
+            xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+            xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+            xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+            xmlns:dis="http://www.stormware.cz/schema/version_2/discount.xsd"
+            xmlns="http://www.stormware.cz/schema/version_2/discount.xsd"
+            targetNamespace="http://www.stormware.cz/schema/version_2/discount.xsd"
+            elementFormDefault="qualified">
 
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
-	<xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
 
-	<!-- ************************************************************************** Slevy zÃ¡soby ************************************************************************** -->
-	<xsd:element name="discount" type="discountType">
-		<xsd:annotation>
-			<xsd:documentation>Aktualizace zÃ¡loÅ¾ky Slevy u zÃ¡soby.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
+    <!-- ************************************************************************** Slevy zásoby ************************************************************************** -->
+    <xsd:element name="discount" type="discountType">
+        <xsd:annotation>
+            <xsd:documentation>Aktualizace záložky Slevy u zásoby.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 
-	<xsd:complexType name="discountType">
-		<xsd:sequence>
-			<xsd:element name="discountStockItem" type="discountStockItemType" maxOccurs="unbounded"/>
-		</xsd:sequence>
-		<xsd:attribute name="version" type="disVersionType"/>
-	</xsd:complexType>
-	<xsd:simpleType name="disVersionType">
-		<xsd:annotation>
-			<xsd:documentation>DostupnÃ© verze. Podrobnosti k jednotlivÃ½m verzÃ­m najdete na www.stormware.cz/xml</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="2.0"/>
-		</xsd:restriction>
-	</xsd:simpleType>
+    <xsd:complexType name="discountType">
+        <xsd:sequence>
+            <xsd:element name="discountStockItem" type="discountStockItemType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="version" type="disVersionType"/>
+    </xsd:complexType>
+    <xsd:simpleType name="disVersionType">
+        <xsd:annotation>
+            <xsd:documentation>Dostupné verze. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-	<xsd:complexType name="discountStockItemType">
-		<xsd:all>
-			<xsd:element name="stockItem" type="typ:stockItemType">
-				<xsd:annotation>
-					<xsd:documentation>ZÃ¡soba, jejÃ­Å¾ slevy/vedlejÅ¡Ã­ ceny se majÃ­ upravit.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="discounts" type="discountsType">
-				<xsd:annotation>
-					<xsd:documentation>Slevy/vedeljÅ¡Ã­ ceny, kterÃ© se majÃ­ upravit.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:all>
-	</xsd:complexType>
+    <xsd:complexType name="discountStockItemType">
+        <xsd:all>
+            <xsd:element name="stockItem" type="typ:stockItemType">
+                <xsd:annotation>
+                    <xsd:documentation>Zásoba, jejíž slevy/vedlejší ceny se mají upravit.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="discounts" type="discountsType">
+                <xsd:annotation>
+                    <xsd:documentation>Slevy/vedeljší ceny, které se mají upravit.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
 
-	<xsd:complexType name="discountsType">
-		<xsd:sequence>
-			<xsd:element name="discountsItem" type="discountsItemType" maxOccurs="unbounded"/>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="discountsType">
+        <xsd:sequence>
+            <xsd:element name="discountsItem" type="discountsItemType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
 
-	<xsd:complexType name="discountsItemType">
-		<xsd:sequence>
-			<xsd:element name="filter" type="dis:priceLevelFilterType">
-				<xsd:annotation>
-					<xsd:documentation>Sleva/vedeljÅ¡Ã­ cena, kterÃ¡ se bude upravovat.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:choice>
-				<xsd:element name="price" type="typ:currencyType">
-					<xsd:annotation>
-						<xsd:documentation>Ãšprava a zafixovÃ¡nÃ­ ceny.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				<xsd:element name="markup" type="typ:currencyType">
-					<xsd:annotation>
-						<xsd:documentation>Ãšprava a zafixovÃ¡nÃ­ marÅ¾e.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				<xsd:element name="rebate" type="typ:currencyType">
-					<xsd:annotation>
-						<xsd:documentation>Ãšprava a zafixovÃ¡nÃ­ rabatu.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-				<xsd:element name="discountPercent" type="typ:currencyType">
-					<xsd:annotation>
-						<xsd:documentation>Ãšprava a zafixovÃ¡nÃ­ slevy.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:element>
-			</xsd:choice>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="discountsItemType">
+        <xsd:sequence>
+            <xsd:element name="filter" type="dis:priceLevelFilterType">
+                <xsd:annotation>
+                    <xsd:documentation>Sleva/vedeljší cena, která se bude upravovat.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:choice>
+                <xsd:element name="price" type="typ:currencyType">
+                    <xsd:annotation>
+                        <xsd:documentation>Úprava a zafixování ceny.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="markup" type="typ:currencyType">
+                    <xsd:annotation>
+                        <xsd:documentation>Úprava a zafixování marže.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="rebate" type="typ:currencyType">
+                    <xsd:annotation>
+                        <xsd:documentation>Úprava a zafixování rabatu.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="discountPercent" type="typ:currencyType">
+                    <xsd:annotation>
+                        <xsd:documentation>Úprava a zafixování slevy.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
 
-	<xsd:complexType name="priceLevelFilterType">
-		<xsd:sequence>
-			<xsd:element name="priceLevel" type="typ:refType"/>
-		</xsd:sequence>
-	</xsd:complexType>
+    <xsd:complexType name="priceLevelFilterType">
+        <xsd:sequence>
+            <xsd:element name="priceLevel" type="typ:refType"/>
+        </xsd:sequence>
+    </xsd:complexType>
 
-	<!-- RESPONSE -->
+    <!-- RESPONSE -->
 
-	<xsd:element name="discountResponse" type="discountResponseType"/>
-	<xsd:complexType name="discountResponseType">
-		<xsd:complexContent>
-			<xsd:extension base="rdc:documentResponseType"/>
-		</xsd:complexContent>
-	</xsd:complexType>
+    <xsd:element name="discountResponse" type="discountResponseType"/>
+    <xsd:complexType name="discountResponseType">
+        <xsd:complexContent>
+            <xsd:extension base="rdc:documentResponseType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
 </xsd:schema>
 

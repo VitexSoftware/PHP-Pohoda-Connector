@@ -1,113 +1,113 @@
 <?xml version="1.0" encoding="Windows-1250"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
-xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
-xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
-xmlns:lwl="http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd"
-xmlns="http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd"
-targetNamespace="http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd"
-elementFormDefault="qualified" >
-  <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
-  <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
-  <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
+            xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+            xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"
+            xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+            xmlns:lwl="http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd"
+            xmlns="http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd"
+            targetNamespace="http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd"
+            elementFormDefault="qualified" >
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" schemaLocation="filter.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/documentresponse.xsd" schemaLocation="documentresponse.xsd"/>
   
-  <!-- REQUEST -->
-  <xsd:element name="liquidationWithoutLink" type="lwl:liquidationWithoutLinkType">
-    <xsd:annotation>
-      <xsd:documentation>Likvidace bez vazby.</xsd:documentation>
-    </xsd:annotation>
-  </xsd:element>
-  <xsd:complexType name="liquidationWithoutLinkType">
-    <xsd:sequence>
-	  <xsd:element name="extId" type="typ:extIdType" minOccurs="0" >
-		<xsd:annotation>
-			<xsd:documentation>
-				Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
-				vazbu mezi agendou a externí databází.
-			</xsd:documentation>
-		</xsd:annotation>
-      </xsd:element>
-      <xsd:element name="record" type="lwl:recordliquidationWithoutLinkType" minOccurs="1">
+    <!-- REQUEST -->
+    <xsd:element name="liquidationWithoutLink" type="lwl:liquidationWithoutLinkType">
         <xsd:annotation>
-          <xsd:documentation>Výběr záznamu.</xsd:documentation>
+            <xsd:documentation>Likvidace bez vazby.</xsd:documentation>
         </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="date" type="xsd:date" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Datum Likvidace. Pokud není hodnota zadaná, použije se aktuální datum</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="amountHome" type="typ:currencyType" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Částka likvidace v tuzemské měně</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="amountForeign" type="typ:currencyType" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation>Částka likvidace v cizí měně</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-    </xsd:sequence>
-    <xsd:attribute name="version" type="lwl:liquidationWithoutLinkVerType" use="required"/>
-  </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="liquidationWithoutLinkType">
+        <xsd:sequence>
+            <xsd:element name="extId" type="typ:extIdType" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation>
+                        Odkaz na záznam v externí databázi. V databázi se nachází speciální tabulka obsahující
+                        vazbu mezi agendou a externí databází.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="record" type="lwl:recordliquidationWithoutLinkType" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Výběr záznamu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="date" type="xsd:date" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Datum Likvidace. Pokud není hodnota zadaná, použije se aktuální datum</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="amountHome" type="typ:currencyType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Částka likvidace v tuzemské měně</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="amountForeign" type="typ:currencyType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Částka likvidace v cizí měně</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="version" type="lwl:liquidationWithoutLinkVerType" use="required"/>
+    </xsd:complexType>
   
-  <xsd:simpleType name="liquidationWithoutLinkVerType">
-    <xsd:annotation>
-      <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="2.0"/>
-    </xsd:restriction>
-  </xsd:simpleType>
+    <xsd:simpleType name="liquidationWithoutLinkVerType">
+        <xsd:annotation>
+            <xsd:documentation>Verze, které jsou dostupné k tomuto dokladu. Podrobnosti k jednotlivým verzím najdete na www.stormware.cz/xml.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="2.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 	
-  <xsd:complexType name="recordliquidationWithoutLinkType">  
-	<xsd:group ref="ftr:groupFilter_1"/>
-    <xsd:attribute name="agenda" type="lwl:liquidationWithoutLinkAgendaType" use="required"/>
-  </xsd:complexType>
+    <xsd:complexType name="recordliquidationWithoutLinkType">  
+        <xsd:group ref="ftr:groupFilter_1"/>
+        <xsd:attribute name="agenda" type="lwl:liquidationWithoutLinkAgendaType" use="required"/>
+    </xsd:complexType>
 
-  <xsd:simpleType name="liquidationWithoutLinkAgendaType">
-    <xsd:annotation>
-      <xsd:documentation>Výběr agendy.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="issuedInvoice">
+    <xsd:simpleType name="liquidationWithoutLinkAgendaType">
         <xsd:annotation>
-          <xsd:documentation>Vydaná faktura.</xsd:documentation>
+            <xsd:documentation>Výběr agendy.</xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="issuedAdvanceInvoice">
-        <xsd:annotation>
-          <xsd:documentation>Vydaná zálohová faktura.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="receivable">
-        <xsd:annotation>
-          <xsd:documentation>Ostatní pohledávka.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="receivedInvoice">
-        <xsd:annotation>
-          <xsd:documentation>Přijatá faktura.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="receivedAdvanceInvoice">
-        <xsd:annotation>
-          <xsd:documentation>Přijatá zálohová faktura.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="commitment">
-        <xsd:annotation>
-          <xsd:documentation>Ostatní závazek.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="issuedInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Vydaná faktura.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="issuedAdvanceInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Vydaná zálohová faktura.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="receivable">
+                <xsd:annotation>
+                    <xsd:documentation>Ostatní pohledávka.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="receivedInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Přijatá faktura.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="receivedAdvanceInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Přijatá zálohová faktura.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="commitment">
+                <xsd:annotation>
+                    <xsd:documentation>Ostatní závazek.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
     
-  <!-- RESPONSE -->
-  <xsd:element name="liquidationWithoutLinkResponse" type="lwl:liquidationWithoutLinkResponseType"/>
-  <xsd:complexType name="liquidationWithoutLinkResponseType">
-    <xsd:complexContent>
-      <xsd:extension base="rdc:documentResponseType"/>
-    </xsd:complexContent>
-  </xsd:complexType>
+    <!-- RESPONSE -->
+    <xsd:element name="liquidationWithoutLinkResponse" type="lwl:liquidationWithoutLinkResponseType"/>
+    <xsd:complexType name="liquidationWithoutLinkResponseType">
+        <xsd:complexContent>
+            <xsd:extension base="rdc:documentResponseType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
 </xsd:schema>

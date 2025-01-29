@@ -1,266 +1,311 @@
 <?xml version="1.0" encoding="Windows-1250"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-			xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
-			xmlns:lst="http://www.stormware.cz/schema/version_2/list.xsd"
-			xmlns:lAdb="http://www.stormware.cz/schema/version_2/list_addBook.xsd"
-			xmlns:lCon="http://www.stormware.cz/schema/version_2/list_contract.xsd"
-			xmlns:lStk="http://www.stormware.cz/schema/version_2/list_stock.xsd"
-      xmlns:lCen="http://www.stormware.cz/schema/version_2/list_centre.xsd"
-      xmlns:lAcv="http://www.stormware.cz/schema/version_2/list_activity.xsd"
-			xmlns:acu="http://www.stormware.cz/schema/version_2/accountingunit.xsd"
-			xmlns:inv="http://www.stormware.cz/schema/version_2/invoice.xsd"
-			xmlns:vch="http://www.stormware.cz/schema/version_2/voucher.xsd"
-			xmlns:int="http://www.stormware.cz/schema/version_2/intDoc.xsd"
-			xmlns:vyd="http://www.stormware.cz/schema/version_2/vydejka.xsd"
-			xmlns:pri="http://www.stormware.cz/schema/version_2/prijemka.xsd"
-			xmlns:pre="http://www.stormware.cz/schema/version_2/prevodka.xsd"
-			xmlns:vyr="http://www.stormware.cz/schema/version_2/vyroba.xsd"
-			xmlns:pro="http://www.stormware.cz/schema/version_2/prodejka.xsd"
-			xmlns:stk="http://www.stormware.cz/schema/version_2/stock.xsd"
-			xmlns:ord="http://www.stormware.cz/schema/version_2/order.xsd"
-			xmlns:enq="http://www.stormware.cz/schema/version_2/enquiry.xsd"
-			xmlns:ofr="http://www.stormware.cz/schema/version_2/offer.xsd"
-			xmlns:rsp="http://www.stormware.cz/schema/version_2/response.xsd"
-			xmlns:adb="http://www.stormware.cz/schema/version_2/addressbook.xsd"
-			xmlns:prm="http://www.stormware.cz/schema/version_2/parameter.xsd"
-			xmlns:bal="http://www.stormware.cz/schema/version_2/balance.xsd"
-			xmlns:con="http://www.stormware.cz/schema/version_2/contract.xsd"
-      xmlns:str="http://www.stormware.cz/schema/version_2/storage.xsd"
-			xmlns:ipm="http://www.stormware.cz/schema/version_2/intParam.xsd"
-		  xmlns:idp="http://www.stormware.cz/schema/version_2/individualPrice.xsd"
-      xmlns:bnk="http://www.stormware.cz/schema/version_2/bank.xsd"
-      xmlns:act="http://www.stormware.cz/schema/version_2/accountancy.xsd"
-			xmlns:sto="http://www.stormware.cz/schema/version_2/store.xsd"
-      xmlns:sup="http://www.stormware.cz/schema/version_2/supplier.xsd"
-      xmlns:ctg="http://www.stormware.cz/schema/version_2/category.xsd"
-			xmlns:grs="http://www.stormware.cz/schema/version_2/groupStocks.xsd"
-      xmlns:acp="http://www.stormware.cz/schema/version_2/actionPrice.xsd"
-			xmlns:ilt="http://www.stormware.cz/schema/version_2/inventoryLists.xsd"
-      xmlns:nms="http://www.stormware.cz/schema/version_2/numericalSeries.xsd"
-      xmlns:pay="http://www.stormware.cz/schema/version_2/payment.xsd"
-      xmlns:prn="http://www.stormware.cz/schema/version_2/print.xsd"
-      xmlns:lck="http://www.stormware.cz/schema/version_2/lock.xsd"
-      xmlns:isd="http://www.stormware.cz/schema/version_2/isdoc.xsd"
-      xmlns:sEET="http://www.stormware.cz/schema/version_2/sendEET.xsd"            
-      xmlns:mKasa="http://www.stormware.cz/schema/version_2/mKasa.xsd"
-      xmlns:gdp="http://www.stormware.cz/schema/version_2/GDPR.xsd"
-      xmlns:est="http://www.stormware.cz/schema/version_2/establishment.xsd"
-      xmlns:cen="http://www.stormware.cz/schema/version_2/centre.xsd"
-      xmlns:acv="http://www.stormware.cz/schema/version_2/activity.xsd"
-      xmlns:asv="http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd"
-      xmlns:req="http://www.stormware.cz/schema/version_2/productRequirement.xsd"
-      xmlns:rec="http://www.stormware.cz/schema/version_2/recyclingContrib.xsd"
-      xmlns:bka="http://www.stormware.cz/schema/version_2/bankAccount.xsd"
-      xmlns:rul="http://www.stormware.cz/schema/version_2/rulesPairing.xsd"
-      xmlns:lwl="http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd"
-	  xmlns:dis="http://www.stormware.cz/schema/version_2/discount.xsd"
-      xmlns:lqd="http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd"
-      xmlns:srv="http://www.stormware.cz/schema/version_2/service.xsd"
-			xmlns="http://www.stormware.cz/schema/version_2/response.xsd"
-			targetNamespace="http://www.stormware.cz/schema/version_2/response.xsd"
-			elementFormDefault="qualified"
+            xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd"
+            xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd"
+            xmlns:lst="http://www.stormware.cz/schema/version_2/list.xsd"
+            xmlns:lAdb="http://www.stormware.cz/schema/version_2/list_addBook.xsd"
+            xmlns:lCon="http://www.stormware.cz/schema/version_2/list_contract.xsd"
+            xmlns:lStk="http://www.stormware.cz/schema/version_2/list_stock.xsd"
+            xmlns:lCen="http://www.stormware.cz/schema/version_2/list_centre.xsd"
+            xmlns:lAcv="http://www.stormware.cz/schema/version_2/list_activity.xsd"
+            xmlns:acu="http://www.stormware.cz/schema/version_2/accountingunit.xsd"
+            xmlns:inv="http://www.stormware.cz/schema/version_2/invoice.xsd"
+            xmlns:vch="http://www.stormware.cz/schema/version_2/voucher.xsd"
+            xmlns:int="http://www.stormware.cz/schema/version_2/intDoc.xsd"
+            xmlns:vyd="http://www.stormware.cz/schema/version_2/vydejka.xsd"
+            xmlns:pri="http://www.stormware.cz/schema/version_2/prijemka.xsd"
+            xmlns:pre="http://www.stormware.cz/schema/version_2/prevodka.xsd"
+            xmlns:vyr="http://www.stormware.cz/schema/version_2/vyroba.xsd"
+            xmlns:pro="http://www.stormware.cz/schema/version_2/prodejka.xsd"
+            xmlns:stk="http://www.stormware.cz/schema/version_2/stock.xsd"
+            xmlns:ord="http://www.stormware.cz/schema/version_2/order.xsd"
+            xmlns:enq="http://www.stormware.cz/schema/version_2/enquiry.xsd"
+            xmlns:ofr="http://www.stormware.cz/schema/version_2/offer.xsd"
+            xmlns:rsp="http://www.stormware.cz/schema/version_2/response.xsd"
+            xmlns:adb="http://www.stormware.cz/schema/version_2/addressbook.xsd"
+            xmlns:prm="http://www.stormware.cz/schema/version_2/parameter.xsd"
+            xmlns:bal="http://www.stormware.cz/schema/version_2/balance.xsd"
+            xmlns:con="http://www.stormware.cz/schema/version_2/contract.xsd"
+            xmlns:str="http://www.stormware.cz/schema/version_2/storage.xsd"
+            xmlns:ipm="http://www.stormware.cz/schema/version_2/intParam.xsd"
+            xmlns:idp="http://www.stormware.cz/schema/version_2/individualPrice.xsd"
+            xmlns:bnk="http://www.stormware.cz/schema/version_2/bank.xsd"
+            xmlns:act="http://www.stormware.cz/schema/version_2/accountancy.xsd"
+            xmlns:sto="http://www.stormware.cz/schema/version_2/store.xsd"
+            xmlns:sup="http://www.stormware.cz/schema/version_2/supplier.xsd"
+            xmlns:ctg="http://www.stormware.cz/schema/version_2/category.xsd"
+            xmlns:grs="http://www.stormware.cz/schema/version_2/groupStocks.xsd"
+            xmlns:acp="http://www.stormware.cz/schema/version_2/actionPrice.xsd"
+            xmlns:ilt="http://www.stormware.cz/schema/version_2/inventoryLists.xsd"
+            xmlns:nms="http://www.stormware.cz/schema/version_2/numericalSeries.xsd"
+            xmlns:pay="http://www.stormware.cz/schema/version_2/payment.xsd"
+            xmlns:prn="http://www.stormware.cz/schema/version_2/print.xsd"
+            xmlns:lck="http://www.stormware.cz/schema/version_2/lock.xsd"
+            xmlns:isd="http://www.stormware.cz/schema/version_2/isdoc.xsd"
+            xmlns:sEET="http://www.stormware.cz/schema/version_2/sendEET.xsd"            
+            xmlns:mKasa="http://www.stormware.cz/schema/version_2/mKasa.xsd"
+            xmlns:gdp="http://www.stormware.cz/schema/version_2/GDPR.xsd"
+            xmlns:est="http://www.stormware.cz/schema/version_2/establishment.xsd"
+            xmlns:cen="http://www.stormware.cz/schema/version_2/centre.xsd"
+            xmlns:acv="http://www.stormware.cz/schema/version_2/activity.xsd"
+            xmlns:asv="http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd"
+            xmlns:req="http://www.stormware.cz/schema/version_2/productRequirement.xsd"
+            xmlns:rec="http://www.stormware.cz/schema/version_2/recyclingContrib.xsd"
+            xmlns:bka="http://www.stormware.cz/schema/version_2/bankAccount.xsd"
+            xmlns:rul="http://www.stormware.cz/schema/version_2/rulesPairing.xsd"
+            xmlns:lwl="http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd"
+            xmlns:dis="http://www.stormware.cz/schema/version_2/discount.xsd"
+            xmlns:lqd="http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd"
+            xmlns:srv="http://www.stormware.cz/schema/version_2/service.xsd"
+            xmlns:uag="http://www.stormware.cz/schema/version_2/userAgenda.xsd"
+            xmlns:apf="http://www.stormware.cz/schema/version_2/advancePartFulfilment.xsd"
+            xmlns="http://www.stormware.cz/schema/version_2/response.xsd"
+            targetNamespace="http://www.stormware.cz/schema/version_2/response.xsd"
+            elementFormDefault="qualified"
 >
 
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" 		schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/type.xsd" 		schemaLocation="type.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/filter.xsd" 	schemaLocation="filter.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/list.xsd" 		schemaLocation="list.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/list_addBook.xsd" schemaLocation="list_addBook.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/list_contract.xsd" schemaLocation="list_contract.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/list_stock.xsd" schemaLocation="list_stock.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/list_centre.xsd" schemaLocation="list_centre.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/list_activity.xsd" schemaLocation="list_activity.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/accountingunit.xsd" schemaLocation="accountingunit.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/invoice.xsd" 	schemaLocation="invoice.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/voucher.xsd" 	schemaLocation="voucher.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/intDoc.xsd" 	schemaLocation="intDoc.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/vydejka.xsd" 	schemaLocation="vydejka.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/prijemka.xsd" 	schemaLocation="prijemka.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/prevodka.xsd" 	schemaLocation="prevodka.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/vyroba.xsd" 	schemaLocation="vyroba.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/prodejka.xsd" 	schemaLocation="prodejka.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/stock.xsd" 		schemaLocation="stock.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/order.xsd" 		schemaLocation="order.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/offer.xsd" 		schemaLocation="offer.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/enquiry.xsd" 	schemaLocation="enquiry.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/addressbook.xsd" 	schemaLocation="addressbook.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/numericalSeries.xsd" 	schemaLocation="numericalSeries.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/parameter.xsd" 	schemaLocation="parameter.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/balance.xsd" schemaLocation="balance.xsd" />
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/contract.xsd" schemaLocation="contract.xsd" />
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/storage.xsd" schemaLocation="storage.xsd" />
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/intParam.xsd" schemaLocation="intParam.xsd" />
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/individualPrice.xsd" schemaLocation="individualPrice.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/bank.xsd" schemaLocation="bank.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/accountancy.xsd" schemaLocation="accountancy.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/store.xsd" schemaLocation="store.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/supplier.xsd" schemaLocation="supplier.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/category.xsd" schemaLocation="category.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/groupStocks.xsd" schemaLocation="groupStocks.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/actionPrice.xsd" schemaLocation="actionPrice.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/inventoryLists.xsd" schemaLocation="inventoryLists.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/payment.xsd" schemaLocation="payment.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/print.xsd" schemaLocation="print.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/lock.xsd" schemaLocation="lock.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/isdoc.xsd" schemaLocation="isdoc.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/sendEET.xsd" schemaLocation="sendEET.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/mKasa.xsd" schemaLocation="mKasa.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/GDPR.xsd" schemaLocation="GDPR.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/establishment.xsd" schemaLocation="establishment.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/centre.xsd" schemaLocation="centre.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/activity.xsd" schemaLocation="activity.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd" schemaLocation="accountingSalesVouchers.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/productRequirement.xsd" schemaLocation="productRequirement.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/recyclingContrib.xsd" schemaLocation="recyclingContrib.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/bankAccount.xsd" schemaLocation="bankAccount.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/rulesPairing.xsd" schemaLocation="rulesPairing.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd" schemaLocation="liquidationWithoutLink.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/discount.xsd" schemaLocation="discount.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd" schemaLocation="automaticLiquidation.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/service.xsd" schemaLocation="service.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/userAgenda.xsd" schemaLocation="userAgenda.xsd"/>
+    <xsd:import namespace="http://www.stormware.cz/schema/version_2/advancePartFulfilment.xsd" schemaLocation="advancePartFulfilment.xsd"/>
 
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/list.xsd" 		schemaLocation="list.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/list_addBook.xsd" schemaLocation="list_addBook.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/list_contract.xsd" schemaLocation="list_contract.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/list_stock.xsd" schemaLocation="list_stock.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/list_centre.xsd" schemaLocation="list_centre.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/list_activity.xsd" schemaLocation="list_activity.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/accountingunit.xsd" schemaLocation="accountingunit.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/invoice.xsd" 	schemaLocation="invoice.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/voucher.xsd" 	schemaLocation="voucher.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/intDoc.xsd" 	schemaLocation="intDoc.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/vydejka.xsd" 	schemaLocation="vydejka.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/prijemka.xsd" 	schemaLocation="prijemka.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/prevodka.xsd" 	schemaLocation="prevodka.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/vyroba.xsd" 	schemaLocation="vyroba.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/prodejka.xsd" 	schemaLocation="prodejka.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/stock.xsd" 		schemaLocation="stock.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/order.xsd" 		schemaLocation="order.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/offer.xsd" 		schemaLocation="offer.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/enquiry.xsd" 	schemaLocation="enquiry.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/addressbook.xsd" 	schemaLocation="addressbook.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/numericalSeries.xsd" 	schemaLocation="numericalSeries.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/parameter.xsd" 	schemaLocation="parameter.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/balance.xsd" schemaLocation="balance.xsd" />
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/contract.xsd" schemaLocation="contract.xsd" />
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/storage.xsd" schemaLocation="storage.xsd" />
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/intParam.xsd" schemaLocation="intParam.xsd" />
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/individualPrice.xsd" schemaLocation="individualPrice.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/bank.xsd" schemaLocation="bank.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/accountancy.xsd" schemaLocation="accountancy.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/store.xsd" schemaLocation="store.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/supplier.xsd" schemaLocation="supplier.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/category.xsd" schemaLocation="category.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/groupStocks.xsd" schemaLocation="groupStocks.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/actionPrice.xsd" schemaLocation="actionPrice.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/inventoryLists.xsd" schemaLocation="inventoryLists.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/payment.xsd" schemaLocation="payment.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/print.xsd" schemaLocation="print.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/lock.xsd" schemaLocation="lock.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/isdoc.xsd" schemaLocation="isdoc.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/sendEET.xsd" schemaLocation="sendEET.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/mKasa.xsd" schemaLocation="mKasa.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/GDPR.xsd" schemaLocation="GDPR.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/establishment.xsd" schemaLocation="establishment.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/centre.xsd" schemaLocation="centre.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/activity.xsd" schemaLocation="activity.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/accountingSalesVouchers.xsd" schemaLocation="accountingSalesVouchers.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/productRequirement.xsd" schemaLocation="productRequirement.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/recyclingContrib.xsd" schemaLocation="recyclingContrib.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/bankAccount.xsd" schemaLocation="bankAccount.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/rulesPairing.xsd" schemaLocation="rulesPairing.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/liquidationWithoutLink.xsd" schemaLocation="liquidationWithoutLink.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/discount.xsd" schemaLocation="discount.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/automaticLiquidation.xsd" schemaLocation="automaticLiquidation.xsd"/>
-<xsd:import namespace="http://www.stormware.cz/schema/version_2/service.xsd" schemaLocation="service.xsd"/>
+    <!-- **************************************************************************
+               root element must be <responsePack>
+    ************************************************************************** -->
+    <xsd:element name="responsePack" type="rsp:responsePackType"/>
 
-  <!-- **************************************************************************
-		root element must be <responsePack>
-     ************************************************************************** -->
-<xsd:element name="responsePack" type="rsp:responsePackType"/>
+    <!-- **************************************************************************
+           responsePack
+    ************************************************************************** -->
 
-<!-- **************************************************************************
-		responsePack
-	 ************************************************************************** -->
+    <xsd:complexType name="responsePackType">
+        <xsd:sequence>
+            <xsd:element name="responsePackItem" type="rsp:responsePackItemType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="version" type="xsd:string" use="required"/>
+        <xsd:attribute name="id" form="unqualified" type="xsd:string" use="required"/>
+        <xsd:attribute name="state" form="unqualified" type="typ:stavType2" use="required"/>
+        <xsd:attribute name="note" type="xsd:string"/>
+        <xsd:attribute name="programVersion" type="xsd:string"/>
+        <xsd:attribute name="ico" type="typ:icoType" >
+            <xsd:annotation>
+                <xsd:documentation>
+                    IČ firmy, která XML zpracovala.
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="key" type="typ:string64">
+            <xsd:annotation>
+                <xsd:documentation>
+                    Jedinečný identifikátor účetnictví firmy, která XML zpracovala.
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="dateTimeStamp" type="xsd:dateTime"/>
+    </xsd:complexType>
 
-<xsd:complexType name="responsePackType">
-	<xsd:sequence>
-		<xsd:element name="responsePackItem" type="rsp:responsePackItemType" minOccurs="0" maxOccurs="unbounded"/>
-	</xsd:sequence>
-	<xsd:attribute name="version" type="xsd:string" use="required"/>
-   <xsd:attribute name="id" form="unqualified" type="xsd:string" use="required"/>
-   <xsd:attribute name="state" form="unqualified" type="typ:stavType2" use="required"/>
-   <xsd:attribute name="note" type="xsd:string"/>
-   <xsd:attribute name="programVersion" type="xsd:string"/>
-  <xsd:attribute name="ico" type="typ:icoType" >
-    <xsd:annotation>
-      <xsd:documentation>
-        IČ firmy, která XML zpracovala.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:attribute>
-  <xsd:attribute name="key" type="typ:string64">
-    <xsd:annotation>
-      <xsd:documentation>
-        Jedinečný identifikátor účetnictví firmy, která XML zpracovala.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:attribute>
-  <xsd:attribute name="dateTimeStamp" type="xsd:dateTime"/>
-</xsd:complexType>
+    <xsd:complexType name="responsePackItemType">
+        <xsd:choice minOccurs="0" maxOccurs="1">
+            <!-- odpověď na import -->
+            <xsd:element ref="adb:addressbookResponse"/>    
+            <xsd:element ref="inv:invoiceResponse"/>
+            <xsd:element ref="nms:numericalSeriesResponse"/>
+            <xsd:element ref="vch:voucherResponse"/>
+            <xsd:element ref="int:intDocResponse"/>
+            <xsd:element ref="vyd:vydejkaResponse"/>
+            <xsd:element ref="pri:prijemkaResponse"/>
+            <xsd:element ref="pro:prodejkaResponse"/>
+            <xsd:element ref="stk:stockItemResponse"/>
+            <xsd:element ref="ord:orderResponse"/>
+            <xsd:element ref="enq:enquiryResponse"/>
+            <xsd:element ref="ofr:offerResponse"/>
+            <xsd:element ref="vyr:vyrobaResponse"/>
+            <xsd:element ref="pre:prevodkaResponse"/>
+            <xsd:element ref="prm:parameterItemResponse"/>
+            <xsd:element ref="con:contractResponse" />
+            <xsd:element ref="str:storageResponse" />
+            <xsd:element ref="ipm:intParamResponse" />
+            <xsd:element ref="idp:individualPriceResponse" />
+            <xsd:element ref="sto:storeResponse" />
+            <xsd:element ref="grs:groupStocksResponse" />
+            <xsd:element ref="prn:printResponse" />
+            <xsd:element ref="lck:lockResponse" />
+            <xsd:element ref="isd:isdocResponse" />
+            <xsd:element ref="sEET:sendEETResponse" />
+            <xsd:element ref="mKasa:mKasaResponse"/>
+            <xsd:element ref="ilt:inventoryListsResponse"/>
+            <xsd:element ref="lst:listUserCodeResponse"/>
+            <xsd:element ref="sup:supplierResponse"/>
+            <xsd:element ref="ctg:categoryResponse"/>
+            <xsd:element ref="gdp:GDPRResponse"/>
+            <xsd:element ref="asv:accountingSalesVouchersResponse"/>
+            <xsd:element ref="req:productRequirementResponse"/>
+            <xsd:element ref="bnk:bankResponse"/>
+            <xsd:element ref="bka:bankAccountResponse"/>
+            <xsd:element ref="rul:rulesPairingResponse"/>
+            <xsd:element ref="lwl:liquidationWithoutLinkResponse"/>
+            <xsd:element ref="apf:advancePartFulfilmentResponse"/>
+            <xsd:element ref="dis:discountResponse"/>
+            <xsd:element ref="lqd:automaticLiquidationResponse"/>
+            <xsd:element ref="srv:serviceResponse"/>
+            <xsd:element ref="uag:userAgendaResponse"/>
+            <xsd:element ref="acv:activityResponse"/>
+            <xsd:element ref="cen:centreResponse"/>
 
-<xsd:complexType name="responsePackItemType">
-	<xsd:choice minOccurs="0" maxOccurs="1">	
-	  
-    <!-- odpověď na import -->
-    <xsd:element ref="adb:addressbookResponse"/>    
-    <xsd:element ref="inv:invoiceResponse"/>
-		<xsd:element ref="nms:numericalSeriesResponse"/>
-		<xsd:element ref="vch:voucherResponse"/>
-		<xsd:element ref="int:intDocResponse"/>
-		<xsd:element ref="vyd:vydejkaResponse"/>
-		<xsd:element ref="pri:prijemkaResponse"/>
-		<xsd:element ref="pro:prodejkaResponse"/>
-		<xsd:element ref="stk:stockItemResponse"/>
-		<xsd:element ref="ord:orderResponse"/>
-		<xsd:element ref="enq:enquiryResponse"/>
-		<xsd:element ref="ofr:offerResponse"/>
-		<xsd:element ref="vyr:vyrobaResponse"/>
-		<xsd:element ref="pre:prevodkaResponse"/>
-		<xsd:element ref="prm:parameterItemResponse"/>
-		<xsd:element ref="con:contractResponse" />
-    <xsd:element ref="str:storageResponse" />
-		<xsd:element ref="ipm:intParamResponse" />
-		<xsd:element ref="idp:individualPriceResponse" />
-		<xsd:element ref="sto:storeResponse" />
-		<xsd:element ref="grs:groupStocksResponse" />
-    <xsd:element ref="prn:printResponse" />
-    <xsd:element ref="lck:lockResponse" />
-    <xsd:element ref="isd:isdocResponse" />
-    <xsd:element ref="sEET:sendEETResponse" />
-    <xsd:element ref="mKasa:mKasaResponse"/>
-    <xsd:element ref="ilt:inventoryListsResponse"/>
-    <xsd:element ref="lst:listUserCodeResponse"/>
-    <xsd:element ref="sup:supplierResponse"/>
-    <xsd:element ref="ctg:categoryResponse"/>
-    <xsd:element ref="gdp:GDPRResponse"/>
-    <xsd:element ref="asv:accountingSalesVouchersResponse"/>
-    <xsd:element ref="req:productRequirementResponse"/>
-		<xsd:element ref="bnk:bankResponse"/>
-    <xsd:element ref="bka:bankAccountResponse"/>
-    <xsd:element ref="rul:rulesPairingResponse"/>
-    <xsd:element ref="lwl:liquidationWithoutLinkResponse"/>
-    <xsd:element ref="dis:discountResponse"/>
-    <xsd:element ref="lqd:automaticLiquidationResponse"/>
-    <xsd:element ref="srv:serviceResponse"/>
+            <!-- export dat z programu -->
+            <xsd:element ref="lst:listCentre"/>
+            <xsd:element ref="lst:listActivity"/>
+            <xsd:element ref="lst:listContract"/>
+            <xsd:element ref="lst:listCash"/>
+            <xsd:element ref="lst:listCashRegister"/>
+            <xsd:element ref="lst:listBankAccount"/>
+            <xsd:element ref="lst:listAccountingSingleEntry"/>
+            <xsd:element ref="lst:listAccountingDoubleEntry"/>
+            <xsd:element ref="lst:listAccount"/>
+            <xsd:element ref="lst:listStorage"/>
+            <xsd:element ref="lst:listSellingPrice"/>
+            <xsd:element ref="lst:listNumericSeries"/>
+            <xsd:element ref="lst:createAccountingDoubleEntryResponse"/>
+            <xsd:element ref="acu:listAccountingUnit"/>
+            <xsd:element ref="lStk:listStock"/>
+            <xsd:element ref="lst:listInvoice"/>
+            <xsd:element ref="lAdb:listAddressBook"/>
+            <xsd:element ref="lst:listOrder"/>
+            <xsd:element ref="lst:listEnquiry"/>
+            <xsd:element ref="lst:listOffer"/>
+            <xsd:element ref="lst:listParameter"/>
+            <xsd:element ref="lst:listUserCodePack"/>
+            <xsd:element ref="lst:listVydejka"/>
+            <xsd:element ref="lst:listPrijemka"/>
+            <xsd:element ref="lst:listBalance" />
+            <xsd:element ref="lCon:listContract"/>
+            <xsd:element ref="lst:listCategory"/>	
+            <xsd:element ref="lst:listIntParam"/>
+            <xsd:element ref="lst:listIntDoc"/>
+            <xsd:element ref="lst:listProdejka"/>
+            <xsd:element ref="lst:listVoucher"/>
+            <xsd:element ref="lst:listPrevodka"/>
+            <xsd:element ref="lst:listVyroba"/>	
+            <xsd:element ref="lst:taxDataResponse"/>
+            <xsd:element ref="lst:listIndividualPrice"/>
+            <xsd:element ref="lst:listBank"/>
+            <xsd:element ref="lst:listAccountancy"/>
+            <xsd:element ref="lst:listStore"/>
+            <xsd:element ref="lst:listSupplier"/>
+            <xsd:element ref="lst:listGroupStocks"/>
+            <xsd:element ref="lst:listActionPrice"/>
+            <xsd:element ref="lst:listInventoryLists"/>
+            <xsd:element ref="lst:listPayment"/>
+            <xsd:element ref="lst:listNumericalSeries"/>
+            <xsd:element ref="lst:listGDPR"/>
+            <xsd:element ref="lst:listEstablishment"/>
+            <xsd:element ref="lCen:listCentre"/>
+            <xsd:element ref="lAcv:listActivity"/>
+            <xsd:element ref="lst:listAccountingFormOfPayment"/>
+            <xsd:element ref="lst:listClassificationVAT"/>
+            <xsd:element ref="lst:listGlobalSettings"/>
+            <xsd:element ref="lst:listRegistrationNumber"/>
+            <xsd:element ref="lst:listProductRequirement"/>
+            <xsd:element ref="lst:listMovement"/>
+            <xsd:element ref="lst:listRecyclingContrib"/>
+            <xsd:element ref="lst:listService"/>
+            <xsd:element ref="lst:listRulesPairing"/>
+            <xsd:element ref="lst:listUserAgenda"/>
 
-    <!-- export dat z programu -->
-		<xsd:element ref="lst:listCentre"/>
-		<xsd:element ref="lst:listActivity"/>
-		<xsd:element ref="lst:listContract"/>
-		<xsd:element ref="lst:listCash"/>
-		<xsd:element ref="lst:listCashRegister"/>
-		<xsd:element ref="lst:listBankAccount"/>
-		<xsd:element ref="lst:listAccountingSingleEntry"/>
-		<xsd:element ref="lst:listAccountingDoubleEntry"/>
-		<xsd:element ref="lst:listAccount"/>
-		<xsd:element ref="lst:listStorage"/>
-		<xsd:element ref="lst:listSellingPrice"/>
-		<xsd:element ref="lst:listNumericSeries"/>
-		<xsd:element ref="lst:createAccountingDoubleEntryResponse"/>
-		<xsd:element ref="acu:listAccountingUnit"/>
-		<xsd:element ref="lStk:listStock"/>
-		<xsd:element ref="lst:listInvoice"/>
-		<xsd:element ref="lAdb:listAddressBook"/>
-		<xsd:element ref="lst:listOrder"/>
-		<xsd:element ref="lst:listEnquiry"/>
-		<xsd:element ref="lst:listOffer"/>
-		<xsd:element ref="lst:listParameter"/>
-		<xsd:element ref="lst:listUserCodePack"/>
-		<xsd:element ref="lst:listVydejka"/>
-		<xsd:element ref="lst:listPrijemka"/>
-		<xsd:element ref="lst:listBalance" />
-		<xsd:element ref="lCon:listContract"/>
-		<xsd:element ref="lst:listCategory"/>	
-		<xsd:element ref="lst:listIntParam"/>
-		<xsd:element ref="lst:listIntDoc"/>
-		<xsd:element ref="lst:listProdejka"/>
-		<xsd:element ref="lst:listVoucher"/>
-		<xsd:element ref="lst:listPrevodka"/>
-		<xsd:element ref="lst:listVyroba"/>	
-		<xsd:element ref="lst:taxDataResponse"/>
-		<xsd:element ref="lst:listIndividualPrice"/>
-    <xsd:element ref="lst:listBank"/>
-    <xsd:element ref="lst:listAccountancy"/>
-		<xsd:element ref="lst:listStore"/>
-    <xsd:element ref="lst:listSupplier"/>
-		<xsd:element ref="lst:listGroupStocks"/>
-    <xsd:element ref="lst:listActionPrice"/>
-		<xsd:element ref="lst:listInventoryLists"/>
-    <xsd:element ref="lst:listPayment"/>
-    <xsd:element ref="lst:listNumericalSeries"/>
-    <xsd:element ref="lst:listGDPR"/>
-    <xsd:element ref="lst:listEstablishment"/>
-    <xsd:element ref="lCen:listCentre"/>
-    <xsd:element ref="lAcv:listActivity"/>
-    <xsd:element ref="lst:listAccountingFormOfPayment"/>
-    <xsd:element ref="lst:listClassificationVAT"/>
-    <xsd:element ref="lst:listGlobalSettings"/>
-    <xsd:element ref="lst:listRegistrationNumber"/>
-    <xsd:element ref="lst:listProductRequirement"/>
-    <xsd:element ref="lst:listMovement"/>
-    <xsd:element ref="lst:listRecyclingContrib"/>
-    <xsd:element ref="lst:listService"/>
-    <xsd:element ref="lst:listRulesPairing"/>
-  </xsd:choice> 
-	<xsd:attribute name="version" type="xsd:string" use="required"/>
-  	<xsd:attribute name="id" type="xsd:string" use="required"/>
-  	<xsd:attribute name="state" type="typ:stavType2" form="unqualified" use="required"/>
-  	<xsd:attribute name="note" type="xsd:string"/>
-</xsd:complexType>
- 
+            <xsd:element name="errorDetail" type="rsp:errorDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>Zobrazení podrobností o chybě.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+
+        </xsd:choice> 
+        <xsd:attribute name="version" type="xsd:string" use="required"/>
+        <xsd:attribute name="id" type="xsd:string" use="required"/>
+        <xsd:attribute name="state" type="typ:stavType2" form="unqualified" use="required"/>
+        <xsd:attribute name="note" type="xsd:string"/>
+    </xsd:complexType>
+
+    <!-- Je zapnutá volba 'Kontrola duplicity dávek'-->
+    <xsd:complexType name="errorDetailType">
+        <xsd:sequence>
+            <xsd:element name="recordDuplicity" type="rsp:recordDuplicityType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>    
+    </xsd:complexType>
+
+    <xsd:complexType name="recordDuplicityType">
+        <xsd:sequence>
+            <xsd:element name="agendaType" type="ftr:printAgendaType"/>
+            <xsd:element name="dateCreate" type="xsd:date" minOccurs="0" >
+                <xsd:annotation>
+                    <xsd:documentation>Datum importu záznamu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="id" type="typ:idType" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>ID vytvořeného dokladu. Pokud hodnota není uvedena, byl doklad již smazán.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="number" type="typ:string32" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Číslo vytvořeného dokladu.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
 </xsd:schema>
