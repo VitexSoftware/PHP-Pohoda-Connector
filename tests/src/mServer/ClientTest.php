@@ -192,14 +192,10 @@ class ClientTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @covers \mServer\Client::addToPohoda
-     *
-     * @todo   Implement testaddToPohoda().
      */
     public function testaddToPohoda(): void
     {
-        $this->assertEquals('', $this->object->addToPohoda());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $this->assertEquals(1, $this->object->addToPohoda());
     }
 
     /**
@@ -219,7 +215,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase
      */
     public function testfilterToMe(): void
     {
-        $this->assertEquals('id', $this->object->filterToMe());
+        $this->assertEquals(['id' => null], $this->object->filterToMe());
     }
 
     /**

@@ -39,6 +39,7 @@ class Response extends \Ease\Sand
     public array $producedDetails;
     protected \SimpleXMLElement $xml;
     protected array $ns = [];
+    private Client $caller;
 
     /**
      * Parsed Result.
@@ -46,7 +47,6 @@ class Response extends \Ease\Sand
      * @var array[]
      */
     private array $parsed = [];
-    private Client $caller;
 
     /**
      * Operation status.
@@ -56,7 +56,7 @@ class Response extends \Ease\Sand
     /**
      * Operation status note.
      */
-    private string $note = '';
+    private ?string $note = null;
 
     /**
      * Create a new Response Instance.

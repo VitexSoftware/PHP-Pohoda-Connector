@@ -54,7 +54,7 @@ class Client extends \Ease\Sand
     /**
      * Raw Content of last curl response.
      */
-    public string $lastCurlResponse;
+    public ?string $lastCurlResponse = null; // Ensure this property is initialized
 
     /**
      * HTTP Response code of last request.
@@ -91,11 +91,11 @@ class Client extends \Ease\Sand
     public array $responseStats = [];
 
     /**
-     * Messages from last operation
-     * @var array<string,array<string>>
+     * Messages from last operation.
+     *
+     * @var array<string, array<string>>
      */
-    public $messages = [];
-
+    public array $messages = [];
 
     /**
      * @var array<string, string> of Http headers attached with every request
@@ -437,6 +437,7 @@ class Client extends \Ease\Sand
     public function processResponse(int $httpCode)
     {
         $this->messages = [];
+
         switch ($httpCode) {
             case 0:
                 $this->lastResponseMessage = '0: '.$this->lastCurlError;
@@ -724,5 +725,10 @@ class Client extends \Ease\Sand
     public function setAgenda(string $agenda): void
     {
         $this->agenda = $agenda;
+    }
+
+    public function getLastCurlResponse(): ?string
+    {
+        return $this->lastCurlResponse;
     }
 }

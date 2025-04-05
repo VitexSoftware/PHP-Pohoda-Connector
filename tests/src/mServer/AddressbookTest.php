@@ -112,6 +112,6 @@ class AddressbookTest extends \PHPUnit\Framework\TestCase
      */
     public function testcreate(): void
     {
-        $this->assertTrue($this->object->create(self::$addressBookRecord));
+        $this->assertTrue($this->object->create(self::$addressBookRecord) === 1);
     }
 }
