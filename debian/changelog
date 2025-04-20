@@ -1,8 +1,14 @@
 php-vitexsoftware-pohoda-connector (0.6.0) UNRELEASED; urgency=medium
 
+  * old unserialization attempt removed
+
+ -- vitex <info@vitexsoftware.cz>  Sun, 20 Apr 2025 10:01:12 +0200
+
+php-vitexsoftware-pohoda-connector (0.6.0) unstable; urgency=medium
+
   * make error messages accessible
 
- -- vitex <info@vitexsoftware.cz>  Tue, 28 Jan 2025 10:06:51 +0100
+ -- vitex <info@vitexsoftware.cz>  Sun, 20 Apr 2025 10:00:35 +0200
 
 php-vitexsoftware-pohoda-connector (0.5.0) unstable; urgency=medium
 
