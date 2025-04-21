@@ -544,6 +544,11 @@ class Client extends \Ease\Sand
      */
     public function takeData(array $data): int
     {
+        // Use only the first record if $data contains multiple records
+        if (isset($data[0]) && \is_array($data[0])) {
+            $data = $data[0];
+        }
+
         parent::takeData($data);
         $created = $this->create($this->getData());
         $this->setObjectName();
@@ -558,6 +563,11 @@ class Client extends \Ease\Sand
      */
     public function create(array $data): int
     {
+        // Use only the first record if $data contains multiple records
+        if (isset($data[0]) && \is_array($data[0])) {
+            $data = $data[0];
+        }
+
         $this->requestXml = $this->pohoda->create($this->agenda, $data);
 
         return empty($this->requestXml) ? 0 : 1;
@@ -727,8 +737,22 @@ class Client extends \Ease\Sand
         $this->agenda = $agenda;
     }
 
-    public function getLastCurlResponse(): ?string
+    public function getPohodaObject($filter)
     {
-        return $this->lastCurlResponse;
+        $this->requestXml = $this->pohoda->createListRequest(['type' => ucfirst($this->agenda)]);
+
+        if (\is_int($filter)) {
+            $filter = [$this->getKeyColumn() => $filter];
+        }
+
+        if (\is_array($filter)) {
+            $this->requestXml->addFilter($filter);
+        }
+
+        $this->pohoda->addItem('2', $this->requestXml);
+        $xmlTmp = $this->pohoda->close();
+        $this->setPostFields($this->xmlCache ? file_get_contents($this->xmlCache) : $xmlTmp);
+
+        return $this->performRequest('/xml') ? Response::deserialize($this->response->getRawXml()) : null;
     }
 }

@@ -15,6 +15,11 @@ declare(strict_types=1);
 
 namespace mServer;
 
+use GoetasWebservices\Xsd\XsdToPhpRuntime\Jms\Handler\BaseTypesHandler;
+use GoetasWebservices\Xsd\XsdToPhpRuntime\Jms\Handler\XmlSchemaDateHandler;
+use JMS\Serializer\Handler\HandlerRegistryInterface;
+use JMS\Serializer\SerializerBuilder;
+
 /**
  * Class ResponseXML.
  */
@@ -39,7 +44,6 @@ class Response extends \Ease\Sand
     public array $producedDetails;
     protected \SimpleXMLElement $xml;
     protected array $ns = [];
-    private Client $caller;
 
     /**
      * Parsed Result.
@@ -47,6 +51,7 @@ class Response extends \Ease\Sand
      * @var array[]
      */
     private array $parsed = [];
+    private Client $caller;
 
     /**
      * Operation status.
@@ -56,7 +61,9 @@ class Response extends \Ease\Sand
     /**
      * Operation status note.
      */
-    private ?string $note = null;
+    private string $note = '';
+    private ?string $rawXML = null;
+    private $unserialized;
 
     /**
      * Create a new Response Instance.
@@ -76,6 +83,7 @@ class Response extends \Ease\Sand
         if ($caller->lastCurlResponse) {
             $parsed = $this->parse($this->caller->lastCurlResponse, []);
             $this->processResponsePack($parsed['responsePack']);
+            $this->rawXML = $this->caller->lastCurlResponse;
         } else {
             $this->state = 'error';
             $this->note = $caller->lastCurlError;
@@ -511,5 +519,33 @@ class Response extends \Ease\Sand
     public function processLiquidationDetails(array $liquidationDetails)
     {
         return \array_key_exists('lqd:automaticLiquidationDetail', $liquidationDetails) ? self::stripArrayNames('lqd', $liquidationDetails['lqd:automaticLiquidationDetail']) : [];
+    }
+
+    public function getRawXml(): ?string
+    {
+        return $this->rawXML;
+    }
+
+    public static function deserialize(string $rawXml): ?\Pohoda\Response\ResponsePack
+    {
+        $responsePack = null;
+        $serializerBuilder = SerializerBuilder::create();
+        $serializerBuilder->addMetadataDir(\dirname(__DIR__, 2).'/vendor/vitexsoftware/pohodaser/metadata/', 'Pohoda');
+        $serializerBuilder->configureHandlers(static function (HandlerRegistryInterface $handler) use ($serializerBuilder): void {
+            $serializerBuilder->addDefaultHandlers();
+            $handler->registerSubscribingHandler(new BaseTypesHandler()); // XMLSchema List handling
+            $handler->registerSubscribingHandler(new XmlSchemaDateHandler()); // XMLSchema date handling
+        });
+
+        $serializer = $serializerBuilder->build();
+        // Use Helper::xml2ns to detect the PHP class name
+        $phpClassName = \Pohoda\Xml\Helper::xml2ns($rawXml);
+
+        if ($phpClassName) {
+            // Deserialize the XML into the detected PHP class
+            $responsePack = $serializer->deserialize($rawXml, $phpClassName, 'xml');
+        }
+
+        return $responsePack;
     }
 }

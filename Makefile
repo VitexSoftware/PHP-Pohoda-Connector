@@ -26,3 +26,5 @@ cs: ## Update Coding Standards
 .PHONY: codingstandards
 codingstandards: ## Use phpcs to reformat code to PSR12
 	phpcbf --colors --standard=PSR12 --extensions=php --ignore=vendor/ src/ 
+
+

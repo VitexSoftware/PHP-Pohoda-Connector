@@ -15,12 +15,14 @@ declare(strict_types=1);
 
 namespace mServer;
 
+use Pohoda\Invoice\Invoice as PohodaInvoice;
+
 /**
  * Description of Invoice.
  *
  * @author vitex
  */
-class Invoice extends Client
+class Invoice extends Client implements smart
 {
     /**
      * Current Object's agenda.
@@ -132,5 +134,17 @@ class Invoice extends Client
         $node->addChild('typ:exSystemText', \htmlspecialchars((string) $exSystemText), \Riesenia\Pohoda::$namespaces['typ']);
 
         return $node;
+    }
+
+    public function getFromPohoda($filter): ?PohodaInvoice
+    {
+        $pohodaObject = $this->getPohodaObject($filter);
+
+        return $pohodaObject ? new PohodaBank($pohodaObject) : null;
+    }
+
+    #[\Override]
+    public function populate(array $data): smart
+    {
     }
 }

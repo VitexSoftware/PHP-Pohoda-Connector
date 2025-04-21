@@ -15,12 +15,14 @@ declare(strict_types=1);
 
 namespace mServer;
 
+use Pohoda\Bank\Bank as PohodaBank;
+
 /**
  * Address Adresa.
  *
  * @author vitex
  */
-class Bank extends Client
+class Bank extends Client implements smart
 {
     /**
      * Current Object's agenda.
@@ -81,5 +83,16 @@ class Bank extends Client
     {
         // @phpstan-ignore method.notFound
         $this->requestXml->addSummary($data);
+    }
+
+    public function getFromPohoda($filter): ?PohodaBank
+    {
+        $pohodaObject = $this->getPohodaObject($filter);
+        return $pohodaObject ? new PohodaBank($pohodaObject) : null;
+    }
+
+    #[\Override]
+    public function populate(array $data): smart
+    {
     }
 }

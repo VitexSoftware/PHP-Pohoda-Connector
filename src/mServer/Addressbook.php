@@ -15,13 +15,15 @@ declare(strict_types=1);
 
 namespace mServer;
 
+use Pohoda\AddressBook\Addressbook as PohodaAddressbook;
+
 /**
  * Address handler.
  *
  * @author vitex
  */
-class Addressbook extends Client
-{
+class Addressbook extends Client implements smart {
+
     /**
      * Current Object's agenda.
      */
@@ -37,10 +39,28 @@ class Addressbook extends Client
      *
      * @param array<string, array<string, string>|string> $data
      */
-    public function create(array $data): int
-    {
+    public function create(array $data): int {
         $this->requestXml = $this->pohoda->createAddressbook($data);
 
         return 1;
+    }
+
+    public function getFromPohoda($filter): ?PohodaAddressbook {
+        $postFilters = [];
+
+        if (is_numeric($filter)) {
+            $filter = ['id' => $filter];
+        }
+
+        \Ease\Functions::divDataArray($filter, $postFilters, 'parSym');
+
+        $pohodaObject = $this->getPohodaObject($filter);
+
+        return $pohodaObject ? new PohodaAddressbook($pohodaObject, $postFilters) : null;
+    }
+
+    #[\Override]
+    public function populate(array $data): smart {
+        
     }
 }
