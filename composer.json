@@ -26,7 +26,8 @@
         "ext-iconv": "*",
         "lightools/xml": "^2.0|^3.0",
         "riesenia/pohoda": "^1.23",
-        "vitexsoftware/ease-core": "^1.44"
+        "vitexsoftware/ease-core": "^1.44",
+        "vitexsoftware/pohodaser": "^0.1"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
