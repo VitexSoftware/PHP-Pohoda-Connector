@@ -737,7 +737,7 @@ class Client extends \Ease\Sand
         $this->agenda = $agenda;
     }
 
-    public function getPohodaObject($filter)
+    public function getPohodaXML($filter = null): ?string
     {
         $this->requestXml = $this->pohoda->createListRequest(['type' => ucfirst($this->agenda)]);
 
@@ -752,7 +752,11 @@ class Client extends \Ease\Sand
         $this->pohoda->addItem('2', $this->requestXml);
         $xmlTmp = $this->pohoda->close();
         $this->setPostFields($this->xmlCache ? file_get_contents($this->xmlCache) : $xmlTmp);
+        return $this->performRequest('/xml') ? $this->response->getRawXml() : null;
+    }
 
-        return $this->performRequest('/xml') ? Response::deserialize($this->response->getRawXml()) : null;
+    public function getPohodaObject($filter = null)
+    {
+        return $this->$this->getPohodaXML($filter) ? Response::deserialize($this->response->getRawXml()) : null;
     }
 }
