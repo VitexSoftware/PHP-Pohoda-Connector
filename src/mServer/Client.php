@@ -395,7 +395,7 @@ class Client extends \Ease\Sand
         }
 
         if ($this->debug) {
-            $tmpName = sys_get_temp_dir().'/response'.time().'.xml';
+            $tmpName = sys_get_temp_dir().'/mPohodaRes'.time().'.xml';
             file_put_contents($tmpName, $this->lastCurlResponse);
             $this->addStatusMessage('response saved as: '.$tmpName, 'debug');
             // xmllint --schema doc/xsd/data.xsd /tmp/1718209563.xml --noout
@@ -752,11 +752,47 @@ class Client extends \Ease\Sand
         $this->pohoda->addItem('2', $this->requestXml);
         $xmlTmp = $this->pohoda->close();
         $this->setPostFields($this->xmlCache ? file_get_contents($this->xmlCache) : $xmlTmp);
+
         return $this->performRequest('/xml') ? $this->response->getRawXml() : null;
     }
 
     public function getPohodaObject($filter = null)
     {
-        return $this->$this->getPohodaXML($filter) ? Response::deserialize($this->response->getRawXml()) : null;
+        return $this->getPohodaXML($filter) ? Response::deserialize($this->response->getRawXml()) : null;
+    }
+
+    /**
+     * Create List request.
+     */
+    public function createListRequest(array $conditions = []): \Riesenia\Pohoda\ListRequest
+    {
+        if ($this->agenda) {
+            $conditions['type'] = ucfirst($this->agenda);
+        }
+
+        return $this->pohoda->createListRequest($conditions);
+    }
+
+    public function queryFilter(string $query, string $name = ''): \Riesenia\Pohoda\ListRequest
+    {
+        return $this->createListRequest()->addQueryFilter(['textName' => $name, 'filter' => $query]);
+    }
+
+    public function getListing(\Riesenia\Pohoda\ListRequest $listRequest): ?array
+    {
+        $this->pohoda->addItem('2', $listRequest);
+
+        $xmlTmp = $this->pohoda->close();
+        $this->setPostFields($this->xmlCache ? file_get_contents($this->xmlCache) : $xmlTmp);
+
+        $response = $this->performRequest('/xml') ? $this->response->getAgendaData($this->agenda) : null;
+
+        if ($response && !empty($columns)) {
+            return array_map(static function ($item) use ($columns) {
+                return array_intersect_key($item, array_flip($columns));
+            }, $response);
+        }
+
+        return $response;
     }
 }

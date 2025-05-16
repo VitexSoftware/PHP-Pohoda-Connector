@@ -1,8 +1,14 @@
-php-vitexsoftware-pohoda-connector (0.6.0) UNRELEASED; urgency=medium
+php-vitexsoftware-pohoda-connector (0.7.0) UNRELEASED; urgency=medium
+
+  * sqlQuery support added
+
+ -- vitex <info@vitexsoftware.cz>  Fri, 16 May 2025 12:40:44 +0200
+
+php-vitexsoftware-pohoda-connector (0.6.0) unstable; urgency=medium
 
   * old unserialization attempt removed
 
- -- vitex <info@vitexsoftware.cz>  Sun, 20 Apr 2025 10:01:12 +0200
+ -- vitex <info@vitexsoftware.cz>  Fri, 16 May 2025 12:40:27 +0200
 
 php-vitexsoftware-pohoda-connector (0.6.0) unstable; urgency=medium
 

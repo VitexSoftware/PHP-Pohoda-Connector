@@ -19,4 +19,3 @@ $banker = new \mServer\Bank();
 
 $bank = $banker->getFromPohoda(null);
 print_r($bank->get());
-

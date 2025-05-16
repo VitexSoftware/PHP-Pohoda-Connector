@@ -22,8 +22,8 @@ use Pohoda\AddressBook\Addressbook as PohodaAddressbook;
  *
  * @author vitex
  */
-class Addressbook extends Client implements smart {
-
+class Addressbook extends Client implements smart
+{
     /**
      * Current Object's agenda.
      */
@@ -39,13 +39,15 @@ class Addressbook extends Client implements smart {
      *
      * @param array<string, array<string, string>|string> $data
      */
-    public function create(array $data): int {
+    public function create(array $data): int
+    {
         $this->requestXml = $this->pohoda->createAddressbook($data);
 
         return 1;
     }
 
-    public function getFromPohoda($filter): ?PohodaAddressbook {
+    public function getFromPohoda($filter): ?PohodaAddressbook
+    {
         $postFilters = [];
 
         if (is_numeric($filter)) {
@@ -60,7 +62,7 @@ class Addressbook extends Client implements smart {
     }
 
     #[\Override]
-    public function populate(array $data): smart {
-        
+    public function populate(array $data): smart
+    {
     }
 }
