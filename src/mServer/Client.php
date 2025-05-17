@@ -15,8 +15,8 @@ declare(strict_types=1);
 
 namespace mServer;
 
-// TODO: PHP8+ use CurlHandle;
 use Ease\Functions;
+// PHP8+ use native CurlHandle type hinting
 use Ease\Shared;
 use Riesenia\Pohoda;
 
@@ -294,33 +294,36 @@ class Client extends \Ease\Sand
     /**
      * Set Instance http header.
      */
-    public function setInstance(string $instance): void
+    public function setInstance(string $instance): self
     {
         $this->defaultHttpHeaders['STW-Instance'] = $instance;
+        return $this;
     }
 
     /**
      * Set Application http header.
      */
-    public function setApplication(string $application): void
+    public function setApplication(string $application): self
     {
         $this->defaultHttpHeaders['STW-Application'] = $application;
+        return $this;
     }
 
     /**
      * Set "Check Duplicity" http header enabler.
      */
-    public function setCheckDuplicity(bool $flag): void
+    public function setCheckDuplicity(bool $flag): self
     {
         if ($flag) {
             $this->defaultHttpHeaders['STW-Check-Duplicity'] = 'true';
         } else {
             unset($this->defaultHttpHeaders['STW-Check-Duplicity']);
         }
+        return $this;
     }
 
     /**
-     * Inicializace CURL.
+     * CURL initialization
      *
      * @return bool Online Status
      */
@@ -354,9 +357,10 @@ class Client extends \Ease\Sand
      *
      * @param string $data
      */
-    public function setPostFields($data): void
+    public function setPostFields(array|string $data): self
     {
         $this->postFields = $data;
+        return $this;
     }
 
     /**
@@ -364,11 +368,10 @@ class Client extends \Ease\Sand
      *
      * @param string     $url    Request URL
      * @param string     $method HTTP Method GET|POST
-     * @param null|mixed $format
      *
      * @return int HTTP Response CODE
      */
-    public function doCurlRequest($url, $method, $format = null)
+    public function doCurlRequest(string $url, string $method)
     {
         $httpHeaders = [];
         \curl_setopt($this->curl, \CURLOPT_URL, $url);
@@ -418,7 +421,7 @@ class Client extends \Ease\Sand
      *
      * @return bool request commit status
      */
-    public function performRequest($urlSuffix = '', $method = 'POST')
+    public function performRequest($urlSuffix = '', $method = 'POST'): bool
     {
         $this->responseStats = [];
         $this->errors = [];
@@ -439,7 +442,7 @@ class Client extends \Ease\Sand
      *
      * @return bool
      */
-    public function processResponse(int $httpCode)
+    public function processResponse(int $httpCode): bool
     {
         $this->messages = [];
 
@@ -534,7 +537,7 @@ class Client extends \Ease\Sand
      *
      * @return bool
      */
-    public function isOnline()
+    public function isOnline(): bool
     {
         $this->responseStats = [];
         $this->errors = [];
@@ -620,7 +623,7 @@ class Client extends \Ease\Sand
      * @param array<string, string> $data   extra data
      * @param null|mixed            $filter
      */
-    public function updateInPohoda($data = [], $filter = null): bool
+    public function updateInPohoda(array $data = [], $filter = null): bool
     {
         if (!empty($data)) {
             $this->takeData($data);
@@ -706,7 +709,7 @@ class Client extends \Ease\Sand
      *
      * @return mixed
      */
-    public function loadFromPohoda($phid = null)
+    public function loadFromPohoda(?int $phid = null)
     {
         if ((null === $phid) === true) {
             $condition = [];
@@ -722,11 +725,9 @@ class Client extends \Ease\Sand
      *
      * @return string
      */
-    public static function libVersion()
+    public static function libVersion(): string
     {
-        $package = \Composer\InstalledVersions::getRootPackage();
-
-        return $package['version'];
+        return \Composer\InstalledVersions::getPrettyVersion('vitexsoftware/pohoda-connector');
     }
 
     public function sendRequest(string $request): string
@@ -737,12 +738,13 @@ class Client extends \Ease\Sand
         return $this->lastCurlResponse;
     }
 
-    public function setAgenda(string $agenda): void
+    public function setAgenda(string $agenda): self
     {
         $this->agenda = $agenda;
+        return $this;
     }
 
-    public function getPohodaXML($filter = null): ?string
+    public function getPohodaXML(null|array|int $filter = null): ?string
     {
         $this->requestXml = $this->pohoda->createListRequest(['type' => ucfirst($this->agenda)]);
 
@@ -761,7 +763,7 @@ class Client extends \Ease\Sand
         return $this->performRequest('/xml') ? $this->response->getRawXml() : null;
     }
 
-    public function getPohodaObject($filter = null)
+    public function getPohodaObject(null|array|int $filter = null): mixed
     {
         return $this->getPohodaXML($filter) ? Response::deserialize($this->response->getRawXml()) : null;
     }

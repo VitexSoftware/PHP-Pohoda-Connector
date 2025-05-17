@@ -21,5 +21,5 @@ namespace mServer;
 interface smart
 {
     public function populate(array $data): self;
-    public function getPohodaObject($filter);
+    public function getPohodaObject(null|array|int $filter = null): mixed;
 }

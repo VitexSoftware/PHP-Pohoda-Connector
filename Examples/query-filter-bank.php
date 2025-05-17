@@ -16,6 +16,7 @@ declare(strict_types=1);
 require_once '../vendor/autoload.php';
 \Ease\Shared::init(['POHODA_URL', 'POHODA_USERNAME', 'POHODA_PASSWORD'], \dirname(__DIR__).'/.env');
 $banker = new \mServer\Bank();
+$banker->logBanner();
 
 $lrq = $banker->queryFilter('id=10', 'Record #10'); // Works well
 $lrq = $banker->queryFilter('number like "KB0010004" ', 'Recort #10');
