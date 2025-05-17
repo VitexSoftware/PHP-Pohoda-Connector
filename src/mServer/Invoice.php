@@ -24,6 +24,8 @@ use Pohoda\Invoice\Invoice as PohodaInvoice;
  */
 class Invoice extends Client implements smart
 {
+    public string $sqlTable = 'FA';
+
     /**
      * Current Object's agenda.
      */

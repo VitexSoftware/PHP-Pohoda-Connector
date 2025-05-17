@@ -145,6 +145,11 @@ class Client extends \Ease\Sand
     public ?Response $response = null;
 
     /**
+     * SQL table for current agenda.
+     */
+    public string $sqlTable = '';
+
+    /**
      * My Company identification ID.
      */
     protected ?string $ico = null;
@@ -794,5 +799,21 @@ class Client extends \Ease\Sand
         }
 
         return $response;
+    }
+
+    /**
+     * Check Record presence in Pohoda.
+     *
+     * @throws \UnexpectedValueException
+     */
+    public function recordExists(null|int|string $id = null): bool
+    {
+        if (empty($this->sqlTable)) {
+            throw new \UnexpectedValueException('The $this->sqlTable is not set.');
+        }
+
+        $recordFound = $this->getListing($this->queryFilter($this->sqlTable.'.ID='.($id ?: $this->getMyKey()), 'Record #'.($id ?: $this->getMyKey()).' exists in '.$this->agenda));
+
+        return empty($recordFound) === false;
     }
 }

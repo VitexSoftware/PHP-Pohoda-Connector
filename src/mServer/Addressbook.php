@@ -24,6 +24,8 @@ use Pohoda\AddressBook\Addressbook as PohodaAddressbook;
  */
 class Addressbook extends Client implements smart
 {
+    public string $sqlTable = 'AD';
+
     /**
      * Current Object's agenda.
      */

@@ -31,3 +31,5 @@ $lrq = $banker->queryFilter('id=10', 'Record #10');
 // print_r($banker->getListing($lrq));
 
 print_r($banker->getBankList("BV.ParSym IS NOT NULL AND BV.ParSym <> ''"));
+
+print_r($banker->recordExists(328));

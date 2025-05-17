@@ -24,7 +24,7 @@ use Pohoda\Bank\Bank as PohodaBank;
  */
 class Bank extends Client implements smart
 {
-    public static string $sqlTable = 'BV';
+    public string $sqlTable = 'BV';
 
     /**
      * SQL Columns for Bank agenda.
@@ -123,6 +123,11 @@ class Bank extends Client implements smart
      */
     public ?string $nameColumn = 'address:company';
 
+    public function __construct($init = null, array $options = [])
+    {
+        parent::__construct($init, $options);
+    }
+
     /**
      * Create Agenda document using given data.
      *
@@ -200,7 +205,7 @@ class Bank extends Client implements smart
     {
         $query = '';
 
-        foreach (self::completeColumns($conditions) as $key => $value) {
+        foreach ($this->completeColumns($conditions) as $key => $value) {
             if (!empty($query)) {
                 $query .= ' AND ';
             }
@@ -222,13 +227,13 @@ class Bank extends Client implements smart
      *
      * @return array<string, string>
      */
-    public static function completeColumns(array $conditions): array
+    public function completeColumns(array $conditions): array
     {
         $columns = [];
 
         foreach ($conditions as $key => $value) {
             if (\array_key_exists($key, self::$sqlColumns)) {
-                $columns[self::$sqlTable.'.'.$key] = $value;
+                $columns[$this->sqlTable.'.'.$key] = $value;
             } else {
                 $columns[$key] = $value;
             }
