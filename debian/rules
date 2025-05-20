@@ -23,3 +23,4 @@ override_dh_install:
 	dh_install	
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//' `'"'  debian/config/composer.json |sponge debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/composer.json
 	sed -i -e  "s/\/\.\.\/\.\.\//\//g" debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/Client.php
+	sed -i 's/vitexsoftware/deb/' debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/Client.php
