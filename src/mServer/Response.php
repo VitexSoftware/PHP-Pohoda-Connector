@@ -314,11 +314,12 @@ class Response extends \Ease\Sand
     public function anyXmlToArray($xml)
     {
         // Only convert encoding if windows-1250 is declared
-        if (is_string($xml) && preg_match('/^\s*<\?xml[^>]*encoding=["\']windows-1250["\']/i', $xml)) {
+        if (\is_string($xml) && preg_match('/^\s*<\?xml[^>]*encoding=["\']windows-1250["\']/i', $xml)) {
             $xml = iconv('windows-1250', 'UTF-8//IGNORE', $xml);
             $xml = preg_replace('/encoding="windows-1250"/i', 'encoding="UTF-8"', $xml);
         }
-        $xmlNode = is_string($xml) ? simplexml_load_string($xml) : $xml;
+
+        $xmlNode = \is_string($xml) ? simplexml_load_string($xml) : $xml;
 
         if ($xmlNode === false) {
             $errors = libxml_get_errors();
@@ -346,10 +347,11 @@ class Response extends \Ease\Sand
     public static function parse($xml, array $alwaysArrayElements)
     {
         // Only convert encoding if windows-1250 is declared
-        if (is_string($xml) && preg_match('/^\s*<\?xml[^>]*encoding=["\']windows-1250["\']/i', $xml)) {
+        if (\is_string($xml) && preg_match('/^\s*<\?xml[^>]*encoding=["\']windows-1250["\']/i', $xml)) {
             $xml = iconv('windows-1250', 'UTF-8//IGNORE', $xml);
             $xml = preg_replace('/encoding="windows-1250"/i', 'encoding="UTF-8"', $xml);
         }
+
         $xmlNode = simplexml_load_string($xml, 'SimpleXMLElement', \LIBXML_NOCDATA);
 
         if ($xmlNode === false) {

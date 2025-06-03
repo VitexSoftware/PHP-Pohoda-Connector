@@ -585,10 +585,8 @@ class Client extends \Ease\Sand
      * Insert prepared record to Pohoda.
      *
      * @param array<string, string> $data extra data
-     *
-     * @return int
      */
-    public function addToPohoda($data = [])
+    public function addToPohoda($data = []): self
     {
         if (!empty($data)) {
             $this->takeData($data);
@@ -602,7 +600,7 @@ class Client extends \Ease\Sand
             $this->pohoda->addItem('2', $this->requestXml);
         }
 
-        return 1;
+        return $this;
     }
 
     public function commit(): bool

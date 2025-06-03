@@ -189,6 +189,7 @@ class Bank extends Client implements smart
     #[\Override]
     public function populate(array $data): smart
     {
+        return $this;
     }
 
     public function getBankList(string $query = ''): ?array

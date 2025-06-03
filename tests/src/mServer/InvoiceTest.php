@@ -43,37 +43,35 @@ class InvoiceTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @covers \mServer\Invoice::create
-     *
-     * @todo   Implement testcreate().
      */
-    public function testcreate(): void
+    public function testCreate(): void
     {
-        $this->assertEquals('', $this->object->create());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $result = $this->object->create([]); // Pass empty array as dummy data
+        $this->assertIsInt($result, 'create() should return an integer');
     }
 
     /**
      * @covers \mServer\Invoice::addItem
-     *
-     * @todo   Implement testaddItem().
      */
-    public function testaddItem(): void
+    public function testAddItem(): void
     {
-        $this->assertEquals('', $this->object->addItem());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $this->object->create([]); // Ensure requestXml is initialized
+        $item = [
+            'text' => 'Test Item',
+            'quantity' => 1,
+            'unit' => 'ks',
+            'homeCurrency' => ['unitPrice' => 100],
+        ];
+        $result = $this->object->addItem($item);
+        $this->assertNotFalse($result, 'addItem() should not return false for a valid item');
     }
 
     /**
      * @covers \mServer\Invoice::extId
-     *
-     * @todo   Implement testextId().
      */
-    public function testextId(): void
+    public function testExtId(): void
     {
-        $this->assertEquals('', $this->object->extId());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $result = $this->object->extId('test-id');
+        $this->assertNotEmpty($result, 'extId() should return a non-empty value');
     }
 }

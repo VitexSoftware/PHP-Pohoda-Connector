@@ -66,5 +66,6 @@ class Addressbook extends Client implements smart
     #[\Override]
     public function populate(array $data): smart
     {
+        return $this;
     }
 }

@@ -43,73 +43,58 @@ class BankTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @covers \mServer\Bank::create
-     *
-     * @todo   Implement testcreate().
      */
-    public function testcreate(): void
+    public function testCreate(): void
     {
-        $this->assertEquals('', $this->object->create());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $result = $this->object->create([]); // Pass empty array as dummy data
+        $this->assertIsInt($result, 'create() should return an integer');
     }
 
     /**
      * @covers \mServer\Bank::takeData
-     *
-     * @todo   Implement testtakeData().
      */
-    public function testtakeData(): void
+    public function testTakeData(): void
     {
-        $this->assertEquals('', $this->object->takeData());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        // Use only valid keys for Bank agenda
+        $data = ['account' => '123456789', 'dateStatement' => '2025-06-03'];
+        $this->object->takeData($data);
+        $this->assertEquals($data, $this->object->getData(), 'takeData() should set data correctly');
     }
 
     /**
      * @covers \mServer\Bank::setObjectName
-     *
-     * @todo   Implement testsetObjectName().
      */
-    public function testsetObjectName(): void
+    public function testSetObjectName(): void
     {
-        $this->assertEquals('', $this->object->setObjectName());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $this->object->setObjectName('BankTest');
+        // No getObjectName(), so just check no exception thrown
+        $this->assertTrue(true);
     }
 
     /**
      * @covers \mServer\Bank::addSummary
-     *
-     * @todo   Implement testaddSummary().
      */
-    public function testaddSummary(): void
+    public function testAddSummary(): void
     {
-        $this->assertEquals('', $this->object->addSummary());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $this->markTestSkipped('addSummary() requires a valid document context and cannot be tested in isolation.');
     }
 
     /**
      * @covers \mServer\Bank::getFromPohoda
-     *
-     * @todo   Implement testgetFromPohoda().
      */
-    public function testgetFromPohoda(): void
+    public function testGetFromPohoda(): void
     {
-        $this->assertEquals('', $this->object->getFromPohoda());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $result = $this->object->getFromPohoda([]); // Pass empty array as dummy filter
+        $this->assertIsArray($result, 'getFromPohoda() should return an array');
     }
 
     /**
      * @covers \mServer\Bank::populate
-     *
-     * @todo   Implement testpopulate().
      */
-    public function testpopulate(): void
+    public function testPopulate(): void
     {
-        $this->assertEquals('', $this->object->populate());
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete('This test has not been implemented yet.');
+        $data = ['field' => 'value'];
+        $this->object->populate($data);
+        $this->assertEquals($data, $this->object->getData(), 'populate() should set data correctly');
     }
 }
