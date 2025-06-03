@@ -297,6 +297,7 @@ class Client extends \Ease\Sand
     public function setInstance(string $instance): self
     {
         $this->defaultHttpHeaders['STW-Instance'] = $instance;
+
         return $this;
     }
 
@@ -306,6 +307,7 @@ class Client extends \Ease\Sand
     public function setApplication(string $application): self
     {
         $this->defaultHttpHeaders['STW-Application'] = $application;
+
         return $this;
     }
 
@@ -319,11 +321,12 @@ class Client extends \Ease\Sand
         } else {
             unset($this->defaultHttpHeaders['STW-Check-Duplicity']);
         }
+
         return $this;
     }
 
     /**
-     * CURL initialization
+     * CURL initialization.
      *
      * @return bool Online Status
      */
@@ -360,14 +363,15 @@ class Client extends \Ease\Sand
     public function setPostFields(array|string $data): self
     {
         $this->postFields = $data;
+
         return $this;
     }
 
     /**
      * Perform HTTP request.
      *
-     * @param string     $url    Request URL
-     * @param string     $method HTTP Method GET|POST
+     * @param string $url    Request URL
+     * @param string $method HTTP Method GET|POST
      *
      * @return int HTTP Response CODE
      */
@@ -439,8 +443,6 @@ class Client extends \Ease\Sand
 
     /**
      * Response processing handler.
-     *
-     * @return bool
      */
     public function processResponse(int $httpCode): bool
     {
@@ -534,8 +536,6 @@ class Client extends \Ease\Sand
 
     /**
      * Check mServer availability.
-     *
-     * @return bool
      */
     public function isOnline(): bool
     {
@@ -722,8 +722,6 @@ class Client extends \Ease\Sand
 
     /**
      * Application version or "0.0.0" fallback.
-     *
-     * @return string
      */
     public static function libVersion(): string
     {
@@ -741,6 +739,7 @@ class Client extends \Ease\Sand
     public function setAgenda(string $agenda): self
     {
         $this->agenda = $agenda;
+
         return $this;
     }
 

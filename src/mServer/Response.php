@@ -313,7 +313,22 @@ class Response extends \Ease\Sand
      */
     public function anyXmlToArray($xml)
     {
-        return self::xmlToArray(\is_string($xml) ? simplexml_load_string($xml) : $xml);
+        $xmlNode = \is_string($xml) ? simplexml_load_string($xml) : $xml;
+
+        if ($xmlNode === false) {
+            $errors = libxml_get_errors();
+            $errorMsg = 'Failed to parse XML: ';
+
+            foreach ($errors as $error) {
+                $errorMsg .= trim($error->message).'; ';
+            }
+
+            libxml_clear_errors();
+
+            throw new \RuntimeException($errorMsg);
+        }
+
+        return self::xmlToArray($xmlNode);
     }
 
     /**
@@ -326,6 +341,20 @@ class Response extends \Ease\Sand
     public static function parse($xml, array $alwaysArrayElements)
     {
         $xmlNode = simplexml_load_string($xml, 'SimpleXMLElement', \LIBXML_NOCDATA);
+
+        if ($xmlNode === false) {
+            // Collect errors
+            $errors = libxml_get_errors();
+            $errorMsg = 'Failed to parse XML: ';
+
+            foreach ($errors as $error) {
+                $errorMsg .= trim($error->message).'; ';
+            }
+
+            libxml_clear_errors();
+
+            throw new \RuntimeException($errorMsg);
+        }
 
         return self::xmlToArray($xmlNode, [
             'alwaysArray' => $alwaysArrayElements,
@@ -372,7 +401,7 @@ class Response extends \Ease\Sand
         foreach ($namespaces as $prefix => $namespace) {
             foreach ($xml->attributes($namespace) as $attributeName => $attribute) {
                 // replace characters in attribute name
-                if ($options['keySearch']) {
+                if ($options['keySearch'] !== false && $options['keyReplace'] !== false) {
                     $attributeName = str_replace($options['keySearch'], $options['keyReplace'], $attributeName);
                 }
 
@@ -395,7 +424,7 @@ class Response extends \Ease\Sand
 
                 // list($childTagName, $childProperties) = each($childArray);
                 // replace characters in tag name
-                if ($options['keySearch']) {
+                if ($options['keySearch'] !== false && $options['keyReplace'] !== false) {
                     $childTagName = str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
                 }
 

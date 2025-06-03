@@ -1,3 +1,20 @@
+php-vitexsoftware-pohoda-connector (0.8.1) UNRELEASED; urgency=medium
+
+  * Enhances XML parsing with error handling  Adds robust error handling
+    for XML parsing failures, including  detailed error messages and
+    runtime exceptions. Updates logic  to validate key search and
+    replacement options before applying  them to attributes and tag
+    names.  Improves reliability and debuggability when processing XML
+    inputs.
+
+ -- vitex <info@vitexsoftware.cz>  Tue, 03 Jun 2025 13:53:37 +0200
+
+php-vitexsoftware-pohoda-connector (0.8.0) unstable; urgency=medium
+
+  * new function recordExists()
+
+ -- vitex <info@vitexsoftware.cz>  Tue, 03 Jun 2025 13:53:02 +0200
+
 php-vitexsoftware-pohoda-connector (0.7.0) unstable; urgency=medium
 
   * sqlQuery support added
