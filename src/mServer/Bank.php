@@ -189,6 +189,7 @@ class Bank extends Client implements smart
     #[\Override]
     public function populate(array $data): smart
     {
+        $this->takeData($data);
         return $this;
     }
 

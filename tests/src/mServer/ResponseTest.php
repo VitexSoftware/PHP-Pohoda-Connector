@@ -31,8 +31,8 @@ class ResponseTest extends \PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         $client = new \mServer\Client();
-        $client->lastCurlResponse = 'Test response'; // Initialize the property for testing
-
+        // Provide minimal valid XML for Response parsing
+        $client->lastCurlResponse = '<?xml version="1.0"?><responsePack></responsePack>';
         $this->object = new Response($client);
     }
 

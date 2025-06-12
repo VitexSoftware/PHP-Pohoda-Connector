@@ -12,6 +12,7 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "mServer\\Tests\\": "tests/mServer/",
             "Test\\": "testing/",
             "Test\\Ease\\": "vendor/vitexsoftware/ease-core/tests/src/Ease",
             "Test\\mServer\\": "testing/src/mServer/"

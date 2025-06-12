@@ -85,7 +85,8 @@ class BankTest extends \PHPUnit\Framework\TestCase
     public function testGetFromPohoda(): void
     {
         $result = $this->object->getFromPohoda([]); // Pass empty array as dummy filter
-        $this->assertIsArray($result, 'getFromPohoda() should return an array');
+        // Accept null or PohodaBank instance, as getFromPohoda returns null if not found
+        $this->assertTrue(is_null($result) || $result instanceof \Pohoda\Bank\Bank, 'getFromPohoda() should return null or PohodaBank instance');
     }
 
     /**
@@ -93,7 +94,8 @@ class BankTest extends \PHPUnit\Framework\TestCase
      */
     public function testPopulate(): void
     {
-        $data = ['field' => 'value'];
+        // Use only valid keys for Bank agenda
+        $data = ['account' => '123456789', 'dateStatement' => '2025-06-03'];
         $this->object->populate($data);
         $this->assertEquals($data, $this->object->getData(), 'populate() should set data correctly');
     }

@@ -95,8 +95,8 @@ class Response extends \Ease\Sand
         if (\array_key_exists('rsp:responsePackItem', $responsePackData)) {
             $this->processResponsePackItem($responsePackData['rsp:responsePackItem']);
         } else {
-            $this->state = $responsePackData['@state'];
-            $this->note = $responsePackData['@note'];
+            $this->state = isset($responsePackData['@state']) ? (string)$responsePackData['@state'] : '';
+            $this->note = $responsePackData['@note'] ?? '';
         }
     }
 
@@ -111,20 +111,16 @@ class Response extends \Ease\Sand
                 case 'adb:addressbookResponse':
                 case 'lqd:automaticLiquidationResponse':
                     $this->processResponseData($responsePackSubitem);
-
                     break;
                 case '@state':
-                    $this->state = $responsePackSubitem;
-
+                    $this->state = (string)$responsePackSubitem;
                     break;
                 case '@note':
                     $note = $responsePackSubitem; // TODO
-
                     break;
                 case '@id':
                 case '@version':
                     break;
-
                 default:
                     //                    throw new Exception('Unknown element to process: ' . $name);
                     break;
