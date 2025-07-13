@@ -190,6 +190,7 @@ class Bank extends Client implements smart
     public function populate(array $data): smart
     {
         $this->takeData($data);
+
         return $this;
     }
 

@@ -86,7 +86,7 @@ class BankTest extends \PHPUnit\Framework\TestCase
     {
         $result = $this->object->getFromPohoda([]); // Pass empty array as dummy filter
         // Accept null or PohodaBank instance, as getFromPohoda returns null if not found
-        $this->assertTrue(is_null($result) || $result instanceof \Pohoda\Bank\Bank, 'getFromPohoda() should return null or PohodaBank instance');
+        $this->assertTrue(null === $result || $result instanceof \Pohoda\Bank\Bank, 'getFromPohoda() should return null or PohodaBank instance');
     }
 
     /**

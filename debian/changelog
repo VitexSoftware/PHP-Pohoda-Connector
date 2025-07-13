@@ -1,4 +1,10 @@
-php-vitexsoftware-pohoda-connector (0.8.1) UNRELEASED; urgency=medium
+php-vitexsoftware-pohoda-connector (0.9.0) UNRELEASED; urgency=medium
+
+  * enhanced record autoloading by initial value type
+
+ -- vitex <info@vitexsoftware.cz>  Sun, 13 Jul 2025 19:06:12 +0200
+
+php-vitexsoftware-pohoda-connector (0.8.1) unstable; urgency=medium
 
   * Enhances XML parsing with error handling  Adds robust error handling
     for XML parsing failures, including  detailed error messages and
@@ -7,7 +13,7 @@ php-vitexsoftware-pohoda-connector (0.8.1) UNRELEASED; urgency=medium
     names.  Improves reliability and debuggability when processing XML
     inputs.
 
- -- vitex <info@vitexsoftware.cz>  Tue, 03 Jun 2025 13:53:37 +0200
+ -- vitex <info@vitexsoftware.cz>  Sun, 13 Jul 2025 19:05:36 +0200
 
 php-vitexsoftware-pohoda-connector (0.8.0) unstable; urgency=medium
 

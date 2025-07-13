@@ -158,6 +158,7 @@ class Client extends \Ease\Sand
      * XML Response Processor.
      */
     protected Pohoda $pohoda;
+    private bool $autoload = false;
 
     /* PHP8+ \CurlHandle */
     private \CurlHandle $curl;
@@ -194,7 +195,7 @@ class Client extends \Ease\Sand
      *
      * @param array<string, string> $options Object Options ( user,password,authSessionId
      *                                       company,url,agenda,
-     *                                       debug,
+     *                                       debug,autoload,
      *                                       filter,ignore404
      *                                       timeout,companyUrl,ver,throwException
      */
@@ -206,6 +207,7 @@ class Client extends \Ease\Sand
         $this->setupProperty($options, 'password', 'POHODA_PASSWORD');
         $this->setupIntProperty($options, 'timeout', 'POHODA_TIMEOUT');
         $this->setupBoolProperty($options, 'compress', 'POHODA_COMPRESS');
+        $this->setupBoolProperty($options, 'autoload');
 
         if (isset($options['agenda'])) {
             $this->setAgenda($options['agenda']);
@@ -253,16 +255,24 @@ class Client extends \Ease\Sand
     /**
      * Process and use initial value.
      *
+     * This method handles different types of initial data:
+     * - If an integer is provided, it loads the record with that ID.
+     * - If an string is provided, it loads the record with that IDS.
+     * - If an array is provided and aultoload mode is enable, it loads the record with that data.
+     * - It an array is provided and autoload mode is disabled, it takes the data as is.
+     *
      * @param mixed $init
      */
     public function processInit($init): void
     {
         if (\is_int($init)) {
             $this->loadFromPohoda($init);
-        } elseif (\is_array($init)) {
-            $this->takeData($init);
-        } else {
+        } elseif (\is_string($init)) {
+            $this->loadFromPohoda(['IDS' => $init]);
+        } elseif (\is_array($init) && $this->autoload) {
             $this->loadFromPohoda($init);
+        } else {
+            $this->takeData($init);
         }
     }
 
@@ -703,11 +713,9 @@ class Client extends \Ease\Sand
     /**
      * Load data from Pohoda.
      *
-     * @param null|mixed $phid
-     *
-     * @return mixed
+     * @return null|int number of records loaded or null if nothing found
      */
-    public function loadFromPohoda(?int $phid = null)
+    public function loadFromPohoda(?mixed $phid = null)
     {
         if ((null === $phid) === true) {
             $condition = [];

@@ -145,6 +145,7 @@ class AddressbookTest extends \PHPUnit\Framework\TestCase
         $this->object->commit();
         $response = $this->object->response;
         $this->assertNotNull($response, 'Response should not be null after commit');
+
         if ($response !== null) {
             $this->assertTrue(property_exists($response, 'producedDetails'), 'Response should have producedDetails property');
         }

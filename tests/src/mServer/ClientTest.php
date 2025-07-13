@@ -139,7 +139,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase
     public function testPerformRequest(): void
     {
         $result = $this->object->performRequest('');
-        $this->assertTrue(is_string($result) || $result === false);
+        $this->assertTrue(\is_string($result) || $result === false);
     }
 
     /**
@@ -156,7 +156,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase
      */
     public function testgetStatus(): void
     {
-        $this->assertTrue(is_bool($this->object->isOnline()));
+        $this->assertIsBool($this->object->isOnline());
     }
 
     /**
