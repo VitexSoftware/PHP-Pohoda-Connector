@@ -22,6 +22,8 @@ use JMS\Serializer\SerializerBuilder;
 
 /**
  * Class ResponseXML.
+ *
+ * @no-named-arguments
  */
 class Response extends \Ease\Sand
 {

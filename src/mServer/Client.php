@@ -24,6 +24,8 @@ use Riesenia\Pohoda;
  * Stormware's Pohoda mServer's client class.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
+ *
+ * @no-named-arguments
  */
 class Client extends \Ease\Sand
 {
@@ -715,7 +717,7 @@ class Client extends \Ease\Sand
      *
      * @return null|int number of records loaded or null if nothing found
      */
-    public function loadFromPohoda(?mixed $phid = null)
+    public function loadFromPohoda(mixed $phid = null)
     {
         if ((null === $phid) === true) {
             $condition = [];

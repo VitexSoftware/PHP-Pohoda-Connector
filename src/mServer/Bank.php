@@ -21,6 +21,8 @@ use Pohoda\Bank\Bank as PohodaBank;
  * Address Adresa.
  *
  * @author vitex
+ *
+ * @no-named-arguments
  */
 class Bank extends Client implements smart
 {

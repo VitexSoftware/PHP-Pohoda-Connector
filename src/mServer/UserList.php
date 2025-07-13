@@ -19,6 +19,8 @@ namespace mServer;
  * UserList handler.
  *
  * @author vitex
+ *
+ * @no-named-arguments
  */
 class UserList extends Client
 {

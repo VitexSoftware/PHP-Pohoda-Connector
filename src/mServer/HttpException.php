@@ -19,6 +19,8 @@ namespace mServer;
  * Description of HttpException.
  *
  * @author Vitex <info@vitexsoftware.cz>
+ *
+ * @no-named-arguments
  */
 class HttpException extends \Ease\Exception
 {

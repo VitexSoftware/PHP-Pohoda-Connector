@@ -21,6 +21,8 @@ use Pohoda\Invoice\Invoice as PohodaInvoice;
  * Description of Invoice.
  *
  * @author vitex
+ *
+ * @no-named-arguments
  */
 class Invoice extends Client implements smart
 {
