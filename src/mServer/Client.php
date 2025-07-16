@@ -422,8 +422,6 @@ class Client extends \Ease\Sand
             $tmpName = sys_get_temp_dir().'/mPohodaRes'.time().'.xml';
             file_put_contents($tmpName, $this->lastCurlResponse);
             $this->addStatusMessage('response saved as: '.$tmpName, 'debug');
-            // xmllint --schema doc/xsd/data.xsd /tmp/1718209563.xml --noout
-            // system('netbeans ' . $tmpName);
         }
 
         return $this->lastResponseCode;
@@ -523,6 +521,34 @@ class Client extends \Ease\Sand
 
             default:
                 $this->lastResponseMessage = $httpCode.': ok';
+
+                // Check for error state in XML response and print note if present
+                if (!empty($this->lastCurlResponse)) {
+                    libxml_use_internal_errors(true);
+                    $xml = simplexml_load_string($this->lastCurlResponse, 'SimpleXMLElement', \LIBXML_NOCDATA);
+
+                    if ($xml === false) {
+                        $errors = libxml_get_errors();
+
+                        foreach ($errors as $error) {
+                            $this->messages['error'][] = $error->message;
+                            $this->addStatusMessage('XML parse error: '.$error->message, 'error');
+                        }
+
+                        libxml_clear_errors();
+                    } elseif (isset($xml['state']) && (string) $xml['state'] === 'error') {
+                        if (isset($xml['note'])) {
+                            $this->messages['error'][] = (string) $xml['note'];
+                        }
+                    }
+
+                    if ($this->debug) {
+                        $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 3).'/pohodaser/xsd/data.xsd'.$this->xmlCache.' --noout', 'debug');
+                    }
+
+                    libxml_use_internal_errors(false);
+                }
+
                 $this->response = new Response($this);
 
                 //                if ($this->response->isOk() === false) {
@@ -621,7 +647,7 @@ class Client extends \Ease\Sand
         $this->setPostFields(file_get_contents($this->xmlCache));
 
         if ($this->debug) {
-            $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 2).'/doc/xsd/data.xsd '.$this->xmlCache.' --noout', 'debug');
+            $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 3).'/pohodaser/xsd/data.xsd'.$this->xmlCache.' --noout', 'debug');
         }
 
         return $this->performRequest('/xml');

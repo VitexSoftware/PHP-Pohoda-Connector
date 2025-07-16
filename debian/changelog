@@ -1,8 +1,14 @@
-php-vitexsoftware-pohoda-connector (0.9.0) UNRELEASED; urgency=medium
+php-vitexsoftware-pohoda-connector (0.9.1) UNRELEASED; urgency=medium
+
+  * XML parsing problems reaction
+
+ -- vitex <info@vitexsoftware.cz>  Wed, 16 Jul 2025 19:01:40 +0200
+
+php-vitexsoftware-pohoda-connector (0.9.0) unstable; urgency=medium
 
   * enhanced record autoloading by initial value type
 
- -- vitex <info@vitexsoftware.cz>  Sun, 13 Jul 2025 19:06:12 +0200
+ -- vitex <info@vitexsoftware.cz>  Wed, 16 Jul 2025 19:01:18 +0200
 
 php-vitexsoftware-pohoda-connector (0.8.1) unstable; urgency=medium
 
