@@ -100,6 +100,12 @@ class Client extends \Ease\Sand
     public array $messages = [];
 
     /**
+     * UserAgent string
+     * @var string
+     */
+    protected string $userAgent = 'mServerPHP';
+
+    /**
      * @var array<string, string> of Http headers attached with every request
      */
     public array $defaultHttpHeaders = [
@@ -175,6 +181,7 @@ class Client extends \Ease\Sand
     {
         parent::setObjectName();
         $this->setUp($options);
+        $this->userAgent = 'mServerPHP v'.self::libVersion().' https://github.com/VitexSoftware/PHP-Pohoda-Connector';
         $this->curlInit();
         Pohoda::$encoding = 'UTF-8';
         $this->reset();
@@ -182,6 +189,20 @@ class Client extends \Ease\Sand
         if (!empty($init)) {
             $this->processInit($init);
         }
+    }
+
+    /**
+     * Set/Get the current userAgent
+     * 
+     * @param string|null $userAgent
+     * @return string
+     */
+    public function userAgent(?string $userAgent): string
+    {
+        if($userAgent){
+            $this->userAgent = $userAgent;
+        }
+        return $userAgent;
     }
 
     /**
@@ -361,7 +382,7 @@ class Client extends \Ease\Sand
                 \curl_setopt($this->curl, \CURLOPT_ENCODING, 'gzip');
             }
 
-            \curl_setopt($this->curl, \CURLOPT_USERAGENT, 'mServerPHP  v'.self::libVersion().' https://github.com/VitexSoftware/PHP-Pohoda-Connector');
+            \curl_setopt($this->curl, \CURLOPT_USERAGENT, $this->userAgent);
         }
 
         return !$this->offline && $this->setAuth();
