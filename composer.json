@@ -12,6 +12,7 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "mServer\\Tests\\": "tests/mServer/",
             "Test\\": "testing/",
             "Test\\Ease\\": "vendor/vitexsoftware/ease-core/tests/src/Ease",
             "Test\\mServer\\": "testing/src/mServer/"
@@ -32,9 +33,9 @@
     "require-dev": {
         "phpunit/phpunit": "*",
         "phpstan/phpstan": "*",
-        "friendsofphp/php-cs-fixer": "3.64.0",
-        "ergebnis/composer-normalize": "^2.45",
-        "ergebnis/php-cs-fixer-config": "^6.38"
+        "friendsofphp/php-cs-fixer": "3.82.2",
+        "ergebnis/composer-normalize": "^2.47",
+        "ergebnis/php-cs-fixer-config": "^6.49"
     },
     "config": {
         "allow-plugins": {

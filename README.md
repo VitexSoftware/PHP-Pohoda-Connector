@@ -40,6 +40,12 @@ Classess check at startup for this constants or environment variables:
 * **POHODA_COMPRESS** - compress is disabled by default
 * **POHODA_DEBUG**    - debug mode is disabled by default
 
+## Note on Encoding
+
+Pohoda always produces XML encoded in `windows-1250`. This library will automatically convert all incoming XML to UTF-8 before processing. As a result, all parsed data and strings you receive from this library will be in UTF-8 encoding, regardless of the original XML encoding.
+
+---
+
 ## Usage
 
 1. Check Connection

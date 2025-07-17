@@ -22,6 +22,8 @@ use JMS\Serializer\SerializerBuilder;
 
 /**
  * Class ResponseXML.
+ *
+ * @no-named-arguments
  */
 class Response extends \Ease\Sand
 {
@@ -95,8 +97,8 @@ class Response extends \Ease\Sand
         if (\array_key_exists('rsp:responsePackItem', $responsePackData)) {
             $this->processResponsePackItem($responsePackData['rsp:responsePackItem']);
         } else {
-            $this->state = $responsePackData['@state'];
-            $this->note = $responsePackData['@note'];
+            $this->state = isset($responsePackData['@state']) ? (string) $responsePackData['@state'] : '';
+            $this->note = $responsePackData['@note'] ?? '';
         }
     }
 
@@ -114,7 +116,7 @@ class Response extends \Ease\Sand
 
                     break;
                 case '@state':
-                    $this->state = $responsePackSubitem;
+                    $this->state = (string) $responsePackSubitem;
 
                     break;
                 case '@note':
@@ -313,7 +315,28 @@ class Response extends \Ease\Sand
      */
     public function anyXmlToArray($xml)
     {
-        return self::xmlToArray(\is_string($xml) ? simplexml_load_string($xml) : $xml);
+        // Only convert encoding if windows-1250 is declared
+        if (\is_string($xml) && preg_match('/^\s*<\?xml[^>]*encoding=["\']windows-1250["\']/i', $xml)) {
+            $xml = iconv('windows-1250', 'UTF-8//IGNORE', $xml);
+            $xml = preg_replace('/encoding="windows-1250"/i', 'encoding="UTF-8"', $xml);
+        }
+
+        $xmlNode = \is_string($xml) ? simplexml_load_string($xml) : $xml;
+
+        if ($xmlNode === false) {
+            $errors = libxml_get_errors();
+            $errorMsg = 'Failed to parse XML: ';
+
+            foreach ($errors as $error) {
+                $errorMsg .= trim($error->message).'; ';
+            }
+
+            libxml_clear_errors();
+
+            throw new \RuntimeException($errorMsg);
+        }
+
+        return self::xmlToArray($xmlNode);
     }
 
     /**
@@ -325,7 +348,27 @@ class Response extends \Ease\Sand
      */
     public static function parse($xml, array $alwaysArrayElements)
     {
+        // Only convert encoding if windows-1250 is declared
+        if (\is_string($xml) && preg_match('/^\s*<\?xml[^>]*encoding=["\']windows-1250["\']/i', $xml)) {
+            $xml = iconv('windows-1250', 'UTF-8//IGNORE', $xml);
+            $xml = preg_replace('/encoding="windows-1250"/i', 'encoding="UTF-8"', $xml);
+        }
+
         $xmlNode = simplexml_load_string($xml, 'SimpleXMLElement', \LIBXML_NOCDATA);
+
+        if ($xmlNode === false) {
+            // Collect errors
+            $errors = libxml_get_errors();
+            $errorMsg = 'Failed to parse XML: ';
+
+            foreach ($errors as $error) {
+                $errorMsg .= trim($error->message).'; ';
+            }
+
+            libxml_clear_errors();
+
+            throw new \RuntimeException($errorMsg);
+        }
 
         return self::xmlToArray($xmlNode, [
             'alwaysArray' => $alwaysArrayElements,
@@ -372,7 +415,7 @@ class Response extends \Ease\Sand
         foreach ($namespaces as $prefix => $namespace) {
             foreach ($xml->attributes($namespace) as $attributeName => $attribute) {
                 // replace characters in attribute name
-                if ($options['keySearch']) {
+                if ($options['keySearch'] !== false && $options['keyReplace'] !== false) {
                     $attributeName = str_replace($options['keySearch'], $options['keyReplace'], $attributeName);
                 }
 
@@ -395,7 +438,7 @@ class Response extends \Ease\Sand
 
                 // list($childTagName, $childProperties) = each($childArray);
                 // replace characters in tag name
-                if ($options['keySearch']) {
+                if ($options['keySearch'] !== false && $options['keyReplace'] !== false) {
                     $childTagName = str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
                 }
 

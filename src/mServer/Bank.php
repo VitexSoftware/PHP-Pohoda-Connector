@@ -21,6 +21,8 @@ use Pohoda\Bank\Bank as PohodaBank;
  * Address Adresa.
  *
  * @author vitex
+ *
+ * @no-named-arguments
  */
 class Bank extends Client implements smart
 {
@@ -189,6 +191,9 @@ class Bank extends Client implements smart
     #[\Override]
     public function populate(array $data): smart
     {
+        $this->takeData($data);
+
+        return $this;
     }
 
     public function getBankList(string $query = ''): ?array

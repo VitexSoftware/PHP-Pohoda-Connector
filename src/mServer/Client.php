@@ -24,6 +24,8 @@ use Riesenia\Pohoda;
  * Stormware's Pohoda mServer's client class.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
+ *
+ * @no-named-arguments
  */
 class Client extends \Ease\Sand
 {
@@ -98,6 +100,12 @@ class Client extends \Ease\Sand
     public array $messages = [];
 
     /**
+     * UserAgent string
+     * @var string
+     */
+    protected string $userAgent = 'mServerPHP';
+
+    /**
      * @var array<string, string> of Http headers attached with every request
      */
     public array $defaultHttpHeaders = [
@@ -158,6 +166,7 @@ class Client extends \Ease\Sand
      * XML Response Processor.
      */
     protected Pohoda $pohoda;
+    private bool $autoload = false;
 
     /* PHP8+ \CurlHandle */
     private \CurlHandle $curl;
@@ -172,6 +181,7 @@ class Client extends \Ease\Sand
     {
         parent::setObjectName();
         $this->setUp($options);
+        $this->userAgent = 'mServerPHP v'.self::libVersion().' https://github.com/VitexSoftware/PHP-Pohoda-Connector';
         $this->curlInit();
         Pohoda::$encoding = 'UTF-8';
         $this->reset();
@@ -179,6 +189,20 @@ class Client extends \Ease\Sand
         if (!empty($init)) {
             $this->processInit($init);
         }
+    }
+
+    /**
+     * Set/Get the current userAgent
+     * 
+     * @param string|null $userAgent
+     * @return string
+     */
+    public function userAgent(?string $userAgent): string
+    {
+        if($userAgent){
+            $this->userAgent = $userAgent;
+        }
+        return $userAgent;
     }
 
     /**
@@ -194,7 +218,7 @@ class Client extends \Ease\Sand
      *
      * @param array<string, string> $options Object Options ( user,password,authSessionId
      *                                       company,url,agenda,
-     *                                       debug,
+     *                                       debug,autoload,
      *                                       filter,ignore404
      *                                       timeout,companyUrl,ver,throwException
      */
@@ -206,6 +230,7 @@ class Client extends \Ease\Sand
         $this->setupProperty($options, 'password', 'POHODA_PASSWORD');
         $this->setupIntProperty($options, 'timeout', 'POHODA_TIMEOUT');
         $this->setupBoolProperty($options, 'compress', 'POHODA_COMPRESS');
+        $this->setupBoolProperty($options, 'autoload');
 
         if (isset($options['agenda'])) {
             $this->setAgenda($options['agenda']);
@@ -253,16 +278,24 @@ class Client extends \Ease\Sand
     /**
      * Process and use initial value.
      *
+     * This method handles different types of initial data:
+     * - If an integer is provided, it loads the record with that ID.
+     * - If an string is provided, it loads the record with that IDS.
+     * - If an array is provided and aultoload mode is enable, it loads the record with that data.
+     * - It an array is provided and autoload mode is disabled, it takes the data as is.
+     *
      * @param mixed $init
      */
     public function processInit($init): void
     {
         if (\is_int($init)) {
             $this->loadFromPohoda($init);
-        } elseif (\is_array($init)) {
-            $this->takeData($init);
-        } else {
+        } elseif (\is_string($init)) {
+            $this->loadFromPohoda(['IDS' => $init]);
+        } elseif (\is_array($init) && $this->autoload) {
             $this->loadFromPohoda($init);
+        } else {
+            $this->takeData($init);
         }
     }
 
@@ -349,7 +382,7 @@ class Client extends \Ease\Sand
                 \curl_setopt($this->curl, \CURLOPT_ENCODING, 'gzip');
             }
 
-            \curl_setopt($this->curl, \CURLOPT_USERAGENT, 'mServerPHP  v'.self::libVersion().' https://github.com/VitexSoftware/PHP-Pohoda-Connector');
+            \curl_setopt($this->curl, \CURLOPT_USERAGENT, $this->userAgent);
         }
 
         return !$this->offline && $this->setAuth();
@@ -410,8 +443,6 @@ class Client extends \Ease\Sand
             $tmpName = sys_get_temp_dir().'/mPohodaRes'.time().'.xml';
             file_put_contents($tmpName, $this->lastCurlResponse);
             $this->addStatusMessage('response saved as: '.$tmpName, 'debug');
-            // xmllint --schema doc/xsd/data.xsd /tmp/1718209563.xml --noout
-            // system('netbeans ' . $tmpName);
         }
 
         return $this->lastResponseCode;
@@ -511,6 +542,34 @@ class Client extends \Ease\Sand
 
             default:
                 $this->lastResponseMessage = $httpCode.': ok';
+
+                // Check for error state in XML response and print note if present
+                if (!empty($this->lastCurlResponse)) {
+                    libxml_use_internal_errors(true);
+                    $xml = simplexml_load_string($this->lastCurlResponse, 'SimpleXMLElement', \LIBXML_NOCDATA);
+
+                    if ($xml === false) {
+                        $errors = libxml_get_errors();
+
+                        foreach ($errors as $error) {
+                            $this->messages['error'][] = $error->message;
+                            $this->addStatusMessage('XML parse error: '.$error->message, 'error');
+                        }
+
+                        libxml_clear_errors();
+                    } elseif (isset($xml['state']) && (string) $xml['state'] === 'error') {
+                        if (isset($xml['note'])) {
+                            $this->messages['error'][] = (string) $xml['note'];
+                        }
+                    }
+
+                    if ($this->debug) {
+                        $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 3).'/pohodaser/xsd/data.xsd'.$this->xmlCache.' --noout', 'debug');
+                    }
+
+                    libxml_use_internal_errors(false);
+                }
+
                 $this->response = new Response($this);
 
                 //                if ($this->response->isOk() === false) {
@@ -585,10 +644,8 @@ class Client extends \Ease\Sand
      * Insert prepared record to Pohoda.
      *
      * @param array<string, string> $data extra data
-     *
-     * @return int
      */
-    public function addToPohoda($data = [])
+    public function addToPohoda($data = []): self
     {
         if (!empty($data)) {
             $this->takeData($data);
@@ -602,7 +659,7 @@ class Client extends \Ease\Sand
             $this->pohoda->addItem('2', $this->requestXml);
         }
 
-        return 1;
+        return $this;
     }
 
     public function commit(): bool
@@ -611,7 +668,7 @@ class Client extends \Ease\Sand
         $this->setPostFields(file_get_contents($this->xmlCache));
 
         if ($this->debug) {
-            $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 2).'/doc/xsd/data.xsd '.$this->xmlCache.' --noout', 'debug');
+            $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 3).'/pohodaser/xsd/data.xsd'.$this->xmlCache.' --noout', 'debug');
         }
 
         return $this->performRequest('/xml');
@@ -705,11 +762,9 @@ class Client extends \Ease\Sand
     /**
      * Load data from Pohoda.
      *
-     * @param null|mixed $phid
-     *
-     * @return mixed
+     * @return null|int number of records loaded or null if nothing found
      */
-    public function loadFromPohoda(?int $phid = null)
+    public function loadFromPohoda(mixed $phid = null)
     {
         if ((null === $phid) === true) {
             $condition = [];

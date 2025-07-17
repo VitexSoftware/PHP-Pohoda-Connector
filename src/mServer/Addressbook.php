@@ -21,6 +21,8 @@ use Pohoda\AddressBook\Addressbook as PohodaAddressbook;
  * Address handler.
  *
  * @author vitex
+ *
+ * @no-named-arguments
  */
 class Addressbook extends Client implements smart
 {
@@ -66,5 +68,6 @@ class Addressbook extends Client implements smart
     #[\Override]
     public function populate(array $data): smart
     {
+        return $this;
     }
 }

@@ -17,6 +17,8 @@ namespace mServer;
 
 /**
  * @author vitex
+ *
+ * @no-named-arguments
  */
 interface smart
 {
