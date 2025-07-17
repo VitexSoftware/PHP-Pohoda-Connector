@@ -100,12 +100,6 @@ class Client extends \Ease\Sand
     public array $messages = [];
 
     /**
-     * UserAgent string
-     * @var string
-     */
-    protected string $userAgent = 'mServerPHP';
-
-    /**
      * @var array<string, string> of Http headers attached with every request
      */
     public array $defaultHttpHeaders = [
@@ -158,6 +152,11 @@ class Client extends \Ease\Sand
     public string $sqlTable = '';
 
     /**
+     * UserAgent string.
+     */
+    protected string $userAgent = 'mServerPHP';
+
+    /**
      * My Company identification ID.
      */
     protected ?string $ico = null;
@@ -189,20 +188,6 @@ class Client extends \Ease\Sand
         if (!empty($init)) {
             $this->processInit($init);
         }
-    }
-
-    /**
-     * Set/Get the current userAgent
-     * 
-     * @param string|null $userAgent
-     * @return string
-     */
-    public function userAgent(?string $userAgent): string
-    {
-        if($userAgent){
-            $this->userAgent = $userAgent;
-        }
-        return $userAgent;
     }
 
     /**
@@ -249,6 +234,18 @@ class Client extends \Ease\Sand
         }
 
         $this->setupProperty($options, 'debug', 'POHODA_DEBUG');
+    }
+
+    /**
+     * Set/Get the current userAgent.
+     */
+    public function userAgent(?string $userAgent = null): string
+    {
+        if ($userAgent) {
+            $this->userAgent = $userAgent;
+        }
+
+        return $this->userAgent;
     }
 
     /**
