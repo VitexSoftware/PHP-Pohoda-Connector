@@ -220,7 +220,7 @@ class Response extends \Ease\Sand
         $details = [];
 
         foreach ($type as $key => $value) {
-            $details[str_replace(['rdc:', 'typ:'], '', $key)] = \is_array($value) ? (\array_key_exists('$', $value) ? $value['$'] : self::typeToArray($value)) : $value;
+            $details[str_replace(['rdc:', 'typ:'], '', (string) $key)] = \is_array($value) ? (\array_key_exists('$', $value) ? $value['$'] : self::typeToArray($value)) : $value;            
         }
 
         return $details;
