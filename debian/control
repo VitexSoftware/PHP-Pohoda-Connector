@@ -12,7 +12,8 @@ Rules-Requires-Root: no
 Package: php-vitexsoftware-pohoda-connector
 Architecture: any
 Multi-Arch: foreign
-Depends: ${misc:Depends}, php-curl, php-xml, php-vitexsoftware-ease-core, composer
+Pre-Depends: php-curl, php-xml
+Depends: ${misc:Depends}, php-vitexsoftware-ease-core, composer
 Provides: php-pohoda
 Description: client library for Sormware's Pohoda mServer
     PHP library for communication with Pohoda mServer.
