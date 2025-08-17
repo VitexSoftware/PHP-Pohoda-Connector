@@ -1,5 +1,13 @@
 # PHPmServer
 
+<!--toc:start-->
+- [PHPmServer](#phpmserver)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Note on Encoding](#note-on-encoding)
+  - [Usage](#usage)
+<!--toc:end-->
+
 client library for Stormware's [mPohoda mServer](https://www.stormware.cz/pohoda/xml/mserver/)
 
 ![Project Logo](phpmserver.svg?raw=true)
@@ -182,6 +190,15 @@ See usage examples in [tests](tests) directory
 * [Create Invoice](tests/insert-invoice.php)
 * [Addressbook reading](tests/read-address.php)
 * [Address update](tests/update-address.php)
+
+
+Some of Projects using pohoda-connector:
+
+* [pohoda-realpad](https://github.com/Spoje-NET/pohoda-realpad) 
+* [pohoda-kb](https://github.com/Spoje-NET/pohoda-kb) 
+* [pohoda-csas](https://github.com/Spoje-NET/pohoda-csas) 
+* [pohoda-raiffeisenbank](https://github.com/Spoje-NET/pohoda-raiffeisenbank) 
+* [pohoda-client-checker](https://github.com/Spoje-NET/pohoda-client-checker) 
 
 **Many thanks to [Riešenia, spol. s r.o.](https://www.riesenia.com/) for its library <https://github.com/riesenia/pohoda>**
 
