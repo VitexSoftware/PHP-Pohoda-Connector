@@ -1,6 +1,6 @@
 #!groovy
 
-String[] distributions = ['debian:bookworm', 'debian:trixie', 'debian:forky', 'ubuntu:jammy', 'ubuntu:noble']
+String[] distributions = ['debian:bullseye', 'debian:bookworm', 'debian:trixie', 'debian:forky', 'ubuntu:focal', 'ubuntu:jammy', 'ubuntu:noble']
 
 String vendor = 'vitexsoftware'
 String distribution = ''
@@ -49,7 +49,7 @@ distributions.each {
                     sh 'sudo apt-get update --allow-releaseinfo-change'
                     sh 'sudo chown jenkins:jenkins ..'
                     sh 'debuild-pbuilder  -i -us -uc -b'
-                    sh 'mkdir -p $WORKSPACE/dist/debian/ ; for deb in $(cat debian/files | awk \'{print $1}\'); do mv "../$deb" $WORKSPACE/dist/debian/; done'
+                    sh 'mkdir -p $WORKSPACE/dist/debian/ ; rm -rf $WORKSPACE/dist/debian/* ; for deb in $(cat debian/files | awk \'{print $1}\'); do mv "../$deb" $WORKSPACE/dist/debian/; done'
                     artifacts = sh (
                         script: "cat debian/files | awk '{print \$1}'",
                         returnStdout: true
