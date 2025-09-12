@@ -561,7 +561,7 @@ class Client extends \Ease\Sand
                     }
 
                     if ($this->debug) {
-                        $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 3).'/pohodaser/xsd/data.xsd'.$this->xmlCache.' --noout', 'debug');
+                        $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 3).'/pohodaser/xsd/data.xsd '.$this->xmlCache.' --noout', 'debug');
                     }
 
                     libxml_use_internal_errors(false);
@@ -665,7 +665,7 @@ class Client extends \Ease\Sand
         $this->setPostFields(file_get_contents($this->xmlCache));
 
         if ($this->debug) {
-            $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 3).'/pohodaser/xsd/data.xsd'.$this->xmlCache.' --noout', 'debug');
+            $this->addStatusMessage('validate request by: xmllint --schema '.\dirname(__DIR__, 3).'/pohodaser/xsd/data.xsd '.$this->xmlCache.' --noout', 'debug');
         }
 
         return $this->performRequest('/xml');
