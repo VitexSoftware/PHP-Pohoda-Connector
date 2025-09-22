@@ -335,6 +335,10 @@ class Client extends \Ease\Sand
     {
         $this->data['identity']['extId']['ids'] = $extId;
 
+        // Ensure extId propagates to the pending request XML if it already exists
+        if ($this->agenda && $this->requestXml) {
+            $this->requestXml = $this->pohoda->create($this->agenda, $this->getData());
+        }
         return $this;
     }
 
