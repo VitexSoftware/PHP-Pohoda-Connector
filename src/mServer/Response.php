@@ -83,11 +83,14 @@ class Response extends \Ease\Sand
         $this->caller = $caller;
         if ($caller->lastCurlResponse) {
             $this->rawXML = $caller->lastCurlResponse;
-            $xml = simplexml_load_string($this->rawXML);
+            $xml = simplexml_load_string($this->rawXML, 'SimpleXMLElement', \LIBXML_NONET | \LIBXML_NOCDATA);
             if ($xml) {
-                $this->state = (string) $xml->attributes('rsp', true)->state;
-                $this->note = (string) $xml->attributes('rsp', true)->note;
-                foreach ($xml->children('rsp', true) as $responsePackItem) {
+                $attrsRsp = $xml->attributes('rsp', true);
+                $attrs    = $xml->attributes();
+                $this->state = (string) (($attrsRsp['state'] ?? $attrs['state'] ?? '') );
+                $this->note  = (string) (($attrsRsp['note']  ?? $attrs['note']  ?? '') );
+                $children = iterator_to_array($xml->children('rsp', true) ?: $xml->children());
+                foreach ($children as $responsePackItem) {
                     $this->processResponsePackItem($responsePackItem);
                 }
             }
