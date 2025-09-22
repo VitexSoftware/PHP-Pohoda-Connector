@@ -81,73 +81,49 @@ class Response extends \Ease\Sand
     public function useCaller(Client $caller): void
     {
         $this->caller = $caller;
-
         if ($caller->lastCurlResponse) {
-            $parsed = $this->parse($this->caller->lastCurlResponse, []);
-            $this->processResponsePack($parsed['responsePack']);
-            $this->rawXML = $this->caller->lastCurlResponse;
+            $this->rawXML = $caller->lastCurlResponse;
+            $xml = simplexml_load_string($this->rawXML);
+            if ($xml) {
+                $this->state = (string) $xml->attributes('rsp', true)->state;
+                $this->note = (string) $xml->attributes('rsp', true)->note;
+                foreach ($xml->children('rsp', true) as $responsePackItem) {
+                    $this->processResponsePackItem($responsePackItem);
+                }
+            }
         } else {
             $this->state = 'error';
             $this->note = $caller->lastCurlError;
         }
     }
 
-    public function processResponsePack($responsePackData): void
+    public function processResponsePack(\SimpleXMLElement $responsePackData): void
     {
-        if (\array_key_exists('rsp:responsePackItem', $responsePackData)) {
-            $this->processResponsePackItem($responsePackData['rsp:responsePackItem']);
-        } else {
-            $this->state = isset($responsePackData['@state']) ? (string) $responsePackData['@state'] : '';
-            $this->note = $responsePackData['@note'] ?? '';
+        // This method is no longer used
+    }
+
+    public function processResponsePackItem(\SimpleXMLElement $responsePackItem): void
+    {
+        $this->state = (string) $responsePackItem->attributes()->state;
+        foreach ($responsePackItem->children() as $response) {
+            $this->processResponseData($response);
         }
     }
 
-    public function processResponsePackItem($responsePackItem): void
+    public function processProducedDetails(\SimpleXMLElement $productDetails): void
     {
-        foreach ($responsePackItem as $name => $responsePackSubitem) {
-            switch ($name) {
-                case 'lAdb:listAddressBook':
-                case 'lst:listBank':
-                case 'bnk:bankResponse':
-                case 'inv:invoiceResponse':
-                case 'adb:addressbookResponse':
-                case 'lqd:automaticLiquidationResponse':
-                    $this->processResponseData($responsePackSubitem);
+        $this->producedDetails = ['id' => (int) $productDetails->children('rdc', true)->id];
+        $this->parsed = $this->producedDetails;
+    }
 
-                    break;
-                case '@state':
-                    $this->state = (string) $responsePackSubitem;
-
-                    break;
-                case '@note':
-                    $note = $responsePackSubitem; // TODO
-
-                    break;
-                case '@id':
-                case '@version':
-                    break;
-
-                default:
-                    //                    throw new Exception('Unknown element to process: ' . $name);
-                    break;
+    public function processImportDetails(\SimpleXMLElement $importDetails): void
+    {
+        foreach ($importDetails->children('rdc', true) as $detail) {
+            $importDetail = [];
+            foreach ($detail->children('rdc', true) as $child) {
+                $importDetail[$child->getName()] = (string) $child;
             }
-        }
-    }
-
-    public function processProducedDetails($productDetails): void
-    {
-        $this->producedDetails = self::typeToArray($productDetails);
-    }
-
-    public function processImportDetails($importDetails): void
-    {
-        if (\array_key_exists('rdc:state', $importDetails['rdc:detail'])) {
-            $importDetail = self::typeToArray($importDetails['rdc:detail']);
             $this->messages[$importDetail['state']][] = $importDetail;
-        } else {
-            foreach (self::typesToArray($importDetails['rdc:detail']) as $importDetail) {
-                $this->messages[$importDetail['state']][] = $importDetail;
-            }
         }
 
         if (\count($this->messages['error'])) {
@@ -155,46 +131,20 @@ class Response extends \Ease\Sand
         } elseif (\count($this->messages['warning'])) {
             $this->state = 'warning';
         }
+        $this->parsed = $this->messages;
     }
 
     /**
-     * @param array $responseData
+     * @param \SimpleXMLElement $responseData
      */
-    public function processResponseData($responseData): void
+    public function processResponseData(\SimpleXMLElement $responseData): void
     {
-        foreach ($responseData as $key => $value) {
-            switch ($key) {
-                case 'lAdb:addressbook':
-                    $this->parsed = $this->processListAddressBook(\array_key_exists(0, $value) ? $value : [$value]);
-
-                    break;
-                case 'rdc:producedDetails':
-                    /* $this->parsed = */ $this->processProducedDetails($value);
-
-                    break;
-                case 'rdc:importDetails':
-                    /* $this->parsed = */ $this->processImportDetails($value);
-
-                    break;
-                case 'lqd:automaticLiquidationDetails':
-                    $this->parsed = $this->processLiquidationDetails($value);
-
-                    break;
-                case 'lst:bank':
-                    $this->parsed = $this->processBank(\array_key_exists(0, $value) ? $value : [$value]);
-
-                    break;
-                case '@version':
-                case '@dateTimeStamp':
-                case '@dateValidFrom':
-                case '@state':
-                    break;
-
-                default:
-                    $this->addStatusMessage(_('Unknown response section').': '.$key, 'debug');
-
-                    break;
-            }
+        $this->state = (string) $responseData->attributes()->state;
+        if (isset($responseData->producedDetails)) {
+            $this->processProducedDetails($responseData->producedDetails);
+        }
+        if (isset($responseData->importDetails)) {
+            $this->processImportDetails($responseData->importDetails);
         }
     }
 

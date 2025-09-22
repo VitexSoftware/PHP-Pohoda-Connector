@@ -331,6 +331,13 @@ class Client extends \Ease\Sand
         return $this;
     }
 
+    public function setExtId(string $extId): self
+    {
+        $this->data['identity']['extId']['ids'] = $extId;
+
+        return $this;
+    }
+
     /**
      * Set Application http header.
      */
@@ -672,12 +679,12 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Insert prepared record to Pohoda.
+     * Update prepared record in Pohoda.
      *
      * @param array<string, string> $data   extra data
      * @param null|mixed            $filter
      */
-    public function updateInPohoda(array $data = [], $filter = null): bool
+    public function updateInPohoda(array $data = [], $filter = null): self
     {
         if (!empty($data)) {
             $this->takeData($data);
@@ -692,9 +699,7 @@ class Client extends \Ease\Sand
             $this->pohoda->addItem('2', $this->requestXml);
         }
 
-        $this->setPostFields($this->pohoda->close());
-
-        return $this->performRequest('/xml');
+        return $this;
     }
 
     /**

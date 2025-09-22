@@ -91,6 +91,7 @@ class AddressbookTest extends \PHPUnit\Framework\TestCase
         'web' => 'https://www.vitexsoftware.cz', // Adresa www stránek.
     ];
     protected Addressbook $object;
+    private static $extId;
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -98,7 +99,9 @@ class AddressbookTest extends \PHPUnit\Framework\TestCase
      */
     protected function setUp(): void
     {
+        self::$extId = 'PHPUnit-'.time();
         $this->object = new Addressbook(self::$addressBookRecord);
+        $this->object->setExtId(self::$extId);
     }
 
     /**
@@ -151,5 +154,32 @@ class AddressbookTest extends \PHPUnit\Framework\TestCase
         if ($response !== null) {
             $this->assertTrue(property_exists($response, 'producedDetails'), 'Response should have producedDetails property');
         }
+    }
+
+    /**
+     * @covers \mServer\Addressbook::updateInPohoda
+     */
+    public function testUpdateInPohoda()
+    {
+        $this->object->addToPohoda();
+        $this->object->commit();
+        $this->assertTrue($this->object->response->isOk(), 'Create failed: '.print_r($this->object->response->messages, true));
+        $pohodaId = (int) $this->object->response->getProducedDetails()['id'];
+
+        $updater = new Addressbook($pohodaId); // This will load the record
+        $updatedData = $updater->getData();
+        $updatedData['note'] = 'Updated Note';
+        $updater->updateInPohoda($updatedData, ['id' => $pohodaId]);
+        $updater->commit();
+
+        if ($updater->response->isOk() === false) {
+            echo "--- START RESPONSE ---\n";
+            echo $updater->lastCurlResponse;
+            echo "\n--- END RESPONSE ---\n";
+        }
+        $this->assertTrue($updater->response->isOk());
+
+        $reloaded = new Addressbook($pohodaId);
+        $this->assertEquals('Updated Note', $reloaded->getDataValue('note'));
     }
 }

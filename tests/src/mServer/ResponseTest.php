@@ -62,7 +62,7 @@ class ResponseTest extends \PHPUnit\Framework\TestCase
      */
     public function testProcessResponsePack(): void
     {
-        $responsePackData = ['@state' => 'ok', '@note' => 'All good'];
+        $responsePackData = simplexml_load_string('<responsePack state="ok" note="All good"></responsePack>');
         $this->object->processResponsePack($responsePackData);
         $this->assertEquals('ok', $this->object->getState());
         $this->assertIsString($this->object->getNote());
@@ -73,7 +73,7 @@ class ResponseTest extends \PHPUnit\Framework\TestCase
      */
     public function testProcessResponsePackItem(): void
     {
-        $item = ['@state' => 'ok', '@note' => 'Note'];
+        $item = simplexml_load_string('<responsePackItem state="ok" note="Note"></responsePackItem>');
         $this->object->processResponsePackItem($item);
         $this->assertEquals('ok', $this->object->getState());
     }
@@ -83,7 +83,7 @@ class ResponseTest extends \PHPUnit\Framework\TestCase
      */
     public function testProcessProducedDetails(): void
     {
-        $details = ['rdc:state' => 'ok', 'rdc:detail' => 'detail'];
+        $details = simplexml_load_string('<producedDetails xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"><rdc:id>1</rdc:id></producedDetails>');
         $this->object->processProducedDetails($details);
         $this->assertIsArray($this->object->producedDetails);
     }
@@ -93,7 +93,7 @@ class ResponseTest extends \PHPUnit\Framework\TestCase
      */
     public function testProcessImportDetails(): void
     {
-        $details = ['rdc:detail' => ['rdc:state' => 'error', 'msg' => 'fail']];
+        $details = simplexml_load_string('<importDetails xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd"><rdc:detail><rdc:state>error</rdc:state></rdc:detail></importDetails>');
         $this->object->processImportDetails($details);
         $this->assertEquals('error', $this->object->getState());
     }
@@ -103,7 +103,7 @@ class ResponseTest extends \PHPUnit\Framework\TestCase
      */
     public function testProcessResponseData(): void
     {
-        $data = ['lAdb:addressbook' => [['addressbookHeader' => ['id' => 1]]]];
+        $data = simplexml_load_string('<addressbookResponse xmlns:lAdb="http://www.stormware.cz/schema/version_2/list_addressbook.xsd" xmlns:rdc="http://www.stormware.cz/schema/version_2/documentresponse.xsd" state="ok"><lAdb:addressbook><lAdb:addressbookHeader><lAdb:id>1</lAdb:id></lAdb:addressbookHeader></lAdb:addressbook></addressbookResponse>');
         $this->object->processResponseData($data);
         $this->assertIsArray($this->object->getAgendaData('addressbook'));
     }
