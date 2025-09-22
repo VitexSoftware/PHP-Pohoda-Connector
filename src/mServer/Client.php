@@ -322,7 +322,10 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Set Instance http header.
+     * Set the STW-Instance HTTP header for subsequent requests.
+     *
+     * @param string $instance Identifier of the mServer instance to send in the `STW-Instance` header.
+     * @return self Fluent interface.
      */
     public function setInstance(string $instance): self
     {
@@ -331,6 +334,15 @@ class Client extends \Ease\Sand
         return $this;
     }
 
+    /**
+     * Set an external identifier in the payload under identity->extId->ids.
+     *
+     * Stores the provided external ID into the internal data structure so it
+     * will be included in the next Pohoda request.
+     *
+     * @param string $extId External identifier to assign.
+     * @return self Fluent interface.
+     */
     public function setExtId(string $extId): self
     {
         $this->data['identity']['extId']['ids'] = $extId;
@@ -666,6 +678,16 @@ class Client extends \Ease\Sand
         return $this;
     }
 
+    /**
+     * Finalizes the current Pohoda XML payload and sends it to the server.
+     *
+     * Closes the current Pohoda document, loads the generated XML from the temporary
+     * cache into the next request body, and performs an HTTP POST to the server's
+     * "/xml" endpoint. In debug mode, adds a status message suggesting an xmllint
+     * validation command for the cached XML.
+     *
+     * @return bool True when the server response indicates success or warning; false otherwise.
+     */
     public function commit(): bool
     {
         $this->pohoda->close();
@@ -679,10 +701,15 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Update prepared record in Pohoda.
+     * Prepare and queue an update for the current agenda object in Pohoda.
      *
-     * @param array<string, string> $data   extra data
-     * @param null|mixed            $filter
+     * If $data is provided, it is taken as the current record (via takeData). If a request XML is present,
+     * the method marks it with an "update" action (using the provided $filter or filterToMe() when $filter is empty)
+     * and adds the item to the Pohoda engine for later commit.
+     *
+     * @param array<string,mixed> $data  Data to prepare as the current record (optional).
+     * @param mixed               $filter Filter to apply for the update; when empty, filterToMe() is used.
+     * @return $this
      */
     public function updateInPohoda(array $data = [], $filter = null): self
     {

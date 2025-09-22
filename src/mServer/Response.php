@@ -78,19 +78,26 @@ class Response extends \Ease\Sand
         $this->useCaller($caller);
     }
 
+    /**
+     * Associate a Caller with this Response and initialize state from its last HTTP response.
+     *
+     * If the caller has a lastCurlResponse, stores it in $rawXML, attempts to load it as XML,
+     * reads the root `rsp` attributes `state` and `note`, and processes each child `rsp` element
+     * by delegating to processResponsePackItem().
+     *
+     * If there is no lastCurlResponse, sets the response state to "error" and the note to the
+     * caller's lastCurlError.
+     */
     public function useCaller(Client $caller): void
     {
         $this->caller = $caller;
         if ($caller->lastCurlResponse) {
             $this->rawXML = $caller->lastCurlResponse;
-            $xml = simplexml_load_string($this->rawXML, 'SimpleXMLElement', \LIBXML_NONET | \LIBXML_NOCDATA);
+            $xml = simplexml_load_string($this->rawXML);
             if ($xml) {
-                $attrsRsp = $xml->attributes('rsp', true);
-                $attrs    = $xml->attributes();
-                $this->state = (string) (($attrsRsp['state'] ?? $attrs['state'] ?? '') );
-                $this->note  = (string) (($attrsRsp['note']  ?? $attrs['note']  ?? '') );
-                $children = iterator_to_array($xml->children('rsp', true) ?: $xml->children());
-                foreach ($children as $responsePackItem) {
+                $this->state = (string) $xml->attributes('rsp', true)->state;
+                $this->note = (string) $xml->attributes('rsp', true)->note;
+                foreach ($xml->children('rsp', true) as $responsePackItem) {
                     $this->processResponsePackItem($responsePackItem);
                 }
             }
@@ -100,11 +107,28 @@ class Response extends \Ease\Sand
         }
     }
 
+    /**
+     * No-op placeholder for processing a responsePack XML element; retained for compatibility.
+     *
+     * This method intentionally does nothing and is deprecated — response pack items are processed
+     * via processResponsePackItem() when XML is loaded.
+     *
+     * @param \SimpleXMLElement $responsePackData The <responsePack> XML element (ignored).
+     * @deprecated Use processResponsePackItem(\SimpleXMLElement $responsePackItem) or let useCaller() handle response pack processing.
+     */
     public function processResponsePack(\SimpleXMLElement $responsePackData): void
     {
         // This method is no longer used
     }
 
+    /**
+     * Process a single <responsePackItem> XML node: update the overall state and handle its child response nodes.
+     *
+     * Reads the node's "state" attribute into the instance state and delegates each child element to
+     * processResponseData(), which may populate parsed data, producedDetails, and messages.
+     *
+     * @param \SimpleXMLElement $responsePackItem XML element representing one responsePackItem.
+     */
     public function processResponsePackItem(\SimpleXMLElement $responsePackItem): void
     {
         $this->state = (string) $responsePackItem->attributes()->state;
@@ -113,12 +137,36 @@ class Response extends \Ease\Sand
         }
     }
 
+    /**
+     * Extracts produced detail ID from an `rdc` namespaced XML node and stores it.
+     *
+     * Reads the `<rdc:id>` child of the provided SimpleXMLElement, casts it to int,
+     * sets $this->producedDetails to ['id' => (int)], and synchronizes $this->parsed
+     * with the same value.
+     *
+     * @param \SimpleXMLElement $productDetails XML node containing an `rdc:id` child (uses the `rdc` namespace)
+     */
     public function processProducedDetails(\SimpleXMLElement $productDetails): void
     {
         $this->producedDetails = ['id' => (int) $productDetails->children('rdc', true)->id];
         $this->parsed = $this->producedDetails;
     }
 
+    /**
+     * Process import-detail nodes from a Pohoda response and record their messages.
+     *
+     * Iterates over children in the `rdc` namespace of the provided import details element,
+     * collects each detail's child elements into an associative array (element name => string value),
+     * groups those arrays into $this->messages keyed by each detail's `state` value, and updates
+     * the response state and parsed representation accordingly.
+     *
+     * Side effects:
+     * - Appends parsed detail arrays into $this->messages (keys like 'error' or 'warning').
+     * - Sets $this->state to 'error' if any error messages exist, otherwise to 'warning' if any warnings exist.
+     * - Updates $this->parsed to reference the messages array.
+     *
+     * @param \SimpleXMLElement $importDetails XML element containing import detail entries (expects children in the `rdc` namespace)
+     */
     public function processImportDetails(\SimpleXMLElement $importDetails): void
     {
         foreach ($importDetails->children('rdc', true) as $detail) {
@@ -138,8 +186,15 @@ class Response extends \Ease\Sand
     }
 
     /**
-     * @param \SimpleXMLElement $responseData
-     */
+         * Process a single <responseData> XML node.
+         *
+         * Updates the object's overall state from the node's `state` attribute and, when present,
+         * delegates processing of child elements `producedDetails` and `importDetails` to
+         * processProducedDetails() and processImportDetails() respectively. Those handlers
+         * update internal parsed data, messages, and producedDetails.
+         *
+         * @param \SimpleXMLElement $responseData The <responseData> element to process.
+         */
     public function processResponseData(\SimpleXMLElement $responseData): void
     {
         $this->state = (string) $responseData->attributes()->state;
