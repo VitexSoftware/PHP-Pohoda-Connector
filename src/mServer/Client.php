@@ -331,17 +331,6 @@ class Client extends \Ease\Sand
         return $this;
     }
 
-    public function setExtId(string $extId): self
-    {
-        $this->data['identity']['extId']['ids'] = $extId;
-
-        // Ensure extId propagates to the pending request XML if it already exists
-        if ($this->agenda && $this->requestXml) {
-            $this->requestXml = $this->pohoda->create($this->agenda, $this->getData());
-        }
-        return $this;
-    }
-
     /**
      * Set Application http header.
      */
@@ -683,12 +672,12 @@ class Client extends \Ease\Sand
     }
 
     /**
-     * Update prepared record in Pohoda.
+     * Insert prepared record to Pohoda.
      *
      * @param array<string, string> $data   extra data
      * @param null|mixed            $filter
      */
-    public function updateInPohoda(array $data = [], $filter = null): self
+    public function updateInPohoda(array $data = [], $filter = null): bool
     {
         if (!empty($data)) {
             $this->takeData($data);
@@ -703,7 +692,12 @@ class Client extends \Ease\Sand
             $this->pohoda->addItem('2', $this->requestXml);
         }
 
-        return $this;
+        $this->pohoda->close();
+        $postFields = file_get_contents($this->xmlCache);
+        var_dump($postFields);
+        $this->setPostFields($postFields);
+
+        return $this->performRequest('/xml');
     }
 
     /**
