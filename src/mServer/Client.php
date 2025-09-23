@@ -692,7 +692,10 @@ class Client extends \Ease\Sand
             $this->pohoda->addItem('2', $this->requestXml);
         }
 
-        $this->setPostFields($this->pohoda->close());
+        $this->pohoda->close();
+        $postFields = file_get_contents($this->xmlCache);
+        var_dump($postFields);
+        $this->setPostFields($postFields);
 
         return $this->performRequest('/xml');
     }

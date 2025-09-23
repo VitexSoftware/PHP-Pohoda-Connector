@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit colors="true" bootstrap="./tests/bootstrap.php">
+    <php>
+        <env name="POHODA_URL" value="https://novak.proxy.spojenet.cz"/>
+        <env name="POHODA_USERNAME" value="api"/>
+        <env name="POHODA_PASSWORD" value="api"/>
+        <env name="POHODA_ICO" value="12345678"/>
+        <env name="POHODA_DEBUG" value="true"/>
+    </php>
     <testsuites>
         <testsuite name="all">
             <directory>./tests</directory>
