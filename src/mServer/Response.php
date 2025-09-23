@@ -92,18 +92,51 @@ class Response extends \Ease\Sand
         }
     }
 
+    /**
+     * Process a response pack from Pohoda.
+     * Reads state/note from attributes and processes each child item.
+     * Accepts SimpleXMLElement (preferred) or legacy array structure.
+     */
     public function processResponsePack($responsePackData): void
     {
-        if (\array_key_exists('rsp:responsePackItem', $responsePackData)) {
-            $this->processResponsePackItem($responsePackData['rsp:responsePackItem']);
-        } else {
-            $this->state = isset($responsePackData['@state']) ? (string) $responsePackData['@state'] : '';
-            $this->note = $responsePackData['@note'] ?? '';
+        // Preferred: XML input
+        if ($responsePackData instanceof \SimpleXMLElement) {
+            $attrs = $responsePackData->attributes();
+            $this->state = isset($attrs['state']) ? (string) $attrs['state'] : ($this->state ?? '');
+            $this->note  = isset($attrs['note'])  ? (string) $attrs['note']  : ($this->note ?? '');
+
+            foreach ($responsePackData->item as $item) {
+                $this->processResponsePackItem($item);
+            }
+            return;
+        }
+
+        // Backward compatibility: array input
+        if (\is_array($responsePackData)) {
+            if (\array_key_exists('rsp:responsePackItem', $responsePackData)) {
+                $this->processResponsePackItem($responsePackData['rsp:responsePackItem']);
+            }
+            $this->state = isset($responsePackData['@state']) ? (string)$responsePackData['@state'] : ($this->state ?? '');
+            $this->note  = isset($responsePackData['@note'])  ? (string)$responsePackData['@note']  : ($this->note ?? '');
         }
     }
 
+    /**
+     * Process a single response pack item (XML or array form).
+     */
     public function processResponsePackItem($responsePackItem): void
     {
+        // If XML is provided, convert to array and reuse existing flow
+        if ($responsePackItem instanceof \SimpleXMLElement) {
+            $asArray = self::xmlToArray($responsePackItem);
+            // xmlToArray wraps with root tag name; flatten one level if needed
+            if (\is_array($asArray) && \count($asArray) === 1) {
+                $asArray = reset($asArray);
+            }
+            $this->processResponsePackItem($asArray);
+            return;
+        }
+
         foreach ($responsePackItem as $name => $responsePackSubitem) {
             switch ($name) {
                 case 'lAdb:listAddressBook':
@@ -113,22 +146,18 @@ class Response extends \Ease\Sand
                 case 'adb:addressbookResponse':
                 case 'lqd:automaticLiquidationResponse':
                     $this->processResponseData($responsePackSubitem);
-
                     break;
                 case '@state':
-                    $this->state = (string) $responsePackSubitem;
-
+                    $this->state = (string)$responsePackSubitem;
                     break;
                 case '@note':
                     $note = $responsePackSubitem; // TODO
-
                     break;
                 case '@id':
                 case '@version':
                     break;
-
                 default:
-                    //                    throw new Exception('Unknown element to process: ' . $name);
+                    // unknown element, ignore
                     break;
             }
         }
@@ -220,7 +249,7 @@ class Response extends \Ease\Sand
         $details = [];
 
         foreach ($type as $key => $value) {
-            $details[str_replace(['rdc:', 'typ:'], '', (string) $key)] = \is_array($value) ? (\array_key_exists('$', $value) ? $value['$'] : self::typeToArray($value)) : $value;            
+            $details[str_replace(['rdc:', 'typ:'], '', (string) $key)] = \is_array($value) ? (\array_key_exists('$', $value) ? $value['$'] : self::typeToArray($value)) : $value;
         }
 
         return $details;
@@ -309,7 +338,7 @@ class Response extends \Ease\Sand
     /**
      * Convert Pohoda Response XML to Array.
      *
-     * @param \rawXML|string $xml
+     * @param \SimpleXMLElement|string $xml
      *
      * @return array
      */
@@ -402,9 +431,17 @@ class Response extends \Ease\Sand
             // key used for the text content of elements
             'autoText' => true,
             // skip textContent key if node has no attributes or child nodes
-            'keySearch' => false,
+            'keySearch' => [],
             // optional search and replace on tag and attribute names
-            'keyReplace' => false, // replace values for above search values (as passed to str_replace())
+            'keyReplace' => '', // replace values for above search values (as passed to str_replace())
+        ];
+        $options = $options + [
+            'namespaces' => true,
+            'attributes' => true,
+            'children' => true,
+            'normalize' => false,
+            'keySearch' => [],
+            'keyReplace' => '', // replace values for above search values (as passed to str_replace())
         ];
         $options = array_merge($defaults, $options);
         $namespaces = $xml->getDocNamespaces();
@@ -415,7 +452,7 @@ class Response extends \Ease\Sand
         foreach ($namespaces as $prefix => $namespace) {
             foreach ($xml->attributes($namespace) as $attributeName => $attribute) {
                 // replace characters in attribute name
-                if ($options['keySearch'] !== false && $options['keyReplace'] !== false) {
+                if (!empty($options['keySearch'])) {
                     $attributeName = str_replace($options['keySearch'], $options['keyReplace'], $attributeName);
                 }
 
@@ -438,7 +475,7 @@ class Response extends \Ease\Sand
 
                 // list($childTagName, $childProperties) = each($childArray);
                 // replace characters in tag name
-                if ($options['keySearch'] !== false && $options['keyReplace'] !== false) {
+                if (!empty($options['keySearch'])) {
                     $childTagName = str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
                 }
 
@@ -590,5 +627,16 @@ class Response extends \Ease\Sand
         }
 
         return $responsePack;
+    }
+
+    /**
+     * Return produced details parsed from the response.
+     * Always returns an array; empty if not set.
+     */
+    public function getProducedDetails(): array
+    {
+        return isset($this->producedDetails) && \is_array($this->producedDetails)
+            ? $this->producedDetails
+            : [];
     }
 }
