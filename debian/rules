@@ -8,7 +8,8 @@ override_dh_install:
 	phpab --output src/mServer/autoload.php --basedir src/mServer src/mServer
 	dh_install
 	# Register with pkg-php-tools
-	pkg-php-tools-phpcomposer install deb pohoda-connector mServer/autoload.php
+	install -m0755 -d debian/php-vitexsoftware-pohoda-connector/usr/share/pkg-php-tools/autoloaders
+	echo 'deb pohoda-connector mServer/autoload.php' > debian/php-vitexsoftware-pohoda-connector/usr/share/pkg-php-tools/autoloaders/php-vitexsoftware-pohoda-connector
 	# Version stamp
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//' `'"'  debian/config/composer.json |sponge debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/composer.json
 	sed -i -e  "s/\/\.\.\/\.\.\//\//g" debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/Client.php
