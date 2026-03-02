@@ -1,42 +1,60 @@
-<!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
+---
+description: PHP-Pohoda-Connector - PHP library for Pohoda accounting system integration
+applyTo: '**'
+---
 
-All code comments should be written in English.
+# PHP-Pohoda-Connector - Copilot Instructions
 
-All messages, including error messages, should be written in English.
+## Project Overview
+PHP-Pohoda-Connector is a **PHP library** for integrating with Pohoda accounting system:
+- **XML API Client**: Handles Pohoda mServer XML communication
+- **Data Serialization**: Converts PHP objects to/from Pohoda XML format
+- **Connection Management**: Manages authentication and session handling
+- **Type Safety**: Full PHP 8.4+ type system integration
+- **Error Handling**: Comprehensive exception management
 
-All code should be written in PHP 8.4 or later.
+## 📋 Development Standards
 
-All code should follow the PSR-12 coding standard.
+### Core Coding Guidelines
+- **PHP 8.4+**: Use modern PHP features and strict types: `declare(strict_types=1);`
+- **PSR-12**: Follow PHP-FIG coding standards for consistency
+- **Type Safety**: Include type hints for all parameters and return types
+- **Documentation**: PHPDoc blocks for all public methods and classes
+- **Testing**: PHPUnit tests for all new functionality
+- **Internationalization**: Use `_()` functions for translatable strings
 
-When writing code, always include a docblock for functions and classes, describing their purpose, parameters, and return types.
+### Code Quality Requirements
+- **Syntax Validation**: After every PHP file edit, run `php -l filename.php` for syntax checking
+- **Error Handling**: Implement comprehensive try-catch blocks with meaningful error messages
+- **Testing**: Create/update PHPUnit test files for all new/modified classes
+- **Performance**: Optimize for production use with large datasets
+- **Security**: Ensure code doesn't expose sensitive information
 
-When writing tests, use PHPUnit and follow the PSR-12 coding standard.
+### Development Best Practices
+- **Code Comments**: Write in English using complete sentences and proper grammar
+- **Variable Names**: Use meaningful names that describe their purpose
+- **Constants**: Avoid magic numbers/strings; define constants instead
+- **Exception Handling**: Always provide meaningful error messages
+- **Commit Messages**: Use imperative mood and keep them concise
+- **Security**: Ensure code is secure and doesn't expose sensitive information
+- **Compatibility**: Maintain compatibility with latest PHP and library versions
+- **Maintainability**: Follow best practices for maintainable code
 
-When writing documentation, use MarkDown format.
+### Testing Requirements
+- **PHPUnit Integration**: All new classes require corresponding test files
+- **Test Coverage**: Aim for comprehensive test coverage of all functionality
+- **Mock Usage**: Use mocks for external dependencies during testing
+- **Test Structure**: Follow PSR-12 coding standards in test files
 
-When writing commit messages, use the imperative mood and keep them concise.
+### XML/API Integration Guidelines
+- **XML Validation**: Validate all XML input/output against Pohoda schemas
+- **Connection Security**: Use secure authentication methods
+- **Error Recovery**: Implement retry logic for network failures
+- **Data Integrity**: Ensure data consistency in XML transformations
 
-When writing code comments, use complete sentences and proper grammar.
-
-When writing code, always use meaningful variable names that describe their purpose.
-
-When writing code, avoid using magic numbers or strings; instead, define constants for them.
-
-When writing code, always handle exceptions properly and provide meaningful error messages.
-
-When writing code, always include type hints for function parameters and return types.
-
-We are using the i18n library for internationalization, so always use the _() functions for strings that need to be translated.
-
-When writing code, always ensure that it is secure and does not expose any sensitive information.
-
-When writing code, always consider performance and optimize where necessary.
-
-When writing code, always ensure that it is compatible with the latest version of PHP and the libraries we are using.
-
-When writing code, always ensure that it is well-tested and includes unit tests where applicable.
-
-When writing code, always ensure that it is maintainable and follows best practices.
-
-When create new class or update existing class, always create or update its phpunit test files.
-
+⚠️ **Important Notes for Copilot:**
+- This is a foundational library used by other VitexSoftware projects
+- Maintain backward compatibility when making changes
+- Follow Pohoda XML schema requirements strictly
+- Prioritize stability and reliability over new features
+- All changes must be thoroughly tested with real Pohoda systems

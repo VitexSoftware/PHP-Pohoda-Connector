@@ -1,19 +1,17 @@
 Source: php-vitexsoftware-pohoda-connector
-Section: fintech
+Section: php
 Priority: optional
 Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
-Build-Depends: debhelper (>= 7.0.50~), composer, moreutils, jq, phpdocumentor, php-mbstring, php-curl, php-intl, debhelper-compat (= 10)
-Standards-Version: 4.5.1
+Build-Depends: debhelper-compat (= 13), pkg-php-tools (>= 1.7~), phpab, jq, moreutils
+Standards-Version: 4.7.0
 Homepage: https://github.com/VitexSoftware/PHP-Pohoda-Connector
 Rules-Requires-Root: no
-#Vcs-Git: https://salsa.debian.org/debian/php-vitexsoftware-pohoda-connector.git
-#Vcs-Browser: https://salsa.debian.org/debian/php-vitexsoftware-pohoda-connector
 
 Package: php-vitexsoftware-pohoda-connector
-Architecture: any
+Architecture: all
 Multi-Arch: foreign
-Pre-Depends: php-curl, php-xml
-Depends: ${misc:Depends}, php-vitexsoftware-ease-core, composer
+Section: php
+Depends: ${misc:Depends}, ${phpcomposer:Debian-require}, php-curl, php-xml
 Provides: php-pohoda
 Description: client library for Sormware's Pohoda mServer
     PHP library for communication with Pohoda mServer.

@@ -1,26 +1,15 @@
 #!/usr/bin/make -f
-# You must remove unused comment lines for the released package.
-#export DH_VERBOSE = 1
-#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 %:
-	dh $@
-
-
-#override_dh_prep:
-#	rm -f composer.lock
-#	composer install --no-dev
-#	phpdoc -d src
-#	mkdir -p docs ; rm -fr docs/* ; mv .phpdoc/build/* docs
-#	dh_prep
-
-#override_dh_auto_install:
-#	dh_auto_install -- prefix=/usr
+	dh $@ --with phpcomposer
 
 override_dh_install:
-	dh_install	
+	# Generate autoloader
+	phpab --output src/mServer/autoload.php --basedir src/mServer src/mServer
+	dh_install
+	# Register with pkg-php-tools
+	pkg-php-tools-phpcomposer install deb pohoda-connector mServer/autoload.php
+	# Version stamp
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//' `'"'  debian/config/composer.json |sponge debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/composer.json
 	sed -i -e  "s/\/\.\.\/\.\.\//\//g" debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/Client.php
 	sed -i 's/vitexsoftware/deb/' debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/Client.php

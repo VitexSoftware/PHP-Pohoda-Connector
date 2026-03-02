@@ -1,6 +1,7 @@
-php-vitexsoftware-pohoda-connector (0.10.0) UNRELEASED; urgency=medium
+php-vitexsoftware-pohoda-connector (0.10.0) unstable; urgency=medium
 
   * configurable userAgent added
+  * Modernize Debian packaging: debhelper-compat 13, pkg-php-tools, phpab
 
  -- Vitex <vitezslav.dvorak@spojenet.cz>  Thu, 17 Jul 2025 17:41:43 +0200
 
