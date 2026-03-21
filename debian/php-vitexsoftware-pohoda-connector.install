@@ -1,3 +1,2 @@
 src/mServer/*.php	        /usr/share/php/mServer
 debian/config/composer.json	/usr/share/php/mServer
-

@@ -3,14 +3,12 @@
 %:
 	dh $@ --with phpcomposer
 
+
 override_dh_install:
-	# Generate autoloader
-	phpab --output src/mServer/autoload.php --basedir src/mServer src/mServer
 	dh_install
-	# Register with pkg-php-tools
-	install -m0755 -d debian/php-vitexsoftware-pohoda-connector/usr/share/pkg-php-tools/autoloaders
-	echo 'deb pohoda-connector mServer/autoload.php' > debian/php-vitexsoftware-pohoda-connector/usr/share/pkg-php-tools/autoloaders/php-vitexsoftware-pohoda-connector
+	phpab --output debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/autoload.php --basedir src/mServer src/mServer
+	echo "require_once '/usr/share/php/Ease/autoload.php';" >> debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/autoload.php
 	# Version stamp
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//' `'"'  debian/config/composer.json |sponge debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/composer.json
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//' `'"'  debian/config/composer.json | sponge debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/composer.json
 	sed -i -e  "s/\/\.\.\/\.\.\//\//g" debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/Client.php
 	sed -i 's/vitexsoftware/deb/' debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/Client.php

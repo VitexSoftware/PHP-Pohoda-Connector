@@ -1,4 +1,4 @@
-# WARP.md - Working AI Reference for PHP-Pohoda-Connector
+# AGENTS.md - Working AI Reference for PHP-Pohoda-Connector
 
 ## Project Overview
 **Type**: PHP Project/Debian Package
