@@ -1,9 +1,16 @@
+php-vitexsoftware-pohoda-connector (0.11.0) UNRELEASED; urgency=medium
+
+  * parse all responses,debian autoloader added
+
+ -- vitex <info@vitexsoftware.cz>  Sat, 21 Mar 2026 11:09:10 +0100
+
 php-vitexsoftware-pohoda-connector (0.10.0) unstable; urgency=medium
 
+  [ Vitex ]
   * configurable userAgent added
   * Modernize Debian packaging: debhelper-compat 13, pkg-php-tools, phpab
 
- -- Vitex <vitezslav.dvorak@spojenet.cz>  Thu, 17 Jul 2025 17:41:43 +0200
+ -- vitex <info@vitexsoftware.cz>  Sat, 21 Mar 2026 11:08:33 +0100
 
 php-vitexsoftware-pohoda-connector (0.9.1) unstable; urgency=medium
 

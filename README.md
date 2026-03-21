@@ -14,12 +14,9 @@ client library for Stormware's [mPohoda mServer](https://www.stormware.cz/pohoda
 
 The PHP-Pohoda-Connector library provides a set of features to interact with the Pohoda accounting software. Below are some of the key features along with code examples:
 
-Features:
-
 * Check connection
-* Create/Update/Delete AddressBook record
-* Create/Update/Delete Invoice record
-* Create/Update/Delete Bank movement record
+* Create/Update/Delete records for AddressBook, Invoice, Bank, etc.
+* Broad support for all Pohoda response types (70+ agendas supported)
 
 ![PHP from Packagist](https://img.shields.io/packagist/php-v/vitexsoftware/pohoda-connector)
 ![Packagist Version](https://img.shields.io/packagist/v/vitexsoftware/pohoda-connector)

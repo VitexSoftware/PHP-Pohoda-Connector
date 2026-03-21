@@ -79,6 +79,30 @@ class ResponseTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * @dataProvider responseTypeProvider
+     * @covers \mServer\Response::processResponsePackItem
+     */
+    public function testProcessResponsePackItemTypes(string $tagName): void
+    {
+        $item = [$tagName => ['rdc:importDetails' => ['rdc:detail' => ['rdc:state' => 'ok']]]];
+        $this->object->processResponsePackItem($item);
+        $this->assertEquals('ok', $this->object->getState());
+    }
+
+    public static function responseTypeProvider(): array
+    {
+        return [
+            ['pri:prijemkaResponse'],
+            ['pro:prodejkaResponse'],
+            ['vch:voucherResponse'],
+            ['vyd:vydejkaResponse'],
+            ['vyr:vyrobaResponse'],
+            ['lst:listInvoice'],
+            ['lStk:listStock'],
+        ];
+    }
+
+    /**
      * @covers \mServer\Response::processProducedDetails
      */
     public function testProcessProducedDetails(): void

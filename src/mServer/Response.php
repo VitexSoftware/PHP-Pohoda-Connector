@@ -140,10 +140,75 @@ class Response extends \Ease\Sand
         foreach ($responsePackItem as $name => $responsePackSubitem) {
             switch ($name) {
                 case 'lAdb:listAddressBook':
+                case 'lAct:listActivity':
+                case 'lCen:listCentre':
+                case 'lCon:listContract':
+                case 'lStk:listStock':
+                case 'lSto:listStorage':
+                case 'lst:listAccountancy':
+                case 'lst:listActivity':
                 case 'lst:listBank':
+                case 'lst:listCentre':
+                case 'lst:listContract':
+                case 'lst:listEnquiry':
+                case 'lst:listIndividualPrice':
+                case 'lst:listIntDoc':
+                case 'lst:listIntParam':
+                case 'lst:listInventoryLists':
+                case 'lst:listInvoice':
+                case 'lst:listNumericalSeries':
+                case 'lst:listOffer':
+                case 'lst:listOrder':
+                case 'lst:listParameter':
+                case 'lst:listPayment':
+                case 'lst:listPrevodka':
+                case 'lst:listPrijemka':
+                case 'lst:listProdejka':
+                case 'lst:listStock':
+                case 'lst:listStorage':
+                case 'lst:listSupplier':
+                case 'lst:listUserCode':
+                case 'lst:listVydejka':
+                case 'lst:listVyroba':
+                case 'acc:accountancyResponse':
+                case 'acp:actionPriceResponse':
+                case 'acv:activityResponse':
+                case 'afp:accountingPaymentResponse':
+                case 'apf:advancePartFulfilmentResponse':
+                case 'bka:bankAccountResponse':
                 case 'bnk:bankResponse':
+                case 'csh:cashRegisterResponse':
+                case 'cen:centreResponse':
+                case 'con:contractResponse':
+                case 'ctg:categoryResponse':
+                case 'enq:enquiryResponse':
+                case 'gdp:GDPRResponse':
+                case 'gps:GPSRResponse':
+                case 'grs:groupStocksResponse':
+                case 'idp:individualPriceResponse':
+                case 'ilt:inventoryListsResponse':
+                case 'int:intDocResponse':
+                case 'ipm:intParamResponse':
                 case 'inv:invoiceResponse':
                 case 'adb:addressbookResponse':
+                case 'lck:lockResponse':
+                case 'lwl:liquidationWithoutLinkResponse':
+                case 'nms:numericalSeriesResponse':
+                case 'ofr:offerResponse':
+                case 'ord:orderResponse':
+                case 'pay:paymentResponse':
+                case 'pre:prevodkaResponse':
+                case 'pri:prijemkaResponse':
+                case 'prn:printResponse':
+                case 'pro:prodejkaResponse':
+                case 'req:productRequirementResponse':
+                case 'sEET:sendEETResponse':
+                case 'srv:serviceResponse':
+                case 'str:storageResponse':
+                case 'uag:userAgendaResponse':
+                case 'vch:voucherResponse':
+                case 'vyd:vydejkaResponse':
+                case 'vyr:vyrobaResponse':
                 case 'lqd:automaticLiquidationResponse':
                     $this->processResponseData($responsePackSubitem);
                     break;
