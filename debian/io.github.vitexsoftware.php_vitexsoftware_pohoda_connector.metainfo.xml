@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop-application">
+<component type="generic">
   <id>io.github.vitexsoftware.php_vitexsoftware_pohoda_connector</id>
   <metadata_license>MIT</metadata_license>
   <project_license>MIT</project_license>
@@ -10,6 +10,7 @@
       PHP library for communication with Pohoda mServer. . This package provides a simple way to communicate with Pohoda mServer using PHP.
     </p>
   </description>
+  <icon type="stock">phpmserver</icon>
   <categories>
     <category>Utility</category>
   </categories>
