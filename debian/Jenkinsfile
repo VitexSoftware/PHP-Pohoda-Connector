@@ -5,10 +5,10 @@
 String[] distributions = [
 			'debian:bookworm', 
 			'debian:trixie', 
-			'debian:forky', 
+// 			'debian:forky', 
 			'ubuntu:jammy', 
 			'ubuntu:noble',
-			'ubuntu:resolute',
+//			'ubuntu:resolute',
 ]
 
 String vendor = 'vitexsoftware'
