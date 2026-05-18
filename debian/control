@@ -11,7 +11,7 @@ Package: php-vitexsoftware-pohoda-connector
 Architecture: all
 Multi-Arch: foreign
 Section: php
-Depends: ${misc:Depends}, ${phpcomposer:Depends}, ${php:Depends}, php-curl, php-xml, php-lightools-xml, php-vitexsoftware-pohodaser, composer
+Depends: ${misc:Depends}, ${phpcomposer:Depends}, ${php:Depends}, php-curl, php-xml, php-lightools-xml, php-vitexsoftware-pohodaser, php-riesenia-pohoda, composer
 Provides: php-pohoda
 Description: client library for Sormware's Pohoda mServer
     PHP library for communication with Pohoda mServer.
