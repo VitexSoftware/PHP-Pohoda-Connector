@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 require_once '/usr/share/php/Composer/InstalledVersions.php';
 require_once '/usr/share/php/Ease/autoload.php';
+require_once '/usr/share/php/Lightools/Xml/autoload.php';
+require_once '/usr/share/php/Riesenia/Pohoda/autoload.php';
+require_once '/usr/share/php/PohodaSer/autoload.php';
 
 spl_autoload_register(function (string $class): void {
     $prefix = 'mServer\\';

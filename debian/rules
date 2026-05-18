@@ -16,8 +16,7 @@ override_dh_install:
 	sed -i "s|'library'|'$(PKG_TYPE)'|g" debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/autoload.php
 	# Version stamp from main composer.json
 	jq '.version = "$(PKG_VERSION)"' composer.json | sponge debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/composer.json
-	sed -i -e "s/\/\.\.\/\.\.\//\//g" debian/php-vitexsoftware-pohoda-connector/usr/share/php/mServer/Client.php
 
 override_dh_auto_test:
 	appstreamcli validate --pedantic --no-net \
-	    debian/io.github.vitexsoftware.php_vitexsoftware_pohoda_connector.metainfo.xml
+	    debian/php-vitexsoftware-pohoda-connector.metainfo.xml

@@ -675,7 +675,7 @@ class Response extends \Ease\Sand
     {
         $responsePack = null;
         $serializerBuilder = SerializerBuilder::create();
-        $serializerBuilder->addMetadataDir(\dirname(__DIR__, 2).'/vendor/vitexsoftware/pohodaser/metadata/', 'Pohoda');
+        $serializerBuilder->addMetadataDir(\Composer\InstalledVersions::getInstallPath('vitexsoftware/pohodaser').'/metadata/', 'Pohoda');
         $serializerBuilder->configureHandlers(static function (HandlerRegistryInterface $handler) use ($serializerBuilder): void {
             $serializerBuilder->addDefaultHandlers();
             $handler->registerSubscribingHandler(new BaseTypesHandler()); // XMLSchema List handling
