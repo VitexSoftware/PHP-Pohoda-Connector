@@ -15,10 +15,10 @@ declare(strict_types=1);
 
 namespace mServer;
 
-class BankAccount  extends Client implements smart {
-    
+class BankAccount extends Client implements smart
+{
     #[\Override]
-    public function populate(array $data): smart {
-        
+    public function populate(array $data): smart
+    {
     }
 }

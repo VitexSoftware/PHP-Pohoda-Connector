@@ -107,7 +107,7 @@ class AddressbookTest extends \PHPUnit\Framework\TestCase
     /**
      * @covers \mServer\Addressbook::updateInPohoda
      */
-    public function testUpdateInPohoda()
+    public function testUpdateInPohoda(): void
     {
         $this->object->addToPohoda();
         $this->object->commit();
