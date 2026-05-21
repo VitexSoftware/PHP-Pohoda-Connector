@@ -79,8 +79,9 @@ class ResponseTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @dataProvider responseTypeProvider
      * @covers \mServer\Response::processResponsePackItem
+     *
+     * @dataProvider responseTypeProvider
      */
     public function testProcessResponsePackItemTypes(string $tagName): void
     {
@@ -89,7 +90,7 @@ class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('ok', $this->object->getState());
     }
 
-    public static function responseTypeProvider(): array
+    public static function responseTypeProvider(): iterable
     {
         return [
             ['pri:prijemkaResponse'],

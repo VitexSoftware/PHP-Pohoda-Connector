@@ -96,6 +96,8 @@ class Response extends \Ease\Sand
      * Process a response pack from Pohoda.
      * Reads state/note from attributes and processes each child item.
      * Accepts SimpleXMLElement (preferred) or legacy array structure.
+     *
+     * @param mixed $responsePackData
      */
     public function processResponsePack($responsePackData): void
     {
@@ -103,11 +105,12 @@ class Response extends \Ease\Sand
         if ($responsePackData instanceof \SimpleXMLElement) {
             $attrs = $responsePackData->attributes();
             $this->state = isset($attrs['state']) ? (string) $attrs['state'] : ($this->state ?? '');
-            $this->note  = isset($attrs['note'])  ? (string) $attrs['note']  : ($this->note ?? '');
+            $this->note = isset($attrs['note']) ? (string) $attrs['note'] : ($this->note ?? '');
 
             foreach ($responsePackData->item as $item) {
                 $this->processResponsePackItem($item);
             }
+
             return;
         }
 
@@ -116,24 +119,30 @@ class Response extends \Ease\Sand
             if (\array_key_exists('rsp:responsePackItem', $responsePackData)) {
                 $this->processResponsePackItem($responsePackData['rsp:responsePackItem']);
             }
-            $this->state = isset($responsePackData['@state']) ? (string)$responsePackData['@state'] : ($this->state ?? '');
-            $this->note  = isset($responsePackData['@note'])  ? (string)$responsePackData['@note']  : ($this->note ?? '');
+
+            $this->state = isset($responsePackData['@state']) ? (string) $responsePackData['@state'] : ($this->state ?? '');
+            $this->note = isset($responsePackData['@note']) ? (string) $responsePackData['@note'] : ($this->note ?? '');
         }
     }
 
     /**
      * Process a single response pack item (XML or array form).
+     *
+     * @param mixed $responsePackItem
      */
     public function processResponsePackItem($responsePackItem): void
     {
         // If XML is provided, convert to array and reuse existing flow
         if ($responsePackItem instanceof \SimpleXMLElement) {
             $asArray = self::xmlToArray($responsePackItem);
+
             // xmlToArray wraps with root tag name; flatten one level if needed
             if (\is_array($asArray) && \count($asArray) === 1) {
                 $asArray = reset($asArray);
             }
+
             $this->processResponsePackItem($asArray);
+
             return;
         }
 
@@ -211,16 +220,20 @@ class Response extends \Ease\Sand
                 case 'vyr:vyrobaResponse':
                 case 'lqd:automaticLiquidationResponse':
                     $this->processResponseData($responsePackSubitem);
+
                     break;
                 case '@state':
-                    $this->state = (string)$responsePackSubitem;
+                    $this->state = (string) $responsePackSubitem;
+
                     break;
                 case '@note':
                     $note = $responsePackSubitem; // TODO
+
                     break;
                 case '@id':
                 case '@version':
                     break;
+
                 default:
                     // unknown element, ignore
                     break;
@@ -500,7 +513,7 @@ class Response extends \Ease\Sand
             // optional search and replace on tag and attribute names
             'keyReplace' => '', // replace values for above search values (as passed to str_replace())
         ];
-        $options = $options + [
+        $options += [
             'namespaces' => true,
             'attributes' => true,
             'children' => true,
