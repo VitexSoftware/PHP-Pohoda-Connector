@@ -291,6 +291,14 @@ class Response extends \Ease\Sand
                     $this->parsed = $this->processBank(\array_key_exists(0, $value) ? $value : [$value]);
 
                     break;
+                case 'lst:invoice':
+                    $this->parsed = $this->processListInvoice(\array_key_exists(0, $value) ? $value : [$value]);
+
+                    break;
+                case 'lst:order':
+                    $this->parsed = $this->processListOrder(\array_key_exists(0, $value) ? $value : [$value]);
+
+                    break;
                 case '@version':
                 case '@dateTimeStamp':
                 case '@dateValidFrom':
@@ -672,6 +680,106 @@ class Response extends \Ease\Sand
         }
 
         return self::stripArrayNames('typ', $bankItems);
+    }
+
+    /**
+     * Normalize a raw inv:* array into a flat record merging header + summary.
+     *
+     * Returns an array keyed by invoice id with fields from invoiceHeader and
+     * invoiceSummary merged at the top level, plus invoiceDetail as an array
+     * of item arrays.
+     */
+    public function processListInvoice(array $invoices): array
+    {
+        $result = [];
+
+        foreach ($invoices as $entry) {
+            if (!\is_array($entry)) {
+                continue;
+            }
+
+            $inv = self::stripArrayNames('inv', $entry);
+            $header = self::stripArrayNames('typ', $inv['invoiceHeader'] ?? []);
+
+            if (empty($header)) {
+                continue;
+            }
+
+            // Merge summary currency blocks into the record so normalizeInvoice can find them
+            $summary = self::stripArrayNames('typ', $inv['invoiceSummary'] ?? []);
+            $record = array_merge($header, [
+                'homeCurrency' => $summary['homeCurrency'] ?? [],
+                'foreignCurrency' => $summary['foreignCurrency'] ?? [],
+            ]);
+
+            // Normalize items into a sequential array
+            $rawDetail = self::stripArrayNames('inv', $inv['invoiceDetail'] ?? []);
+            $rawItems = $rawDetail['invoiceItem'] ?? [];
+
+            // Single item comes as assoc array, multiple as numeric array
+            if (!empty($rawItems) && !\array_key_exists(0, $rawItems)) {
+                $rawItems = [$rawItems];
+            }
+
+            $items = [];
+
+            foreach ($rawItems as $item) {
+                $items[] = self::stripArrayNames('typ', \is_array($item) ? $item : []);
+            }
+
+            $record['invoiceDetail'] = $items;
+
+            $id = (int) ($header['id'] ?? 0);
+            $result[$id] = $record;
+        }
+
+        return $result;
+    }
+
+    /**
+     * Normalize ord:* order records into flat arrays keyed by id.
+     */
+    public function processListOrder(array $orders): array
+    {
+        $result = [];
+
+        foreach ($orders as $entry) {
+            if (!\is_array($entry)) {
+                continue;
+            }
+
+            $ord = self::stripArrayNames('ord', $entry);
+            $header = self::stripArrayNames('typ', $ord['orderHeader'] ?? []);
+
+            if (empty($header)) {
+                continue;
+            }
+
+            $summary = self::stripArrayNames('typ', $ord['orderSummary'] ?? []);
+            $record = array_merge($header, [
+                'homeCurrency' => $summary['homeCurrency'] ?? [],
+            ]);
+
+            $rawDetail = self::stripArrayNames('ord', $ord['orderDetail'] ?? []);
+            $rawItems = $rawDetail['orderItem'] ?? [];
+
+            if (!empty($rawItems) && !\array_key_exists(0, $rawItems)) {
+                $rawItems = [$rawItems];
+            }
+
+            $items = [];
+
+            foreach ($rawItems as $item) {
+                $items[] = self::stripArrayNames('typ', \is_array($item) ? $item : []);
+            }
+
+            $record['orderDetail'] = $items;
+
+            $id = (int) ($header['id'] ?? 0);
+            $result[$id] = $record;
+        }
+
+        return $result;
     }
 
     public function processLiquidationDetails(array $liquidationDetails)

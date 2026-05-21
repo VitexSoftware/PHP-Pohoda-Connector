@@ -750,7 +750,7 @@ class Client extends \Ease\Sand
 
         $response = $this->performRequest('/xml') ? $this->response->getAgendaData($this->agenda) : null;
 
-        if ($response && !empty($columns)) {
+        if ($response && !empty($columns) && $columns !== ['*']) {
             return array_map(static function ($item) use ($columns) {
                 return array_intersect_key($item, array_flip($columns));
             }, $response);
@@ -839,7 +839,7 @@ class Client extends \Ease\Sand
         return $this->createListRequest()->addQueryFilter(['textName' => $name, 'filter' => $query]);
     }
 
-    public function getListing(\Riesenia\Pohoda\ListRequest $listRequest): ?array
+    public function getListing(\Riesenia\Pohoda\ListRequest $listRequest, array $columns = []): ?array
     {
         $this->pohoda->addItem('2', $listRequest);
 
@@ -848,7 +848,7 @@ class Client extends \Ease\Sand
 
         $response = $this->performRequest('/xml') ? $this->response->getAgendaData($this->agenda) : null;
 
-        if ($response && !empty($columns)) {
+        if ($response && !empty($columns) && $columns !== ['*']) {
             return array_map(static function ($item) use ($columns) {
                 return array_intersect_key($item, array_flip($columns));
             }, $response);
