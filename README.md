@@ -10,7 +10,7 @@
 
 client library for Stormware's [mPohoda mServer](https://www.stormware.cz/pohoda/xml/mserver/)
 
-![Project Logo](phpmserver.svg?raw=true)
+![Project Logo](io.github.vitexsoftware.php_vitexsoftware_pohoda_connector.svg?raw=true)
 
 The PHP-Pohoda-Connector library provides a set of features to interact with the Pohoda accounting software. Below are some of the key features along with code examples:
 

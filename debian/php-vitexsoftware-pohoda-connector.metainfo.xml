@@ -10,7 +10,7 @@
       PHP library for communication with Pohoda mServer. . This package provides a simple way to communicate with Pohoda mServer using PHP.
     </p>
   </description>
-  <icon type="stock">phpmserver</icon>
+  <icon type="stock">io.github.vitexsoftware.php_vitexsoftware_pohoda_connector</icon>
   <categories>
     <category>Utility</category>
   </categories>
