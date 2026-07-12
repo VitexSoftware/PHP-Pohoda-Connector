@@ -1,3 +1,4 @@
 src/mServer/*.php	        /usr/share/php/mServer
 composer.json	/usr/share/php/mServer
 io.github.vitexsoftware.php_vitexsoftware_pohoda_connector.svg usr/share/icons/hicolor/scalable/apps/
+debian/php-vitexsoftware-pohoda-connector.metainfo.xml usr/share/metainfo/
