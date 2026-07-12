@@ -598,7 +598,13 @@ class Client extends \Ease\Sand
         $this->responseStats = [];
         $this->errors = [];
 
-        return ($this->doCurlRequest($this->url.'/status', 'POST') === 200) && str_contains($this->lastCurlResponse, 'Response from POHODA mServer');
+        try {
+            return ($this->doCurlRequest($this->url.'/status', 'POST') === 200) && str_contains($this->lastCurlResponse, 'Response from POHODA mServer');
+        } catch (HttpException $exc) {
+            $this->lastCurlResponse = $exc->getMessage();
+
+            return false;
+        }
     }
 
     /**
