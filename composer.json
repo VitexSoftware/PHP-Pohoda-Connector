@@ -25,7 +25,7 @@
   "require": {
     "ext-curl": "*",
     "ext-iconv": "*",
-    "lightools/xml": "^2.0|^3.0",
+    "lightools/xml": "^4.0.0",
     "riesenia/pohoda": "^1.26",
     "vitexsoftware/ease-core": "^1.50",
     "vitexsoftware/pohodaser": "^0.1"
