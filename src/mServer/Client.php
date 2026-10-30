@@ -571,8 +571,15 @@ class Client extends \Ease\Sand
 
                 //                if ($this->response->isOk() === false) {
                 if ($this->response->getNote()) {
-                    $this->messages['error'][] = $this->response->getNote();
-                    $this->addStatusMessage($this->response->getNote(), 'error');
+                    if ($this->response->isOk()) {
+                        // Pohoda echoes the request note back in a successful response — not an error
+                        if ($this->debug) {
+                            $this->addStatusMessage($this->response->getNote(), 'debug');
+                        }
+                    } else {
+                        $this->messages['error'][] = $this->response->getNote();
+                        $this->addStatusMessage($this->response->getNote(), $this->response->isWarning() ? 'warning' : 'error');
+                    }
                 }
 
                 foreach ($this->response->messages as $type => $messages) {
